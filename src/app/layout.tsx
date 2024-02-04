@@ -3,6 +3,7 @@ import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
 
 import {Providers} from '@/components/common/providers'
+import {defaultThemeColorScheme} from '@/constants'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 const inter = Inter({subsets: ['latin']})
@@ -23,7 +24,7 @@ export default function RootLayout({children}: RootLayoutProps) {
           content='minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no'
           name='viewport'
         />
-        <ColorSchemeScript defaultColorScheme='light' />
+        <ColorSchemeScript defaultColorScheme={defaultThemeColorScheme} />
       </head>
       <body className={inter.className}>
         <Providers>{children}</Providers>
