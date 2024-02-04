@@ -59,6 +59,8 @@
     "typescript": "5.3.2"
   },
   "resolutions": {
-    "string-width": "4.2.3"
+    "string-width": "^4",
+    "strip-ansi": "^4",
+    "wrap-ansi": "^7"
   }
 }
