@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import {sprinkles} from '@/lib/styles/sprinkles.css'
 
-import * as styles from './job-card.css'
+import * as styles from './JobCard.css'
 
 function JobCardHeader() {
   return (

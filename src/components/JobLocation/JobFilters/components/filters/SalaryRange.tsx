@@ -1,18 +1,11 @@
 import type {RangeSliderValue} from '@mantine/core'
-import {
-  Accordion,
-  Box,
-  Group,
-  Input,
-  NumberInput,
-  RangeSlider,
-} from '@mantine/core'
+import {Accordion, Box, Input, NumberInput, RangeSlider} from '@mantine/core'
 import {useCallbackRef} from '@mantine/hooks'
 import {produce} from 'immer'
 import {toNumber} from 'lodash-es'
 import {useState} from 'react'
 
-import {AccordionItem} from '@/components/JobLocation/job-filters/components/accordion-item'
+import {AccordionItem} from '@/components/JobLocation/JobFilters/components/AccordionItem'
 import {sprinkles} from '@/lib/styles/sprinkles.css'
 
 type NumberInputValue = number | string
