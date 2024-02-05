@@ -22,7 +22,7 @@ export const responsiveProperties = defineProperties({
   defaultCondition: 'mobile',
   properties: {
     display: ['none', 'flex', 'block', 'inline'],
-    flexDirection: ['row', 'column'],
+    flexDirection: ['row', 'column', 'row-reverse', 'column-reverse'],
     justifyContent: [
       'stretch',
       'flex-start',
@@ -55,6 +55,8 @@ export const responsiveProperties = defineProperties({
     padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
     paddingX: ['paddingLeft', 'paddingRight'],
     paddingY: ['paddingTop', 'paddingBottom'],
+    marginX: ['marginLeft', 'marginRight'],
+    marginY: ['marginTop', 'marginBottom'],
     placeItems: ['justifyContent', 'alignItems'],
   },
 })
