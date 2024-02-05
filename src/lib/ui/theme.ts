@@ -1,9 +1,20 @@
 'use client'
 
-import {createTheme} from '@mantine/core'
+import {Button, createTheme} from '@mantine/core'
 import {themeToVars} from '@mantine/vanilla-extract'
 
+import {sprinkles} from '@/lib/styles/sprinkles.css'
+
 export const theme = createTheme({
+  components: {
+    Button: Button.extend({
+      classNames(t, props, ctx) {
+        return {
+          root: sprinkles({borderRadius: 'md'}),
+        }
+      },
+    }),
+  },
   primaryShade: 4,
 
   colors: {

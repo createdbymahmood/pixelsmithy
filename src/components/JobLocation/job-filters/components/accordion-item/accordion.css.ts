@@ -15,6 +15,7 @@ export const control = style([
     background: 'transparent',
     cursor: 'pointer',
     paddingLeft: 0,
+    color: 'black',
   },
 ])
 
