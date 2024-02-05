@@ -1,8 +1,8 @@
 import {useSelections} from 'ahooks'
 
-import {AccordionItem} from '@/components/job-filters/components/accordion-item'
-import {seniorityLevels} from '@/components/job-filters/components/constants'
-import {SelectableAccordionPanel} from '@/components/job-filters/components/selectable-accordion-panel'
+import {AccordionItem} from '@/components/JobLocation/job-filters/components/accordion-item'
+import {seniorityLevels} from '@/components/JobLocation/job-filters/components/constants'
+import {SelectableAccordionPanel} from '@/components/JobLocation/job-filters/components/selectable-accordion-panel'
 
 export const SeniorityLevel = () => {
   const selections = useSelections(seniorityLevels.map((toe) => toe.label))

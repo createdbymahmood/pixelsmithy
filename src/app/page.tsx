@@ -1,13 +1,10 @@
-import {Box, Container} from '@mantine/core'
-
-import {JobFilters} from '@/components/job-filters/job-filters'
+import {Container, Text} from '@mantine/core'
+import React from 'react'
 
 export default function App() {
   return (
     <Container my='sm'>
-      <Box maw={288}>
-        <JobFilters />
-      </Box>
+      <Text>Hello World!</Text>
     </Container>
   )
 }
