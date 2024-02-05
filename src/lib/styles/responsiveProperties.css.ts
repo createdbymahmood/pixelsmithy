@@ -50,6 +50,7 @@ export const responsiveProperties = defineProperties({
     borderRadius: vars.radius,
     boxShadow: vars.shadows as MantineSizeObject,
     lineHeight: vars.lineHeights as MantineSizeObject,
+    gap: space,
   },
   shorthands: {
     padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],

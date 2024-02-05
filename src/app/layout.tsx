@@ -6,7 +6,7 @@ import {Providers} from '@/components/common/providers'
 import {defaultThemeColorScheme} from '@/constants'
 import {constructMetadata} from '@/utils/constructMetadata'
 
-const inter = Poppins({weight: '400', subsets: ['latin']})
+const inter = Poppins({weight: ['400', '500', '700'], subsets: ['latin']})
 
 export const metadata: Metadata = constructMetadata({
   title: 'Pixelsmithy',

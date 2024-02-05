@@ -1,11 +1,19 @@
 import type {RangeSliderValue} from '@mantine/core'
-import {Accordion, Box, Input, NumberInput, RangeSlider} from '@mantine/core'
+import {
+  Accordion,
+  Box,
+  Group,
+  Input,
+  NumberInput,
+  RangeSlider,
+} from '@mantine/core'
 import {useCallbackRef} from '@mantine/hooks'
 import {produce} from 'immer'
 import {toNumber} from 'lodash-es'
 import {useState} from 'react'
 
 import {AccordionItem} from '@/components/JobLocation/job-filters/components/accordion-item'
+import {sprinkles} from '@/lib/styles/sprinkles.css'
 
 type NumberInputValue = number | string
 
@@ -64,25 +72,35 @@ export function SalaryRange() {
           onChange={state.onRangeSliderValueChange}
         />
 
-        <Input.Wrapper label='Min'>
-          <NumberInput
-            max={state.range.max}
-            min={salaryRangeInitialValues.min}
-            value={state.range.min}
-            onChange={state.onMinInputChange}
-          />
-        </Input.Wrapper>
+        <Box
+          className={sprinkles({
+            flexDirection: 'row',
+            display: 'flex',
+            gap: 'sm',
+            alignItems: 'center',
+            marginTop: 'md',
+          })}
+        >
+          <Input.Wrapper label='Min'>
+            <NumberInput
+              max={state.range.max}
+              min={salaryRangeInitialValues.min}
+              value={state.range.min}
+              onChange={state.onMinInputChange}
+            />
+          </Input.Wrapper>
 
-        <Box mt={26}>-</Box>
+          <Box mt={26}>-</Box>
 
-        <Input.Wrapper label='Max'>
-          <NumberInput
-            max={salaryRangeInitialValues.max}
-            min={state.range.min}
-            value={state.range.max}
-            onChange={state.onMaxInputChange}
-          />
-        </Input.Wrapper>
+          <Input.Wrapper label='Max'>
+            <NumberInput
+              max={salaryRangeInitialValues.max}
+              min={state.range.min}
+              value={state.range.max}
+              onChange={state.onMaxInputChange}
+            />
+          </Input.Wrapper>
+        </Box>
       </Accordion.Panel>
     </AccordionItem>
   )
