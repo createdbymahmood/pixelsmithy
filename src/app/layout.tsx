@@ -1,12 +1,12 @@
 import {ColorSchemeScript} from '@mantine/core'
 import type {Metadata} from 'next'
-import {Inter} from 'next/font/google'
+import {Poppins} from 'next/font/google'
 
 import {Providers} from '@/components/common/providers'
 import {defaultThemeColorScheme} from '@/constants'
 import {constructMetadata} from '@/utils/constructMetadata'
 
-const inter = Inter({subsets: ['latin']})
+const inter = Poppins({weight: '400', subsets: ['latin']})
 
 export const metadata: Metadata = constructMetadata({
   title: 'Pixelsmithy',
