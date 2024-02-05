@@ -1,1 +1,1 @@
-export * from './job-location'
+export * from './JobLocation'

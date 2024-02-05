@@ -2,7 +2,7 @@ import {Grid, Group, Stack, Text} from '@mantine/core'
 import {range} from 'lodash-es'
 import React from 'react'
 
-import {JobCard} from '@/components/JobLocation/job-card/job-card'
+import {JobCard} from '@/components/JobLocation/JobsCard/JobCard'
 import {sprinkles} from '@/lib/styles/sprinkles.css'
 
 export function JobsList() {

@@ -4,10 +4,10 @@ import {Accordion, ActionIcon, Box, Drawer} from '@mantine/core'
 import {useDisclosure, useMediaQuery} from '@mantine/hooks'
 import {IconMenu2} from '@tabler/icons-react'
 
-import {SalaryRange} from '@/components/JobLocation/job-filters/components/filters/salary-range'
-import {SeniorityLevel} from '@/components/JobLocation/job-filters/components/filters/seniority-level'
-import {TypeOfEmployment} from '@/components/JobLocation/job-filters/components/filters/type-of-employment'
-import {JobFiltersCTA} from '@/components/JobLocation/job-filters/components/job-filters-cta'
+import {SalaryRange} from '@/components/JobLocation/JobFilters/components/filters/SalaryRange'
+import {SeniorityLevel} from '@/components/JobLocation/JobFilters/components/filters/SeniorityLevel'
+import {TypeOfEmployment} from '@/components/JobLocation/JobFilters/components/filters/TypeOfEmployment'
+import {JobFiltersCTA} from '@/components/JobLocation/JobFilters/components/JobFiltersCTA'
 import {vars} from '@/lib/ui/theme'
 
 function useMobileDevice() {

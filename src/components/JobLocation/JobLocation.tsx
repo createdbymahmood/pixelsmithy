@@ -2,8 +2,8 @@
 
 import {Container, Grid} from '@mantine/core'
 
-import {JobFilters} from '@/components/JobLocation/job-filters/job-filters'
-import {JobsList} from '@/components/JobLocation/jobs-list'
+import {JobFilters} from '@/components/JobLocation/JobFilters/JobFilters'
+import {JobsList} from '@/components/JobLocation/JobsList'
 
 export function JobLocation() {
   return (

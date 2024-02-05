@@ -3,9 +3,9 @@ import {useCallbackRef} from '@mantine/hooks'
 import type {useSelections} from 'ahooks'
 import React from 'react'
 
-import type {JobFilterCheckboxItem} from '@/components/JobLocation/job-filters/components/constants'
+import type {JobFilterCheckboxItem} from '@/components/JobLocation/JobFilters/components/constants'
 
-import * as styles from './accordion-item/accordion.css'
+import * as styles from './AccordionItem/accordion.css'
 
 interface SelectableAccordionPanel {
   item: JobFilterCheckboxItem
