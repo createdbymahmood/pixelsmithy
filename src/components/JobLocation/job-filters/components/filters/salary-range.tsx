@@ -5,7 +5,7 @@ import {produce} from 'immer'
 import {toNumber} from 'lodash-es'
 import {useState} from 'react'
 
-import {AccordionItem} from '@/components/job-filters/components/accordion-item'
+import {AccordionItem} from '@/components/JobLocation/job-filters/components/accordion-item'
 
 type NumberInputValue = number | string
 
