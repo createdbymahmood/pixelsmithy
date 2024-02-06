@@ -1,3 +1,10 @@
 {
-  "conventionalCommits.scopes": ["JobLocation"]
+  "conventionalCommits.scopes": ["JobLocation"],
+  "cssVariables.lookupFiles": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+    "node_modules/@mantine/core/styles.css"
+  ]
 }
