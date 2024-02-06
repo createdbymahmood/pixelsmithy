@@ -1,0 +1,7 @@
+.rangeWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: var(--mantine-spacing-sm);
+  align-items: center;
+  margin-top: var(--mantine-spacing-md);
+}

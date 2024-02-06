@@ -1,0 +1,17 @@
+.panel {
+  padding-bottom: var(--mantine-spacing-md);
+}
+
+.item {
+  padding-bottom: var(--mantine-spacing-lg);
+}
+
+.checkboxArea {
+  display: flex;
+  flex-direction: row;
+}
+
+.checkboxBadge {
+  transition: 300ms all ease-in-out;
+  margin-left: auto;
+}

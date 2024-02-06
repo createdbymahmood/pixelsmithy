@@ -1,5 +1,4 @@
 import '@mantine/core/styles.css'
-import '@/lib/styles/globalStyles.css'
 
 import {MantineProvider} from '@mantine/core'
 import type {ReactNode} from 'react'

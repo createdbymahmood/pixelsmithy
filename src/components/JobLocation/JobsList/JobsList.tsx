@@ -3,14 +3,15 @@ import {range} from 'lodash-es'
 import React from 'react'
 
 import {JobCard} from '@/components/JobLocation/JobsCard/JobCard'
-import {sprinkles} from '@/lib/styles/sprinkles.css'
+
+import styles from './JobList.module.scss'
 
 export function JobsList() {
   return (
     <Stack>
       <Group gap={5}>
-        <Text className={sprinkles({fontWeight: 'bold'})}>8,520</Text>
-        <Text className={sprinkles({color: 'gray.6'})}>Jobs Found</Text>
+        <Text className={styles.count}>8,520</Text>
+        <Text className={styles.description}>Jobs Found</Text>
       </Group>
 
       <Grid gutter='xl'>

@@ -6,7 +6,8 @@ import {toNumber} from 'lodash-es'
 import {useState} from 'react'
 
 import {AccordionItem} from '@/components/JobLocation/JobFilters/components/AccordionItem'
-import {sprinkles} from '@/lib/styles/sprinkles.css'
+
+import styles from './SalaryRange.module.scss'
 
 type NumberInputValue = number | string
 
@@ -65,15 +66,7 @@ export function SalaryRange() {
           onChange={state.onRangeSliderValueChange}
         />
 
-        <Box
-          className={sprinkles({
-            flexDirection: 'row',
-            display: 'flex',
-            gap: 'sm',
-            alignItems: 'center',
-            marginTop: 'md',
-          })}
-        >
+        <Box className={styles.rangeWrapper}>
           <Input.Wrapper label='Min'>
             <NumberInput
               max={state.range.max}

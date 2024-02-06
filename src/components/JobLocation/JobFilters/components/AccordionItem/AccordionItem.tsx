@@ -2,7 +2,7 @@ import {Accordion as OriginalAccordion, Title} from '@mantine/core'
 import type {ReactNode} from 'react'
 import React from 'react'
 
-import * as styles from './accordion.css'
+import styles from './AccordionItem.module.scss'
 
 interface AccordionItemProps {
   title: string
@@ -20,7 +20,6 @@ export function AccordionItem({children, _key, title}: AccordionItemProps) {
           {title}
         </Title>
       </OriginalAccordion.Control>
-
       {children}
     </OriginalAccordion.Item>
   )

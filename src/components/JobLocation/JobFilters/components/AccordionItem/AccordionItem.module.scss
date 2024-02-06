@@ -1,0 +1,24 @@
+.control {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding-bottom: var(--mantine-spacing-lg);
+  width: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding-left: 0;
+  color: var(--mantine-color-black);
+}
+
+.chevron {
+  transition: 50ms all ease-in-out;
+
+  &[data-rotate] {
+    transform: rotate(-180deg);
+  }
+}
+
+.item {
+  padding-bottom: var(--mantine-spacing-lg);
+}
