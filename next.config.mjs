@@ -1,12 +1,11 @@
-import {createVanillaExtractPlugin} from '@vanilla-extract/next-plugin'
-
-const withVanillaExtract = createVanillaExtractPlugin()
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
+  sassOptions: {
+    prependData: `@import "./src/lib/styles/_mantine.scss";`,
+  },
 }
 
-export default withVanillaExtract(nextConfig)
+export default nextConfig

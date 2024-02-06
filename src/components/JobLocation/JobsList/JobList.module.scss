@@ -1,0 +1,13 @@
+.count {
+  font-weight: bold;
+}
+
+.description {
+  @include light {
+    color: var(--mantine-color-gray-6);
+  }
+
+  @include dark {
+    color: var(--mantine-color-gray-6);
+  }
+}

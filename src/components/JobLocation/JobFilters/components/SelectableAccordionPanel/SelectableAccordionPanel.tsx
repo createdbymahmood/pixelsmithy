@@ -5,7 +5,7 @@ import React from 'react'
 
 import type {JobFilterCheckboxItem} from '@/components/JobLocation/JobFilters/components/constants'
 
-import * as styles from './AccordionItem/accordion.css'
+import styles from './SelectableAccordionPanel.module.scss'
 
 interface SelectableAccordionPanel {
   item: JobFilterCheckboxItem

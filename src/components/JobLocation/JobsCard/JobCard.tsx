@@ -2,26 +2,14 @@ import {Box, Group, Stack, Text} from '@mantine/core'
 import {IconBookmark, IconDots, IconForbid} from '@tabler/icons-react'
 import Image from 'next/image'
 
-import {sprinkles} from '@/lib/styles/sprinkles.css'
-
-import * as styles from './JobCard.css'
+import styles from './JobCard.module.scss'
 
 function JobCardHeader() {
   return (
-    <Group
-      className={sprinkles({
-        display: 'flex',
-        flexDirection: 'row',
-      })}
-      gap='xs'
-      w='100%'
-    >
+    <Group className={styles.header}>
       <Image alt='Icon' height={60} src='/next.svg' width={60} />
       <Stack gap='xs' maw={200}>
-        <Text
-          className={sprinkles({lineHeight: 'xs', fontWeight: 'medium'})}
-          size='xl'
-        >
+        <Text className={styles.title} size='xl'>
           Senior Product Designer, Growth
         </Text>
         <Text c='blue' size='sm'>
@@ -35,8 +23,8 @@ function JobCardHeader() {
 
 function JobCardBody() {
   return (
-    <Stack mt='sm' w='100%'>
-      <Text className={sprinkles({color: 'gray.5'})} size='sm'>
+    <Stack className={styles.body}>
+      <Text className={styles.location} size='sm'>
         Berlin, New, Germany
       </Text>
 
@@ -46,7 +34,7 @@ function JobCardBody() {
         <Text size='sm'>1000$</Text>
       </Group>
 
-      <Text className={sprinkles({color: 'gray.5'})} size='sm'>
+      <Text className={styles.description} size='sm'>
         It is a long established fact that a reader will be distracted by the
         readable content of a page when looking at its layout. The point of
         using Lorem Ipsum is that it has a more-or-less normal.
@@ -63,15 +51,12 @@ function JobCardBody() {
 
 function JobCardFooter() {
   return (
-    <Group w='100%'>
-      <Text className={sprinkles({color: 'gray.5'})} size='sm'>
+    <Group className={styles.footer}>
+      <Text className={styles.date} size='sm'>
         28 Match 2021
       </Text>
 
-      <Group
-        className={sprinkles({color: 'gray.5', fontWeight: 'regular'})}
-        ml='auto'
-      >
+      <Group className={styles.actions} ml='auto'>
         <IconForbid />
         <IconBookmark />
       </Group>
@@ -81,13 +66,7 @@ function JobCardFooter() {
 
 export function JobCard() {
   return (
-    <Group
-      className={sprinkles({
-        boxShadow: 'lg',
-        padding: 'sm',
-        borderRadius: 'md',
-      })}
-    >
+    <Group className={styles.card}>
       <JobCardHeader />
       <JobCardBody />
       <JobCardFooter />

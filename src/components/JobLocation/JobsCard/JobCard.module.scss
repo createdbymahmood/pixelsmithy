@@ -1,0 +1,92 @@
+.tag {
+  font-size: var(--mantine-font-size-sm);
+  border-radius: var(--mantine-radius-sm);
+  cursor: pointer;
+  transition: transition(300ms, all, ease-in-out);
+  padding: 5px 3px;
+
+  @include light {
+    color: var(--mantine-color-gray-5);
+    background: var(--mantine-color-gray-0);
+  }
+
+  @include dark {
+    color: var(--mantine-color-gray-5);
+    background: var(--mantine-color-gray-8);
+  }
+}
+
+.more {
+  color: var(--mantine-color-gray-5);
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: var(--mantine-spacing-xs);
+  width: 100%;
+}
+
+.title {
+  line-height: var(--mantine-line-height-xs);
+  font-weight: 500;
+}
+
+.body {
+  width: 100%;
+  margin-top: var(--mantine-spacing-sm);
+}
+
+.location {
+  @include light {
+    color: var(--mantine-color-gray-5);
+  }
+
+  @include dark {
+    color: var(--mantine-color-gray-3);
+  }
+}
+
+.description {
+  @include light {
+    color: var(--mantine-color-gray-5);
+  }
+
+  @include dark {
+    color: var(--mantine-color-gray-3);
+  }
+}
+
+.footer {
+  width: 100%;
+}
+
+.date {
+  @include light {
+    color: var(--mantine-color-gray-5);
+  }
+
+  @include dark {
+    color: var(--mantine-color-gray-3);
+  }
+}
+
+.actions {
+  font-weight: 400;
+  @include light {
+    color: var(--mantine-color-gray-5);
+  }
+
+  @include dark {
+    color: var(--mantine-color-gray-3);
+  }
+}
+
+.card {
+  box-shadow: var(--mantine-shadow-lg);
+  padding: var(--mantine-spacing-sm);
+  border-radius: var(--mantine-radius-md);
+}
