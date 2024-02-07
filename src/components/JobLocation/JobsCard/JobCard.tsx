@@ -32,12 +32,12 @@ function JobCardHeader() {
 
 function JobCardBody() {
   return (
-    <Stack className={styles.body}>
+    <Stack className={styles.body} gap='sm'>
       <Text className={styles.location} size='sm'>
         Berlin, New, Germany
       </Text>
 
-      <Group justify='space-between'>
+      <Group justify='space-between' mt=''>
         <Text size='sm'>Mid-Senior</Text>
         <Text size='sm'>Full-Time</Text>
         <Text size='sm'>1000$</Text>
