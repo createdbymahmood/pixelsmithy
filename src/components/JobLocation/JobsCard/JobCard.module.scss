@@ -98,8 +98,9 @@
 }
 
 .card {
+  background-color: var(--mantine-color-white);
   padding: var(--mantine-spacing-sm);
 
   @include border-radius(var(--mantine-radius-md));
-  @include box-shadow(var(--mantine-shadow-lg));
+  @include box-shadow(var(--mantine-shadow-sm));
 }
