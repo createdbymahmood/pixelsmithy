@@ -1,7 +1,8 @@
 .tag {
-  font-size: var(--mantine-font-size-sm);
   cursor: pointer;
-  padding: 5px 3px;
+  font-size: var(--mantine-font-size-xs);
+  padding: 5px var(--mantine-spacing-md);
+  line-height: var(--mantine-line-height-sm);
 
   @include transition();
   @include border-radius(var(--mantine-radius-sm));
@@ -90,6 +91,10 @@
   @include dark {
     color: var(--mantine-color-gray-3);
   }
+}
+
+.action {
+  cursor: pointer;
 }
 
 .card {
