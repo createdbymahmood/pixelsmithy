@@ -59,6 +59,8 @@
 }
 
 .description {
+  line-height: var(--mantine-line-height-lg);
+  letter-spacing: 0.5px;
   @include light {
     color: var(--mantine-color-gray-5);
   }
@@ -99,7 +101,7 @@
 
 .card {
   background-color: var(--mantine-color-white);
-  padding: var(--mantine-spacing-sm);
+  padding: var(--mantine-spacing-xl);
 
   @include border-radius(var(--mantine-radius-md));
   @include box-shadow(var(--mantine-shadow-sm));

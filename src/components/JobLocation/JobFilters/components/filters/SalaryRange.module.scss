@@ -20,7 +20,9 @@
 }
 
 .input {
-  @include border-radius(var(--mantine-radius-md));
   border-color: var(--mantine-color-gray-3);
   padding: var(--mantine-spacing-lg);
+  background-color: transparent;
+  @include border-radius(var(--mantine-radius-md));
+  color: var(--mantine-color-gray-6);
 }
