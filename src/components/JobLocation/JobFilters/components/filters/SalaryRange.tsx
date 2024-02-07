@@ -74,6 +74,7 @@ export function SalaryRange() {
       <Accordion.Panel>
         <RangeSlider
           classNames={omit(styles, 'range')}
+          label={null}
           max={salaryRangeInitialValues.max}
           min={salaryRangeInitialValues.min}
           value={Object.values(state.range) as RangeSliderValue}
