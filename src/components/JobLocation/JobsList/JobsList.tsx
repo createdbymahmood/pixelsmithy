@@ -12,8 +12,12 @@ export function JobsList() {
     <Stack>
       <Group justify='space-between'>
         <Group gap={5}>
-          <Text className={styles.count}>8,520</Text>
-          <Text className={styles.description}>Jobs Found</Text>
+          <Text className={styles.count} size='xl'>
+            8,520
+          </Text>
+          <Text className={styles.description} size='xl'>
+            Jobs Found
+          </Text>
         </Group>
         <JobSortMenu />
       </Group>
