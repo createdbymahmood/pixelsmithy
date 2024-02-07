@@ -1,7 +1,26 @@
-.rangeWrapper {
+.range {
   display: flex;
   flex-direction: row;
   gap: var(--mantine-spacing-sm);
   align-items: center;
   margin-top: var(--mantine-spacing-md);
+}
+
+.thumb {
+  height: rem(20px);
+  width: rem(20px);
+  background-color: var(--mantine-color-white);
+  border-width: rem(1px);
+  border-color: var(--mantine-color-gray-4);
+  @include box-shadow(var(--mantine-shadow-sm));
+}
+
+.track {
+  height: rem(6px);
+}
+
+.input {
+  @include border-radius(var(--mantine-radius-md));
+  border-color: var(--mantine-color-gray-3);
+  padding: var(--mantine-spacing-lg);
 }
