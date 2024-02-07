@@ -1,6 +1,15 @@
 import {Box, Group, Stack, Text} from '@mantine/core'
-import {IconBookmark, IconDots, IconForbid} from '@tabler/icons-react'
+import {useDisclosure} from '@mantine/hooks'
+import {
+  IconBookmark,
+  IconBookmarkFilled,
+  IconDots,
+  IconForbid,
+} from '@tabler/icons-react'
+import dayJS from 'dayjs'
 import Image from 'next/image'
+
+import {defaultDateFormat} from '@/constants'
 
 import styles from './JobCard.module.scss'
 
@@ -50,15 +59,19 @@ function JobCardBody() {
 }
 
 function JobCardFooter() {
+  const [isBookmarked, {toggle}] = useDisclosure(false)
+
+  const BookmarkIcon = isBookmarked ? IconBookmarkFilled : IconBookmark
+
   return (
     <Group className={styles.footer}>
       <Text className={styles.date} size='sm'>
-        28 Match 2021
+        {dayJS().format(defaultDateFormat)}
       </Text>
 
       <Group className={styles.actions} ml='auto'>
-        <IconForbid />
-        <IconBookmark />
+        <IconForbid className={styles.action} />
+        <BookmarkIcon className={styles.action} onClick={toggle} />
       </Group>
     </Group>
   )
