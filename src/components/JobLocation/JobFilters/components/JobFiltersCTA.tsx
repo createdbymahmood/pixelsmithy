@@ -4,8 +4,12 @@ import React from 'react'
 export function JobFiltersCTA() {
   return (
     <Group>
-      <Button>Apply</Button>
-      <Button color='gray'>Reset</Button>
+      <Button radius='md' size='sm'>
+        Apply
+      </Button>
+      <Button color='gray' radius='md' size='sm'>
+        Reset
+      </Button>
     </Group>
   )
 }
