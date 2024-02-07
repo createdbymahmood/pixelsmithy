@@ -1,0 +1,13 @@
+/* Transition Variables */
+$transition-base: 100ms all ease-in-out !default;
+$transition-base-short: 50ms all ease-in-out !default;
+$transition-base-long: 150ms all ease-in-out !default;
+$enable-transitions: true !default;
+$enable-reduced-motion: false !default;
+
+/* Mantine Variables */
+$mantine-breakpoint-xs: '36em';
+$mantine-breakpoint-sm: '48em';
+$mantine-breakpoint-md: '62em';
+$mantine-breakpoint-lg: '75em';
+$mantine-breakpoint-xl: '88em';
