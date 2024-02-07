@@ -1,5 +1,9 @@
 .count {
   font-weight: 600;
+
+  @include smaller-than($mantine-breakpoint-md) {
+    font-size: var(--mantine-font-size-md);
+  }
 }
 
 .description {
@@ -9,5 +13,9 @@
 
   @include dark {
     color: var(--mantine-color-gray-6);
+  }
+
+  @include smaller-than($mantine-breakpoint-md) {
+    font-size: var(--mantine-font-size-md);
   }
 }
