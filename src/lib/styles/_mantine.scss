@@ -2,11 +2,6 @@
 
 // Define variables for your breakpoints,
 // values must be the same as in your theme
-$mantine-breakpoint-xs: '36em';
-$mantine-breakpoint-sm: '48em';
-$mantine-breakpoint-md: '62em';
-$mantine-breakpoint-lg: '75em';
-$mantine-breakpoint-xl: '88em';
 
 @function rem($value) {
   @return #{math.div(math.div($value, $value * 0 + 1), 16)}rem;
@@ -61,8 +56,4 @@ $mantine-breakpoint-xl: '88em';
   [dir='ltr'] & {
     @content;
   }
-}
-
-@mixin transition($duration, $property, $easing) {
-  transition: $duration $property $easing;
 }
