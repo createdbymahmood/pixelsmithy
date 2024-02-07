@@ -15,8 +15,8 @@
 }
 
 .item {
-  height: 58px;
-  width: 58px;
+  height: rem(58px);
+  width: rem(58px);
   stroke-width: 1;
   padding: var(--mantine-spacing-xs);
   color: var(--mantine-color-gray-6);

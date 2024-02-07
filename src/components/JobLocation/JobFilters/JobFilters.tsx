@@ -1,23 +1,13 @@
 'use client'
-import {
-  Accordion,
-  ActionIcon,
-  Box,
-  Drawer,
-  useMantineTheme,
-} from '@mantine/core'
-import {useDisclosure, useMediaQuery} from '@mantine/hooks'
+import {Accordion, ActionIcon, Box, Drawer, rem} from '@mantine/core'
+import {useDisclosure} from '@mantine/hooks'
 import {IconMenu2} from '@tabler/icons-react'
 
 import {SalaryRange} from '@/components/JobLocation/JobFilters/components/filters/SalaryRange'
 import {SeniorityLevel} from '@/components/JobLocation/JobFilters/components/filters/SeniorityLevel'
 import {TypeOfEmployment} from '@/components/JobLocation/JobFilters/components/filters/TypeOfEmployment'
 import {JobFiltersCTA} from '@/components/JobLocation/JobFilters/components/JobFiltersCTA'
-
-function useMobileDevice() {
-  const theme = useMantineTheme()
-  return useMediaQuery(`(max-width: ${theme.breakpoints.lg})`)
-}
+import {useMobileDevice} from '@/hooks/useMobileDevice'
 
 export function JobFilters() {
   const isMobile = useMobileDevice()
@@ -44,7 +34,7 @@ export function JobFilters() {
         </ActionIcon>
 
         <Drawer
-          maw={200}
+          maw={rem(200)}
           opened={opened}
           size='xs'
           title='Filters'

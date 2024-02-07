@@ -1,4 +1,4 @@
-import {Box, Group, Stack, Text} from '@mantine/core'
+import {Box, Group, rem, Stack, Text} from '@mantine/core'
 import {useDisclosure} from '@mantine/hooks'
 import {
   IconBookmark,
@@ -17,7 +17,7 @@ function JobCardHeader() {
   return (
     <Group className={styles.header}>
       <Image alt='Icon' height={60} src='/next.svg' width={60} />
-      <Stack gap='xs' maw={200}>
+      <Stack gap='xs' maw={rem(200)}>
         <Text className={styles.title} size='xl'>
           Senior Product Designer, Growth
         </Text>
