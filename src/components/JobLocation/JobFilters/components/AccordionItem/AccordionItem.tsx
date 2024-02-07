@@ -1,6 +1,5 @@
 import {Accordion as OriginalAccordion, Title} from '@mantine/core'
 import type {ReactNode} from 'react'
-import React from 'react'
 
 import styles from './AccordionItem.module.scss'
 

@@ -1,7 +1,6 @@
 import {Group, Menu} from '@mantine/core'
 import {IconChevronDown} from '@tabler/icons-react'
 import type {ReactNode} from 'react'
-import React from 'react'
 
 import styles from './MenuTarget.module.scss'
 
