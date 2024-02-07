@@ -16,6 +16,13 @@
   stroke-width: 1;
 }
 
+.navbarCol {
+  margin: auto;
+  @include smaller-than($mantine-breakpoint-md) {
+    margin-left: 0;
+  }
+}
+
 .navbar {
   margin-left: auto;
   display: flex;

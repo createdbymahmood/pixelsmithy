@@ -99,7 +99,12 @@ export function JobLocationHeader() {
           <IconApps className={styles.logo} />
         </Grid.Col>
 
-        <Grid.Col maw={rem(rem(800))} mx='auto' p={0} span='content'>
+        <Grid.Col
+          className={styles.navbarCol}
+          maw={rem(800)}
+          p={0}
+          span='content'
+        >
           <JobLocationHeaderNavbar />
         </Grid.Col>
 
