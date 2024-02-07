@@ -1,6 +1,6 @@
 'use client'
 
-import {Box, Container} from '@mantine/core'
+import {Box, Container, rem} from '@mantine/core'
 import dynamic from 'next/dynamic'
 
 const JobFilters = dynamic(
@@ -14,7 +14,7 @@ const JobFilters = dynamic(
 export default function App() {
   return (
     <Container my='sm'>
-      <Box maw={280}>
+      <Box maw={rem(280)}>
         <JobFilters />
       </Box>
     </Container>

@@ -1,0 +1,80 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: var(--mantine-color-white);
+  z-index: var(--mantine-z-index-popover);
+
+  @include smaller-than($mantine-breakpoint-md) {
+    display: none;
+  }
+}
+
+.logo {
+  stroke-width: 1;
+}
+
+.navbar {
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbarItem {
+  color: var(--mantine-color-gray-6);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.active {
+  color: var(--mantine-color-black);
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    height: rem(5px);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    top: calc(-1 * var(--mantine-spacing-lg) - rem(7px));
+    background-color: var(--mantine-color-indigo-6);
+    @include border-bottom-radius();
+  }
+}
+
+.notifications {
+  box-sizing: border-box;
+
+  cursor: pointer;
+  border: 1px solid var(--mantine-color-gray-4);
+  @include border-radius(var(--mantine-radius-md));
+  padding: calc(var(--mantine-spacing-xs) / 3);
+  margin-left: auto;
+}
+
+.notificationsTarget {
+  stroke-width: 1;
+  color: var(--mantine-color-blue-4);
+  padding: rem(1px);
+}
+.separator {
+  color: var(--mantine-color-gray-4);
+  transform: rotate(90deg);
+}
+
+.actions {
+  line-height: 0;
+}
+
+.greeting {
+  color: var(--mantine-color-gray-6);
+}
+
+.profile {
+  cursor: pointer;
+}
