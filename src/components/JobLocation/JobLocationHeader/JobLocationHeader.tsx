@@ -1,22 +1,10 @@
-import {
-  Avatar,
-  Box,
-  Grid,
-  Group,
-  List,
-  Popover,
-  rem,
-  Stack,
-  Text,
-} from '@mantine/core'
-import {
-  IconApps,
-  IconBellBolt,
-  IconChevronDown,
-  IconSeparator,
-} from '@tabler/icons-react'
+import {Box, Grid, Group, Menu, rem, Stack, Text} from '@mantine/core'
+import {IconApps, IconBellBolt, IconSeparator} from '@tabler/icons-react'
 import clsx from 'clsx'
 import Image from 'next/image'
+
+import {MenuDropdownContent} from '@/components/JobLocation/Menu/MenuDropdownContent'
+import {MenuTarget} from '@/components/JobLocation/Menu/MenuTarget'
 
 import styles from './JobLocationHeader.module.scss'
 
@@ -66,53 +54,16 @@ const notifications = [
   },
 ]
 
-interface Notification {
-  id: number
-  title: string
-  message: string
-  avatar: string
-  time: string
-}
-
-interface NotificationProps {
-  notification: Notification
-}
-
-const Notification = ({notification}: NotificationProps) => (
-  <Stack gap={0}>
-    {notification.avatar ? (
-      <Avatar radius='md' size={50} src={notification.avatar} />
-    ) : null}
-
-    <Text fw='bold' size='md'>
-      {notification.title}
-    </Text>
-
-    <Text c='gray' size='xs'>
-      {notification.time}
-    </Text>
-    <Text size='sm'>{notification.message}</Text>
-  </Stack>
-)
-
 function JobLocationHeaderNotifications() {
   return (
     <Box className={styles.notifications}>
-      <Popover position='bottom-end' shadow='md' withArrow>
-        <Popover.Target>
+      <Menu position='bottom-end' shadow='md' withArrow>
+        <MenuTarget withChevron={false}>
           <IconBellBolt className={styles.notificationsTarget} />
-        </Popover.Target>
+        </MenuTarget>
 
-        <Popover.Dropdown maw={rem(320)}>
-          <List listStyleType='none' spacing='md'>
-            {notifications.map((notification) => (
-              <List.Item key={notification.id}>
-                <Notification notification={notification} />
-              </List.Item>
-            ))}
-          </List>
-        </Popover.Dropdown>
-      </Popover>
+        <MenuDropdownContent />
+      </Menu>
     </Box>
   )
 }
@@ -127,13 +78,14 @@ function JobLocationHeaderProfileMenu() {
           Hello!
         </Text>
 
-        <Group align='center' gap='xs'>
-          <Text fw='600' size='xs'>
-            Mahmood Bagheri
-          </Text>
-
-          <IconChevronDown size={12} />
-        </Group>
+        <Menu position='bottom-end' shadow='md'>
+          <MenuTarget>
+            <Text fw='600' size='xs'>
+              Mahmood Bagheri
+            </Text>
+          </MenuTarget>
+          <MenuDropdownContent />
+        </Menu>
       </Stack>
     </Group>
   )
