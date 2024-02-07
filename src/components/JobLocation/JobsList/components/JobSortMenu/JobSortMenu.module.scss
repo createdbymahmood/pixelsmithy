@@ -1,0 +1,19 @@
+.action {
+  color: var(--mantine-color-gray-7);
+}
+
+.value {
+  color: var(--mantine-color-black);
+  font-weight: 500;
+}
+
+.sort {
+  cursor: pointer;
+  @include transition();
+
+  &[data-expanded] {
+    .chevron {
+      transform: rotate(-180deg);
+    }
+  }
+}

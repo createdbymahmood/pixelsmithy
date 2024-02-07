@@ -3,15 +3,19 @@ import {range} from 'lodash-es'
 import React from 'react'
 
 import {JobCard} from '@/components/JobLocation/JobsCard/JobCard'
+import {JobSortMenu} from '@/components/JobLocation/JobsList/components/JobSortMenu'
 
 import styles from './JobList.module.scss'
 
 export function JobsList() {
   return (
     <Stack>
-      <Group gap={5}>
-        <Text className={styles.count}>8,520</Text>
-        <Text className={styles.description}>Jobs Found</Text>
+      <Group justify='space-between'>
+        <Group gap={5}>
+          <Text className={styles.count}>8,520</Text>
+          <Text className={styles.description}>Jobs Found</Text>
+        </Group>
+        <JobSortMenu />
       </Group>
 
       <Grid gutter='xl'>
