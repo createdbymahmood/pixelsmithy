@@ -1,0 +1,33 @@
+.sidebar {
+  background-color: var(--mantine-color-white);
+  padding: var(--mantine-spacing-xl) var(--mantine-spacing-sm);
+  position: absolute;
+  @include border-end-radius(var(--mantine-radius-xl));
+  display: flex;
+  align-items: center;
+  top: 50%;
+  transform: translate(0, -50%);
+  gap: var(--mantine-spacing-lg);
+
+  @include smaller-than($mantine-breakpoint-lg) {
+    display: none;
+  }
+}
+
+.item {
+  height: 58px;
+  width: 58px;
+  stroke-width: 1;
+  padding: var(--mantine-spacing-xs);
+  color: var(--mantine-color-gray-6);
+  fill: transparent;
+  cursor: pointer;
+
+  @include transition();
+  @include border-radius(var(--mantine-radius-md));
+
+  @include hover {
+    color: var(--mantine-color-indigo-3);
+    background: var(--mantine-color-indigo-0);
+  }
+}
