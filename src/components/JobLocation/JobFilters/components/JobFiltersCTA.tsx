@@ -1,5 +1,4 @@
 import {Button, Group} from '@mantine/core'
-import React from 'react'
 
 export function JobFiltersCTA() {
   return (
