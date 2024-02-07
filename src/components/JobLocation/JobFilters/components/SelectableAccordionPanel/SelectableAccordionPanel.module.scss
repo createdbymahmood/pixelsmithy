@@ -12,6 +12,6 @@
 }
 
 .checkboxBadge {
-  transition: 300ms all ease-in-out;
+  @include transition($transition-base-short);
   margin-left: auto;
 }

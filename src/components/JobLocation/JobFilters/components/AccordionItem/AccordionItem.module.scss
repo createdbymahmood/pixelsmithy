@@ -12,7 +12,7 @@
 }
 
 .chevron {
-  transition: 50ms all ease-in-out;
+  @include transition($transition-base-short);
 
   &[data-rotate] {
     transform: rotate(-180deg);

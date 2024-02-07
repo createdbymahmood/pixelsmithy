@@ -2,8 +2,9 @@
   font-size: var(--mantine-font-size-sm);
   border-radius: var(--mantine-radius-sm);
   cursor: pointer;
-  transition: transition(300ms, all, ease-in-out);
   padding: 5px 3px;
+
+  @include transition();
 
   @include light {
     color: var(--mantine-color-gray-5);
@@ -13,6 +14,12 @@
   @include dark {
     color: var(--mantine-color-gray-5);
     background: var(--mantine-color-gray-8);
+  }
+
+  @include hover {
+    @include light {
+      background: var(--mantine-color-gray-3);
+    }
   }
 }
 
