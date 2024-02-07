@@ -1,0 +1,11 @@
+.menuTarget {
+  cursor: pointer;
+
+  @include transition();
+
+  &[data-expanded] {
+    .chevron {
+      transform: rotate(-180deg);
+    }
+  }
+}
