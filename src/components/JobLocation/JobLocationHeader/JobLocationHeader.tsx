@@ -22,7 +22,11 @@ import styles from './JobLocationHeader.module.scss'
 
 function JobLocationHeaderNavbar() {
   return (
-    <Group align='center' gap='lg' justify='space-between'>
+    <Group
+      align='center'
+      className={styles.navbarItems}
+      justify='space-between'
+    >
       <Text className={clsx(styles.navbarItem, styles.active)} size='sm'>
         Find Jobs
       </Text>

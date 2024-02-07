@@ -22,6 +22,13 @@
   justify-content: space-between;
 }
 
+.navbarItems {
+  gap: rem(50px);
+
+  @include smaller-than($mantine-breakpoint-lg) {
+    gap: rem(25px);
+  }
+}
 .navbarItem {
   color: var(--mantine-color-gray-6);
   cursor: pointer;
