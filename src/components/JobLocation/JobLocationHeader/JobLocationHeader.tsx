@@ -34,26 +34,6 @@ function JobLocationHeaderNavbar() {
   )
 }
 
-const avatar = 'https://randomuser.me/api/portraits/men/85.jpg'
-
-const notifications = [
-  {
-    id: 1,
-    title: 'New message from John',
-    message: 'Hey, how are you doing?',
-    avatar,
-    time: 'Just now',
-  },
-  {
-    id: 2,
-    title: 'Meeting reminder',
-    message: 'Your meeting with Sarah is in 15 minutes',
-    avatar: '',
-    time: '5 minutes ago',
-    variant: 'warning',
-  },
-]
-
 function JobLocationHeaderNotifications() {
   return (
     <Box className={styles.notifications}>

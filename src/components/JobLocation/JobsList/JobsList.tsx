@@ -6,20 +6,26 @@ import {JobSortMenu} from '@/components/JobLocation/JobSortMenu'
 
 import styles from './JobList.module.scss'
 
+function JobsListHeader() {
+  return (
+    <Group justify='space-between'>
+      <Group gap={5}>
+        <Text className={styles.count} size='xl'>
+          8,520
+        </Text>
+        <Text className={styles.description} size='xl'>
+          Jobs Found
+        </Text>
+      </Group>
+      <JobSortMenu />
+    </Group>
+  )
+}
+
 export function JobsList() {
   return (
     <Stack>
-      <Group justify='space-between'>
-        <Group gap={5}>
-          <Text className={styles.count} size='xl'>
-            8,520
-          </Text>
-          <Text className={styles.description} size='xl'>
-            Jobs Found
-          </Text>
-        </Group>
-        <JobSortMenu />
-      </Group>
+      <JobsListHeader />
 
       <Grid gutter='xl'>
         {range(0, 3).map((idx) => (
