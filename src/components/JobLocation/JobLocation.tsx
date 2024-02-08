@@ -2,10 +2,10 @@
 
 import {Box, Container, Grid, rem} from '@mantine/core'
 
-import {JobFilters} from '@/components/JobLocation/JobFilters/JobFilters'
+import {JobFilters} from '@/components/JobLocation/JobFilters'
 import {JobLocationHeader} from '@/components/JobLocation/JobLocationHeader'
 import {JobsList} from '@/components/JobLocation/JobsList'
-import {JobsSiderbar} from '@/components/JobLocation/JobsSidebar/JobsSiderbar'
+import {JobsSiderbar} from '@/components/JobLocation/JobsSidebar'
 import {useMobileDevice} from '@/hooks/useMobileDevice'
 
 function JobLocationContent() {
