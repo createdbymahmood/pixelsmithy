@@ -1,8 +1,11 @@
 import {Box, Container, Stack, Text} from '@mantine/core'
+import clsx from 'clsx'
 import {Roboto_Slab} from 'next/font/google'
 import Link from 'next/link'
 
 import {urls} from '@/constants'
+
+import styles from './Projects.module.scss'
 
 const playfairDisplay = Roboto_Slab({
   weight: '400',
@@ -24,7 +27,10 @@ const ProjectsList = () => {
         return (
           <Stack key={project.id}>
             <Box component={Link} href={urls.JobLocation.index}>
-              <Text className={playfairDisplay.className} size='xl'>
+              <Text
+                className={clsx(playfairDisplay.className, styles.title)}
+                size='xl'
+              >
                 {project.title}
               </Text>
               <Text size='sm'>{project.description}</Text>
