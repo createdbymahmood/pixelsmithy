@@ -3,10 +3,10 @@ import {Accordion, ActionIcon, Box, Drawer, rem} from '@mantine/core'
 import {useDisclosure} from '@mantine/hooks'
 import {IconMenu2} from '@tabler/icons-react'
 
-import {SalaryRange} from '@/components/JobLocation/JobFilters/components/filters/SalaryRange'
-import {SeniorityLevel} from '@/components/JobLocation/JobFilters/components/filters/SeniorityLevel'
-import {TypeOfEmployment} from '@/components/JobLocation/JobFilters/components/filters/TypeOfEmployment'
-import {JobFiltersCTA} from '@/components/JobLocation/JobFilters/components/JobFiltersCTA'
+import {SalaryRange} from '@/components/JobLocation/components/JobFilters/components/filters/SalaryRange'
+import {SeniorityLevel} from '@/components/JobLocation/components/JobFilters/components/filters/SeniorityLevel'
+import {TypeOfEmployment} from '@/components/JobLocation/components/JobFilters/components/filters/TypeOfEmployment'
+import {JobFiltersCTA} from '@/components/JobLocation/components/JobFilters/components/JobFiltersCTA'
 import {useMobileDevice} from '@/hooks/useMobileDevice'
 
 export function JobFilters() {

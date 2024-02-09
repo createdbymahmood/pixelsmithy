@@ -6,7 +6,7 @@ import {gt, lt, omit, toNumber} from 'lodash-es'
 import type {ChangeEvent} from 'react'
 import {useState} from 'react'
 
-import {AccordionItem} from '@/components/JobLocation/JobFilters/components/AccordionItem'
+import {AccordionItem} from '@/components/JobLocation/components/JobFilters/components/AccordionItem'
 
 import styles from './SalaryRange.module.scss'
 

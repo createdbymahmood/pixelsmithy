@@ -1,7 +1,7 @@
 import {Group, Menu, rem, Text} from '@mantine/core'
 
-import {MenuDropdownContent} from '@/components/JobLocation/Menu/MenuDropdownContent'
-import {MenuTarget} from '@/components/JobLocation/Menu/MenuTarget'
+import {MenuDropdownContent} from '@/components/JobLocation/components/Menu/MenuDropdownContent'
+import {MenuTarget} from '@/components/JobLocation/components/Menu/MenuTarget'
 
 import styles from './JobSortMenu.module.scss'
 

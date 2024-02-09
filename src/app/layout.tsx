@@ -1,15 +1,11 @@
+import '@/lib/styles/global.scss'
+import '@mantine/core/styles.css'
+
 import {ColorSchemeScript} from '@mantine/core'
 import type {Metadata} from 'next'
-import {Poppins} from 'next/font/google'
 
-import {Providers} from '@/components/common/providers'
 import {defaultThemeColorScheme} from '@/constants'
 import {constructMetadata} from '@/utils/constructMetadata'
-
-const inter = Poppins({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-})
 
 export const metadata: Metadata = constructMetadata({
   title: 'Pixelsmithy',
@@ -29,9 +25,7 @@ export default function RootLayout({children}: RootLayoutProps) {
         />
         <ColorSchemeScript defaultColorScheme={defaultThemeColorScheme} />
       </head>
-      <body className={inter.className}>
-        <Providers>{children}</Providers>
-      </body>
+      <body>{children}</body>
     </html>
   )
 }

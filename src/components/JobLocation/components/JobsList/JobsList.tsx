@@ -1,8 +1,8 @@
 import {Grid, Group, Stack, Text} from '@mantine/core'
 import {range} from 'lodash-es'
 
-import {JobCard} from '@/components/JobLocation/JobsCard'
-import {JobSortMenu} from '@/components/JobLocation/JobSortMenu'
+import {JobCard} from '@/components/JobLocation/components/JobsCard'
+import {JobSortMenu} from '@/components/JobLocation/components/JobSortMenu'
 
 import styles from './JobList.module.scss'
 
