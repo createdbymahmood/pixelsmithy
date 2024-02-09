@@ -5,8 +5,8 @@ import type {ReactNode} from 'react'
 import {defaultThemeColorScheme} from '@/constants'
 import {theme} from '@/lib/ui/theme'
 
-const inter = Poppins({
-  weight: ['400', '500', '600', '700'],
+const poppins = Poppins({
+  weight: ['400', '500', '600'],
   subsets: ['latin'],
 })
 
@@ -16,7 +16,7 @@ interface JobLocationProvidersProps {
 
 export function JobLocationLayout({children}: JobLocationProvidersProps) {
   return (
-    <div className={inter.className}>
+    <div className={poppins.className}>
       <MantineProvider
         defaultColorScheme={defaultThemeColorScheme}
         theme={theme}
