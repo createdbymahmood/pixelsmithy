@@ -1,8 +1,8 @@
 import {useSelections} from 'ahooks'
 
-import {AccordionItem} from '@/components/JobLocation/JobFilters/components/AccordionItem'
-import {typesOfEmployment} from '@/components/JobLocation/JobFilters/components/constants'
-import {SelectableAccordionPanel} from '@/components/JobLocation/JobFilters/components/SelectableAccordionPanel'
+import {AccordionItem} from '@/components/JobLocation/components/JobFilters/components/AccordionItem'
+import {typesOfEmployment} from '@/components/JobLocation/components/JobFilters/components/constants'
+import {SelectableAccordionPanel} from '@/components/JobLocation/components/JobFilters/components/SelectableAccordionPanel'
 
 export const TypeOfEmployment = () => {
   const selections = useSelections(typesOfEmployment.map((toe) => toe.label))

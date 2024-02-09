@@ -3,7 +3,7 @@ import {useCallbackRef} from '@mantine/hooks'
 import type {useSelections} from 'ahooks'
 import React from 'react'
 
-import type {JobFilterCheckboxItem} from '@/components/JobLocation/JobFilters/components/constants'
+import type {JobFilterCheckboxItem} from '@/components/JobLocation/components/JobFilters/components/constants'
 
 import styles from './SelectableAccordionPanel.module.scss'
 

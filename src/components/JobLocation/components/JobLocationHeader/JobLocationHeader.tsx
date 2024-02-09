@@ -3,8 +3,8 @@ import {IconApps, IconBellBolt, IconSeparator} from '@tabler/icons-react'
 import clsx from 'clsx'
 import Image from 'next/image'
 
-import {MenuDropdownContent} from '@/components/JobLocation/Menu/MenuDropdownContent'
-import {MenuTarget} from '@/components/JobLocation/Menu/MenuTarget'
+import {MenuDropdownContent} from '@/components/JobLocation/components/Menu/MenuDropdownContent'
+import {MenuTarget} from '@/components/JobLocation/components/Menu/MenuTarget'
 
 import styles from './JobLocationHeader.module.scss'
 
