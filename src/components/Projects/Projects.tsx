@@ -17,6 +17,13 @@ const projects = [
     id: 1,
     title: 'Job Location',
     description: 'A dashboard page',
+    href: urls.JobLocation.index,
+  },
+  {
+    id: 2,
+    title: 'Snow UI',
+    description: 'Design system and UI Kit',
+    href: urls.SnowUI.index,
   },
 ]
 
@@ -26,7 +33,7 @@ const ProjectsList = () => {
       {projects.map((project) => {
         return (
           <Stack key={project.id}>
-            <Box component={Link} href={urls.JobLocation.index}>
+            <Box component={Link} href={project.href}>
               <Text
                 className={clsx(playfairDisplay.className, styles.title)}
                 size='xl'
