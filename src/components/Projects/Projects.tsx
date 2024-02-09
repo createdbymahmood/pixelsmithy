@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import {Roboto_Slab} from 'next/font/google'
 import Link from 'next/link'
 
-import {defaultThemeColorScheme, projects, urls} from '@/constants'
+import {defaultThemeColorScheme, projects} from '@/constants'
 
 import styles from './Projects.module.scss'
 
@@ -13,25 +13,20 @@ const robotoSlab = Roboto_Slab({
 })
 
 const ProjectsList = () => {
-  return (
-    <Stack gap='lg'>
-      {projects.map((project) => {
-        return (
-          <Stack key={project.id}>
-            <Box component={Link} href={project.href}>
-              <Text
-                className={clsx(robotoSlab.className, styles.title)}
-                size='xl'
-              >
-                {project.title}
-              </Text>
-              <Text size='sm'>{project.description}</Text>
-            </Box>
-          </Stack>
-        )
-      })}
-    </Stack>
-  )
+  const content = projects.map((project) => {
+    return (
+      <Stack key={project.id}>
+        <Box component={Link} href={project.href}>
+          <Text className={clsx(robotoSlab.className, styles.title)} size='xl'>
+            {project.title}
+          </Text>
+          <Text size='sm'>{project.description}</Text>
+        </Box>
+      </Stack>
+    )
+  })
+
+  return <Stack gap='lg'>{content}</Stack>
 }
 
 export function Projects() {
