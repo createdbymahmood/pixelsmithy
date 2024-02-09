@@ -15,7 +15,7 @@ export function AccordionItem({children, _key, title}: AccordionItemProps) {
       <OriginalAccordion.Control
         classNames={{control: styles.control, chevron: styles.chevron}}
       >
-        <Title order={4} variant='text'>
+        <Title className={styles.title} order={4} variant='text'>
           {title}
         </Title>
       </OriginalAccordion.Control>
