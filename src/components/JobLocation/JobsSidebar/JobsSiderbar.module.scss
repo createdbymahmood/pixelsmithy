@@ -1,5 +1,11 @@
 .sidebar {
-  background-color: var(--mantine-color-white);
+  @include light {
+    background-color: var(--mantine-color-white);
+  }
+
+  @include dark {
+    background-color: var(--mantine-color-gray-8);
+  }
   padding: var(--mantine-spacing-xl) var(--mantine-spacing-sm);
   position: absolute;
   @include border-end-radius(var(--mantine-radius-xl));

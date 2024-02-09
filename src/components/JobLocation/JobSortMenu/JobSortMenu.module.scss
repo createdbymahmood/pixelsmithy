@@ -1,9 +1,21 @@
 .action {
-  color: var(--mantine-color-gray-7);
+  @include light {
+    color: var(--mantine-color-gray-7);
+  }
+
+  @include dark {
+    color: var(--mantine-color-gray-5);
+  }
 }
 
 .value {
-  color: var(--mantine-color-black);
+  @include light {
+    color: var(--mantine-color-black);
+  }
+
+  @include dark {
+    color: var(--mantine-color-gray-5);
+  }
   font-weight: 500;
 }
 

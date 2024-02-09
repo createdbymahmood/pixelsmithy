@@ -7,14 +7,14 @@
   @include transition();
   @include border-radius(var(--mantine-radius-sm));
 
+  color: var(--mantine-color-gray-5);
+
   @include light {
-    color: var(--mantine-color-gray-5);
     background: var(--mantine-color-gray-0);
   }
 
   @include dark {
-    color: var(--mantine-color-gray-5);
-    background: var(--mantine-color-gray-8);
+    background: var(--mantine-color-gray-7);
   }
 
   @include hover {
@@ -101,7 +101,14 @@
 }
 
 .card {
-  background-color: var(--mantine-color-white);
+  @include light {
+    background-color: var(--mantine-color-white);
+  }
+
+  @include dark {
+    background-color: var(--mantine-color-gray-8);
+  }
+
   padding: var(--mantine-spacing-xl);
 
   @include border-radius(var(--mantine-radius-md));
