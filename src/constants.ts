@@ -10,3 +10,17 @@ export const urls = {
     index: '/snow-ui',
   },
 }
+export const projects = [
+  {
+    id: 1,
+    title: 'Job Location',
+    description: 'A dashboard page',
+    href: urls.JobLocation.index,
+  },
+  {
+    id: 2,
+    title: 'Snow UI',
+    description: 'Design system and UI Kit',
+    href: urls.SnowUI.index,
+  },
+]
