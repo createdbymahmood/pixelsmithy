@@ -24,7 +24,7 @@ function JobLocationContent() {
   )
 }
 
-export function JobLocation() {
+export default function JobLocation() {
   const isMobile = useMobileDevice()
   return (
     <Box pt={isMobile ? 0 : rem(80)}>
