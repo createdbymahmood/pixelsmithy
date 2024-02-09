@@ -1,6 +1,6 @@
 import {Box, Container, MantineProvider, Stack, Text} from '@mantine/core'
 import clsx from 'clsx'
-import {Roboto_Slab} from 'next/font/google'
+import {Inter, Roboto_Slab} from 'next/font/google'
 import Link from 'next/link'
 
 import {defaultThemeColorScheme, projects} from '@/constants'
@@ -8,6 +8,11 @@ import {defaultThemeColorScheme, projects} from '@/constants'
 import styles from './Projects.module.scss'
 
 const robotoSlab = Roboto_Slab({
+  weight: '400',
+  subsets: ['latin'],
+})
+
+const inter = Inter({
   weight: '400',
   subsets: ['latin'],
 })
@@ -20,7 +25,9 @@ const ProjectsList = () => {
           <Text className={clsx(robotoSlab.className, styles.title)} size='xl'>
             {project.title}
           </Text>
-          <Text size='sm'>{project.description}</Text>
+          <Text className={inter.className} size='sm'>
+            {project.description}
+          </Text>
         </Box>
       </Stack>
     )
