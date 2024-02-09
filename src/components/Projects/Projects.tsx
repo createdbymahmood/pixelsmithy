@@ -1,31 +1,16 @@
-import {Box, Container, Stack, Text} from '@mantine/core'
+import {Box, Container, MantineProvider, Stack, Text} from '@mantine/core'
 import clsx from 'clsx'
 import {Roboto_Slab} from 'next/font/google'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {defaultThemeColorScheme, projects, urls} from '@/constants'
 
 import styles from './Projects.module.scss'
 
-const playfairDisplay = Roboto_Slab({
+const robotoSlab = Roboto_Slab({
   weight: '400',
   subsets: ['latin'],
 })
-
-const projects = [
-  {
-    id: 1,
-    title: 'Job Location',
-    description: 'A dashboard page',
-    href: urls.JobLocation.index,
-  },
-  {
-    id: 2,
-    title: 'Snow UI',
-    description: 'Design system and UI Kit',
-    href: urls.SnowUI.index,
-  },
-]
 
 const ProjectsList = () => {
   return (
@@ -35,7 +20,7 @@ const ProjectsList = () => {
           <Stack key={project.id}>
             <Box component={Link} href={project.href}>
               <Text
-                className={clsx(playfairDisplay.className, styles.title)}
+                className={clsx(robotoSlab.className, styles.title)}
                 size='xl'
               >
                 {project.title}
@@ -51,8 +36,10 @@ const ProjectsList = () => {
 
 export function Projects() {
   return (
-    <Container py='xl'>
-      <ProjectsList />
-    </Container>
+    <MantineProvider defaultColorScheme={defaultThemeColorScheme}>
+      <Container py='xl'>
+        <ProjectsList />
+      </Container>
+    </MantineProvider>
   )
 }
