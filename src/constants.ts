@@ -6,4 +6,7 @@ export const urls = {
   JobLocation: {
     index: '/job-location',
   },
+  SnowUI: {
+    index: '/snow-ui',
+  },
 }
