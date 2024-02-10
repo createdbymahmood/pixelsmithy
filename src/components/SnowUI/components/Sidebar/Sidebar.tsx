@@ -1,13 +1,16 @@
 'use client'
 
-import {Accordion, Group, rem, Stack, Text} from '@mantine/core'
+import {Accordion, Box, Group, rem, Stack, Text} from '@mantine/core'
 import type {IconProps, IconWeight} from '@phosphor-icons/react'
 import {
-  BookOpenText,
   ChartPieSlice,
+  ChatsTeardrop,
   FolderNotch,
+  IdentificationBadge,
+  IdentificationCard,
   Notebook,
   ShoppingBagOpen,
+  UsersThree,
 } from '@phosphor-icons/react'
 import {useSelections} from 'ahooks'
 import clsx from 'clsx'
@@ -43,7 +46,7 @@ interface SidebarItemsProps {
 
 const SidebarItems = ({items, selections}: SidebarItemsProps) => {
   const content = items.map((item) => {
-    const withChildren = isArray(item.children)
+    const withChildren = isArray(item.children) && !isEmpty(item.children)
 
     const toggle = (title: string) => () => {
       if (!withChildren) return
@@ -105,13 +108,13 @@ const SidebarSections = ({sections}: SidebarSectionsProps) => {
   const selections = useSelections<string>([])
   const content = sections.map((section) => {
     return (
-      <Fragment key={section.title}>
+      <Box key={section.title} mb='xl'>
         <Text className={styles.section} mb={rem(10)} ml='lg' size='sm'>
           {section.title}
         </Text>
 
         <SidebarItems items={section.items} selections={selections} />
-      </Fragment>
+      </Box>
     )
   })
 
@@ -165,33 +168,72 @@ export function Sidebar() {
           icon: Notebook,
           href: '/',
         },
+      ],
+    },
+    {
+      title: 'Pages',
+      items: [
         {
-          id: 'allInOne',
-          title: 'All in one',
-          icon: BookOpenText,
+          id: 'userProfile',
           href: '/',
+          title: 'User Profile',
+          icon: IdentificationBadge,
           children: [
             {
-              id: 'allInOne-overview',
+              id: 'userProfile-Overview',
               href: '/',
               title: 'Overview',
             },
             {
-              title: 'eCommerce',
-              id: 'allInOne-ecommerce',
+              id: 'userProfile-Projects',
               href: '/',
-            },
-            {
-              id: 'allInOne-projects',
               title: 'Projects',
-              href: '/',
             },
             {
-              id: 'allInOne-online-courses',
-              title: 'Online Courses',
+              id: 'userProfile-Campaigns',
               href: '/',
+              title: 'Campaigns',
+            },
+            {
+              id: 'userProfile-Documents',
+              href: '/',
+              title: 'Documents',
+            },
+            {
+              id: 'userProfile-Followers',
+              href: '/',
+              title: 'Followers',
             },
           ],
+        },
+        {
+          id: 'account',
+          href: '/',
+          title: 'Account',
+          icon: IdentificationCard,
+          children: [],
+        },
+
+        {
+          id: 'corporate',
+          href: '/',
+          title: 'Corporate',
+          icon: UsersThree,
+          children: [],
+        },
+        {
+          id: 'blog',
+          href: '/',
+          title: 'Blog',
+          icon: Notebook,
+          children: [],
+        },
+        {
+          id: 'social',
+          href: '/',
+          title: 'Social',
+          icon: ChatsTeardrop,
+          children: [],
         },
       ],
     },
