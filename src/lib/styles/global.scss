@@ -1,6 +1,6 @@
 body {
   @include light {
-    background: var(--mantine-color-gray-0);
+    background: var(--mantine-color-white);
   }
 
   @include dark {

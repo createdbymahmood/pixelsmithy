@@ -1,5 +1,7 @@
 'use client'
 
+import './JobLocationDefaultStyles.scss'
+
 import {createTheme} from '@mantine/core'
 
 export const JobLocationTheme = createTheme({
