@@ -1,0 +1,8 @@
+.contentArea {
+  height: calc(100vh - rem(68px));
+}
+
+.content {
+  height: 100vh;
+  padding: var(--mantine-spacing-lg);
+}

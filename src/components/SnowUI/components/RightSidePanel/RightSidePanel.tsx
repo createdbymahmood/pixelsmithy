@@ -2,23 +2,15 @@
 
 import '@/lib/date/dayjs'
 
-import {
-  Avatar,
-  Box,
-  Group,
-  rem,
-  Stack,
-  Text,
-  ThemeIcon,
-  Timeline,
-} from '@mantine/core'
+import {Avatar, Box, Group, rem, Stack, Text, Timeline} from '@mantine/core'
 import type {IconProps} from '@phosphor-icons/react'
-import {Broadcast, BugBeetle, Sun, Video} from '@phosphor-icons/react'
+import {Broadcast, BugBeetle} from '@phosphor-icons/react'
 import {User} from '@phosphor-icons/react/dist/ssr'
 import type {Dayjs} from 'dayjs'
 import dayJS from 'dayjs'
 import {get} from 'lodash-es'
 import {Fragment} from 'react'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import styles from './RightSidePanel.module.scss'
 
@@ -186,10 +178,14 @@ function Contacts() {
 
 export function RightSidePanel() {
   return (
-    <Stack gap='xl' miw={rem(280)} p='lg'>
-      <Notifications />
-      <Activities />
-      <Contacts />
-    </Stack>
+    <Box className={styles.rightSidePanel} miw={rem(280)} pl='lg'>
+      <PerfectScrollbar>
+        <Stack gap='xl' py='lg'>
+          <Notifications />
+          <Activities />
+          <Contacts />
+        </Stack>
+      </PerfectScrollbar>
+    </Box>
   )
 }
