@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 
-import {JobLocationLayout} from '@/components/JobLocation/layout'
+import {JobLocationProviders} from '@/components/JobLocation/layout'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 const JobLocation = dynamic(
@@ -16,8 +16,8 @@ export const metadata = constructMetadata({
 
 export default function JobLocationPage() {
   return (
-    <JobLocationLayout>
+    <JobLocationProviders>
       <JobLocation />
-    </JobLocationLayout>
+    </JobLocationProviders>
   )
 }

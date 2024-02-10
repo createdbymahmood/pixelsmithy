@@ -1,11 +1,11 @@
 import {MantineProvider} from '@mantine/core'
-import {Poppins} from 'next/font/google'
+import {Inter} from 'next/font/google'
 import type {ReactNode} from 'react'
 
-import {JobLocationTheme} from '@/components/JobLocation/lib/style/JobLocationTheme'
+import {SnowUITheme} from '@/components/SnowUI/lib/style/SnowUITheme'
 import {defaultThemeColorScheme} from '@/constants'
 
-const poppins = Poppins({
+const inter = Inter({
   weight: ['400', '500', '600'],
   subsets: ['latin'],
 })
@@ -14,12 +14,12 @@ interface JobLocationProvidersProps {
   children: ReactNode
 }
 
-export function JobLocationProviders({children}: JobLocationProvidersProps) {
+export function SnowUIProviders({children}: JobLocationProvidersProps) {
   return (
-    <div className={poppins.className}>
+    <div className={inter.className}>
       <MantineProvider
         defaultColorScheme={defaultThemeColorScheme}
-        theme={JobLocationTheme}
+        theme={SnowUITheme}
       >
         {children}
       </MantineProvider>
