@@ -31,7 +31,7 @@ const notificationIconMap: Record<NotificationType, React.FC<IconProps>> = {
 const notifications: Notification[] = [
   {
     title: 'You fixed a bug.',
-    date: dayJS(),
+    date: dayJS().subtract(20, 'seconds'),
     type: 'bug',
   },
   {
@@ -81,7 +81,7 @@ function Notifications() {
 const activities = [
   {
     title: 'Changed the style.',
-    date: dayJS(),
+    date: dayJS().subtract(20, 'seconds'),
   },
   {
     title: 'Released a new version.',
