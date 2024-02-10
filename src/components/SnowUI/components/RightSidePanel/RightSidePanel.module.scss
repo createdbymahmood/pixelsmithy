@@ -1,3 +1,9 @@
+.rightSidePanel {
+  border-left: rem(1px) solid var(--mantine-color-gray-3);
+  height: 100vh;
+  background-color: var(--mantine-color-white);
+}
+
 .iconWrapper {
   height: rem(24px);
   width: rem(24px);

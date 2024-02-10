@@ -16,6 +16,7 @@ import {useSelections} from 'ahooks'
 import clsx from 'clsx'
 import {isArray, isEmpty} from 'lodash-es'
 import React, {Fragment} from 'react'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {SidebarTabsQuickNavigation} from '@/components/SnowUI/components/Sidebar/SidebarTabsQuickNavigation'
 
@@ -75,6 +76,7 @@ const SidebarItems = ({items, selections}: SidebarItemsProps) => {
           chevron={withChildren ? null : <Fragment />}
           className={clsx({[styles.activeSidebarItem]: opened})}
           mb='5px'
+          pr='lg'
         >
           <Group gap='xs'>
             {withIcon ? (
@@ -240,9 +242,11 @@ export function Sidebar() {
   ]
 
   return (
-    <Stack gap='xl' maw={220} pl='lg' py='lg'>
-      <SidebarTabsQuickNavigation />
-      <SidebarSections sections={sidebarSections} />
-    </Stack>
+    <PerfectScrollbar>
+      <Stack className={styles.sidebar} gap='xl' pl='sm' pr='md' py='lg'>
+        <SidebarTabsQuickNavigation />
+        <SidebarSections sections={sidebarSections} />
+      </Stack>
+    </PerfectScrollbar>
   )
 }
