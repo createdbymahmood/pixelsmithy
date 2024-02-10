@@ -5,5 +5,5 @@ export const metadata = constructMetadata({
 })
 
 export default function SnowUI() {
-  return <div>Hello World</div>
+  return <div style={{height: '200vh'}}>Hello World</div>
 }

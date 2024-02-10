@@ -243,7 +243,7 @@ export function Sidebar() {
 
   return (
     <PerfectScrollbar>
-      <Stack className={styles.sidebar} gap='xl' pl='sm' pr='md' py='lg'>
+      <Stack className={styles.sidebar} gap='xl' px='md' py='lg'>
         <SidebarTabsQuickNavigation />
         <SidebarSections sections={sidebarSections} />
       </Stack>
