@@ -26,6 +26,36 @@ const tabs = [
 const initialOpenedTab = head(tabs)?.key
 
 export function SidebarTabsQuickNavigation() {
+  const tabsList = tabs.map((tab) => (
+    <Tabs.Tab key={tab.key} value={tab.key}>
+      {tab.title}
+    </Tabs.Tab>
+  ))
+
+  const tabsContent = tabs.map((tab) => {
+    const itemsList = tab.items.map((tabItem) => {
+      return <List.Item key={tabItem.key}>{tabItem.title}</List.Item>
+    })
+
+    return (
+      <Tabs.Panel
+        key={tab.key}
+        classNames={{panel: styles.panel}}
+        mt='lg'
+        pl='lg'
+        value={tab.key}
+      >
+        <List
+          classNames={{item: styles.item}}
+          listStyleType='none'
+          spacing='md'
+        >
+          {itemsList}
+        </List>
+      </Tabs.Panel>
+    )
+  })
+
   return (
     <Tabs
       classNames={{
@@ -36,36 +66,10 @@ export function SidebarTabsQuickNavigation() {
       unstyled
     >
       <Tabs.List>
-        <Group>
-          {tabs.map((tab) => (
-            <Tabs.Tab key={tab.key} value={tab.key}>
-              {tab.title}
-            </Tabs.Tab>
-          ))}
-        </Group>
+        <Group>{tabsList}</Group>
       </Tabs.List>
 
-      {tabs.map((tab) => {
-        return (
-          <Tabs.Panel
-            key={tab.key}
-            classNames={{panel: styles.panel}}
-            mt='lg'
-            pl='lg'
-            value={tab.key}
-          >
-            <List
-              classNames={{item: styles.item}}
-              listStyleType='none'
-              spacing='md'
-            >
-              {tab.items.map((tabItem) => {
-                return <List.Item key={tabItem.key}>{tabItem.title}</List.Item>
-              })}
-            </List>
-          </Tabs.Panel>
-        )
-      })}
+      {tabsContent}
     </Tabs>
   )
 }
