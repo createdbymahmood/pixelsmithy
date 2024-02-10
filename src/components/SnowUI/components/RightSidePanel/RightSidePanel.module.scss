@@ -22,8 +22,7 @@
   }
 
   &:before {
-    content: '';
-    top: 32px;
-    bottom: -12px;
+    top: rem(32px);
+    bottom: rem(-12px);
   }
 }
