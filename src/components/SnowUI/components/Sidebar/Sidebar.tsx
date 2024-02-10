@@ -1,6 +1,6 @@
 'use client'
 
-import {Accordion, Group, rem, Text} from '@mantine/core'
+import {Accordion, Group, rem, Stack, Text} from '@mantine/core'
 import type {IconProps, IconWeight} from '@phosphor-icons/react'
 import {
   BookOpenText,
@@ -13,6 +13,8 @@ import {useSelections} from 'ahooks'
 import clsx from 'clsx'
 import {isArray, isEmpty} from 'lodash-es'
 import React, {Fragment} from 'react'
+
+import {SidebarTabsQuickNavigation} from '@/components/SnowUI/components/Sidebar/SidebarTabsQuickNavigation'
 
 import styles from './Sidebar.module.scss'
 
@@ -196,8 +198,9 @@ export function Sidebar() {
   ]
 
   return (
-    <Group gap='xs' maw={220} pl='lg' py='lg'>
+    <Stack gap='xl' maw={220} pl='lg' py='lg'>
+      <SidebarTabsQuickNavigation />
       <SidebarSections sections={sidebarSections} />
-    </Group>
+    </Stack>
   )
 }
