@@ -1,0 +1,29 @@
+.iconWrapper {
+  height: rem(24px);
+  width: rem(24px);
+  background-color: var(--mantine-color-blue-1);
+  @include border-radius(var(--mantine-radius-md));
+}
+
+.time {
+  color: var(--mantine-color-gray-6);
+}
+
+.timelineItemTitle {
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 400;
+}
+
+.timelineItem {
+  margin: 0;
+
+  &:not(:last-child) {
+    margin-bottom: var(--mantine-spacing-lg);
+  }
+
+  &:before {
+    content: '';
+    top: 32px;
+    bottom: -12px;
+  }
+}
