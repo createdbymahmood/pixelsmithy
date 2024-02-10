@@ -1,17 +1,17 @@
 'use client'
 
-import {Accordion, Box, Group, rem, Text} from '@mantine/core'
+import {Accordion, Group, rem, Text} from '@mantine/core'
+import type {IconProps, IconWeight} from '@phosphor-icons/react'
 import {
-  IconBook,
-  IconBook2,
-  IconChartPie,
-  IconFolder,
-  IconShoppingBag,
-} from '@tabler/icons-react'
+  BookOpenText,
+  ChartPieSlice,
+  FolderNotch,
+  Notebook,
+  ShoppingBagOpen,
+} from '@phosphor-icons/react'
 import {useSelections} from 'ahooks'
 import clsx from 'clsx'
 import {isArray, isEmpty} from 'lodash-es'
-import type {ComponentPropsWithoutRef} from 'react'
 import React, {Fragment} from 'react'
 
 import styles from './Sidebar.module.scss'
@@ -19,8 +19,8 @@ import styles from './Sidebar.module.scss'
 interface SidebarItem {
   id: string
   title: string
-  icon?: React.FC<ComponentPropsWithoutRef<'svg'>>
-  filledIcon?: React.FC<ComponentPropsWithoutRef<'svg'>>
+  icon?: React.FC<IconProps>
+  filledIcon?: React.FC<IconProps>
   href: string
   children?: SidebarItem[]
 }
@@ -62,6 +62,7 @@ const SidebarItems = ({items, selections}: SidebarItemsProps) => {
       return item.filledIcon ?? item.icon ?? Fragment
     })()
 
+    const iconWeight: IconWeight = opened ? 'fill' : 'duotone'
     return (
       <Accordion.Item key={item.id} value={item.id} onClick={toggle(item.id)}>
         <Accordion.Control
@@ -71,11 +72,15 @@ const SidebarItems = ({items, selections}: SidebarItemsProps) => {
           mb='5px'
         >
           <Group gap='xs'>
-            <Icon
-              className={clsx(styles.icon, {
-                [styles.childlessSidebarItem]: !withChildren,
-              })}
-            />
+            {withIcon ? (
+              <Icon
+                className={clsx(styles.icon, {
+                  [styles.childlessSidebarItem]: !withChildren,
+                })}
+                size={25}
+                weight={iconWeight}
+              />
+            ) : null}
 
             <Text
               className={clsx({[styles.withoutIconSidebarItem]: !withIcon})}
@@ -113,6 +118,7 @@ const SidebarSections = ({sections}: SidebarSectionsProps) => {
       classNames={{control: styles.sidebarItem, chevron: styles.chevron}}
       mb='sm'
       value={selections.selected}
+      w='100%'
       multiple
       unstyled
     >
@@ -128,9 +134,9 @@ export function Sidebar() {
       items: [
         {
           id: 'Dashboards',
-          icon: IconChartPie,
+          icon: ChartPieSlice,
           href: '/',
-          title: 'overview',
+          title: 'Overview',
           children: [
             {
               id: 'Overview',
@@ -142,25 +148,25 @@ export function Sidebar() {
         {
           id: 'eCommerce',
           title: 'eCommerce',
-          icon: IconShoppingBag,
+          icon: ShoppingBagOpen,
           href: '/',
         },
         {
           id: 'projects',
           title: 'Projects',
-          icon: IconFolder,
+          icon: FolderNotch,
           href: '/',
         },
         {
           id: 'onlineCourses',
           title: 'Online Courses',
-          icon: IconBook,
+          icon: Notebook,
           href: '/',
         },
         {
           id: 'allInOne',
           title: 'All in one',
-          icon: IconBook2,
+          icon: BookOpenText,
           href: '/',
           children: [
             {
@@ -190,8 +196,8 @@ export function Sidebar() {
   ]
 
   return (
-    <Box maw={220} p='lg'>
+    <Group gap='xs' maw={220} pl='lg' py='lg'>
       <SidebarSections sections={sidebarSections} />
-    </Box>
+    </Group>
   )
 }
