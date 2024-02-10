@@ -1,0 +1,17 @@
+.root {
+  @include light {
+    background-color: var(--mantine-color-white);
+    padding: var(--mantine-spacing-sm);
+    @include border-radius(var(--mantine-radius-lg));
+  }
+}
+
+.input {
+  border: none;
+
+  @include light {
+    background-color: var(--mantine-color-gray-1);
+  }
+
+  @include border-radius(var(--mantine-radius-sm));
+}

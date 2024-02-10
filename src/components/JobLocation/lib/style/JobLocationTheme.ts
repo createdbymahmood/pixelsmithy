@@ -2,7 +2,7 @@
 
 import {createTheme} from '@mantine/core'
 
-export const theme = createTheme({
+export const JobLocationTheme = createTheme({
   primaryShade: 4,
 
   colors: {
