@@ -1,0 +1,48 @@
+.sidebarItem {
+  all: unset;
+  font-size: var(--mantine-font-size-sm);
+  display: flex;
+  align-items: center;
+
+  @include border-radius(var(--mantine-radius-lg));
+  padding: 8px 30px 8px var(--mantine-spacing-md);
+
+  @include hover {
+    background-color: var(--mantine-color-gray-1);
+  }
+  width: 100%;
+  cursor: pointer;
+}
+
+.activeSidebarItem {
+  background-color: var(--mantine-color-gray-1);
+}
+
+.chevron {
+  margin-right: rem(10px);
+
+  transform: rotate(-90deg);
+  color: var(--mantine-color-gray-5);
+  @include transition();
+
+  &[data-rotate] {
+    color: var(--mantine-color-black);
+    transform: rotate(0);
+  }
+}
+
+.withoutIconSidebarItem {
+  margin-left: 17px;
+}
+
+.childlessSidebarItem {
+  margin-left: rem(15px);
+}
+
+.icon {
+  stroke-width: 1;
+}
+
+.section {
+  color: var(--mantine-color-gray-6);
+}
