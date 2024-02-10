@@ -86,7 +86,7 @@
   box-sizing: border-box;
 
   cursor: pointer;
-  border-width: 1px;
+  border-width: rem(1px);
   border-style: solid;
 
   @include light {
