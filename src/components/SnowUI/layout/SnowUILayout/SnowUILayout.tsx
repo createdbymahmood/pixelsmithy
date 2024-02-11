@@ -5,8 +5,8 @@ import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {Sidebar} from '@/components/SnowUI'
-import {Header} from '@/components/SnowUI/components/Header/Header'
-import {RightSidePanel} from '@/components/SnowUI/components/RightSidePanel/RightSidePanel'
+import {Header} from '@/components/SnowUI/layout/SnowUILayout/components/Header/Header'
+import {RightSidePanel} from '@/components/SnowUI/layout/SnowUILayout/components/RightSidePanel/RightSidePanel'
 import {SnowUIProviders} from '@/components/SnowUI/layout/SnowUIProviders'
 
 import styles from './SnowUILayout.module.scss'
