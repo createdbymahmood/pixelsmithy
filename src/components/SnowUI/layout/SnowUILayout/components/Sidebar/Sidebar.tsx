@@ -18,8 +18,8 @@ import {isArray, isEmpty} from 'lodash-es'
 import React, {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {SidebarProfileButton} from '@/components/SnowUI/components/Sidebar/SidebarProfileButton'
-import {SidebarTabsQuickNavigation} from '@/components/SnowUI/components/Sidebar/SidebarTabsQuickNavigation'
+import {SidebarProfileButton} from '@/components/SnowUI/layout/SnowUILayout/components/Sidebar/SidebarProfileButton'
+import {SidebarTabsQuickNavigation} from '@/components/SnowUI/layout/SnowUILayout/components/Sidebar/SidebarTabsQuickNavigation'
 
 import styles from './Sidebar.module.scss'
 
