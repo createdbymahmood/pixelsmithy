@@ -18,6 +18,7 @@ import {isArray, isEmpty} from 'lodash-es'
 import React, {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
+import {SidebarProfileButton} from '@/components/SnowUI/components/Sidebar/SidebarProfileButton'
 import {SidebarTabsQuickNavigation} from '@/components/SnowUI/components/Sidebar/SidebarTabsQuickNavigation'
 
 import styles from './Sidebar.module.scss'
@@ -244,6 +245,7 @@ export function Sidebar() {
   return (
     <PerfectScrollbar>
       <Stack className={styles.sidebar} gap='xl' px='md' py='lg'>
+        <SidebarProfileButton />
         <SidebarTabsQuickNavigation />
         <SidebarSections sections={sidebarSections} />
       </Stack>

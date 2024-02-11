@@ -66,7 +66,7 @@ function JobCardFooter() {
   return (
     <Group className={styles.footer}>
       <Text className={styles.date} size='sm'>
-        {dayJS().format(defaultDateFormat)}
+        {dayJS().subtract(10, 'minutes').format(defaultDateFormat)}
       </Text>
 
       <Group className={styles.actions} ml='auto'>
