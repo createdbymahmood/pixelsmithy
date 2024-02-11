@@ -1,4 +1,15 @@
-import {Anchor, Breadcrumbs, Group} from '@mantine/core'
+import {Anchor, Breadcrumbs, Group, Input} from '@mantine/core'
+import type {IconWeight} from '@phosphor-icons/react'
+import {
+  Bell,
+  ClockCounterClockwise,
+  Command,
+  MagnifyingGlass,
+  Sidebar,
+  Star,
+  Sun,
+} from '@phosphor-icons/react'
+import {Fragment} from 'react'
 
 import styles from './Header.module.scss'
 
@@ -24,10 +35,38 @@ const HeaderBreadcrumbs = () => {
   )
 }
 
+const iconSize = 20
+const iconWeight: IconWeight = 'duotone'
+
 export function Header() {
   return (
     <Group className={styles.header}>
+      <Sidebar className={styles.icon} size={iconSize} weight={iconWeight} />
+      <Star className={styles.icon} size={iconSize} weight={iconWeight} />
       <HeaderBreadcrumbs />
+      <Input
+        classNames={{
+          input: styles.searchInput,
+          section: styles.searchInputRightSection,
+          wrapper: styles.searchInputWrapper,
+        }}
+        leftSection={<MagnifyingGlass />}
+        placeholder='Search'
+        rightSection={
+          <Fragment>
+            <Command />/
+          </Fragment>
+        }
+        size='xs'
+      />
+      <Sun className={styles.icon} size={iconSize} weight={iconWeight} />
+      <ClockCounterClockwise
+        className={styles.icon}
+        size={iconSize}
+        weight={iconWeight}
+      />
+      <Bell className={styles.icon} size={iconSize} weight={iconWeight} />
+      <Sidebar className={styles.icon} size={iconSize} weight={iconWeight} />
     </Group>
   )
 }
