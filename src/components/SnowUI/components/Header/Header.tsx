@@ -38,27 +38,35 @@ const HeaderBreadcrumbs = () => {
 const iconSize = 20
 const iconWeight: IconWeight = 'duotone'
 
+function HeaderSearchInput() {
+  const rightSection = (
+    <Fragment>
+      <Command />/
+    </Fragment>
+  )
+
+  return (
+    <Input
+      classNames={{
+        input: styles.searchInput,
+        section: styles.searchInputRightSection,
+        wrapper: styles.searchInputWrapper,
+      }}
+      leftSection={<MagnifyingGlass />}
+      placeholder='Search'
+      rightSection={rightSection}
+      size='xs'
+    />
+  )
+}
+
 export function Header() {
   return (
     <Group className={styles.header}>
       <Sidebar className={styles.icon} size={iconSize} weight={iconWeight} />
       <Star className={styles.icon} size={iconSize} weight={iconWeight} />
       <HeaderBreadcrumbs />
-      <Input
-        classNames={{
-          input: styles.searchInput,
-          section: styles.searchInputRightSection,
-          wrapper: styles.searchInputWrapper,
-        }}
-        leftSection={<MagnifyingGlass />}
-        placeholder='Search'
-        rightSection={
-          <Fragment>
-            <Command />/
-          </Fragment>
-        }
-        size='xs'
-      />
+      <HeaderSearchInput />
       <Sun className={styles.icon} size={iconSize} weight={iconWeight} />
       <ClockCounterClockwise
         className={styles.icon}
