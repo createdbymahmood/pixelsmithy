@@ -9,7 +9,10 @@ import {
   TrendUp,
   UsersThree,
 } from '@phosphor-icons/react'
+import {range} from 'lodash-es'
 import React from 'react'
+
+import {ProjectCard} from '@/components/SnowUI/components/Projects/components'
 
 import styles from './Projects.module.scss'
 
@@ -76,14 +79,29 @@ function ProjectsOverview() {
   const content = overviews.map((overview) => {
     return <ProjectOverviewCard key={overview.title} {...overview} />
   })
-  return <SimpleGrid cols={{xl: 3, lg: 2, md: 2}}>{content}</SimpleGrid>
+
+  return (
+    <SimpleGrid cols={{xl: 3, lg: 2, md: 2, sm: 1, xs: 1}}>
+      {content}
+    </SimpleGrid>
+  )
+}
+
+function ProjectsList() {
+  const content = range(0, 20).map((index) => <ProjectCard key={index} />)
+  return (
+    <SimpleGrid cols={{xl: 3, lg: 2, md: 2, sm: 1, xs: 1}}>
+      {content}
+    </SimpleGrid>
+  )
 }
 
 export function Projects() {
   return (
-    <Stack>
-      <Title order={6}>My Projects</Title>
+    <Stack gap='xl'>
+      <Title order={5}>My Projects</Title>
       <ProjectsOverview />
+      <ProjectsList />
     </Stack>
   )
 }
