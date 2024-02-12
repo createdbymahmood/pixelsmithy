@@ -12,7 +12,7 @@ import {
 import {range} from 'lodash-es'
 import React from 'react'
 
-import {ProjectCard} from '@/components/SnowUI/components/Projects/components'
+import {ProjectCard} from '@/components/SnowUI/components'
 
 import styles from './Projects.module.scss'
 
