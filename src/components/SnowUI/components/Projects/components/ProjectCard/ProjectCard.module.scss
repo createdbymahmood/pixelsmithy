@@ -1,0 +1,48 @@
+.card {
+  background-color: var(--mantine-color-gray-0);
+  @include border-radius(var(--mantine-radius-md));
+  padding: var(--mantine-spacing-lg);
+}
+
+.dueDate {
+  color: var(--mantine-color-gray-6);
+}
+
+@mixin withDot {
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: '';
+    width: rem(6px);
+    height: rem(6px);
+    background-color: currentColor;
+    margin-right: rem(6px);
+    @include border-radius();
+  }
+}
+
+.complete {
+  color: var(--mantine-color-green-7);
+  @include withDot();
+}
+
+.inProgress {
+  color: var(--mantine-color-indigo-4);
+  @include withDot();
+}
+
+.rejected {
+  color: var(--mantine-color-gray-5);
+  @include withDot();
+}
+
+.pending {
+  color: var(--mantine-color-blue-4);
+  @include withDot();
+}
+
+.approved {
+  color: var(--mantine-color-yellow-4);
+  @include withDot();
+}
