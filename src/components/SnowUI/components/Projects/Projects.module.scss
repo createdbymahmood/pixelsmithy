@@ -1,0 +1,12 @@
+.card {
+  @include border-radius(var(--mantine-radius-lg));
+  background-color: var(--mantine-color-gray-1);
+  padding: var(--mantine-spacing-lg);
+}
+
+.cardTitle {
+  color: var(--mantine-color-gray-9);
+}
+
+.insight {
+}
