@@ -49,7 +49,6 @@ function HeaderSearchInput() {
     <Input
       classNames={{
         input: styles.searchInput,
-        section: styles.searchInputRightSection,
         wrapper: styles.searchInputWrapper,
       }}
       leftSection={<MagnifyingGlass />}
