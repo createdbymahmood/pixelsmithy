@@ -1,0 +1,28 @@
+.card {
+  background-color: var(--mantine-color-gray-0);
+  border-radius: var(--mantine-radius-lg);
+  padding: var(--mantine-spacing-sm);
+  width: 100%;
+}
+
+.weekDayWrapper {
+  border-radius: rem(10px);
+  padding: rem(7px) rem(10px);
+}
+
+.activeWeekDayWrapper {
+  background-color: black;
+
+  .weekDay,
+  .weekDate {
+    color: var(--mantine-color-white) !important;
+  }
+}
+
+.weekDay {
+  color: var(--mantine-color-gray-5);
+}
+
+.weekDate {
+  font-weight: 700;
+}
