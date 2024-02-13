@@ -2,14 +2,16 @@
 
 import {createTheme, rem} from '@mantine/core'
 
+import {inter} from '@/components/SnowUI/layout/SnowUIProviders'
+
 import {components} from './customizations'
 
 export const SnowUITheme = createTheme({
   components,
   primaryColor: 'gray',
   primaryShade: 9,
-
   headings: {
+    fontFamily: inter.style.fontFamily,
     sizes: {
       h1: {fontSize: rem(64)},
       h2: {fontSize: rem(48)},
