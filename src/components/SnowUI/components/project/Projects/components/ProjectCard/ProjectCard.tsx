@@ -1,10 +1,31 @@
 import {Avatar, Group, Progress, rem, Stack, Text, Title} from '@mantine/core'
 import {Butterfly} from '@phosphor-icons/react/dist/ssr'
-import {get, head, shuffle, startCase} from 'lodash-es'
+import {get, startCase} from 'lodash-es'
 
 import styles from './ProjectCard.module.scss'
 
-const status = ['complete', 'inProgress', 'rejected', 'pending', 'approved']
+const statusMap = {
+  complete: {
+    color: 'var(--mantine-color-green-7)',
+    percentage: 100,
+  },
+  inProgress: {
+    color: 'var(--mantine-color-indigo-4)',
+    percentage: 40,
+  },
+  rejected: {
+    color: 'var(--mantine-color-gray-5)',
+    percentage: 60,
+  },
+  pending: {
+    color: 'var(--mantine-color-blue-4)',
+    percentage: 10,
+  },
+  approved: {
+    color: 'var(--mantine-color-yellow-6)',
+    percentage: 12,
+  },
+} as const
 
 function ProjectCardHeader() {
   return (
@@ -20,19 +41,39 @@ function ProjectCardHeader() {
   )
 }
 
-function ProgressState() {
-  const s = head(shuffle(shuffle(status)))!
+interface ProgressStateProps {
+  index: number
+}
+
+function getStatusByIndex(index: number) {
+  const projectIndex = index % Object.keys(statusMap).length
+  const statusKey = get(
+    Object.keys(statusMap),
+    projectIndex,
+  ) as keyof typeof statusMap
+  const status = get(statusMap, statusKey)
+  return {status, statusKey}
+}
+
+function ProgressState({index}: ProgressStateProps) {
+  const {status, statusKey} = getStatusByIndex(index)
 
   return (
     <Stack>
-      <Text className={get(styles, s)} size='xs'>
-        {startCase(s)}
+      <Text c={status.color} className={styles.status} size='xs'>
+        {startCase(statusKey)}
       </Text>
     </Stack>
   )
 }
 
-function ProjectCardStatus() {
+interface ProjectCardStatusProps {
+  index: number
+}
+
+function ProjectCardStatus({index}: ProjectCardStatusProps) {
+  const {status} = getStatusByIndex(index)
+
   return (
     <Stack>
       <Group justify='space-between'>
@@ -42,10 +83,10 @@ function ProjectCardStatus() {
           <Avatar size={24} />
           <Avatar size={24}>+5</Avatar>
         </Avatar.Group>
-        <ProgressState />
+        <ProgressState index={index} />
       </Group>
 
-      <Progress color='blue' value={100} />
+      <Progress color={status.color} value={status.percentage} />
 
       <Group justify='space-between'>
         <Group gap={rem(4)}>
@@ -58,17 +99,21 @@ function ProjectCardStatus() {
             Total Tasks
           </Text>
         </Group>
-        <Text size='xs'>100%</Text>
+        <Text size='xs'>{status.percentage}%</Text>
       </Group>
     </Stack>
   )
 }
 
-export function ProjectCard() {
+interface ProjectCardProps {
+  index: number
+}
+
+export function ProjectCard({index}: ProjectCardProps) {
   return (
     <Stack className={styles.card}>
       <ProjectCardHeader />
-      <ProjectCardStatus />
+      <ProjectCardStatus index={index} />
     </Stack>
   )
 }
