@@ -1,3 +1,5 @@
+import {redirect} from 'next/navigation'
+
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({
@@ -5,5 +7,6 @@ export const metadata = constructMetadata({
 })
 
 export default function SnowUI() {
-  return <div style={{height: '200vh'}}>Hello World</div>
+  return redirect('/snow-ui/projects')
+  // return <div style={{height: '200vh'}}>Hello World</div>
 }
