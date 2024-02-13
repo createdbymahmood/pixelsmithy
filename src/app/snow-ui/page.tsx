@@ -7,6 +7,6 @@ export const metadata = constructMetadata({
 })
 
 export default function SnowUI() {
-  return redirect('/snow-ui/projects')
-  // return <div style={{height: '200vh'}}>Hello World</div>
+  // return redirect('/snow-ui/projects')
+  return <div style={{height: '200vh'}}>Hello World</div>
 }

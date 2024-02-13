@@ -8,6 +8,9 @@ export const urls = {
   },
   SnowUI: {
     index: '/snow-ui',
+    projects: {
+      overview: '/snow-ui/projects',
+    },
   },
 }
 export const applications = [
