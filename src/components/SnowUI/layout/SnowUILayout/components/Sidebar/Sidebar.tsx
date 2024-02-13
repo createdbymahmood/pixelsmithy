@@ -167,7 +167,7 @@ export function Sidebar() {
           id: 'projects',
           title: 'Projects',
           icon: FolderNotch,
-          href: urls.SnowUI.projects.overview,
+          href: urls.SnowUI.projects.details('projectId', 'overview'),
         },
         {
           id: 'onlineCourses',
