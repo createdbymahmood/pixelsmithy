@@ -14,21 +14,3 @@
 .time {
   color: var(--mantine-color-gray-6);
 }
-
-.timelineItemTitle {
-  font-size: var(--mantine-font-size-sm);
-  font-weight: 400;
-}
-
-.timelineItem {
-  margin: 0;
-
-  &:not(:last-child) {
-    margin-bottom: var(--mantine-spacing-lg);
-  }
-
-  &:before {
-    top: rem(32px);
-    bottom: rem(-12px);
-  }
-}
