@@ -27,7 +27,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-perfect-scrollbar": "1.5.8",
-    "urlcat": "2.0.4"
+    "urlcat": "2.0.4",
+    "utility-types": "3.11.0"
   },
   "devDependencies": {
     "@fullstacksjs/eslint-config": "10.10.1",
