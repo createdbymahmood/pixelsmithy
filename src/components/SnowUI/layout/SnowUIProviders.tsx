@@ -5,7 +5,7 @@ import type {ReactNode} from 'react'
 import {SnowUITheme} from '@/components/SnowUI/lib/style/SnowUITheme'
 import {defaultThemeColorScheme} from '@/constants'
 
-const inter = Inter({
+export const inter = Inter({
   weight: ['400', '500', '600'],
   subsets: ['latin'],
 })
