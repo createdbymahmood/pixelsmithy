@@ -1,4 +1,5 @@
 import type {MantineColorScheme} from '@mantine/core'
+import urlCat from 'urlcat'
 
 export const defaultThemeColorScheme: MantineColorScheme = 'light'
 export const defaultDateFormat = 'DD MMMM YYYY'
@@ -10,6 +11,8 @@ export const urls = {
     index: '/snow-ui',
     projects: {
       overview: '/snow-ui/projects',
+      details: (projectId: string, section: string) =>
+        urlCat('/snow-ui/projects/:projectId/:section', {projectId, section}),
     },
   },
 }

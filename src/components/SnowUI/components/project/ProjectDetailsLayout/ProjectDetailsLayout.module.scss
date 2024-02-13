@@ -1,0 +1,19 @@
+.list {
+  &:before {
+    border-bottom: none;
+  }
+
+  margin-bottom: var(--mantine-spacing-md);
+}
+
+.tab {
+  padding: var(--mantine-spacing-xs) 0;
+
+  &:hover {
+    background: inherit;
+  }
+
+  &:not(:last-of-type) {
+    margin-right: var(--mantine-spacing-xl);
+  }
+}
