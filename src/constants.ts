@@ -10,7 +10,7 @@ export const urls = {
     index: '/snow-ui',
   },
 }
-export const projects = [
+export const applications = [
   {
     id: 1,
     title: 'Job Location',

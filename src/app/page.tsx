@@ -1,4 +1,4 @@
-import {Projects} from '@/components/Projects'
+import {Applications} from '@/components/Applications'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({
@@ -6,5 +6,5 @@ export const metadata = constructMetadata({
 })
 
 export default function App() {
-  return <Projects />
+  return <Applications />
 }
