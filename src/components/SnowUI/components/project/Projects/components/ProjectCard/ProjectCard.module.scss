@@ -22,27 +22,6 @@
   }
 }
 
-.complete {
-  color: var(--mantine-color-green-7);
-  @include withDot();
-}
-
-.inProgress {
-  color: var(--mantine-color-indigo-4);
-  @include withDot();
-}
-
-.rejected {
-  color: var(--mantine-color-gray-5);
-  @include withDot();
-}
-
-.pending {
-  color: var(--mantine-color-blue-4);
-  @include withDot();
-}
-
-.approved {
-  color: var(--mantine-color-yellow-4);
+.status {
   @include withDot();
 }

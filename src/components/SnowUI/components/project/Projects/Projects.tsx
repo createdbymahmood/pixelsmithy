@@ -88,7 +88,9 @@ function ProjectsOverview() {
 }
 
 function ProjectsList() {
-  const content = range(0, 20).map((index) => <ProjectCard key={index} />)
+  const content = range(0, 20).map((index) => (
+    <ProjectCard key={index} index={index} />
+  ))
   return (
     <SimpleGrid cols={{xl: 3, lg: 2, md: 2, sm: 1, xs: 1}}>
       {content}
