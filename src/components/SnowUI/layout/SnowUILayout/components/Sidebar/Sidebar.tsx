@@ -15,11 +15,13 @@ import {
 import {useSelections} from 'ahooks'
 import clsx from 'clsx'
 import {isArray, isEmpty} from 'lodash-es'
+import Link from 'next/link'
 import React, {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {SidebarProfileButton} from '@/components/SnowUI/layout/SnowUILayout/components/Sidebar/SidebarProfileButton'
 import {SidebarTabsQuickNavigation} from '@/components/SnowUI/layout/SnowUILayout/components/Sidebar/SidebarTabsQuickNavigation'
+import {urls} from '@/constants'
 
 import styles from './Sidebar.module.scss'
 
@@ -79,24 +81,26 @@ const SidebarItems = ({items, selections}: SidebarItemsProps) => {
           mb='5px'
           pr='lg'
         >
-          <Group gap='xs'>
-            {withIcon ? (
-              <Icon
-                className={clsx(styles.icon, {
-                  [styles.childlessSidebarItem]: !withChildren,
-                })}
-                size={25}
-                weight={iconWeight}
-              />
-            ) : null}
+          <Box component={Link} href={item.href}>
+            <Group gap='xs'>
+              {withIcon ? (
+                <Icon
+                  className={clsx(styles.icon, {
+                    [styles.childlessSidebarItem]: !withChildren,
+                  })}
+                  size={25}
+                  weight={iconWeight}
+                />
+              ) : null}
 
-            <Text
-              className={clsx({[styles.withoutIconSidebarItem]: !withIcon})}
-              size='sm'
-            >
-              {item.title}
-            </Text>
-          </Group>
+              <Text
+                className={clsx({[styles.withoutIconSidebarItem]: !withIcon})}
+                size='sm'
+              >
+                {item.title}
+              </Text>
+            </Group>
+          </Box>
         </Accordion.Control>
 
         <Accordion.Panel>{children}</Accordion.Panel>
@@ -163,7 +167,7 @@ export function Sidebar() {
           id: 'projects',
           title: 'Projects',
           icon: FolderNotch,
-          href: '/',
+          href: urls.SnowUI.projects.overview,
         },
         {
           id: 'onlineCourses',
