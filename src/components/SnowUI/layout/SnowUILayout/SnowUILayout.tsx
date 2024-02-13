@@ -1,6 +1,6 @@
 'use client'
 
-import {Box, Grid} from '@mantine/core'
+import {Box, Container, Grid} from '@mantine/core'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -28,7 +28,7 @@ export function SnowUILayout({children}: SnowUILayoutProps) {
 
           <Box className={styles.contentArea}>
             <PerfectScrollbar>
-              <Box className={styles.content}>{children}</Box>
+              <Container className={styles.content}>{children}</Container>
             </PerfectScrollbar>
           </Box>
         </Grid.Col>
