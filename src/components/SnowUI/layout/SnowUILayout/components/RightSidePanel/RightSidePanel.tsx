@@ -78,7 +78,7 @@ function Notifications() {
   )
 }
 
-const activities = [
+export const activities = [
   {
     title: 'Changed the style.',
     date: dayJS().subtract(20, 'seconds'),
@@ -101,16 +101,12 @@ const activities = [
   },
 ]
 
-function Activities() {
+export function Activities() {
   const content = activities.map((activity) => {
     return (
       <Timeline.Item
         key={activity.title}
         bullet={<Avatar radius='xl' size={24} src='' />}
-        classNames={{
-          itemTitle: styles.timelineItemTitle,
-          item: styles.timelineItem,
-        }}
         title={activity.title}
       >
         <Text c='dimmed' size='xs'>
