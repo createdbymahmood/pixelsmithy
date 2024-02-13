@@ -1,8 +1,8 @@
-import {ProjectOverview} from '@/components/SnowUI/components/project/ProjectOverview/ProjectOverview'
+import {ProjectDetails} from '@/components/SnowUI/components/project/ProjectDetails/ProjectDetails'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({
-  title: 'Project overview',
+  title: 'Project Overview',
 })
 
-export default ProjectOverview
+export default ProjectDetails

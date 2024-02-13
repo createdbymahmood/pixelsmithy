@@ -18,7 +18,7 @@ interface ProjectOverviewProps {
   children: ReactNode
 }
 
-const tabs = [
+export const projectDetailsSections = [
   'overview',
   'targets',
   'budget',
@@ -26,7 +26,7 @@ const tabs = [
   'files',
   'activity',
   'settings',
-]
+] as const
 
 interface QueryParams extends Params {
   section: string
@@ -42,7 +42,7 @@ const Tab = Tabs.Tab as MantineComponent<{
 export function ProjectDetailsLayout({children}: ProjectOverviewProps) {
   const params = useParams<QueryParams>()
 
-  const content = tabs.map((tab) => {
+  const content = projectDetailsSections.map((tab) => {
     return (
       <Tab
         key={tab}
