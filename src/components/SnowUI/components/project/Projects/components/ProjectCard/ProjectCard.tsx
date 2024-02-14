@@ -1,6 +1,6 @@
 import {
   Avatar,
-  Card,
+  Card as OriginalCard,
   Group,
   Progress,
   rem,
@@ -9,11 +9,13 @@ import {
   Title,
 } from '@mantine/core'
 import {Butterfly} from '@phosphor-icons/react/dist/ssr'
+import Link from 'next/link'
 
 import {
   getStatusByIndex,
   Status,
 } from '@/components/SnowUI/components/project/Projects/components/Status/Status'
+import {urls} from '@/constants'
 
 import styles from './ProjectCard.module.scss'
 
@@ -73,11 +75,22 @@ interface ProjectCardProps {
   index: number
 }
 
+const Card = OriginalCard
+
 export function ProjectCard({index}: ProjectCardProps) {
   return (
-    <Stack component={Card}>
-      <ProjectCardHeader />
-      <ProjectCardStatus index={index} />
-    </Stack>
+    <Card
+      component={Link}
+      href={urls.SnowUI.projects.details(
+        '6cf7e844-a4a2-40c3-b7a4-a9ac8a0593de',
+        'overview',
+      )}
+      scroll
+    >
+      <Stack className={styles.card}>
+        <ProjectCardHeader />
+        <ProjectCardStatus index={index} />
+      </Stack>
+    </Card>
   )
 }

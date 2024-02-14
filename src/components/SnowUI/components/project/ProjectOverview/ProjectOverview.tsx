@@ -1,3 +1,5 @@
+'use client'
+
 import {SimpleGrid, Stack} from '@mantine/core'
 
 import {
