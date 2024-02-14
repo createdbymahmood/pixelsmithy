@@ -1,8 +1,14 @@
 import {Button, Card, Group, rem, Stack, Text, Title} from '@mantine/core'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
 import type {IconProps} from '@phosphor-icons/react'
-import {DownloadSimple, FilePdf, FileXls, Image, X} from '@phosphor-icons/react'
-import {Upload} from '@phosphor-icons/react/dist/ssr'
+import {
+  DownloadSimple,
+  FilePdf,
+  FileXls,
+  Image,
+  Upload,
+  X,
+} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import type {FC} from 'react'
 import {Fragment} from 'react'

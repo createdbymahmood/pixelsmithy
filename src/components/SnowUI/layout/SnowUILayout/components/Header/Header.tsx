@@ -1,5 +1,5 @@
 import {Anchor, Breadcrumbs, Group, Input} from '@mantine/core'
-import type {IconWeight} from '@phosphor-icons/react'
+import type {IconWeight} from '@phosphor-icons/react/dist/ssr'
 import {
   Bell,
   ClockCounterClockwise,
@@ -8,7 +8,7 @@ import {
   Sidebar,
   Star,
   Sun,
-} from '@phosphor-icons/react'
+} from '@phosphor-icons/react/dist/ssr'
 import {Fragment} from 'react'
 
 import styles from './Header.module.scss'

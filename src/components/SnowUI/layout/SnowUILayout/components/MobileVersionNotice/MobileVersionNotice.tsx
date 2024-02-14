@@ -1,5 +1,5 @@
 import {Center, Stack, Text} from '@mantine/core'
-import {Barricade} from '@phosphor-icons/react'
+import {Barricade} from '@phosphor-icons/react/dist/ssr'
 import type {ReactNode} from 'react'
 
 import {useMobileDevice} from '@/hooks/useMobileDevice'

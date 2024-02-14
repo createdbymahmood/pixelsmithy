@@ -10,7 +10,7 @@ import {
   Text,
   Title,
 } from '@mantine/core'
-import {ChatText, Paperclip} from '@phosphor-icons/react'
+import {ChatText, Paperclip} from '@phosphor-icons/react/dist/ssr'
 
 import styles from './ProjectTargets.module.scss'
 

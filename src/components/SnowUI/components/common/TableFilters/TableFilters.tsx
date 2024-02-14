@@ -1,10 +1,12 @@
+'use client'
+
 import {Card, Group, Input} from '@mantine/core'
 import {
   FunnelSimple,
   MagnifyingGlass,
   Plus,
   SortAscending,
-} from '@phosphor-icons/react'
+} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 import styles from './TableFilters.module.scss'
