@@ -11,7 +11,7 @@ import {
   Notebook,
   ShoppingBagOpen,
   UsersThree,
-} from '@phosphor-icons/react'
+} from '@phosphor-icons/react/dist/ssr'
 import {useSelections} from 'ahooks'
 import clsx from 'clsx'
 import {isArray, isEmpty} from 'lodash-es'

@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Card,
   Checkbox,
@@ -11,7 +13,7 @@ import {
 } from '@mantine/core'
 import {DateInput} from '@mantine/dates'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
-import {CalendarBlank, UploadSimple} from '@phosphor-icons/react'
+import {CalendarBlank, UploadSimple} from '@phosphor-icons/react/dist/ssr'
 import dayJS from 'dayjs'
 import {useState} from 'react'
 

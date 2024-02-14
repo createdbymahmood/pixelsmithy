@@ -8,7 +8,14 @@ import {
   TrendDown,
   TrendUp,
   UsersThree,
-} from '@phosphor-icons/react'
+} from '@phosphor-icons/react/dist/ssr'
+// import {
+//   CurrencyCircleDollar,
+//   Folder,
+//   TrendDown,
+//   TrendUp,
+//   UsersThree,
+// } from '@phosphor-icons/react/dist/ssr'
 import {range} from 'lodash-es'
 import React from 'react'
 

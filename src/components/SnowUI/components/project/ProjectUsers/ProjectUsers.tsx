@@ -1,3 +1,5 @@
+'use client'
+
 import {Avatar, Group, Pagination, rem, Stack, Table} from '@mantine/core'
 import dayJS from 'dayjs'
 import React from 'react'
