@@ -1,4 +1,13 @@
-import {Avatar, Group, Progress, rem, Stack, Text, Title} from '@mantine/core'
+import {
+  Avatar,
+  Card,
+  Group,
+  Progress,
+  rem,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core'
 import {Butterfly} from '@phosphor-icons/react/dist/ssr'
 
 import {
@@ -66,7 +75,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({index}: ProjectCardProps) {
   return (
-    <Stack className={styles.card}>
+    <Stack component={Card}>
       <ProjectCardHeader />
       <ProjectCardStatus index={index} />
     </Stack>

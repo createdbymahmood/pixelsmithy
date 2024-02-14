@@ -1,4 +1,4 @@
-import {Button, Group, rem, Stack, Text, Title} from '@mantine/core'
+import {Button, Card, Group, rem, Stack, Text, Title} from '@mantine/core'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
 import type {IconProps} from '@phosphor-icons/react'
 import {DownloadSimple, FilePdf, FileXls, Image, X} from '@phosphor-icons/react'
@@ -140,7 +140,7 @@ function FileDropzone() {
 
 export function ProjectOverviewFilesList() {
   return (
-    <Stack className={styles.card} gap='lg'>
+    <Stack component={Card} gap='lg'>
       <Title order={5}>Latest Files</Title>
       <FilesList />
       <FileDropzone />

@@ -1,7 +1,8 @@
 import type {MantineThemeComponents} from '@mantine/core'
-import {MultiSelect, rem, Table, Timeline} from '@mantine/core'
+import {Card, MultiSelect, rem, Table, Timeline} from '@mantine/core'
 
 import AutocompleteStyles from './Autocomplete.module.scss'
+import CardStyles from './Card.module.scss'
 import TableStyles from './Table.module.scss'
 import TimelineStyles from './Timeline.module.scss'
 
@@ -36,6 +37,13 @@ export const components: MantineThemeComponents = {
         th: TableStyles.th,
         tr: TableStyles.tr,
         td: TableStyles.td,
+      }
+    },
+  }),
+  Card: Card.extend({
+    classNames(theme, props, ctx) {
+      return {
+        root: CardStyles.root,
       }
     },
   }),

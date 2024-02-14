@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Card,
   Group,
   rem,
   Stack,
@@ -92,7 +93,7 @@ function TimelineHeader() {
 
 export function ProjectOverviewTimeline() {
   return (
-    <Stack className={styles.card} gap='md'>
+    <Stack component={Card} gap='md'>
       <Title order={5}>What's on the road?</Title>
       <TimelineHeader />
       <Timeline />
