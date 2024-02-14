@@ -7,9 +7,12 @@ import {
   Timeline as OriginalTimeline,
   Title,
 } from '@mantine/core'
+import {useCallbackRef} from '@mantine/hooks'
 import clsx from 'clsx'
+import type {Dayjs} from 'dayjs'
 import dayJS from 'dayjs'
 import {range} from 'lodash-es'
+import {useState} from 'react'
 
 import {activities} from '@/components/SnowUI/layout/SnowUILayout/components/RightSidePanel/RightSidePanel'
 
@@ -44,21 +47,36 @@ function Timeline() {
   )
 }
 
-function TimelineHeader() {
+function useTimelineHeaderState() {
+  const today = dayJS()
+  const [selectedDay, setSelectedDay] = useState<Dayjs>(today)
+
   const timelineDays = generateWeekTimeline().map((day) => ({
+    instance: day,
     date: day.format('DD'),
     day: day.format('dd'),
-    isToday: day.isSame(dayJS(), 'date'),
+    isSelected: selectedDay.isSame(day, 'date'),
   }))
+
+  const onDaySelect = useCallbackRef((d: Dayjs) => () => {
+    setSelectedDay(d)
+  })
+
+  return {timelineDays, onDaySelect}
+}
+
+function TimelineHeader() {
+  const {onDaySelect, timelineDays} = useTimelineHeaderState()
 
   const content = timelineDays.map((day) => (
     <Stack
       key={day.date}
       align='center'
       className={clsx(styles.weekDayWrapper, {
-        [styles.activeWeekDayWrapper]: day.isToday,
+        [styles.activeWeekDayWrapper]: day.isSelected,
       })}
       gap={rem(2)}
+      onClick={onDaySelect(day.instance)}
     >
       <Text className={styles.weekDay} size='xs'>
         {day.day}
