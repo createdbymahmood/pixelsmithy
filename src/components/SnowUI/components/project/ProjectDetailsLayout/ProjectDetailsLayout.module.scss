@@ -4,6 +4,8 @@
   }
 
   margin-bottom: var(--mantine-spacing-md);
+  flex-wrap: nowrap;
+  overflow: auto;
 }
 
 .tab {
