@@ -1,10 +1,8 @@
-import {Avatar, Group, rem, Stack, Table, Title} from '@mantine/core'
+import {Avatar, Card, Group, rem, Stack, Table, Title} from '@mantine/core'
 import dayJS from 'dayjs'
 import React from 'react'
 
 import {Status} from '@/components/SnowUI'
-
-import styles from './ProjectSpendingsTable.module.scss'
 
 const elements = [
   {
@@ -68,7 +66,7 @@ function TableContent() {
 
 export function ProjectSpendingsTable() {
   return (
-    <Stack className={styles.card} gap='xs'>
+    <Stack component={Card} gap='xs'>
       <Title order={5}>Project Spendings</Title>
       <TableContent />
     </Stack>
