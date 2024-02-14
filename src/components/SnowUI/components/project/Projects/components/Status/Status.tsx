@@ -4,7 +4,7 @@ import React from 'react'
 
 import styles from './Status.module.scss'
 
-const statusMap = {
+export const statusMap = {
   complete: {
     color: 'var(--mantine-color-green-7)',
     percentage: 100,
