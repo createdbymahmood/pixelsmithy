@@ -81,7 +81,7 @@ function Notifications() {
 export const activities = [
   {
     title: 'Changed the style.',
-    date: dayJS().subtract(20, 'seconds'),
+    date: dayJS().subtract(1, 'minute'),
   },
   {
     title: 'Released a new version.',
