@@ -1,6 +1,7 @@
 'use client'
 
 import {
+  Box,
   Button,
   Card,
   Checkbox,
@@ -39,7 +40,7 @@ const usageOptions = [
   },
 ]
 
-function Header() {
+function UsageCharacterSettings() {
   const [selected, setSelected] = useState('precise')
 
   const onSelectValue = useCallbackRef((netxValue: string) => () => {
@@ -81,8 +82,34 @@ function Header() {
   )
 }
 
-function UsageCharacterSettings() {
-  return <div />
+function Header() {
+  return (
+    <Stack component={Card}>
+      <Group gap={rem(3)}>
+        <Title order={4}>Budget</Title>
+        <Text size='sm'>$22,300 of 36,000 Used</Text>
+      </Group>
+
+      <Group className={styles.progress} gap='xs'>
+        <Box
+          className={clsx(
+            styles.progressStrippedLine,
+            styles.progressStrippedLineActive,
+          )}
+        />
+        <Box className={styles.progressStrippedLine} />
+        <Box className={styles.progressStrippedLine} />
+        <Box className={styles.progressStrippedLine} />
+        <Box className={styles.progressStrippedLine} />
+        <Box className={styles.progressStrippedLine} />
+        <Box className={styles.progressStrippedLine} />
+      </Group>
+
+      <Text c='gray.5' size='sm'>
+        18 Targets are remaining
+      </Text>
+    </Stack>
+  )
 }
 
 interface SettingsCardProps {
@@ -160,14 +187,17 @@ function FloatingActionButons() {
 
 export function ProjectBudget() {
   return (
-    <Stack component={Card} pos='relative'>
+    <Stack gap='lg'>
       <Header />
-      <UsageCharacterSettings />
-      <BudgetNotes />
-      <ManageBudget />
-      <OveruseNotificartionSettings />
-      <AllowChangesSettings />
-      <FloatingActionButons />
+
+      <Stack component={Card} pos='relative'>
+        <UsageCharacterSettings />
+        <BudgetNotes />
+        <ManageBudget />
+        <OveruseNotificartionSettings />
+        <AllowChangesSettings />
+        <FloatingActionButons />
+      </Stack>
     </Stack>
   )
 }
