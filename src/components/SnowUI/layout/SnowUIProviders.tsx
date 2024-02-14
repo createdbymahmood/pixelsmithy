@@ -1,3 +1,5 @@
+import '@mantine/dropzone/styles.css'
+
 import {MantineProvider} from '@mantine/core'
 import {Inter} from 'next/font/google'
 import type {ReactNode} from 'react'
