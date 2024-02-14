@@ -1,0 +1,8 @@
+.root {
+  font-weight: 400;
+  @include border-radius(var(--mantine-radius-md));
+}
+
+.light {
+  background-color: var(--mantine-color-gray-1);
+}
