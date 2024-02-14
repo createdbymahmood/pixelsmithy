@@ -2,7 +2,6 @@
 
 import {
   Box,
-  Button,
   Card,
   Checkbox,
   Group,
@@ -19,6 +18,8 @@ import clsx from 'clsx'
 import {isEqual} from 'lodash-es'
 import type {ReactNode} from 'react'
 import React, {Fragment, useState} from 'react'
+
+import {SaveFloatingActionButons} from '@/components/SnowUI/components/project/components/SaveFloatingActionButons'
 
 import styles from './ProjectBudget.module.scss'
 
@@ -171,20 +172,6 @@ function AllowChangesSettings() {
   )
 }
 
-function FloatingActionButons() {
-  return (
-    <Group
-      className={styles.actionButtonsCard}
-      component={Card}
-      display='flex'
-      wrap='nowrap'
-    >
-      <Button variant='light'>Cancel</Button>
-      <Button>Save Changes</Button>
-    </Group>
-  )
-}
-
 export function ProjectBudget() {
   return (
     <Stack gap='lg'>
@@ -196,7 +183,7 @@ export function ProjectBudget() {
         <ManageBudget />
         <OveruseNotificartionSettings />
         <AllowChangesSettings />
-        <FloatingActionButons />
+        <SaveFloatingActionButons />
       </Stack>
     </Stack>
   )
