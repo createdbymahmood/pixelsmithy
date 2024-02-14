@@ -79,7 +79,7 @@ const files: FileItem[] = [
 
 function FilesList() {
   const content = files.map((file) => {
-    return <FileItem key={file.name} {...file} />
+    return <FileItem key={`${file.name}-${file.info}`} {...file} />
   })
 
   return <Stack>{content}</Stack>

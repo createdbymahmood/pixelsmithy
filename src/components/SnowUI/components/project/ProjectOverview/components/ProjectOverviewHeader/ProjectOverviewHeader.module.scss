@@ -1,0 +1,17 @@
+.progress {
+  border-radius: var(--mantine-radius-md);
+  min-width: rem(160px);
+}
+
+.headerSection {
+  padding: 0 var(--mantine-spacing-xl);
+  gap: rem(5px);
+
+  &:first-of-type {
+    padding-left: 0;
+  }
+
+  &:not(:last-of-type) {
+    border-right: rem(1px) solid var(--mantine-color-gray-4);
+  }
+}
