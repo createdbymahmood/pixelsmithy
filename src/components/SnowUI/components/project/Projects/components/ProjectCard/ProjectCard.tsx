@@ -1,31 +1,12 @@
 import {Avatar, Group, Progress, rem, Stack, Text, Title} from '@mantine/core'
 import {Butterfly} from '@phosphor-icons/react/dist/ssr'
-import {get, startCase} from 'lodash-es'
+
+import {
+  getStatusByIndex,
+  Status,
+} from '@/components/SnowUI/components/project/Projects/components/Status/Status'
 
 import styles from './ProjectCard.module.scss'
-
-const statusMap = {
-  complete: {
-    color: 'var(--mantine-color-green-7)',
-    percentage: 100,
-  },
-  inProgress: {
-    color: 'var(--mantine-color-indigo-4)',
-    percentage: 40,
-  },
-  rejected: {
-    color: 'var(--mantine-color-gray-5)',
-    percentage: 60,
-  },
-  pending: {
-    color: 'var(--mantine-color-blue-4)',
-    percentage: 10,
-  },
-  approved: {
-    color: 'var(--mantine-color-yellow-6)',
-    percentage: 12,
-  },
-} as const
 
 function ProjectCardHeader() {
   return (
@@ -38,32 +19,6 @@ function ProjectCardHeader() {
       </Stack>
       <Butterfly size={40} weight='thin' />
     </Group>
-  )
-}
-
-interface ProgressStateProps {
-  index: number
-}
-
-function getStatusByIndex(index: number) {
-  const projectIndex = index % Object.keys(statusMap).length
-  const statusKey = get(
-    Object.keys(statusMap),
-    projectIndex,
-  ) as keyof typeof statusMap
-  const status = get(statusMap, statusKey)
-  return {status, statusKey}
-}
-
-function ProgressState({index}: ProgressStateProps) {
-  const {status, statusKey} = getStatusByIndex(index)
-
-  return (
-    <Stack>
-      <Text c={status.color} className={styles.status} size='xs'>
-        {startCase(statusKey)}
-      </Text>
-    </Stack>
   )
 }
 
@@ -83,7 +38,7 @@ function ProjectCardStatus({index}: ProjectCardStatusProps) {
           <Avatar size={24} />
           <Avatar size={24}>+5</Avatar>
         </Avatar.Group>
-        <ProgressState index={index} />
+        <Status index={index} />
       </Group>
 
       <Progress color={status.color} value={status.percentage} />

@@ -1,7 +1,8 @@
 import type {MantineThemeComponents} from '@mantine/core'
-import {MultiSelect, Timeline} from '@mantine/core'
+import {MultiSelect, rem, Table, Timeline} from '@mantine/core'
 
 import AutocompleteStyles from './Autocomplete.module.scss'
+import TableStyles from './Table.module.scss'
 import TimelineStyles from './Timeline.module.scss'
 
 export const components: MantineThemeComponents = {
@@ -20,6 +21,21 @@ export const components: MantineThemeComponents = {
       return {
         item: TimelineStyles.item,
         itemTitle: TimelineStyles.itemTitle,
+      }
+    },
+  }),
+
+  Table: Table.extend({
+    defaultProps: {
+      verticalSpacing: rem(8),
+    },
+    classNames(theme, props, ctx) {
+      return {
+        table: TableStyles.table,
+        thead: TableStyles.thead,
+        th: TableStyles.th,
+        tr: TableStyles.tr,
+        td: TableStyles.td,
       }
     },
   }),
