@@ -11,8 +11,9 @@ import {
   ProjectBudget,
   ProjectOverview,
   ProjectSettings,
+  ProjectTargets,
+  ProjectUsers,
 } from '@/components/SnowUI'
-import {ProjectTargets} from '@/components/SnowUI/components/project/ProjectTargets/ProjectTargets'
 
 interface QueryParams extends Params {
   section: ValuesType<typeof projectDetailsSections>
@@ -30,7 +31,7 @@ export function ProjectDetails() {
     settings: <ProjectSettings />,
     overview: <ProjectOverview />,
     targets: <ProjectTargets />,
-    users: <Fragment />,
+    users: <ProjectUsers />,
   }
 
   const element = get(elementsMap, params.section, null)

@@ -1,0 +1,13 @@
+.control {
+  border: none;
+  @include border-radius(var(--mantine-radius-md));
+
+  &[data-active] {
+    background-color: var(--mantine-color-gray-1);
+    color: var(--mantine-color-black);
+  }
+}
+
+.root {
+  align-self: flex-end;
+}
