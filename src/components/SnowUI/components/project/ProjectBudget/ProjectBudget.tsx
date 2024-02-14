@@ -19,7 +19,7 @@ import {isEqual} from 'lodash-es'
 import type {ReactNode} from 'react'
 import React, {Fragment, useState} from 'react'
 
-import {SaveFloatingActionButons} from '@/components/SnowUI/components/project/components/SaveFloatingActionButons'
+import {SaveFloatingActionButons} from '@/components/SnowUI/components/project/components'
 
 import styles from './ProjectBudget.module.scss'
 
@@ -118,7 +118,7 @@ interface SettingsCardProps {
   children: ReactNode
 }
 
-function SettingsCard({children, title}: SettingsCardProps) {
+export function SettingsCard({children, title}: SettingsCardProps) {
   const isValidElement = React.isValidElement(children)
   const Wrapper = isValidElement ? Fragment : Text
   const wrapperProps = isValidElement ? {} : {size: 'sm'}
@@ -151,7 +151,7 @@ function OveruseNotificartionSettings() {
     <SettingsCard title='Overuse Notifications'>
       <Group gap='lg'>
         <Checkbox label='Email' defaultChecked />
-        <Checkbox label='Phone' defaultChecked />
+        <Checkbox label='Phone' />
       </Group>
     </SettingsCard>
   )
