@@ -3,6 +3,7 @@ import dayJS from 'dayjs'
 import React from 'react'
 
 import {Status} from '@/components/SnowUI'
+import {dateToString} from '@/components/SnowUI/utils/date'
 
 const elements = [
   {
@@ -40,7 +41,7 @@ function TableContent() {
           <Avatar size={rem(24)} /> {element.manager}
         </Group>
       </Table.Td>
-      <Table.Td>{element.date.format('MMM DD, YYYY')}</Table.Td>
+      <Table.Td>{dateToString(element.date)}</Table.Td>
       <Table.Td>{element.amount}</Table.Td>
       <Table.Td>
         <Status index={index} />

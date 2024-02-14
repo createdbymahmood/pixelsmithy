@@ -1,63 +1,104 @@
 'use client'
 
-import {Avatar, Group, Pagination, rem, Stack, Table} from '@mantine/core'
+import {
+  Avatar,
+  Checkbox,
+  Group,
+  Pagination,
+  rem,
+  Stack,
+  Table,
+  Text,
+} from '@mantine/core'
+import {CalendarBlank} from '@phosphor-icons/react/dist/ssr'
+import {useSelections} from 'ahooks'
 import dayJS from 'dayjs'
-import React from 'react'
+import type {ChangeEvent} from 'react'
 
-import {Status, TableFilters} from '@/components/SnowUI'
+import {TableFilters} from '@/components/SnowUI'
+import {useTableState} from '@/components/SnowUI/hooks/useTableState'
+import {dateToString} from '@/components/SnowUI/utils/date'
 
 const elements = [
   {
-    manager: 'ByeWind',
-    date: dayJS().subtract(4, 'years').subtract(1, 'months'),
-    amount: '$942.00',
-    status: 'Completed',
+    user: 'ByeWind',
+    registrationDate: dayJS().subtract(4, 'years').subtract(1, 'months'),
+    email: 'example@gmail.com',
   },
   {
-    manager: 'Natali Craig',
-    date: dayJS().subtract(1, 'year').subtract(5, 'months').subtract(2, 'days'),
-    amount: '$881.00',
-    status: 'Completed',
+    user: 'Natali Craig',
+    registrationDate: dayJS()
+      .subtract(1, 'year')
+      .subtract(5, 'months')
+      .subtract(2, 'days'),
+    email: 'example@gmail.com',
   },
   {
-    manager: 'Drew Cano',
-    date: dayJS().subtract(5, 'months').subtract(10, 'days'),
-    amount: '$409.00',
-    status: 'Completed',
+    user: 'Drew Cano',
+    registrationDate: dayJS().subtract(5, 'months').subtract(10, 'days'),
+    email: 'example@gmail.com',
   },
   {
-    manager: 'Orlando Diggs',
-    date: dayJS().subtract(1, 'month').subtract(25, 'days'),
-    amount: '$953.00',
-    status: 'Completed',
+    user: 'Orlando Diggs',
+    registrationDate: dayJS().subtract(1, 'month').subtract(25, 'days'),
+    email: 'example@gmail.com',
   },
-  {manager: 'Andi Lane', date: dayJS(), amount: '$907.00', status: 'Completed'},
+  {
+    user: 'Andi Lane',
+    registrationDate: dayJS(),
+    email: 'example@gmail.com',
+  },
 ]
 
 function TableContent() {
-  const rows = elements.map((element, index) => (
-    <Table.Tr key={element.manager}>
-      <Table.Td>
-        <Group gap={rem(5)}>
-          <Avatar size={rem(24)} /> {element.manager}
-        </Group>
-      </Table.Td>
-      <Table.Td>{element.date.format('MMM DD, YYYY')}</Table.Td>
-      <Table.Td>{element.amount}</Table.Td>
-      <Table.Td>
-        <Status index={index} />
-      </Table.Td>
-    </Table.Tr>
-  ))
+  const {onAllSelectionsChange, onItemSelectionChange, selections} =
+    useTableState(elements.map((element) => element.user))
 
+  const rows = elements.map((element) => {
+    return (
+      <Table.Tr key={element.user}>
+        <Table.Td>
+          <Group>
+            <Checkbox
+              checked={selections.isSelected(element.user)}
+              size='xs'
+              onChange={onItemSelectionChange(element.user)}
+            />
+            <Avatar size={rem(24)} />
+            <Text size='xs'>{element.user}</Text>
+          </Group>
+        </Table.Td>
+        <Table.Td>{element.email}</Table.Td>
+        <Table.Td>
+          <Group gap={rem(5)}>
+            <CalendarBlank size={16} />
+            {dateToString(element.registrationDate)}
+          </Group>
+        </Table.Td>
+      </Table.Tr>
+    )
+  })
+
+  const indeterminate = (() => {
+    if (selections.allSelected || selections.noneSelected) return false
+    return true
+  })()
   return (
     <Table>
       <Table.Thead>
         <Table.Tr>
-          <Table.Th>Manager</Table.Th>
-          <Table.Th>Date</Table.Th>
-          <Table.Th>Amount</Table.Th>
-          <Table.Th>Status</Table.Th>
+          <Table.Th>
+            <Group>
+              <Checkbox
+                indeterminate={indeterminate}
+                size='xs'
+                onChange={onAllSelectionsChange}
+              />
+              <Text size='xs'>Manager</Text>
+            </Group>
+          </Table.Th>
+          <Table.Th>Email</Table.Th>
+          <Table.Th>Registration Date</Table.Th>
         </Table.Tr>
       </Table.Thead>
       <Table.Tbody>{rows}</Table.Tbody>

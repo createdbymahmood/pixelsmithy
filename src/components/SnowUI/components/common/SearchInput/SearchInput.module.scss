@@ -1,0 +1,7 @@
+.searchInput {
+  background: var(--mantine-color-gray-0);
+  border-color: var(--mantine-color-gray-2);
+  @include border-radius(var(--mantine-radius-md));
+  width: rem(160px);
+  margin-left: auto;
+}

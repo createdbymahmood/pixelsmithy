@@ -19,14 +19,6 @@
   color: var(--mantine-color-gray-6);
 }
 
-.searchInput {
-  background: var(--mantine-color-gray-1);
-  border: none;
-  @include border-radius(var(--mantine-radius-md));
-  width: rem(160px);
-  margin-left: auto;
-}
-
 .searchInputWrapper {
   margin-left: auto;
 }

@@ -1,13 +1,9 @@
 'use client'
 
-import {Card, Group, Input} from '@mantine/core'
-import {
-  FunnelSimple,
-  MagnifyingGlass,
-  Plus,
-  SortAscending,
-} from '@phosphor-icons/react/dist/ssr'
-import React from 'react'
+import {Card, Group} from '@mantine/core'
+import {FunnelSimple, Plus, SortAscending} from '@phosphor-icons/react/dist/ssr'
+
+import {SearchInput} from '@/components/SnowUI'
 
 import styles from './TableFilters.module.scss'
 
@@ -16,17 +12,11 @@ export function TableFilters() {
     <Card className={styles.root}>
       <Group>
         <Group>
-          <Plus />
-          <FunnelSimple />
-          <SortAscending />
+          <Plus className={styles.icon} />
+          <FunnelSimple className={styles.icon} />
+          <SortAscending className={styles.icon} />
         </Group>
-
-        <Input
-          leftSection={<MagnifyingGlass />}
-          ml='auto'
-          placeholder='Search'
-          size='xs'
-        />
+        <SearchInput ml='auto' size='xs' />
       </Group>
     </Card>
   )

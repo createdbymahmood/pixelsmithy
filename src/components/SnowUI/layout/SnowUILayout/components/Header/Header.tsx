@@ -1,15 +1,16 @@
-import {Anchor, Breadcrumbs, Group, Input} from '@mantine/core'
-import type {IconWeight} from '@phosphor-icons/react/dist/ssr'
+import {Anchor, Breadcrumbs, Group} from '@mantine/core'
+import type {IconWeight} from '@phosphor-icons/react'
 import {
   Bell,
   ClockCounterClockwise,
   Command,
-  MagnifyingGlass,
   Sidebar,
   Star,
   Sun,
 } from '@phosphor-icons/react/dist/ssr'
 import {Fragment} from 'react'
+
+import {SearchInput} from '@/components/SnowUI'
 
 import styles from './Header.module.scss'
 
@@ -45,18 +46,7 @@ function HeaderSearchInput() {
     </Fragment>
   )
 
-  return (
-    <Input
-      classNames={{
-        input: styles.searchInput,
-        wrapper: styles.searchInputWrapper,
-      }}
-      leftSection={<MagnifyingGlass />}
-      placeholder='Search'
-      rightSection={rightSection}
-      size='xs'
-    />
-  )
+  return <SearchInput ml='auto' rightSection={rightSection} />
 }
 
 export function Header() {
