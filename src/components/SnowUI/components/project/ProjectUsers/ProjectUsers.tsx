@@ -1,8 +1,8 @@
-import {Avatar, Card, Group, rem, Stack, Table, Title} from '@mantine/core'
+import {Avatar, Group, Pagination, rem, Stack, Table} from '@mantine/core'
 import dayJS from 'dayjs'
 import React from 'react'
 
-import {Status} from '@/components/SnowUI'
+import {Status, TableFilters} from '@/components/SnowUI'
 
 const elements = [
   {
@@ -58,17 +58,17 @@ function TableContent() {
           <Table.Th>Status</Table.Th>
         </Table.Tr>
       </Table.Thead>
-
       <Table.Tbody>{rows}</Table.Tbody>
     </Table>
   )
 }
 
-export function ProjectSpendingsTable() {
+export function ProjectUsers() {
   return (
-    <Stack component={Card} gap='xs'>
-      <Title order={5}>Project Spendings</Title>
+    <Stack>
+      <TableFilters />
       <TableContent />
+      <Pagination size='sm' total={5} />
     </Stack>
   )
 }

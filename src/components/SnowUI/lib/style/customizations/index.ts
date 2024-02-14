@@ -1,10 +1,20 @@
 import type {MantineThemeComponents} from '@mantine/core'
-import {Button, Card, MultiSelect, rem, Table, Timeline} from '@mantine/core'
+import {
+  Button,
+  Card,
+  MultiSelect,
+  Pagination,
+  rem,
+  Table,
+  Timeline,
+} from '@mantine/core'
+import {CaretLeft, CaretRight} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 
 import AutocompleteStyles from './Autocomplete.module.scss'
 import ButtonStyles from './Button.module.scss'
 import CardStyles from './Card.module.scss'
+import PaginationStyles from './Pagination.module.scss'
 import TableStyles from './Table.module.scss'
 import TimelineStyles from './Timeline.module.scss'
 
@@ -31,6 +41,7 @@ export const components: MantineThemeComponents = {
   Table: Table.extend({
     defaultProps: {
       verticalSpacing: rem(8),
+      withRowBorders: false,
     },
     classNames(theme, props, ctx) {
       return {
@@ -54,6 +65,18 @@ export const components: MantineThemeComponents = {
       const isLightVariant = props.variant === 'light'
       return {
         root: clsx(ButtonStyles.root, {[ButtonStyles.light]: isLightVariant}),
+      }
+    },
+  }),
+  Pagination: Pagination.extend({
+    defaultProps: {
+      nextIcon: CaretRight,
+      previousIcon: CaretLeft,
+    },
+    classNames(theme, props, ctx) {
+      return {
+        root: PaginationStyles.root,
+        control: PaginationStyles.control,
       }
     },
   }),
