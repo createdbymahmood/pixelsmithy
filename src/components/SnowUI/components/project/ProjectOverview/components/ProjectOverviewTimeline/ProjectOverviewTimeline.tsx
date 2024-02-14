@@ -82,13 +82,18 @@ function TimelineHeader() {
       <Text className={styles.weekDay} size='xs'>
         {day.day}
       </Text>
+
       <Text className={styles.weekDate} size='xs'>
         {day.date}
       </Text>
     </Stack>
   ))
 
-  return <Group justify='space-between'>{content}</Group>
+  return (
+    <Group gap='0' justify='space-between' wrap='nowrap'>
+      {content}
+    </Group>
+  )
 }
 
 export function ProjectOverviewTimeline() {
