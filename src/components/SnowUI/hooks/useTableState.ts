@@ -21,5 +21,12 @@ export function useTableState<T>(items: T[], defaultSelected?: T[]) {
       }
     }
 
-  return {onAllSelectionsChange, onItemSelectionChange, selections}
+  const indeterminate = !(selections.allSelected || selections.noneSelected)
+
+  return {
+    onAllSelectionsChange,
+    onItemSelectionChange,
+    selections,
+    indeterminate,
+  }
 }

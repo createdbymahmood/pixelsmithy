@@ -51,8 +51,12 @@ const elements = [
 ]
 
 function TableContent() {
-  const {onAllSelectionsChange, onItemSelectionChange, selections} =
-    useTableState(elements.map((element) => element.user))
+  const {
+    onAllSelectionsChange,
+    onItemSelectionChange,
+    selections,
+    indeterminate,
+  } = useTableState(elements.map((element) => element.user))
 
   const rows = elements.map((element) => {
     return (
@@ -79,10 +83,6 @@ function TableContent() {
     )
   })
 
-  const indeterminate = (() => {
-    if (selections.allSelected || selections.noneSelected) return false
-    return true
-  })()
   return (
     <Table>
       <Table.Thead>
