@@ -7,7 +7,11 @@ import {Fragment} from 'react'
 import type {ValuesType} from 'utility-types'
 
 import type {projectDetailsSections} from '@/components/SnowUI'
-import {ProjectBudget, ProjectOverview} from '@/components/SnowUI'
+import {
+  ProjectBudget,
+  ProjectOverview,
+  ProjectSettings,
+} from '@/components/SnowUI'
 import {ProjectTargets} from '@/components/SnowUI/components/project/ProjectTargets/ProjectTargets'
 
 interface QueryParams extends Params {
@@ -23,7 +27,7 @@ export function ProjectDetails() {
     activity: <Fragment />,
     budget: <ProjectBudget />,
     files: <Fragment />,
-    settings: <Fragment />,
+    settings: <ProjectSettings />,
     overview: <ProjectOverview />,
     targets: <ProjectTargets />,
     users: <Fragment />,
