@@ -1,6 +1,6 @@
 import type {InputProps} from '@mantine/core'
 import {Input} from '@mantine/core'
-import {MagnifyingGlass} from '@phosphor-icons/react'
+import {MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 import {inter} from '@/components/SnowUI/layout/SnowUIProviders'
