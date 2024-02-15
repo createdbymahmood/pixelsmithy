@@ -1,5 +1,12 @@
+'use client'
 import React from 'react'
 
+import {ProfileDetails} from './components'
+
 export function AccountOverview() {
-  return <div>AccountOverview</div>
+  return (
+    <div>
+      <ProfileDetails />
+    </div>
+  )
 }
