@@ -1,17 +1,11 @@
 import {Button, Card, Group, rem, Stack, Text, Title} from '@mantine/core'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
-import type {IconProps} from '@phosphor-icons/react'
-import {
-  DownloadSimple,
-  FilePdf,
-  FileXls,
-  Image,
-  Upload,
-  X,
-} from '@phosphor-icons/react/dist/ssr'
+import {DownloadSimple, Upload, X} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
-import type {FC} from 'react'
+import {get} from 'lodash-es'
 import {Fragment} from 'react'
+
+import {iconMap} from '@/components/SnowUI/utils/icons'
 
 import styles from './ProjectOverviewFilesList.module.scss'
 
@@ -22,20 +16,7 @@ interface FileItem {
 }
 
 function FileItem({info, name, type}: FileItem) {
-  const Icon: FC<IconProps> = (() => {
-    switch (type) {
-      case 'img':
-        return Image
-
-      case 'pdf':
-        return FilePdf
-      case 'xlsx':
-        return FileXls
-
-      default:
-        return Fragment
-    }
-  })()
+  const Icon = get(iconMap, type, Fragment)
 
   return (
     <Group className={styles.file} gap='sm' w='100%'>
@@ -55,7 +36,7 @@ function FileItem({info, name, type}: FileItem) {
   )
 }
 
-const files: FileItem[] = [
+export const files: FileItem[] = [
   {
     name: 'Project tech requirements.pdf',
     info: '5.6 MB / Just now / Karina Clark',
