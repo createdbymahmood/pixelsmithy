@@ -20,6 +20,7 @@ export const urls = {
     },
     account: {
       index: '/snow-ui/account',
+      page: (section: string) => urlCat('/snow-ui/account/:section', {section}),
     },
   },
 }
