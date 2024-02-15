@@ -183,10 +183,10 @@ export function Sidebar() {
         }, */
       ],
     },
-    /*  {
+    {
       title: 'Pages',
       items: [
-        {
+        /*  {
           id: 'userProfile',
           href: '/',
           title: 'User Profile',
@@ -218,16 +218,17 @@ export function Sidebar() {
               title: 'Followers',
             },
           ],
-        },
+        }, */
         {
           id: 'account',
-          href: '/',
+          href: urls.SnowUI.account.index,
           title: 'Account',
           icon: IdentificationCard,
           children: [],
+          activeSegment: 'account',
         },
 
-        {
+        /*  {
           id: 'corporate',
           href: '/',
           title: 'Corporate',
@@ -247,9 +248,9 @@ export function Sidebar() {
           title: 'Social',
           icon: ChatsTeardrop,
           children: [],
-        },
+        }, */
       ],
-    }, */
+    },
   ]
 
   return (

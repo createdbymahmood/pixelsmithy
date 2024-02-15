@@ -18,6 +18,9 @@ export const urls = {
           section,
         }),
     },
+    account: {
+      index: '/snow-ui/account',
+    },
   },
 }
 export const applications = [
