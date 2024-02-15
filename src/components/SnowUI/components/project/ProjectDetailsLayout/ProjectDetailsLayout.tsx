@@ -12,8 +12,6 @@ import type {ReactNode} from 'react'
 
 import {urls} from '@/constants'
 
-import styles from './ProjectDetailsLayout.module.scss'
-
 interface ProjectOverviewProps {
   children: ReactNode
 }
@@ -46,7 +44,6 @@ export function ProjectDetailsLayout({children}: ProjectOverviewProps) {
     return (
       <Tab
         key={tab}
-        classNames={{tab: styles.tab}}
         component={Link}
         href={urls.SnowUI.projects.details(
           '6cf7e844-a4a2-40c3-b7a4-a9ac8a0593de',
@@ -61,7 +58,7 @@ export function ProjectDetailsLayout({children}: ProjectOverviewProps) {
 
   return (
     <Tabs defaultValue={params.section}>
-      <Tabs.List classNames={{list: styles.list}}>{content}</Tabs.List>
+      <Tabs.List>{content}</Tabs.List>
       <Box mt='lg'>{children}</Box>
     </Tabs>
   )
