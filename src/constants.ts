@@ -19,7 +19,7 @@ export const urls = {
         }),
     },
     account: {
-      index: '/snow-ui/account',
+      index: '/snow-ui/account/overview',
       page: (section: string) => urlCat('/snow-ui/account/:section', {section}),
     },
   },
