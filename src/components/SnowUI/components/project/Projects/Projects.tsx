@@ -100,7 +100,7 @@ function ProjectsList() {
 
 export function Projects() {
   return (
-    <Stack gap='xl'>
+    <Stack gap='lg'>
       <Title order={5}>My Projects</Title>
       <ProjectsOverview />
       <ProjectsList />

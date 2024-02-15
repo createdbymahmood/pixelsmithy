@@ -45,7 +45,7 @@ const notifications: Notification[] = [
   },
   {
     title: 'Andi Lane subscribed to you',
-    date: dayJS().set('hour', 12).set('minutes', 59),
+    date: dayJS().subtract(1, 'day').set('hour', 12).set('minutes', 59),
     type: 'subscribe',
   },
 ]
