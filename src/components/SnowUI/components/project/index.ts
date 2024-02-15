@@ -1,5 +1,7 @@
+export * from './ProjectActivity'
 export * from './ProjectBudget'
 export * from './ProjectDetailsLayout'
+export * from './ProjectFiles'
 export * from './ProjectOverview'
 export * from './Projects'
 export * from './ProjectSettings'

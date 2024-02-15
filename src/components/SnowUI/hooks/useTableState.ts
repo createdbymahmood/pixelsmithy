@@ -2,7 +2,15 @@ import {useCallbackRef} from '@mantine/hooks'
 import {useSelections} from 'ahooks'
 import type {ChangeEvent} from 'react'
 
-export function useTableState<T>(items: T[], defaultSelected?: T[]) {
+interface UseTableStateParams<T> {
+  items: T[]
+  defaultSelected?: T[]
+}
+
+export function useTableState<T>({
+  items,
+  defaultSelected,
+}: UseTableStateParams<T>) {
   const selections = useSelections<T>(items, defaultSelected)
 
   const onAllSelectionsChange = useCallbackRef(

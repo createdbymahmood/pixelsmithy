@@ -11,9 +11,7 @@ import {
   Text,
 } from '@mantine/core'
 import {CalendarBlank} from '@phosphor-icons/react/dist/ssr'
-import {useSelections} from 'ahooks'
 import dayJS from 'dayjs'
-import type {ChangeEvent} from 'react'
 
 import {TableFilters} from '@/components/SnowUI'
 import {useTableState} from '@/components/SnowUI/hooks/useTableState'
@@ -56,7 +54,7 @@ function TableContent() {
     onItemSelectionChange,
     selections,
     indeterminate,
-  } = useTableState(elements.map((element) => element.user))
+  } = useTableState({items: elements.map((element) => element.user)})
 
   const rows = elements.map((element) => {
     return (
