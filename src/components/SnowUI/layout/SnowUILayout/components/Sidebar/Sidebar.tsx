@@ -16,6 +16,7 @@ import {useSelections} from 'ahooks'
 import clsx from 'clsx'
 import {isArray, isEmpty} from 'lodash-es'
 import Link from 'next/link'
+import {useSelectedLayoutSegment} from 'next/navigation'
 import React, {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -32,6 +33,7 @@ interface SidebarItem {
   filledIcon?: React.FC<IconProps>
   href: string
   children?: SidebarItem[]
+  activeSegment: string
 }
 
 interface SidebarSection {
@@ -49,6 +51,8 @@ interface SidebarItemsProps {
 }
 
 const SidebarItems = ({items, selections}: SidebarItemsProps) => {
+  const segment = useSelectedLayoutSegment()
+
   const content = items.map((item) => {
     const withChildren = isArray(item.children) && !isEmpty(item.children)
 
@@ -58,13 +62,12 @@ const SidebarItems = ({items, selections}: SidebarItemsProps) => {
     }
 
     const children = (() => {
-      // if (!opened) return null
       return withChildren ? (
         <SidebarItems items={item.children!} selections={selections} />
       ) : null
     })()
 
-    const opened = selections.isSelected(item.id)
+    const opened = segment === item.activeSegment
     const withIcon = !isEmpty(item.icon)
     const Icon = (() => {
       if (!opened) return item.icon ?? Fragment
@@ -144,40 +147,43 @@ export function Sidebar() {
     {
       title: 'Dashboards',
       items: [
-        {
+        /*  {
           id: 'Dashboards',
           icon: ChartPieSlice,
           href: '/',
           title: 'Overview',
+          activeSegment: '',
           children: [
             {
               id: 'Overview',
               href: '/',
               title: 'Icon360',
+              activeSegment: '',
             },
           ],
-        },
-        {
+        }, */
+        /*  {
           id: 'eCommerce',
           title: 'eCommerce',
           icon: ShoppingBagOpen,
           href: '/',
-        },
+        }, */
         {
           id: 'projects',
           title: 'Projects',
           icon: FolderNotch,
           href: urls.SnowUI.projects.overview,
+          activeSegment: 'projects',
         },
-        {
+        /*   {
           id: 'onlineCourses',
           title: 'Online Courses',
           icon: Notebook,
           href: '/',
-        },
+        }, */
       ],
     },
-    {
+    /*  {
       title: 'Pages',
       items: [
         {
@@ -243,7 +249,7 @@ export function Sidebar() {
           children: [],
         },
       ],
-    },
+    }, */
   ]
 
   return (
