@@ -2,8 +2,10 @@ import {get} from 'lodash-es'
 import type {Metadata} from 'next'
 import type {ValuesType} from 'utility-types'
 
+import {sleep} from '@/app/snow-ui/projects/page'
 import type {projectDetailsSections} from '@/components/SnowUI'
-import {ProjectDetails} from '@/components/SnowUI/components/project/ProjectDetails/ProjectDetails'
+import {ProjectDetails as ProjectDetailsImpl} from '@/components/SnowUI/components/project/ProjectDetails/ProjectDetails'
+import {defaultLoadingScreenDelayMS} from '@/constants'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 interface Props {
@@ -30,4 +32,7 @@ export function generateMetadata({params}: Props): Metadata {
   return metadata
 }
 
-export default ProjectDetails
+export default async function ProjectDetails() {
+  await sleep(defaultLoadingScreenDelayMS)
+  return <ProjectDetailsImpl />
+}
