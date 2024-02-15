@@ -2,9 +2,9 @@ import {startCase} from 'lodash-es'
 import type {Metadata} from 'next'
 import React from 'react'
 
-import {sleep} from '@/app/snow-ui/projects/page'
 import {defaultLoadingScreenDelayMS} from '@/constants'
 import {constructMetadata} from '@/utils/constructMetadata'
+import {sleep} from '@/utils/sleep'
 
 interface Props {
   params: {section: string}
