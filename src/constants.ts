@@ -13,7 +13,7 @@ export const urls = {
     projects: {
       overview: '/snow-ui/projects',
       details: (projectId: string, section: string) =>
-        urlCat('/snow-ui/projects/:projectId/details/:section', {
+        urlCat('/snow-ui/projects/:projectId/:section', {
           projectId,
           section,
         }),
