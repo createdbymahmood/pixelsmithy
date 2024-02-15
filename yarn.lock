@@ -1929,6 +1929,18 @@
   resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-7.5.1.tgz#c95855e9bfcffca26a22f21389ff6c3157113758"
   integrity sha512-LfrEOkX8U2KbkYAU5BMA7FPbMva/TSd65c45W35wHSx3iqYMsoPN9+Ll1zc/HT0XNFp73jGet9cU7VREbAl0/A==
 
+"@mantine/spotlight@7.5.2":
+  version "7.5.2"
+  resolved "https://registry.yarnpkg.com/@mantine/spotlight/-/spotlight-7.5.2.tgz#01a5c8f0dad23ecb632114dd3c1c5578b8a3aa2c"
+  integrity sha512-2z23INFOUAvtPpeiXaqJDCakKo1asCGzlyg1FJ3AByZOrGtyT1WY3tAo/0XXFaKh+dUmcj7HcQcEEobJL5QKzQ==
+  dependencies:
+    "@mantine/store" "7.5.2"
+
+"@mantine/store@7.5.2":
+  version "7.5.2"
+  resolved "https://registry.yarnpkg.com/@mantine/store/-/store-7.5.2.tgz#adfea0d01d2ca572fe5fe1e43363cbccc18f97ef"
+  integrity sha512-au53HLLH/LfHLOR2Zb00TgG11xAXZNJb4jqsEhAr90axCIw6mlBDIAhbb+Yu6OwDaV7TscE/sonkUstmRjLh/w==
+
 "@mdx-js/react@^2.1.5":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-2.3.0.tgz#4208bd6d70f0d0831def28ef28c26149b03180b3"

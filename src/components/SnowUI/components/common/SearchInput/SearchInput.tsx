@@ -1,13 +1,15 @@
 import type {InputProps} from '@mantine/core'
 import {Input} from '@mantine/core'
 import {MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
-import React from 'react'
+import type {ComponentPropsWithoutRef} from 'react'
 
 import {inter} from '@/components/SnowUI/layout/SnowUIProviders'
 
 import styles from './SearchInput.module.scss'
 
-interface SearchInputProps extends InputProps {}
+interface SearchInputProps
+  extends InputProps,
+    Omit<ComponentPropsWithoutRef<'input'>, 'size' | 'style'> {}
 
 export function SearchInput(props: SearchInputProps) {
   return (
