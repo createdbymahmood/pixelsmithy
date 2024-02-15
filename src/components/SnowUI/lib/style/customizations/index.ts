@@ -6,6 +6,7 @@ import {
   Pagination,
   rem,
   Table,
+  Tabs,
   Timeline,
 } from '@mantine/core'
 import {CaretLeft, CaretRight} from '@phosphor-icons/react/dist/ssr'
@@ -16,6 +17,7 @@ import ButtonStyles from './Button.module.scss'
 import CardStyles from './Card.module.scss'
 import PaginationStyles from './Pagination.module.scss'
 import TableStyles from './Table.module.scss'
+import TabsStyles from './Tabs.module.scss'
 import TimelineStyles from './Timeline.module.scss'
 
 export const components: MantineThemeComponents = {
@@ -77,6 +79,14 @@ export const components: MantineThemeComponents = {
       return {
         root: PaginationStyles.root,
         control: PaginationStyles.control,
+      }
+    },
+  }),
+  Tabs: Tabs.extend({
+    classNames(theme, props, ctx) {
+      return {
+        list: TabsStyles.list,
+        tab: TabsStyles.tab,
       }
     },
   }),

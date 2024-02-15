@@ -27,7 +27,7 @@ const initialOpenedTab = head(tabs)?.key
 
 export function SidebarTabsQuickNavigation() {
   const tabsList = tabs.map((tab) => (
-    <Tabs.Tab key={tab.key} value={tab.key}>
+    <Tabs.Tab key={tab.key} className={styles.tab} value={tab.key}>
       {tab.title}
     </Tabs.Tab>
   ))
@@ -66,7 +66,7 @@ export function SidebarTabsQuickNavigation() {
       unstyled
     >
       <Tabs.List>
-        <Group>{tabsList}</Group>
+        <Group gap='xs'>{tabsList}</Group>
       </Tabs.List>
 
       {tabsContent}
