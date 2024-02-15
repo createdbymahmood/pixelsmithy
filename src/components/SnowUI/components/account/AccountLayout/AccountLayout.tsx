@@ -5,13 +5,8 @@ import type {
 } from '@mantine/core'
 import {Box, Tabs} from '@mantine/core'
 import {startCase} from 'lodash-es'
-import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
 import Link from 'next/link'
-import {
-  useParams,
-  useSelectedLayoutSegment,
-  useSelectedLayoutSegments,
-} from 'next/navigation'
+import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
 import {urls} from '@/constants'
