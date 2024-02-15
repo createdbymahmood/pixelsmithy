@@ -19,8 +19,8 @@ function Status() {
       <Text size='sm'>Status</Text>
 
       <Progress.Root classNames={{root: styles.progress}} size={rem(24)}>
-        <Progress.Section color='indigo.2' value={80}>
-          <Progress.Label c='black' style={{width: '100%'}}>
+        <Progress.Section color='indigo.1' value={70}>
+          <Progress.Label c='black' styles={{label: {lineHeight: 1.3}}}>
             In Progress
           </Progress.Label>
         </Progress.Section>
