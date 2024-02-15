@@ -3,7 +3,7 @@ import type {
   TabsTabProps,
   TabsTabStylesNames,
 } from '@mantine/core'
-import {Tabs} from '@mantine/core'
+import {Box, Tabs} from '@mantine/core'
 import {startCase} from 'lodash-es'
 import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
 import Link from 'next/link'
@@ -62,7 +62,7 @@ export function ProjectDetailsLayout({children}: ProjectOverviewProps) {
   return (
     <Tabs defaultValue={params.section}>
       <Tabs.List classNames={{list: styles.list}}>{content}</Tabs.List>
-      {children}
+      <Box mt='lg'>{children}</Box>
     </Tabs>
   )
 }
