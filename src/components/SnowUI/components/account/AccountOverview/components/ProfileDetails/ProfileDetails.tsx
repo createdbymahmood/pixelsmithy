@@ -75,7 +75,11 @@ function Details() {
       </Table.Tr>
     )
   })
-  return <Table horizontalSpacing={0}>{content}</Table>
+  return (
+    <Table horizontalSpacing={0}>
+      <Table.Tbody>{content}</Table.Tbody>
+    </Table>
+  )
 }
 
 export function ProfileDetails() {
