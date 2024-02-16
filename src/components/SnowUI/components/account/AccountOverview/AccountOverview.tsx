@@ -1,12 +1,16 @@
 'use client'
+import {SimpleGrid, Stack} from '@mantine/core'
 import React from 'react'
 
-import {ProfileDetails} from './components'
+import {ProductDelivery, ProfileDetails} from './components'
 
 export function AccountOverview() {
   return (
-    <div>
+    <Stack gap='xl'>
       <ProfileDetails />
-    </div>
+      <SimpleGrid cols={2}>
+        <ProductDelivery />
+      </SimpleGrid>
+    </Stack>
   )
 }
