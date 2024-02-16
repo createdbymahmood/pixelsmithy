@@ -1,14 +1,4 @@
-import {
-  Avatar,
-  Badge,
-  Card,
-  Group,
-  Menu,
-  rem,
-  Stack,
-  Text,
-  Title,
-} from '@mantine/core'
+import {Avatar, Card, Group, Menu, rem, Stack, Text, Title} from '@mantine/core'
 import {ArrowRight} from '@phosphor-icons/react'
 import {
   Chat,
@@ -19,6 +9,9 @@ import {
   Trash,
 } from '@phosphor-icons/react/dist/ssr'
 import {get} from 'lodash-es'
+
+import type {StatusType} from '@/components/SnowUI'
+import {statusBadgeMap} from '@/components/SnowUI'
 
 import styles from './ProductDelivery.module.scss'
 
@@ -89,12 +82,10 @@ function ProductMenu() {
   )
 }
 
-type ProductDeliveryStatus = 'approved' | 'complete' | 'in-progress' | 'pending'
-
 interface Product {
   title: string
   receiver: string
-  status: ProductDeliveryStatus
+  status: StatusType
 }
 
 const products: Product[] = [
@@ -122,17 +113,10 @@ const products: Product[] = [
   },
 ]
 
-const statusBadgeMap: Record<ProductDeliveryStatus, JSX.Element> = {
-  'in-progress': <Badge color='indigo'>In Progress</Badge>,
-  approved: <Badge color='yellow'>Approved</Badge>,
-  complete: <Badge color='green'>Complete</Badge>,
-  pending: <Badge color='blue'>Pending</Badge>,
-}
-
 interface ProductProps {
   title: string
   receiver: string
-  status: ProductDeliveryStatus
+  status: StatusType
 }
 
 function Product({receiver, status, title}: ProductProps) {

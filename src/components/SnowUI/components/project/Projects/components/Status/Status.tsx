@@ -1,8 +1,17 @@
-import {Stack, Text} from '@mantine/core'
+import {Badge, Stack, Text} from '@mantine/core'
 import {get, startCase} from 'lodash-es'
 import React from 'react'
 
 import styles from './Status.module.scss'
+
+export type StatusType = 'approved' | 'complete' | 'in-progress' | 'pending'
+
+export const statusBadgeMap: Record<StatusType, JSX.Element> = {
+  'in-progress': <Badge color='indigo'>In Progress</Badge>,
+  approved: <Badge color='yellow'>Approved</Badge>,
+  complete: <Badge color='green'>Complete</Badge>,
+  pending: <Badge color='blue'>Pending</Badge>,
+}
 
 export const statusMap = {
   complete: {
