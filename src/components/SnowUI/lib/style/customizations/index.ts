@@ -1,5 +1,6 @@
 import type {MantineThemeComponents} from '@mantine/core'
 import {
+  Badge,
   Button,
   Card,
   MultiSelect,
@@ -13,6 +14,7 @@ import {CaretLeft, CaretRight} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 
 import AutocompleteStyles from './Autocomplete.module.scss'
+import BadgeStyles from './Badge.module.scss'
 import ButtonStyles from './Button.module.scss'
 import CardStyles from './Card.module.scss'
 import PaginationStyles from './Pagination.module.scss'
@@ -87,6 +89,19 @@ export const components: MantineThemeComponents = {
       return {
         list: TabsStyles.list,
         tab: TabsStyles.tab,
+      }
+    },
+  }),
+  Badge: Badge.extend({
+    classNames(theme, props, ctx) {
+      const colorClassName = clsx({
+        [BadgeStyles.yellow]: props.color === 'yellow',
+        [BadgeStyles.indigo]: props.color === 'indigo',
+        [BadgeStyles.green]: props.color === 'green',
+        [BadgeStyles.blue]: props.color === 'blue',
+      })
+      return {
+        root: clsx(BadgeStyles.root, colorClassName),
       }
     },
   }),

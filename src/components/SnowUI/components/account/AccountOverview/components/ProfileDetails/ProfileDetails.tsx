@@ -3,6 +3,7 @@ import {
   Badge,
   Card,
   Group,
+  rem,
   Stack,
   Table,
   Text,
@@ -34,9 +35,9 @@ function PaymentMethodAlert() {
 
 function Header() {
   return (
-    <Group gap='xs'>
+    <Group align='baseline' gap={rem(5)}>
       <Title order={5}>Profile Details</Title>
-      <Text c='dimmed' className={styles.edit} size='sm'>
+      <Text c='dimmed' className={styles.edit} size='xs'>
         Edit Profile
       </Text>
     </Group>
@@ -66,7 +67,7 @@ function Details() {
           <Group gap='xs'>
             <Text size='xs'>{element.value}</Text>
             {element.isVerified ? (
-              <Badge className={styles.verifiedBadge} size='sm'>
+              <Badge color='green' size='sm'>
                 Verified
               </Badge>
             ) : null}
