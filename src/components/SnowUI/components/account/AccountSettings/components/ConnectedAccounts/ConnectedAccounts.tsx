@@ -10,7 +10,7 @@ import {
   Text,
   Title,
 } from '@mantine/core'
-import {ShieldCheck} from '@phosphor-icons/react'
+import {ShieldCheck} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 import styles from './ConnectedAccounts.module.scss'

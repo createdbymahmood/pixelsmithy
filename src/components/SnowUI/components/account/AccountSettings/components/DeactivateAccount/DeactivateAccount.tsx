@@ -1,5 +1,5 @@
 import {Alert, Button, Card, Checkbox, Group, Stack, Title} from '@mantine/core'
-import {Info} from '@phosphor-icons/react'
+import {Info} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 function Header() {
