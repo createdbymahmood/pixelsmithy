@@ -11,18 +11,8 @@ import {
 } from '@mantine/core'
 import React from 'react'
 
+import {SaveActions} from '../common'
 import styles from './EmailPreferences.module.scss'
-
-function SaveActions() {
-  return (
-    <Group gap='xs'>
-      <Button size='xs' variant='light'>
-        Cancel
-      </Button>
-      <Button size='xs'>Save Changes</Button>
-    </Group>
-  )
-}
 
 function Header() {
   return (
@@ -96,7 +86,12 @@ function Preferences() {
     return <Preference key={preference.title} {...preference} />
   })
   return (
-    <SimpleGrid className={styles.stack} cols={{xs: 1, md: 2}}>
+    <SimpleGrid
+      className={styles.stack}
+      cols={{xs: 1, md: 2}}
+      spacing='xl'
+      verticalSpacing='sm'
+    >
       {content}
     </SimpleGrid>
   )

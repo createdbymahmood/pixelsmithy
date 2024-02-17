@@ -1,0 +1,9 @@
+.stack > .col {
+  border-bottom: rem(1px) solid var(--mantine-color-gray-3);
+  padding-bottom: var(--mantine-spacing-lg);
+}
+
+.stack .col:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
