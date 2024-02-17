@@ -1,0 +1,12 @@
+.accountDescription {
+  @include text-truncate(1);
+}
+
+.stack > .col {
+  border-bottom: rem(1px) solid var(--mantine-color-gray-3);
+}
+
+.stack .col:last-child,
+.stack .col:nth-last-child(2) {
+  border-bottom: none;
+}
