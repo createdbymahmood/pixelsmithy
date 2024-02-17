@@ -1,5 +1,5 @@
 import {Button, Card, Group, rem, Stack, Title} from '@mantine/core'
-import {StackOverflowLogo} from '@phosphor-icons/react'
+import {StackOverflowLogo} from '@phosphor-icons/react/dist/ssr'
 
 export function MobileApplicationAnnouncement() {
   return (

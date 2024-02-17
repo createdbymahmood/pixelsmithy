@@ -1,6 +1,6 @@
 import {Avatar, Card, Group, Menu, rem, Stack, Text, Title} from '@mantine/core'
-import {ArrowRight} from '@phosphor-icons/react'
 import {
+  ArrowRight,
   Chat,
   DotsThree,
   Gear,

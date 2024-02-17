@@ -10,7 +10,7 @@
   border: none;
 
   @include light {
-    background-color: var(--mantine-color-gray-1);
+    background-color: var(--mantine-color-white);
   }
 
   @include border-radius(var(--mantine-radius-sm));

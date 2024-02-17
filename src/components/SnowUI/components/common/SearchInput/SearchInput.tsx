@@ -17,7 +17,6 @@ export function SearchInput(props: SearchInputProps) {
       className={inter.className}
       classNames={{
         input: styles.searchInput,
-        wrapper: styles.searchInputWrapper,
       }}
       leftSection={<MagnifyingGlass />}
       placeholder='Search'
