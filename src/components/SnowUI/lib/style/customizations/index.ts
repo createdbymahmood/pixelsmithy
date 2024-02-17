@@ -3,6 +3,7 @@ import {
   Badge,
   Button,
   Card,
+  Input,
   MultiSelect,
   Pagination,
   rem,
@@ -17,6 +18,7 @@ import AutocompleteStyles from './Autocomplete.module.scss'
 import BadgeStyles from './Badge.module.scss'
 import ButtonStyles from './Button.module.scss'
 import CardStyles from './Card.module.scss'
+import InputStyles from './Input.module.scss'
 import PaginationStyles from './Pagination.module.scss'
 import TableStyles from './Table.module.scss'
 import TabsStyles from './Tabs.module.scss'
@@ -102,6 +104,13 @@ export const components: MantineThemeComponents = {
       })
       return {
         root: clsx(BadgeStyles.root, colorClassName),
+      }
+    },
+  }),
+  Input: Input.extend({
+    classNames(theme, props, ctx) {
+      return {
+        input: InputStyles.root,
       }
     },
   }),
