@@ -36,7 +36,7 @@ interface AccountProps {
 
 function Account({defaultConnected, description, title}: AccountProps) {
   return (
-    <Group className={styles.col} pb='lg' wrap='nowrap'>
+    <Group className={styles.col} pb='md' wrap='nowrap'>
       <Avatar size={rem(32)} />
       <Stack gap={rem(4)}>
         <Title order={5}>{title}</Title>
