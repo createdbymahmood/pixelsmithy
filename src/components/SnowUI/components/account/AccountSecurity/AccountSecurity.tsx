@@ -1,14 +1,20 @@
 'use client'
 
-import {Stack} from '@mantine/core'
+import {SimpleGrid, Stack} from '@mantine/core'
 import React from 'react'
 
-import {SignInTimes} from './components'
+import {RecentAlerts, SecurityGuidelines, SignInTimes} from './components'
 
 export function AccountSecurity() {
   return (
     <Stack gap='lg'>
-      <SignInTimes />
+      <SimpleGrid cols={2}>
+        <SignInTimes />
+        <Stack>
+          <RecentAlerts />
+          <SecurityGuidelines />
+        </Stack>
+      </SimpleGrid>
     </Stack>
   )
 }
