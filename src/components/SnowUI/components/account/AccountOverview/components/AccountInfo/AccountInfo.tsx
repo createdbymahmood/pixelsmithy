@@ -1,6 +1,7 @@
 import {
   Avatar,
   Card,
+  Divider,
   Group,
   Progress,
   rem,
@@ -49,7 +50,7 @@ function UserDetails() {
 
 function ProfileCompleationStatus() {
   return (
-    <Stack className={styles.headerSection} miw={rem(160)}>
+    <Stack miw={rem(160)}>
       <Text size='sm'>Proile Compleation</Text>
 
       <Progress.Root classNames={{root: styles.progress}} size={rem(28)}>
@@ -63,9 +64,9 @@ function ProfileCompleationStatus() {
   )
 }
 
-function Earningsg() {
+function Earnings() {
   return (
-    <Stack className={styles.headerSection}>
+    <Stack>
       <Text size='sm'>Earnings</Text>
       <Group gap='sm'>
         <Title order={4}>$4,500</Title>
@@ -76,7 +77,7 @@ function Earningsg() {
 
 function Projects() {
   return (
-    <Stack className={styles.headerSection}>
+    <Stack>
       <Text size='sm'>Projects</Text>
       <Title order={4}>75</Title>
     </Stack>
@@ -85,7 +86,7 @@ function Projects() {
 
 function SuccessRate() {
   return (
-    <Stack className={styles.headerSection}>
+    <Stack>
       <Text size='sm'>Success Rate</Text>
       <Title order={4}>60</Title>
     </Stack>
@@ -96,10 +97,13 @@ export function ProfileStats() {
   return (
     <Group justify='space-between'>
       <Stack>
-        <Group gap={0}>
+        <Group gap='xl'>
           <ProfileCompleationStatus />
-          <Earningsg />
+          <Divider orientation='vertical' />
+          <Earnings />
+          <Divider orientation='vertical' />
           <Projects />
+          <Divider orientation='vertical' />
           <SuccessRate />
         </Group>
       </Stack>
