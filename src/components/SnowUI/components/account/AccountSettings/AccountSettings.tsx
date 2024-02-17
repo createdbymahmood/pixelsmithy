@@ -4,6 +4,7 @@ import React from 'react'
 
 import {
   ConnectedAccounts,
+  DeactivateAccount,
   EmailPreferences,
   NotificationSettings,
   ProfileDetailsSettings,
@@ -18,6 +19,7 @@ export function AccountSettings() {
       <ConnectedAccounts />
       <EmailPreferences />
       <NotificationSettings />
+      <DeactivateAccount />
     </Stack>
   )
 }
