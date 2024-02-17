@@ -2,6 +2,7 @@ import {
   Avatar,
   AvatarGroup,
   Card,
+  Divider,
   Group,
   Progress,
   rem,
@@ -15,7 +16,7 @@ import styles from './ProjectOverviewHeader.module.scss'
 
 function Status() {
   return (
-    <Stack className={styles.headerSection} miw={rem(160)}>
+    <Stack miw={rem(160)}>
       <Text size='sm'>Status</Text>
 
       <Progress.Root classNames={{root: styles.progress}} size={rem(24)}>
@@ -31,7 +32,7 @@ function Status() {
 
 function TotalTasks() {
   return (
-    <Stack className={styles.headerSection}>
+    <Stack>
       <Text size='sm'>Total Tasks</Text>
       <Group gap='sm'>
         <Title order={4}>15</Title>
@@ -46,7 +47,7 @@ function TotalTasks() {
 
 function DueDate() {
   return (
-    <Stack className={styles.headerSection}>
+    <Stack>
       <Text size='sm'>Due Date</Text>
       <Title order={4}>{dayjs().format('DD MMM, YYYY')}</Title>
     </Stack>
@@ -55,7 +56,7 @@ function DueDate() {
 
 function Budget() {
   return (
-    <Stack className={styles.headerSection}>
+    <Stack>
       <Text size='sm'>Budget Spent</Text>
       <Title order={4}>$15,000</Title>
     </Stack>
@@ -69,10 +70,13 @@ export function ProjectOverviewHeader() {
         <Stack>
           <Title order={4}>Snow UI</Title>
 
-          <Group gap={0}>
+          <Group gap='xl'>
             <Status />
+            <Divider orientation='vertical' />
             <TotalTasks />
+            <Divider orientation='vertical' />
             <DueDate />
+            <Divider orientation='vertical' />
             <Budget />
           </Group>
         </Stack>
