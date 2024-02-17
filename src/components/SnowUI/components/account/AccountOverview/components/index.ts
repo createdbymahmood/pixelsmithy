@@ -1,3 +1,4 @@
+export * from './AccountInfo'
 export * from './MobileApplicationAnnouncement'
 export * from './ProductDelivery'
 export * from './ProfileDetails'

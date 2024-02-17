@@ -3,6 +3,7 @@ import {Grid, SimpleGrid, Stack} from '@mantine/core'
 import React from 'react'
 
 import {
+  AccountInfo,
   MobileApplicationAnnouncement,
   ProductDelivery,
   ProfileDetails,
@@ -13,8 +14,8 @@ import {
 export function AccountOverview() {
   return (
     <Stack gap='xl'>
+      <AccountInfo />
       <ProfileDetails />
-
       <Grid>
         <Grid.Col span={8}>
           <TopSellingProductsChart />
