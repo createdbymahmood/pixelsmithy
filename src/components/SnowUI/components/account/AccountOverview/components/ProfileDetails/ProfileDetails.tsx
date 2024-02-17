@@ -69,7 +69,7 @@ function Details() {
     const hasInfoTooltip = !isEmpty(element.info)
     return (
       <Table.Tr key={element.key}>
-        <Table.Td>
+        <Table.Td w={rem(206)}>
           <Group gap={rem(5)}>
             <Text c='dimmed' size='xs'>
               {element.key}
@@ -84,7 +84,7 @@ function Details() {
         </Table.Td>
 
         <Table.Td>
-          <Group gap='xs'>
+          <Group align='baseline' gap='xs'>
             <Text size='xs'>{element.value}</Text>
 
             {element.isVerified ? (
