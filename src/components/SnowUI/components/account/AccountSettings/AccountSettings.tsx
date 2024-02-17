@@ -2,13 +2,18 @@
 import {Stack} from '@mantine/core'
 import React from 'react'
 
-import {ProfileDetailsSettings, SignInMethod} from './components'
+import {
+  ConnectedAccounts,
+  ProfileDetailsSettings,
+  SignInMethod,
+} from './components'
 
 export function AccountSettings() {
   return (
-    <Stack>
+    <Stack gap='xl'>
       <ProfileDetailsSettings />
       <SignInMethod />
+      <ConnectedAccounts />
     </Stack>
   )
 }
