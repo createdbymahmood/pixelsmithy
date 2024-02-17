@@ -81,7 +81,7 @@ function ProjectsOverview() {
   })
 
   return (
-    <SimpleGrid cols={{xl: 3, lg: 2, md: 2, sm: 1, xs: 1}}>
+    <SimpleGrid cols={{xl: 3, lg: 2, md: 2, sm: 1, xs: 1}} spacing='lg'>
       {content}
     </SimpleGrid>
   )
@@ -92,7 +92,7 @@ function ProjectsList() {
     <ProjectCard key={index} index={index} />
   ))
   return (
-    <SimpleGrid cols={{xl: 3, lg: 2, md: 2, sm: 1, xs: 1}}>
+    <SimpleGrid cols={{xl: 3, lg: 2, md: 2, sm: 1, xs: 1}} spacing='lg'>
       {content}
     </SimpleGrid>
   )
