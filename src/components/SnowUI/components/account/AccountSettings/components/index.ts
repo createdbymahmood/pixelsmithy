@@ -1,4 +1,5 @@
 export * from './ConnectedAccounts'
 export * from './EmailPreferences'
+export * from './NotificationSettings'
 export * from './ProfileDetailsSettings'
 export * from './SignInMethod'
