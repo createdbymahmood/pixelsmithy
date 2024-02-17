@@ -1,0 +1,17 @@
+.icon {
+  margin-right: rem(5px);
+}
+
+.body {
+  gap: rem(2px);
+}
+
+.title {
+  font-weight: 400;
+  font-size: var(--mantine-font-size-sm);
+}
+
+.message {
+  color: var(--mantine-color-dimmed);
+  font-size: var(--mantine-font-size-xs);
+}

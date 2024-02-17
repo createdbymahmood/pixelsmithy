@@ -16,7 +16,7 @@ import {useState} from 'react'
 
 import styles from './ProfileDetailsSettings.module.scss'
 
-function ProfileDetailsSecttingsSection(props: {
+export function ProfileDetailsSecttingsSection(props: {
   children: ReactNode
   title?: string
 }) {
