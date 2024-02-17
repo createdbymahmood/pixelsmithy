@@ -1,5 +1,6 @@
 import type {MantineThemeComponents} from '@mantine/core'
 import {
+  Alert,
   Badge,
   Button,
   Card,
@@ -14,6 +15,7 @@ import {
 import {CaretLeft, CaretRight} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 
+import AlertStyles from './Alert.module.scss'
 import AutocompleteStyles from './Autocomplete.module.scss'
 import BadgeStyles from './Badge.module.scss'
 import ButtonStyles from './Button.module.scss'
@@ -111,6 +113,19 @@ export const components: MantineThemeComponents = {
     classNames(theme, props, ctx) {
       return {
         input: InputStyles.root,
+      }
+    },
+  }),
+  Alert: Alert.extend({
+    defaultProps: {
+      radius: 'lg',
+    },
+    classNames(theme, props, ctx) {
+      return {
+        icon: AlertStyles.icon,
+        message: AlertStyles.message,
+        title: AlertStyles.title,
+        body: AlertStyles.body,
       }
     },
   }),
