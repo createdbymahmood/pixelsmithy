@@ -8,8 +8,10 @@ import {
   Table,
   Text,
   Title,
+  Tooltip,
 } from '@mantine/core'
 import {Info} from '@phosphor-icons/react/dist/ssr'
+import {isEmpty} from 'lodash-es'
 
 import styles from './ProfileDetails.module.scss'
 
@@ -47,25 +49,44 @@ function Header() {
 function Details() {
   const elements = [
     {key: 'Company', value: 'Snow UI'},
-    {key: 'Contact phone', value: '+852 19850622', isVerified: true},
+    {
+      key: 'Contact phone',
+      value: '+852 19850622',
+      isVerified: true,
+      info: 'lorem ipsum dolor sit amet',
+    },
     {key: 'Company Site', value: 'snowui.byewind.com'},
-    {key: 'Country', value: 'United States'},
+    {
+      key: 'Country',
+      value: 'United States',
+      info: 'lorem ipsum dolor sit amet',
+    },
     {key: 'Communication', value: 'Email, Phone'},
     {key: 'Allow Changes', value: 'Yes'},
   ]
 
   const content = elements.map((element) => {
+    const hasInfoTooltip = !isEmpty(element.info)
     return (
       <Table.Tr key={element.key}>
         <Table.Td>
-          <Text c='dimmed' size='xs'>
-            {element.key}
-          </Text>
+          <Group gap={rem(5)}>
+            <Text c='dimmed' size='xs'>
+              {element.key}
+            </Text>
+
+            {hasInfoTooltip ? (
+              <Tooltip label={element.info}>
+                <Info className={styles.infoIcon} />
+              </Tooltip>
+            ) : null}
+          </Group>
         </Table.Td>
 
         <Table.Td>
           <Group gap='xs'>
             <Text size='xs'>{element.value}</Text>
+
             {element.isVerified ? (
               <Badge color='green' size='sm'>
                 Verified
