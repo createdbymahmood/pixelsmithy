@@ -1,0 +1,16 @@
+.tab {
+  color: var(--mantine-color-dimmed);
+
+  &[data-active] {
+    border: none;
+    color: var(--mantine-color-black);
+  }
+
+  &:hover {
+    border: none;
+  }
+}
+
+.list {
+  margin-bottom: 0 !important;
+}
