@@ -4,6 +4,7 @@ import React from 'react'
 
 import {
   ConnectedAccounts,
+  EmailPreferences,
   ProfileDetailsSettings,
   SignInMethod,
 } from './components'
@@ -14,6 +15,7 @@ export function AccountSettings() {
       <ProfileDetailsSettings />
       <SignInMethod />
       <ConnectedAccounts />
+      <EmailPreferences />
     </Stack>
   )
 }
