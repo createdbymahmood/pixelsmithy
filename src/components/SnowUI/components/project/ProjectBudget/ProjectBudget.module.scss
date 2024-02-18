@@ -17,21 +17,3 @@
 .settingsCard {
   background-color: var(--mantine-color-white);
 }
-
-.progress {
-  background-color: var(--mantine-color-gray-2);
-  width: 100%;
-  height: rem(8px);
-  @include border-radius();
-}
-
-.progressStrippedLine {
-  width: 10%;
-  background-color: var(--mantine-color-black);
-  height: rem(8px);
-  @include border-radius();
-}
-
-.progressStrippedLineActive {
-  background-color: var(--mantine-color-indigo-4);
-}
