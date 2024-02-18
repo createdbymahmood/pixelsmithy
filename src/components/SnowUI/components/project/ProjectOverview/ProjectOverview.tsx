@@ -11,7 +11,7 @@ import {
 
 export function ProjectOverview() {
   return (
-    <Stack>
+    <Stack gap='xl'>
       <ProjectOverviewHeader />
       <SimpleGrid cols={{md: 1, lg: 2}}>
         <ProjectOverviewTimeline />
