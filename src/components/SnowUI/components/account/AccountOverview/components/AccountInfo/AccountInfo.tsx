@@ -51,7 +51,7 @@ function UserDetails() {
 function ProfileCompleationStatus() {
   return (
     <Stack miw={rem(160)}>
-      <Text size='sm'>Proile Compleation</Text>
+      <Text size='sm'>Profile Compleation</Text>
 
       <Progress.Root classNames={{root: styles.progress}} size={rem(28)}>
         <Progress.Section color='indigo.1' value={70}>
