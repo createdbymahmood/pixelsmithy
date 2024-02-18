@@ -11,3 +11,14 @@
 .list {
   margin-bottom: 0 !important;
 }
+
+.addCard {
+  cursor: pointer;
+  border: rem(1px) dashed var(--mantine-color-gray-4);
+  @include border-radius(var(--mantine-radius-md));
+}
+
+.plusIcon {
+  height: rem(16px);
+  width: rem(16px);
+}
