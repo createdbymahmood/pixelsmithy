@@ -1,6 +1,7 @@
 export * from './AccountApiKeys'
 export * from './AccountBilling'
 export * from './AccountLayout'
+export * from './AccountLogs'
 export * from './AccountOverview'
 export * from './AccountReferrals'
 export * from './AccountSecurity'
