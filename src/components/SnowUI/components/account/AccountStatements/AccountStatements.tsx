@@ -1,7 +1,7 @@
 import {SimpleGrid, Stack} from '@mantine/core'
 import React from 'react'
 
-import {Earnings, Invoices} from './components'
+import {Earnings, Invoices, Statements} from './components'
 
 export function AccountStatements() {
   return (
@@ -10,6 +10,8 @@ export function AccountStatements() {
         <Earnings />
         <Invoices />
       </SimpleGrid>
+
+      <Statements />
     </Stack>
   )
 }
