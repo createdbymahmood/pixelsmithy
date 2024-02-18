@@ -2,7 +2,6 @@ import {
   Alert,
   Button,
   Card,
-  CloseButton,
   CopyButton,
   Divider,
   Group,
@@ -17,17 +16,9 @@ import {
   ClipboardText,
   CurrencyCircleDollar,
 } from '@phosphor-icons/react/dist/ssr'
-import {useState} from 'react'
 
 function Header() {
-  return (
-    <Group justify='space-between'>
-      <Title order={5}>Earnings</Title>
-      <Button ml='auto' size='xs' variant='light'>
-        Withdraw Earnings
-      </Button>
-    </Group>
-  )
+  return <Title order={4}>Referral Program</Title>
 }
 
 function NetEarnings() {
