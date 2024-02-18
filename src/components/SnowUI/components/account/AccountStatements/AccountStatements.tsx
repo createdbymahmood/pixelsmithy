@@ -5,7 +5,7 @@ import {Earnings, Invoices, Statements} from './components'
 
 export function AccountStatements() {
   return (
-    <Stack>
+    <Stack gap='xl'>
       <SimpleGrid cols={{xs: 1, md: 2}}>
         <Earnings />
         <Invoices />

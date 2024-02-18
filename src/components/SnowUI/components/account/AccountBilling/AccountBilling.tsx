@@ -12,7 +12,7 @@ import {
 
 export function AccountBilling() {
   return (
-    <Stack gap='lg'>
+    <Stack gap='xl'>
       <BillingOverview />
       <PaymentMethods />
       <BillingAddress />
