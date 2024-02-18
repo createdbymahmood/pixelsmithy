@@ -1,7 +1,5 @@
 'use client'
 
-import '@/lib/date/dayjs'
-
 import {Avatar, Box, Group, rem, Stack, Text, Timeline} from '@mantine/core'
 import type {IconProps} from '@phosphor-icons/react'
 import {Broadcast, BugBeetle, User} from '@phosphor-icons/react/dist/ssr'
