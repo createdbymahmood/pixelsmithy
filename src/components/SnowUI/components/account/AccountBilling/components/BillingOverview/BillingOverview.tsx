@@ -62,7 +62,7 @@ function InfoSection({description, title}: InfoSectionProps) {
   )
 }
 
-function PaymendDeclinedAlert() {
+function SomeRandomAlert() {
   return (
     <Alert
       bg='gray.1'
@@ -92,7 +92,7 @@ export function BillingOverview() {
           description='We will send you a notification upon Subscription expiration.'
           title='Active until Dec 9, 2022'
         />
-        <PaymendDeclinedAlert />
+        <SomeRandomAlert />
       </Stack>
     </Card>
   )
