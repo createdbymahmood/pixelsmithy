@@ -1,25 +1,3 @@
-.alertRoot {
-  @include border-radius(var(--mantine-radius-lg));
-}
-
-.alertIcon {
-  margin-right: rem(5px);
-}
-
-.alertBody {
-  gap: rem(2px);
-}
-
-.alertTitle {
-  font-weight: 400;
-  font-size: var(--mantine-font-size-sm);
-}
-
-.alertMessage {
-  color: var(--mantine-color-dimmed);
-  font-size: var(--mantine-font-size-xs);
-}
-
 .edit {
   cursor: pointer;
 }

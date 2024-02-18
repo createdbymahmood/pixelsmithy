@@ -19,13 +19,6 @@ function PaymentMethodAlert() {
   return (
     <Alert
       bg='indigo.0'
-      classNames={{
-        icon: styles.alertIcon,
-        root: styles.alertRoot,
-        message: styles.alertMessage,
-        title: styles.alertTitle,
-        body: styles.alertBody,
-      }}
       icon={<Info size={20} />}
       title='We need your attention!'
     >
