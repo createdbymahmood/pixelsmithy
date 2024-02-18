@@ -1,0 +1,7 @@
+.actionButtonsCard {
+  max-width: fit-content;
+  background-color: var(--mantine-color-white);
+  flex-direction: row;
+  border: rem(1px) solid var(--mantine-color-gray-4);
+  align-self: flex-end;
+}

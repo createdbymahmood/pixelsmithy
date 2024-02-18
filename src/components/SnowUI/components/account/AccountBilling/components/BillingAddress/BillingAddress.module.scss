@@ -1,0 +1,17 @@
+.addressDescription {
+  white-space: pre-line;
+}
+.addressTitle {
+  height: rem(30);
+}
+
+.addCard {
+  cursor: pointer;
+  border: rem(1px) dashed var(--mantine-color-gray-4);
+  @include border-radius(var(--mantine-radius-lg));
+}
+
+.plusIcon {
+  height: rem(16px);
+  width: rem(16px);
+}

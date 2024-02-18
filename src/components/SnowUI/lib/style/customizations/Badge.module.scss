@@ -1,0 +1,26 @@
+.root {
+  text-transform: none;
+  font-size: var(--mantine-font-size-xs);
+  font-weight: 400;
+  padding: var(--badge-padding-x-xs);
+}
+
+.yellow {
+  background-color: var(--mantine-color-yellow-0);
+  color: var(--mantine-color-yellow-7);
+}
+
+.indigo {
+  background-color: var(--mantine-color-indigo-0);
+  color: var(--mantine-color-indigo-7);
+}
+
+.green {
+  background-color: var(--mantine-color-green-0);
+  color: var(--mantine-color-green-7);
+}
+
+.blue {
+  background-color: var(--mantine-color-blue-0);
+  color: var(--mantine-color-blue-7);
+}

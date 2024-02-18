@@ -1,6 +1,8 @@
 body {
+  overflow: hidden;
+
   @include light {
-    background: var(--mantine-color-gray-0);
+    background: var(--mantine-color-white);
   }
 
   @include dark {
@@ -15,4 +17,13 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.icon-size-normal {
+  height: rem(16);
+  width: rem(16);
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

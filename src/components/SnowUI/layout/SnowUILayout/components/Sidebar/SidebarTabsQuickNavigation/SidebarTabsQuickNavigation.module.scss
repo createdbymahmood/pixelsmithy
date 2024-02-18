@@ -1,0 +1,35 @@
+.tab {
+  background-color: transparent;
+  border: none;
+
+  font-size: rem(14px);
+  cursor: pointer;
+
+  @include light {
+    color: var(--mantine-color-gray-5);
+  }
+
+  &[data-active] {
+    @include light {
+      color: var(--mantine-color-gray-6);
+    }
+  }
+  margin-right: var(--mantine-spacing-md) !important;
+}
+
+.item {
+  font-size: rem(14px);
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-sm);
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    height: rem(7px);
+    width: rem(7px);
+    display: inline-block;
+    background-color: var(--mantine-color-gray-4);
+    border-radius: 100%;
+  }
+}

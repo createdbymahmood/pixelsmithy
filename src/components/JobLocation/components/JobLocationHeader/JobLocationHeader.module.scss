@@ -1,0 +1,137 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @include light {
+    background-color: var(--mantine-color-white);
+  }
+
+  @include dark {
+    background-color: var(--mantine-color-gray-8);
+  }
+
+  z-index: var(--mantine-z-index-popover);
+
+  @include smaller-than($mantine-breakpoint-md) {
+    display: none;
+  }
+}
+
+.logo {
+  stroke-width: 1;
+}
+
+.navbarCol {
+  margin: auto;
+  @include smaller-than($mantine-breakpoint-md) {
+    margin-left: 0;
+  }
+}
+
+.navbar {
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbarItems {
+  gap: rem(50px);
+
+  @include smaller-than($mantine-breakpoint-lg) {
+    gap: rem(25px);
+  }
+}
+.navbarItem {
+  @include light {
+    color: var(--mantine-color-gray-6);
+  }
+
+  @include dark {
+    color: var(--mantine-color-gray-5);
+  }
+
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.active {
+  @include light {
+    color: var(--mantine-color-black);
+  }
+  @include dark {
+    color: var(--mantine-color-white);
+  }
+
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    height: rem(5px);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    top: calc(-1 * var(--mantine-spacing-lg) - rem(7px));
+    background-color: var(--mantine-color-indigo-6);
+
+    @include border-bottom-radius();
+  }
+}
+
+.notifications {
+  box-sizing: border-box;
+
+  cursor: pointer;
+  border-width: rem(1px);
+  border-style: solid;
+
+  @include light {
+    border-color: var(--mantine-color-gray-4);
+  }
+
+  @include dark {
+    border-color: var(--mantine-color-gray-6);
+  }
+
+  @include border-radius(var(--mantine-radius-md));
+  padding: calc(var(--mantine-spacing-xs) / 3);
+  margin-left: auto;
+}
+
+.notificationsTarget {
+  stroke-width: 1;
+
+  @include light {
+    color: var(--mantine-color-blue-4);
+  }
+
+  @include dark {
+    color: var(--mantine-color-gray-4);
+  }
+
+  padding: rem(1px);
+}
+
+.separator {
+  @include light {
+    color: var(--mantine-color-gray-4);
+  }
+
+  @include dark {
+    color: var(--mantine-color-gray-3);
+  }
+
+  transform: rotate(90deg);
+}
+
+.actions {
+  line-height: 0;
+}
+
+.greeting {
+  color: var(--mantine-color-gray-6);
+}

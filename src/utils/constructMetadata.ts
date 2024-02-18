@@ -21,7 +21,8 @@ export const constructMetadata = ({
   icons,
 }: ConstructMetadataParams = defaultMetadata): Metadata => {
   return {
-    title,
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    title: `${title} | Pixelsmithy`,
     description,
     openGraph: {
       title,
