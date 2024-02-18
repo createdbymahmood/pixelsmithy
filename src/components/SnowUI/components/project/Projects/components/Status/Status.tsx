@@ -1,6 +1,5 @@
 import {Badge, Stack, Text} from '@mantine/core'
 import {get, startCase} from 'lodash-es'
-import React from 'react'
 
 import styles from './Status.module.scss'
 
@@ -12,8 +11,9 @@ export const statusBadgeMap: Record<StatusType, JSX.Element> = {
   complete: <Badge color='green'>Complete</Badge>,
   pending: <Badge color='blue'>Pending</Badge>,
 }
+export type StatusMapKeys = keyof typeof compleationStatusMap
 
-export const statusMap = {
+export const compleationStatusMap = {
   complete: {
     color: 'var(--mantine-color-green-7)',
     percentage: 100,
@@ -36,22 +36,46 @@ export const statusMap = {
   },
 } as const
 
+export type OperationStatus = 'failure' | 'success'
+
+export const operationStatusMap: Record<OperationStatus, {color: string}> = {
+  failure: {
+    color: 'var(--mantine-color-gray-6)',
+  },
+  success: {
+    color: 'var(--mantine-color-green-7)',
+  },
+}
+
+interface OperationStatusProps {
+  status: OperationStatus
+}
+
+export const OperationStatus = ({status: statusKey}: OperationStatusProps) => {
+  const status = get(operationStatusMap, statusKey)
+  return (
+    <Text c={status.color} className={styles.status} size='xs'>
+      {startCase(statusKey)}
+    </Text>
+  )
+}
+
 interface ProgressStateProps {
   index: number
 }
 
-export function getStatusByIndex(index: number) {
-  const projectIndex = index % Object.keys(statusMap).length
+export function getCompleationStatusByIndex(index: number) {
+  const projectIndex = index % Object.keys(compleationStatusMap).length
   const statusKey = get(
-    Object.keys(statusMap),
+    Object.keys(compleationStatusMap),
     projectIndex,
-  ) as keyof typeof statusMap
-  const status = get(statusMap, statusKey)
+  ) as keyof typeof compleationStatusMap
+  const status = get(compleationStatusMap, statusKey)
   return {status, statusKey}
 }
 
-export function Status({index}: ProgressStateProps) {
-  const {status, statusKey} = getStatusByIndex(index)
+export function CompleationStatus({index}: ProgressStateProps) {
+  const {status, statusKey} = getCompleationStatusByIndex(index)
 
   return (
     <Stack>

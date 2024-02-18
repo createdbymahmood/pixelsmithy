@@ -12,8 +12,8 @@ import {Butterfly} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
 import {
-  getStatusByIndex,
-  Status,
+  getCompleationStatusByIndex,
+  CompleationStatus,
 } from '@/components/SnowUI/components/project/Projects/components/Status/Status'
 import {urls} from '@/constants'
 
@@ -38,7 +38,7 @@ interface ProjectCardStatusProps {
 }
 
 function ProjectCardStatus({index}: ProjectCardStatusProps) {
-  const {status} = getStatusByIndex(index)
+  const {status} = getCompleationStatusByIndex(index)
 
   return (
     <Stack>
@@ -49,7 +49,7 @@ function ProjectCardStatus({index}: ProjectCardStatusProps) {
           <Avatar size={24} />
           <Avatar size={24}>+5</Avatar>
         </Avatar.Group>
-        <Status index={index} />
+        <CompleationStatus index={index} />
       </Group>
 
       <Progress color={status.color} value={status.percentage} />

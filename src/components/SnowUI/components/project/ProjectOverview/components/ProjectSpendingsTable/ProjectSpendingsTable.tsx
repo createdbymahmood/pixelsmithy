@@ -2,7 +2,7 @@ import {Avatar, Card, Group, rem, Stack, Table, Title} from '@mantine/core'
 import dayJS from 'dayjs'
 import React from 'react'
 
-import {Status} from '@/components/SnowUI'
+import {CompleationStatus} from '@/components/SnowUI'
 import {dateToString} from '@/components/SnowUI/utils/date'
 
 const elements = [
@@ -44,7 +44,7 @@ function TableContent() {
       <Table.Td>{dateToString(element.date)}</Table.Td>
       <Table.Td>{element.amount}</Table.Td>
       <Table.Td>
-        <Status index={index} />
+        <CompleationStatus index={index} />
       </Table.Td>
     </Table.Tr>
   ))

@@ -3,7 +3,12 @@
 import {SimpleGrid, Stack} from '@mantine/core'
 import React from 'react'
 
-import {RecentAlerts, SecurityGuidelines, SignInTimes} from './components'
+import {
+  RecentAlerts,
+  SecurityGuidelines,
+  SignInSessions,
+  SignInTimes,
+} from './components'
 
 export function AccountSecurity() {
   return (
@@ -15,6 +20,7 @@ export function AccountSecurity() {
           <SecurityGuidelines />
         </Stack>
       </SimpleGrid>
+      <SignInSessions />
     </Stack>
   )
 }
