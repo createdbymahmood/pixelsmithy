@@ -147,19 +147,25 @@ function WithdrawalAlert() {
   return (
     <Alert
       bg='gray.1'
-      icon={<CurrencyCircleDollar size={20} />}
-      title='Withdraw Your Money to a Bank Account'
-    >
-      <Group justify='space-between'>
-        <Text size='xs'>
-          Withdraw money securily to your bank account. Commision is $25 per
-          transaction under $50,000.
-        </Text>
+      icon={<CurrencyCircleDollar size={20} style={{marginTop: rem(6)}} />}
+      radius='md'
+      styles={{
+        label: {
+          width: '100%',
+        },
+      }}
+      title={
+        <Group justify='space-between'>
+          <Text size='sm'>Withdraw Your Money to a Bank Account</Text>
 
-        <Button bg='gray.3' size='xs' variant='light'>
-          Withdraw Money
-        </Button>
-      </Group>
+          <Button bg='gray.3' size='xs' variant='light'>
+            Withdraw Money
+          </Button>
+        </Group>
+      }
+    >
+      Withdraw money securily to your bank account. Commision is $25 per
+      transaction under $50,000.
     </Alert>
   )
 }
