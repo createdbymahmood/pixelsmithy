@@ -4,6 +4,7 @@ import {SimpleGrid, Stack} from '@mantine/core'
 import React from 'react'
 
 import {
+  LicenseUsage,
   RecentAlerts,
   SecurityGuidelines,
   SignInSessions,
@@ -21,6 +22,7 @@ export function AccountSecurity() {
         </Stack>
       </SimpleGrid>
       <SignInSessions />
+      <LicenseUsage />
     </Stack>
   )
 }

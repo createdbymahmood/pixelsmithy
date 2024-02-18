@@ -11,7 +11,7 @@ export const statusBadgeMap: Record<StatusType, JSX.Element> = {
   complete: <Badge color='green'>Complete</Badge>,
   pending: <Badge color='blue'>Pending</Badge>,
 }
-export type StatusMapKeys = keyof typeof compleationStatusMap
+export type CompleationStatus = keyof typeof compleationStatusMap
 
 export const compleationStatusMap = {
   complete: {
