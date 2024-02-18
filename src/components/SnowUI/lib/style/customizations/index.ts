@@ -1,5 +1,6 @@
 import type {MantineThemeComponents} from '@mantine/core'
 import {
+  ActionIcon,
   Alert,
   Badge,
   Button,
@@ -15,6 +16,7 @@ import {
 import {CaretLeft, CaretRight} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 
+import ActionIconStyles from './ActionIcon.module.scss'
 import AlertStyles from './Alert.module.scss'
 import AutocompleteStyles from './Autocomplete.module.scss'
 import BadgeStyles from './Badge.module.scss'
@@ -126,6 +128,19 @@ export const components: MantineThemeComponents = {
         message: AlertStyles.message,
         title: AlertStyles.title,
         body: AlertStyles.body,
+      }
+    },
+  }),
+  ActionIcon: ActionIcon.extend({
+    defaultProps: {
+      radius: 'lg',
+    },
+    classNames(theme, props, ctx) {
+      const isLightVariant = props.variant === 'light'
+      return {
+        root: clsx(ButtonStyles.root, {
+          [ActionIconStyles.light]: isLightVariant,
+        }),
       }
     },
   }),
