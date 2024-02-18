@@ -24,8 +24,6 @@ const accountSections = [
   'referrals',
   'api-keys',
   'logs',
-  'follow',
-  'hire-me',
 ] as const
 
 const Tab = Tabs.Tab as MantineComponent<{
