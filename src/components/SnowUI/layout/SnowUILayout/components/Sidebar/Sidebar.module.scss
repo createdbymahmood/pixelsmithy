@@ -1,0 +1,56 @@
+.sidebar {
+  border-right: rem(1px) solid var(--mantine-color-gray-3);
+  height: 100vh;
+
+  @include light {
+    background-color: var(--mantine-color-white);
+  }
+}
+
+.sidebarItem {
+  border: none;
+  background-color: var(--mantine-color-white);
+  font-size: var(--mantine-font-size-sm);
+  display: flex;
+  align-items: center;
+
+  @include border-radius(var(--mantine-radius-lg));
+  padding: 7px 0 7px var(--mantine-spacing-md);
+
+  @include hover {
+    background-color: var(--mantine-color-gray-1);
+  }
+  width: 100%;
+  cursor: pointer;
+}
+
+.activeSidebarItem {
+  background-color: var(--mantine-color-gray-1);
+}
+.chevron {
+  margin-right: rem(10px);
+
+  transform: rotate(-90deg);
+  color: var(--mantine-color-gray-5);
+  @include transition();
+
+  &[data-rotate] {
+    color: var(--mantine-color-black);
+    transform: rotate(0);
+  }
+}
+
+.withoutIconSidebarItem {
+  margin-left: rem(17px);
+}
+
+.childlessSidebarItem {
+  margin-left: rem(16px);
+}
+
+.icon {
+}
+
+.section {
+  color: var(--mantine-color-gray-6);
+}

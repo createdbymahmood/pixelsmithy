@@ -1,0 +1,19 @@
+.usage {
+  padding: var(--mantine-spacing-lg);
+  background: var(--mantine-color-white);
+  @include border-radius(var(--mantine-radius-lg));
+  cursor: pointer;
+
+  border-style: solid;
+  border-width: rem(2px);
+  border-color: var(--mantine-color-white);
+  @include transition();
+
+  &.isSelected {
+    border-color: var(--mantine-color-black);
+  }
+}
+
+.settingsCard {
+  background-color: var(--mantine-color-white);
+}

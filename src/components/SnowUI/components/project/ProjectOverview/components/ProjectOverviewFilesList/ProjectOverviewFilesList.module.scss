@@ -1,0 +1,51 @@
+.file {
+  cursor: pointer;
+
+  &:hover {
+    .download {
+      opacity: 1;
+    }
+  }
+}
+
+.iconWrapper {
+  height: rem(24px);
+  width: rem(24px);
+  background-color: var(--mantine-color-gray-2);
+  @include border-radius(var(--mantine-radius-md));
+}
+
+.fileInfo {
+  color: var(--mantine-color-gray-5);
+}
+
+.download {
+  margin-left: auto;
+  height: rem(20px);
+  width: rem(20px);
+  align-self: flex-start;
+  opacity: 0;
+  @include transition($transition-base-long);
+}
+
+.dropzone {
+  background-color: var(--mantine-color-gray-1);
+  @include border-radius(var(--mantine-radius-lg));
+  border: none;
+  margin-top: auto;
+}
+
+.dropzoneArea {
+  height: rem(40px);
+}
+
+.dropzoneUploadButton {
+  font-weight: 400;
+  background-color: var(--mantine-color-gray-3);
+  @include border-radius(var(--mantine-radius-lg));
+  color: var(--mantine-color-black);
+}
+
+.dropzoneInstruction {
+  color: var(--mantine-color-gray-7);
+}

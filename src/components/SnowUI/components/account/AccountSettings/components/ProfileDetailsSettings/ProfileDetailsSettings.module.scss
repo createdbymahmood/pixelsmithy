@@ -1,0 +1,12 @@
+.section {
+  @include border-radius(var(--mantine-radius-lg));
+  padding: var(--mantine-spacing-xs);
+}
+
+.input {
+  padding-left: 0 !important;
+}
+
+.switchLabel {
+  color: var(--mantine-color-dimmed);
+}

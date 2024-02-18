@@ -1,0 +1,21 @@
+.list {
+  &:before {
+    border-bottom: none;
+  }
+
+  margin-bottom: var(--mantine-spacing-md);
+  flex-wrap: nowrap;
+  overflow: auto;
+}
+
+.tab {
+  padding: rem(6px) 0;
+
+  &:hover {
+    background: inherit;
+  }
+
+  &:not(:last-of-type) {
+    margin-right: var(--mantine-spacing-lg);
+  }
+}

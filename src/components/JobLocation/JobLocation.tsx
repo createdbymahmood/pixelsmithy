@@ -2,10 +2,10 @@
 
 import {Box, Container, Grid, rem} from '@mantine/core'
 
-import {JobFilters} from '@/components/JobLocation/JobFilters'
-import {JobLocationHeader} from '@/components/JobLocation/JobLocationHeader'
-import {JobsList} from '@/components/JobLocation/JobsList'
-import {JobsSiderbar} from '@/components/JobLocation/JobsSidebar'
+import {JobFilters} from '@/components/JobLocation/components/JobFilters'
+import {JobLocationHeader} from '@/components/JobLocation/components/JobLocationHeader'
+import {JobsList} from '@/components/JobLocation/components/JobsList'
+import {JobsSiderbar} from '@/components/JobLocation/components/JobsSidebar'
 import {useMobileDevice} from '@/hooks/useMobileDevice'
 
 function JobLocationContent() {
@@ -24,7 +24,7 @@ function JobLocationContent() {
   )
 }
 
-export function JobLocation() {
+export default function JobLocation() {
   const isMobile = useMobileDevice()
   return (
     <Box pt={isMobile ? 0 : rem(80)}>

@@ -1,0 +1,28 @@
+.header {
+  padding: var(--mantine-spacing-lg) var(--mantine-spacing-lg);
+  width: 100%;
+  border-bottom: rem(1px) solid var(--mantine-color-gray-3);
+}
+
+.breadcrumb {
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-gray-6);
+
+  &:last-of-type {
+    color: var(--mantine-color-black);
+  }
+
+  line-height: var(--mantine-line-height-md);
+}
+
+.breadcrumbSeparator {
+  color: var(--mantine-color-gray-6);
+}
+
+.searchInputWrapper {
+  margin-left: auto;
+}
+
+.icon {
+  cursor: pointer;
+}

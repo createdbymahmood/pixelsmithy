@@ -1,0 +1,16 @@
+.rightSidePanel {
+  border-left: rem(1px) solid var(--mantine-color-gray-3);
+  height: 100vh;
+  background-color: var(--mantine-color-white);
+}
+
+.iconWrapper {
+  height: rem(24px);
+  width: rem(24px);
+  background-color: var(--mantine-color-blue-1);
+  @include border-radius(var(--mantine-radius-md));
+}
+
+.time {
+  color: var(--mantine-color-gray-6);
+}

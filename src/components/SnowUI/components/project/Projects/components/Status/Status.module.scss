@@ -1,0 +1,17 @@
+@mixin withDot {
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: '';
+    width: rem(6px);
+    height: rem(6px);
+    background-color: currentColor;
+    margin-right: rem(6px);
+    @include border-radius();
+  }
+}
+
+.status {
+  @include withDot();
+}
