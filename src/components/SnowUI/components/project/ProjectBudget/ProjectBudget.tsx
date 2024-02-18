@@ -161,7 +161,7 @@ function AllowChangesSettings() {
 
 export function ProjectBudget() {
   return (
-    <Stack gap='lg'>
+    <Stack gap='xl'>
       <Header />
 
       <Stack component={Card} pos='relative'>
