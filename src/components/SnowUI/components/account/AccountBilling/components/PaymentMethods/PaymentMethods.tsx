@@ -68,7 +68,7 @@ interface CreditCardProps {
 function CreditCard({exp, name, number, isActive}: CreditCardProps) {
   const activeBadge = isActive && <Badge color='green'>Active</Badge>
   return (
-    <Card bg='gray.1' p='md' radius='md'>
+    <Card bg='gray.2' p='md' radius='md'>
       <Stack>
         <Group>
           <Title order={5}>{name}</Title>
