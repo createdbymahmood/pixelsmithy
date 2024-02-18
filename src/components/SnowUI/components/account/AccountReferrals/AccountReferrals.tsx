@@ -3,12 +3,13 @@
 import {Stack} from '@mantine/core'
 import React from 'react'
 
-import {ReferralProgram} from './components'
+import {ReferralProgram, ReferredUsers} from './components'
 
 export function AccountReferrals() {
   return (
-    <Stack>
+    <Stack gap='xl'>
       <ReferralProgram />
+      <ReferredUsers />
     </Stack>
   )
 }

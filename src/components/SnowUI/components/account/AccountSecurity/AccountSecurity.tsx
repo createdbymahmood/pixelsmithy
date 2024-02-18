@@ -13,7 +13,7 @@ import {
 
 export function AccountSecurity() {
   return (
-    <Stack gap='lg'>
+    <Stack gap='xl'>
       <SimpleGrid cols={2}>
         <SignInTimes />
         <Stack>
