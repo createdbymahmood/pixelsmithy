@@ -3,7 +3,12 @@
 import {Stack} from '@mantine/core'
 import React from 'react'
 
-import {BillingAddress, BillingOverview, PaymentMethods} from './components'
+import {
+  BillingAddress,
+  BillingHistory,
+  BillingOverview,
+  PaymentMethods,
+} from './components'
 
 export function AccountBilling() {
   return (
@@ -11,6 +16,7 @@ export function AccountBilling() {
       <BillingOverview />
       <PaymentMethods />
       <BillingAddress />
+      <BillingHistory />
     </Stack>
   )
 }
