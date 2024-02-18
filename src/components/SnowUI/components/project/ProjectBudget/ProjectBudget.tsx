@@ -1,7 +1,6 @@
 'use client'
 
 import {
-  Box,
   Card,
   Checkbox,
   Group,
@@ -19,6 +18,7 @@ import {isEqual} from 'lodash-es'
 import type {ReactNode} from 'react'
 import React, {Fragment, useState} from 'react'
 
+import {StrippedProgress} from '@/components/SnowUI/components/common/StrippedProgress'
 import {SaveFloatingActionButons} from '@/components/SnowUI/components/project/components'
 
 import styles from './ProjectBudget.module.scss'
@@ -91,20 +91,7 @@ function Header() {
         <Text size='sm'>$22,300 of 36,000 Used</Text>
       </Group>
 
-      <Group className={styles.progress} gap='xs'>
-        <Box
-          className={clsx(
-            styles.progressStrippedLine,
-            styles.progressStrippedLineActive,
-          )}
-        />
-        <Box className={styles.progressStrippedLine} />
-        <Box className={styles.progressStrippedLine} />
-        <Box className={styles.progressStrippedLine} />
-        <Box className={styles.progressStrippedLine} />
-        <Box className={styles.progressStrippedLine} />
-        <Box className={styles.progressStrippedLine} />
-      </Group>
+      <StrippedProgress lines={7} />
 
       <Text c='gray.5' size='sm'>
         18 Targets are remaining
