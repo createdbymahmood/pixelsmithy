@@ -1,5 +1,6 @@
 'use client'
 
+import type {AccordionControlProps, MantineComponent} from '@mantine/core'
 import {Accordion, Box, Group, rem, Stack, Text} from '@mantine/core'
 import type {IconProps, IconWeight} from '@phosphor-icons/react'
 import {
@@ -26,6 +27,13 @@ import {urls} from '@/constants'
 
 import styles from './Sidebar.module.scss'
 
+export type AccordionControlStylesNames =
+  | 'chevron'
+  | 'control'
+  | 'icon'
+  | 'itemTitle'
+  | 'label'
+
 interface SidebarItem {
   id: string
   title: string
@@ -49,6 +57,17 @@ interface SidebarItemsProps {
   items: SidebarItem[]
   selections: ReturnType<typeof useSelections<string>>
 }
+
+type LocalAccordionControlProps = AccordionControlProps & {
+  href: string
+}
+
+const AccordionControl = Accordion.Control as MantineComponent<{
+  props: LocalAccordionControlProps
+  ref: HTMLButtonElement
+  stylesNames: AccordionControlStylesNames
+  compound: true
+}>
 
 const SidebarItems = ({items, selections}: SidebarItemsProps) => {
   const segment = useSelectedLayoutSegment()
@@ -77,14 +96,16 @@ const SidebarItems = ({items, selections}: SidebarItemsProps) => {
     const iconWeight: IconWeight = opened ? 'fill' : 'duotone'
     return (
       <Accordion.Item key={item.id} value={item.id} onClick={toggle(item.id)}>
-        <Accordion.Control
+        <AccordionControl
           // eslint-disable-next-line react/jsx-no-useless-fragment
           chevron={withChildren ? null : <Fragment />}
           className={clsx({[styles.activeSidebarItem]: opened})}
+          component={Link}
+          href={item.href}
           mb='5px'
           pr='lg'
         >
-          <Box component={Link} href={item.href}>
+          <Box>
             <Group gap='xs'>
               {withIcon ? (
                 <Icon
@@ -104,7 +125,7 @@ const SidebarItems = ({items, selections}: SidebarItemsProps) => {
               </Text>
             </Group>
           </Box>
-        </Accordion.Control>
+        </AccordionControl>
 
         <Accordion.Panel>{children}</Accordion.Panel>
       </Accordion.Item>
