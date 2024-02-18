@@ -152,8 +152,10 @@ export function PaymentMethods() {
           classNames={{tab: styles.tab, list: styles.list}}
           defaultValue={defaultActiveTab.title}
         >
-          <Header />
-          <Body />
+          <Stack>
+            <Header />
+            <Body />
+          </Stack>
         </Tabs>
         <AddCard />
       </Stack>
