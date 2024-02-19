@@ -39,3 +39,6 @@ next-env.d.ts
 
 # storybook
 storybook-static
+
+# WYSIWYG Editor Assets
+public/tinymce

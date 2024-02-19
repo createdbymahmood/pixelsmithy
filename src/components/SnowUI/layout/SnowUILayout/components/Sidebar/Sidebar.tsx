@@ -6,6 +6,7 @@ import type {IconProps, IconWeight} from '@phosphor-icons/react'
 import {
   ChartPieSlice,
   ChatsTeardrop,
+  Envelope,
   FolderNotch,
   IdentificationBadge,
   IdentificationCard,
@@ -247,6 +248,14 @@ export function Sidebar() {
           icon: IdentificationCard,
           children: [],
           activeSegment: 'account',
+        },
+        {
+          id: 'email',
+          href: urls.SnowUI.email.index,
+          title: 'Email',
+          icon: Envelope,
+          children: [],
+          activeSegment: 'email',
         },
 
         /*  {
