@@ -24,6 +24,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {SidebarProfileButton} from '@/components/SnowUI/layout/SnowUILayout/components/Sidebar/SidebarProfileButton'
 import {SidebarTabsQuickNavigation} from '@/components/SnowUI/layout/SnowUILayout/components/Sidebar/SidebarTabsQuickNavigation'
+import {emailId} from '@/components/SnowUI/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './Sidebar.module.scss'
@@ -251,7 +252,7 @@ export function Sidebar() {
         },
         {
           id: 'email',
-          href: urls.SnowUI.email.index,
+          href: urls.SnowUI.email.inbox(emailId),
           title: 'Email',
           icon: Envelope,
           children: [],
