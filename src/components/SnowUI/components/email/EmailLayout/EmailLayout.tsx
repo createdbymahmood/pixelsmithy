@@ -36,7 +36,9 @@ function Compose() {
   return (
     <Group
       className={clsx('cursor-pointer', styles.item, styles.compose)}
+      component={Link}
       gap='sm'
+      href={urls.SnowUI.email.compose}
     >
       <PencilSimpleLine className='icon-size-md' />
       <Text size='sm'>Compose</Text>
@@ -69,6 +71,7 @@ const sidebarItems = [
     title: 'Inbox',
     icon: Tray,
     href: urls.SnowUI.email.inbox,
+    segment: null,
   },
   {
     title: 'Sent',
@@ -108,7 +111,7 @@ function SidebarItems() {
       />
     )
   })
-  content.unshift(<Compose />)
+  content.unshift(<Compose key='Compose' />)
   return <Fragment>{content}</Fragment>
 }
 
