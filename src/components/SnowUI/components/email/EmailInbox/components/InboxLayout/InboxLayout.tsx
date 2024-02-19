@@ -1,9 +1,10 @@
+'use client'
+
 import {
   Avatar,
   Box,
   Card,
   Checkbox,
-  Divider,
   Group,
   rem,
   Stack,
@@ -14,6 +15,7 @@ import clsx from 'clsx'
 import type {Dayjs} from 'dayjs'
 import dayJS from 'dayjs'
 import type {ReactNode} from 'react'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {toEmailTime} from '@/components/SnowUI/utils/date'
 
@@ -21,7 +23,7 @@ import styles from './InboxLayout.module.scss'
 
 function InboxSidebarHeader() {
   return (
-    <Card p='sm'>
+    <Card p='sm' style={{flexShrink: 0}}>
       <Group>
         <Checkbox />
         <FunnelSimple className={clsx('icon-size-md', 'cursor-pointer')} />
@@ -137,8 +139,13 @@ const emails: EmailPreviewItem[] = [
 ]
 
 function InboxLayoutEmailsList() {
-  const content = emails.map((email, index) => {
-    return <InboxLayoutEmailsListItem key={email.preview} {...email} />
+  const content = emails.map((email) => {
+    return (
+      <InboxLayoutEmailsListItem
+        key={`${email.sender}-${email.preview}`}
+        {...email}
+      />
+    )
   })
 
   return <Stack gap={0}>{content}</Stack>
@@ -146,9 +153,12 @@ function InboxLayoutEmailsList() {
 
 function InboxSidebar() {
   return (
-    <Stack maw={rem(320)}>
+    <Stack h='100%' style={{flexShrink: 0, width: rem(304)}}>
       <InboxSidebarHeader />
-      <InboxLayoutEmailsList />
+
+      <PerfectScrollbar>
+        <InboxLayoutEmailsList />
+      </PerfectScrollbar>
     </Stack>
   )
 }
@@ -159,10 +169,12 @@ interface EmailInboxLayoutProps {
 
 export function EmailInboxLayout({children}: EmailInboxLayoutProps) {
   return (
-    <Group align='flex-start' h='100%'>
+    <Group align='flex-start' h='100%' w='100%' wrap='nowrap'>
       <InboxSidebar />
 
-      {children}
+      <Box h='100%' w='100%'>
+        {children}
+      </Box>
     </Group>
   )
 }

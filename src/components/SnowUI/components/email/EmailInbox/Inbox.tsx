@@ -1,5 +1,3 @@
-import React from 'react'
-
 export function EmailInbox() {
-  return <div>Inbox</div>
+  return <div>Hello from Google!</div>
 }

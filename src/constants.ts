@@ -23,8 +23,9 @@ export const urls = {
       page: (section: string) => urlCat('/snow-ui/account/:section', {section}),
     },
     email: {
-      index: '/snow-ui/email',
-      inbox: '/snow-ui/email/inbox',
+      index: '/snow-ui/email/inbox',
+      inbox: (emailId: string) =>
+        urlCat('/snow-ui/email/inbox/:emailId', {emailId}),
       compose: '/snow-ui/email/compose',
       sent: '/snow-ui/email/sent',
       draft: '/snow-ui/email/draft',

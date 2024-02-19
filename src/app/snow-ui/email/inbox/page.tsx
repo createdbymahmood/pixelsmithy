@@ -1,5 +1,8 @@
-import React from 'react'
+import {redirect} from 'next/navigation'
+
+import {emailId} from '@/components/SnowUI/mocks/email'
+import {urls} from '@/constants'
 
 export default function Inbox() {
-  return <div>Inbox</div>
+  return redirect(urls.SnowUI.email.inbox(emailId))
 }

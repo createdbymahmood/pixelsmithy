@@ -8,5 +8,5 @@ export const metadata = constructMetadata({
 })
 
 export default function Email() {
-  return redirect(urls.SnowUI.email.inbox)
+  return redirect(urls.SnowUI.email.index)
 }
