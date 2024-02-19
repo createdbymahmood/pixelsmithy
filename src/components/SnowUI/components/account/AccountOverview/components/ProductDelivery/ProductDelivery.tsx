@@ -132,7 +132,7 @@ function Product({receiver, status, title}: ProductProps) {
           {receiver}
         </Text>
       </Stack>
-      <Stack align='flex-end'>
+      <Stack align='flex-end' ml='auto'>
         <ProductMenu />
         {badge}
       </Stack>
