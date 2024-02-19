@@ -88,7 +88,7 @@ function Header() {
         <Menu.Target>
           <Group className={styles.menuTrigger} gap='xs'>
             <Text size='xs'>1 Hour</Text>
-            <CaretDown className={styles.caret} />
+            <CaretDown className='icon-size-sm' />
           </Group>
         </Menu.Target>
 

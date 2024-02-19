@@ -25,21 +25,21 @@ function UserDetails() {
   return (
     <Group>
       <Group gap={rem(5)}>
-        <UserCircle className={styles.icon} />
+        <UserCircle className='icon-size-sm' />
         <Text c='dimmed' size='xs'>
           Developer
         </Text>
       </Group>
 
       <Group gap={rem(5)}>
-        <MapPin className={styles.icon} />
+        <MapPin className='icon-size-sm' />
         <Text c='dimmed' size='xs'>
           SF, Bay Area
         </Text>
       </Group>
 
       <Group gap={rem(5)}>
-        <EnvelopeSimple className={styles.icon} />
+        <EnvelopeSimple className='icon-size-sm' />
         <Text c='dimmed' size='xs'>
           byewind@twitter.com
         </Text>

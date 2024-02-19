@@ -93,7 +93,7 @@ function ReferralLink() {
         {({copied, copy}) => {
           const Icon = copied ? Check : ClipboardText
           const rightSection = (
-            <Icon className='icon-size-normal cursor-pointer' onClick={copy} />
+            <Icon className='icon-size-sm cursor-pointer' onClick={copy} />
           )
 
           return (

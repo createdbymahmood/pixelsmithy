@@ -44,7 +44,7 @@ function TableContent() {
 
         <Table.Td>
           <Group className='cursor-pointer' gap={rem(5)}>
-            <DownloadSimple className='icon-size-normal' />
+            <DownloadSimple className='icon-size-sm' />
             <Text size='xs'>PDF</Text>
           </Group>
         </Table.Td>

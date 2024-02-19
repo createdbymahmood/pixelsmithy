@@ -37,11 +37,11 @@ function DownloadBox() {
         defaultValue='Individual Seller Account'
         placeholder='Pick value or enter anything'
         radius='md'
-        rightSection={<CaretUpDown className='icon-size-normal' />}
+        rightSection={<CaretUpDown className='icon-size-sm' />}
         w='100%'
       />
       <ActionIcon aria-label='Settings' variant='light'>
-        <DownloadSimple className='icon-size-normal' />
+        <DownloadSimple className='icon-size-sm' />
       </ActionIcon>
     </Group>
   )

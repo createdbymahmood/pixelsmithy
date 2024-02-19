@@ -64,7 +64,7 @@ function TableContent() {
         </Table.Td>
         <Table.Td>
           <Group gap={rem(5)}>
-            <CalendarBlank className='icon-size-normal' />
+            <CalendarBlank className='icon-size-sm' />
             <Text size='xs'>{dateToString(element.date)}</Text>
           </Group>
         </Table.Td>

@@ -49,7 +49,7 @@ function Log({date, log}: LogProps) {
       <Text size='xs'>{log}</Text>
 
       <Box
-        className='icon-size-normal cursor-pointer'
+        className='icon-size-sm cursor-pointer'
         component={DownloadSimple}
         ml='auto'
       />

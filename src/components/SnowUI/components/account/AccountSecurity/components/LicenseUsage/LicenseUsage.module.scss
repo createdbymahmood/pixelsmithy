@@ -5,10 +5,6 @@
 .caret {
   color: var(--mantine-color-dimmed);
 }
-.icon {
-  height: rem(16px);
-  width: rem(16px);
-}
 
 .clipboardIcon {
   @include transition($transition-base);

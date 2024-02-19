@@ -19,9 +19,14 @@ a {
   color: inherit;
 }
 
-.icon-size-normal {
-  height: rem(16);
-  width: rem(16);
+.icon-size-sm {
+  height: rem(16px);
+  width: rem(16px);
+}
+
+.icon-size-md {
+  height: rem(24px);
+  width: rem(24px);
 }
 
 .cursor-pointer {

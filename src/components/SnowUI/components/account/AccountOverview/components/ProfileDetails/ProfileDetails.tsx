@@ -70,7 +70,7 @@ function Details() {
 
             {hasInfoTooltip ? (
               <Tooltip label={element.info}>
-                <Info className={styles.infoIcon} />
+                <Info className='icon-side-normal cursor-pointer' />
               </Tooltip>
             ) : null}
           </Group>
