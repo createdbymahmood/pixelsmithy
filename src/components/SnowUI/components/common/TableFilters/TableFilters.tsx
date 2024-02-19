@@ -2,6 +2,7 @@
 
 import {Card, Group} from '@mantine/core'
 import {FunnelSimple, Plus, SortAscending} from '@phosphor-icons/react/dist/ssr'
+import clsx from 'clsx'
 
 import {SearchInput} from '@/components/SnowUI'
 
@@ -12,9 +13,15 @@ export function TableFilters() {
     <Card className={styles.root}>
       <Group>
         <Group>
-          <Plus className={styles.icon} />
-          <FunnelSimple className={styles.icon} />
-          <SortAscending className={styles.icon} />
+          <Plus
+            className={clsx('icon-size-md', styles.icon, 'cursor-pointer')}
+          />
+          <FunnelSimple
+            className={clsx('icon-size-md', styles.icon, 'cursor-pointer')}
+          />
+          <SortAscending
+            className={clsx('icon-size-md', styles.icon, 'cursor-pointer')}
+          />
         </Group>
         <SearchInput ml='auto' size='xs' />
       </Group>

@@ -31,7 +31,7 @@ function FileItem({info, name, type}: FileItem) {
         </Text>
       </Stack>
 
-      <DownloadSimple className={styles.download} />
+      <DownloadSimple className={clsx(styles.download, 'icon-size-md')} />
     </Group>
   )
 }

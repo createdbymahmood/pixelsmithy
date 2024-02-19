@@ -14,6 +14,7 @@ import {
 import {DateInput} from '@mantine/dates'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
 import {CalendarBlank, UploadSimple} from '@phosphor-icons/react/dist/ssr'
+import clsx from 'clsx'
 import dayJS from 'dayjs'
 import {useState} from 'react'
 
@@ -87,7 +88,11 @@ function DueDateSettings() {
     <SettingsCard title='Due Date'>
       <DateInput
         classNames={{input: styles.input}}
-        leftSection={<CalendarBlank className={styles.dateInputIcon} />}
+        leftSection={
+          <CalendarBlank
+            className={clsx(styles.dateInputIcon, 'icon-size-md')}
+          />
+        }
         placeholder='Date input'
         value={value}
         valueFormat='MMM D, YYYY'

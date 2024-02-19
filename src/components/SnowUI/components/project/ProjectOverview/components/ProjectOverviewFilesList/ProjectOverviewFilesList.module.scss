@@ -21,8 +21,7 @@
 
 .download {
   margin-left: auto;
-  height: rem(20px);
-  width: rem(20px);
+
   align-self: flex-start;
   opacity: 0;
   @include transition($transition-base-long);
