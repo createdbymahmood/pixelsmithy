@@ -30,7 +30,9 @@ export function SnowUILayout({children}: SnowUILayoutProps) {
 
             <Box className={styles.contentArea}>
               <PerfectScrollbar>
-                <Container className={styles.content}>{children}</Container>
+                <Box mih='100%' p='lg'>
+                  <Container className={styles.content}>{children}</Container>
+                </Box>
               </PerfectScrollbar>
             </Box>
           </Grid.Col>

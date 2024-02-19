@@ -1,0 +1,14 @@
+.item {
+  padding: var(--mantine-spacing-xs);
+  border-radius: var(--mantine-radius-md);
+  color: var(--mantine-color-dimmed);
+}
+
+.compose {
+  background: var(--mantine-color-gray-2);
+  color: var(--mantine-color-black);
+}
+
+.itemActive {
+  color: var(--mantine-color-black);
+}
