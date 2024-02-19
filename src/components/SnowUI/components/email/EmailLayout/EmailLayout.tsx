@@ -40,7 +40,7 @@ function Compose() {
       gap='sm'
       href={urls.SnowUI.email.compose}
     >
-      <PencilSimpleLine className='icon-size-md' />
+      <PencilSimpleLine className='icon-size-lg' />
       <Text size='sm'>Compose</Text>
     </Group>
   )
@@ -60,7 +60,7 @@ function SidebarItem({href, title, icon: Icon}: SidebarItemProps) {
       gap='sm'
       href={href}
     >
-      <Icon className='icon-size-md' />
+      <Icon className='icon-size-lg' />
       <Text size='sm'>{title}</Text>
     </Group>
   )
@@ -122,11 +122,13 @@ interface EmailLayoutProps {
 export function EmailLayout({children}: EmailLayoutProps) {
   return (
     <Group align='flex-start' gap='lg' h='100%'>
-      <Stack gap={rem(5)}>
+      <Stack gap={rem(5)} w={rem(124)}>
         <SidebarItems />
       </Stack>
 
-      <Box>{children}</Box>
+      <Box h='100%' style={{alignSelf: 'stretch'}}>
+        {children}
+      </Box>
     </Group>
   )
 }

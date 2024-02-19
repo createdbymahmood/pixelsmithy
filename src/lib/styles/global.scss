@@ -25,8 +25,18 @@ a {
 }
 
 .icon-size-md {
+  height: rem(20px);
+  width: rem(20px);
+}
+
+.icon-size-lg {
   height: rem(24px);
   width: rem(24px);
+}
+
+.icon-size-lg {
+  height: rem(28px);
+  width: rem(28px);
 }
 
 .cursor-pointer {
