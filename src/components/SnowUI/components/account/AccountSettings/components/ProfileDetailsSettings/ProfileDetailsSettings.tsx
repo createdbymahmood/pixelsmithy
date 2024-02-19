@@ -112,7 +112,7 @@ function Country() {
         defaultValue='US'
         p={0}
         placeholder=''
-        rightSection={<CaretUpDown className='icon-size-normal' />}
+        rightSection={<CaretUpDown className='icon-size-sm' />}
       />
     </ProfileDetailsSecttingsSection>
   )
@@ -127,7 +127,7 @@ function Language() {
         defaultValue='DE'
         p={0}
         placeholder=''
-        rightSection={<CaretUpDown className='icon-size-normal' />}
+        rightSection={<CaretUpDown className='icon-size-sm' />}
       />
     </ProfileDetailsSecttingsSection>
   )

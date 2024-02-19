@@ -135,7 +135,7 @@ function AddCard() {
   return (
     <Stack className={styles.addCard} p='md' radioGroup='xl'>
       <Group gap='xs'>
-        <Plus className={styles.plusIcon} />
+        <Plus className='icon-size-sm' />
         <Text size='sm'>Add Card</Text>
       </Group>
     </Stack>

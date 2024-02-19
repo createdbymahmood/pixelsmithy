@@ -49,7 +49,7 @@ function TableContent() {
         <Table.Td>{element.details}</Table.Td>
         <Table.Td>
           <Group gap={rem(5)}>
-            <CalendarBlank className='icon-size-normal' />
+            <CalendarBlank className='icon-size-sm' />
             <Text size='xs'>{dateToString(element.date)}</Text>
           </Group>
         </Table.Td>
@@ -57,7 +57,7 @@ function TableContent() {
 
         <Table.Td>
           <Group className='cursor-pointer' gap={rem(5)}>
-            <DownloadSimple className='icon-size-normal' />
+            <DownloadSimple className='icon-size-sm' />
             <Text size='xs'>PDF</Text>
           </Group>
         </Table.Td>

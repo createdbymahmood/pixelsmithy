@@ -70,7 +70,7 @@ function AddAddressCard() {
     <Stack className={styles.addCard} p='lg'>
       <Center h='100%'>
         <Group gap='xs' mr='auto'>
-          <Plus className={styles.plusIcon} />
+          <Plus className='icon-size-sm' />
           <Text size='sm'>Add Address</Text>
         </Group>
       </Center>

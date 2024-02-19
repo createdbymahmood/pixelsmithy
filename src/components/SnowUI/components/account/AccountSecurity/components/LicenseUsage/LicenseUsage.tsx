@@ -66,7 +66,7 @@ function TableContent() {
         <Table.Td>{element.ipAddress}</Table.Td>
         <Table.Td>
           <Group gap={rem(5)}>
-            <Clock className={styles.icon} />
+            <Clock className='icon-size-sm' />
             <Text size='xs'>{dateToString(element.time)}</Text>
           </Group>
         </Table.Td>
@@ -76,7 +76,7 @@ function TableContent() {
               <Group className={styles.copyGroup} gap={rem(5)} onClick={copy}>
                 <Text size='xs'>{element.apiKey}</Text>
                 <ClipboardText
-                  className={clsx(styles.icon, styles.clipboardIcon)}
+                  className={clsx('icon-size-sm', styles.clipboardIcon)}
                 />
               </Group>
             )}
@@ -114,7 +114,7 @@ function Header() {
         <Menu.Target>
           <Group className={styles.menuTrigger} gap='xs'>
             <Text size='xs'>1 Hour</Text>
-            <CaretDown className={clsx(styles.caret, styles.icon)} />
+            <CaretDown className={clsx(styles.caret, 'icon-size-sm')} />
           </Group>
         </Menu.Target>
 
