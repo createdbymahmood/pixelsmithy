@@ -22,6 +22,14 @@ export const urls = {
       index: '/snow-ui/account/overview',
       page: (section: string) => urlCat('/snow-ui/account/:section', {section}),
     },
+    email: {
+      inbox: '/snow-ui/email',
+      compose: '/snow-ui/email/compose',
+      sent: '/snow-ui/email/sent',
+      draft: '/snow-ui/email/draft',
+      spam: '/snow-ui/email/spam',
+      trash: '/snow-ui/email/trash',
+    },
   },
 }
 export const applications = [
