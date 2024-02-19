@@ -77,7 +77,7 @@ const sidebarItems = [
   {
     title: 'Inbox',
     icon: Tray,
-    href: urls.SnowUI.email.inbox,
+    href: urls.SnowUI.email.index,
     segment: 'inbox',
   },
   {
@@ -134,12 +134,12 @@ interface EmailLayoutProps {
 
 export function EmailLayout({children}: EmailLayoutProps) {
   return (
-    <Group align='flex-start' gap='lg' h='100%'>
-      <Stack gap={rem(5)} w={rem(124)}>
+    <Group align='flex-start' gap='lg' h='100%' wrap='nowrap'>
+      <Stack gap={rem(5)} style={{flexShrink: 0}} w={rem(124)}>
         <SidebarItems />
       </Stack>
 
-      <Box h='100%' style={{alignSelf: 'stretch'}}>
+      <Box h='100%' w='100%'>
         {children}
       </Box>
     </Group>
