@@ -31,6 +31,7 @@ export const urls = {
       draft: '/snow-ui/email/draft',
       spam: '/snow-ui/email/spam',
       trash: '/snow-ui/email/trash',
+      archive: '/snow-ui/email/archive',
     },
   },
 }
