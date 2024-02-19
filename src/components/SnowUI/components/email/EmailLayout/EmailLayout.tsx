@@ -5,7 +5,7 @@ import type {
   MantineComponent,
 } from '@mantine/core'
 import {Box, Group as MantineGroup, rem, Stack, Text} from '@mantine/core'
-import type {IconProps} from '@phosphor-icons/react'
+import type {IconProps, IconWeight} from '@phosphor-icons/react'
 import {
   Archive,
   FileText,
@@ -17,6 +17,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import Link from 'next/link'
+import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 import React, {Fragment} from 'react'
 
@@ -50,17 +51,23 @@ interface SidebarItemProps {
   title: string
   href: string
   icon: React.FC<IconProps>
+  segment: string | null
 }
 
-function SidebarItem({href, title, icon: Icon}: SidebarItemProps) {
+function SidebarItem({href, title, icon: Icon, segment}: SidebarItemProps) {
+  const layoutSegment = useSelectedLayoutSegment()
+  const isActive = layoutSegment === segment
+  const iconWeight: IconWeight = isActive ? 'fill' : 'light'
   return (
     <Group
-      className={clsx('cursor-pointer', styles.item)}
+      className={clsx('cursor-pointer', styles.item, {
+        [styles.itemActive]: isActive,
+      })}
       component={Link}
       gap='sm'
       href={href}
     >
-      <Icon className='icon-size-lg' weight='light' />
+      <Icon className='icon-size-lg' weight={iconWeight} />
       <Text size='sm'>{title}</Text>
     </Group>
   )
@@ -71,32 +78,37 @@ const sidebarItems = [
     title: 'Inbox',
     icon: Tray,
     href: urls.SnowUI.email.inbox,
-    segment: null,
+    segment: 'inbox',
   },
   {
     title: 'Sent',
     icon: PaperPlaneRight,
     href: urls.SnowUI.email.sent,
+    segment: 'sent',
   },
   {
     title: 'Draft',
     icon: FileText,
     href: urls.SnowUI.email.draft,
+    segment: 'darft',
   },
   {
     title: 'Spam',
     icon: WarningOctagon,
     href: urls.SnowUI.email.spam,
+    segment: 'spam',
   },
   {
     title: 'Trash',
     icon: Trash,
     href: urls.SnowUI.email.trash,
+    segment: 'trash',
   },
   {
     title: 'Archive',
     icon: Archive,
     href: urls.SnowUI.email.trash,
+    segment: 'archive',
   },
 ]
 
@@ -107,6 +119,7 @@ function SidebarItems() {
         key={sidebarItem.title}
         href={sidebarItem.href}
         icon={sidebarItem.icon}
+        segment={sidebarItem.segment}
         title={sidebarItem.title}
       />
     )
