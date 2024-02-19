@@ -1,2 +1,2 @@
-export * from './components'
-export * from './EmailService'
+export * from './EmailInbox'
+export * from './EmailLayout'
