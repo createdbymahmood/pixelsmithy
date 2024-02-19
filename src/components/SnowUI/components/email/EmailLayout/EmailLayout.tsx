@@ -90,7 +90,7 @@ const sidebarItems = [
     title: 'Draft',
     icon: FileText,
     href: urls.SnowUI.email.draft,
-    segment: 'darft',
+    segment: 'draft',
   },
   {
     title: 'Spam',
@@ -107,7 +107,7 @@ const sidebarItems = [
   {
     title: 'Archive',
     icon: Archive,
-    href: urls.SnowUI.email.trash,
+    href: urls.SnowUI.email.archive,
     segment: 'archive',
   },
 ]
