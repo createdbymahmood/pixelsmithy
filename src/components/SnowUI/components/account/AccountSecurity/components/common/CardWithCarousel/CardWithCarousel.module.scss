@@ -1,13 +1,12 @@
 .indicator {
-  background-color: var(--mantine-color-dimmed);
-  width: rem(6);
-  height: rem(6);
+  background-color: var(--mantine-color-dimmed) !important;
+  width: rem(6px) !important;
+  height: rem(6px) !important;
   @include transition($transition-base);
 
   &[data-active] {
-    background: var(--mantine-color-black);
-
-    width: rem(10px);
+    background: var(--mantine-color-black) !important;
+    width: rem(10px) !important;
   }
 }
 
@@ -15,6 +14,6 @@
   position: absolute !important;
   top: 0 !important;
   right: 0 !important;
-  gap: rem(5px);
+  gap: rem(5px) !important;
   transform: translate(45%, -27px);
 }

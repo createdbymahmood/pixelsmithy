@@ -16,7 +16,7 @@ export function AccountSecurity() {
     <Stack gap='xl'>
       <SimpleGrid cols={2}>
         <SignInTimes />
-        <Stack>
+        <Stack justify='space-between'>
           <RecentAlerts />
           <SecurityGuidelines />
         </Stack>
