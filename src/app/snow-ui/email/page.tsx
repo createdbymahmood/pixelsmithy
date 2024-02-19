@@ -1,6 +1,6 @@
-import React from 'react'
+import {redirect} from 'next/navigation'
 
-import {EmailInbox} from '@/components/SnowUI'
+import {urls} from '@/constants'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({
@@ -8,5 +8,5 @@ export const metadata = constructMetadata({
 })
 
 export default function Email() {
-  return <EmailInbox />
+  return redirect(urls.SnowUI.email.inbox)
 }

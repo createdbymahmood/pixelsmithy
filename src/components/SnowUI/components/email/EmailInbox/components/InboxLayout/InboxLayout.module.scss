@@ -1,0 +1,26 @@
+.listItem {
+  border-radius: var(--mantine-radius-md);
+
+  &:hover {
+    background-color: var(--mantine-color-gray-0);
+  }
+}
+
+.bordered {
+  border-top: rem(1px) solid var(--mantine-color-gray-2);
+  @include transition();
+
+  &:first-of-type {
+    border-top: rem(1px) solid transparent;
+  }
+
+  &:hover {
+    border-top: rem(1px) solid transparent;
+    & + .bordered {
+      border-top: rem(1px) solid transparent;
+    }
+  }
+}
+.preview {
+  @include text-truncate(1);
+}

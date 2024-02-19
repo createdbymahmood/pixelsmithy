@@ -28,11 +28,9 @@ export function SnowUILayout({children}: SnowUILayoutProps) {
           <Grid.Col span='auto'>
             <Header />
 
-            <Box className={styles.contentArea}>
+            <Box className={styles.contentArea} mah='100%' py='lg'>
               <PerfectScrollbar>
-                <Box mih='100%' p='lg'>
-                  <Container className={styles.content}>{children}</Container>
-                </Box>
+                <Container h='100%'>{children}</Container>
               </PerfectScrollbar>
             </Box>
           </Grid.Col>

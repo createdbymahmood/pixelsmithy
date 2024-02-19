@@ -1,6 +1,5 @@
 'use client'
 
-import '@/lib/date/dayjs'
 import '@mantine/dropzone/styles.css'
 import '@mantine/dates/styles.css'
 import '@mantine/spotlight/styles.css'
