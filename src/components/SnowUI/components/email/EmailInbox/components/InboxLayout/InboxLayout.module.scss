@@ -6,6 +6,16 @@
   }
 }
 
+.activeListItem {
+  background-color: var(--mantine-color-gray-0);
+  border-top: rem(1px) solid transparent !important;
+  border-radius: var(--mantine-radius-md);
+
+  & + .bordered {
+    border-top: rem(1px) solid transparent;
+  }
+}
+
 .bordered {
   border-top: rem(1px) solid var(--mantine-color-gray-2);
   @include transition();

@@ -1,7 +1,8 @@
 .root {
+  padding: var(--mantine-spacing-sm);
+
   @include light {
     background-color: var(--mantine-color-white);
-    padding: var(--mantine-spacing-sm);
     @include border-radius(var(--mantine-radius-lg));
   }
 }

@@ -34,6 +34,11 @@ const Group = MantineGroup as MantineComponent<{
 }>
 
 function Compose() {
+  const layoutSegment = useSelectedLayoutSegment()
+
+  const isActive = layoutSegment === 'compose'
+  const iconWeight: IconWeight = isActive ? 'fill' : 'light'
+
   return (
     <Group
       className={clsx('cursor-pointer', styles.item, styles.compose)}
@@ -41,7 +46,7 @@ function Compose() {
       gap='sm'
       href={urls.SnowUI.email.compose}
     >
-      <PencilSimpleLine className='icon-size-lg' />
+      <PencilSimpleLine className='icon-size-lg' weight={iconWeight} />
       <Text size='sm'>Compose</Text>
     </Group>
   )
