@@ -2,6 +2,7 @@
 
 import {
   Avatar,
+  Box,
   Button,
   Card,
   Divider,
@@ -65,40 +66,59 @@ function Header() {
 
 function Content() {
   return (
-    <Stack align='flex-start' className={styles.content} gap='xl' h='100%'>
-      <Group>
-        <Avatar size={rem(40)} />
-        <Title order={3}>slack</Title>
-      </Group>
+    <Box className={styles.content}>
+      <Stack align='flex-start' gap='xl' h='100%' p='lg'>
+        <Group>
+          <Avatar size={rem(40)} />
+          <Title order={3}>slack</Title>
+        </Group>
 
-      <Stack gap={0}>
-        <Title order={3}>Invite your team</Title>
-        <Text size='sm'>
-          Slack is most useful when your whole team can join the conversation.
-          Try adding people to SnowUI Community to start being more productive
-          together!
+        <Stack gap={0}>
+          <Title order={3}>Invite your team</Title>
+          <Text size='sm'>
+            Slack is most useful when your whole team can join the conversation.
+            Try adding people to SnowUI Community to start being more productive
+            together!
+          </Text>
+        </Stack>
+        <Button radius='xl'> Invite People</Button>
+
+        <Skeleton h={rem(260)} radius='lg' w='100%' />
+        <Group w='100%'>
+          <Avatar size={rem(40)} />
+          <Stack gap={0}>
+            <Title order={5}>SnowUI Community</Title>
+            <Text size='sm'>Workspace URL: SnowUI-community</Text>
+            <Text size='sm'>Email: byewind@live.com</Text>
+          </Stack>
+
+          <Button ml='auto' size='xs' variant='light'>
+            Sign In
+          </Button>
+        </Group>
+
+        <Text c='dimmed' size='sm' ta='center' w='100%'>
+          ©2024 Slack Technologies, LLC, a Salesforce company.
         </Text>
       </Stack>
-      <Button radius='xl'> Invite People</Button>
 
-      <Skeleton h={rem(260)} radius='lg' w='100%' />
-      <Group w='100%'>
-        <Avatar size={rem(40)} />
-        <Stack gap={0}>
-          <Title order={5}>SnowUI Community</Title>
-          <Text size='sm'>Workspace URL: SnowUI-community</Text>
-          <Text size='sm'>Email: byewind@live.com</Text>
-        </Stack>
+      <Footer />
+    </Box>
+  )
+}
 
-        <Button ml='auto' size='xs' variant='light'>
-          Sign In
-        </Button>
-      </Group>
-
-      <Text c='dimmed' size='sm' ta='center' w='100%'>
-        ©2024 Slack Technologies, LLC, a Salesforce company.
-      </Text>
-    </Stack>
+function Footer() {
+  const forwardIcon = <ArrowBendUpRight className='icon-size-sm' />
+  const replyIcon = <ArrowBendUpLeft className='icon-size-sm' />
+  return (
+    <Group className={styles.footer} gap='xs' justify='flex-end' p='md'>
+      <Button leftSection={replyIcon} size='xs' variant='light'>
+        Reply
+      </Button>
+      <Button rightSection={forwardIcon} size='xs' variant='light'>
+        Forward
+      </Button>
+    </Group>
   )
 }
 
