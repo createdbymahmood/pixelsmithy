@@ -1,5 +1,4 @@
 'use client'
-import '@/lib/date/dayjs'
 
 import {Card, Group, rem, Stack, Table, Text, Title} from '@mantine/core'
 import {CalendarBlank} from '@phosphor-icons/react'

@@ -60,7 +60,7 @@ function SidebarItem({href, title, icon: Icon}: SidebarItemProps) {
       gap='sm'
       href={href}
     >
-      <Icon className='icon-size-lg' />
+      <Icon className='icon-size-lg' weight='light' />
       <Text size='sm'>{title}</Text>
     </Group>
   )
