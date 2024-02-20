@@ -1,55 +1,50 @@
 'use client'
 
-import type {
-  GroupCssVariables,
-  GroupProps,
-  GroupStylesCtx,
-  MantineComponent,
-} from '@mantine/core'
-import {Box, Card, Checkbox, Group as MantineGroup} from '@mantine/core'
-import {FunnelSimple} from '@phosphor-icons/react/dist/ssr'
+import {Box, Card, Group} from '@mantine/core'
+import {Gear, NotePencil} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import dayJS from 'dayjs'
 import type {ReactNode} from 'react'
 
 import type {SidebarInboxPreviewItem} from '@/components/SnowUI'
-import {SidebarInbox} from '@/components/SnowUI'
+import {SearchInput, SidebarInbox} from '@/components/SnowUI'
 
-const Group = MantineGroup as MantineComponent<{
-  props: GroupProps & {href?: string}
-  ref: HTMLDivElement
-  stylesNames: 'root'
-  vars: GroupCssVariables
-  ctx: GroupStylesCtx
-}>
+import styles from './ChatLayout.module.scss'
 
-function InboxSidebarHeader() {
+interface ChatLayoutProps {
+  children: ReactNode
+}
+
+function Header() {
   return (
-    <Card p='sm' style={{flexShrink: 0}}>
+    <Card p='xs' style={{flexShrink: 0}}>
       <Group>
-        <Checkbox />
-        <FunnelSimple className={clsx('icon-size-md', 'cursor-pointer')} />
+        <NotePencil className={clsx('icon-size-md', 'cursor-pointer')} />
+        <Gear className={clsx('icon-size-md', 'cursor-pointer')} />
+        <SearchInput classNames={{input: styles.searchInput}} ml='auto' />
       </Group>
     </Card>
   )
 }
 
-export function InboxSidebar() {
-  const emails: SidebarInboxPreviewItem[] = [
+function ChatInboxSidebar() {
+  const chats: SidebarInboxPreviewItem[] = [
+    {
+      sender: 'William Johnson',
+      preview: 'What about the second plan',
+      date: dayJS().set('hours', 18).set('minutes', 30),
+    },
     {
       sender: 'ByeWind',
       preview: 'Are you free tonight?',
       date: dayJS().set('hours', 19).set('minutes', 28),
-    },
-    {
-      sender: 'Slack',
-      preview: 'Invite your team to Slack',
-      date: dayJS().set('hours', 18).set('minutes', 30),
+      unread: 12,
     },
     {
       sender: 'Natali Craig',
       preview: 'Hi',
       date: dayJS().set('hours', 17).set('minutes', 52),
+      unread: 5,
     },
     {
       sender: 'Drew Cano',
@@ -58,7 +53,7 @@ export function InboxSidebar() {
       date: dayJS().set('hours', 10).set('minutes', 12),
     },
     {
-      sender: 'Behance',
+      sender: 'Bruce Wayne, James Davis',
       preview: 'You have a new follower',
       date: dayJS().set('hours', 6).set('minutes', 30),
     },
@@ -68,7 +63,7 @@ export function InboxSidebar() {
       date: dayJS().set('month', 2).set('date', 12),
     },
     {
-      sender: 'ChatGPT',
+      sender: 'Sarah Jackson, Michael Brown, Christopher Lee',
       preview: 'Welcome to ChatGPT',
       date: dayJS().set('month', 2).set('date', 12),
     },
@@ -78,13 +73,13 @@ export function InboxSidebar() {
       date: dayJS().set('month', 2).set('date', 11),
     },
     {
-      sender: 'Facebook',
+      sender: 'Group',
       preview: 'You have a new follower',
       date: dayJS().set('month', 2).set('date', 10),
     },
     {
-      sender: 'YouTube',
-      preview: 'The most popular videos of 2024',
+      sender: 'John Smith',
+      preview: "There's a bug you need to deal with.",
       date: dayJS().set('month', 2).set('date', 9),
     },
     {
@@ -94,7 +89,7 @@ export function InboxSidebar() {
     },
     {
       sender: 'Threads',
-      preview: 'You have a new follower',
+      preview: 'I think we should use the first version.',
       date: dayJS().set('month', 2).set('date', 8),
     },
     {
@@ -103,20 +98,15 @@ export function InboxSidebar() {
       date: dayJS().set('month', 2).set('date', 7),
     },
   ]
-
-  return <SidebarInbox header={<InboxSidebarHeader />} items={emails} />
+  return <SidebarInbox header={<Header />} items={chats} />
 }
 
-interface EmailInboxLayoutProps {
-  children: ReactNode
-}
-
-export function EmailInboxLayout({children}: EmailInboxLayoutProps) {
+export function ChatLayout({children}: ChatLayoutProps) {
   return (
     <Group align='flex-start' h='100%' w='100%' wrap='nowrap'>
-      <InboxSidebar />
+      <ChatInboxSidebar />
 
-      <Box h='100%' w='100%'>
+      <Box h='100%' style={{alignSelf: 'stretch'}} w='100%'>
         {children}
       </Box>
     </Group>

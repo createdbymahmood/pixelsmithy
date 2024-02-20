@@ -18,7 +18,7 @@ export const dateToString = (date: Dayjs) => {
   return date.fromNow()
 }
 
-export const toEmailTime = (date: Dayjs) => {
+export const toSidebarInboxTime = (date: Dayjs) => {
   const isToday = date.isToday()
 
   if (isToday) {
