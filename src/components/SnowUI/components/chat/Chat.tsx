@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {Chat as ChatView} from './components/Chat'
+
 export function Chat() {
-  return <div>Chat</div>
+  return <ChatView />
 }

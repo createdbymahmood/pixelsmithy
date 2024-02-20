@@ -47,7 +47,7 @@ function ChatListItem({
           </Text>
         </Stack>
 
-        <Stack gap={rem(6)} ml='auto'>
+        <Stack align='flex-end' gap={rem(6)} ml='auto'>
           <Text c='dimmed' size='xs' style={{whiteSpace: 'nowrap'}}>
             {toSidebarInboxTime(date)}
           </Text>
