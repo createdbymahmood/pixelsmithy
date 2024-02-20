@@ -22,8 +22,8 @@ import {useSelectedLayoutSegment} from 'next/navigation'
 import React, {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {SidebarProfileButton} from '@/components/SnowUI/layout/SnowUILayout/components/Sidebar/SidebarProfileButton'
-import {SidebarTabsQuickNavigation} from '@/components/SnowUI/layout/SnowUILayout/components/Sidebar/SidebarTabsQuickNavigation'
+import {SidebarProfileButton} from '@/components/SnowUI/layout/SnowUIDashboardLayout/components/Sidebar/SidebarProfileButton'
+import {SidebarTabsQuickNavigation} from '@/components/SnowUI/layout/SnowUIDashboardLayout/components/Sidebar/SidebarTabsQuickNavigation'
 import {emailId} from '@/components/SnowUI/mocks/email'
 import {urls} from '@/constants'
 
