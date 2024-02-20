@@ -9,29 +9,30 @@ export const urls = {
     index: '/job-location',
   },
   SnowUI: {
-    index: '/snow-ui',
+    index: '/snow-ui/dashboard',
     projects: {
-      overview: '/snow-ui/projects',
+      overview: '/snow-ui/dashboard/projects',
       details: (projectId: string, section: string) =>
-        urlCat('/snow-ui/projects/:projectId/:section', {
+        urlCat('/snow-ui/dashboard/projects/:projectId/:section', {
           projectId,
           section,
         }),
     },
     account: {
-      index: '/snow-ui/account/overview',
-      page: (section: string) => urlCat('/snow-ui/account/:section', {section}),
+      index: '/snow-ui/dashboard/account/overview',
+      page: (section: string) =>
+        urlCat('/snow-ui/dashboard/account/:section', {section}),
     },
     email: {
-      index: '/snow-ui/email/inbox',
+      index: '/snow-ui/dashboard/email/inbox',
       inbox: (emailId: string) =>
-        urlCat('/snow-ui/email/inbox/:emailId', {emailId}),
-      compose: '/snow-ui/email/compose',
-      sent: '/snow-ui/email/sent',
-      draft: '/snow-ui/email/draft',
-      spam: '/snow-ui/email/spam',
-      trash: '/snow-ui/email/trash',
-      archive: '/snow-ui/email/archive',
+        urlCat('/snow-ui/dashboard/email/inbox/:emailId', {emailId}),
+      compose: '/snow-ui/dashboard/email/compose',
+      sent: '/snow-ui/dashboard/email/sent',
+      draft: '/snow-ui/dashboard/email/draft',
+      spam: '/snow-ui/dashboard/email/spam',
+      trash: '/snow-ui/dashboard/email/trash',
+      archive: '/snow-ui/dashboard/email/archive',
     },
   },
 }
