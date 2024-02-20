@@ -1,3 +1,3 @@
-import {SnowUILayout} from '@/components/SnowUI/layout/SnowUILayout'
+import {SnowUIDashboardLayout} from '@/components/SnowUI/layout/SnowUIDashboardLayout'
 
-export default SnowUILayout
+export default SnowUIDashboardLayout
