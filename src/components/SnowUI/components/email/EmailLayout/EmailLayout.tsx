@@ -21,6 +21,7 @@ import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 import React, {Fragment} from 'react'
 
+import {emailId} from '@/components/SnowUI/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './EmailLayout.module.scss'
@@ -82,7 +83,7 @@ const sidebarItems = [
   {
     title: 'Inbox',
     icon: Tray,
-    href: urls.SnowUI.email.index,
+    href: urls.SnowUI.email.inbox(emailId),
     segment: 'inbox',
   },
   {
