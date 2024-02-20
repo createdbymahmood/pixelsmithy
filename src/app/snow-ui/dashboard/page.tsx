@@ -1,5 +1,3 @@
-import {redirect} from 'next/navigation'
-
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({
