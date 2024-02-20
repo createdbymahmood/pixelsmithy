@@ -1,8 +1,9 @@
 'use client'
 
-import {Avatar, Box, Group, rem, Stack, Text} from '@mantine/core'
+import {Avatar, Badge, Box, Group, rem, Stack, Text} from '@mantine/core'
 import clsx from 'clsx'
 import type {Dayjs} from 'dayjs'
+import {isUndefined} from 'lodash-es'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -40,14 +41,23 @@ function ChatListItem({
           <Text className={styles.sender} size='sm'>
             {sender}
           </Text>
+
           <Text c='dimmed' className={styles.preview} size='xs'>
             {preview}
           </Text>
         </Stack>
 
-        <Text c='dimmed' ml='auto' size='xs' style={{whiteSpace: 'nowrap'}}>
-          {toSidebarInboxTime(date)}
-        </Text>
+        <Stack gap={rem(6)} ml='auto'>
+          <Text c='dimmed' size='xs' style={{whiteSpace: 'nowrap'}}>
+            {toSidebarInboxTime(date)}
+          </Text>
+
+          {!isUndefined(unread) && (
+            <Badge className={styles.unread} color='indigo.2'>
+              {unread}
+            </Badge>
+          )}
+        </Stack>
       </Group>
     </Box>
   )

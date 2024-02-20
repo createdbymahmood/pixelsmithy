@@ -36,3 +36,7 @@
 .sender {
   @include text-truncate(1);
 }
+
+.unread {
+  color: var(--mantine-color-black);
+}
