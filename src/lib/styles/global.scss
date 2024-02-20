@@ -22,21 +22,25 @@ a {
 .icon-size-sm {
   height: rem(16px);
   width: rem(16px);
+  flex-shrink: 0;
 }
 
 .icon-size-md {
   height: rem(20px);
   width: rem(20px);
+  flex-shrink: 0;
 }
 
 .icon-size-lg {
   height: rem(24px);
   width: rem(24px);
+  flex-shrink: 0;
 }
 
 .icon-size-lg {
   height: rem(28px);
   width: rem(28px);
+  flex-shrink: 0;
 }
 
 .cursor-pointer {

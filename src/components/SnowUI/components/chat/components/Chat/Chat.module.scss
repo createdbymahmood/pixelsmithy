@@ -1,0 +1,79 @@
+.chat {
+  border: rem(1px) solid var(--mantine-color-gray-3);
+  border-radius: var(--mantine-radius-md);
+}
+
+.header {
+  border-bottom: rem(1px) solid var(--mantine-color-gray-3);
+}
+
+.send {
+  color: var(--mantine-color-dimmed);
+}
+
+.input {
+  background: var(--mantine-color-gray-0);
+}
+
+.message {
+  max-width: rem(420);
+  width: fit-content;
+  @include border-radius(var(--mantine-radius-lg));
+}
+
+.rtl {
+  align-self: flex-end;
+}
+
+.messageRTL {
+  border-bottom-right-radius: var(--mantine-radius-sm);
+}
+
+.textContentMessage {
+  padding: var(--mantine-spacing-sm) var(--mantine-spacing-lg);
+}
+
+.messageRTLTextContent {
+  background: var(--mantine-color-indigo-3);
+  color: var(--mantine-color-white);
+}
+
+.messageLTR {
+  border-bottom-left-radius: var(--mantine-radius-sm);
+}
+
+.messageLTRTextContent {
+  background-color: var(--mantine-color-gray-2);
+  color: black;
+}
+
+.messageImageContent {
+  @include border-radius(var(--mantine-radius-lg));
+}
+.messageImageContentRTL {
+  background: var(--mantine-color-indigo-0);
+  border-bottom-right-radius: 0;
+}
+
+.messageImageContentLTR {
+  background: var(--mantine-color-gray-1);
+  border-bottom-left-radius: 0;
+}
+
+.messageContainer {
+  &:hover {
+    .actions {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+
+.actions {
+  opacity: 0;
+  pointer-events: none;
+  @include transition($transition-base);
+}
+
+.messageActions {
+}
