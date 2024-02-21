@@ -41,12 +41,12 @@ function Users({queryString}: UsersProps) {
   const {groupedUsers} = useUsersState({queryString})
   const content = map(entries(groupedUsers), ([letter, users]) => {
     return (
-      <Stack key={letter}>
+      <Stack key={letter} gap='sm'>
         <Text c='dimmed' size='xs'>
           {letter}
         </Text>
 
-        <Stack>
+        <Stack gap='sm'>
           {users.map((user) => {
             return (
               <Group key={user}>
@@ -60,7 +60,7 @@ function Users({queryString}: UsersProps) {
     )
   })
   return (
-    <Stack p='md' pt={0}>
+    <Stack gap='lg' p='md' pt={0}>
       {content}
     </Stack>
   )

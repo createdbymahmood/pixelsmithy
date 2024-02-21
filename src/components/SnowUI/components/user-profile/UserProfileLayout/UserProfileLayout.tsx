@@ -14,7 +14,7 @@ export function UserProfileLayout({children}: UserProfileLayoutProps) {
   return (
     <Group align='flex-start' h='100%' wrap='nowrap'>
       <SideUsersList />
-      <Box>{children}</Box>
+      <Box w='100%'>{children}</Box>
     </Group>
   )
 }
