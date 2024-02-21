@@ -21,9 +21,9 @@ function Header() {
   return <Title order={4}>ByeWind</Title>
 }
 
-function UserDetails() {
+export function UserDetails() {
   return (
-    <Group>
+    <Group c='dimmed'>
       <Group gap={rem(5)}>
         <UserCircle className='icon-size-sm' />
         <Text c='dimmed' size='xs'>
