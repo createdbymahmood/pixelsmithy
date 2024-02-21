@@ -17,12 +17,14 @@ interface SearchInputProps
 
 export function SearchInput({classNames, ...props}: SearchInputProps) {
   const inputClassName = classNames?.input
+  const wrapperClassName = classNames?.wrapper
   return (
     <Input
       className={inter.className}
       classNames={{
+        wrapper: clsx(styles.searchWrapper, wrapperClassName),
         input: clsx(styles.searchInput, inputClassName),
-        ...omit(classNames, 'input'),
+        ...omit(classNames, ['input', 'wrapperClassName']),
       }}
       leftSection={<MagnifyingGlass />}
       placeholder='Search'

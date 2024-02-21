@@ -34,6 +34,8 @@ export const urls = {
       trash: '/snow-ui/dashboard/email/trash',
       archive: '/snow-ui/dashboard/email/archive',
     },
+    userProfile: (userId: string) =>
+      urlCat('/snow-ui/dashboard/user-profile/:userId', {userId}),
   },
 }
 export const applications = [
