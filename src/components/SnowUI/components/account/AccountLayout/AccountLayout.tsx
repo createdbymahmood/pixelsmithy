@@ -16,14 +16,14 @@ interface ProjectOverviewProps {
 }
 
 const accountSections = [
-  'overview',
-  'settings',
-  'security',
-  'billing',
-  'statements',
-  'referrals',
-  'api-keys',
-  'logs',
+  {key: 'overview', href: urls.SnowUI.account.overview},
+  {key: 'settings', href: urls.SnowUI.account.settings},
+  {key: 'security', href: urls.SnowUI.account.security},
+  {key: 'billing', href: urls.SnowUI.account.billing},
+  {key: 'statements', href: urls.SnowUI.account.statements},
+  {key: 'referrals', href: urls.SnowUI.account.referrals},
+  {key: 'api-keys', href: urls.SnowUI.account.apiKey},
+  {key: 'logs', href: urls.SnowUI.account.logs},
 ] as const
 
 const Tab = Tabs.Tab as MantineComponent<{
@@ -38,13 +38,8 @@ export function AccountLayout({children}: ProjectOverviewProps) {
 
   const content = accountSections.map((tab) => {
     return (
-      <Tab
-        key={tab}
-        component={Link}
-        href={urls.SnowUI.account.page(tab)}
-        value={tab}
-      >
-        {startCase(tab)}
+      <Tab key={tab.key} component={Link} href={tab.href} value={tab.key}>
+        {startCase(tab.key)}
       </Tab>
     )
   })

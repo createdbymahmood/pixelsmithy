@@ -11,5 +11,5 @@ interface QueryParams extends Params {
 
 export default function ProjectDetails() {
   const params = useParams<QueryParams>()
-  return redirect(urls.SnowUI.projects.details(params.id, 'overview'))
+  return redirect(urls.SnowUI.projects.overview(params.id))
 }
