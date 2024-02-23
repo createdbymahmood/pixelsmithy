@@ -21,7 +21,7 @@ const logs = [
   },
   {
     date: dayjs().subtract(4, 'months'),
-    log: 'POST /v1/customer/c_630faaba0c57b/not_found',
+    log: 'POST /v1/customer/c_630faaba0c57c/not_found',
   },
   {
     date: dayjs().subtract(4, 'months'),
