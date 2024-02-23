@@ -3,24 +3,32 @@
 import {Box, Container, Grid} from '@mantine/core'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
+import {useShallow} from 'zustand/react/shallow'
+
+import {useSnowUILayoutStore} from '@/components/SnowUI/layout/store/layout'
 
 import {Header, RightSidePanel, Sidebar} from './components'
 import styles from './SnowUILayout.module.scss'
 
 interface SnowUILayoutProps {
   children: ReactNode
-  withNotificationsSidebar?: boolean
 }
 
-export function SnowUIDashboardLayout({
-  children,
-  withNotificationsSidebar = true,
-}: SnowUILayoutProps) {
+export function SnowUIDashboardLayout({children}: SnowUILayoutProps) {
+  const {notificationsOpen, sidebarOpen} = useSnowUILayoutStore(
+    useShallow((state) => ({
+      sidebarOpen: state.sidebarOpen,
+      notificationsOpen: state.notificationsOpen,
+    })),
+  )
+
   return (
     <Grid gutter={0}>
-      <Grid.Col span='content'>
-        <Sidebar />
-      </Grid.Col>
+      {sidebarOpen ? (
+        <Grid.Col span='content'>
+          <Sidebar />
+        </Grid.Col>
+      ) : null}
 
       <Grid.Col span='auto'>
         <Header />
@@ -32,7 +40,7 @@ export function SnowUIDashboardLayout({
         </Box>
       </Grid.Col>
 
-      {withNotificationsSidebar ? (
+      {notificationsOpen ? (
         <Grid.Col span='content'>
           <RightSidePanel />
         </Grid.Col>

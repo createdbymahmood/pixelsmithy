@@ -34,13 +34,15 @@
     "lodash-es": "4.17.21",
     "next": "14.1.0",
     "numeral": "2.0.6",
+    "produce": "0.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-perfect-scrollbar": "1.5.8",
     "tinymce": "6.8.3",
     "urlcat": "2.0.4",
     "utility-types": "3.11.0",
-    "uuid": "9.0.1"
+    "uuid": "9.0.1",
+    "zustand": "4.5.1"
   },
   "devDependencies": {
     "@fullstacksjs/eslint-config": "10.10.1",
