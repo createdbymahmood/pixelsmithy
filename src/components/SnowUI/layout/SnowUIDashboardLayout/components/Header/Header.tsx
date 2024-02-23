@@ -17,6 +17,7 @@ import {useRouter} from 'next/navigation'
 import {Fragment} from 'react'
 
 import {SearchInput} from '@/components/SnowUI'
+import {useSnowUILayoutStore} from '@/components/SnowUI/layout/store/layout'
 import {projectId} from '@/components/SnowUI/mocks/email'
 import {urls} from '@/constants'
 
@@ -102,9 +103,16 @@ function HeaderSearchInput() {
 }
 
 export function Header() {
+  const state = useSnowUILayoutStore()
+
   return (
     <Group className={styles.header}>
-      <Sidebar className={styles.icon} size={iconSize} weight={iconWeight} />
+      <Sidebar
+        className={styles.icon}
+        size={iconSize}
+        weight={iconWeight}
+        onClick={state.toggleSidebar}
+      />
       <Star className={styles.icon} size={iconSize} weight={iconWeight} />
       <HeaderBreadcrumbs />
       <HeaderSearchInput />
@@ -115,7 +123,12 @@ export function Header() {
         weight={iconWeight}
       />
       <Bell className={styles.icon} size={iconSize} weight={iconWeight} />
-      <Sidebar className={styles.icon} size={iconSize} weight={iconWeight} />
+      <Sidebar
+        className={styles.icon}
+        size={iconSize}
+        weight={iconWeight}
+        onClick={state.toggleNotifications}
+      />
     </Group>
   )
 }
