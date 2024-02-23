@@ -5,11 +5,14 @@ import type {
 } from '@mantine/core'
 import {Box, Tabs} from '@mantine/core'
 import {startCase} from 'lodash-es'
-import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
 import Link from 'next/link'
-import {useParams, useSelectedLayoutSegment} from 'next/navigation'
+import {
+  useSelectedLayoutSegment,
+  useSelectedLayoutSegments,
+} from 'next/navigation'
 import type {ReactNode} from 'react'
 
+import {projectId} from '@/components/SnowUI/mocks/email'
 import {urls} from '@/constants'
 
 interface ProjectOverviewProps {
@@ -17,13 +20,13 @@ interface ProjectOverviewProps {
 }
 
 export const projectDetailsSections = [
-  'overview',
-  'targets',
-  'budget',
-  'users',
-  'files',
-  'activity',
-  'settings',
+  {key: 'overview', href: urls.SnowUI.projects.overview(projectId)},
+  {key: 'targets', href: urls.SnowUI.projects.targets(projectId)},
+  {key: 'budget', href: urls.SnowUI.projects.budget(projectId)},
+  {key: 'users', href: urls.SnowUI.projects.users(projectId)},
+  {key: 'files', href: urls.SnowUI.projects.files(projectId)},
+  {key: 'activity', href: urls.SnowUI.projects.activity(projectId)},
+  {key: 'settings', href: urls.SnowUI.projects.settings(projectId)},
 ] as const
 
 const Tab = Tabs.Tab as MantineComponent<{
@@ -37,22 +40,14 @@ export function ProjectDetailsLayout({children}: ProjectOverviewProps) {
   const segment = useSelectedLayoutSegment()
   const content = projectDetailsSections.map((tab) => {
     return (
-      <Tab
-        key={tab}
-        component={Link}
-        href={urls.SnowUI.projects.details(
-          '6cf7e844-a4a2-40c3-b7a4-a9ac8a0593de',
-          tab,
-        )}
-        value={tab}
-      >
-        {startCase(tab)}
+      <Tab key={tab.key} component={Link} href={tab.href} value={tab.key}>
+        {startCase(tab.key)}
       </Tab>
     )
   })
 
   return (
-    <Tabs defaultValue={segment}>
+    <Tabs key={segment} defaultValue={segment}>
       <Tabs.List>{content}</Tabs.List>
       <Box mt='lg'>{children}</Box>
     </Tabs>

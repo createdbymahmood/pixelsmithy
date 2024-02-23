@@ -1,5 +1,18 @@
 'use client'
 
-import {AccountLayout} from '@/components/SnowUI/components/account'
+import type {ReactNode} from 'react'
 
-export default AccountLayout
+import {AccountLayout} from '@/components/SnowUI/components/account'
+import {SnowUIDashboardLayout} from '@/components/SnowUI/layout/SnowUIDashboardLayout'
+
+interface LayoutProps {
+  children: ReactNode
+}
+
+export default function Layout({children}: LayoutProps) {
+  return (
+    <SnowUIDashboardLayout>
+      <AccountLayout>{children}</AccountLayout>
+    </SnowUIDashboardLayout>
+  )
+}

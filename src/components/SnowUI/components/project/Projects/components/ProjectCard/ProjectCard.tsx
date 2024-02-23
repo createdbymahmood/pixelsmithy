@@ -12,9 +12,10 @@ import {Butterfly} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
 import {
-  getCompleationStatusByIndex,
   CompleationStatus,
+  getCompleationStatusByIndex,
 } from '@/components/SnowUI/components/project/Projects/components/Status/Status'
+import {projectId} from '@/components/SnowUI/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './ProjectCard.module.scss'
@@ -81,10 +82,7 @@ export function ProjectCard({index}: ProjectCardProps) {
   return (
     <Card
       component={Link}
-      href={urls.SnowUI.projects.details(
-        '6cf7e844-a4a2-40c3-b7a4-a9ac8a0593de',
-        'overview',
-      )}
+      href={urls.SnowUI.projects.overview(projectId)}
       scroll
     >
       <Stack className={styles.card}>

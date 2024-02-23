@@ -11,17 +11,32 @@ export const urls = {
   SnowUI: {
     index: '/snow-ui/dashboard',
     projects: {
-      overview: '/snow-ui/dashboard/projects',
-      details: (projectId: string, section: string) =>
-        urlCat('/snow-ui/dashboard/projects/:projectId/:section', {
-          projectId,
-          section,
-        }),
+      index: '/snow-ui/dashboard/projects',
+      overview: (projectId: string) =>
+        urlCat('/snow-ui/dashboard/projects/:projectId/overview', {projectId}),
+      targets: (projectId: string) =>
+        urlCat('/snow-ui/dashboard/projects/:projectId/targets', {projectId}),
+      budget: (projectId: string) =>
+        urlCat('/snow-ui/dashboard/projects/:projectId/budget', {projectId}),
+      users: (projectId: string) =>
+        urlCat('/snow-ui/dashboard/projects/:projectId/users', {projectId}),
+      files: (projectId: string) =>
+        urlCat('/snow-ui/dashboard/projects/:projectId/files', {projectId}),
+      activity: (projectId: string) =>
+        urlCat('/snow-ui/dashboard/projects/:projectId/activity', {projectId}),
+      settings: (projectId: string) =>
+        urlCat('/snow-ui/dashboard/projects/:projectId/settings', {projectId}),
     },
     account: {
       index: '/snow-ui/dashboard/account/overview',
-      page: (section: string) =>
-        urlCat('/snow-ui/dashboard/account/:section', {section}),
+      overview: '/snow-ui/dashboard/account/overview',
+      settings: '/snow-ui/dashboard/account/settings',
+      security: '/snow-ui/dashboard/account/security',
+      billing: '/snow-ui/dashboard/account/billing',
+      statements: '/snow-ui/dashboard/account/statements',
+      referrals: '/snow-ui/dashboard/account/referrals',
+      apiKey: '/snow-ui/dashboard/account/api-key',
+      logs: '/snow-ui/dashboard/account/logs',
     },
     email: {
       index: '/snow-ui/dashboard/email/inbox',

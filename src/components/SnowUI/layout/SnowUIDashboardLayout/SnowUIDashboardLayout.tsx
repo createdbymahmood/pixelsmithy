@@ -12,9 +12,13 @@ import styles from './SnowUILayout.module.scss'
 
 interface SnowUILayoutProps {
   children: ReactNode
+  withNotificationsSidebar?: boolean
 }
 
-export function SnowUIDashboardLayout({children}: SnowUILayoutProps) {
+export function SnowUIDashboardLayout({
+  children,
+  withNotificationsSidebar = true,
+}: SnowUILayoutProps) {
   return (
     <Grid gutter={0}>
       <Grid.Col span='content'>
@@ -31,9 +35,11 @@ export function SnowUIDashboardLayout({children}: SnowUILayoutProps) {
         </Box>
       </Grid.Col>
 
-      <Grid.Col span='content'>
-        <RightSidePanel />
-      </Grid.Col>
+      {withNotificationsSidebar ? (
+        <Grid.Col span='content'>
+          <RightSidePanel />
+        </Grid.Col>
+      ) : null}
     </Grid>
   )
 }
