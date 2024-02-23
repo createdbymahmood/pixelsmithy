@@ -45,7 +45,7 @@ export function AccountLayout({children}: ProjectOverviewProps) {
   })
 
   return (
-    <Tabs defaultValue={segment}>
+    <Tabs key={segment} defaultValue={segment}>
       <Tabs.List>{content}</Tabs.List>
       <Box mt='lg'>{children}</Box>
     </Tabs>

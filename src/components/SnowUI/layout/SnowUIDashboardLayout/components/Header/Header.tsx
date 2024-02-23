@@ -17,6 +17,7 @@ import {useRouter} from 'next/navigation'
 import {Fragment} from 'react'
 
 import {SearchInput} from '@/components/SnowUI'
+import {projectId} from '@/components/SnowUI/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './Header.module.scss'
@@ -53,7 +54,7 @@ function SpotlightImpl() {
       id: 'projects',
       label: 'Projects',
       description: 'Go to projects page',
-      onClick: () => router.push(urls.SnowUI.projects.overview),
+      onClick: () => router.push(urls.SnowUI.projects.overview(projectId)),
       leftSection: <Folder size={iconSize} weight={iconWeight} />,
     },
     {
