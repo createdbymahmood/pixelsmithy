@@ -3,7 +3,14 @@
 import type {AccordionControlProps, MantineComponent} from '@mantine/core'
 import {Accordion, Box, Group, rem, Stack, Text} from '@mantine/core'
 import type {IconProps, IconWeight} from '@phosphor-icons/react'
-import {FolderNotch, IdentificationCard} from '@phosphor-icons/react/dist/ssr'
+import {
+  ChatsCircle,
+  Envelope,
+  FolderNotch,
+  IdentificationCard,
+  PaintRoller,
+  UsersThree,
+} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {isArray, isEmpty, isEqual} from 'lodash-es'
 import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
@@ -14,7 +21,8 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {SidebarProfileButton} from '@/components/SnowUI/layout/SnowUIDashboardLayout/components/Sidebar/SidebarProfileButton'
 import {SidebarTabsQuickNavigation} from '@/components/SnowUI/layout/SnowUIDashboardLayout/components/Sidebar/SidebarTabsQuickNavigation'
-import {projectId} from '@/components/SnowUI/mocks/email'
+import {emailId, projectId} from '@/components/SnowUI/mocks/email'
+import {userId} from '@/components/SnowUI/mocks/user'
 import {urls} from '@/constants'
 
 import styles from './Sidebar.module.scss'
@@ -62,7 +70,6 @@ const AccordionControl = Accordion.Control as MantineComponent<{
 
 const SidebarItems = ({items}: SidebarItemsProps) => {
   const segments = useSelectedLayoutSegments()
-  console.log({segments})
   const content = items.map((item) => {
     const withChildren = isArray(item.children) && !isEmpty(item.children)
 
@@ -80,41 +87,39 @@ const SidebarItems = ({items}: SidebarItemsProps) => {
     const iconWeight: IconWeight = opened ? 'fill' : 'duotone'
 
     return (
-      <Fragment key={item.id}>
-        <Accordion.Item value={item.id}>
-          <AccordionControl
-            // eslint-disable-next-line react/jsx-no-useless-fragment
-            chevron={withChildren ? null : <Fragment />}
-            className={clsx({[styles.activeSidebarItem]: opened})}
-            component={item.href ? Link : undefined}
-            href={item.href as unknown as string}
-            mb='5px'
-            pr='lg'
-          >
-            <Box>
-              <Group gap='xs'>
-                {withIcon ? (
-                  <Icon
-                    className={clsx(styles.icon, {
-                      [styles.childlessSidebarItem]: !withChildren,
-                    })}
-                    size={25}
-                    weight={iconWeight}
-                  />
-                ) : null}
+      <Accordion.Item key={item.id} value={item.id}>
+        <AccordionControl
+          // eslint-disable-next-line react/jsx-no-useless-fragment
+          chevron={withChildren ? null : <Fragment />}
+          className={clsx({[styles.activeSidebarItem]: opened})}
+          component={item.href ? Link : undefined}
+          href={item.href as unknown as string}
+          mb='5px'
+          pr='lg'
+        >
+          <Box>
+            <Group gap='xs'>
+              {withIcon ? (
+                <Icon
+                  className={clsx(styles.icon, {
+                    [styles.childlessSidebarItem]: !withChildren,
+                  })}
+                  size={25}
+                  weight={iconWeight}
+                />
+              ) : null}
 
-                <Text
-                  className={clsx({[styles.withoutIconSidebarItem]: !withIcon})}
-                  size='sm'
-                >
-                  {item.title}
-                </Text>
-              </Group>
-            </Box>
-          </AccordionControl>
-          <Accordion.Panel>{children}</Accordion.Panel>
-        </Accordion.Item>
-      </Fragment>
+              <Text
+                className={clsx({[styles.withoutIconSidebarItem]: !withIcon})}
+                size='sm'
+              >
+                {item.title}
+              </Text>
+            </Group>
+          </Box>
+        </AccordionControl>
+        {children ? <Accordion.Panel>{children}</Accordion.Panel> : null}
+      </Accordion.Item>
     )
   })
 
@@ -122,8 +127,8 @@ const SidebarItems = ({items}: SidebarItemsProps) => {
 }
 
 const SidebarSections = ({sections}: SidebarSectionsProps) => {
-  // const selections = useSelections<string>([])
   const [selection, setSelection] = useState<string[]>([])
+
   const content = sections.map((section) => {
     return (
       <Box key={section.title} mb='xl'>
@@ -290,20 +295,42 @@ export function Sidebar() {
             },
           ],
         },
-        // {
-        //   id: 'email',
-        //   href: urls.SnowUI.email.inbox(emailId),
-        //   title: 'Email',
-        //   icon: Envelope,
-        //   children: [],
-        //   activeSegment: 'email',
-        // },
-        /*   {
-          id: 'onlineCourses',
-          title: 'Online Courses',
-          icon: Notebook,
-          href: '/',
-        }, */
+        {
+          id: 'email',
+          href: urls.SnowUI.email.inbox(emailId),
+          title: 'Email',
+          icon: Envelope,
+          activeSegment: null,
+          children: [],
+        },
+        {
+          id: 'chat',
+          href: urls.SnowUI.chat,
+          title: 'Chat',
+          icon: ChatsCircle,
+          activeSegment: null,
+          children: [],
+        },
+        {
+          id: 'userProfile',
+          href: urls.SnowUI.userProfile(userId),
+          title: 'User Profile',
+          icon: UsersThree,
+          activeSegment: null,
+          children: [],
+        },
+      ],
+    },
+    {
+      title: 'Etc',
+      items: [
+        {
+          id: 'email-template',
+          title: 'Template',
+          icon: PaintRoller,
+          href: urls.SnowUI.emailTemplate,
+          activeSegment: ['email-template'],
+        },
       ],
     },
   ]

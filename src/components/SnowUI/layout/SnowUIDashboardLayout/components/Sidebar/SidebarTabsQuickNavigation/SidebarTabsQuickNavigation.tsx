@@ -1,5 +1,14 @@
-import {Group, List, Tabs} from '@mantine/core'
+import type {
+  ListItemProps,
+  ListItemStylesNames,
+  MantineComponent,
+} from '@mantine/core'
+import {List, Tabs} from '@mantine/core'
 import {head} from 'lodash-es'
+import Link from 'next/link'
+
+import {projectId} from '@/components/SnowUI/mocks/email'
+import {urls} from '@/constants'
 
 import styles from './SidebarTabsQuickNavigation.module.scss'
 
@@ -8,8 +17,12 @@ const tabs = [
     key: 'favorites',
     title: 'Favorites',
     items: [
-      {key: '1', title: 'Microsoft', href: '/'},
-      {key: '2', title: 'Google', href: '/'},
+      {
+        key: '1',
+        title: 'Project Budget',
+        href: urls.SnowUI.projects.budget(projectId),
+      },
+      {key: '2', title: 'Account Settings', href: urls.SnowUI.account.settings},
     ],
   },
 
@@ -24,6 +37,12 @@ const tabs = [
 ]
 
 const initialOpenedTab = head(tabs)?.key
+const ListItem = List.Item as MantineComponent<{
+  props: ListItemProps & {href: string}
+  ref: HTMLLIElement
+  stylesNames: ListItemStylesNames
+  compound: true
+}>
 
 export function SidebarTabsQuickNavigation() {
   const tabsList = tabs.map((tab) => (
@@ -34,7 +53,11 @@ export function SidebarTabsQuickNavigation() {
 
   const tabsContent = tabs.map((tab) => {
     const itemsList = tab.items.map((tabItem) => {
-      return <List.Item key={tabItem.key}>{tabItem.title}</List.Item>
+      return (
+        <ListItem key={tabItem.key} component={Link} href={tabItem.href}>
+          {tabItem.title}
+        </ListItem>
+      )
     })
 
     return (
@@ -65,9 +88,7 @@ export function SidebarTabsQuickNavigation() {
       defaultValue={initialOpenedTab}
       unstyled
     >
-      <Tabs.List>
-        <Group gap='xs'>{tabsList}</Group>
-      </Tabs.List>
+      <Tabs.List>{tabsList}</Tabs.List>
 
       {tabsContent}
     </Tabs>
