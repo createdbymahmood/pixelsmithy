@@ -4,12 +4,12 @@ import type {AccordionControlProps, MantineComponent} from '@mantine/core'
 import {Accordion, Box, Group, rem, Stack, Text} from '@mantine/core'
 import type {IconProps, IconWeight} from '@phosphor-icons/react'
 import {FolderNotch, IdentificationCard} from '@phosphor-icons/react/dist/ssr'
-import {useSelections} from 'ahooks'
 import clsx from 'clsx'
-import {includes, isArray, isEmpty} from 'lodash-es'
+import {isArray, isEmpty, isEqual} from 'lodash-es'
+import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
 import Link from 'next/link'
-import {useSelectedLayoutSegments} from 'next/navigation'
-import React, {Fragment} from 'react'
+import {useParams, useSelectedLayoutSegments} from 'next/navigation'
+import React, {Fragment, useState} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {SidebarProfileButton} from '@/components/SnowUI/layout/SnowUIDashboardLayout/components/Sidebar/SidebarProfileButton'
@@ -33,7 +33,7 @@ interface SidebarItem {
   filledIcon?: React.FC<IconProps>
   href?: string
   children?: SidebarItem[]
-  activeSegment: string | null
+  activeSegment: string[] | null
 }
 
 interface SidebarSection {
@@ -47,7 +47,6 @@ interface SidebarSectionsProps {
 
 interface SidebarItemsProps {
   items: SidebarItem[]
-  selections: ReturnType<typeof useSelections<string>>
 }
 
 type LocalAccordionControlProps = AccordionControlProps & {
@@ -61,18 +60,17 @@ const AccordionControl = Accordion.Control as MantineComponent<{
   compound: true
 }>
 
-const SidebarItems = ({items, selections}: SidebarItemsProps) => {
+const SidebarItems = ({items}: SidebarItemsProps) => {
   const segments = useSelectedLayoutSegments()
+  console.log({segments})
   const content = items.map((item) => {
     const withChildren = isArray(item.children) && !isEmpty(item.children)
 
     const children = (() => {
-      return withChildren ? (
-        <SidebarItems items={item.children!} selections={selections} />
-      ) : null
+      return withChildren ? <SidebarItems items={item.children!} /> : null
     })()
 
-    const opened = includes(segments, item.activeSegment)
+    const opened = isEqual(segments, item.activeSegment)
     const withIcon = !isEmpty(item.icon)
     const Icon = (() => {
       if (!opened) return item.icon ?? Fragment
@@ -124,7 +122,8 @@ const SidebarItems = ({items, selections}: SidebarItemsProps) => {
 }
 
 const SidebarSections = ({sections}: SidebarSectionsProps) => {
-  const selections = useSelections<string>([])
+  // const selections = useSelections<string>([])
+  const [selection, setSelection] = useState<string[]>([])
   const content = sections.map((section) => {
     return (
       <Box key={section.title} mb='xl'>
@@ -132,38 +131,33 @@ const SidebarSections = ({sections}: SidebarSectionsProps) => {
           {section.title}
         </Text>
 
-        <SidebarItems items={section.items} selections={selections} />
+        <SidebarItems items={section.items} />
       </Box>
     )
   })
-
-  const onChange = (value: string[]) => {
-    if (isArray(value)) {
-      value.forEach((v) => {
-        selections.select(v)
-      })
-    } else {
-      selections.select(value)
-    }
-  }
 
   return (
     <Accordion
       classNames={{control: styles.sidebarItem, chevron: styles.chevron}}
       mb='sm'
-      value={selections.selected}
+      value={selection}
       w='100%'
       multiple
       unstyled
-      onChange={onChange}
+      onChange={setSelection}
     >
       {content}
     </Accordion>
   )
 }
 
+interface QueryParams extends Params {
+  id: string
+}
+
 // eslint-disable-next-line max-lines-per-function
 export function Sidebar() {
+  const params = useParams<QueryParams>()
   const sidebarSections: SidebarSection[] = [
     {
       title: 'Pages',
@@ -197,46 +191,46 @@ export function Sidebar() {
           activeSegment: null,
           children: [
             {
-              id: 'projectOverview',
+              id: 'projectsOverview',
               href: urls.SnowUI.projects.overview(projectId),
               title: 'Overview',
-              activeSegment: 'overview',
+              activeSegment: ['projects', params.id, 'overview'],
             },
             {
-              id: 'projectTargets',
+              id: 'projectsTargets',
               href: urls.SnowUI.projects.targets(projectId),
               title: 'Targets',
-              activeSegment: 'targets',
+              activeSegment: ['projects', params.id, 'targets'],
             },
             {
-              id: 'projectBudget',
+              id: 'projectsBudget',
               href: urls.SnowUI.projects.budget(projectId),
-              title: 'budget',
-              activeSegment: 'budget',
+              title: 'Budget',
+              activeSegment: ['projects', params.id, 'budget'],
             },
             {
-              id: 'projectUsers',
+              id: 'projectsUsers',
               href: urls.SnowUI.projects.users(projectId),
               title: 'Users',
-              activeSegment: 'users',
+              activeSegment: ['projects', params.id, 'users'],
             },
             {
-              id: 'projectFiles',
+              id: 'projectsFiles',
               href: urls.SnowUI.projects.files(projectId),
               title: 'Files',
-              activeSegment: 'files',
+              activeSegment: ['projects', params.id, 'files'],
             },
             {
-              id: 'projectActivity',
+              id: 'projectsActivity',
               href: urls.SnowUI.projects.activity(projectId),
               title: 'Activity',
-              activeSegment: 'activity',
+              activeSegment: ['projects', params.id, 'activity'],
             },
             {
-              id: 'projectSettings',
+              id: 'projectsSettings',
               href: urls.SnowUI.projects.settings(projectId),
               title: 'Settings',
-              activeSegment: 'settings',
+              activeSegment: ['projects', params.id, 'settings'],
             },
           ],
         },
@@ -244,55 +238,55 @@ export function Sidebar() {
           id: 'account',
           title: 'Account',
           icon: IdentificationCard,
-          activeSegment: 'account',
+          activeSegment: null,
           children: [
             {
               id: 'accountOverview',
               href: urls.SnowUI.account.overview,
               title: 'Overview',
-              activeSegment: 'overview',
+              activeSegment: ['account', 'overview'],
             },
             {
               id: 'accountSettings',
               href: urls.SnowUI.account.settings,
               title: 'Settings',
-              activeSegment: 'settings',
+              activeSegment: ['account', 'settings'],
             },
             {
               id: 'accountSecurity',
               href: urls.SnowUI.account.security,
               title: 'Security',
-              activeSegment: 'security',
+              activeSegment: ['account', 'security'],
             },
             {
               id: 'accountBilling',
               href: urls.SnowUI.account.billing,
               title: 'Billing',
-              activeSegment: 'billing',
+              activeSegment: ['account', 'billing'],
             },
             {
               id: 'accountStatements',
               href: urls.SnowUI.account.statements,
               title: 'Statements',
-              activeSegment: 'statements',
+              activeSegment: ['account', 'statements'],
             },
             {
               id: 'accountReferrals',
               href: urls.SnowUI.account.referrals,
               title: 'Referrals',
-              activeSegment: 'referrals',
+              activeSegment: ['account', 'referrals'],
             },
             {
               id: 'accountApiKeys',
               href: urls.SnowUI.account.apiKey,
               title: 'API Keys',
-              activeSegment: 'api-key',
+              activeSegment: ['account', 'api-key'],
             },
             {
               id: 'accountLogs',
               href: urls.SnowUI.account.logs,
               title: 'Logs',
-              activeSegment: 'logs',
+              activeSegment: ['account', 'logs'],
             },
           ],
         },
