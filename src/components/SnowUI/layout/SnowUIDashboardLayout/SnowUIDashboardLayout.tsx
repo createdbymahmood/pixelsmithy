@@ -4,10 +4,7 @@ import {Box, Container, Grid} from '@mantine/core'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {Sidebar} from '@/components/SnowUI'
-import {Header} from '@/components/SnowUI/layout/SnowUIDashboardLayout/components/Header/Header'
-import {RightSidePanel} from '@/components/SnowUI/layout/SnowUIDashboardLayout/components/RightSidePanel/RightSidePanel'
-
+import {Header, RightSidePanel, Sidebar} from './components'
 import styles from './SnowUILayout.module.scss'
 
 interface SnowUILayoutProps {
