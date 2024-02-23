@@ -83,7 +83,7 @@ function Addresses() {
     return <AddressCard key={address.title} {...address} />
   })
 
-  content.push(<AddAddressCard />)
+  content.push(<AddAddressCard key='add-address-card' />)
 
   return <SimpleGrid cols={3}>{content}</SimpleGrid>
 }

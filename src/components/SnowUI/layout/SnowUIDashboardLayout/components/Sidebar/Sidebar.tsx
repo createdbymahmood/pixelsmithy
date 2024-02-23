@@ -3,28 +3,18 @@
 import type {AccordionControlProps, MantineComponent} from '@mantine/core'
 import {Accordion, Box, Group, rem, Stack, Text} from '@mantine/core'
 import type {IconProps, IconWeight} from '@phosphor-icons/react'
-import {
-  ChartPieSlice,
-  ChatsTeardrop,
-  Envelope,
-  FolderNotch,
-  IdentificationBadge,
-  IdentificationCard,
-  Notebook,
-  ShoppingBagOpen,
-  UsersThree,
-} from '@phosphor-icons/react/dist/ssr'
+import {FolderNotch, IdentificationCard} from '@phosphor-icons/react/dist/ssr'
 import {useSelections} from 'ahooks'
 import clsx from 'clsx'
-import {isArray, isEmpty} from 'lodash-es'
+import {includes, isArray, isEmpty} from 'lodash-es'
 import Link from 'next/link'
-import {useSelectedLayoutSegment} from 'next/navigation'
+import {useSelectedLayoutSegments} from 'next/navigation'
 import React, {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {SidebarProfileButton} from '@/components/SnowUI/layout/SnowUIDashboardLayout/components/Sidebar/SidebarProfileButton'
 import {SidebarTabsQuickNavigation} from '@/components/SnowUI/layout/SnowUIDashboardLayout/components/Sidebar/SidebarTabsQuickNavigation'
-import {emailId} from '@/components/SnowUI/mocks/email'
+import {projectId} from '@/components/SnowUI/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './Sidebar.module.scss'
@@ -41,9 +31,9 @@ interface SidebarItem {
   title: string
   icon?: React.FC<IconProps>
   filledIcon?: React.FC<IconProps>
-  href: string
+  href?: string
   children?: SidebarItem[]
-  activeSegment: string
+  activeSegment: string | null
 }
 
 interface SidebarSection {
@@ -72,15 +62,9 @@ const AccordionControl = Accordion.Control as MantineComponent<{
 }>
 
 const SidebarItems = ({items, selections}: SidebarItemsProps) => {
-  const segment = useSelectedLayoutSegment()
-
+  const segments = useSelectedLayoutSegments()
   const content = items.map((item) => {
     const withChildren = isArray(item.children) && !isEmpty(item.children)
-
-    const toggle = (title: string) => () => {
-      if (!withChildren) return
-      selections.toggle(title)
-    }
 
     const children = (() => {
       return withChildren ? (
@@ -88,7 +72,7 @@ const SidebarItems = ({items, selections}: SidebarItemsProps) => {
       ) : null
     })()
 
-    const opened = segment === item.activeSegment
+    const opened = includes(segments, item.activeSegment)
     const withIcon = !isEmpty(item.icon)
     const Icon = (() => {
       if (!opened) return item.icon ?? Fragment
@@ -96,41 +80,43 @@ const SidebarItems = ({items, selections}: SidebarItemsProps) => {
     })()
 
     const iconWeight: IconWeight = opened ? 'fill' : 'duotone'
+
     return (
-      <Accordion.Item key={item.id} value={item.id} onClick={toggle(item.id)}>
-        <AccordionControl
-          // eslint-disable-next-line react/jsx-no-useless-fragment
-          chevron={withChildren ? null : <Fragment />}
-          className={clsx({[styles.activeSidebarItem]: opened})}
-          component={Link}
-          href={item.href}
-          mb='5px'
-          pr='lg'
-        >
-          <Box>
-            <Group gap='xs'>
-              {withIcon ? (
-                <Icon
-                  className={clsx(styles.icon, {
-                    [styles.childlessSidebarItem]: !withChildren,
-                  })}
-                  size={25}
-                  weight={iconWeight}
-                />
-              ) : null}
+      <Fragment key={item.id}>
+        <Accordion.Item value={item.id}>
+          <AccordionControl
+            // eslint-disable-next-line react/jsx-no-useless-fragment
+            chevron={withChildren ? null : <Fragment />}
+            className={clsx({[styles.activeSidebarItem]: opened})}
+            component={item.href ? Link : undefined}
+            href={item.href as unknown as string}
+            mb='5px'
+            pr='lg'
+          >
+            <Box>
+              <Group gap='xs'>
+                {withIcon ? (
+                  <Icon
+                    className={clsx(styles.icon, {
+                      [styles.childlessSidebarItem]: !withChildren,
+                    })}
+                    size={25}
+                    weight={iconWeight}
+                  />
+                ) : null}
 
-              <Text
-                className={clsx({[styles.withoutIconSidebarItem]: !withIcon})}
-                size='sm'
-              >
-                {item.title}
-              </Text>
-            </Group>
-          </Box>
-        </AccordionControl>
-
-        <Accordion.Panel>{children}</Accordion.Panel>
-      </Accordion.Item>
+                <Text
+                  className={clsx({[styles.withoutIconSidebarItem]: !withIcon})}
+                  size='sm'
+                >
+                  {item.title}
+                </Text>
+              </Group>
+            </Box>
+          </AccordionControl>
+          <Accordion.Panel>{children}</Accordion.Panel>
+        </Accordion.Item>
+      </Fragment>
     )
   })
 
@@ -151,6 +137,16 @@ const SidebarSections = ({sections}: SidebarSectionsProps) => {
     )
   })
 
+  const onChange = (value: string[]) => {
+    if (isArray(value)) {
+      value.forEach((v) => {
+        selections.select(v)
+      })
+    } else {
+      selections.select(value)
+    }
+  }
+
   return (
     <Accordion
       classNames={{control: styles.sidebarItem, chevron: styles.chevron}}
@@ -159,16 +155,18 @@ const SidebarSections = ({sections}: SidebarSectionsProps) => {
       w='100%'
       multiple
       unstyled
+      onChange={onChange}
     >
       {content}
     </Accordion>
   )
 }
 
+// eslint-disable-next-line max-lines-per-function
 export function Sidebar() {
   const sidebarSections: SidebarSection[] = [
     {
-      title: 'Dashboards',
+      title: 'Pages',
       items: [
         /*  {
           id: 'Dashboards',
@@ -195,90 +193,122 @@ export function Sidebar() {
           id: 'projects',
           title: 'Projects',
           icon: FolderNotch,
-          href: urls.SnowUI.projects.overview,
-          activeSegment: 'projects',
+          // href: urls.SnowUI.projects.overview(projectId),
+          activeSegment: null,
+          children: [
+            {
+              id: 'projectOverview',
+              href: urls.SnowUI.projects.overview(projectId),
+              title: 'Overview',
+              activeSegment: 'overview',
+            },
+            {
+              id: 'projectTargets',
+              href: urls.SnowUI.projects.targets(projectId),
+              title: 'Targets',
+              activeSegment: 'targets',
+            },
+            {
+              id: 'projectBudget',
+              href: urls.SnowUI.projects.budget(projectId),
+              title: 'budget',
+              activeSegment: 'budget',
+            },
+            {
+              id: 'projectUsers',
+              href: urls.SnowUI.projects.users(projectId),
+              title: 'Users',
+              activeSegment: 'users',
+            },
+            {
+              id: 'projectFiles',
+              href: urls.SnowUI.projects.files(projectId),
+              title: 'Files',
+              activeSegment: 'files',
+            },
+            {
+              id: 'projectActivity',
+              href: urls.SnowUI.projects.activity(projectId),
+              title: 'Activity',
+              activeSegment: 'activity',
+            },
+            {
+              id: 'projectSettings',
+              href: urls.SnowUI.projects.settings(projectId),
+              title: 'Settings',
+              activeSegment: 'settings',
+            },
+          ],
         },
+        {
+          id: 'account',
+          title: 'Account',
+          icon: IdentificationCard,
+          activeSegment: 'account',
+          children: [
+            {
+              id: 'accountOverview',
+              href: urls.SnowUI.account.overview,
+              title: 'Overview',
+              activeSegment: 'overview',
+            },
+            {
+              id: 'accountSettings',
+              href: urls.SnowUI.account.settings,
+              title: 'Settings',
+              activeSegment: 'settings',
+            },
+            {
+              id: 'accountSecurity',
+              href: urls.SnowUI.account.security,
+              title: 'Security',
+              activeSegment: 'security',
+            },
+            {
+              id: 'accountBilling',
+              href: urls.SnowUI.account.billing,
+              title: 'Billing',
+              activeSegment: 'billing',
+            },
+            {
+              id: 'accountStatements',
+              href: urls.SnowUI.account.statements,
+              title: 'Statements',
+              activeSegment: 'statements',
+            },
+            {
+              id: 'accountReferrals',
+              href: urls.SnowUI.account.referrals,
+              title: 'Referrals',
+              activeSegment: 'referrals',
+            },
+            {
+              id: 'accountApiKeys',
+              href: urls.SnowUI.account.apiKey,
+              title: 'API Keys',
+              activeSegment: 'api-key',
+            },
+            {
+              id: 'accountLogs',
+              href: urls.SnowUI.account.logs,
+              title: 'Logs',
+              activeSegment: 'logs',
+            },
+          ],
+        },
+        // {
+        //   id: 'email',
+        //   href: urls.SnowUI.email.inbox(emailId),
+        //   title: 'Email',
+        //   icon: Envelope,
+        //   children: [],
+        //   activeSegment: 'email',
+        // },
         /*   {
           id: 'onlineCourses',
           title: 'Online Courses',
           icon: Notebook,
           href: '/',
-        }, */
-      ],
-    },
-    {
-      title: 'Pages',
-      items: [
-        /*  {
-          id: 'userProfile',
-          href: '/',
-          title: 'User Profile',
-          icon: IdentificationBadge,
-          children: [
-            {
-              id: 'userProfile-Overview',
-              href: '/',
-              title: 'Overview',
-            },
-            {
-              id: 'userProfile-Projects',
-              href: '/',
-              title: 'Projects',
-            },
-            {
-              id: 'userProfile-Campaigns',
-              href: '/',
-              title: 'Campaigns',
-            },
-            {
-              id: 'userProfile-Documents',
-              href: '/',
-              title: 'Documents',
-            },
-            {
-              id: 'userProfile-Followers',
-              href: '/',
-              title: 'Followers',
-            },
-          ],
-        }, */
-        {
-          id: 'account',
-          href: urls.SnowUI.account.index,
-          title: 'Account',
-          icon: IdentificationCard,
-          children: [],
-          activeSegment: 'account',
-        },
-        {
-          id: 'email',
-          href: urls.SnowUI.email.inbox(emailId),
-          title: 'Email',
-          icon: Envelope,
-          children: [],
-          activeSegment: 'email',
-        },
-
-        /*  {
-          id: 'corporate',
-          href: '/',
-          title: 'Corporate',
-          icon: UsersThree,
-          children: [],
-        },
-        {
-          id: 'blog',
-          href: '/',
-          title: 'Blog',
-          icon: Notebook,
-          children: [],
-        },
-        {
-          id: 'social',
-          href: '/',
-          title: 'Social',
-          icon: ChatsTeardrop,
-          children: [],
         }, */
       ],
     },

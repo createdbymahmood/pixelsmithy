@@ -28,7 +28,7 @@ export const urls = {
         urlCat('/snow-ui/dashboard/projects/:projectId/settings', {projectId}),
     },
     account: {
-      index: '/snow-ui/dashboard/account/overview',
+      index: '/snow-ui/dashboard/account',
       overview: '/snow-ui/dashboard/account/overview',
       settings: '/snow-ui/dashboard/account/settings',
       security: '/snow-ui/dashboard/account/security',
