@@ -51,6 +51,8 @@ export const urls = {
     },
     userProfile: (userId: string) =>
       urlCat('/snow-ui/dashboard/user-profile/:userId', {userId}),
+    emailTemplate: '/snow-ui/email-template',
+    chat: '/snow-ui/dashboard/chat',
   },
 }
 export const applications = [
