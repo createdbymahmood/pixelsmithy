@@ -1,18 +1,19 @@
+'use client'
 import {
   Anchor,
   Button,
-  Center,
   Divider,
   Group,
   Input,
+  PasswordInput,
   rem,
   Skeleton,
   Stack,
   Text,
   Title,
 } from '@mantine/core'
+import {Eye, EyeSlash} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
-import React from 'react'
 
 import {urls} from '@/constants'
 
@@ -29,7 +30,7 @@ function Header() {
   )
 }
 
-function SocialLogin() {
+export function SocialLogin() {
   const leftSection = <Skeleton h={rem(24)} w={rem(24)} circle />
   return (
     <Group>
@@ -52,11 +53,28 @@ function FormView() {
         radius='md'
       />
 
-      <Input
+      <PasswordInput
         classNames={{input: styles.input}}
         placeholder='Password'
         radius='md'
         type='password'
+        visibilityToggleIcon={({reveal}) =>
+          reveal ? (
+            <Eye
+              style={{
+                width: 'var(--psi-icon-size)',
+                height: 'var(--psi-icon-size)',
+              }}
+            />
+          ) : (
+            <EyeSlash
+              style={{
+                width: 'var(--psi-icon-size)',
+                height: 'var(--psi-icon-size)',
+              }}
+            />
+          )
+        }
       />
 
       <Anchor
@@ -95,13 +113,11 @@ function FormView() {
 
 export function SignInForm() {
   return (
-    <Center h='100%'>
-      <Stack gap='xl'>
-        <Header />
-        <SocialLogin />
-        <Divider label='Or with Email' labelPosition='center' my='xs' />
-        <FormView />
-      </Stack>
-    </Center>
+    <Stack gap='xl'>
+      <Header />
+      <SocialLogin />
+      <Divider label='Or with Email' labelPosition='center' my='xs' />
+      <FormView />
+    </Stack>
   )
 }
