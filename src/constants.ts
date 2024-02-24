@@ -58,6 +58,15 @@ export const urls = {
       signUp: '/snow-ui/authentication/sign-up',
       signIn: '/snow-ui/authentication/sign-in',
       verification: '/snow-ui/authentication/verification',
+      resetPassword: '/snow-ui/authentication/reset-password',
+      accountSetup: {
+        accountInfo: '/snow-ui/authentication/account-setup/account-info',
+        billingDetails: '/snow-ui/authentication/account-setup/billing-details',
+        creditCardSetup:
+          '/snow-ui/authentication/account-setup/credit-card-setup',
+        accountTypeSelection:
+          '/snow-ui/authentication/account-setup/account-type-selection',
+      },
     },
   },
 }

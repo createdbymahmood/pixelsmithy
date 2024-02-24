@@ -6,6 +6,9 @@ import {
   SuitcaseSimple,
   UserCircle,
 } from '@phosphor-icons/react/dist/ssr'
+import Link from 'next/link'
+
+import {urls} from '@/constants'
 
 import {CardSelectionGroup} from '../CardSelectionGroup'
 
@@ -41,7 +44,14 @@ function FormView() {
   return (
     <Stack>
       <CardSelectionGroup options={options} />
-      <Button mt='lg' radius='md' rightSection={rightSection} fullWidth>
+      <Button
+        component={Link}
+        href={urls.SnowUI.authentication.accountSetup.accountInfo}
+        mt='lg'
+        radius='md'
+        rightSection={rightSection}
+        fullWidth
+      >
         Continue
       </Button>
     </Stack>

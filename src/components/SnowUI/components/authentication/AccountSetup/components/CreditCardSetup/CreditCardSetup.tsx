@@ -128,10 +128,12 @@ function FormView() {
 
 function Footer() {
   const previousLeftSection = <CaretLeft className='icon-size-xs' />
-  const continueRightsection = <CaretRight className='icon-size-xs' />
+
   return (
     <Group justify='center' wrap='nowrap'>
       <Button
+        component={Link}
+        href={urls.SnowUI.authentication.accountSetup.billingDetails}
         leftSection={previousLeftSection}
         radius='md'
         variant='light'
@@ -139,8 +141,13 @@ function Footer() {
       >
         Previous
       </Button>
-      <Button radius='md' rightSection={continueRightsection} fullWidth>
-        Continue
+      <Button
+        component={Link}
+        href={urls.SnowUI.projects.index}
+        radius='md'
+        fullWidth
+      >
+        Submit
       </Button>
     </Group>
   )

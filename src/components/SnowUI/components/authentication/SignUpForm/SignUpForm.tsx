@@ -25,7 +25,7 @@ import styles from './SignUpForm.module.scss'
 function Header() {
   return (
     <Stack align='center' gap={rem(5)}>
-      <Title order={3}>Sign In</Title>
+      <Title order={3}>Sign Up </Title>
       <Text c='dimmed' size='sm'>
         Your Social Campaigns
       </Text>
