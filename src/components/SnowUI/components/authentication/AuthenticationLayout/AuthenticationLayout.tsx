@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   Card,
+  Center,
   Group,
   rem,
   SimpleGrid,
@@ -11,7 +12,10 @@ import {
   Stack,
   Text,
 } from '@mantine/core'
+import Link from 'next/link'
 import type {ReactNode} from 'react'
+
+import {urls} from '@/constants'
 
 const navbar = ['Product', 'Solutions', 'Resources', 'Download', 'Pricing']
 
@@ -33,8 +37,19 @@ function Navbar() {
 function SignInActions() {
   return (
     <Group justify='flex-end'>
-      <Button size='xs'>Sign in</Button>
-      <Button size='xs' variant='light'>
+      <Button
+        component={Link}
+        href={urls.SnowUI.authentication.signIn}
+        size='xs'
+      >
+        Sign in
+      </Button>
+      <Button
+        component={Link}
+        href={urls.SnowUI.authentication.signUp}
+        size='xs'
+        variant='light'
+      >
         Sign up
       </Button>
     </Group>
@@ -62,7 +77,7 @@ interface ContentProps {
 function Content({children}: ContentProps) {
   return (
     <Card bg='white' h={658} miw={rem(680)} px={rem(100)} py={50}>
-      <Box h='100%'>{children}</Box>
+      <Center h='100%'>{children}</Center>
     </Card>
   )
 }

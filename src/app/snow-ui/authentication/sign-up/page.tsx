@@ -1,12 +1,12 @@
 import React from 'react'
 
-import {SignInForm} from '@/components/SnowUI'
+import {SignUpForm} from '@/components/SnowUI'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({
-  title: 'Sign In',
+  title: 'Sign Up',
 })
 
-export default function SignIn() {
-  return <SignInForm />
+export default function SignUp() {
+  return <SignUpForm />
 }

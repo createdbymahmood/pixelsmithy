@@ -1,4 +1,5 @@
 export * from './account'
+export * from './authentication'
 export * from './chat'
 export * from './common'
 export * from './email'
