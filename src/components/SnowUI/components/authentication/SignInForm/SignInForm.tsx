@@ -85,7 +85,7 @@ function FormView() {
         size='sm'
         underline='never'
       >
-        Forogt Password?
+        Forgot Password?
       </Anchor>
 
       <Button mt='xs' fullWidth>
