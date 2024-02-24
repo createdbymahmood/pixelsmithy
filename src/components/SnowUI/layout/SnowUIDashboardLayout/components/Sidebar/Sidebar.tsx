@@ -6,6 +6,7 @@ import type {IconProps, IconWeight} from '@phosphor-icons/react'
 import {
   ChatsCircle,
   Envelope,
+  Fingerprint,
   FolderNotch,
   IdentificationCard,
   PaintRoller,
@@ -16,6 +17,7 @@ import {isArray, isEmpty, isEqual} from 'lodash-es'
 import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
 import Link from 'next/link'
 import {useParams, useSelectedLayoutSegments} from 'next/navigation'
+import type {ComponentProps} from 'react'
 import React, {Fragment, useState} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -34,6 +36,7 @@ export type AccordionControlStylesNames =
   | 'itemTitle'
   | 'label'
 
+type AnchorTarget = ComponentProps<'a'>['target']
 interface SidebarItem {
   id: string
   title: string
@@ -42,6 +45,7 @@ interface SidebarItem {
   href?: string
   children?: SidebarItem[]
   activeSegment: string[] | null
+  target?: AnchorTarget
 }
 
 interface SidebarSection {
@@ -59,6 +63,7 @@ interface SidebarItemsProps {
 
 type LocalAccordionControlProps = AccordionControlProps & {
   href: string
+  target?: AnchorTarget
 }
 
 const AccordionControl = Accordion.Control as MantineComponent<{
@@ -96,6 +101,7 @@ const SidebarItems = ({items}: SidebarItemsProps) => {
           href={item.href as unknown as string}
           mb='5px'
           pr='lg'
+          target={item.target}
         >
           <Box>
             <Group gap='xs'>
@@ -292,6 +298,50 @@ export function Sidebar() {
               href: urls.SnowUI.account.logs,
               title: 'Logs',
               activeSegment: ['account', 'logs'],
+            },
+          ],
+        },
+        {
+          id: 'authentication',
+          title: 'Auth',
+          icon: Fingerprint,
+          activeSegment: null,
+          children: [
+            {
+              id: 'sign-up',
+              href: urls.SnowUI.authentication.signUp,
+              title: 'Sign Up',
+              activeSegment: null,
+              target: '_blank',
+            },
+            {
+              id: 'sign-in',
+              href: urls.SnowUI.authentication.signIn,
+              title: 'Sign In',
+              activeSegment: null,
+              target: '_blank',
+            },
+            {
+              id: 'forgot-password',
+              href: urls.SnowUI.authentication.forgotPassword,
+              title: 'Forgot Password',
+              activeSegment: null,
+              target: '_blank',
+            },
+            {
+              id: 'reset-password',
+              href: urls.SnowUI.authentication.resetPassword,
+              title: 'Reset Password',
+              activeSegment: null,
+              target: '_blank',
+            },
+            {
+              id: 'accoun-setup',
+              href: urls.SnowUI.authentication.accountSetup
+                .accountTypeSelection,
+              title: 'Account Setup',
+              activeSegment: null,
+              target: '_blank',
             },
           ],
         },

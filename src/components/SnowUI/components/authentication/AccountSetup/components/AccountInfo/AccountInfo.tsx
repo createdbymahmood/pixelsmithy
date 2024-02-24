@@ -127,6 +127,8 @@ function Footer() {
   return (
     <Group justify='center' wrap='nowrap'>
       <Button
+        component={Link}
+        href={urls.SnowUI.authentication.accountSetup.accountTypeSelection}
         leftSection={previousLeftSection}
         radius='md'
         variant='light'
@@ -134,7 +136,13 @@ function Footer() {
       >
         Previous
       </Button>
-      <Button radius='md' rightSection={continueRightsection} fullWidth>
+      <Button
+        component={Link}
+        href={urls.SnowUI.authentication.accountSetup.billingDetails}
+        radius='md'
+        rightSection={continueRightsection}
+        fullWidth
+      >
         Continue
       </Button>
     </Group>
