@@ -27,7 +27,7 @@ import {urls} from '@/constants'
 import {CardSelectionGroup} from '../CardSelectionGroup'
 import styles from './AccountInfo.module.scss'
 
-function AlreadyResetPassword() {
+function Help() {
   return (
     <Group gap={0} justify='center'>
       <Text c='dimmed' size='sm'>
@@ -56,7 +56,7 @@ function Header() {
   return (
     <Stack align='center' gap={rem(5)}>
       <Title order={3}>Account Info</Title>
-      <AlreadyResetPassword />
+      <Help />
     </Stack>
   )
 }
