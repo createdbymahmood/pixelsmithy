@@ -20,8 +20,8 @@ import styles from './SignInForm.module.scss'
 
 function Header() {
   return (
-    <Stack align='center' gap={0}>
-      <Title order={4}>Sign In</Title>
+    <Stack align='center' gap={rem(5)}>
+      <Title order={3}>Sign In</Title>
       <Text c='dimmed' size='sm'>
         Your Social Campaigns
       </Text>
