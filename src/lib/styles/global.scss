@@ -43,6 +43,11 @@ a {
   flex-shrink: 0;
 }
 
+.icon-size-xl {
+  height: rem(32px);
+  width: rem(32px);
+  flex-shrink: 0;
+}
 .cursor-pointer {
   cursor: pointer;
 }

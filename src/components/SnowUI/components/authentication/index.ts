@@ -1,3 +1,4 @@
+export * from './AccountSetup'
 export * from './AuthenticationLayout'
 export * from './ForgotPasswordForm'
 export * from './ResetPasswordForm'
