@@ -39,18 +39,21 @@ function SignInActions() {
     <Group justify='flex-end'>
       <Button
         component={Link}
-        href={urls.SnowUI.authentication.signIn}
-        size='xs'
-      >
-        Sign in
-      </Button>
-      <Button
-        component={Link}
         href={urls.SnowUI.authentication.signUp}
-        size='xs'
+        radius='md'
+        size='compact-sm'
         variant='light'
       >
         Sign up
+      </Button>
+
+      <Button
+        component={Link}
+        href={urls.SnowUI.authentication.signIn}
+        radius='md'
+        size='compact-sm'
+      >
+        Sign in
       </Button>
     </Group>
   )
