@@ -1,5 +1,5 @@
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 
   @include light {
     background: var(--mantine-color-white);
