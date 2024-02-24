@@ -6,10 +6,7 @@ import type {
 import {Box, Tabs} from '@mantine/core'
 import {startCase} from 'lodash-es'
 import Link from 'next/link'
-import {
-  useSelectedLayoutSegment,
-  useSelectedLayoutSegments,
-} from 'next/navigation'
+import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
 import {projectId} from '@/components/SnowUI/mocks/email'

@@ -35,7 +35,7 @@ export const urls = {
       billing: '/snow-ui/dashboard/account/billing',
       statements: '/snow-ui/dashboard/account/statements',
       referrals: '/snow-ui/dashboard/account/referrals',
-      apiKey: '/snow-ui/dashboard/account/api-key',
+      apiKey: '/snow-ui/dashboard/account/api-keys',
       logs: '/snow-ui/dashboard/account/logs',
     },
     email: {
