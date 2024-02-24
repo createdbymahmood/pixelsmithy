@@ -73,6 +73,9 @@ export const components: MantineThemeComponents = {
     },
   }),
   Button: Button.extend({
+    defaultProps: {
+      radius: 'md',
+    },
     classNames(theme, props, ctx) {
       const isLightVariant = props.variant === 'light'
       const isDefaultVariant = props.variant === 'default'
