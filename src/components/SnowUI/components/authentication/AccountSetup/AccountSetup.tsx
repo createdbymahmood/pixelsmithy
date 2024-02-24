@@ -1,5 +1,9 @@
-import {AccountTypeSelection, BillingDetails} from './components'
+import {
+  AccountTypeSelection,
+  BillingDetails,
+  CreditCardSetup,
+} from './components'
 
 export function AccountSetup() {
-  return <BillingDetails />
+  return <CreditCardSetup />
 }
