@@ -22,8 +22,10 @@ function FormView() {
     <Stack w={rem(360)}>
       <Input
         classNames={{input: styles.input}}
+        name='email'
         placeholder='Please enter your email address'
         radius='md'
+        type='email'
         w='100%'
       />
 
