@@ -1,0 +1,11 @@
+.input {
+  border: rem(1px) solid var(--mantine-color-gray-2) !important;
+  min-width: rem(58px);
+  min-height: rem(58px);
+  text-align: center;
+  @include transition();
+}
+
+.filled {
+  border: rem(1px) solid var(--mantine-color-gray-8) !important;
+}
