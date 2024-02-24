@@ -5,6 +5,7 @@ import {
   Badge,
   Button,
   Card,
+  Divider,
   Input,
   MultiSelect,
   Pagination,
@@ -22,6 +23,7 @@ import AutocompleteStyles from './Autocomplete.module.scss'
 import BadgeStyles from './Badge.module.scss'
 import ButtonStyles from './Button.module.scss'
 import CardStyles from './Card.module.scss'
+import DividerStyles from './Divider.module.scss'
 import InputStyles from './Input.module.scss'
 import PaginationStyles from './Pagination.module.scss'
 import TableStyles from './Table.module.scss'
@@ -73,8 +75,13 @@ export const components: MantineThemeComponents = {
   Button: Button.extend({
     classNames(theme, props, ctx) {
       const isLightVariant = props.variant === 'light'
+      const isDefaultVariant = props.variant === 'default'
       return {
-        root: clsx(ButtonStyles.root, {[ButtonStyles.light]: isLightVariant}),
+        root: clsx(
+          ButtonStyles.root,
+          {[ButtonStyles.light]: isLightVariant},
+          {[ButtonStyles.default]: isDefaultVariant},
+        ),
       }
     },
   }),
@@ -141,6 +148,13 @@ export const components: MantineThemeComponents = {
         root: clsx(ButtonStyles.root, {
           [ActionIconStyles.light]: isLightVariant,
         }),
+      }
+    },
+  }),
+  Divider: Divider.extend({
+    classNames(theme, props, ctx) {
+      return {
+        label: DividerStyles.label,
       }
     },
   }),

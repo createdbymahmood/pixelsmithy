@@ -53,6 +53,10 @@ export const urls = {
       urlCat('/snow-ui/dashboard/user-profile/:userId', {userId}),
     emailTemplate: '/snow-ui/email-template',
     chat: '/snow-ui/dashboard/chat',
+    authentication: {
+      forgotPassword: '/snow-ui/authentication/forgot-password',
+      signUp: '/snow-ui/authentication/sign-up',
+    },
   },
 }
 export const applications = [
