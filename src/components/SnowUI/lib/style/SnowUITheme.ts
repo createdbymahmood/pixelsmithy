@@ -10,6 +10,7 @@ export const SnowUITheme = createTheme({
   components,
   primaryColor: 'gray',
   primaryShade: 9,
+  colors: {},
   headings: {
     fontFamily: inter.style.fontFamily,
     sizes: {
