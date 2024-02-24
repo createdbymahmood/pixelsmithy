@@ -57,6 +57,7 @@ export const urls = {
       forgotPassword: '/snow-ui/authentication/forgot-password',
       signUp: '/snow-ui/authentication/sign-up',
       signIn: '/snow-ui/authentication/sign-in',
+      verification: '/snow-ui/authentication/verification',
     },
   },
 }
