@@ -79,7 +79,7 @@ interface ContentProps {
 
 function Content({children}: ContentProps) {
   return (
-    <Card bg='white' h={658} miw={rem(680)} px={rem(100)} py={50}>
+    <Card bg='white' mih={658} miw={rem(680)} px={rem(100)} py={50}>
       <Center h='100%'>{children}</Center>
     </Card>
   )

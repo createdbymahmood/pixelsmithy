@@ -1,17 +1,13 @@
 'use client'
 
-import {Box, Button, Group, Radio, rem, Stack, Text, Title} from '@mantine/core'
-import {useCallbackRef} from '@mantine/hooks'
+import {Button, rem, Stack, Text, Title} from '@mantine/core'
 import {
   CaretRight,
   SuitcaseSimple,
   UserCircle,
 } from '@phosphor-icons/react/dist/ssr'
-import clsx from 'clsx'
-import {head, isEqual} from 'lodash-es'
-import React, {useState} from 'react'
 
-import styles from './AccountTypeSelection.module.scss'
+import {CardSelectionGroup} from '../CardSelectionGroup'
 
 function Header() {
   return (
@@ -24,7 +20,7 @@ function Header() {
   )
 }
 
-const accountTypes = [
+const options = [
   {
     value: 'personal',
     title: 'Personal Account',
@@ -40,51 +36,15 @@ const accountTypes = [
 ]
 
 function FormView() {
-  const [selected, setSelected] = useState(head(accountTypes)?.value)
-
-  const onSelectValue = useCallbackRef((netxValue: string) => () => {
-    return setSelected(netxValue)
-  })
-  const options = accountTypes.map((accountType) => {
-    const Icon = accountType.icon
-    const isSelected = selected === accountType.value
-    return (
-      <Group
-        key={accountType.title}
-        align='flex-start'
-        className={clsx(styles.accountType, {
-          [styles.isSelected]: isEqual(selected, accountType.value),
-        })}
-        wrap='nowrap'
-        onClick={onSelectValue(accountType.value)}
-      >
-        <Icon className='icon-size-xl' weight='duotone' />
-        <Stack gap={rem(5)}>
-          <Title order={5}>{accountType.title}</Title>
-          <Text c='gray.6' size='sm'>
-            {accountType.description}
-          </Text>
-        </Stack>
-        {isSelected ? (
-          <Radio value={accountType.value} />
-        ) : (
-          <Box h={rem(20)} w={20} />
-        )}
-      </Group>
-    )
-  })
-
   const rightSection = <CaretRight className='icon-size-xs' />
 
   return (
-    <Radio.Group mt='md' value={selected} withAsterisk onChange={setSelected}>
-      <Stack>
-        {options}
-        <Button radius='md' rightSection={rightSection} fullWidth>
-          Continue
-        </Button>
-      </Stack>
-    </Radio.Group>
+    <Stack>
+      <CardSelectionGroup options={options} />
+      <Button mt='lg' radius='md' rightSection={rightSection} fullWidth>
+        Continue
+      </Button>
+    </Stack>
   )
 }
 

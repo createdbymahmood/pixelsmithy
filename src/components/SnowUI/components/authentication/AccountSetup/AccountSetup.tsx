@@ -1,7 +1,7 @@
 import React from 'react'
 
-import {AccountTypeSelection} from './components'
+import {AccountInfo, AccountTypeSelection} from './components'
 
 export function AccountSetup() {
-  return <AccountTypeSelection />
+  return <AccountInfo />
 }

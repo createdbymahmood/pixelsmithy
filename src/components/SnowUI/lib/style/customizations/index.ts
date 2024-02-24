@@ -66,6 +66,10 @@ export const components: MantineThemeComponents = {
     },
   }),
   Card: Card.extend({
+    defaultProps: {
+      radius: 'lg',
+      p: 'lg',
+    },
     classNames(theme, props, ctx) {
       return {
         root: CardStyles.root,
