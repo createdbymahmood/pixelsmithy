@@ -135,7 +135,7 @@ function FormView() {
       <PasswordField />
       <TermsOfUse />
 
-      <Button mt='xs' fullWidth>
+      <Button mt='xs' radius='lg' size='md' fullWidth>
         Sign Up
       </Button>
 
