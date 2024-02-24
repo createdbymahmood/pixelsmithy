@@ -1,4 +1,7 @@
+'use client'
+
 import {
+  Box,
   Button,
   Card,
   Group,
@@ -20,7 +23,11 @@ function Navbar() {
       </Text>
     )
   })
-  return <Group gap='xl'>{content}</Group>
+  return (
+    <Group gap='xl' justify='center' wrap='nowrap'>
+      {content}
+    </Group>
+  )
 }
 
 function SignInActions() {
@@ -54,9 +61,17 @@ interface ContentProps {
 
 function Content({children}: ContentProps) {
   return (
-    <Card bg='white' h={658} miw={rem(680)} p={rem(100)}>
-      {children}
+    <Card bg='white' h={658} miw={rem(680)} px={rem(100)} py={50}>
+      <Box h='100%'>{children}</Box>
     </Card>
+  )
+}
+
+function Copyright() {
+  return (
+    <Text c='dimmed' size='sm' ta='center'>
+      © 2024 SnowUI
+    </Text>
   )
 }
 
@@ -66,9 +81,12 @@ interface AuthenticationLayoutProps {
 
 export function AuthenticationLayout(props: AuthenticationLayoutProps) {
   return (
-    <Stack align='center' bg='gray.1' mih='100vh' miw='100vw' p='xl'>
+    <Stack align='center' bg='gray.0' mih='100vh' miw='100vw' p='xl'>
       <Header />
-      <Content>{props.children}</Content>
+      <Box h='100%' py={rem(60)}>
+        <Content>{props.children}</Content>
+      </Box>
+      <Copyright />
     </Stack>
   )
 }
