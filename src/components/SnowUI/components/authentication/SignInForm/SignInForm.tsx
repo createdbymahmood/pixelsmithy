@@ -88,7 +88,7 @@ function FormView() {
         Forgot Password?
       </Anchor>
 
-      <Button mt='xs' fullWidth>
+      <Button mt='xs' radius='lg' fullWidth>
         Sign In
       </Button>
 
