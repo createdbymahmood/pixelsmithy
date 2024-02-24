@@ -50,7 +50,7 @@ function FormView() {
 
 export function AccountTypeSelection() {
   return (
-    <Stack>
+    <Stack gap='lg' miw={rem(384)}>
       <Header />
       <FormView />
     </Stack>

@@ -1,7 +1,5 @@
-import React from 'react'
-
-import {AccountInfo, AccountTypeSelection} from './components'
+import {AccountTypeSelection, BillingDetails} from './components'
 
 export function AccountSetup() {
-  return <AccountInfo />
+  return <BillingDetails />
 }

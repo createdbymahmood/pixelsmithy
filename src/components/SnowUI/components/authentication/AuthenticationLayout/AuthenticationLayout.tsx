@@ -79,8 +79,17 @@ interface ContentProps {
 
 function Content({children}: ContentProps) {
   return (
-    <Card bg='white' mih={658} miw={rem(680)} px={rem(100)} py={50}>
-      <Center h='100%'>{children}</Center>
+    <Card
+      align='center'
+      bg='white'
+      component={Stack}
+      justify='center'
+      mih={rem(658)}
+      miw={rem(680)}
+      px={rem(100)}
+      py={50}
+    >
+      {children}
     </Card>
   )
 }
