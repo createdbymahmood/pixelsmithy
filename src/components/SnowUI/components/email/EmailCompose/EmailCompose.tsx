@@ -24,7 +24,6 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import type {Editor as EditorType} from 'tinymce'
 
 import {InboxSidebar} from '@/components/SnowUI'
-import {inter} from '@/components/SnowUI/layout/SnowUIProviders'
 
 import styles from './EmailCompose.module.scss'
 
