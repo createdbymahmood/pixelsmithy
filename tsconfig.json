@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@modernize/*": ["./src/components/Modernize/*"]
     },
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },
