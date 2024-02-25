@@ -1,21 +1,13 @@
 import {Box, Container, MantineProvider, Stack, Text} from '@mantine/core'
 import clsx from 'clsx'
-import {Inter, Roboto_Slab} from 'next/font/google'
+import {Roboto_Slab} from 'next/font/google'
 import Link from 'next/link'
 
 import {applications, defaultThemeColorScheme} from '@/constants'
+import {inter} from '@/lib/styles/font/inter'
+import {robotoSlab} from '@/lib/styles/font/robotoSlab'
 
 import styles from './Applications.module.scss'
-
-const robotoSlab = Roboto_Slab({
-  weight: '400',
-  subsets: ['latin'],
-})
-
-const inter = Inter({
-  weight: '400',
-  subsets: ['latin'],
-})
 
 const ApplicationsList = () => {
   const content = applications.map((application) => {
