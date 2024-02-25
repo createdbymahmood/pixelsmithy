@@ -5,7 +5,7 @@ import clsx from 'clsx'
 import {omit} from 'lodash-es'
 import type {ComponentPropsWithoutRef} from 'react'
 
-import {inter} from '@/components/SnowUI/layout/SnowUIProviders'
+import {inter} from '@/lib/styles/font/inter'
 
 import styles from './SearchInput.module.scss'
 
