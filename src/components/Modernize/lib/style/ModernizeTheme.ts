@@ -5,8 +5,11 @@ import {createTheme, rem} from '@mantine/core'
 import {inter} from '@/lib/styles/font/inter'
 
 import {colors} from './colors'
+import {components} from './customizations'
 
 export const ModernizeTheme = createTheme({
+  components,
+  primaryColor: 'primary',
   colors,
   fontFamily: inter.style.fontFamily,
   headings: {

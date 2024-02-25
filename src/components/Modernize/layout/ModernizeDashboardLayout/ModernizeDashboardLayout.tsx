@@ -1,5 +1,6 @@
 'use client'
 
+import {Container} from '@mantine/core'
 import type {ReactNode} from 'react'
 
 interface ModernizeDashboardLayoutProps {
@@ -9,5 +10,5 @@ interface ModernizeDashboardLayoutProps {
 export function ModernizeDashboardLayout({
   children,
 }: ModernizeDashboardLayoutProps) {
-  return children
+  return <Container>{children}</Container>
 }

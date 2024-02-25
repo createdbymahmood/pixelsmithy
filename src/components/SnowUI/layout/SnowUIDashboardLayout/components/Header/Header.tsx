@@ -17,7 +17,7 @@ import {useRouter} from 'next/navigation'
 import {Fragment} from 'react'
 
 import {SearchInput} from '@/components/SnowUI'
-import {useSnowUILayoutStore} from '@/components/SnowUI/layout/store/layout'
+import {useSnowUILayoutStore} from '@/components/SnowUI/layout/SnowUIDashboardLayout/store/layout'
 import {projectId} from '@/components/SnowUI/mocks/email'
 import {urls} from '@/constants'
 

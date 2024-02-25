@@ -5,7 +5,7 @@ import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import {useShallow} from 'zustand/react/shallow'
 
-import {useSnowUILayoutStore} from '@/components/SnowUI/layout/store/layout'
+import {useSnowUILayoutStore} from '@/components/SnowUI/layout/SnowUIDashboardLayout/store/layout'
 
 import {Header, RightSidePanel, Sidebar} from './components'
 import styles from './SnowUILayout.module.scss'
