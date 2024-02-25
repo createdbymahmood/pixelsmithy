@@ -2,7 +2,7 @@
 
 import {createTheme, rem} from '@mantine/core'
 
-import {inter} from '@/components/SnowUI/layout/SnowUIProviders'
+import {inter} from '@/lib/styles/font/inter'
 
 import {components} from './customizations'
 

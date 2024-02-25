@@ -1,14 +1,13 @@
 'use client'
 import type {ReactNode} from 'react'
-import React from 'react'
 
 import {MobileVersionNotice} from '@/components/common/MobileVersionNotice'
-import {SnowUIProviders} from '@/components/SnowUI/layout/SnowUIProviders'
+import {ModernizeProviders} from '@/components/Modernize/layout'
 
 export default function Layout(props: {children: ReactNode}) {
   return (
-    <SnowUIProviders>
+    <ModernizeProviders>
       <MobileVersionNotice>{props.children}</MobileVersionNotice>
-    </SnowUIProviders>
+    </ModernizeProviders>
   )
 }
