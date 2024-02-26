@@ -1,4 +1,4 @@
-import {Box, Group, rem, Stack, Text} from '@mantine/core'
+import {Badge, Box, Chip, Group, rem, Stack, Text} from '@mantine/core'
 import type {IconWeight} from '@phosphor-icons/react'
 import {UsersThree} from '@phosphor-icons/react'
 import {
@@ -39,7 +39,8 @@ function SidebarItem(props: SidebarItem) {
       })}
       component={Group}
       gap='xs'
-      px='sm'
+      pl='sm'
+      pr='xs'
       py={rem(8)}
       wrap='nowrap'
     >
@@ -49,6 +50,11 @@ function SidebarItem(props: SidebarItem) {
         style={{padding: rem(2)}}
       />
       <Text size='sm'>{props.title}</Text>
+      {props.unread ? (
+        <Badge color='black' ml='auto'>
+          {props.unread}
+        </Badge>
+      ) : null}
     </Group>
   )
 }
@@ -70,6 +76,7 @@ const sections: SidebarSection[] = [
         icon: ListDashes,
         href: '',
         activeSegment: ['orders'],
+        unread: 16,
       },
       {
         id: 'products',
