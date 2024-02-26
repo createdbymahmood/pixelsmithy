@@ -8,8 +8,8 @@ interface AuthenticationLayoutProps {
 
 export function AuthenticationLayout({children}: AuthenticationLayoutProps) {
   return (
-    <Stack align='center' bg='general.0' justify='center' mih='100vh'>
-      <Card miw={rem(540)} p='md' radius='sm'>
+    <Stack align='center' bg='general.0' justify='center' mih='100vh' py='md'>
+      <Card miw={rem(540)} p='lg' radius='sm'>
         {children}
       </Card>
     </Stack>
