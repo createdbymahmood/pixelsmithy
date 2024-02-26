@@ -1,0 +1,25 @@
+.table {
+  @include border-radius(var(--mantine-radius-lg));
+  padding: var(--mantine-spacing-lg);
+}
+
+.thead {
+  border-bottom: rem(2px) solid var(--mantine-color-general-1);
+}
+
+.th {
+  font-weight: 400;
+  color: var(--mantine-color-general-5);
+  font-size: var(--mantine-font-size-xs);
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.tr {
+  font-size: var(--mantine-font-size-xs);
+}
+
+.td {
+  padding-right: 0;
+  padding-left: 0;
+}

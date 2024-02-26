@@ -1,11 +1,22 @@
 import type {MantineThemeComponents} from '@mantine/core'
-import {Button, Checkbox, Group, Input, Stack} from '@mantine/core'
+import {
+  Badge,
+  Button,
+  Checkbox,
+  Group,
+  Input,
+  rem,
+  Stack,
+  Table,
+} from '@mantine/core'
 import clsx from 'clsx'
 
+import BadgeStyles from './Badge.module.scss'
 import ButtonStyles from './Button.module.scss'
 import CheckboxStyles from './Checkbox.module.scss'
 import InputStyles from './Input.module.scss'
 import InputWrapperStyles from './InputWrapper.module.scss'
+import TableStyles from './Table.module.scss'
 
 export const components: MantineThemeComponents = {
   Button: Button.extend({
@@ -53,6 +64,34 @@ export const components: MantineThemeComponents = {
   Group: Group.extend({
     defaultProps: {
       gap: 'xs',
+    },
+  }),
+  Badge: Badge.extend({
+    classNames(theme, props, ctx) {
+      const colorClassName = clsx({
+        [BadgeStyles.yellow]: props.color === 'yellow',
+        [BadgeStyles.indigo]: props.color === 'indigo',
+        [BadgeStyles.green]: props.color === 'green',
+        [BadgeStyles.blue]: props.color === 'blue',
+      })
+      return {
+        root: clsx(BadgeStyles.root, colorClassName),
+      }
+    },
+  }),
+  Table: Table.extend({
+    defaultProps: {
+      verticalSpacing: rem(10),
+      withRowBorders: false,
+    },
+    classNames(theme, props, ctx) {
+      return {
+        table: TableStyles.table,
+        thead: TableStyles.thead,
+        th: TableStyles.th,
+        tr: TableStyles.tr,
+        td: TableStyles.td,
+      }
     },
   }),
 }
