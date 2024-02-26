@@ -49,7 +49,12 @@ function FormView() {
   return (
     <Stack gap='sm' w='100%'>
       <Input.Wrapper label='Email'>
-        <Input placeholder='Enter Email Address' size='md' />
+        <Input
+          name='email'
+          placeholder='Enter Email Address'
+          size='md'
+          type='email'
+        />
       </Input.Wrapper>
 
       <Input.Wrapper label='Password'>
