@@ -1,12 +1,12 @@
-import {SignUpForm} from '@modernize/components'
+import {SignInForm} from '@modernize/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({
-  title: 'Sign Up',
+  title: 'Sign In',
 })
 
-export default function SignUp() {
-  return <SignUpForm />
+export default function SignIn() {
+  return <SignInForm />
 }

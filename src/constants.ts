@@ -73,6 +73,8 @@ export const urls = {
     index: '/modernize',
     authentication: {
       signUp: '/modernize/authentication/sign-up',
+      signIn: '/modernize/authentication/sign-in',
+      forgotPassword: '/modernize/authentication/forgot-password',
     },
   },
 }
