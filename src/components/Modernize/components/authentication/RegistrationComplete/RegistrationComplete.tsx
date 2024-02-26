@@ -12,7 +12,7 @@ function Header() {
       <Image
         alt='Registration Completed LogoO'
         height={140}
-        src='/assets/modernize/icons/registration-complete.svg'
+        src='/assets/modernize/illustrations/registration-complete.svg'
         width={140}
       />
       <Title mt='sm' order={4} ta='center'>
