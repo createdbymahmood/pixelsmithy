@@ -1,5 +1,17 @@
-import {Badge, Box, Chip, Group, rem, Stack, Text} from '@mantine/core'
-import type {IconWeight} from '@phosphor-icons/react'
+import type {
+  GroupCssVariables,
+  GroupProps,
+  GroupStylesCtx,
+  MantineComponent,
+} from '@mantine/core'
+import {
+  Badge,
+  Box,
+  Group as MantineGroup,
+  rem,
+  Stack,
+  Text,
+} from '@mantine/core'
 import {UsersThree} from '@phosphor-icons/react'
 import {
   ChartBar,
@@ -16,7 +28,8 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {isEqual} from 'lodash-es'
-import {useSelectedLayoutSegment} from 'next/navigation'
+import Link from 'next/link'
+import {useSelectedLayoutSegments} from 'next/navigation'
 import {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -26,9 +39,18 @@ import {urls} from '@/constants'
 
 import styles from './Sidebar.module.scss'
 
-function SidebarItem(props: SidebarItem) {
-  const segment = useSelectedLayoutSegment()
+const Group = MantineGroup as MantineComponent<{
+  props: GroupProps & {href?: string}
+  ref: HTMLDivElement
+  stylesNames: 'root'
+  vars: GroupCssVariables
+  ctx: GroupStylesCtx
+}>
 
+function SidebarItem(props: SidebarItem) {
+  const segment = useSelectedLayoutSegments()
+
+  console.log({segment})
   const isActive = isEqual(segment, props.activeSegment)
   const Icon = props.icon ?? Fragment
 
@@ -37,8 +59,9 @@ function SidebarItem(props: SidebarItem) {
       className={clsx(styles.sidebarItem, 'cursor-pointer', {
         [styles.active]: isActive,
       })}
-      component={Group}
+      component={Link}
       gap='xs'
+      href={props.href}
       pl='sm'
       pr='xs'
       py={rem(8)}
@@ -68,13 +91,13 @@ const sections: SidebarSection[] = [
         title: 'Dashboard',
         icon: House,
         href: urls.Modernize.dashboard.index,
-        activeSegment: null,
+        activeSegment: [],
       },
       {
         id: 'orders',
         title: 'Orders',
         icon: ListDashes,
-        href: '',
+        href: urls.Modernize.dashboard.orders,
         activeSegment: ['orders'],
         unread: 16,
       },

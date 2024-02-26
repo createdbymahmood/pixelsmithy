@@ -26,7 +26,9 @@ export function ModernizeDashboardLayout({
         <Grid.Col p={0} span='auto'>
           <Box className={styles.contentArea} mah='100%'>
             <PerfectScrollbar>
-              <Container h='100%'>{children}</Container>
+              <Container h='100%' p='sm' size='lg'>
+                {children}
+              </Container>
             </PerfectScrollbar>
           </Box>
         </Grid.Col>

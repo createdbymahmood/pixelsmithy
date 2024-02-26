@@ -2,6 +2,16 @@
   font-weight: 400;
 }
 
+.section {
+  &[data-position='left'] {
+    --_button-section-margin-right: calc(var(--mantine-spacing-xs) / 2);
+  }
+
+  &[data-position='right'] {
+    --_button-section-margin-left: calc(var(--mantine-spacing-xs) / 2);
+  }
+}
+
 .variantDefault {
   color: var(--mantine-color-primary-7);
 }
