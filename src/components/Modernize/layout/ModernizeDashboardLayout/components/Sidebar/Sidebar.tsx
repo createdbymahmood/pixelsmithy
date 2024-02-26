@@ -27,7 +27,7 @@ import {
   User,
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
-import {isEqual} from 'lodash-es'
+import {isEmpty, isEqual} from 'lodash-es'
 import Link from 'next/link'
 import {useSelectedLayoutSegments} from 'next/navigation'
 import {Fragment} from 'react'
@@ -84,7 +84,7 @@ function SidebarItem(props: SidebarItem) {
 
 const sections: SidebarSection[] = [
   {
-    title: 'Home',
+    title: '',
     items: [
       {
         id: 'dashboard',
@@ -193,9 +193,11 @@ function SidebarItems() {
 
     return (
       <Stack key={section.title} gap='xs'>
-        <Text c='general.4' px='sm' size='sm'>
-          {section.title}
-        </Text>
+        {!isEmpty(section.title) ? (
+          <Text c='general.4' px='sm' size='sm'>
+            {section.title}
+          </Text>
+        ) : null}
         <Stack gap={rem(2)}>{sidebarItems}</Stack>
       </Stack>
     )
