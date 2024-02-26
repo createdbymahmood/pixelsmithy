@@ -1,8 +1,9 @@
 import type {MantineThemeComponents} from '@mantine/core'
-import {Button, Input} from '@mantine/core'
+import {Button, Checkbox, Input} from '@mantine/core'
 import clsx from 'clsx'
 
 import ButtonStyles from './Button.module.scss'
+import CheckboxStyles from './Checkbox.module.scss'
 import InputStyles from './Input.module.scss'
 import InputWrapperStyles from './InputWrapper.module.scss'
 
@@ -32,6 +33,13 @@ export const components: MantineThemeComponents = {
     classNames(theme, props, ctx) {
       return {
         input: InputStyles.input,
+      }
+    },
+  }),
+  Checkbox: Checkbox.extend({
+    classNames(theme, props, ctx) {
+      return {
+        label: CheckboxStyles.label,
       }
     },
   }),
