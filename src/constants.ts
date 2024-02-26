@@ -75,6 +75,8 @@ export const urls = {
       signUp: '/modernize/authentication/sign-up',
       signIn: '/modernize/authentication/sign-in',
       forgotPassword: '/modernize/authentication/forgot-password',
+      emailConfirmation: '/modernize/authentication/email-confirmation',
+      registrationComplete: '/modernize/authentication/registration-complete',
     },
   },
 }
