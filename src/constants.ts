@@ -73,6 +73,7 @@ export const urls = {
     index: '/modernize',
     dashboard: {
       index: '/modernize/dashboard',
+      orders: '/modernize/dashboard/orders',
     },
     authentication: {
       signUp: '/modernize/authentication/sign-up',

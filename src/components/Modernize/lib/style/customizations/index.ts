@@ -1,5 +1,5 @@
 import type {MantineThemeComponents} from '@mantine/core'
-import {Button, Checkbox, Input} from '@mantine/core'
+import {Button, Checkbox, Group, Input, Stack} from '@mantine/core'
 import clsx from 'clsx'
 
 import ButtonStyles from './Button.module.scss'
@@ -19,6 +19,7 @@ export const components: MantineThemeComponents = {
         root: clsx(ButtonStyles.root, {
           [ButtonStyles.variantDefault]: isDefaultVariant,
         }),
+        section: ButtonStyles.section,
       }
     },
   }),
@@ -41,6 +42,17 @@ export const components: MantineThemeComponents = {
       return {
         label: CheckboxStyles.label,
       }
+    },
+  }),
+  Stack: Stack.extend({
+    defaultProps: {
+      gap: 'xs',
+    },
+  }),
+
+  Group: Group.extend({
+    defaultProps: {
+      gap: 'xs',
     },
   }),
 }
