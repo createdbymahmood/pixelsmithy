@@ -71,6 +71,9 @@ export const urls = {
   },
   Modernize: {
     index: '/modernize',
+    dashboard: {
+      index: '/modernize/dashboard',
+    },
     authentication: {
       signUp: '/modernize/authentication/sign-up',
       signIn: '/modernize/authentication/sign-in',

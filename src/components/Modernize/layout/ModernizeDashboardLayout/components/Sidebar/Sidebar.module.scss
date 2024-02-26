@@ -1,0 +1,20 @@
+.sidebar {
+  border-right: rem(1px) solid var(--mantine-color-general-2);
+  height: calc(100vh - 68px);
+}
+
+.sidebarItem {
+  border-radius: var(--mantine-radius-sm);
+  color: var(--mantine-color-general-5);
+
+  @include transition();
+
+  &:hover {
+    background-color: var(--mantine-primary-color-0);
+  }
+
+  &.active {
+    background-color: var(--mantine-primary-color-7);
+    color: white;
+  }
+}
