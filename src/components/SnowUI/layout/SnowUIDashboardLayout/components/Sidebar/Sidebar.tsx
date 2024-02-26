@@ -45,6 +45,7 @@ export interface SidebarItem {
   children?: SidebarItem[]
   activeSegment: string[] | null
   target?: AnchorTarget
+  unread?: number
 }
 
 export interface SidebarSection {
