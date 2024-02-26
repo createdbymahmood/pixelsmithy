@@ -1,5 +1,7 @@
-import {Container} from '@mantine/core'
+import {redirect} from 'next/navigation'
+
+import {urls} from '@/constants'
 
 export default function ModernizeDashboard() {
-  return <Container py='xl' />
+  return redirect(urls.Modernize.dashboard.index)
 }

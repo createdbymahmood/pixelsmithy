@@ -37,18 +37,17 @@ export type AccordionControlStylesNames =
   | 'label'
 
 type AnchorTarget = ComponentProps<'a'>['target']
-interface SidebarItem {
+export interface SidebarItem {
   id: string
   title: string
   icon?: React.FC<IconProps>
-  filledIcon?: React.FC<IconProps>
   href?: string
   children?: SidebarItem[]
   activeSegment: string[] | null
   target?: AnchorTarget
 }
 
-interface SidebarSection {
+export interface SidebarSection {
   title: string
   items: SidebarItem[]
 }
@@ -86,7 +85,7 @@ const SidebarItems = ({items}: SidebarItemsProps) => {
     const withIcon = !isEmpty(item.icon)
     const Icon = (() => {
       if (!opened) return item.icon ?? Fragment
-      return item.filledIcon ?? item.icon ?? Fragment
+      return item.icon ?? Fragment
     })()
 
     const iconWeight: IconWeight = opened ? 'fill' : 'duotone'
