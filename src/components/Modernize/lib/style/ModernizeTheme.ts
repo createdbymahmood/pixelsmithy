@@ -31,4 +31,10 @@ export const ModernizeTheme = createTheme({
     xl: rem(80),
     xxl: rem(96),
   },
+  lineHeights: {
+    sm: rem(20),
+    md: rem(24),
+    lg: rem(34),
+  },
+  fontSizes: {},
 })
