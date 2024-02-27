@@ -120,7 +120,7 @@ const sections: SidebarSection[] = [
         id: 'customers',
         title: 'Customers',
         icon: UsersThree,
-        href: '',
+        href: urls.Modernize.dashboard.customers.index,
         activeSegment: ['customers'],
       },
       {
