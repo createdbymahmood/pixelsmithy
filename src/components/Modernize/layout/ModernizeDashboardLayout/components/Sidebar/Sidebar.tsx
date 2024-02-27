@@ -27,7 +27,7 @@ import {
   User,
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
-import {intersection, isEmpty} from 'lodash-es'
+import {intersection, isEmpty, isEqual} from 'lodash-es'
 import Link from 'next/link'
 import {useSelectedLayoutSegments} from 'next/navigation'
 import {Fragment} from 'react'
@@ -49,7 +49,9 @@ const Group = MantineGroup as MantineComponent<{
 
 function SidebarItem(props: SidebarItem) {
   const segment = useSelectedLayoutSegments()
-  const isActive = !isEmpty(intersection(segment, props.activeSegment))
+  const isEqualToSegment = isEqual(segment, props.activeSegment)
+  const isActive =
+    !isEmpty(intersection(segment, props.activeSegment)) || isEqualToSegment
 
   const Icon = props.icon ?? Fragment
 
@@ -111,8 +113,8 @@ const sections: SidebarSection[] = [
         id: 'categories',
         title: 'Categories',
         icon: FolderSimple,
-        href: '',
-        activeSegment: ['categories'],
+        href: urls.Modernize.dashboard.categories.index,
+        activeSegment: ['categories', 'add-category'],
       },
       {
         id: 'customers',
