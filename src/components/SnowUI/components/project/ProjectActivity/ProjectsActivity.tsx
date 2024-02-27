@@ -13,7 +13,7 @@ import dayJS from 'dayjs'
 import {get} from 'lodash-es'
 
 import {TableFilters} from '@/components/SnowUI'
-import {useTableState} from '@/components/SnowUI/hooks/useTableState'
+import {useTableState} from '@/hooks/useTableState'
 import {dateToString} from '@/components/SnowUI/utils/date'
 import {iconMap} from '@/components/SnowUI/utils/icons'
 
