@@ -9,7 +9,6 @@ import type {
 import {
   Anchor,
   Autocomplete,
-  Badge,
   Button,
   Card,
   Checkbox,
@@ -20,7 +19,6 @@ import {
   Input,
   rem,
   Select,
-  SimpleGrid,
   Stack,
   Switch,
   TagsInput,
@@ -29,7 +27,7 @@ import {
   Title,
 } from '@mantine/core'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
-import {ArrowLeft, Upload, X} from '@phosphor-icons/react/dist/ssr'
+import {ArrowLeft, X} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 import type {ReactNode} from 'react'
 
@@ -270,7 +268,7 @@ function SectionWrapper({children}: SectionWrapperProps) {
 
 export function AddProductForm() {
   return (
-    <Stack gap={rem(30)} pb='sm'>
+    <Stack gap={rem(30)}>
       <Header />
       <Grid gutter={rem(30)}>
         <Grid.Col span={8}>
