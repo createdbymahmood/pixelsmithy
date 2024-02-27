@@ -12,7 +12,6 @@ import {
   Stack,
   Text,
 } from '@mantine/core'
-import {UsersThree} from '@phosphor-icons/react'
 import {
   ChartBar,
   ChatText,
@@ -25,6 +24,7 @@ import {
   Star,
   Sticker,
   User,
+  UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {intersection, isEmpty, isEqual} from 'lodash-es'

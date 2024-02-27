@@ -8,7 +8,7 @@ import {
   Text,
   Title,
 } from '@mantine/core'
-import {CalendarBlank} from '@phosphor-icons/react'
+import {CalendarBlank} from '@phosphor-icons/react/dist/ssr'
 import dayJS from 'dayjs'
 
 import {dateToString} from '@/components/SnowUI/utils/date'

@@ -45,7 +45,13 @@ function Category({count, title}: CategoryProps) {
   const [hovered, {toggle}] = useDisclosure(false)
 
   const categoryImageOverlay = hovered ? (
-    <Overlay backgroundOpacity={0.35} blur={0} color='#000'>
+    <Overlay
+      backgroundOpacity={0.35}
+      blur={0}
+      color='#000'
+      component={Link}
+      href={urls.Modernize.dashboard.categories.add}
+    >
       <Button
         leftSection={<PencilSimple className='icons-size-md' weight='bold' />}
         size='md'
@@ -138,7 +144,7 @@ function Categories() {
 
 export function CategoriesList() {
   return (
-    <Stack>
+    <Stack gap={rem(30)}>
       <Header />
       <Categories />
     </Stack>
