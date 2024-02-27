@@ -87,11 +87,15 @@ export const urls = {
         add: '/modernize/dashboard/customers/add',
 
         list: {
-          all: '/modernize/dashboard/customers/all',
-          new: '/modernize/dashboard/customers/new',
-          returning: '/modernize/dashboard/customers/returning',
-          fromEurope: '/modernize/dashboard/customers/from-europe',
+          all: '/modernize/dashboard/customers/list/all',
+          new: '/modernize/dashboard/customers/list/new',
+          returning: '/modernize/dashboard/customers/list/returning',
+          fromEurope: '/modernize/dashboard/customers/list/from-europe',
         },
+        info: (customerId: string) =>
+          urlCat('/modernize/dashboard/customers/info/:customerId', {
+            customerId,
+          }),
       },
     },
     authentication: {

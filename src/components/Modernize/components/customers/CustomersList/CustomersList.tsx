@@ -1,28 +1,37 @@
 'use client'
 
+import type {
+  GroupCssVariables,
+  GroupProps,
+  GroupStylesCtx,
+  MantineComponent,
+} from '@mantine/core'
 import {
   Avatar,
-  Button,
   Checkbox,
-  Group,
+  Group as MantineGroup,
   Pagination,
   rem,
   Stack,
   Table,
   Text,
-  Title,
 } from '@mantine/core'
-import {Plus} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
-import {
-  TableFilters,
-  TableWrapper,
-} from '@/components/Modernize/components/common'
+import {TableFilters} from '@/components/Modernize/components/common'
 import {urls} from '@/constants'
 import {useTableState} from '@/hooks/useTableState'
 
+const Group = MantineGroup as MantineComponent<{
+  props: GroupProps & {href?: string}
+  ref: HTMLDivElement
+  stylesNames: 'root'
+  vars: GroupCssVariables
+  ctx: GroupStylesCtx
+}>
+
 interface Customer {
+  id: string
   name: string
   location: string
   orders: number
@@ -31,30 +40,35 @@ interface Customer {
 
 const elements: Customer[] = [
   {
+    id: '1',
     name: 'Walter Gibson',
     location: 'Sawaynchester',
     orders: 5,
     spent: '$96.14',
   },
   {
+    id: '2',
     name: 'Lenora Robinson',
     location: 'Kaydenville',
     orders: 12,
     spent: '$22.18',
   },
   {
+    id: '3',
     name: 'Daisy Tran',
     location: 'East Freidaton',
     orders: 6,
     spent: '$59.64',
   },
   {
+    id: '4',
     name: 'Alejandro Holland',
     location: 'South Marcellus',
     orders: 3,
     spent: '$54.52',
   },
   {
+    id: '5',
     name: 'Rose Foster',
     location: 'South Olestad',
     orders: 15,
@@ -77,7 +91,10 @@ function TableContent() {
 
   const rows = elements.map((element) => {
     const nameColumn = (
-      <Group>
+      <Group
+        component={Link}
+        href={urls.Modernize.dashboard.customers.info(element.id)}
+      >
         <Checkbox
           checked={selections.isSelected(mapElementToKey(element))}
           size='sm'
