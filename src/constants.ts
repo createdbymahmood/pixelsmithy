@@ -101,6 +101,6 @@ export const applications = [
     id: 3,
     title: 'Modernize',
     description: 'Dashboard UI Kit',
-    href: urls.Modernize.authentication.signUp,
+    href: urls.Modernize.dashboard.index,
   },
 ]

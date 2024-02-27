@@ -14,7 +14,7 @@ import {CalendarBlank} from '@phosphor-icons/react/dist/ssr'
 import dayJS from 'dayjs'
 
 import {TableFilters} from '@/components/SnowUI'
-import {useTableState} from '@/components/SnowUI/hooks/useTableState'
+import {useTableState} from '@/hooks/useTableState'
 import {dateToString} from '@/components/SnowUI/utils/date'
 
 const elements = [

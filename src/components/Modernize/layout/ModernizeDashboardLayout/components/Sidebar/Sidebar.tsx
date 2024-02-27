@@ -50,7 +50,6 @@ const Group = MantineGroup as MantineComponent<{
 function SidebarItem(props: SidebarItem) {
   const segment = useSelectedLayoutSegments()
 
-  console.log({segment})
   const isActive = isEqual(segment, props.activeSegment)
   const Icon = props.icon ?? Fragment
 

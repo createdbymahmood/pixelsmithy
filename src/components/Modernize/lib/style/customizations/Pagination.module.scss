@@ -1,0 +1,8 @@
+.control {
+  border: none;
+  color: var(--mantine-color-general-5);
+
+  &[data-active] {
+    background: var(--mantine-primary-color-0);
+  }
+}

@@ -5,17 +5,21 @@ import {
   Checkbox,
   Group,
   Input,
+  Pagination,
   rem,
   Stack,
   Table,
 } from '@mantine/core'
+import {ArrowLeft, ArrowRight} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
+import React from 'react'
 
 import BadgeStyles from './Badge.module.scss'
 import ButtonStyles from './Button.module.scss'
 import CheckboxStyles from './Checkbox.module.scss'
 import InputStyles from './Input.module.scss'
 import InputWrapperStyles from './InputWrapper.module.scss'
+import PaginationStyles from './Pagination.module.scss'
 import TableStyles from './Table.module.scss'
 
 export const components: MantineThemeComponents = {
@@ -91,6 +95,17 @@ export const components: MantineThemeComponents = {
         th: TableStyles.th,
         tr: TableStyles.tr,
         td: TableStyles.td,
+      }
+    },
+  }),
+  Pagination: Pagination.extend({
+    defaultProps: {
+      previousIcon: () => <ArrowLeft weight='bold' />,
+      nextIcon: () => <ArrowRight weight='bold' />,
+    },
+    classNames(theme, props, ctx) {
+      return {
+        control: PaginationStyles.control,
       }
     },
   }),
