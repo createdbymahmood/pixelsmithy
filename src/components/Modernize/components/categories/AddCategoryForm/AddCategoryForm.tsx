@@ -10,6 +10,7 @@ import {
   ActionIcon,
   Avatar,
   Button,
+  Card,
   Divider,
   Grid,
   Group as MantineGroup,
@@ -21,7 +22,6 @@ import {
   Title,
 } from '@mantine/core'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
-import {FormSection} from '@modernize/components/common'
 import {
   ArrowLeft,
   DotsThreeVertical,
@@ -91,12 +91,12 @@ function Header() {
 
 function Visibility() {
   return (
-    <FormSection>
+    <Card>
       <Stack gap={rem(24)}>
         <Text fw='bold'>Category Visibility</Text>
         <Switch label='Visible on site' size='md' defaultChecked />
       </Stack>
-    </FormSection>
+    </Card>
   )
 }
 
@@ -126,7 +126,7 @@ function Images() {
 
 function Info() {
   return (
-    <FormSection>
+    <Card>
       <Stack gap={rem(24)}>
         <Text fw='bold'>Category Info</Text>
         <Input.Wrapper label='Category Name' w='100%'>
@@ -138,7 +138,7 @@ function Info() {
         </Input.Wrapper>
         <Images />
       </Stack>
-    </FormSection>
+    </Card>
   )
 }
 
@@ -205,7 +205,7 @@ function Products() {
   })
 
   return (
-    <FormSection>
+    <Card>
       <Stack gap={rem(24)}>
         <ProductsHeader />
         <Stack gap={rem(12)}>{content}</Stack>
@@ -218,7 +218,7 @@ function Products() {
       >
         Add Product
       </Button>
-    </FormSection>
+    </Card>
   )
 }
 

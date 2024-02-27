@@ -2,8 +2,8 @@ import type {MantineThemeComponents} from '@mantine/core'
 import {
   Autocomplete,
   Badge,
-  Box,
   Button,
+  Card,
   Checkbox,
   Group,
   Input,
@@ -17,7 +17,6 @@ import {
 } from '@mantine/core'
 import {ArrowLeft, ArrowRight, CaretDown} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
-import React from 'react'
 
 import BadgeStyles from './Badge.module.scss'
 import ButtonStyles from './Button.module.scss'
@@ -139,6 +138,12 @@ export const components: MantineThemeComponents = {
         list: TabsStyles.list,
         tab: TabsStyles.tab,
       }
+    },
+  }),
+  Card: Card.extend({
+    defaultProps: {
+      p: rem(28),
+      radius: 'md',
     },
   }),
 }

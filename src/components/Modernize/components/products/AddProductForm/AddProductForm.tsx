@@ -27,10 +27,8 @@ import {
   Title,
 } from '@mantine/core'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
-import {FormSection} from '@modernize/components/common'
 import {ArrowLeft, X} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
-import type {ReactNode} from 'react'
 
 import {urls} from '@/constants'
 
@@ -173,7 +171,7 @@ function Shipping() {
 
 function Categories() {
   return (
-    <FormSection>
+    <Card>
       <Stack gap={rem(24)}>
         <Text fw='bold'>Categories</Text>
         <Stack gap={rem(12)}>
@@ -188,7 +186,7 @@ function Categories() {
           Create New
         </Anchor>
       </Stack>
-    </FormSection>
+    </Card>
   )
 }
 
@@ -210,7 +208,7 @@ function Tags() {
   })
 
   return (
-    <FormSection>
+    <Card>
       <Stack gap={rem(24)}>
         <Text fw='bold'>Tags</Text>
         <Input.Wrapper label='Add Tags' w='100%'>
@@ -218,13 +216,13 @@ function Tags() {
         </Input.Wrapper>
         <Group gap={rem(8)}>{content}</Group>
       </Stack>
-    </FormSection>
+    </Card>
   )
 }
 
 function SeoSettings() {
   return (
-    <FormSection>
+    <Card>
       <Stack gap={rem(24)}>
         <Text fw='bold'>Seo Settings</Text>
         <Input.Wrapper label='Title'>
@@ -233,7 +231,7 @@ function SeoSettings() {
 
         <Textarea label='Description' rows={3} />
       </Stack>
-    </FormSection>
+    </Card>
   )
 }
 
@@ -261,16 +259,18 @@ export function AddProductForm() {
       <Header />
       <Grid gutter={rem(30)}>
         <Grid.Col span={8}>
-          <FormSection>
-            <Information />
-            <Divider />
-            <Images />
-            <Divider />
-            <Price />
-            <DifferentOptions />
-            <Divider />
-            <Shipping />
-          </FormSection>
+          <Card>
+            <Stack gap='md'>
+              <Information />
+              <Divider />
+              <Images />
+              <Divider />
+              <Price />
+              <DifferentOptions />
+              <Divider />
+              <Shipping />
+            </Stack>
+          </Card>
         </Grid.Col>
 
         <Grid.Col span={4}>
