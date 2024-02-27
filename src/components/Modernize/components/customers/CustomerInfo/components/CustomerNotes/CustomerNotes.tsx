@@ -19,6 +19,7 @@ function Header() {
       <Avatar size={rem(56)} variant='light'>
         L
       </Avatar>
+
       <Stack gap={rem(8)}>
         <Text fw='bold'>Lenora Robinson</Text>
         <Text
