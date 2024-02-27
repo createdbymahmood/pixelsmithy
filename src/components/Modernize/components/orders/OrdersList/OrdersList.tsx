@@ -20,12 +20,13 @@ import {
   TableFilters,
   TableWrapper,
 } from '@/components/Modernize/components/common'
+import {dateTimeFormat} from '@/constants'
 import {useTableState} from '@/hooks/useTableState'
 
-type OrderStatus = 'ready' | 'received' | 'shipped'
+type OrderStatus = 'completed' | 'pending' | 'ready' | 'received' | 'shipped'
 type PaymentStatus = 'paid' | 'pending'
 
-interface Order {
+export interface Order {
   order: string
   date: Dayjs
   customer: string
@@ -34,13 +35,13 @@ interface Order {
   total: string
 }
 
-const elements: Order[] = [
+export const orders: Order[] = [
   {
     order: '#12512B',
     date: dayJS().subtract(2, 'days'),
     customer: 'Tom Anderson',
     paymentStatus: 'paid',
-    orderStatus: 'ready',
+    orderStatus: 'pending',
     total: '$49.90',
   },
   {
@@ -48,7 +49,7 @@ const elements: Order[] = [
     date: dayJS().subtract(2, 'days'),
     customer: 'Tom Anderson',
     paymentStatus: 'paid',
-    orderStatus: 'ready',
+    orderStatus: 'completed',
     total: '$49.90',
   },
   {
@@ -61,7 +62,7 @@ const elements: Order[] = [
   },
 ]
 
-const orderStatusMap: Record<OrderStatus, JSX.Element> = {
+export const orderStatusMap: Record<OrderStatus, JSX.Element> = {
   ready: (
     <Badge color='yellow' radius='sm'>
       Ready
@@ -77,9 +78,19 @@ const orderStatusMap: Record<OrderStatus, JSX.Element> = {
       Shipped
     </Badge>
   ),
+  completed: (
+    <Badge color='green' radius='sm'>
+      Completed
+    </Badge>
+  ),
+  pending: (
+    <Badge color='general' radius='sm'>
+      Pending
+    </Badge>
+  ),
 }
 
-const paymentStatusMap: Record<PaymentStatus, JSX.Element> = {
+export const paymentStatusMap: Record<PaymentStatus, JSX.Element> = {
   paid: (
     <Badge color='green' radius='sm'>
       Paid
@@ -100,10 +111,10 @@ function TableContent() {
     indeterminate,
     isAllSelected,
   } = useTableState({
-    items: elements.map((element) => element.order),
+    items: orders.map((element) => element.order),
   })
 
-  const rows = elements.map((element) => {
+  const rows = orders.map((element) => {
     const orderStatus = get(orderStatusMap, element.orderStatus)
     const paymentStatus = get(paymentStatusMap, element.paymentStatus)
 
@@ -119,7 +130,7 @@ function TableContent() {
     return (
       <Table.Tr key={element.order}>
         <Table.Td>{orderColumn}</Table.Td>
-        <Table.Td>{element.date.format('MMM D, hh:mmA')}</Table.Td>
+        <Table.Td>{element.date.format(dateTimeFormat)}</Table.Td>
         <Table.Td>{element.customer}</Table.Td>
         <Table.Td>{paymentStatus}</Table.Td>
         <Table.Td>{orderStatus}</Table.Td>

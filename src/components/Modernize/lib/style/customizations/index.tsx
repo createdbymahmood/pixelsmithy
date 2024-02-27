@@ -83,6 +83,7 @@ export const components: MantineThemeComponents = {
         [BadgeStyles.indigo]: props.color === 'indigo',
         [BadgeStyles.green]: props.color === 'green',
         [BadgeStyles.blue]: props.color === 'blue',
+        [BadgeStyles.general]: props.color === 'general',
       })
       return {
         root: clsx(BadgeStyles.root, colorClassName),
