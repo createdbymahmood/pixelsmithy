@@ -1,6 +1,6 @@
 'use client'
 
-import {Box, Container, Grid, Stack} from '@mantine/core'
+import {Box, Container, Grid, rem, Stack} from '@mantine/core'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -26,8 +26,8 @@ export function ModernizeDashboardLayout({
         <Grid.Col p={0} span='auto'>
           <Box className={styles.contentArea} mah='100%'>
             <PerfectScrollbar>
-              <Container h='100%' p='sm' size='lg'>
-                {children}
+              <Container h='100%' px='sm' py={0} size='lg'>
+                <Box py={rem(30)}>{children}</Box>
               </Container>
             </PerfectScrollbar>
           </Box>
