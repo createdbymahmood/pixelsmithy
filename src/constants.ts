@@ -82,6 +82,17 @@ export const urls = {
         index: '/modernize/dashboard/categories',
         add: '/modernize/dashboard/categories/add',
       },
+      customers: {
+        index: '/modernize/dashboard/customers',
+        add: '/modernize/dashboard/customers/add',
+
+        list: {
+          all: '/modernize/dashboard/customers/all',
+          new: '/modernize/dashboard/customers/new',
+          returning: '/modernize/dashboard/customers/returning',
+          fromEurope: '/modernize/dashboard/customers/from-europe',
+        },
+      },
     },
     authentication: {
       signUp: '/modernize/authentication/sign-up',

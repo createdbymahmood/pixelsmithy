@@ -13,6 +13,7 @@ import {
   Stack,
   Switch,
   Table,
+  Tabs,
 } from '@mantine/core'
 import {ArrowLeft, ArrowRight, CaretDown} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
@@ -26,6 +27,7 @@ import InputWrapperStyles from './InputWrapper.module.scss'
 import PaginationStyles from './Pagination.module.scss'
 import SwitchStyles from './Switch.module.scss'
 import TableStyles from './Table.module.scss'
+import TabsStyles from './Tabs.module.scss'
 
 export const components: MantineThemeComponents = {
   Button: Button.extend({
@@ -129,6 +131,14 @@ export const components: MantineThemeComponents = {
   Autocomplete: Autocomplete.extend({
     defaultProps: {
       rightSection: <CaretDown weight='bold' />,
+    },
+  }),
+  Tabs: Tabs.extend({
+    classNames(theme, props, ctx) {
+      return {
+        list: TabsStyles.list,
+        tab: TabsStyles.tab,
+      }
     },
   }),
 }
