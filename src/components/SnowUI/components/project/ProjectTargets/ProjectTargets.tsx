@@ -65,7 +65,7 @@ function ProjectTargetCard({
           {tag}
         </Text>
         <Title order={5}>{title}</Title>
-        <Text className={styles.description} size='xs'>
+        <Text c='gray.6' className={styles.description} lineClamp={2} size='xs'>
           {descritpion}
         </Text>
 

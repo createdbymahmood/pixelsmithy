@@ -6,7 +6,3 @@
 .stack .col:nth-last-child(2) {
   border-bottom: none;
 }
-
-.description {
-  @include text-truncate(1);
-}

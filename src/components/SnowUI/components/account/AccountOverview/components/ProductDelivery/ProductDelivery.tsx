@@ -125,7 +125,7 @@ function Product({receiver, status, title}: ProductProps) {
     <Group gap='sm' wrap='nowrap'>
       <Avatar radius='md' size={rem(48)} />
       <Stack gap={0}>
-        <Text className={styles.productDescription} size='xs'>
+        <Text lineClamp={2} size='xs'>
           {title}
         </Text>
         <Text c='dimmed' size='xs'>
