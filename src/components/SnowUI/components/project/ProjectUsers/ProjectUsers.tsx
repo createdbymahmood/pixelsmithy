@@ -14,8 +14,8 @@ import {CalendarBlank} from '@phosphor-icons/react/dist/ssr'
 import dayJS from 'dayjs'
 
 import {TableFilters} from '@/components/SnowUI'
-import {useTableState} from '@/hooks/useTableState'
 import {dateToString} from '@/components/SnowUI/utils/date'
+import {useTableState} from '@/hooks/useTableState'
 
 const elements = [
   {
@@ -54,6 +54,7 @@ function TableContent() {
     onItemSelectionChange,
     selections,
     indeterminate,
+    isAllSelected,
   } = useTableState({items: elements.map((element) => element.user)})
 
   const rows = elements.map((element) => {
@@ -88,6 +89,7 @@ function TableContent() {
           <Table.Th>
             <Group>
               <Checkbox
+                checked={isAllSelected}
                 indeterminate={indeterminate}
                 size='xs'
                 onChange={onAllSelectionsChange}

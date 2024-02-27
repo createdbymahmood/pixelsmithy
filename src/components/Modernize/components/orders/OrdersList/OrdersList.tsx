@@ -16,10 +16,11 @@ import type {Dayjs} from 'dayjs'
 import dayJS from 'dayjs'
 import {get} from 'lodash-es'
 
-import {TableFilters} from '@/components/Modernize/components/common'
+import {
+  TableFilters,
+  TableWrapper,
+} from '@/components/Modernize/components/common'
 import {useTableState} from '@/hooks/useTableState'
-
-import styles from './OrdersList.module.scss'
 
 type OrderStatus = 'ready' | 'received' | 'shipped'
 type PaymentStatus = 'paid' | 'pending'
@@ -97,6 +98,7 @@ function TableContent() {
     onItemSelectionChange,
     selections,
     indeterminate,
+    isAllSelected,
   } = useTableState({
     items: elements.map((element) => element.order),
   })
@@ -104,18 +106,19 @@ function TableContent() {
   const rows = elements.map((element) => {
     const orderStatus = get(orderStatusMap, element.orderStatus)
     const paymentStatus = get(paymentStatusMap, element.paymentStatus)
+
+    const orderColumn = (
+      <Group>
+        <Checkbox
+          checked={selections.isSelected(element.order)}
+          onChange={onItemSelectionChange(element.order)}
+        />
+        {element.order}
+      </Group>
+    )
     return (
       <Table.Tr key={element.order}>
-        <Table.Td>
-          <Group>
-            <Checkbox
-              checked={selections.isSelected(element.order)}
-              size='xs'
-              onChange={onItemSelectionChange(element.order)}
-            />
-            {element.order}
-          </Group>
-        </Table.Td>
+        <Table.Td>{orderColumn}</Table.Td>
         <Table.Td>{element.date.format('MMM D, hh:mmA')}</Table.Td>
         <Table.Td>{element.customer}</Table.Td>
         <Table.Td>{paymentStatus}</Table.Td>
@@ -125,20 +128,22 @@ function TableContent() {
     )
   })
 
+  const orderHeadColumn = (
+    <Group>
+      <Checkbox
+        checked={isAllSelected}
+        indeterminate={indeterminate}
+        onChange={onAllSelectionsChange}
+      />
+      <Text size='sm'>Order</Text>
+    </Group>
+  )
+
   return (
     <Table withRowBorders>
       <Table.Thead>
         <Table.Tr>
-          <Table.Th>
-            <Group>
-              <Checkbox
-                indeterminate={indeterminate}
-                size='xs'
-                onChange={onAllSelectionsChange}
-              />
-              Order
-            </Group>
-          </Table.Th>
+          <Table.Th>{orderHeadColumn}</Table.Th>
           <Table.Th>Date</Table.Th>
           <Table.Th>Customer</Table.Th>
           <Table.Th>Payment Status</Table.Th>
@@ -166,19 +171,25 @@ function Header() {
   )
 }
 
+function TableFooter() {
+  return (
+    <Group justify='space-between'>
+      <Pagination total={24} />
+      <Text c='general.5'>247 Results</Text>
+    </Group>
+  )
+}
+
 export function OrdersList() {
   return (
     <Stack gap='sm'>
       <Header />
 
-      <Stack bg='white' className={styles.table} gap='sm' p='sm'>
+      <TableWrapper>
         <TableFilters />
         <TableContent />
-        <Group justify='space-between'>
-          <Pagination total={24} />
-          <Text c='general.5'>247 Results</Text>
-        </Group>
-      </Stack>
+        <TableFooter />
+      </TableWrapper>
     </Stack>
   )
 }

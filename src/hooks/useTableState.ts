@@ -33,6 +33,8 @@ export function useTableState<T>({
     },
   )
 
+  const isAllSelected = selections.allSelected
+
   const indeterminate = !(selections.allSelected || selections.noneSelected)
 
   return {
@@ -40,5 +42,6 @@ export function useTableState<T>({
     onItemSelectionChange,
     selections,
     indeterminate,
+    isAllSelected,
   }
 }
