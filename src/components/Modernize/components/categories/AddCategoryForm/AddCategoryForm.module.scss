@@ -1,0 +1,19 @@
+.product {
+  border-radius: var(--mantine-radius-sm);
+  border: rem(1px) solid var(--mantine-color-general-1);
+  padding: var(--mantine-spacing-xs);
+
+  .actions {
+    @include transition();
+
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover {
+    .actions {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

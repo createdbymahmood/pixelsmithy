@@ -141,7 +141,7 @@ function TableFooter() {
 
 export function ProductsList() {
   return (
-    <Stack gap='sm'>
+    <Stack gap={rem(30)}>
       <Header />
 
       <TableWrapper>

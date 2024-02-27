@@ -10,7 +10,7 @@ import {
   Text,
   Title,
 } from '@mantine/core'
-import {Plus} from '@phosphor-icons/react'
+import {Plus} from '@phosphor-icons/react/dist/ssr'
 import React, {Fragment} from 'react'
 
 import styles from './BillingAddress.module.scss'

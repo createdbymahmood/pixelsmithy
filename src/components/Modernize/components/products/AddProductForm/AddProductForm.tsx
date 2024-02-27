@@ -27,6 +27,7 @@ import {
   Title,
 } from '@mantine/core'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
+import {FormSection} from '@modernize/components/common'
 import {ArrowLeft, X} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 import type {ReactNode} from 'react'
@@ -51,7 +52,7 @@ function BackButton() {
       href={urls.Modernize.dashboard.products.index}
     >
       <ArrowLeft className='icon-size-md' weight='bold' />
-      <Text>Back</Text>
+      <Text size='sm'>Back</Text>
     </Group>
   )
 }
@@ -172,7 +173,7 @@ function Shipping() {
 
 function Categories() {
   return (
-    <SectionWrapper>
+    <FormSection>
       <Stack gap={rem(24)}>
         <Text fw='bold'>Categories</Text>
         <Stack gap={rem(12)}>
@@ -187,7 +188,7 @@ function Categories() {
           Create New
         </Anchor>
       </Stack>
-    </SectionWrapper>
+    </FormSection>
   )
 }
 
@@ -209,7 +210,7 @@ function Tags() {
   })
 
   return (
-    <SectionWrapper>
+    <FormSection>
       <Stack gap={rem(24)}>
         <Text fw='bold'>Tags</Text>
         <Input.Wrapper label='Add Tags' w='100%'>
@@ -217,13 +218,13 @@ function Tags() {
         </Input.Wrapper>
         <Group gap={rem(8)}>{content}</Group>
       </Stack>
-    </SectionWrapper>
+    </FormSection>
   )
 }
 
 function SeoSettings() {
   return (
-    <SectionWrapper>
+    <FormSection>
       <Stack gap={rem(24)}>
         <Text fw='bold'>Seo Settings</Text>
         <Input.Wrapper label='Title'>
@@ -232,7 +233,7 @@ function SeoSettings() {
 
         <Textarea label='Description' rows={3} />
       </Stack>
-    </SectionWrapper>
+    </FormSection>
   )
 }
 
@@ -254,25 +255,13 @@ function Actions() {
   )
 }
 
-interface SectionWrapperProps {
-  children: ReactNode
-}
-
-function SectionWrapper({children}: SectionWrapperProps) {
-  return (
-    <Card bg='white' component={Stack} gap='md' p='sm' radius='md'>
-      {children}
-    </Card>
-  )
-}
-
 export function AddProductForm() {
   return (
     <Stack gap={rem(30)}>
       <Header />
       <Grid gutter={rem(30)}>
         <Grid.Col span={8}>
-          <SectionWrapper>
+          <FormSection>
             <Information />
             <Divider />
             <Images />
@@ -281,7 +270,7 @@ export function AddProductForm() {
             <DifferentOptions />
             <Divider />
             <Shipping />
-          </SectionWrapper>
+          </FormSection>
         </Grid.Col>
 
         <Grid.Col span={4}>
