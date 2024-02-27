@@ -38,11 +38,11 @@ function ChatListItem({
       >
         <Avatar size={rem(24)} />
         <Stack gap={0}>
-          <Text className={styles.sender} size='sm'>
+          <Text lineClamp={1} size='sm'>
             {sender}
           </Text>
 
-          <Text c='dimmed' className={styles.preview} size='xs'>
+          <Text c='dimmed' lineClamp={1} size='xs'>
             {preview}
           </Text>
         </Stack>

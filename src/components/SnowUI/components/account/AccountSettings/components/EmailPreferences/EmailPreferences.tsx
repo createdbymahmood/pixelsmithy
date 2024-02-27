@@ -73,7 +73,7 @@ function Preference(props: PreferenceProps) {
       <Checkbox defaultChecked={props.defaultActivated} />
       <Stack gap={rem(4)}>
         <Title order={5}>{props.title}</Title>
-        <Text c='dimmed' className={styles.description} size='xs'>
+        <Text c='dimmed' lineClamp={1} size='xs'>
           {props.description}
         </Text>
       </Stack>

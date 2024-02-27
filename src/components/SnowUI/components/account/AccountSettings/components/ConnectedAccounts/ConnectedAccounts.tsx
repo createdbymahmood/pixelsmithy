@@ -40,7 +40,7 @@ function Account({defaultConnected, description, title}: AccountProps) {
       <Avatar size={rem(32)} />
       <Stack gap={rem(4)}>
         <Title order={5}>{title}</Title>
-        <Text c='dimmed' className={styles.accountDescription} size='xs'>
+        <Text c='dimmed' lineClamp={1} size='xs'>
           {description}
         </Text>
       </Stack>
