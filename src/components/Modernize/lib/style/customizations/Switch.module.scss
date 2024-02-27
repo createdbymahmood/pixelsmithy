@@ -1,0 +1,9 @@
+.root {
+  &[data-label-position='left'] {
+    --label-offset-right: rem(12px);
+  }
+
+  &[data-label-position='right'] {
+    --label-offset-left: rem(12px);
+  }
+}

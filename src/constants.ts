@@ -76,7 +76,7 @@ export const urls = {
       orders: '/modernize/dashboard/orders',
       products: {
         index: '/modernize/dashboard/products',
-        addProduct: '/modernize/dashboard/products/add-product',
+        add: '/modernize/dashboard/products/add-product',
       },
     },
     authentication: {

@@ -13,11 +13,13 @@ import {
   Title,
 } from '@mantine/core'
 import {Plus} from '@phosphor-icons/react/dist/ssr'
+import Link from 'next/link'
 
 import {
   TableFilters,
   TableWrapper,
 } from '@/components/Modernize/components/common'
+import {urls} from '@/constants'
 import {useTableState} from '@/hooks/useTableState'
 
 interface Product {
@@ -116,7 +118,11 @@ function Header() {
 
       <Group ml='auto'>
         <Button variant='default'>Export</Button>
-        <Button leftSection={<Plus className='icon-size-md' weight='bold' />}>
+        <Button
+          component={Link}
+          href={urls.Modernize.dashboard.products.add}
+          leftSection={<Plus className='icon-size-md' weight='bold' />}
+        >
           Add Product
         </Button>
       </Group>
