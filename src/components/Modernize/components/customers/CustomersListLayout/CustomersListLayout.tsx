@@ -25,7 +25,7 @@ function Header() {
           href={urls.Modernize.dashboard.customers.add}
           leftSection={<Plus className='icon-size-md' weight='bold' />}
         >
-          Add Cusomer
+          Add Customer
         </Button>
       </Group>
     </Group>

@@ -14,6 +14,7 @@ import {
   Switch,
   Table,
   Tabs,
+  Textarea,
 } from '@mantine/core'
 import {ArrowLeft, ArrowRight, CaretDown} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
@@ -27,6 +28,7 @@ import PaginationStyles from './Pagination.module.scss'
 import SwitchStyles from './Switch.module.scss'
 import TableStyles from './Table.module.scss'
 import TabsStyles from './Tabs.module.scss'
+import TextareaStyles from './Textarea.module.scss'
 
 export const components: MantineThemeComponents = {
   Button: Button.extend({
@@ -52,6 +54,9 @@ export const components: MantineThemeComponents = {
     },
   }),
   Input: Input.extend({
+    defaultProps: {
+      size: 'md',
+    },
     classNames(theme, props, ctx) {
       return {
         input: InputStyles.input,
@@ -126,11 +131,13 @@ export const components: MantineThemeComponents = {
   Select: Select.extend({
     defaultProps: {
       rightSection: <CaretDown weight='bold' />,
+      size: 'md',
     },
   }),
   Autocomplete: Autocomplete.extend({
     defaultProps: {
       rightSection: <CaretDown weight='bold' />,
+      size: 'md',
     },
   }),
   Tabs: Tabs.extend({
@@ -145,6 +152,16 @@ export const components: MantineThemeComponents = {
     defaultProps: {
       p: rem(28),
       radius: 'md',
+    },
+  }),
+  Textarea: Textarea.extend({
+    defaultProps: {
+      size: 'md',
+    },
+    classNames(theme, props, ctx) {
+      return {
+        label: TextareaStyles.label,
+      }
     },
   }),
 }
