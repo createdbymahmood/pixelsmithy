@@ -34,20 +34,19 @@ const elements = [
 
 function TableContent() {
   const rows = elements.map((element) => {
+    const downloadColumn = (
+      <Group className='cursor-pointer' gap={rem(5)}>
+        <DownloadSimple className='icon-size-sm' />
+        <Text size='xs'>PDF</Text>
+      </Group>
+    )
+
     return (
       <Table.Tr key={`${element.description}-${element.amount}`}>
         <Table.Td>{dateToString(element.date)}</Table.Td>
         <Table.Td>{element.description}</Table.Td>
-        <Table.Td>
-          <Text size='xs'>{element.amount}</Text>
-        </Table.Td>
-
-        <Table.Td>
-          <Group className='cursor-pointer' gap={rem(5)}>
-            <DownloadSimple className='icon-size-sm' />
-            <Text size='xs'>PDF</Text>
-          </Group>
-        </Table.Td>
+        <Table.Td>{element.amount}</Table.Td>
+        <Table.Td>{downloadColumn}</Table.Td>
       </Table.Tr>
     )
   })

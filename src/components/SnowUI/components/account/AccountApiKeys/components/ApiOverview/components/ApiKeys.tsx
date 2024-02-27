@@ -54,7 +54,6 @@ function TableContent() {
         <Table.Tr>
           <Table.Th>Label</Table.Th>
           <Table.Th>API Keys</Table.Th>
-
           <Table.Th>Date</Table.Th>
           <Table.Th>Status</Table.Th>
         </Table.Tr>

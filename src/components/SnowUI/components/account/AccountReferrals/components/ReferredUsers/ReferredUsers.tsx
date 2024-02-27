@@ -53,21 +53,24 @@ const elements = [
 
 function TableContent() {
   const rows = elements.map((element) => {
+    const managerColumn = (
+      <Group gap={rem(5)}>
+        <Avatar size={24} />
+        <Text size='xs'>{element.manager}</Text>
+      </Group>
+    )
+
+    const dateColumn = (
+      <Group gap={rem(5)}>
+        <CalendarBlank className='icon-size-sm' />
+        <Text size='xs'>{dateToString(element.date)}</Text>
+      </Group>
+    )
     return (
       <Table.Tr key={element.orderId}>
         <Table.Td>{element.orderId}</Table.Td>
-        <Table.Td>
-          <Group gap={rem(5)}>
-            <Avatar size={24} />
-            <Text size='xs'>{element.manager}</Text>
-          </Group>
-        </Table.Td>
-        <Table.Td>
-          <Group gap={rem(5)}>
-            <CalendarBlank className='icon-size-sm' />
-            <Text size='xs'>{dateToString(element.date)}</Text>
-          </Group>
-        </Table.Td>
+        <Table.Td>{managerColumn}</Table.Td>
+        <Table.Td>{dateColumn}</Table.Td>
         <Table.Td>{element.bonus}</Table.Td>
         <Table.Td>{element.profit}</Table.Td>
       </Table.Tr>

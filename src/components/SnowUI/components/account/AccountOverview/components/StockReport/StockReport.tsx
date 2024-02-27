@@ -41,13 +41,8 @@ function TableContent() {
     const status = get(statusBadgeMap, element.status)
     return (
       <Table.Tr key={element.item}>
-        <Table.Td>
-          <Text size='xs'>{element.item}</Text>
-        </Table.Td>
-
-        <Table.Td>
-          <Text size='xs'>{element.price}</Text>
-        </Table.Td>
+        <Table.Td>{element.item}</Table.Td>
+        <Table.Td>{element.price}</Table.Td>
         <Table.Td>{element.quantity}</Table.Td>
         <Table.Td>{status}</Table.Td>
       </Table.Tr>

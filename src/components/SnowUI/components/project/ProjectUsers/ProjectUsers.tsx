@@ -58,19 +58,21 @@ function TableContent() {
   } = useTableState({items: elements.map((element) => element.user)})
 
   const rows = elements.map((element) => {
+    const managerColumn = (
+      <Group>
+        <Checkbox
+          checked={selections.isSelected(element.user)}
+          size='xs'
+          onChange={onItemSelectionChange(element.user)}
+        />
+        <Avatar size={rem(24)} />
+        <Text size='xs'>{element.user}</Text>
+      </Group>
+    )
+
     return (
       <Table.Tr key={element.user}>
-        <Table.Td>
-          <Group>
-            <Checkbox
-              checked={selections.isSelected(element.user)}
-              size='xs'
-              onChange={onItemSelectionChange(element.user)}
-            />
-            <Avatar size={rem(24)} />
-            <Text size='xs'>{element.user}</Text>
-          </Group>
-        </Table.Td>
+        <Table.Td>{managerColumn}</Table.Td>
         <Table.Td>{element.email}</Table.Td>
         <Table.Td>
           <Group gap={rem(5)}>
@@ -82,21 +84,22 @@ function TableContent() {
     )
   })
 
+  const managerColumnHead = (
+    <Group>
+      <Checkbox
+        checked={isAllSelected}
+        indeterminate={indeterminate}
+        size='xs'
+        onChange={onAllSelectionsChange}
+      />
+      <Text size='xs'>Manager</Text>
+    </Group>
+  )
   return (
     <Table>
       <Table.Thead>
         <Table.Tr>
-          <Table.Th>
-            <Group>
-              <Checkbox
-                checked={isAllSelected}
-                indeterminate={indeterminate}
-                size='xs'
-                onChange={onAllSelectionsChange}
-              />
-              <Text size='xs'>Manager</Text>
-            </Group>
-          </Table.Th>
+          <Table.Th>{managerColumnHead}</Table.Th>
           <Table.Th>Email</Table.Th>
           <Table.Th>Registration Date</Table.Th>
         </Table.Tr>
