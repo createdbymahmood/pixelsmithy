@@ -74,6 +74,10 @@ export const urls = {
     dashboard: {
       index: '/modernize/dashboard',
       orders: '/modernize/dashboard/orders',
+      products: {
+        index: '/modernize/dashboard/products',
+        addProduct: '/modernize/dashboard/products/add-product',
+      },
     },
     authentication: {
       signUp: '/modernize/authentication/sign-up',

@@ -13,9 +13,9 @@ import dayJS from 'dayjs'
 import {get} from 'lodash-es'
 
 import {TableFilters} from '@/components/SnowUI'
-import {useTableState} from '@/hooks/useTableState'
 import {dateToString} from '@/components/SnowUI/utils/date'
 import {iconMap} from '@/components/SnowUI/utils/icons'
+import {useTableState} from '@/hooks/useTableState'
 
 const elements = [
   {
@@ -60,6 +60,7 @@ function TableContent() {
     onItemSelectionChange,
     selections,
     indeterminate,
+    isAllSelected,
   } = useTableState({
     items: elements.map((element) =>
       createElementKey(element.file, element.uploader),
@@ -104,6 +105,7 @@ function TableContent() {
           <Table.Th>
             <Group>
               <Checkbox
+                checked={isAllSelected}
                 indeterminate={indeterminate}
                 size='xs'
                 onChange={onAllSelectionsChange}

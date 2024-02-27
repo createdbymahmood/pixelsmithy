@@ -104,7 +104,7 @@ const sections: SidebarSection[] = [
         id: 'products',
         title: 'Products',
         icon: Sticker,
-        href: '',
+        href: urls.Modernize.dashboard.products.index,
         activeSegment: ['products'],
       },
       {
