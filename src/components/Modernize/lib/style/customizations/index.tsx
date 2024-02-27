@@ -1,16 +1,20 @@
 import type {MantineThemeComponents} from '@mantine/core'
 import {
+  Autocomplete,
   Badge,
+  Box,
   Button,
   Checkbox,
   Group,
   Input,
   Pagination,
   rem,
+  Select,
   Stack,
+  Switch,
   Table,
 } from '@mantine/core'
-import {ArrowLeft, ArrowRight} from '@phosphor-icons/react/dist/ssr'
+import {ArrowLeft, ArrowRight, CaretDown} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import React from 'react'
 
@@ -20,6 +24,7 @@ import CheckboxStyles from './Checkbox.module.scss'
 import InputStyles from './Input.module.scss'
 import InputWrapperStyles from './InputWrapper.module.scss'
 import PaginationStyles from './Pagination.module.scss'
+import SwitchStyles from './Switch.module.scss'
 import TableStyles from './Table.module.scss'
 
 export const components: MantineThemeComponents = {
@@ -107,6 +112,23 @@ export const components: MantineThemeComponents = {
       return {
         control: PaginationStyles.control,
       }
+    },
+  }),
+  Switch: Switch.extend({
+    classNames(theme, props, ctx) {
+      return {
+        root: SwitchStyles.root,
+      }
+    },
+  }),
+  Select: Select.extend({
+    defaultProps: {
+      rightSection: <CaretDown weight='bold' />,
+    },
+  }),
+  Autocomplete: Autocomplete.extend({
+    defaultProps: {
+      rightSection: <CaretDown weight='bold' />,
     },
   }),
 }
