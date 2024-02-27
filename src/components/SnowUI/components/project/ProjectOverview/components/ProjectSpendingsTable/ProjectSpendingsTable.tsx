@@ -34,20 +34,20 @@ const elements = [
 ]
 
 function TableContent() {
-  const rows = elements.map((element, index) => (
-    <Table.Tr key={element.manager}>
-      <Table.Td>
-        <Group gap={rem(5)}>
+  const rows = elements.map((element, index) => {
+    return (
+      <Table.Tr key={element.manager}>
+        <Table.Td>
           <Avatar size={rem(24)} /> {element.manager}
-        </Group>
-      </Table.Td>
-      <Table.Td>{dateToString(element.date)}</Table.Td>
-      <Table.Td>{element.amount}</Table.Td>
-      <Table.Td>
-        <CompleationStatus index={index} />
-      </Table.Td>
-    </Table.Tr>
-  ))
+        </Table.Td>
+        <Table.Td>{dateToString(element.date)}</Table.Td>
+        <Table.Td>{element.amount}</Table.Td>
+        <Table.Td>
+          <CompleationStatus index={index} />
+        </Table.Td>
+      </Table.Tr>
+    )
+  })
 
   return (
     <Table>

@@ -42,24 +42,26 @@ const elements = [
 
 function TableContent() {
   const rows = elements.map((element) => {
+    const dateColumn = (
+      <Group gap={rem(5)}>
+        <CalendarBlank className='icon-size-sm' />
+        <Text size='xs'>{dateToString(element.date)}</Text>
+      </Group>
+    )
+    const downloadColumn = (
+      <Group className='cursor-pointer' gap={rem(5)}>
+        <DownloadSimple className='icon-size-sm' />
+        <Text size='xs'>PDF</Text>
+      </Group>
+    )
     return (
       <Table.Tr key={`${element.orderId}-${element.amount}`}>
         <Table.Td>{element.orderId}</Table.Td>
         <Table.Td>{element.details}</Table.Td>
-        <Table.Td>
-          <Group gap={rem(5)}>
-            <CalendarBlank className='icon-size-sm' />
-            <Text size='xs'>{dateToString(element.date)}</Text>
-          </Group>
-        </Table.Td>
+        <Table.Td>{dateColumn}</Table.Td>
         <Table.Td>{element.amount}</Table.Td>
 
-        <Table.Td>
-          <Group className='cursor-pointer' gap={rem(5)}>
-            <DownloadSimple className='icon-size-sm' />
-            <Text size='xs'>PDF</Text>
-          </Group>
-        </Table.Td>
+        <Table.Td>{downloadColumn}</Table.Td>
       </Table.Tr>
     )
   })

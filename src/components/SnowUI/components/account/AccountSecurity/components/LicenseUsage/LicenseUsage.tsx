@@ -60,28 +60,32 @@ const elements = [
 
 function TableContent() {
   const rows = elements.map((element, index) => {
+    const timeColumn = (
+      <Group gap={rem(5)}>
+        <Clock className='icon-size-sm' />
+        <Text size='xs'>{dateToString(element.time)}</Text>
+      </Group>
+    )
+
+    const copyColumn = (
+      <CopyButton value={element.apiKey}>
+        {({copied, copy}) => (
+          <Group className={styles.copyGroup} gap={rem(5)} onClick={copy}>
+            <Text size='xs'>{element.apiKey}</Text>
+            <ClipboardText
+              className={clsx('icon-size-sm', styles.clipboardIcon)}
+            />
+          </Group>
+        )}
+      </CopyButton>
+    )
+
     return (
       <Table.Tr key={element.apiKey}>
         <Table.Td>{element.operator}</Table.Td>
         <Table.Td>{element.ipAddress}</Table.Td>
-        <Table.Td>
-          <Group gap={rem(5)}>
-            <Clock className='icon-size-sm' />
-            <Text size='xs'>{dateToString(element.time)}</Text>
-          </Group>
-        </Table.Td>
-        <Table.Td>
-          <CopyButton value={element.apiKey}>
-            {({copied, copy}) => (
-              <Group className={styles.copyGroup} gap={rem(5)} onClick={copy}>
-                <Text size='xs'>{element.apiKey}</Text>
-                <ClipboardText
-                  className={clsx('icon-size-sm', styles.clipboardIcon)}
-                />
-              </Group>
-            )}
-          </CopyButton>
-        </Table.Td>
+        <Table.Td>{timeColumn}</Table.Td>
+        <Table.Td>{copyColumn}</Table.Td>
         <Table.Td>
           <CompleationStatus index={index} />
         </Table.Td>
