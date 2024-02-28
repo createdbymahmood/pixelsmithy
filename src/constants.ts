@@ -103,7 +103,7 @@ export const urls = {
       },
       coupons: {
         index: '/modernize/dashboard/coupons',
-        add: '/modernize/dashboard/coupons/add',
+        create: '/modernize/dashboard/coupons/create',
 
         list: {
           all: '/modernize/dashboard/coupons/list/all',

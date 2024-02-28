@@ -20,9 +20,9 @@ import {
   Textarea,
   Title,
 } from '@mantine/core'
+import {FormViewSection} from '@modernize/components/common'
 import {ArrowLeft} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
-import type {ReactNode} from 'react'
 
 import {urls} from '@/constants'
 
@@ -75,27 +75,6 @@ function Header() {
         <Title order={5}>Add Customer</Title>
         <Actions />
       </Group>
-    </Stack>
-  )
-}
-
-interface FormViewSectionProps {
-  title: string
-  description: string
-  children: ReactNode
-}
-
-function FormViewSection({children, description, title}: FormViewSectionProps) {
-  return (
-    <Stack gap={rem(24)}>
-      <Stack gap={rem(4)}>
-        <Text fw='bold'>{title}</Text>
-        <Text c='general.5' size='sm'>
-          {description}
-        </Text>
-      </Stack>
-
-      {children}
     </Stack>
   )
 }
@@ -193,9 +172,7 @@ export function AddCustomerForm() {
       <Header />
 
       <Card>
-        <Stack gap={rem(30)}>
-          <FormView />
-        </Stack>
+        <FormView />
       </Card>
 
       <Divider />

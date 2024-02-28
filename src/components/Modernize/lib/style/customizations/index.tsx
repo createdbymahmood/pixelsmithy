@@ -16,12 +16,14 @@ import {
   Tabs,
   Textarea,
 } from '@mantine/core'
+import {DatePickerInput} from '@mantine/dates'
 import {ArrowLeft, ArrowRight, CaretDown} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 
 import BadgeStyles from './Badge.module.scss'
 import ButtonStyles from './Button.module.scss'
 import CheckboxStyles from './Checkbox.module.scss'
+import DatePickerInputStyles from './DatePickerInput.module.scss'
 import InputStyles from './Input.module.scss'
 import InputWrapperStyles from './InputWrapper.module.scss'
 import PaginationStyles from './Pagination.module.scss'
@@ -165,6 +167,19 @@ export const components: MantineThemeComponents = {
     classNames(theme, props, ctx) {
       return {
         label: TextareaStyles.label,
+      }
+    },
+  }),
+  DatePickerInput: DatePickerInput.extend({
+    defaultProps: {
+      size: 'md',
+      popoverProps: {
+        styles: {dropdown: {padding: 'var(--mantine-spacing-xs)'}},
+      },
+    },
+    classNames(theme, props, ctx) {
+      return {
+        label: DatePickerInputStyles.label,
       }
     },
   }),
