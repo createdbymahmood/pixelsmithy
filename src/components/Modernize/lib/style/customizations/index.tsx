@@ -86,7 +86,7 @@ export const components: MantineThemeComponents = {
   Badge: Badge.extend({
     defaultProps: {
       radius: 'sm',
-      size: 'lg',
+      size: 'md',
     },
     classNames(theme, props, ctx) {
       const colorClassName = clsx({

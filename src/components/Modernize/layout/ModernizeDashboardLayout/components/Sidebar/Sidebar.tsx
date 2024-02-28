@@ -75,7 +75,7 @@ function SidebarItem(props: SidebarItem) {
       />
       <Text size='sm'>{props.title}</Text>
       {props.unread ? (
-        <Badge color='black' ml='auto'>
+        <Badge color='black' fw='bold' ml='auto' radius='xl' size='sm'>
           {props.unread}
         </Badge>
       ) : null}

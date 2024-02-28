@@ -4,7 +4,7 @@ import urlCat from 'urlcat'
 export const defaultThemeColorScheme: MantineColorScheme = 'light'
 export const defaultDateFormat = 'DD MMMM YYYY'
 export const defaultLoadingScreenDelayMS = 500
-export const dateTimeFormat = 'MMM D, hh:mmA'
+export const dateTimeFormat = 'MMM D, hh:mm A'
 export const urls = {
   JobLocation: {
     index: '/job-location',
