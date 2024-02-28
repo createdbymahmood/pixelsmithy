@@ -111,6 +111,9 @@ export const urls = {
           expired: '/modernize/dashboard/coupons/list/expired',
         },
       },
+      knowledgeBase: {
+        index: '/modernize/dashboard/knowledge-base',
+      },
     },
     authentication: {
       signUp: '/modernize/authentication/sign-up',

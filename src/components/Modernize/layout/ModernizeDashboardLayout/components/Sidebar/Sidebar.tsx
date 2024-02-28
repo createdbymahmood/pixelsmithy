@@ -153,7 +153,7 @@ const sections: SidebarSection[] = [
         id: 'knowledgeBase',
         title: 'Knowledge Base',
         icon: Question,
-        href: '/',
+        href: urls.Modernize.dashboard.knowledgeBase.index,
         activeSegment: ['knowledge-base'],
       },
       {
