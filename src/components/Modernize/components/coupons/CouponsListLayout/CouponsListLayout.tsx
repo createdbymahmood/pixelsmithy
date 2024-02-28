@@ -21,7 +21,7 @@ function Header() {
       <Group ml='auto'>
         <Button
           component={Link}
-          href={urls.Modernize.dashboard.coupons.add}
+          href={urls.Modernize.dashboard.coupons.create}
           leftSection={<Plus className='icon-size-md' weight='bold' />}
           px='md'
         >

@@ -1,0 +1,11 @@
+.couponType {
+  border-width: rem(2px);
+  border-style: solid;
+  border-color: var(--mantine-color-general-2);
+  border-radius: var(--mantine-radius-md);
+  @include transition();
+
+  &.isSelected {
+    border-color: var(--mantine-primary-color-7);
+  }
+}
