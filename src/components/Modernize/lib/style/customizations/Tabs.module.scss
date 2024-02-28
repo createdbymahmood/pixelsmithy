@@ -1,8 +1,4 @@
 .list {
-  &:before {
-    border-bottom: none;
-  }
-
   margin-bottom: rem(20px);
   flex-wrap: nowrap;
   overflow: auto;

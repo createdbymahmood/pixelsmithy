@@ -63,44 +63,16 @@ export const orders: Order[] = [
 ]
 
 export const orderStatusMap: Record<OrderStatus, JSX.Element> = {
-  ready: (
-    <Badge color='yellow' radius='sm'>
-      Ready
-    </Badge>
-  ),
-  received: (
-    <Badge color='primary' radius='sm'>
-      Received
-    </Badge>
-  ),
-  shipped: (
-    <Badge color='general' radius='sm'>
-      Shipped
-    </Badge>
-  ),
-  completed: (
-    <Badge color='green' radius='sm'>
-      Completed
-    </Badge>
-  ),
-  pending: (
-    <Badge color='general' radius='sm'>
-      Pending
-    </Badge>
-  ),
+  ready: <Badge color='yellow'>Ready</Badge>,
+  received: <Badge color='primary'>Received</Badge>,
+  shipped: <Badge color='general'>Shipped</Badge>,
+  completed: <Badge color='green'>Completed</Badge>,
+  pending: <Badge color='general'>Pending</Badge>,
 }
 
 export const paymentStatusMap: Record<PaymentStatus, JSX.Element> = {
-  paid: (
-    <Badge color='green' radius='sm'>
-      Paid
-    </Badge>
-  ),
-  pending: (
-    <Badge color='general' radius='sm'>
-      Paid
-    </Badge>
-  ),
+  paid: <Badge color='green'>Paid</Badge>,
+  pending: <Badge color='general'>Paid</Badge>,
 }
 
 function TableContent() {
@@ -124,7 +96,9 @@ function TableContent() {
           checked={selections.isSelected(element.order)}
           onChange={onItemSelectionChange(element.order)}
         />
-        {element.order}
+        <Text fw='500' size='sm'>
+          {element.order}
+        </Text>
       </Group>
     )
     return (

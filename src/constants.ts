@@ -101,6 +101,16 @@ export const urls = {
       reports: {
         index: '/modernize/dashboard/reports',
       },
+      coupons: {
+        index: '/modernize/dashboard/coupons',
+        add: '/modernize/dashboard/coupons/add',
+
+        list: {
+          all: '/modernize/dashboard/coupons/list/all',
+          active: '/modernize/dashboard/coupons/list/active',
+          expired: '/modernize/dashboard/coupons/list/expired',
+        },
+      },
     },
     authentication: {
       signUp: '/modernize/authentication/sign-up',

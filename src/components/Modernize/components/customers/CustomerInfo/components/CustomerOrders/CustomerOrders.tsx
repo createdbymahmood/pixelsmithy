@@ -13,7 +13,7 @@ function TableContent() {
 
     return (
       <Table.Tr key={element.order}>
-        <Table.Td>{element.order}</Table.Td>
+        <Table.Td fw='500'>{element.order}</Table.Td>
         <Table.Td>{element.date.format(dateTimeFormat)}</Table.Td>
         <Table.Td>{orderStatus}</Table.Td>
         <Table.Td>{element.total}</Table.Td>
