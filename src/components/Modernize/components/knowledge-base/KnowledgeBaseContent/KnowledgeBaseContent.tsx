@@ -13,7 +13,11 @@ import {
   TextInput,
   Title,
 } from '@mantine/core'
+import {articles} from '@modernize/mock/articles'
 import {MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
+import Link from 'next/link'
+
+import {urls} from '@/constants'
 
 function Header() {
   return <Title order={5}>Knowledge Base</Title>
@@ -30,54 +34,31 @@ function SearchInput() {
   )
 }
 
-const articles = [
-  {
-    id: '1',
-    title: 'Getting Started',
-    sections: [
-      'Guide to get started faster',
-      'Video tutorials for beginners',
-      'Moving to Bolt system',
-    ],
-  },
-  {
-    id: '2',
-    title: 'Personal Settings',
-    sections: [
-      'Setting up your profile',
-      'Changing business name',
-      'Changing email address',
-    ],
-  },
-  {
-    id: '3',
-    title: 'Billing',
-    sections: ['Payment declined', 'Get a refund', 'Subscriptions'],
-  },
-  {
-    id: '4',
-    title: 'Commerce',
-    sections: ['Add products', 'Selling guide', 'Create categories'],
-  },
-]
-
 interface Article {
   id: string
   title: string
-  sections: string[]
+  contents: string[]
 }
 interface ArticleProps extends Article {}
 
-function ArticleCard({id, sections, title}: ArticleProps) {
+function ArticleCard({id, contents, title}: ArticleProps) {
   const content = (() => {
-    const result = sections.map((section) => (
+    const result = contents.map((section) => (
       <Text key={section} size='sm'>
         {section}
       </Text>
     ))
 
     result.push(
-      <Anchor key='more' c='primary.7' mt={rem(20)} size='sm' underline='never'>
+      <Anchor
+        key='more'
+        c='primary.7'
+        component={Link}
+        href={urls.Modernize.dashboard.knowledgeBase.article(id)}
+        mt={rem(20)}
+        size='sm'
+        underline='never'
+      >
         More Tutorials
       </Anchor>,
     )
@@ -111,7 +92,7 @@ function Articles() {
   )
 }
 
-function CommunityForm() {
+export function CommunityForm() {
   return (
     <Card w='100%'>
       <Title order={6}>Community Forum</Title>
@@ -127,7 +108,7 @@ function CommunityForm() {
   )
 }
 
-function Webinars() {
+export function Webinars() {
   return (
     <Card w='100%'>
       <Title order={6}>Webinars</Title>

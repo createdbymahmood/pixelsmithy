@@ -2,11 +2,16 @@
   margin-bottom: rem(20px);
   flex-wrap: nowrap;
   overflow: auto;
+
+  &:before {
+    border-bottom: 1px solid var(--mantine-color-general-1);
+  }
 }
 
 .tab {
-  padding: rem(12px) 0;
+  padding: rem(14px) 0;
   margin-bottom: 0;
+  font-size: var(--mantine-font-size-md);
 
   &:hover {
     background: inherit;
@@ -14,5 +19,9 @@
 
   &:not(:last-of-type) {
     margin-right: var(--mantine-spacing-xs);
+  }
+
+  &[data-active] {
+    color: var(--mantine-primary-color-7);
   }
 }
