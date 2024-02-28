@@ -65,7 +65,9 @@ function TableContent() {
         <Avatar radius='md' size={rem(48)} />
 
         <Stack gap={0}>
-          <Text size='sm'>{element.title}</Text>
+          <Text fw='500' size='sm'>
+            {element.title}
+          </Text>
           <Text c='general.5' size='sm'>
             {element.category}
           </Text>

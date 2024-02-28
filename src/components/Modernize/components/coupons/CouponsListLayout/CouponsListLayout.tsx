@@ -16,16 +16,16 @@ import {urls} from '@/constants'
 function Header() {
   return (
     <Group>
-      <Title order={5}>Customers</Title>
+      <Title order={5}>Coupons</Title>
 
       <Group ml='auto'>
-        <Button variant='default'>Export</Button>
         <Button
           component={Link}
-          href={urls.Modernize.dashboard.customers.add}
+          href={urls.Modernize.dashboard.coupons.add}
           leftSection={<Plus className='icon-size-md' weight='bold' />}
+          px='md'
         >
-          Add Customer
+          Create
         </Button>
       </Group>
     </Group>
@@ -39,39 +39,32 @@ const Tab = Tabs.Tab as MantineComponent<{
   compound: true
 }>
 
-interface CustomersListLayoutProps {
+interface CouponsListLayout {
   children: ReactNode
 }
 
-const customers = [
+const coupons = [
   {
     key: 'all',
-    label: 'All Customers',
-    href: urls.Modernize.dashboard.customers.list.all,
+    label: 'All Coupons',
+    href: urls.Modernize.dashboard.coupons.list.all,
   },
   {
-    key: 'new',
-    label: 'New Customers',
-    href: urls.Modernize.dashboard.customers.list.new,
+    key: 'active',
+    label: 'Active Coupons',
+    href: urls.Modernize.dashboard.coupons.list.active,
   },
   {
-    key: 'returning',
-    label: 'Returning Customers',
-    href: urls.Modernize.dashboard.customers.list.returning,
-  },
-  {
-    key: 'from-europe',
-    label: 'From Europe',
-    href: urls.Modernize.dashboard.customers.list.fromEurope,
+    key: 'expired',
+    label: 'Expired Coupons',
+    href: urls.Modernize.dashboard.coupons.list.expired,
   },
 ] as const
 
-export default function CustomersListLayout({
-  children,
-}: CustomersListLayoutProps) {
+export default function CouponsListLayout({children}: CouponsListLayout) {
   const segment = useSelectedLayoutSegment()
 
-  const content = customers.map((tab) => {
+  const content = coupons.map((tab) => {
     return (
       <Tab key={tab.key} component={Link} href={tab.href} value={tab.key}>
         {startCase(tab.label)}

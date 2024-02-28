@@ -22,7 +22,7 @@ import {
   Medal,
   Question,
   Star,
-  Sticker,
+  Tag,
   User,
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
@@ -105,7 +105,7 @@ const sections: SidebarSection[] = [
       {
         id: 'products',
         title: 'Products',
-        icon: Sticker,
+        icon: Tag,
         href: urls.Modernize.dashboard.products.index,
         activeSegment: ['products', 'add-product'],
       },
@@ -134,7 +134,7 @@ const sections: SidebarSection[] = [
         id: 'coupons',
         title: 'Coupons',
         icon: Star,
-        href: '',
+        href: urls.Modernize.dashboard.coupons.index,
         activeSegment: ['coupons'],
       },
       {

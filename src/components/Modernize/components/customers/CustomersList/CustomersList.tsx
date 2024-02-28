@@ -103,10 +103,9 @@ function TableContent() {
         <Avatar color='general' size={rem(48)} variant='light'>
           {String(element.name).charAt(0)}
         </Avatar>
-
-        <Stack gap={0}>
-          <Text size='sm'>{element.name}</Text>
-        </Stack>
+        <Text fw='500' size='sm'>
+          {element.name}
+        </Text>
       </Group>
     )
 

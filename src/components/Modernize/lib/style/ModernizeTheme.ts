@@ -36,5 +36,4 @@ export const ModernizeTheme = createTheme({
     md: rem(24),
     lg: rem(34),
   },
-  shadows: {},
 })
