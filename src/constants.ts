@@ -98,6 +98,9 @@ export const urls = {
             customerId,
           }),
       },
+      reports: {
+        index: '/modernize/dashboard/reports',
+      },
     },
     authentication: {
       signUp: '/modernize/authentication/sign-up',

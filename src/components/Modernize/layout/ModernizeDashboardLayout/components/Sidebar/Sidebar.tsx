@@ -127,7 +127,7 @@ const sections: SidebarSection[] = [
         id: 'reports',
         title: 'Reports',
         icon: ChartBar,
-        href: '',
+        href: urls.Modernize.dashboard.reports.index,
         activeSegment: ['reports'],
       },
       {
