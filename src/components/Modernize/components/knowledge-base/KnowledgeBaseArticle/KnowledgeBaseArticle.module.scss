@@ -1,0 +1,24 @@
+.list {
+  &:before {
+    border: none;
+  }
+  width: 100%;
+}
+
+.tab {
+  padding: rem(12px) rem(20px);
+  margin-bottom: 0;
+  border-radius: var(--mantine-radius-md);
+  font-size: var(--mantine-font-size-sm);
+  border: none;
+
+  &:not(:last-of-type) {
+    margin-right: var(--mantine-spacing-xs);
+  }
+
+  &[data-active] {
+    background-color: var(--mantine-primary-color-7);
+    color: var(--mantine-color-white);
+    font-weight: 700;
+  }
+}

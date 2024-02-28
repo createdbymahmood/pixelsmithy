@@ -113,6 +113,10 @@ export const urls = {
       },
       knowledgeBase: {
         index: '/modernize/dashboard/knowledge-base',
+        article: (articleId: string) =>
+          urlCat('/modernize/dashboard/knowledge-base/article/:articleId', {
+            articleId,
+          }),
       },
     },
     authentication: {
