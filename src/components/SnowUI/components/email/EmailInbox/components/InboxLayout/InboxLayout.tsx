@@ -25,7 +25,7 @@ const Group = MantineGroup as MantineComponent<{
 
 function InboxSidebarHeader() {
   return (
-    <Card p='sm' style={{flexShrink: 0}}>
+    <Card className='shrink-0' p='sm'>
       <Group>
         <Checkbox />
         <FunnelSimple className={clsx('icon-size-md', 'cursor-pointer')} />
@@ -37,68 +37,68 @@ function InboxSidebarHeader() {
 export function InboxSidebar() {
   const emails: SidebarInboxPreviewItem[] = [
     {
-      sender: 'ByeWind',
+      name: 'ByeWind',
       preview: 'Are you free tonight?',
       date: dayJS().set('hours', 19).set('minutes', 28),
     },
     {
-      sender: 'Slack',
+      name: 'Slack',
       preview: 'Invite your team to Slack',
       date: dayJS().set('hours', 18).set('minutes', 30),
     },
     {
-      sender: 'Natali Craig',
+      name: 'Natali Craig',
       preview: 'Hi',
       date: dayJS().set('hours', 17).set('minutes', 52),
     },
     {
-      sender: 'Drew Cano',
+      name: 'Drew Cano',
       preview:
         "Let's go fishing! – Hey, You wanna join me and Fred at the lake tomorrow? It'll be awesome.",
       date: dayJS().set('hours', 10).set('minutes', 12),
     },
     {
-      sender: 'Behance',
+      name: 'Behance',
       preview: 'You have a new follower',
       date: dayJS().set('hours', 6).set('minutes', 30),
     },
     {
-      sender: 'Orlando Diggs',
+      name: 'Orlando Diggs',
       preview: "Hey man – Nah man sorry i don't. Should i get it?",
       date: dayJS().set('month', 2).set('date', 12),
     },
     {
-      sender: 'ChatGPT',
+      name: 'ChatGPT',
       preview: 'Welcome to ChatGPT',
       date: dayJS().set('month', 2).set('date', 12),
     },
     {
-      sender: 'Andi Lane',
+      name: 'Andi Lane',
       preview: 'Re: New mail settings – Will you answer him asap?',
       date: dayJS().set('month', 2).set('date', 11),
     },
     {
-      sender: 'Facebook',
+      name: 'Facebook',
       preview: 'You have a new follower',
       date: dayJS().set('month', 2).set('date', 10),
     },
     {
-      sender: 'YouTube',
+      name: 'YouTube',
       preview: 'The most popular videos of 2024',
       date: dayJS().set('month', 2).set('date', 9),
     },
     {
-      sender: 'Kate Morrison',
+      name: 'Kate Morrison',
       preview: 'I think we should use the first version.',
       date: dayJS().set('month', 2).set('date', 9),
     },
     {
-      sender: 'Threads',
+      name: 'Threads',
       preview: 'You have a new follower',
       date: dayJS().set('month', 2).set('date', 8),
     },
     {
-      sender: 'Koray Okumus',
+      name: 'Koray Okumus',
       preview: "Let's talk about the search box interaction again",
       date: dayJS().set('month', 2).set('date', 7),
     },

@@ -17,7 +17,7 @@ interface ChatLayoutProps {
 
 function Header() {
   return (
-    <Card p='xs' style={{flexShrink: 0}}>
+    <Card className='shrink-0' p='xs'>
       <Group>
         <NotePencil className={clsx('icon-size-md', 'cursor-pointer')} />
         <Gear className={clsx('icon-size-md', 'cursor-pointer')} />
@@ -30,70 +30,70 @@ function Header() {
 function ChatInboxSidebar() {
   const chats: SidebarInboxPreviewItem[] = [
     {
-      sender: 'William Johnson',
+      name: 'William Johnson',
       preview: 'What about the second plan',
       date: dayJS().set('hours', 18).set('minutes', 30),
     },
     {
-      sender: 'ByeWind',
+      name: 'ByeWind',
       preview: 'Are you free tonight?',
       date: dayJS().set('hours', 19).set('minutes', 28),
       unread: 12,
     },
     {
-      sender: 'Natali Craig',
+      name: 'Natali Craig',
       preview: 'Hi',
       date: dayJS().set('hours', 17).set('minutes', 52),
       unread: 5,
     },
     {
-      sender: 'Drew Cano',
+      name: 'Drew Cano',
       preview:
         "Let's go fishing! – Hey, You wanna join me and Fred at the lake tomorrow? It'll be awesome.",
       date: dayJS().set('hours', 10).set('minutes', 12),
     },
     {
-      sender: 'Bruce Wayne, James Davis',
+      name: 'Bruce Wayne, James Davis',
       preview: 'You have a new follower',
       date: dayJS().set('hours', 6).set('minutes', 30),
     },
     {
-      sender: 'Orlando Diggs',
+      name: 'Orlando Diggs',
       preview: "Hey man – Nah man sorry i don't. Should i get it?",
       date: dayJS().set('month', 2).set('date', 12),
     },
     {
-      sender: 'Sarah Jackson, Michael Brown, Christopher Lee',
+      name: 'Sarah Jackson, Michael Brown, Christopher Lee',
       preview: 'Welcome to ChatGPT',
       date: dayJS().set('month', 2).set('date', 12),
     },
     {
-      sender: 'Andi Lane',
+      name: 'Andi Lane',
       preview: 'Re: New mail settings – Will you answer him asap?',
       date: dayJS().set('month', 2).set('date', 11),
     },
     {
-      sender: 'Group',
+      name: 'Group',
       preview: 'You have a new follower',
       date: dayJS().set('month', 2).set('date', 10),
     },
     {
-      sender: 'John Smith',
+      name: 'John Smith',
       preview: "There's a bug you need to deal with.",
       date: dayJS().set('month', 2).set('date', 9),
     },
     {
-      sender: 'Kate Morrison',
+      name: 'Kate Morrison',
       preview: 'I think we should use the first version.',
       date: dayJS().set('month', 2).set('date', 9),
     },
     {
-      sender: 'Threads',
+      name: 'Threads',
       preview: 'I think we should use the first version.',
       date: dayJS().set('month', 2).set('date', 8),
     },
     {
-      sender: 'Koray Okumus',
+      name: 'Koray Okumus',
       preview: "Let's talk about the search box interaction again",
       date: dayJS().set('month', 2).set('date', 7),
     },

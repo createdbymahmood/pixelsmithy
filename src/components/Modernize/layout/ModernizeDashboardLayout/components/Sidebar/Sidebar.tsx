@@ -141,7 +141,7 @@ const sections: SidebarSection[] = [
         id: 'inbox',
         title: 'Inbox',
         icon: ChatText,
-        href: '',
+        href: urls.Modernize.dashboard.inbox,
         activeSegment: ['inbox'],
       },
     ],
