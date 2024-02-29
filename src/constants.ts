@@ -119,7 +119,13 @@ export const urls = {
           }),
       },
       inbox: '/modernize/dashboard/inbox',
+      settings: {
+        index: '/modernize/dashboard/settings',
+        profile: '/modernize/dashboard/settings/profile',
+        notifications: '/modernize/dashboard/settings/notifications',
+      },
     },
+
     authentication: {
       signUp: '/modernize/authentication/sign-up',
       signIn: '/modernize/authentication/sign-in',
