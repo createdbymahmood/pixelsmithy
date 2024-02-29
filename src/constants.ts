@@ -118,6 +118,7 @@ export const urls = {
             articleId,
           }),
       },
+      inbox: '/modernize/dashboard/inbox',
     },
     authentication: {
       signUp: '/modernize/authentication/sign-up',

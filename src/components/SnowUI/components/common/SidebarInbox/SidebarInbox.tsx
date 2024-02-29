@@ -12,7 +12,7 @@ import {toSidebarInboxTime} from '@/components/SnowUI/utils/date'
 import styles from './SidebarInbox.module.scss'
 
 export interface SidebarInboxPreviewItem {
-  sender: string
+  name: string
   preview: string
   date: Dayjs
   unread?: number
@@ -22,7 +22,7 @@ interface SidebarInboxListItemProps extends SidebarInboxPreviewItem {}
 
 function ChatListItem({
   preview,
-  sender,
+  name,
   date,
   unread,
 }: SidebarInboxListItemProps) {
@@ -39,7 +39,7 @@ function ChatListItem({
         <Avatar size={rem(24)} />
         <Stack gap={0}>
           <Text lineClamp={1} size='sm'>
-            {sender}
+            {name}
           </Text>
 
           <Text c='dimmed' lineClamp={1} size='xs'>
@@ -69,7 +69,7 @@ interface ChatListProps {
 
 function ChatsList({items}: ChatListProps) {
   const content = items.map((item) => {
-    return <ChatListItem key={`${item.sender}-${item.preview}`} {...item} />
+    return <ChatListItem key={`${item.name}-${item.preview}`} {...item} />
   })
 
   return <Stack gap={rem(2)}>{content}</Stack>

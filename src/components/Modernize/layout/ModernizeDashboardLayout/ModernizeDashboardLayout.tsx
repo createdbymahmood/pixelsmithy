@@ -27,7 +27,9 @@ export function ModernizeDashboardLayout({
           <Box className={styles.contentArea} mah='100%'>
             <PerfectScrollbar>
               <Container h='100%' px='sm' py={0} size='lg'>
-                <Box py={rem(30)}>{children}</Box>
+                <Box h='100%' py={rem(30)}>
+                  {children}
+                </Box>
               </Container>
             </PerfectScrollbar>
           </Box>

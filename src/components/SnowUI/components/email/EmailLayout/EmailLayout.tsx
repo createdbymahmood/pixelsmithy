@@ -141,7 +141,7 @@ interface EmailLayoutProps {
 export function EmailLayout({children}: EmailLayoutProps) {
   return (
     <Group align='flex-start' gap='lg' h='100%' wrap='nowrap'>
-      <Stack gap={rem(5)} style={{flexShrink: 0}} w={rem(124)}>
+      <Stack className='shrink-0' gap={rem(5)} w={rem(124)}>
         <SidebarItems />
       </Stack>
 

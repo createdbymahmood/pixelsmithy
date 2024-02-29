@@ -70,7 +70,7 @@ export function SideUsersList() {
   const [queryString, setQueryString] = useState<string | null>(null)
 
   return (
-    <Card h='100%' p={0} style={{flexShrink: 0}} w={rem(208)}>
+    <Card className='shrink-0' h='100%' p={0} w={rem(208)}>
       <Stack h='100%'>
         <Box pt='md' px='md'>
           <SearchInput
