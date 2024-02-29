@@ -1,0 +1,15 @@
+.chatPreview {
+  @include transition();
+
+  &:hover {
+    background-color: var(--mantine-primary-color-0);
+  }
+}
+
+.onlineBadge {
+  border: rem(5px) solid var(--mantine-color-white);
+}
+
+.sidebar {
+  border-right: rem(1px) solid var(--mantine-color-general-1);
+}
