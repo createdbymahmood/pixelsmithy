@@ -1,0 +1,32 @@
+.message {
+  max-width: rem(420);
+  width: fit-content;
+  @include border-radius(var(--mantine-radius-md));
+}
+
+.rtl {
+  align-self: flex-end;
+}
+
+.textContentMessage {
+  padding: rem(12px);
+}
+
+.messageRTLTextContent {
+  background-color: var(--mantine-color-general-2);
+  color: var(--mantine-color-black);
+}
+
+.messageLTRTextContent {
+  background: var(--mantine-color-primary-7);
+  color: var(--mantine-color-white);
+}
+
+.messageContainer {
+  &:hover {
+    .actions {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
