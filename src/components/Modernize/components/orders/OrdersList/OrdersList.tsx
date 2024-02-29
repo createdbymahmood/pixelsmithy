@@ -6,6 +6,7 @@ import {
   Checkbox,
   Group,
   Pagination,
+  rem,
   Stack,
   Table,
   Text,
@@ -167,7 +168,7 @@ function TableFooter() {
 
 export function OrdersList() {
   return (
-    <Stack gap='sm'>
+    <Stack gap={rem(30)}>
       <Header />
 
       <TableWrapper>
