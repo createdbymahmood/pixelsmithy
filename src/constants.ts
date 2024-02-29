@@ -124,6 +124,7 @@ export const urls = {
         profile: '/modernize/dashboard/settings/profile',
         notifications: '/modernize/dashboard/settings/notifications',
       },
+      pricing: '/modernize/dashboard/pricing',
     },
 
     authentication: {

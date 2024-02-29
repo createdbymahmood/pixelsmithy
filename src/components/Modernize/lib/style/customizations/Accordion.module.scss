@@ -1,0 +1,35 @@
+.control {
+  padding: 0;
+  padding-right: var(--_control-padding-right, rem(24px));
+  padding-left: var(--_control-padding-left, rem(24px));
+
+  &[data-chevron-position='left'] {
+    --_control-flex-direction: row;
+    --_control-padding-left: 0;
+  }
+
+  @mixin rtl {
+    &[data-chevron-position='left'] {
+      --_control-padding-left: rem(24px);
+    }
+  }
+}
+
+.label {
+  padding: rem(20px) 0;
+}
+
+.content {
+  padding: rem(20px);
+}
+
+.item {
+  border-bottom: none;
+  border-top: rem(1px) solid var(--_item-border-color);
+
+  &[data-active] {
+    .label {
+      font-weight: bold;
+    }
+  }
+}
