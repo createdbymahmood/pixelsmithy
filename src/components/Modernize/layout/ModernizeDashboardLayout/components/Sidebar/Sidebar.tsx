@@ -1,25 +1,10 @@
-import type {
-  GroupCssVariables,
-  GroupProps,
-  GroupStylesCtx,
-  MantineComponent,
-} from '@mantine/core'
-import {
-  Badge,
-  Box,
-  Group as MantineGroup,
-  rem,
-  Stack,
-  Text,
-} from '@mantine/core'
+import {Badge, Box, rem, Stack, Text} from '@mantine/core'
 import {
   ChartBar,
   ChatText,
   FolderSimple,
-  Gear,
   House,
   ListDashes,
-  Medal,
   Money,
   Question,
   Star,
@@ -34,19 +19,12 @@ import {useSelectedLayoutSegments} from 'next/navigation'
 import {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
+import {GroupLink} from '@/components/common'
 import type {SidebarSection} from '@/components/SnowUI'
 import {SidebarItem} from '@/components/SnowUI'
 import {urls} from '@/constants'
 
 import styles from './Sidebar.module.scss'
-
-const Group = MantineGroup as MantineComponent<{
-  props: GroupProps & {href?: string}
-  ref: HTMLDivElement
-  stylesNames: 'root'
-  vars: GroupCssVariables
-  ctx: GroupStylesCtx
-}>
 
 function SidebarItem(props: SidebarItem) {
   const segment = useSelectedLayoutSegments()
@@ -57,7 +35,7 @@ function SidebarItem(props: SidebarItem) {
   const Icon = props.icon ?? Fragment
 
   return (
-    <Group
+    <GroupLink
       className={clsx(styles.sidebarItem, 'cursor-pointer', {
         [styles.active]: isActive,
       })}
@@ -80,7 +58,7 @@ function SidebarItem(props: SidebarItem) {
           {props.unread}
         </Badge>
       ) : null}
-    </Group>
+    </GroupLink>
   )
 }
 

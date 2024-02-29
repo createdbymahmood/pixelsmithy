@@ -1,34 +1,21 @@
 'use client'
 
-import type {
-  GroupCssVariables,
-  GroupProps,
-  GroupStylesCtx,
-  MantineComponent,
-} from '@mantine/core'
 import {
   Avatar,
   Checkbox,
-  Group as MantineGroup,
+  Group,
   Pagination,
   rem,
   Stack,
   Table,
   Text,
 } from '@mantine/core'
+import {TableFilters} from '@modernize/components/common'
 import Link from 'next/link'
 
-import {TableFilters} from '@/components/Modernize/components/common'
+import {GroupLink} from '@/components/common'
 import {urls} from '@/constants'
 import {useTableState} from '@/hooks/useTableState'
-
-const Group = MantineGroup as MantineComponent<{
-  props: GroupProps & {href?: string}
-  ref: HTMLDivElement
-  stylesNames: 'root'
-  vars: GroupCssVariables
-  ctx: GroupStylesCtx
-}>
 
 interface Customer {
   id: string
@@ -91,7 +78,7 @@ function TableContent() {
 
   const rows = elements.map((element) => {
     const nameColumn = (
-      <Group
+      <GroupLink
         component={Link}
         href={urls.Modernize.dashboard.customers.info(element.id)}
       >
@@ -106,7 +93,7 @@ function TableContent() {
         <Text fw='500' size='sm'>
           {element.name}
         </Text>
-      </Group>
+      </GroupLink>
     )
 
     return (

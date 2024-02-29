@@ -1,11 +1,5 @@
 'use client'
 
-import type {
-  GroupCssVariables,
-  GroupProps,
-  GroupStylesCtx,
-  MantineComponent,
-} from '@mantine/core'
 import {
   Avatar,
   Box,
@@ -13,7 +7,7 @@ import {
   Card,
   Divider,
   Grid,
-  Group as MantineGroup,
+  Group,
   rem,
   Stack,
   Tabs,
@@ -27,25 +21,17 @@ import {find, head} from 'lodash-es'
 import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
 import Link from 'next/link'
 import {notFound, useParams} from 'next/navigation'
-import React from 'react'
 
+import {GroupLink} from '@/components/common'
 import {CommunityForm, Webinars} from '@/components/Modernize/components'
 import {articles} from '@/components/Modernize/mock/articles'
 import {urls} from '@/constants'
 
 import styles from './KnowledgeBaseArticle.module.scss'
 
-const Group = MantineGroup as MantineComponent<{
-  props: GroupProps & {href?: string}
-  ref: HTMLDivElement
-  stylesNames: 'root'
-  vars: GroupCssVariables
-  ctx: GroupStylesCtx
-}>
-
 function BackButton() {
   return (
-    <Group
+    <GroupLink
       c='general.5'
       className='cursor-pointer'
       component={Link}
@@ -54,7 +40,7 @@ function BackButton() {
     >
       <ArrowLeft className='icon-size-md' weight='bold' />
       <Text size='sm'>Back</Text>
-    </Group>
+    </GroupLink>
   )
 }
 

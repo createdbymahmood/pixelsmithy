@@ -1,35 +1,21 @@
 'use client'
 
-import type {
-  GroupCssVariables,
-  GroupProps,
-  GroupStylesCtx,
-  MantineComponent,
-} from '@mantine/core'
 import {
   Avatar,
   Badge,
   Checkbox,
-  Group as MantineGroup,
+  Group,
   Pagination,
   rem,
   Stack,
   Table,
   Text,
 } from '@mantine/core'
+import {TableFilters} from '@modernize/components/common'
 import {Tag} from '@phosphor-icons/react/dist/ssr'
 import {get, isUndefined} from 'lodash-es'
 
-import {TableFilters} from '@/components/Modernize/components/common'
 import {useTableState} from '@/hooks/useTableState'
-
-const Group = MantineGroup as MantineComponent<{
-  props: GroupProps & {href?: string}
-  ref: HTMLDivElement
-  stylesNames: 'root'
-  vars: GroupCssVariables
-  ctx: GroupStylesCtx
-}>
 
 type CouponStatus = 'active' | 'expired'
 

@@ -1,11 +1,5 @@
 'use client'
 
-import type {
-  GroupCssVariables,
-  GroupProps,
-  GroupStylesCtx,
-  MantineComponent,
-} from '@mantine/core'
 import {
   ActionIcon,
   Avatar,
@@ -13,7 +7,7 @@ import {
   Card,
   Divider,
   Grid,
-  Group as MantineGroup,
+  Group,
   Input,
   rem,
   Stack,
@@ -32,21 +26,14 @@ import {
 import clsx from 'clsx'
 import Link from 'next/link'
 
+import {GroupLink} from '@/components/common/GroupLink'
 import {urls} from '@/constants'
 
 import styles from './AddCategoryForm.module.scss'
 
-const Group = MantineGroup as MantineComponent<{
-  props: GroupProps & {href?: string}
-  ref: HTMLDivElement
-  stylesNames: 'root'
-  vars: GroupCssVariables
-  ctx: GroupStylesCtx
-}>
-
 function Actions() {
   return (
-    <Group ml='auto'>
+    <GroupLink ml='auto'>
       <Button
         component={Link}
         href={urls.Modernize.dashboard.categories.index}
@@ -58,13 +45,13 @@ function Actions() {
       <Button component={Link} href={urls.Modernize.dashboard.categories.index}>
         Save
       </Button>
-    </Group>
+    </GroupLink>
   )
 }
 
 function BackButton() {
   return (
-    <Group
+    <GroupLink
       c='general.5'
       className='cursor-pointer'
       component={Link}
@@ -73,7 +60,7 @@ function BackButton() {
     >
       <ArrowLeft className='icon-size-md' weight='bold' />
       <Text size='sm'>Back</Text>
-    </Group>
+    </GroupLink>
   )
 }
 

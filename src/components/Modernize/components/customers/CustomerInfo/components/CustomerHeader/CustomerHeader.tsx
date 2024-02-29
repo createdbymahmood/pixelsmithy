@@ -1,35 +1,14 @@
 'use client'
-import type {
-  GroupCssVariables,
-  GroupProps,
-  GroupStylesCtx,
-  MantineComponent,
-} from '@mantine/core'
-import {
-  Button,
-  Group as MantineGroup,
-  rem,
-  Stack,
-  Text,
-  Title,
-} from '@mantine/core'
+import {Button, Group, rem, Stack, Text, Title} from '@mantine/core'
 import {ArrowLeft} from '@phosphor-icons/react'
 import Link from 'next/link'
-import React from 'react'
 
+import {GroupLink} from '@/components/common'
 import {urls} from '@/constants'
-
-const Group = MantineGroup as MantineComponent<{
-  props: GroupProps & {href?: string}
-  ref: HTMLDivElement
-  stylesNames: 'root'
-  vars: GroupCssVariables
-  ctx: GroupStylesCtx
-}>
 
 function BackButton() {
   return (
-    <Group
+    <GroupLink
       c='general.5'
       className='cursor-pointer'
       component={Link}
@@ -38,13 +17,13 @@ function BackButton() {
     >
       <ArrowLeft className='icon-size-md' weight='bold' />
       <Text size='sm'>Back</Text>
-    </Group>
+    </GroupLink>
   )
 }
 
 function Actions() {
   return (
-    <Group ml='auto'>
+    <GroupLink ml='auto'>
       <Button
         component={Link}
         href={urls.Modernize.dashboard.customers.index}
@@ -56,7 +35,7 @@ function Actions() {
       <Button component={Link} href={urls.Modernize.dashboard.customers.index}>
         Save
       </Button>
-    </Group>
+    </GroupLink>
   )
 }
 

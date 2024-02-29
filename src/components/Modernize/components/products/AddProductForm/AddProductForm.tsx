@@ -1,11 +1,5 @@
 'use client'
 
-import type {
-  GroupCssVariables,
-  GroupProps,
-  GroupStylesCtx,
-  MantineComponent,
-} from '@mantine/core'
 import {
   Anchor,
   Autocomplete,
@@ -15,7 +9,7 @@ import {
   Chip,
   Divider,
   Grid,
-  Group as MantineGroup,
+  Group,
   Input,
   rem,
   Select,
@@ -30,19 +24,12 @@ import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
 import {ArrowLeft, X} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
+import {GroupLink} from '@/components/common'
 import {urls} from '@/constants'
-
-const Group = MantineGroup as MantineComponent<{
-  props: GroupProps & {href?: string}
-  ref: HTMLDivElement
-  stylesNames: 'root'
-  vars: GroupCssVariables
-  ctx: GroupStylesCtx
-}>
 
 function BackButton() {
   return (
-    <Group
+    <GroupLink
       c='general.5'
       className='cursor-pointer'
       component={Link}
@@ -51,7 +38,7 @@ function BackButton() {
     >
       <ArrowLeft className='icon-size-md' weight='bold' />
       <Text size='sm'>Back</Text>
-    </Group>
+    </GroupLink>
   )
 }
 
