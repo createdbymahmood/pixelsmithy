@@ -16,17 +16,10 @@ import {urls} from '@/constants'
 function Actions() {
   return (
     <Group ml='auto'>
-      <Button
-        component={Link}
-        href={urls.Modernize.dashboard.categories.index}
-        ml='auto'
-        variant='default'
-      >
+      <Button ml='auto' variant='default'>
         Cancel
       </Button>
-      <Button component={Link} href={urls.Modernize.dashboard.categories.index}>
-        Save
-      </Button>
+      <Button>Save</Button>
     </Group>
   )
 }
