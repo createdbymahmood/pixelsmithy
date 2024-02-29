@@ -9,6 +9,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 
+import {ChatMessages} from '../ChatMessage'
 import styles from './Chat.module.scss'
 
 function ChatHeader() {
@@ -54,6 +55,7 @@ export function Chat() {
   return (
     <Stack h='100%' w='100%'>
       <ChatHeader />
+      <ChatMessages />
       <Compose />
     </Stack>
   )
