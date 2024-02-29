@@ -1,35 +1,22 @@
 'use client'
 
-import type {
-  GroupCssVariables,
-  GroupProps,
-  GroupStylesCtx,
-  MantineComponent,
-} from '@mantine/core'
-import {Box, Card, Checkbox, Group as MantineGroup} from '@mantine/core'
+import {Box, Card, Checkbox, Group} from '@mantine/core'
 import {FunnelSimple} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import dayJS from 'dayjs'
 import type {ReactNode} from 'react'
 
+import {GroupLink} from '@/components/common'
 import type {SidebarInboxPreviewItem} from '@/components/SnowUI'
 import {SidebarInbox} from '@/components/SnowUI'
-
-const Group = MantineGroup as MantineComponent<{
-  props: GroupProps & {href?: string}
-  ref: HTMLDivElement
-  stylesNames: 'root'
-  vars: GroupCssVariables
-  ctx: GroupStylesCtx
-}>
 
 function InboxSidebarHeader() {
   return (
     <Card className='shrink-0' p='sm'>
-      <Group>
+      <GroupLink>
         <Checkbox />
         <FunnelSimple className={clsx('icon-size-md', 'cursor-pointer')} />
-      </Group>
+      </GroupLink>
     </Card>
   )
 }

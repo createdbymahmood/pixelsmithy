@@ -1,17 +1,11 @@
 'use client'
 
-import type {
-  GroupCssVariables,
-  GroupProps,
-  GroupStylesCtx,
-  MantineComponent,
-} from '@mantine/core'
 import {
   Button,
   Card,
   Checkbox,
   Divider,
-  Group as MantineGroup,
+  Group,
   Input,
   Radio,
   rem,
@@ -37,17 +31,10 @@ import {head} from 'lodash-es'
 import Link from 'next/link'
 import React, {useState} from 'react'
 
+import {GroupLink} from '@/components/common'
 import {urls} from '@/constants'
 
 import styles from './CreateCouponForm.module.scss'
-
-const Group = MantineGroup as MantineComponent<{
-  props: GroupProps & {href?: string}
-  ref: HTMLDivElement
-  stylesNames: 'root'
-  vars: GroupCssVariables
-  ctx: GroupStylesCtx
-}>
 
 function Actions() {
   return (
@@ -69,7 +56,7 @@ function Actions() {
 
 function BackButton() {
   return (
-    <Group
+    <GroupLink
       c='general.5'
       className='cursor-pointer'
       component={Link}
@@ -78,7 +65,7 @@ function BackButton() {
     >
       <ArrowLeft className='icon-size-md' weight='bold' />
       <Text size='sm'>Back</Text>
-    </Group>
+    </GroupLink>
   )
 }
 

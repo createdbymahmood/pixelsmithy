@@ -1,17 +1,11 @@
 'use client'
 
-import type {
-  GroupCssVariables,
-  GroupProps,
-  GroupStylesCtx,
-  MantineComponent,
-} from '@mantine/core'
 import {
   Autocomplete,
   Button,
   Card,
   Divider,
-  Group as MantineGroup,
+  Group,
   Input,
   rem,
   SimpleGrid,
@@ -24,19 +18,12 @@ import {FormViewSection} from '@modernize/components/common'
 import {ArrowLeft} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
+import {GroupLink} from '@/components/common'
 import {urls} from '@/constants'
-
-const Group = MantineGroup as MantineComponent<{
-  props: GroupProps & {href?: string}
-  ref: HTMLDivElement
-  stylesNames: 'root'
-  vars: GroupCssVariables
-  ctx: GroupStylesCtx
-}>
 
 function Actions() {
   return (
-    <Group ml='auto'>
+    <GroupLink ml='auto'>
       <Button
         component={Link}
         href={urls.Modernize.dashboard.customers.index}
@@ -48,13 +35,13 @@ function Actions() {
       <Button component={Link} href={urls.Modernize.dashboard.customers.index}>
         Save
       </Button>
-    </Group>
+    </GroupLink>
   )
 }
 
 function BackButton() {
   return (
-    <Group
+    <GroupLink
       c='general.5'
       className='cursor-pointer'
       component={Link}
@@ -63,7 +50,7 @@ function BackButton() {
     >
       <ArrowLeft className='icon-size-md' weight='bold' />
       <Text size='sm'>Back</Text>
-    </Group>
+    </GroupLink>
   )
 }
 
