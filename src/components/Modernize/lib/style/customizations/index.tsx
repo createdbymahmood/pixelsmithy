@@ -1,5 +1,6 @@
 import type {MantineThemeComponents} from '@mantine/core'
 import {
+  Accordion,
   Autocomplete,
   Badge,
   Button,
@@ -20,6 +21,7 @@ import {DatePickerInput} from '@mantine/dates'
 import {ArrowLeft, ArrowRight, CaretDown} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 
+import AccordionStyles from './Accordion.module.scss'
 import BadgeStyles from './Badge.module.scss'
 import ButtonStyles from './Button.module.scss'
 import CheckboxStyles from './Checkbox.module.scss'
@@ -180,6 +182,16 @@ export const components: MantineThemeComponents = {
     classNames(theme, props, ctx) {
       return {
         label: DatePickerInputStyles.label,
+      }
+    },
+  }),
+  Accordion: Accordion.extend({
+    classNames(theme, props, ctx) {
+      return {
+        control: AccordionStyles.control,
+        label: AccordionStyles.label,
+        content: AccordionStyles.content,
+        item: AccordionStyles.item,
       }
     },
   }),
