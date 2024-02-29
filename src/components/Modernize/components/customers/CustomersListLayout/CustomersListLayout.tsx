@@ -3,7 +3,7 @@ import type {
   TabsTabProps,
   TabsTabStylesNames,
 } from '@mantine/core'
-import {Box, Button, Group, Stack, Tabs, Title} from '@mantine/core'
+import {Box, Button, Group, rem, Stack, Tabs, Title} from '@mantine/core'
 import {TableWrapper} from '@modernize/components/common'
 import {Plus} from '@phosphor-icons/react/dist/ssr'
 import {startCase} from 'lodash-es'
@@ -80,7 +80,7 @@ export default function CustomersListLayout({
   })
 
   return (
-    <Stack gap='xs'>
+    <Stack gap={rem(30)}>
       <Header />
 
       <TableWrapper>

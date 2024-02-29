@@ -156,7 +156,7 @@ function TableFooter() {
 
 export function CustomersList() {
   return (
-    <Stack gap={rem(20)}>
+    <Stack>
       <TableFilters />
       <TableContent />
       <TableFooter />
