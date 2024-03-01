@@ -89,6 +89,7 @@ export const components: MantineThemeComponents = {
     defaultProps: {
       radius: 'sm',
       size: 'md',
+      px: rem(6),
     },
     classNames(theme, props, ctx) {
       const colorClassName = clsx({

@@ -37,7 +37,6 @@ const data = {
         borderRadiusApplication: 'around',
         borderRadiusWhenStacked: 'last',
         barHeight: '70%',
-
         distributed: false,
         rangeBarOverlap: true,
         rangeBarGroupRows: false,
@@ -119,9 +118,6 @@ const data = {
         offsetX: 0,
         offsetY: 0,
         rotate: 0,
-        formatter: (value) => {
-          return value.toString()
-        },
       },
     },
     yaxis: {
@@ -153,9 +149,6 @@ const data = {
         offsetX: 0,
         offsetY: 0,
         rotate: 0,
-        formatter: (value) => {
-          return value.toString()
-        },
       },
       axisBorder: {
         show: false,
