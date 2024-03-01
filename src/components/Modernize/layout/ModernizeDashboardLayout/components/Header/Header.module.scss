@@ -10,3 +10,9 @@
 .logo {
   width: calc(rem(250px) - var(--mantine-spacing-xs) * 2);
 }
+
+.spotlightActionGroup {
+  &::before {
+    padding: 0 var(--mantine-spacing-xs);
+  }
+}
