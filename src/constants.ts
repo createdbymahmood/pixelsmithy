@@ -142,17 +142,20 @@ export const applications = [
     title: 'Job Location',
     description: 'A dashboard page',
     href: urls.JobLocation.index,
+    tools: 'Mantine | SCSS Modules',
   },
   {
     id: 2,
     title: 'Snow UI',
     description: 'Design system and UI Kit',
     href: urls.SnowUI.index,
+    tools: 'Mantine | SCSS Modules | Desktop Only',
   },
   {
     id: 3,
     title: 'Modernize',
     description: 'Dashboard UI Kit',
     href: urls.Modernize.dashboard.index,
+    tools: 'Mantine | SCSS Modules | Desktop Only',
   },
 ]
