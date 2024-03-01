@@ -1,8 +1,3 @@
-import '@/lib/styles/global.scss'
-import '@mantine/core/styles.css'
-import 'react-perfect-scrollbar/dist/css/styles.css'
-import '@mantine/dates/styles.css'
-
 import {ColorSchemeScript} from '@mantine/core'
 import type {Metadata} from 'next'
 
