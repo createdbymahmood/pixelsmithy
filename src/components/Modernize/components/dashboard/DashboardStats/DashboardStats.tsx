@@ -20,6 +20,8 @@ import {
 import {get} from 'lodash-es'
 import React from 'react'
 
+import {OrdersChart} from '@/components/Modernize/components/dashboard/OrdersChart'
+
 type StatCardType = 'growing' | 'regressing'
 
 interface StatsCardProps {
