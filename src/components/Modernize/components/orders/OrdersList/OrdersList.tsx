@@ -73,7 +73,7 @@ export const orderStatusMap: Record<OrderStatus, JSX.Element> = {
 
 export const paymentStatusMap: Record<PaymentStatus, JSX.Element> = {
   paid: <Badge color='green'>Paid</Badge>,
-  pending: <Badge color='general'>Paid</Badge>,
+  pending: <Badge color='general'>Pending</Badge>,
 }
 
 function TableContent() {
