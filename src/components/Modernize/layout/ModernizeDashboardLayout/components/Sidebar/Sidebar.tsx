@@ -151,7 +151,7 @@ const sections: SidebarSection[] = [
         id: 'settings',
         title: 'Personal Settings',
         icon: User,
-        href: urls.Modernize.dashboard.settings.index,
+        href: urls.Modernize.dashboard.settings.profile,
         activeSegment: ['settings'],
       },
     ],
