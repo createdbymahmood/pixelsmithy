@@ -1,10 +1,35 @@
-import {Box, Group, Input, Title} from '@mantine/core'
+import {
+  Avatar,
+  Box,
+  Button,
+  Group,
+  Input,
+  Menu,
+  Popover,
+  rem,
+  Text,
+  Title,
+} from '@mantine/core'
 import type {
   SpotlightActionData,
   SpotlightActionGroupData,
 } from '@mantine/spotlight'
 import {Spotlight, spotlight} from '@mantine/spotlight'
-import {MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
+import {
+  Bell,
+  CaretDown,
+  ChatDots,
+  MagnifyingGlass,
+} from '@phosphor-icons/react/dist/ssr'
+import {
+  IconArrowsLeftRight,
+  IconMessageCircle,
+  IconPhoto,
+  IconSearch,
+  IconSettings,
+  IconTrash,
+} from '@tabler/icons-react'
+import clsx from 'clsx'
 import Image from 'next/image'
 import {useRouter} from 'next/navigation'
 import {Fragment} from 'react'
@@ -122,6 +147,26 @@ function SearchInput() {
   )
 }
 
+function Profile() {
+  return (
+    <Popover shadow='md' width={200}>
+      <Popover.Target>
+        <Group className='cursor-pointer' gap={rem(20)}>
+          <Avatar size={rem(36)} />
+          <Text>X’eriya Ponald</Text>
+          <CaretDown weight='bold' />
+        </Group>
+      </Popover.Target>
+
+      <Popover.Dropdown style={{padding: rem(12)}}>
+        <Text c='general.5' size='sm'>
+          This is uncontrolled popover, it is opened when button is clicked
+        </Text>
+      </Popover.Dropdown>
+    </Popover>
+  )
+}
+
 export function Header() {
   return (
     <Group bg='white' className={styles.header} gap={0} wrap='nowrap'>
@@ -138,6 +183,12 @@ export function Header() {
       <Box px='sm'>
         <SearchInput />
       </Box>
+
+      <Group c='general.5' ml='auto'>
+        <ChatDots className={clsx('icon-size-md', 'cursor-pointer')} />
+        <Bell className={clsx('icon-size-md', 'cursor-pointer')} />
+        <Profile />
+      </Group>
     </Group>
   )
 }
