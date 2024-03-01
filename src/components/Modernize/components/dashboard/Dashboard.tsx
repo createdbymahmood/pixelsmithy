@@ -4,11 +4,11 @@ import {Button, Grid, Group, rem, SimpleGrid, Stack, Title} from '@mantine/core'
 import {Gear} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
-import {SalesChart} from '@/components/Modernize/components/dashboard/SalesChart'
+import {OrdersChart} from '@/components/Modernize/components/dashboard/OrdersChart'
 
 import {DashboardStats} from './DashboardStats'
-import {OrdersChart} from './OrdersChart'
 import {RecentTransactions} from './RecentTransactions'
+import {SalesChart} from './SalesChart'
 import {TopProducts} from './TopProducts'
 
 function Header() {
