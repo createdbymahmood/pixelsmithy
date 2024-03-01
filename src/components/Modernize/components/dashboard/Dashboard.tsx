@@ -41,7 +41,7 @@ export function Dashboard() {
         </Grid.Col>
       </Grid>
 
-      <SimpleGrid cols={2} spacing={rem(30)}>
+      <SimpleGrid cols={2} pb={rem(30)} spacing={rem(30)}>
         <RecentTransactions />
         <TopProducts />
       </SimpleGrid>
