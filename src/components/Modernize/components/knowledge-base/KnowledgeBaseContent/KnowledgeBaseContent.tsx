@@ -142,7 +142,8 @@ export function KnowledgeBaseContent() {
   return (
     <Stack gap={0}>
       <Header />
-      <Box mt={rem(54)}>
+
+      <Box mt={rem(30)}>
         <SearchInput />
       </Box>
 

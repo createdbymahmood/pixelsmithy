@@ -160,7 +160,7 @@ export const components: MantineThemeComponents = {
   Card: Card.extend({
     defaultProps: {
       p: rem(28),
-      radius: 'md',
+      radius: 'sm',
     },
   }),
   Textarea: Textarea.extend({

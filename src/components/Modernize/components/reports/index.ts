@@ -1,1 +1,1 @@
-export * from './CustomerGrowthReports'
+export * from './Reports'
