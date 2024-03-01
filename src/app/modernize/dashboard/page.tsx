@@ -1,11 +1,17 @@
-import {Dashboard as DashboardView} from '@modernize/components'
+'use client'
+
+import dynamic from 'next/dynamic'
 import React from 'react'
 
-import {constructMetadata} from '@/utils/constructMetadata'
-
-export const metadata = constructMetadata({
-  title: 'Dashboard',
-})
+const DashboardView = dynamic(
+  () =>
+    import('@modernize/components/reports').then(
+      (m) => m.CustomerGrowthReports,
+    ),
+  {
+    ssr: false,
+  },
+)
 
 export default function Dashboard() {
   return <DashboardView />
