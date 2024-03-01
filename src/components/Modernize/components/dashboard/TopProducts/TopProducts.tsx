@@ -46,9 +46,16 @@ const elements: Product[] = [
 
 function TableContent() {
   const rows = elements.map((element) => {
+    const titleColumn = (
+      <Group gap={rem(12)}>
+        <Avatar radius='sm' size={rem(36)} />
+        {element.title}
+      </Group>
+    )
+
     return (
       <Table.Tr key={element.title}>
-        <Table.Td fw='500'>{element.title}</Table.Td>
+        <Table.Td fw='500'>{titleColumn}</Table.Td>
         <Table.Td>{element.price}</Table.Td>
         <Table.Td>{element.unitsSold}</Table.Td>
       </Table.Tr>
@@ -75,8 +82,8 @@ function Header() {
 
 export function TopProducts() {
   return (
-    <Stack gap={rem(30)}>
-      <TableWrapper gap={rem(20)}>
+    <Stack gap={rem(30)} h='100%'>
+      <TableWrapper gap={rem(20)} h='100%'>
         <Header />
         <TableContent />
       </TableWrapper>

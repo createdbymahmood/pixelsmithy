@@ -46,6 +46,14 @@ export const orders: Order[] = [
     orderStatus: 'ready',
     total: '$5.51',
   },
+  {
+    order: '#71232A',
+    date: dayJS().subtract(2, 'days'),
+    customer: 'Inez Kim',
+    paymentStatus: 'paid',
+    orderStatus: 'ready',
+    total: '$5.51',
+  },
 ]
 
 function TableContent() {
@@ -84,7 +92,7 @@ function Header() {
 
 export function RecentTransactions() {
   return (
-    <Stack gap={rem(30)}>
+    <Stack gap={rem(30)} h='100%'>
       <TableWrapper>
         <Header />
         <TableContent />
