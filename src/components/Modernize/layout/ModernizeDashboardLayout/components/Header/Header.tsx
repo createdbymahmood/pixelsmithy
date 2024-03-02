@@ -1,10 +1,8 @@
 import {
   Avatar,
   Box,
-  Button,
   Group,
   Input,
-  Menu,
   Popover,
   rem,
   Text,
@@ -21,14 +19,6 @@ import {
   ChatDots,
   MagnifyingGlass,
 } from '@phosphor-icons/react/dist/ssr'
-import {
-  IconArrowsLeftRight,
-  IconMessageCircle,
-  IconPhoto,
-  IconSearch,
-  IconSettings,
-  IconTrash,
-} from '@tabler/icons-react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import {useRouter} from 'next/navigation'
