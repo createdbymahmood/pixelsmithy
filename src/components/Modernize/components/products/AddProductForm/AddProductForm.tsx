@@ -242,7 +242,7 @@ function Actions() {
 
 export function AddProductForm() {
   return (
-    <Stack gap={rem(30)}>
+    <Stack gap={rem(30)} pb='sm'>
       <Header />
       <Grid gutter={rem(30)}>
         <Grid.Col span={8}>
