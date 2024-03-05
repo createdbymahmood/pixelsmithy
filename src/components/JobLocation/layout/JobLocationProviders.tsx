@@ -1,3 +1,7 @@
+import '@/lib/styles/global.scss'
+import '@mantine/core/styles.css'
+import 'react-perfect-scrollbar/dist/css/styles.css'
+
 import {MantineProvider} from '@mantine/core'
 import {Poppins} from 'next/font/google'
 import type {ReactNode} from 'react'
