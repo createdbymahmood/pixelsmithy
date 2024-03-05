@@ -135,6 +135,12 @@ export const urls = {
       registrationComplete: '/modernize/authentication/registration-complete',
     },
   },
+  DashStack: {
+    index: '/dash-stack',
+    dashboard: {
+      index: '/dash-stack/dashboard',
+    },
+  },
 }
 export const applications = [
   {
@@ -142,20 +148,26 @@ export const applications = [
     title: 'Job Location',
     description: 'A dashboard page',
     href: urls.JobLocation.index,
-    tools: 'Mantine | SCSS Modules',
   },
   {
     id: 2,
     title: 'Snow UI',
     description: 'Design system and UI Kit',
     href: urls.SnowUI.index,
-    tools: 'Mantine | SCSS Modules | Desktop Only',
+    info: 'Desktop Only',
   },
   {
     id: 3,
     title: 'Modernize',
     description: 'Dashboard UI Kit',
     href: urls.Modernize.dashboard.index,
-    tools: 'Mantine | SCSS Modules | Desktop Only',
+    info: 'Desktop Only',
+  },
+  {
+    id: 4,
+    title: 'DashStack',
+    description: 'Dashboard UI Kit',
+    href: urls.DashStack.dashboard.index,
+    info: 'Desktop Only',
   },
 ]

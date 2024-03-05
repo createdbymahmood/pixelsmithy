@@ -29,12 +29,10 @@ const ApplicationsList = () => {
             {application.title}
           </Text>
 
-          <Group align='baseline' gap={rem(5)}>
+          <Group align='baseline' gap='sm'>
             <Text className={inter.className} size='sm'>
               {application.description}
             </Text>
-
-            <Text size='sm'>Using</Text>
 
             <Text
               c='dimmed'
@@ -42,7 +40,7 @@ const ApplicationsList = () => {
               mt={rem(5)}
               size='xs'
             >
-              {application.tools}
+              {application.info}
             </Text>
           </Group>
         </Box>
