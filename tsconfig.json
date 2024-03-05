@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@modernize/*": ["./src/components/Modernize/*"]
+      "@modernize/*": ["./src/components/Modernize/*"],
+      "@dash-stack/*": ["./src/components/DashStack/*"]
     },
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },

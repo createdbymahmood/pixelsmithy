@@ -5,27 +5,22 @@ import '@mantine/core/styles.css'
 import 'react-perfect-scrollbar/dist/css/styles.css'
 
 import {MantineProvider} from '@mantine/core'
-import {Poppins} from 'next/font/google'
 import type {ReactNode} from 'react'
 
-import {JobLocationTheme} from '@/components/JobLocation/lib/style/JobLocationTheme'
+import {ModernizeTheme} from '@/components/Modernize/lib/style/ModernizeTheme'
 import {defaultThemeColorScheme} from '@/constants'
+import {inter} from '@/lib/styles/font/inter'
 
-const poppins = Poppins({
-  weight: ['400', '500', '600'],
-  subsets: ['latin'],
-})
-
-interface JobLocationProvidersProps {
+interface DashStackProvidersProps {
   children: ReactNode
 }
 
-export function JobLocationProviders({children}: JobLocationProvidersProps) {
+export function DashStackProviders({children}: DashStackProvidersProps) {
   return (
-    <div className={poppins.className}>
+    <div className={inter.className}>
       <MantineProvider
         defaultColorScheme={defaultThemeColorScheme}
-        theme={JobLocationTheme}
+        theme={ModernizeTheme}
       >
         {children}
       </MantineProvider>
