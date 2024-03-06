@@ -5,7 +5,7 @@ export function SalesChart() {
   return (
     <Card component={Stack}>
       <Title order={5}>Sales Details</Title>
-      <Skeleton h={rem(320)} radius='lg' />
+      <Skeleton h={rem(320)} radius='md' />
     </Card>
   )
 }

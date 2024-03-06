@@ -76,13 +76,13 @@ const sections: SidebarSection[] = [
         href: urls.DashStack.dashboard.index,
         activeSegment: [],
       },
-      // {
-      //   id: 'products',
-      //   title: 'Products',
-      //   icon: Scan,
-      //   href: urls.DashStack.products.index,
-      //   activeSegment: ['products'],
-      // },
+      {
+        id: 'products',
+        title: 'Products',
+        icon: Scan,
+        href: urls.DashStack.products.index,
+        activeSegment: ['products'],
+      },
       // {
       //   id: 'favorites',
       //   title: 'Favorites',
