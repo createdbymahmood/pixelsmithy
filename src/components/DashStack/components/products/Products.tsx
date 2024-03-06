@@ -1,5 +1,13 @@
-import React from 'react'
+import {PageContent, PageHeader} from '@dash-stack/components'
+
+import {ProductsCarousel, PromotionsCarousel} from './components'
 
 export function Products() {
-  return <div>Products</div>
+  return (
+    <PageContent>
+      <PageHeader>Products</PageHeader>
+      <PromotionsCarousel />
+      <ProductsCarousel />
+    </PageContent>
+  )
 }
