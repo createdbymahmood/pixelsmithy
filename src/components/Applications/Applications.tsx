@@ -2,7 +2,6 @@ import '@/lib/styles/global.scss'
 import '@mantine/core/styles.css'
 
 import {
-  Box,
   Container,
   Group,
   MantineProvider,
@@ -13,6 +12,7 @@ import {
 import clsx from 'clsx'
 import Link from 'next/link'
 
+import {StackLink} from '@/components/common'
 import {applications, defaultThemeColorScheme} from '@/constants'
 import {inter} from '@/lib/styles/font/inter'
 import {robotoMono} from '@/lib/styles/font/robotoMono'
@@ -23,28 +23,31 @@ import styles from './Applications.module.scss'
 const ApplicationsList = () => {
   const content = applications.map((application) => {
     return (
-      <Stack key={application.id}>
-        <Box component={Link} href={application.href}>
-          <Text className={clsx(robotoSlab.className, styles.title)} size='xl'>
-            {application.title}
+      <StackLink
+        key={application.title}
+        component={Link}
+        gap={0}
+        href={application.href}
+      >
+        <Text className={clsx(robotoSlab.className, styles.title)} size='xl'>
+          {application.title}
+        </Text>
+
+        <Group align='baseline' gap='sm'>
+          <Text className={inter.className} size='sm'>
+            {application.description}
           </Text>
 
-          <Group align='baseline' gap='sm'>
-            <Text className={inter.className} size='sm'>
-              {application.description}
-            </Text>
-
-            <Text
-              c='dimmed'
-              className={robotoMono.className}
-              mt={rem(5)}
-              size='xs'
-            >
-              {application.info}
-            </Text>
-          </Group>
-        </Box>
-      </Stack>
+          <Text
+            c='dimmed'
+            className={robotoMono.className}
+            mt={rem(5)}
+            size='xs'
+          >
+            {application.info}
+          </Text>
+        </Group>
+      </StackLink>
     )
   })
 
