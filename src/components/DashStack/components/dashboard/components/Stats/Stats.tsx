@@ -33,7 +33,7 @@ const growthRateBadgeMap: Record<StatType, JSX.Element> = {
 }
 
 const growthRateColorMap: Record<StatType, string> = {
-  growing: 'var(--mantine-color-green-7)',
+  growing: 'var(--mantine-color-green-9)',
   regressing: 'var(--mantine-color-red-7)',
 }
 
@@ -74,8 +74,7 @@ function Stat({
       <Group gap={rem(4)} wrap='nowrap'>
         <Group c={color} gap='xs' wrap='nowrap'>
           {badge}
-
-          <Text fw='600'>{gorwingOrRegressingPercentage}</Text>
+          <Text fw='600'>{gorwingOrRegressingPercentage}%</Text>
         </Group>
 
         <Text c='gray.7' fw='600' lineClamp={1}>
