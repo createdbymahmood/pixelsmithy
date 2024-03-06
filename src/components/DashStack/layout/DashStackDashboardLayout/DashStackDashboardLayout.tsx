@@ -18,8 +18,11 @@ export function DashStackDashboardLayout({
     <Stack bg='general.0' gap={0}>
       <Header />
 
-      <Group w='100%' wrap='nowrap'>
-        <Sidebar />
+      <Group gap={0} w='100%' wrap='nowrap'>
+        <Box style={{flexShrink: 0}}>
+          <Sidebar />
+        </Box>
+
         <Box bg='gray.0' className={styles.contentArea} flex={1} mah='100%'>
           <PerfectScrollbar>
             <Container h='100%' px='sm' py={0} size='lg'>
