@@ -68,7 +68,7 @@ function StatsCard({amount, icon: Icon, title, type, value}: StatsCardProps) {
   )
 }
 
-export function DashboardStats() {
+export function Stats() {
   return (
     <Card p={0} radius='md'>
       <Group gap={0} wrap='nowrap'>
