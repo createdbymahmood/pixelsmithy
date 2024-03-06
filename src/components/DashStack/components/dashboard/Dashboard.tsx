@@ -12,8 +12,8 @@ export function Dashboard() {
     <Stack gap='md'>
       <Header />
       <Stats />
-      {/* <SalesChart />
-      <DealsDetails /> */}
+      <SalesChart />
+      <DealsDetails />
     </Stack>
   )
 }
