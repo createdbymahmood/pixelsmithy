@@ -1,14 +1,16 @@
 .header {
-  box-shadow: 0 1px 4px 0 rgba(21, 34, 50, 0.08);
-  padding: rem(14px) rem(28px) rem(16px) rem(20px);
+  // box-shadow: 0 1px 4px 0 rgba(21, 34, 50, 0.08);
+  padding: var(--mantine-spacing-sm) var(--mantine-spacing-md);
 }
 
 .searchInput {
-  border: none;
+  // border: none;
+  width: rem(388);
+  background: var(--mantine-color-gray-0);
 }
 
 .logo {
-  width: calc(rem(250px) - var(--mantine-spacing-xs) * 2);
+  width: calc(rem(240px) - var(--mantine-spacing-xs) * 2);
 }
 
 .spotlightActionGroup {

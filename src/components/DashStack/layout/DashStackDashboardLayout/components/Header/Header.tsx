@@ -1,10 +1,8 @@
 import {
   Avatar,
   Box,
-  Button,
   Group,
   Input,
-  Menu,
   Popover,
   rem,
   Text,
@@ -19,16 +17,9 @@ import {
   Bell,
   CaretDown,
   ChatDots,
+  List,
   MagnifyingGlass,
 } from '@phosphor-icons/react/dist/ssr'
-import {
-  IconArrowsLeftRight,
-  IconMessageCircle,
-  IconPhoto,
-  IconSearch,
-  IconSettings,
-  IconTrash,
-} from '@tabler/icons-react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import {useRouter} from 'next/navigation'
@@ -138,6 +129,7 @@ function SearchInput() {
         classNames={{input: styles.searchInput}}
         leftSection={leftSection}
         placeholder='Search...'
+        radius='lg'
         size='sm'
         onClick={spotlight.open}
         onFocus={(e) => e.preventDefault()}
@@ -170,25 +162,23 @@ function Profile() {
 export function Header() {
   return (
     <Group bg='white' className={styles.header} gap={0} wrap='nowrap'>
-      <Group className={styles.logo} gap='xs'>
-        <Image
-          alt='Logo'
-          height={38}
-          src='/assets/modernize/icons/logo.svg'
-          width={41.3}
-        />
-        <Title order={6}>Modernize</Title>
+      <Group className={styles.logo} gap={rem(4)} justify='center'>
+        <Title c='primary.4' order={6}>
+          Dash
+        </Title>
+        <Title order={6}>Stack</Title>
       </Group>
 
-      <Box px='sm'>
+      <Group gap='md'>
+        <List className={clsx('cursor-pointer', 'icon-size-md')} />
         <SearchInput />
-      </Box>
+      </Group>
 
-      <Group c='general.5' ml='auto'>
+      {/* <Group c='general.5' ml='auto'>
         <ChatDots className={clsx('icon-size-md', 'cursor-pointer')} />
         <Bell className={clsx('icon-size-md', 'cursor-pointer')} />
         <Profile />
-      </Group>
+      </Group> */}
     </Group>
   )
 }
