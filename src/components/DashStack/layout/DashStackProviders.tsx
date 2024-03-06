@@ -7,7 +7,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css'
 import {MantineProvider} from '@mantine/core'
 import type {ReactNode} from 'react'
 
-import {ModernizeTheme} from '@/components/Modernize/lib/style/ModernizeTheme'
+import {DashStackTheme} from '@/components/DashStack/lib/style/DashStackTheme'
 import {defaultThemeColorScheme} from '@/constants'
 import {inter} from '@/lib/styles/font/inter'
 
@@ -20,7 +20,7 @@ export function DashStackProviders({children}: DashStackProvidersProps) {
     <div className={inter.className}>
       <MantineProvider
         defaultColorScheme={defaultThemeColorScheme}
-        theme={ModernizeTheme}
+        theme={DashStackTheme}
       >
         {children}
       </MantineProvider>

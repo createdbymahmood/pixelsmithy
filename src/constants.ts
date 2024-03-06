@@ -140,6 +140,9 @@ export const urls = {
     dashboard: {
       index: '/dash-stack/dashboard',
     },
+    products: {
+      index: '/dash-stack/dashboard/products',
+    },
   },
 }
 export const applications = [

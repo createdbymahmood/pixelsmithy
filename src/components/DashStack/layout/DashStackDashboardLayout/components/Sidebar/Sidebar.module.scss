@@ -4,7 +4,7 @@
 }
 
 .sidebarItem {
-  border-radius: var(--mantine-radius-sm);
+  border-radius: var(--mantine-radius-md);
   color: var(--mantine-color-general-5);
 
   @include transition();
@@ -14,7 +14,24 @@
   }
 
   &.active {
-    background-color: var(--mantine-primary-color-7);
+    background-color: var(--mantine-primary-color-4);
     color: white;
   }
+}
+
+.activeWrapper {
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 5px;
+    height: calc(100% - var(--mantine-spacing-xs));
+    background: var(--mantine-primary-color-4);
+    left: 0;
+    position: absolute;
+    @include border-end-radius(var(--mantine-radius-sm));
+  }
+}
+.sectionTitle {
+  border-top: rem(1px) solid var(--mantine-color-gray-1);
 }
