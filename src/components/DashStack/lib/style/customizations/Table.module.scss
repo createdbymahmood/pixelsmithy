@@ -1,0 +1,36 @@
+.table {
+  @include border-radius(var(--mantine-radius-lg));
+  padding: var(--mantine-spacing-lg);
+}
+
+.thead {
+  border-bottom: rem(2px) solid var(--mantine-color-general-1);
+  background: var(--mantine-color-gray-1);
+  border-radius: var(--mantine-radius-md);
+}
+
+.th {
+  color: var(--mantine-color-general-5);
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 600;
+
+  padding-right: var(--mantine-spacing-md);
+  padding-left: var(--mantine-spacing-md);
+
+  &:first-of-type {
+    @include border-start-radius(var(--mantine-radius-md));
+  }
+
+  &:last-of-type {
+    @include border-end-radius(var(--mantine-radius-md));
+  }
+}
+
+.tr {
+  font-size: var(--mantine-font-size-sm);
+}
+
+.td {
+  padding-right: var(--mantine-spacing-md);
+  padding-left: var(--mantine-spacing-md);
+}

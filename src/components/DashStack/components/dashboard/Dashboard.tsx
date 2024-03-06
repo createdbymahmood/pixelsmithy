@@ -9,7 +9,7 @@ function Header() {
 
 export function Dashboard() {
   return (
-    <Stack gap='md'>
+    <Stack gap='md' pb='md'>
       <Header />
       <Stats />
       <SalesChart />
