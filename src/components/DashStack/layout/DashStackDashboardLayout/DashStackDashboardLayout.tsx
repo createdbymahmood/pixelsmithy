@@ -24,7 +24,7 @@ export function DashStackDashboardLayout({
         </Grid.Col>
 
         <Grid.Col p={0} span='auto'>
-          <Box className={styles.contentArea} mah='100%'>
+          <Box bg='gray.0' className={styles.contentArea} mah='100%'>
             <PerfectScrollbar>
               <Container h='100%' px='sm' py={0} size='lg'>
                 <Box h='100%' py={rem(30)}>
