@@ -2,9 +2,12 @@
 
 import {createTheme, rem} from '@mantine/core'
 
-import {inter} from '@/lib/styles/font/inter'
+import {nunitoSans} from '@/lib/styles/font/nunitoSans'
+
+import {components} from './customizations'
 
 export const DashStackTheme = createTheme({
+  components,
   primaryColor: 'primary',
   colors: {
     primary: [
@@ -20,9 +23,10 @@ export const DashStackTheme = createTheme({
       '#0034b5',
     ],
   },
-  fontFamily: inter.style.fontFamily,
+  fontFamily: nunitoSans.style.fontFamily,
+
   headings: {
-    fontFamily: inter.style.fontFamily,
+    fontFamily: nunitoSans.style.fontFamily,
     sizes: {
       h1: {fontSize: rem(80), lineHeight: rem(112), fontWeight: '700'},
       h2: {fontSize: rem(64), lineHeight: rem(90), fontWeight: '700'},

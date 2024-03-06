@@ -9,7 +9,6 @@ import type {ReactNode} from 'react'
 
 import {DashStackTheme} from '@/components/DashStack/lib/style/DashStackTheme'
 import {defaultThemeColorScheme} from '@/constants'
-import {inter} from '@/lib/styles/font/inter'
 
 interface DashStackProvidersProps {
   children: ReactNode
@@ -17,7 +16,7 @@ interface DashStackProvidersProps {
 
 export function DashStackProviders({children}: DashStackProvidersProps) {
   return (
-    <div className={inter.className}>
+    <div>
       <MantineProvider
         defaultColorScheme={defaultThemeColorScheme}
         theme={DashStackTheme}

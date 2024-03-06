@@ -1,5 +1,11 @@
-import React from 'react'
+import {Dashboard as DashboardView} from '@dash-stack/components'
+
+import {constructMetadata} from '@/utils/constructMetadata'
+
+export const metadata = constructMetadata({
+  title: 'Dashboard',
+})
 
 export default function Dashboard() {
-  return <div>Dash Stack Dashboard</div>
+  return <DashboardView />
 }
