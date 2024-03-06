@@ -6,9 +6,9 @@ import React from 'react'
 
 import {OrdersChart} from '@/components/Modernize/components/dashboard/OrdersChart'
 
-import {DashboardStats} from './DashboardStats'
 import {RecentTransactions} from './RecentTransactions'
 import {SalesChart} from './SalesChart'
+import {Stats} from './Stats'
 import {TopProducts} from './TopProducts'
 
 function Header() {
@@ -29,7 +29,7 @@ export function Dashboard() {
   return (
     <Stack gap={rem(30)}>
       <Header />
-      <DashboardStats />
+      <Stats />
 
       <Grid>
         <Grid.Col span={8}>
