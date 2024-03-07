@@ -1,12 +1,25 @@
-import {Box, Button, Card, Group, Input, rem, Stack, Text} from '@mantine/core'
+import {
+  Badge,
+  Box,
+  Button,
+  Card,
+  Checkbox,
+  Group,
+  Input,
+  rem,
+  Stack,
+  Text,
+} from '@mantine/core'
 import {
   CaretLeft,
   CaretRight,
   Download,
   Info,
   MagnifyingGlass,
+  Star,
   Trash,
 } from '@phosphor-icons/react/dist/ssr'
+import {range} from 'lodash-es'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import styles from './Emails.module.scss'
@@ -28,15 +41,15 @@ function Header() {
       />
 
       <Button.Group>
-        <Button px='sm' radius='md' size='md' variant='default'>
+        <Button px='sm' radius={rem(12)} size='md' variant='default'>
           <Download className='icon-size-md' weight='fill' />
         </Button>
 
-        <Button px='sm' radius='md' size='md' variant='default'>
+        <Button px='sm' radius={rem(12)} size='md' variant='default'>
           <Info className='icon-size-md' weight='fill' />
         </Button>
 
-        <Button px='sm' radius='md' size='md' variant='default'>
+        <Button px='sm' radius={rem(12)} size='md' variant='default'>
           <Trash className='icon-size-md' weight='fill' />
         </Button>
       </Button.Group>
@@ -44,8 +57,44 @@ function Header() {
   )
 }
 
+function EmailListItem() {
+  return (
+    <Group gap='sm' wrap='nowrap'>
+      <Checkbox />
+      <Box c='gray.5' className='icon-size-md' component={Star} />
+      <Text fw='600' lineClamp={1} size='sm'>
+        Jullu Jalal
+      </Text>
+      <Badge color='pink' radius='sm' variant='light'>
+        Firends
+      </Badge>
+
+      <Text c='gray.8' fw='600' lineClamp={1} size='sm'>
+        Our Bachelor of Commerce program is ACBSP-accredited.
+      </Text>
+      <Text lineClamp={1} ml='auto' size='sm'>
+        8:38 AM
+      </Text>
+    </Group>
+  )
+}
+
+function EmailList() {
+  return (
+    <Stack>
+      {range(0, 10).map((index) => (
+        <EmailListItem key={index} />
+      ))}
+    </Stack>
+  )
+}
+
 function Content() {
-  return <Box h='100%'>Salam</Box>
+  return (
+    <Box h='100%'>
+      <EmailList />
+    </Box>
+  )
 }
 
 function Footer() {
@@ -70,7 +119,7 @@ function Footer() {
 
 export function Emails() {
   return (
-    <Card h='100%' w='100%'>
+    <Card h='100%' p='md' w='100%'>
       <Stack h='100%'>
         <Header />
 
