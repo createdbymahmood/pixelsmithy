@@ -6,8 +6,8 @@ import clsx from 'clsx'
 import dayJS from 'dayjs'
 import type {ReactNode} from 'react'
 
-import type {SidebarInboxPreviewItem} from '@/components/SnowUI'
-import {SearchInput, SidebarInbox} from '@/components/SnowUI'
+import type {InboxSidebarPreviewItem} from '@/components/SnowUI'
+import {InboxSidebar, SearchInput} from '@/components/SnowUI'
 
 import styles from './ChatLayout.module.scss'
 
@@ -28,7 +28,7 @@ function Header() {
 }
 
 function ChatInboxSidebar() {
-  const chats: SidebarInboxPreviewItem[] = [
+  const chats: InboxSidebarPreviewItem[] = [
     {
       name: 'William Johnson',
       preview: 'What about the second plan',
@@ -98,7 +98,7 @@ function ChatInboxSidebar() {
       date: dayJS().set('month', 2).set('date', 7),
     },
   ]
-  return <SidebarInbox header={<Header />} items={chats} />
+  return <InboxSidebar header={<Header />} items={chats} />
 }
 
 export function ChatLayout({children}: ChatLayoutProps) {
