@@ -35,7 +35,9 @@ function SidebarItem(props: SidebarItem) {
 
   return (
     <GroupLink
-      className={clsx('cursor-pointer', {[styles.activeWrapper]: isActive})}
+      className={clsx('cursor-pointer', {
+        [styles.activeSidebarItemWrapper]: isActive,
+      })}
       component={Link}
       href={props.href}
       py={rem(2)}
@@ -80,16 +82,16 @@ const sections: SidebarSection[] = [
         id: 'products',
         title: 'Products',
         icon: Scan,
-        href: urls.DashStack.products.index,
+        href: urls.DashStack.dashboard.products.index,
         activeSegment: ['products'],
       },
-      // {
-      //   id: 'favorites',
-      //   title: 'Favorites',
-      //   icon: Heart,
-      //   href: '/',
-      //   activeSegment: ['favorites'],
-      // },
+      {
+        id: 'favorites',
+        title: 'Favorites',
+        icon: Heart,
+        href: urls.DashStack.dashboard.favorites.index,
+        activeSegment: ['favorites'],
+      },
       // {
       //   id: 'inbox',
       //   title: 'Inbox',
