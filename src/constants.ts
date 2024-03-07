@@ -142,6 +142,7 @@ export const urls = {
 
       products: '/dash-stack/dashboard/products',
       favorites: '/dash-stack/dashboard/favorites',
+      inbox: '/dash-stack/dashboard/inbox',
     },
   },
 }

@@ -92,13 +92,13 @@ const sections: SidebarSection[] = [
         href: urls.DashStack.dashboard.favorites,
         activeSegment: ['favorites'],
       },
-      // {
-      //   id: 'inbox',
-      //   title: 'Inbox',
-      //   icon: ChatsTeardrop,
-      //   href: '/',
-      //   activeSegment: ['inbox'],
-      // },
+      {
+        id: 'inbox',
+        title: 'Inbox',
+        icon: ChatsTeardrop,
+        href: urls.DashStack.dashboard.inbox,
+        activeSegment: ['inbox'],
+      },
       // {
       //   id: 'orders-list',
       //   title: 'Orders',
