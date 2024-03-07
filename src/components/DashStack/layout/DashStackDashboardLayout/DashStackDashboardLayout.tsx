@@ -1,6 +1,6 @@
 'use client'
 
-import {Box, Container, Grid, Group, rem, Stack} from '@mantine/core'
+import {Box, Container, Group, rem, Stack} from '@mantine/core'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 

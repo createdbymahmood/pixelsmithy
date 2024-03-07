@@ -1,9 +1,8 @@
 'use client'
 
-import {PageContent, PageHeader, Product} from '@dash-stack/components'
-import {SimpleGrid} from '@mantine/core'
+import {PageHeader, Product} from '@dash-stack/components'
+import {SimpleGrid, Stack} from '@mantine/core'
 import {range} from 'lodash-es'
-import React from 'react'
 
 export function Favorites() {
   const content = range(0, 9).map((index) => {
@@ -11,9 +10,9 @@ export function Favorites() {
   })
 
   return (
-    <PageContent>
+    <Stack gap='md' pb='md'>
       <PageHeader>Favorites</PageHeader>
       <SimpleGrid cols={3}>{content}</SimpleGrid>
-    </PageContent>
+    </Stack>
   )
 }
