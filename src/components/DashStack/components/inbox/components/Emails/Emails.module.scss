@@ -1,3 +1,9 @@
 .searchInput {
   background: var(--mantine-color-gray-0);
 }
+
+.emailListItem {
+  &:not(:last-child) {
+    border-bottom: rem(1px) solid var(--mantine-color-gray-2);
+  }
+}
