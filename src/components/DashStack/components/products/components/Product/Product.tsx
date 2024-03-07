@@ -12,6 +12,7 @@ import {
   Text,
   Title,
 } from '@mantine/core'
+import {useDisclosure} from '@mantine/hooks'
 import {Heart} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
@@ -46,6 +47,8 @@ function ImagesCarousel() {
 }
 
 function Body() {
+  const [favorited, handlers] = useDisclosure(false)
+
   return (
     <Group align='flex-start' justify='space-between'>
       <Stack align='flex-start' gap={rem(4)}>
@@ -74,13 +77,14 @@ function Body() {
       </Stack>
 
       <ActionIcon
-        c='black'
+        c={favorited ? 'red.6' : 'black'}
         color='gray.5'
         radius='xl'
         size={rem(44)}
         variant='light'
+        onClick={handlers.toggle}
       >
-        <Heart />
+        <Heart weight={favorited ? 'fill' : 'regular'} />
       </ActionIcon>
     </Group>
   )

@@ -139,9 +139,13 @@ export const urls = {
     index: '/dash-stack',
     dashboard: {
       index: '/dash-stack/dashboard',
-    },
-    products: {
-      index: '/dash-stack/dashboard/products',
+
+      products: {
+        index: '/dash-stack/dashboard/products',
+      },
+      favorites: {
+        index: '/dash-stack/dashboard/favorites',
+      },
     },
   },
 }
