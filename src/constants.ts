@@ -140,12 +140,8 @@ export const urls = {
     dashboard: {
       index: '/dash-stack/dashboard',
 
-      products: {
-        index: '/dash-stack/dashboard/products',
-      },
-      favorites: {
-        index: '/dash-stack/dashboard/favorites',
-      },
+      products: '/dash-stack/dashboard/products',
+      favorites: '/dash-stack/dashboard/favorites',
     },
   },
 }
