@@ -1,4 +1,4 @@
-import type {MantineColor} from '@mantine/core'
+import type {MantineColor, StackProps} from '@mantine/core'
 import {Button, Card, Checkbox, Group, rem, Stack, Text} from '@mantine/core'
 import type {IconProps} from '@phosphor-icons/react'
 import {
@@ -102,18 +102,18 @@ function Folder(props: FolderProps) {
   )
 }
 
-interface SectionProps {
+interface SectionProps extends StackProps {
   children: ReactNode
   title: string
 }
 
-function Section(props: SectionProps) {
+function Section({children, title, ...props}: SectionProps) {
   return (
-    <Stack gap='xs'>
+    <Stack gap={rem(4)} {...props}>
       <Text fw='700' mb='xs'>
-        {props.title}
+        {title}
       </Text>
-      {props.children}
+      {children}
     </Stack>
   )
 }
@@ -171,7 +171,7 @@ function Labels() {
   })
 
   return (
-    <Section title='Label'>
+    <Section gap={rem(12)} title='Label'>
       {content}
       <Group>
         <Button
