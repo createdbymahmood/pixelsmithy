@@ -30,7 +30,7 @@ function Header() {
   )
 
   return (
-    <Group justify='space-between'>
+    <Group justify='space-between' p='md' pb={0}>
       <Input
         classNames={{input: styles.searchInput}}
         leftSection={searchInputLeftSection}
@@ -59,7 +59,7 @@ function Header() {
 
 function EmailListItem() {
   return (
-    <Group gap='sm' wrap='nowrap'>
+    <Group className={styles.emailListItem} gap='sm' p='md' py='sm'>
       <Checkbox />
       <Box c='gray.5' className='icon-size-md' component={Star} />
       <Text fw='600' lineClamp={1} size='sm'>
@@ -81,7 +81,7 @@ function EmailListItem() {
 
 function EmailList() {
   return (
-    <Stack>
+    <Stack gap={0}>
       {range(0, 10).map((index) => (
         <EmailListItem key={index} />
       ))}
@@ -99,7 +99,7 @@ function Content() {
 
 function Footer() {
   return (
-    <Group justify='space-between'>
+    <Group justify='space-between' pb={0} px='md'>
       <Text c='gray.8' size='sm'>
         Showing 1-12 of 1,253
       </Text>
@@ -119,7 +119,7 @@ function Footer() {
 
 export function Emails() {
   return (
-    <Card h='100%' p='md' w='100%'>
+    <Card h='100%' p={0} w='100%'>
       <Stack h='100%'>
         <Header />
 
