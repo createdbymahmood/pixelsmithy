@@ -1,3 +1,5 @@
+'use client'
+
 import {PageContent, PageHeader} from '@dash-stack/components'
 
 import {ProductsCarousel, PromotionsCarousel} from './components'

@@ -1,7 +1,14 @@
+import {Group} from '@mantine/core'
 import React from 'react'
 
-function Slide() {}
+import {Product} from '../Product'
 
 export function ProductsCarousel() {
-  return <div>ProductsSlider</div>
+  return (
+    <Group wrap='nowrap'>
+      <Product />
+      <Product />
+      <Product />
+    </Group>
+  )
 }
