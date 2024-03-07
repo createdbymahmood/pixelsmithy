@@ -1,7 +1,6 @@
 'use client'
 
 import {
-  Autocomplete,
   Button,
   Group,
   Input,
@@ -17,13 +16,12 @@ import {
   Paperclip,
   Trash,
 } from '@phosphor-icons/react/dist/ssr'
-import {Editor} from '@tinymce/tinymce-react'
 import clsx from 'clsx'
 import {useRef} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import type {Editor as EditorType} from 'tinymce'
 
-import {InboxSidebar} from '@/components/SnowUI'
+import {EmailInboxSidebar} from '@/components/SnowUI'
 
 import styles from './EmailCompose.module.scss'
 
@@ -136,7 +134,7 @@ function Footer() {
 export function EmailCompose() {
   return (
     <Group align='flex-start' h='100%' w='100%' wrap='nowrap'>
-      <InboxSidebar />
+      <EmailInboxSidebar />
 
       <PerfectScrollbar style={{width: '100%'}}>
         <Stack w='100%'>

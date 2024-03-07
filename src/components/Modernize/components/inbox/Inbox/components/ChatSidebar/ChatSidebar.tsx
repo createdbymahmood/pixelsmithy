@@ -8,7 +8,7 @@ import dayJS from 'dayjs'
 import {isUndefined} from 'lodash-es'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {toSidebarInboxTime} from '@/components/SnowUI/utils/date'
+import {toInboxSidebarTime} from '@/components/SnowUI/utils/date'
 
 import styles from './ChatSidebar.module.scss'
 
@@ -59,7 +59,7 @@ function ChatPreview({date, name, preview, unread, isOnline}: ChatItem) {
               ml='auto'
               size='xs'
             >
-              {toSidebarInboxTime(date)}
+              {toInboxSidebarTime(date)}
             </Text>
           </Group>
 

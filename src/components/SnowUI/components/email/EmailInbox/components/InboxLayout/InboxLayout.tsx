@@ -7,8 +7,8 @@ import dayJS from 'dayjs'
 import type {ReactNode} from 'react'
 
 import {GroupLink} from '@/components/common'
-import type {SidebarInboxPreviewItem} from '@/components/SnowUI'
-import {SidebarInbox} from '@/components/SnowUI'
+import type {InboxSidebarPreviewItem} from '@/components/SnowUI'
+import {InboxSidebar} from '@/components/SnowUI'
 
 function InboxSidebarHeader() {
   return (
@@ -21,8 +21,8 @@ function InboxSidebarHeader() {
   )
 }
 
-export function InboxSidebar() {
-  const emails: SidebarInboxPreviewItem[] = [
+export function EmailInboxSidebar() {
+  const emails: InboxSidebarPreviewItem[] = [
     {
       name: 'ByeWind',
       preview: 'Are you free tonight?',
@@ -91,7 +91,7 @@ export function InboxSidebar() {
     },
   ]
 
-  return <SidebarInbox header={<InboxSidebarHeader />} items={emails} />
+  return <InboxSidebar header={<InboxSidebarHeader />} items={emails} />
 }
 
 interface EmailInboxLayoutProps {
@@ -101,7 +101,7 @@ interface EmailInboxLayoutProps {
 export function EmailInboxLayout({children}: EmailInboxLayoutProps) {
   return (
     <Group align='flex-start' h='100%' w='100%' wrap='nowrap'>
-      <InboxSidebar />
+      <EmailInboxSidebar />
 
       <Box h='100%' w='100%'>
         {children}

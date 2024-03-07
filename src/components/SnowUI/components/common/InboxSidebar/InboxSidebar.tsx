@@ -7,25 +7,25 @@ import {isUndefined} from 'lodash-es'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {toSidebarInboxTime} from '@/components/SnowUI/utils/date'
+import {toInboxSidebarTime} from '@/components/SnowUI/utils/date'
 
-import styles from './SidebarInbox.module.scss'
+import styles from './InboxSidebar.module.scss'
 
-export interface SidebarInboxPreviewItem {
+export interface InboxSidebarPreviewItem {
   name: string
   preview: string
   date: Dayjs
   unread?: number
 }
 
-interface SidebarInboxListItemProps extends SidebarInboxPreviewItem {}
+interface InboxSidebarListItemProps extends InboxSidebarPreviewItem {}
 
 function ChatListItem({
   preview,
   name,
   date,
   unread,
-}: SidebarInboxListItemProps) {
+}: InboxSidebarListItemProps) {
   return (
     <Box className={clsx(styles.bordered)}>
       <Group
@@ -49,7 +49,7 @@ function ChatListItem({
 
         <Stack align='flex-end' gap={rem(6)} ml='auto'>
           <Text c='dimmed' size='xs' style={{whiteSpace: 'nowrap'}}>
-            {toSidebarInboxTime(date)}
+            {toInboxSidebarTime(date)}
           </Text>
 
           {!isUndefined(unread) && (
@@ -64,7 +64,7 @@ function ChatListItem({
 }
 
 interface ChatListProps {
-  items: SidebarInboxPreviewItem[]
+  items: InboxSidebarPreviewItem[]
 }
 
 function ChatsList({items}: ChatListProps) {
@@ -75,11 +75,11 @@ function ChatsList({items}: ChatListProps) {
   return <Stack gap={rem(2)}>{content}</Stack>
 }
 
-interface SidebarInboxProps extends ChatListProps {
+interface InboxSidebarProps extends ChatListProps {
   header: ReactNode
 }
 
-export function SidebarInbox({header, items}: SidebarInboxProps) {
+export function InboxSidebar({header, items}: InboxSidebarProps) {
   return (
     <Stack h='100%' style={{flexShrink: 0, width: rem(304)}}>
       {header}

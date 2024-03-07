@@ -1,3 +1,3 @@
+export * from './InboxSidebar'
 export * from './SearchInput'
-export * from './SidebarInbox'
 export * from './TableFilters'
