@@ -1,4 +1,5 @@
 export * from './common'
 export * from './dashboard'
 export * from './favorites'
+export * from './inbox'
 export * from './products'
