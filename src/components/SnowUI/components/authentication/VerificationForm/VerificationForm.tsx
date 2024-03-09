@@ -12,7 +12,7 @@ import {
 } from '@mantine/core'
 import {DeviceMobile} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
-import {isEmpty, isEqual} from 'lodash-es'
+import {isEmpty} from 'lodash-es'
 import {useState} from 'react'
 import OtpInput from 'react-otp-input'
 

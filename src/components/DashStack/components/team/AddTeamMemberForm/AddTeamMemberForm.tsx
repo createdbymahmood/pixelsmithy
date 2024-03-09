@@ -10,7 +10,6 @@ import {
   Stack,
   Text,
 } from '@mantine/core'
-import {DatePickerInput} from '@mantine/dates'
 import {Image} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 

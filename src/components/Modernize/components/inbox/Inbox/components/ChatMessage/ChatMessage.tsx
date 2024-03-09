@@ -5,7 +5,6 @@ import dayjs from 'dayjs'
 import React from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {dateToString} from '@/components/SnowUI/utils/date'
 import {dateTimeFormat} from '@/constants'
 
 import styles from './ChatMessage.module.scss'

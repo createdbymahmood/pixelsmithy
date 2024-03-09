@@ -1,16 +1,12 @@
 import {Badge, Box, Group, rem, Stack, Text} from '@mantine/core'
 import {
-  Calendar,
   ChatsTeardrop,
   Gauge,
   Gear,
   Gift,
   Heart,
-  ListChecks,
-  Money,
   Note,
   Scan,
-  StackSimple,
   User,
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'

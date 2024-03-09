@@ -1,13 +1,4 @@
-import {
-  Anchor,
-  Button,
-  Card,
-  Divider,
-  Group,
-  rem,
-  Stack,
-  Text,
-} from '@mantine/core'
+import {Anchor, Card, Divider, Group, rem, Stack, Text} from '@mantine/core'
 import React from 'react'
 
 function Header() {

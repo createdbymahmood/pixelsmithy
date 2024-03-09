@@ -3,7 +3,6 @@ import {
   Autocomplete,
   Card,
   Group,
-  rem,
   Stack,
   Text,
   Title,

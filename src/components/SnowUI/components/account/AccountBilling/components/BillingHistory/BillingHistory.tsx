@@ -1,4 +1,4 @@
-import {Card, Group, Menu, rem, Stack, Table, Text, Title} from '@mantine/core'
+import {Card, Group, rem, Stack, Table, Text, Title} from '@mantine/core'
 import {DownloadSimple} from '@phosphor-icons/react/dist/ssr'
 import dayJS from 'dayjs'
 

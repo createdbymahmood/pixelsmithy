@@ -1,6 +1,6 @@
 'use client'
 
-import {Box, Card, Group, rem, Stack, Text, Title} from '@mantine/core'
+import {Card, Group, rem, Stack, Text, Title} from '@mantine/core'
 import type {ApexOptions} from 'apexcharts'
 import React, {Fragment} from 'react'
 import ReactApexChart from 'react-apexcharts'

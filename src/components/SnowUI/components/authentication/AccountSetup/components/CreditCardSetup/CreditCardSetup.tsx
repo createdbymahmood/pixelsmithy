@@ -12,7 +12,7 @@ import {
   Text,
   Title,
 } from '@mantine/core'
-import {CaretLeft, CaretRight} from '@phosphor-icons/react/dist/ssr'
+import {CaretLeft} from '@phosphor-icons/react/dist/ssr'
 import {range} from 'lodash-es'
 import Link from 'next/link'
 

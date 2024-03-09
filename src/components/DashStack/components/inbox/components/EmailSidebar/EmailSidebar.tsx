@@ -16,10 +16,7 @@ import {
 import clsx from 'clsx'
 import {intersection, isEmpty, isEqual, isUndefined} from 'lodash-es'
 import Link from 'next/link'
-import {
-  useSelectedLayoutSegment,
-  useSelectedLayoutSegments,
-} from 'next/navigation'
+import {useSelectedLayoutSegments} from 'next/navigation'
 import numeral from 'numeral'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
