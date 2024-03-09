@@ -3,6 +3,7 @@ import {
   Calendar,
   ChatsTeardrop,
   Gauge,
+  Gear,
   Gift,
   Heart,
   ListChecks,
@@ -154,6 +155,13 @@ const sections: SidebarSection[] = [
         icon: User,
         href: urls.DashStack.dashboard.team.index,
         activeSegment: ['team'],
+      },
+      {
+        id: 'settings',
+        title: 'Settings',
+        icon: Gear,
+        href: urls.DashStack.dashboard.settings,
+        activeSegment: ['settings'],
       },
       // {
       //   id: 'invoice',
