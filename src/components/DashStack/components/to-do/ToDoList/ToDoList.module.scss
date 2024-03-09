@@ -1,0 +1,13 @@
+.todo {
+  border: rem(1px) solid var(--mantine-color-gray-2);
+  @include transition();
+
+  &.checked {
+    background: var(--mantine-primary-color-4);
+    color: var(--mantine-color-white);
+
+    & .checkbox {
+      border: rem(1px) solid var(--mantine-color-gray-3);
+    }
+  }
+}
