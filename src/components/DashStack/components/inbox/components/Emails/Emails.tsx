@@ -98,7 +98,7 @@ function EmailListItem() {
         <Text fw='600' lineClamp={1} size='sm'>
           Jullu Jalal
         </Text>
-        <Badge color='pink' radius='sm' variant='light'>
+        <Badge color='pink.4' radius='sm' variant='light'>
           Firends
         </Badge>
 

@@ -1,0 +1,46 @@
+.content {
+  border: rem(1px) solid var(--mantine-color-gray-2);
+}
+
+.header {
+  border-bottom: rem(1px) solid var(--mantine-color-gray-2);
+}
+
+.footer {
+  border-top: rem(1px) solid var(--mantine-color-gray-2);
+}
+
+.rtl {
+  align-self: flex-end;
+}
+
+.message {
+  border-radius: var(--mantine-radius-lg);
+  max-width: rem(590px);
+}
+
+.messageRTL {
+  border-bottom-right-radius: var(--mantine-radius-sm);
+}
+
+.textContentMessage {
+  padding: var(--mantine-spacing-sm);
+}
+
+.messageRTLTextContent {
+  background: var(--mantine-color-primary-4);
+  color: var(--mantine-color-white);
+}
+
+.messageLTR {
+  border-bottom-left-radius: var(--mantine-radius-sm);
+}
+
+.messageLTRTextContent {
+  background-color: var(--mantine-color-gray-1);
+  color: var(--mantine-color-black);
+}
+
+.messageText {
+  line-height: 1.86;
+}
