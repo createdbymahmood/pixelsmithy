@@ -25,7 +25,6 @@ import {
 import clsx from 'clsx'
 import {range} from 'lodash-es'
 import Link from 'next/link'
-import type {ChangeEvent, MouseEvent} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {GroupLink} from '@/components/common'

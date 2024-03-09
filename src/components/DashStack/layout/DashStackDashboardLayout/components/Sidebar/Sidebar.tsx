@@ -115,39 +115,39 @@ const sections: SidebarSection[] = [
       // },
     ],
   },
-  // {
-  //   title: 'Pages',
-  //   items: [
-  //     {
-  //       id: 'pricing',
-  //       title: 'Pricing',
-  //       icon: Gift,
-  //       href: '/',
-  //       activeSegment: ['pricing'],
-  //     },
-  //     {
-  //       id: 'calendar',
-  //       title: 'Pricing',
-  //       icon: Calendar,
-  //       href: '/',
-  //       activeSegment: ['pricing'],
-  //     },
-  //     {
-  //       id: 'to-do',
-  //       title: 'To-Do',
-  //       icon: Note,
-  //       href: '/',
-  //       activeSegment: ['pricing'],
-  //     },
-  //     {
-  //       id: 'invoice',
-  //       title: 'Invoice',
-  //       icon: Money,
-  //       href: '/',
-  //       activeSegment: ['pricing'],
-  //     },
-  //   ],
-  // },
+  {
+    title: 'Pages',
+    items: [
+      {
+        id: 'pricing',
+        title: 'Pricing',
+        icon: Gift,
+        href: urls.DashStack.dashboard.pricing,
+        activeSegment: ['pricing'],
+      },
+      // {
+      //   id: 'calendar',
+      //   title: 'Pricing',
+      //   icon: Calendar,
+      //   href: '/',
+      //   activeSegment: ['pricing'],
+      // },
+      // {
+      //   id: 'to-do',
+      //   title: 'To-Do',
+      //   icon: Note,
+      //   href: '/',
+      //   activeSegment: ['pricing'],
+      // },
+      // {
+      //   id: 'invoice',
+      //   title: 'Invoice',
+      //   icon: Money,
+      //   href: '/',
+      //   activeSegment: ['pricing'],
+      // },
+    ],
+  },
 ]
 
 function SidebarItems() {
