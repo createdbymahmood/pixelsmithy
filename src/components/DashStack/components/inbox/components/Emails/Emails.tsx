@@ -10,6 +10,7 @@ import {
   Stack,
   Text,
 } from '@mantine/core'
+import {useDisclosure} from '@mantine/hooks'
 import {
   CaretLeft,
   CaretRight,
@@ -19,6 +20,7 @@ import {
   Star,
   Trash,
 } from '@phosphor-icons/react/dist/ssr'
+import clsx from 'clsx'
 import {range} from 'lodash-es'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -30,7 +32,7 @@ function Header() {
   )
 
   return (
-    <Group justify='space-between' p='md' pb={0}>
+    <Group bg='white' justify='space-between' p='md'>
       <Input
         classNames={{input: styles.searchInput}}
         leftSection={searchInputLeftSection}
@@ -41,15 +43,15 @@ function Header() {
       />
 
       <Button.Group>
-        <Button px='sm' radius={rem(12)} size='md' variant='default'>
+        <Button px='sm' radius='sm' size='md' variant='default'>
           <Download className='icon-size-md' weight='fill' />
         </Button>
 
-        <Button px='sm' radius={rem(12)} size='md' variant='default'>
+        <Button px='sm' radius='sm' size='md' variant='default'>
           <Info className='icon-size-md' weight='fill' />
         </Button>
 
-        <Button px='sm' radius={rem(12)} size='md' variant='default'>
+        <Button px='sm' radius='sm' size='md' variant='default'>
           <Trash className='icon-size-md' weight='fill' />
         </Button>
       </Button.Group>
@@ -58,10 +60,24 @@ function Header() {
 }
 
 function EmailListItem() {
+  const [isStarred, {toggle: toggleStar}] = useDisclosure(false)
+  const [isSelected, {toggle: toggleSelection}] = useDisclosure(false)
+
   return (
-    <Group className={styles.emailListItem} gap='sm' p='md' py='sm'>
-      <Checkbox />
-      <Box c='gray.5' className='icon-size-md' component={Star} />
+    <Group
+      className={clsx(styles.emailListItem, {[styles.isSelected]: isSelected})}
+      gap='sm'
+      p='md'
+      py='sm'
+    >
+      <Checkbox color='black' onChange={toggleSelection} />
+      <Box
+        c={isStarred ? 'yellow.4' : 'gray.5'}
+        className={clsx('icon-size-md', 'cursor-pointer')}
+        component={Star}
+        weight={isStarred ? 'fill' : 'regular'}
+        onClick={toggleStar}
+      />
       <Text fw='600' lineClamp={1} size='sm'>
         Jullu Jalal
       </Text>
@@ -99,17 +115,17 @@ function Content() {
 
 function Footer() {
   return (
-    <Group justify='space-between' pb={0} px='md'>
+    <Group justify='space-between' px='md'>
       <Text c='gray.8' size='sm'>
         Showing 1-12 of 1,253
       </Text>
 
       <Button.Group>
-        <Button px='sm' py={0} radius='md' size='sm' variant='default'>
+        <Button px='xs' py={0} radius='md' size='xs' variant='default'>
           <CaretLeft className='icon-size-sm' weight='bold' />
         </Button>
 
-        <Button px='sm' py={0} radius='md' size='sm' variant='default'>
+        <Button px='xs' py={0} radius='md' size='xs' variant='default'>
           <CaretRight className='icon-size-sm' weight='bold' />
         </Button>
       </Button.Group>
@@ -119,16 +135,18 @@ function Footer() {
 
 export function Emails() {
   return (
-    <Card h='100%' p={0} w='100%'>
-      <Stack h='100%'>
+    <Stack h='100%'>
+      <Card bg='transparent' className={styles.content} h='100%' p={0} w='100%'>
         <Header />
 
-        <PerfectScrollbar>
-          <Content />
-        </PerfectScrollbar>
+        <Box bg='white' h={`calc(100% - ${rem(90)})`} p='0'>
+          <PerfectScrollbar>
+            <Content />
+          </PerfectScrollbar>
+        </Box>
+      </Card>
 
-        <Footer />
-      </Stack>
-    </Card>
+      <Footer />
+    </Stack>
   )
 }
