@@ -56,12 +56,9 @@ function FormView() {
             <Input placeholder='Enter your Phone number' size='md' />
           </Input.Wrapper>
 
-          <DatePickerInput
-            label='Date of birth'
-            placeholder='Enter your birhdate'
-            size='md'
-            type='range'
-          />
+          <Input.Wrapper label='Position' size='md'>
+            <Input placeholder='CEO' size='md' />
+          </Input.Wrapper>
 
           <Select
             data={['Male', 'Female']}
@@ -80,10 +77,10 @@ function FormView() {
   )
 }
 
-export function AddContactForm() {
+export function AddTeamMemberForm() {
   return (
     <Stack gap='md' pb='md'>
-      <PageHeader>Add New Contact</PageHeader>
+      <PageHeader>Add Team Member</PageHeader>
       <FormView />
     </Stack>
   )

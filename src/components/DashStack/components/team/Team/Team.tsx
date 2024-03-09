@@ -9,7 +9,6 @@ import {
   Stack,
   Text,
 } from '@mantine/core'
-import {EnvelopeSimple} from '@phosphor-icons/react/dist/ssr'
 import {range} from 'lodash-es'
 import Link from 'next/link'
 
@@ -23,7 +22,7 @@ function Header() {
       <Button
         color='primary.4'
         component={Link}
-        href={urls.DashStack.dashboard.contacts.add}
+        href={urls.DashStack.dashboard.team.add}
         radius='md'
         size='md'
       >
