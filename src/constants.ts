@@ -154,6 +154,7 @@ export const urls = {
         chat: (userId: string) =>
           urlCat('/dash-stack/dashboard/inbox/:userId', {userId}),
       },
+      pricing: '/dash-stack/dashboard/pricing',
     },
   },
 }
