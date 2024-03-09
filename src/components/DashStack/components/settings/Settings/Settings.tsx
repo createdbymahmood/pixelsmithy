@@ -86,7 +86,7 @@ function FormView() {
 export function Settings() {
   return (
     <Stack gap='md' pb='md'>
-      <PageHeader>Settings</PageHeader>
+      <PageHeader>General Settings</PageHeader>
       <FormView />
     </Stack>
   )
