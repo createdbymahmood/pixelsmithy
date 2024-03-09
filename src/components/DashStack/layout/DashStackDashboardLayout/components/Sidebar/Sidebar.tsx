@@ -133,13 +133,13 @@ const sections: SidebarSection[] = [
       //   href: '/',
       //   activeSegment: ['pricing'],
       // },
-      // {
-      //   id: 'to-do',
-      //   title: 'To-Do',
-      //   icon: Note,
-      //   href: '/',
-      //   activeSegment: ['pricing'],
-      // },
+      {
+        id: 'to-do',
+        title: 'To-Do',
+        icon: Note,
+        href: urls.DashStack.dashboard.toDo.index,
+        activeSegment: ['to-do'],
+      },
       {
         id: 'contacts',
         title: 'Contacts',
