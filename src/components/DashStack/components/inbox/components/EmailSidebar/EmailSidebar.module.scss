@@ -1,6 +1,11 @@
 .folder {
   @include transition();
 
+  &.active {
+    color: var(--mantine-primary-color-4);
+    background: var(--mantine-primary-color-0);
+  }
+
   &:hover {
     color: var(--mantine-primary-color-4);
     background: var(--mantine-primary-color-0);

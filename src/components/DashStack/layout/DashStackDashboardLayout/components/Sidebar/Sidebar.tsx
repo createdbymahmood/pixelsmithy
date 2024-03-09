@@ -96,7 +96,7 @@ const sections: SidebarSection[] = [
         id: 'inbox',
         title: 'Inbox',
         icon: ChatsTeardrop,
-        href: urls.DashStack.dashboard.inbox,
+        href: urls.DashStack.dashboard.inbox.index,
         activeSegment: ['inbox'],
       },
       // {

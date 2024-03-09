@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Badge,
   Box,
@@ -22,7 +24,13 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {range} from 'lodash-es'
+import Link from 'next/link'
+import type {ChangeEvent, MouseEvent} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
+
+import {GroupLink} from '@/components/common'
+import {userId} from '@/components/DashStack/mock/user'
+import {urls} from '@/constants'
 
 import styles from './Emails.module.scss'
 
@@ -64,13 +72,15 @@ function EmailListItem() {
   const [isSelected, {toggle: toggleSelection}] = useDisclosure(false)
 
   return (
-    <Group
+    <GroupLink
       className={clsx(styles.emailListItem, {[styles.isSelected]: isSelected})}
       gap='sm'
       p='md'
       py='sm'
+      wrap='nowrap'
     >
-      <Checkbox color='black' onChange={toggleSelection} />
+      <Checkbox checked={isSelected} color='black' onChange={toggleSelection} />
+
       <Box
         c={isStarred ? 'yellow.4' : 'gray.5'}
         className={clsx('icon-size-md', 'cursor-pointer')}
@@ -78,20 +88,28 @@ function EmailListItem() {
         weight={isStarred ? 'fill' : 'regular'}
         onClick={toggleStar}
       />
-      <Text fw='600' lineClamp={1} size='sm'>
-        Jullu Jalal
-      </Text>
-      <Badge color='pink' radius='sm' variant='light'>
-        Firends
-      </Badge>
 
-      <Text c='gray.8' fw='600' lineClamp={1} size='sm'>
-        Our Bachelor of Commerce program is ACBSP-accredited.
-      </Text>
-      <Text lineClamp={1} ml='auto' size='sm'>
-        8:38 AM
-      </Text>
-    </Group>
+      <GroupLink
+        component={Link}
+        gap='sm'
+        href={urls.DashStack.dashboard.inbox.chat(userId)}
+        wrap='nowrap'
+      >
+        <Text fw='600' lineClamp={1} size='sm'>
+          Jullu Jalal
+        </Text>
+        <Badge color='pink' radius='sm' variant='light'>
+          Firends
+        </Badge>
+
+        <Text c='gray.8' fw='600' lineClamp={1} size='sm'>
+          Our Bachelor of Commerce program is ACBSP-accredited.
+        </Text>
+        <Text lineClamp={1} ml='auto' size='sm'>
+          8:38 AM
+        </Text>
+      </GroupLink>
+    </GroupLink>
   )
 }
 
