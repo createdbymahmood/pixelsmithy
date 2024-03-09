@@ -1,6 +1,7 @@
 const {init} = require('@fullstacksjs/eslint-config/init')
 
 module.exports = init({
+  plugins: ['eslint-plugin-unused-imports'],
   modules: {
     auto: true,
     esm: true,
@@ -36,5 +37,6 @@ module.exports = init({
     'react/no-children-prop': ['error'],
     'react/hook-use-state': ['error'],
     'import/extensions': ['off'],
+    'unused-imports/no-unused-imports': 'warn',
   },
 })
