@@ -1,6 +1,16 @@
 'use client'
 
-import {Box, Button, Card, Checkbox, Group, Stack, Text} from '@mantine/core'
+import {
+  Box,
+  Button,
+  Card,
+  Checkbox,
+  Group,
+  Input,
+  rem,
+  Stack,
+  Text,
+} from '@mantine/core'
 import {useDisclosure} from '@mantine/hooks'
 import {Star, Trash, XCircle} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
@@ -10,12 +20,19 @@ import {PageHeader} from '@/components/DashStack/components'
 
 import styles from './ToDoList.module.scss'
 
-function Header() {
+function Header({state}: {state: UseTodoListStateReturnValue}) {
+  const label = state.formShown ? 'Save' : 'Add new task'
   return (
     <Group justify='space-between'>
       <PageHeader>To-Do List</PageHeader>
-      <Button color='primary.4' radius='md' size='md'>
-        Add new task
+
+      <Button
+        color='primary.4'
+        radius='md'
+        size='md'
+        onClick={state.onCreateTaskClick}
+      >
+        {label}
       </Button>
     </Group>
   )
@@ -99,10 +116,29 @@ function List() {
   return <Stack>{content}</Stack>
 }
 
+type UseTodoListStateReturnValue = ReturnType<typeof useTodoListState>
+
+function useTodoListState() {
+  const [formShown, handlers] = useDisclosure(false)
+
+  const onCreateTaskClick = handlers.toggle
+  return {onCreateTaskClick, formShown}
+}
+
+function AddTaskFormView() {
+  return (
+    <Card p='md'>
+      <Input maw={rem(435)} placeholder='Write Your task name here' />
+    </Card>
+  )
+}
+
 export function ToDoList() {
+  const state = useTodoListState()
   return (
     <Stack gap='md' pb='md'>
-      <Header />
+      <Header state={state} />
+      {state.formShown ? <AddTaskFormView /> : null}
       <List />
     </Stack>
   )
