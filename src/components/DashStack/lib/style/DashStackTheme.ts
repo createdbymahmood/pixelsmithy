@@ -34,6 +34,18 @@ export const DashStackTheme = createTheme({
       '#2ac8ac',
       '#00ad94',
     ],
+    pink: [
+      '#fee9ff',
+      '#f5cfff',
+      '#e79dff',
+      '#d866fd',
+      '#cc39fc',
+      '#c51dfb',
+      '#c10cfc',
+      '#aa00e1',
+      '#9800c9',
+      '#8400b1',
+    ],
   },
   fontFamily: nunitoSans.style.fontFamily,
 
