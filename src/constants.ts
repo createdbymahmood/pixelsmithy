@@ -155,6 +155,9 @@ export const urls = {
           urlCat('/dash-stack/dashboard/inbox/:userId', {userId}),
       },
       pricing: '/dash-stack/dashboard/pricing',
+      contacts: {
+        index: '/dash-stack/dashboard/contacts',
+      },
     },
   },
 }

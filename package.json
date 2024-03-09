@@ -48,6 +48,7 @@
     "zustand": "4.5.1"
   },
   "devDependencies": {
+    "@faker-js/faker": "8.4.1",
     "@fullstacksjs/eslint-config": "10.10.1",
     "@jest/globals": "29.7.0",
     "@semantic-release/changelog": "6.0.3",
