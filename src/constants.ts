@@ -157,6 +157,7 @@ export const urls = {
       pricing: '/dash-stack/dashboard/pricing',
       contacts: {
         index: '/dash-stack/dashboard/contacts',
+        add: '/dash-stack/dashboard/contacts/add',
       },
     },
   },

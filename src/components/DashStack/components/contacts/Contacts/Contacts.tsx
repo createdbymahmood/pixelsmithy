@@ -11,14 +11,22 @@ import {
 } from '@mantine/core'
 import {EnvelopeSimple} from '@phosphor-icons/react/dist/ssr'
 import {range} from 'lodash-es'
+import Link from 'next/link'
 
 import {PageHeader} from '@/components/DashStack/components'
+import {urls} from '@/constants'
 
 function Header() {
   return (
     <Group justify='space-between'>
       <PageHeader>Contacts</PageHeader>
-      <Button color='primary.4' size='md'>
+      <Button
+        color='primary.4'
+        component={Link}
+        href={urls.DashStack.dashboard.contacts.add}
+        radius='md'
+        size='md'
+      >
         Add new contact
       </Button>
     </Group>
