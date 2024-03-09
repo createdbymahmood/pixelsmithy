@@ -23,6 +23,7 @@ interface Pricing {
   chargeType: string
   price: string
   features: PricingFeature[]
+  isRecommended: boolean
 }
 
 const pricings: Pricing[] = [
@@ -30,6 +31,7 @@ const pricings: Pricing[] = [
     title: 'Basic',
     price: '$14.99',
     chargeType: 'Monthly',
+    isRecommended: false,
     features: [
       {
         title: 'Free Setup',
@@ -65,6 +67,7 @@ const pricings: Pricing[] = [
     title: 'Standard',
     price: '$49.99',
     chargeType: 'Monthly',
+    isRecommended: false,
     features: [
       {
         title: 'Free Setup',
@@ -100,6 +103,7 @@ const pricings: Pricing[] = [
     title: 'Premium',
     price: '$89.99',
     chargeType: 'Monthly',
+    isRecommended: true,
     features: [
       {
         title: 'Free Setup',
@@ -135,7 +139,13 @@ const pricings: Pricing[] = [
 
 interface PricingProps extends Pricing {}
 
-function PricingCard({title, chargeType, features, price}: PricingProps) {
+function PricingCard({
+  title,
+  chargeType,
+  features,
+  price,
+  isRecommended,
+}: PricingProps) {
   return (
     <Card radius='xl' w='100%'>
       <Stack align='center' gap={0}>
@@ -170,7 +180,12 @@ function PricingCard({title, chargeType, features, price}: PricingProps) {
 
         <Divider my={rem(40)} w='100%' />
 
-        <Button c='primary.4' radius='xl' size='lg' variant='outline'>
+        <Button
+          color='primary.4'
+          radius='xl'
+          size='lg'
+          variant={isRecommended ? 'fill' : 'outline'}
+        >
           Get Started
         </Button>
 
