@@ -10,6 +10,7 @@ import {
   Note,
   Scan,
   StackSimple,
+  User,
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
@@ -146,6 +147,13 @@ const sections: SidebarSection[] = [
         icon: UsersThree,
         href: urls.DashStack.dashboard.contacts.index,
         activeSegment: ['contacts'],
+      },
+      {
+        id: 'team',
+        title: 'Team',
+        icon: User,
+        href: urls.DashStack.dashboard.team.index,
+        activeSegment: ['team'],
       },
       // {
       //   id: 'invoice',
