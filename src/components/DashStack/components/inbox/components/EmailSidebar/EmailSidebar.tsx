@@ -12,22 +12,44 @@ import {
   Warning,
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
+import {isUndefined} from 'lodash-es'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import styles from './EmailSidebar.module.scss'
 
+interface SectionProps extends StackProps {
+  children: ReactNode
+  title?: string
+}
+
+function Section({children, title, ...props}: SectionProps) {
+  return (
+    <Stack gap={rem(4)} {...props} px='md'>
+      {!isUndefined(title) && (
+        <Text fw='700' mb='xs'>
+          {title}
+        </Text>
+      )}
+      {children}
+    </Stack>
+  )
+}
+
 function Header() {
   return (
-    <Button
-      color='primary.4'
-      leftSection={<Plus weight='bold' />}
-      radius='md'
-      size='md'
-      fullWidth
-    >
-      Compose
-    </Button>
+    <Section pt='md'>
+      <Button
+        color='primary.4'
+        leftSection={<Plus weight='bold' />}
+        radius='md'
+        size='md'
+        style={{flexShrink: 0}}
+        fullWidth
+      >
+        Compose
+      </Button>
+    </Section>
   )
 }
 
@@ -102,22 +124,6 @@ function Folder(props: FolderProps) {
   )
 }
 
-interface SectionProps extends StackProps {
-  children: ReactNode
-  title: string
-}
-
-function Section({children, title, ...props}: SectionProps) {
-  return (
-    <Stack gap={rem(4)} {...props}>
-      <Text fw='700' mb='xs'>
-        {title}
-      </Text>
-      {children}
-    </Stack>
-  )
-}
-
 function Folders() {
   const content = folders.map((folder) => {
     return <Folder key={folder.title} {...folder} />
@@ -189,14 +195,17 @@ function Labels() {
 
 export function EmailSidebar() {
   return (
-    <Card h='100%' miw={rem(286)} p='md'>
-      <PerfectScrollbar>
-        <Stack gap='md'>
-          <Header />
-          <Folders />
-          <Labels />
-        </Stack>
-      </PerfectScrollbar>
+    <Card className={styles.sidebar} h='100%' miw={rem(286)} p={0}>
+      <Stack h='100%'>
+        <Header />
+
+        <PerfectScrollbar>
+          <Stack>
+            <Folders />
+            <Labels />
+          </Stack>
+        </PerfectScrollbar>
+      </Stack>
     </Card>
   )
 }

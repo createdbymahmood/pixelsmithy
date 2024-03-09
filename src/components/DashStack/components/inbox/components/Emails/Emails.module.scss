@@ -3,7 +3,17 @@
 }
 
 .emailListItem {
+  @include transition();
+
   &:not(:last-child) {
     border-bottom: rem(1px) solid var(--mantine-color-gray-2);
   }
+
+  &.isSelected {
+    background: var(--mantine-color-indigo-0);
+  }
+}
+
+.content {
+  border: rem(1px) solid var(--mantine-color-gray-2);
 }
