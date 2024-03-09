@@ -1,7 +1,17 @@
 import type {MantineThemeComponents} from '@mantine/core'
-import {Badge, Card, rem, Table} from '@mantine/core'
+import {
+  Badge,
+  Card,
+  Input,
+  InputWrapper,
+  rem,
+  Select,
+  Table,
+} from '@mantine/core'
+import {CaretDown} from '@phosphor-icons/react/dist/ssr'
 
 import BadgeStyles from './Badge.module.scss'
+import InputStyles from './Input.module.scss'
 import TableStyles from './Table.module.scss'
 
 export const components: MantineThemeComponents = {
@@ -9,6 +19,11 @@ export const components: MantineThemeComponents = {
     defaultProps: {
       p: 'sm',
       radius: 'lg',
+    },
+  }),
+  Select: Select.extend({
+    defaultProps: {
+      rightSection: <CaretDown />,
     },
   }),
   Table: Table.extend({
@@ -33,6 +48,26 @@ export const components: MantineThemeComponents = {
     classNames(theme, props, ctx) {
       return {
         label: BadgeStyles.label,
+      }
+    },
+  }),
+
+  InputWrapper: InputWrapper.extend({
+    classNames(theme, props, ctx) {
+      return {
+        label: InputStyles.label,
+      }
+    },
+  }),
+
+  Input: Input.extend({
+    defaultProps: {
+      variant: 'filled',
+    },
+
+    classNames(theme, props, ctx) {
+      return {
+        wrapper: InputStyles.wrapper,
       }
     },
   }),
