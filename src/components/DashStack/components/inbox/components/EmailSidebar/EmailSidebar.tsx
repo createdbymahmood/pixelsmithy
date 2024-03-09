@@ -231,12 +231,7 @@ function Labels() {
 
 export function EmailSidebar() {
   return (
-    <Card
-      className={styles.sidebar}
-      h={`calc(100% - ${rem(30)} - var(--mantine-spacing-md))`}
-      miw={rem(286)}
-      p={0}
-    >
+    <Card className={styles.sidebar} h='100%' miw={rem(286)} p={0}>
       <Stack h='100%'>
         <Header />
 
