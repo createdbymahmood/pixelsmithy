@@ -7,6 +7,7 @@ import {
   Button,
   Card,
   Group,
+  Input,
   rem,
   Skeleton,
   Stack,
@@ -16,6 +17,10 @@ import {
 import {
   CaretLeft,
   DotsThreeVertical,
+  Image,
+  Microphone,
+  Paperclip,
+  PaperPlaneTilt,
   Printer,
   Star,
   Trash,
@@ -86,7 +91,13 @@ function Message({direction, content, type}: MessageProps) {
       wrap='nowrap'
     >
       {isLTR ? (
-        <Skeleton className='shrink-0' h={rem(40)} w={rem(40)} circle />
+        <Skeleton
+          animate={false}
+          className='shrink-0'
+          h={rem(40)}
+          w={rem(40)}
+          circle
+        />
       ) : null}
 
       <Box
@@ -145,7 +156,46 @@ function ChatMessages() {
 }
 
 function Compose() {
-  return <Section className={styles.footer}>Compose</Section>
+  return (
+    <Section className={styles.footer} py='sm'>
+      <Group c='gray.6' gap='sm' wrap='nowrap'>
+        <Box
+          className={clsx('icon-size-md', 'cursor-pointer')}
+          component={Microphone}
+          weight='fill'
+        />
+        <Input
+          classNames={{input: styles.input}}
+          placeholder='Write message'
+          size='md'
+          w='100%'
+        />
+
+        <Box
+          className={clsx('icon-size-md', 'cursor-pointer')}
+          component={Paperclip}
+          weight='bold'
+        />
+
+        <Box
+          className={clsx('icon-size-md', 'cursor-pointer')}
+          component={Image}
+          weight='fill'
+        />
+
+        <Button
+          className='shrink-0'
+          color='primary.4'
+          radius='md'
+          rightSection={
+            <PaperPlaneTilt className='icon-size-md' weight='fill' />
+          }
+        >
+          Send
+        </Button>
+      </Group>
+    </Section>
+  )
 }
 
 interface SectionProps extends BoxProps {
