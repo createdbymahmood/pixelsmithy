@@ -14,13 +14,18 @@ import {
   Warning,
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
-import {isEqual, isUndefined} from 'lodash-es'
+import {intersection, isEmpty, isEqual, isUndefined} from 'lodash-es'
 import Link from 'next/link'
-import {useSelectedLayoutSegment} from 'next/navigation'
+import {
+  useSelectedLayoutSegment,
+  useSelectedLayoutSegments,
+} from 'next/navigation'
+import numeral from 'numeral'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {GroupLink} from '@/components/common'
+import {userId} from '@/components/DashStack/mock/user'
 import {urls} from '@/constants'
 
 import styles from './EmailSidebar.module.scss'
@@ -64,7 +69,7 @@ interface Folder {
   title: string
   icon: React.FC<IconProps>
   count: number
-  segment: string | null
+  segment: string[]
   href: string
 }
 
@@ -73,49 +78,49 @@ const folders: Folder[] = [
     title: 'Inbox',
     icon: EnvelopeSimple,
     count: 1253,
-    segment: null,
+    segment: [userId],
     href: urls.DashStack.dashboard.inbox.index,
   },
   {
     title: 'Starred',
     icon: Star,
     count: 245,
-    segment: 'starred',
+    segment: ['starred'],
     href: urls.DashStack.dashboard.inbox.starred,
   },
   {
     title: 'Sent',
     icon: PaperPlaneTilt,
     count: 24532,
-    segment: 'sent',
+    segment: ['sent'],
     href: urls.DashStack.dashboard.inbox.sent,
   },
   {
     title: 'Draft',
     icon: PencilSimple,
     count: 9,
-    segment: 'draft',
+    segment: ['draft'],
     href: urls.DashStack.dashboard.inbox.draft,
   },
   {
     title: 'Spam',
     icon: Warning,
     count: 14,
-    segment: 'spam',
+    segment: ['spam'],
     href: urls.DashStack.dashboard.inbox.spam,
   },
   {
     title: 'Important',
     icon: SnapchatLogo,
     count: 18,
-    segment: 'important',
+    segment: ['important'],
     href: urls.DashStack.dashboard.inbox.important,
   },
   {
     title: 'Bin',
     icon: Trash,
     count: 9,
-    segment: 'bin',
+    segment: ['bin'],
     href: urls.DashStack.dashboard.inbox.bin,
   },
 ]
@@ -124,8 +129,11 @@ interface FolderProps extends Folder {}
 
 function Folder(props: FolderProps) {
   const Icon = props.icon
-  const segment = useSelectedLayoutSegment()
-  const isActive = isEqual(segment, props.segment)
+  const segment = useSelectedLayoutSegments()
+  const isEqualToSegment = isEqual(segment, props.segment)
+
+  const isActive =
+    !isEmpty(intersection(segment, props.segment)) || isEqualToSegment
 
   return (
     <GroupLink
@@ -146,7 +154,7 @@ function Folder(props: FolderProps) {
       </Text>
 
       <Text fw='600' ml='auto' size='sm'>
-        {props.count}
+        {numeral(props.count).format('0,0')}
       </Text>
     </GroupLink>
   )
