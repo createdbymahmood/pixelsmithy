@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ./src --fix",
+    "lint": "eslint ./src --report-unused-disable-directives --max-warnings 0 --fix",
     "test": "jest --passWithNoTests",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
