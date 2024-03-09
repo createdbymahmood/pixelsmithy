@@ -10,6 +10,7 @@ import {
   Note,
   Scan,
   StackSimple,
+  UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {intersection, isEmpty, isEqual} from 'lodash-es'
@@ -139,6 +140,13 @@ const sections: SidebarSection[] = [
       //   href: '/',
       //   activeSegment: ['pricing'],
       // },
+      {
+        id: 'contacts',
+        title: 'Contacts',
+        icon: UsersThree,
+        href: urls.DashStack.dashboard.contacts.index,
+        activeSegment: ['contacts'],
+      },
       // {
       //   id: 'invoice',
       //   title: 'Invoice',
