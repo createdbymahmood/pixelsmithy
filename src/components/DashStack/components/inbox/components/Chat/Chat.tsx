@@ -51,7 +51,7 @@ function Header() {
         />
         <Title order={6}>Minerva Barnett</Title>
         <Badge color='pink.4' radius='sm' variant='light'>
-          Firends
+          Friends
         </Badge>
 
         <Button.Group ml='auto'>
