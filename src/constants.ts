@@ -142,7 +142,18 @@ export const urls = {
 
       products: '/dash-stack/dashboard/products',
       favorites: '/dash-stack/dashboard/favorites',
-      inbox: '/dash-stack/dashboard/inbox',
+      inbox: {
+        index: '/dash-stack/dashboard/inbox',
+        starred: '/dash-stack/dashboard/inbox/starred',
+        sent: '/dash-stack/dashboard/inbox/sent',
+        draft: '/dash-stack/dashboard/inbox/draft',
+        spam: '/dash-stack/dashboard/inbox/spam',
+        important: '/dash-stack/dashboard/inbox/important',
+        bin: '/dash-stack/dashboard/inbox/bin',
+
+        chat: (userId: string) =>
+          urlCat('/dash-stack/dashboard/inbox/:userId', {userId}),
+      },
     },
   },
 }

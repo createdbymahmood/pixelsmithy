@@ -1,4 +1,6 @@
-import type {MantineColor, StackProps} from '@mantine/core'
+'use client'
+
+import type {StackProps} from '@mantine/core'
 import {Button, Card, Checkbox, Group, rem, Stack, Text} from '@mantine/core'
 import type {IconProps} from '@phosphor-icons/react'
 import {
@@ -12,9 +14,14 @@ import {
   Warning,
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
-import {isUndefined} from 'lodash-es'
+import {isEqual, isUndefined} from 'lodash-es'
+import Link from 'next/link'
+import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
+
+import {GroupLink} from '@/components/common'
+import {urls} from '@/constants'
 
 import styles from './EmailSidebar.module.scss'
 
@@ -57,6 +64,8 @@ interface Folder {
   title: string
   icon: React.FC<IconProps>
   count: number
+  segment: string | null
+  href: string
 }
 
 const folders: Folder[] = [
@@ -64,36 +73,50 @@ const folders: Folder[] = [
     title: 'Inbox',
     icon: EnvelopeSimple,
     count: 1253,
+    segment: null,
+    href: urls.DashStack.dashboard.inbox.index,
   },
   {
     title: 'Starred',
     icon: Star,
     count: 245,
+    segment: 'starred',
+    href: urls.DashStack.dashboard.inbox.starred,
   },
   {
     title: 'Sent',
     icon: PaperPlaneTilt,
     count: 24532,
+    segment: 'sent',
+    href: urls.DashStack.dashboard.inbox.sent,
   },
   {
     title: 'Draft',
     icon: PencilSimple,
     count: 9,
+    segment: 'draft',
+    href: urls.DashStack.dashboard.inbox.draft,
   },
   {
     title: 'Spam',
     icon: Warning,
     count: 14,
+    segment: 'spam',
+    href: urls.DashStack.dashboard.inbox.spam,
   },
   {
     title: 'Important',
     icon: SnapchatLogo,
     count: 18,
+    segment: 'important',
+    href: urls.DashStack.dashboard.inbox.important,
   },
   {
     title: 'Bin',
     icon: Trash,
     count: 9,
+    segment: 'bin',
+    href: urls.DashStack.dashboard.inbox.bin,
   },
 ]
 
@@ -101,14 +124,19 @@ interface FolderProps extends Folder {}
 
 function Folder(props: FolderProps) {
   const Icon = props.icon
+  const segment = useSelectedLayoutSegment()
+  const isActive = isEqual(segment, props.segment)
+
   return (
-    <Card
-      className={clsx('cursor-pointer', styles.folder)}
-      component={Group}
+    <GroupLink
+      className={clsx('cursor-pointer', styles.folder, {
+        [styles.active]: isActive,
+      })}
+      component={Link}
       gap='xs'
+      href={props.href}
       px='sm'
       py={rem(10)}
-      radius='sm'
       style={{flexDirection: 'row'}}
       wrap='nowrap'
     >
@@ -120,7 +148,7 @@ function Folder(props: FolderProps) {
       <Text fw='600' ml='auto' size='sm'>
         {props.count}
       </Text>
-    </Card>
+    </GroupLink>
   )
 }
 
