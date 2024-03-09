@@ -2,7 +2,6 @@
 
 import {Carousel} from '@mantine/carousel'
 import {
-  Box,
   Button,
   Card,
   getGradient,

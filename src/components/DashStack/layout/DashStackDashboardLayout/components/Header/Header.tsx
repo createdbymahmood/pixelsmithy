@@ -1,27 +1,11 @@
-import {
-  Avatar,
-  Box,
-  Group,
-  Input,
-  Popover,
-  rem,
-  Text,
-  Title,
-} from '@mantine/core'
+import {Avatar, Group, Input, Popover, rem, Text, Title} from '@mantine/core'
 import type {
   SpotlightActionData,
   SpotlightActionGroupData,
 } from '@mantine/spotlight'
 import {Spotlight, spotlight} from '@mantine/spotlight'
-import {
-  Bell,
-  CaretDown,
-  ChatDots,
-  List,
-  MagnifyingGlass,
-} from '@phosphor-icons/react/dist/ssr'
+import {CaretDown, List, MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
-import Image from 'next/image'
 import {useRouter} from 'next/navigation'
 import {Fragment} from 'react'
 

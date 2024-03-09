@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   Card,
-  Center,
   Group,
   rem,
   SimpleGrid,

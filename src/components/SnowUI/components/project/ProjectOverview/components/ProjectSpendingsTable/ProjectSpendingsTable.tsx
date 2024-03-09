@@ -1,4 +1,4 @@
-import {Avatar, Card, Group, rem, Stack, Table, Title} from '@mantine/core'
+import {Avatar, Card, rem, Stack, Table, Title} from '@mantine/core'
 import dayJS from 'dayjs'
 import React from 'react'
 
