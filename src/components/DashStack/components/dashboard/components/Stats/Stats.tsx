@@ -64,6 +64,9 @@ function Stat({
           color={iconColor}
           h={rem(60)}
           radius='lg'
+          styles={{
+            label: {lineHeight: 0},
+          }}
           variant='light'
           w={rem(60)}
         >
