@@ -167,6 +167,7 @@ export const urls = {
         add: '/dash-stack/dashboard/team/add',
       },
       settings: '/dash-stack/dashboard/settings',
+      orders: '/dash-stack/dashboard/orders',
     },
   },
 }

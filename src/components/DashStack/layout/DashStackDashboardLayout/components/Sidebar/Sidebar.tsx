@@ -5,6 +5,7 @@ import {
   Gear,
   Gift,
   Heart,
+  ListChecks,
   Note,
   Scan,
   User,
@@ -98,13 +99,13 @@ const sections: SidebarSection[] = [
         href: urls.DashStack.dashboard.inbox.index,
         activeSegment: ['inbox'],
       },
-      // {
-      //   id: 'orders-list',
-      //   title: 'Orders',
-      //   icon: ListChecks,
-      //   href: '/',
-      //   activeSegment: ['orders'],
-      // },
+      {
+        id: 'orders',
+        title: 'Orders List',
+        icon: ListChecks,
+        href: urls.DashStack.dashboard.orders,
+        activeSegment: ['orders'],
+      },
       // {
       //   id: 'product-stock',
       //   title: 'Product Stock',
