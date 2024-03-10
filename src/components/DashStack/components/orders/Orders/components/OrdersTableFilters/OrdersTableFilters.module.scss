@@ -1,0 +1,12 @@
+.filters {
+  border: rem(1px) solid var(--mantine-color-gray-2);
+  width: fit-content;
+}
+
+.filterItem {
+  padding: var(--mantine-spacing-sm) var(--mantine-spacing-md);
+
+  &:not(:last-child) {
+    border-right: rem(1px) solid var(--mantine-color-gray-2);
+  }
+}

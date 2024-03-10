@@ -3,6 +3,7 @@
 import {Badge, Card, rem, Stack, Table} from '@mantine/core'
 import {get} from 'lodash-es'
 
+import {OrdersTableFilters} from '../OrdersTableFilters'
 import {TablePagination} from '../TablePagination'
 import styles from './OrdersTable.module.scss'
 
@@ -93,6 +94,7 @@ function TableContent() {
 export function OrdersTable() {
   return (
     <Stack gap={rem(30)}>
+      <OrdersTableFilters />
       <Card className={styles.tableWrapper} p={0}>
         <TableContent />
       </Card>
