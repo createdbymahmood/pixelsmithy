@@ -19,8 +19,8 @@ import {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {GroupLink} from '@/components/common'
-import type {SidebarSection} from '@/components/SnowUI'
-import {SidebarItem} from '@/components/SnowUI'
+import type {SidebarSection} from '@/components/Roscent'
+import {SidebarItem} from '@/components/Roscent'
 import {urls} from '@/constants'
 
 import styles from './Sidebar.module.scss'
