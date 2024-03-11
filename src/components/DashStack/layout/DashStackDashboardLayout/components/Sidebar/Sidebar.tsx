@@ -188,8 +188,9 @@ function SidebarItems() {
           <Text
             c='dimmed'
             className={styles.sectionTitle}
+            mx={sidebarOpen ? 0 : 'auto'}
             pt='sm'
-            px={sidebarOpen ? 'xl' : 'sm'}
+            px={sidebarOpen ? 'xl' : 0}
             size='xs'
           >
             {section.title}
