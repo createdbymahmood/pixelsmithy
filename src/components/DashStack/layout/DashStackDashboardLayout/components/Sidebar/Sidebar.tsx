@@ -1,4 +1,5 @@
-import {Badge, Box, Group, rem, Stack, Text} from '@mantine/core'
+import {useLayoutStore} from '@dash-stack/layout/DashStackDashboardLayout/store/layout'
+import {Box, Group, rem, Stack, Text, Tooltip} from '@mantine/core'
 import {
   ChatsTeardrop,
   Gauge,
@@ -33,6 +34,7 @@ function SidebarItem(props: SidebarItem) {
     !isEmpty(intersection(segment, props.activeSegment)) || isEqualToSegment
 
   const Icon = props.icon ?? Fragment
+  const sidebarOpen = useLayoutStore((s) => s.sidebarOpen)
 
   return (
     <GroupLink
@@ -44,26 +46,27 @@ function SidebarItem(props: SidebarItem) {
       py={rem(2)}
       wrap='nowrap'
     >
-      <Group
-        className={clsx(styles.sidebarItem, {[styles.active]: isActive})}
-        gap='sm'
-        mx='md'
-        px='sm'
-        py='xs'
-        w='100%'
+      <Tooltip
+        label={props.title}
+        position='right'
+        style={{display: sidebarOpen ? 'none' : 'normal'}}
       >
-        <Icon
-          className='icon-size-lg'
-          color='currentColor'
-          style={{padding: rem(2)}}
-        />
-        <Text size='sm'>{props.title}</Text>
-        {props.unread ? (
-          <Badge color='black' fw='bold' ml='auto' radius='xl' size='sm'>
-            {props.unread}
-          </Badge>
-        ) : null}
-      </Group>
+        <Group
+          className={clsx(styles.sidebarItem, {[styles.active]: isActive})}
+          gap='sm'
+          mx={sidebarOpen ? 'md' : 'xs'}
+          px='sm'
+          py='xs'
+          w={sidebarOpen ? '100%' : 'auto'}
+        >
+          <Icon
+            className='icon-size-lg'
+            color='currentColor'
+            style={{padding: rem(2)}}
+          />
+          {sidebarOpen ? <Text size='sm'>{props.title}</Text> : null}
+        </Group>
+      </Tooltip>
     </GroupLink>
   )
 }
@@ -173,6 +176,7 @@ const sections: SidebarSection[] = [
 ]
 
 function SidebarItems() {
+  const sidebarOpen = useLayoutStore((s) => s.sidebarOpen)
   const content = sections.map((section) => {
     const sidebarItems = section.items.map((item) => {
       return <SidebarItem key={item.id} {...item} />
@@ -185,7 +189,7 @@ function SidebarItems() {
             c='dimmed'
             className={styles.sectionTitle}
             pt='sm'
-            px='xl'
+            px={sidebarOpen ? 'xl' : 'sm'}
             size='xs'
           >
             {section.title}
@@ -204,9 +208,11 @@ function SidebarItems() {
 }
 
 export function Sidebar() {
+  const sidebarOpen = useLayoutStore((s) => s.sidebarOpen)
+  const sidebarWidth = sidebarOpen ? rem(240) : 'fit-content'
   return (
     <PerfectScrollbar>
-      <Box className={styles.sidebar} miw={rem(240)}>
+      <Box className={styles.sidebar} miw={sidebarWidth}>
         <SidebarItems />
       </Box>
     </PerfectScrollbar>

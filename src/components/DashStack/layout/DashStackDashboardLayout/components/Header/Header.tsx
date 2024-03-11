@@ -1,3 +1,4 @@
+import {useLayoutStore} from '@dash-stack/layout/DashStackDashboardLayout/store/layout'
 import {
   Avatar,
   Group,
@@ -167,13 +168,17 @@ function LanguageSettings() {
   return (
     <Group gap='xs'>
       <Avatar h={rem(27)} radius='md' w={rem(40)} />
-      <Text size='md'>English</Text>
+      <Text fw='600' size='sm'>
+        English
+      </Text>
       <CaretDown />
     </Group>
   )
 }
 
 export function Header() {
+  const togleSidebar = useLayoutStore((s) => s.toggleSidebar)
+
   return (
     <Group bg='white' className={styles.header} gap={0} wrap='nowrap'>
       <Group className={styles.logo} gap={rem(4)} justify='center'>
@@ -184,7 +189,10 @@ export function Header() {
       </Group>
 
       <Group gap='md'>
-        <List className={clsx('cursor-pointer', 'icon-size-md')} />
+        <List
+          className={clsx('cursor-pointer', 'icon-size-md')}
+          onClick={togleSidebar}
+        />
         <SearchInput />
       </Group>
 
