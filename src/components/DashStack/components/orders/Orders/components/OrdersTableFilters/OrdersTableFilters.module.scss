@@ -10,3 +10,11 @@
     border-right: rem(1px) solid var(--mantine-color-gray-2);
   }
 }
+
+.popoverTargetChevron {
+  @include transition();
+
+  &[data-rotate='true'] {
+    transform: rotate(-180deg);
+  }
+}
