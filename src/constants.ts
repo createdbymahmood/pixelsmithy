@@ -9,64 +9,64 @@ export const urls = {
   JobLocation: {
     index: '/job-location',
   },
-  SnowUI: {
-    index: '/snow-ui/dashboard',
+  roscent: {
+    index: '/roscent/dashboard',
     projects: {
-      index: '/snow-ui/dashboard/projects',
+      index: '/roscent/dashboard/projects',
       overview: (projectId: string) =>
-        urlCat('/snow-ui/dashboard/projects/:projectId/overview', {projectId}),
+        urlCat('/roscent/dashboard/projects/:projectId/overview', {projectId}),
       targets: (projectId: string) =>
-        urlCat('/snow-ui/dashboard/projects/:projectId/targets', {projectId}),
+        urlCat('/roscent/dashboard/projects/:projectId/targets', {projectId}),
       budget: (projectId: string) =>
-        urlCat('/snow-ui/dashboard/projects/:projectId/budget', {projectId}),
+        urlCat('/roscent/dashboard/projects/:projectId/budget', {projectId}),
       users: (projectId: string) =>
-        urlCat('/snow-ui/dashboard/projects/:projectId/users', {projectId}),
+        urlCat('/roscent/dashboard/projects/:projectId/users', {projectId}),
       files: (projectId: string) =>
-        urlCat('/snow-ui/dashboard/projects/:projectId/files', {projectId}),
+        urlCat('/roscent/dashboard/projects/:projectId/files', {projectId}),
       activity: (projectId: string) =>
-        urlCat('/snow-ui/dashboard/projects/:projectId/activity', {projectId}),
+        urlCat('/roscent/dashboard/projects/:projectId/activity', {projectId}),
       settings: (projectId: string) =>
-        urlCat('/snow-ui/dashboard/projects/:projectId/settings', {projectId}),
+        urlCat('/roscent/dashboard/projects/:projectId/settings', {projectId}),
     },
     account: {
-      index: '/snow-ui/dashboard/account',
-      overview: '/snow-ui/dashboard/account/overview',
-      settings: '/snow-ui/dashboard/account/settings',
-      security: '/snow-ui/dashboard/account/security',
-      billing: '/snow-ui/dashboard/account/billing',
-      statements: '/snow-ui/dashboard/account/statements',
-      referrals: '/snow-ui/dashboard/account/referrals',
-      apiKey: '/snow-ui/dashboard/account/api-keys',
-      logs: '/snow-ui/dashboard/account/logs',
+      index: '/roscent/dashboard/account',
+      overview: '/roscent/dashboard/account/overview',
+      settings: '/roscent/dashboard/account/settings',
+      security: '/roscent/dashboard/account/security',
+      billing: '/roscent/dashboard/account/billing',
+      statements: '/roscent/dashboard/account/statements',
+      referrals: '/roscent/dashboard/account/referrals',
+      apiKey: '/roscent/dashboard/account/api-keys',
+      logs: '/roscent/dashboard/account/logs',
     },
     email: {
-      index: '/snow-ui/dashboard/email/inbox',
+      index: '/roscent/dashboard/email/inbox',
       inbox: (emailId: string) =>
-        urlCat('/snow-ui/dashboard/email/inbox/:emailId', {emailId}),
-      compose: '/snow-ui/dashboard/email/compose',
-      sent: '/snow-ui/dashboard/email/sent',
-      draft: '/snow-ui/dashboard/email/draft',
-      spam: '/snow-ui/dashboard/email/spam',
-      trash: '/snow-ui/dashboard/email/trash',
-      archive: '/snow-ui/dashboard/email/archive',
+        urlCat('/roscent/dashboard/email/inbox/:emailId', {emailId}),
+      compose: '/roscent/dashboard/email/compose',
+      sent: '/roscent/dashboard/email/sent',
+      draft: '/roscent/dashboard/email/draft',
+      spam: '/roscent/dashboard/email/spam',
+      trash: '/roscent/dashboard/email/trash',
+      archive: '/roscent/dashboard/email/archive',
     },
     userProfile: (userId: string) =>
-      urlCat('/snow-ui/dashboard/user-profile/:userId', {userId}),
-    emailTemplate: '/snow-ui/email-template',
-    chat: '/snow-ui/dashboard/chat',
+      urlCat('/roscent/dashboard/user-profile/:userId', {userId}),
+    emailTemplate: '/roscent/email-template',
+    chat: '/roscent/dashboard/chat',
     authentication: {
-      forgotPassword: '/snow-ui/authentication/forgot-password',
-      signUp: '/snow-ui/authentication/sign-up',
-      signIn: '/snow-ui/authentication/sign-in',
-      verification: '/snow-ui/authentication/verification',
-      resetPassword: '/snow-ui/authentication/reset-password',
+      forgotPassword: '/roscent/authentication/forgot-password',
+      signUp: '/roscent/authentication/sign-up',
+      signIn: '/roscent/authentication/sign-in',
+      verification: '/roscent/authentication/verification',
+      resetPassword: '/roscent/authentication/reset-password',
       accountSetup: {
-        accountInfo: '/snow-ui/authentication/account-setup/account-info',
-        billingDetails: '/snow-ui/authentication/account-setup/billing-details',
+        accountInfo: '/roscent/authentication/account-setup/account-info',
+        billingDetails: '/roscent/authentication/account-setup/billing-details',
         creditCardSetup:
-          '/snow-ui/authentication/account-setup/credit-card-setup',
+          '/roscent/authentication/account-setup/credit-card-setup',
         accountTypeSelection:
-          '/snow-ui/authentication/account-setup/account-type-selection',
+          '/roscent/authentication/account-setup/account-type-selection',
       },
     },
   },
@@ -180,9 +180,9 @@ export const applications = [
   },
   {
     id: 2,
-    title: 'Snow UI',
+    title: 'Roscent',
     description: 'Design system and UI Kit',
-    href: urls.SnowUI.index,
+    href: urls.roscent.index,
     info: 'Desktop Only',
   },
   {
