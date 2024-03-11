@@ -1,10 +1,25 @@
-import {Avatar, Group, Input, Popover, rem, Text, Title} from '@mantine/core'
+import {
+  Avatar,
+  Group,
+  Input,
+  Popover,
+  rem,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core'
 import type {
   SpotlightActionData,
   SpotlightActionGroupData,
 } from '@mantine/spotlight'
 import {Spotlight, spotlight} from '@mantine/spotlight'
-import {CaretDown, List, MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
+import {
+  Bell,
+  CaretCircleDown,
+  CaretDown,
+  List,
+  MagnifyingGlass,
+} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {useRouter} from 'next/navigation'
 import {Fragment} from 'react'
@@ -129,8 +144,13 @@ function Profile() {
       <Popover.Target>
         <Group className='cursor-pointer' gap={rem(20)}>
           <Avatar size={rem(36)} />
-          <Text>X’eriya Ponald</Text>
-          <CaretDown weight='bold' />
+          <Stack gap={0}>
+            <Text fw='700' size='sm'>
+              Mony Roy
+            </Text>
+            <Text size='xs'>Admin</Text>
+          </Stack>
+          <CaretCircleDown className='icon-size-md' weight='thin' />
         </Group>
       </Popover.Target>
 
@@ -140,6 +160,16 @@ function Profile() {
         </Text>
       </Popover.Dropdown>
     </Popover>
+  )
+}
+
+function LanguageSettings() {
+  return (
+    <Group gap='xs'>
+      <Avatar h={rem(27)} radius='md' w={rem(40)} />
+      <Text size='md'>English</Text>
+      <CaretDown />
+    </Group>
   )
 }
 
@@ -158,11 +188,11 @@ export function Header() {
         <SearchInput />
       </Group>
 
-      {/* <Group c='general.5' ml='auto'>
-        <ChatDots className={clsx('icon-size-md', 'cursor-pointer')} />
+      <Group c='general.5' ml='auto'>
         <Bell className={clsx('icon-size-md', 'cursor-pointer')} />
+        <LanguageSettings />
         <Profile />
-      </Group> */}
+      </Group>
     </Group>
   )
 }
