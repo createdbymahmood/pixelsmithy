@@ -24,6 +24,7 @@
   &:last-of-type {
     @include border-end-radius(var(--mantine-radius-md));
   }
+  white-space: nowrap;
 }
 
 .tr {
@@ -33,4 +34,6 @@
 .td {
   padding-right: var(--mantine-spacing-md);
   padding-left: var(--mantine-spacing-md);
+  font-weight: 600;
+  white-space: nowrap;
 }

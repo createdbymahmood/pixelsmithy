@@ -8,6 +8,7 @@ import {
   ListChecks,
   Note,
   Scan,
+  StackSimple,
   User,
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
@@ -82,7 +83,7 @@ const sections: SidebarSection[] = [
         id: 'products',
         title: 'Products',
         icon: Scan,
-        href: urls.DashStack.dashboard.products,
+        href: urls.DashStack.dashboard.products.index,
         activeSegment: ['products'],
       },
       {
@@ -106,13 +107,13 @@ const sections: SidebarSection[] = [
         href: urls.DashStack.dashboard.orders,
         activeSegment: ['orders'],
       },
-      // {
-      //   id: 'product-stock',
-      //   title: 'Product Stock',
-      //   icon: StackSimple,
-      //   href: '/',
-      //   activeSegment: ['products'],
-      // },
+      {
+        id: 'product-stock',
+        title: 'Product Stock',
+        icon: StackSimple,
+        href: urls.DashStack.dashboard.products.stock,
+        activeSegment: ['product-stock'],
+      },
     ],
   },
   {

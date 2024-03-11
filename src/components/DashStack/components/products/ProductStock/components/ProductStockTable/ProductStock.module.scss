@@ -1,0 +1,13 @@
+.th {
+  font-weight: 700;
+  padding-top: var(--mantine-spacing-xs);
+  padding-bottom: var(--mantine-spacing-xs);
+}
+
+.thead {
+  background-color: var(--mantine-color-gray-0);
+}
+
+.tableWrapper {
+  border: rem(1px) solid var(--mantine-color-gray-2);
+}

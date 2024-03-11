@@ -31,6 +31,7 @@ export const components: MantineThemeComponents = {
       verticalSpacing: rem(16),
       withRowBorders: false,
     },
+
     classNames(theme, props, ctx) {
       return {
         table: TableStyles.table,
