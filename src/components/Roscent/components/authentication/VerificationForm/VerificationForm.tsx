@@ -1,20 +1,15 @@
 'use client'
 import {
   Anchor,
-  Box,
   Button,
   Group,
-  Input,
+  PinInput,
   rem,
   Stack,
   Text,
   Title,
 } from '@mantine/core'
 import {DeviceMobile} from '@phosphor-icons/react/dist/ssr'
-import clsx from 'clsx'
-import {isEmpty} from 'lodash-es'
-import {useState} from 'react'
-import OtpInput from 'react-otp-input'
 
 import styles from './VerificationForm.module.scss'
 
@@ -36,39 +31,11 @@ function Header() {
 }
 
 function OTPView() {
-  const [otp, setOtp] = useState('')
-
   return (
     <Stack align='center' gap='lg' miw={rem(384)}>
       <Title order={5}>Type your 4 digit security code</Title>
 
-      <Box w={rem(248)}>
-        <OtpInput
-          containerStyle={{
-            gap: rem(10),
-            width: '100%',
-            justifyContent: 'space-between',
-          }}
-          numInputs={4}
-          renderInput={(props) => {
-            console.log(props.value)
-            return (
-              <Input
-                classNames={{
-                  input: clsx(styles.input, {
-                    [styles.filled]: !isEmpty(props.value),
-                  }),
-                }}
-                radius='lg'
-                size='lg'
-                {...props}
-              />
-            )
-          }}
-          value={otp}
-          onChange={setOtp}
-        />
-      </Box>
+      <PinInput classNames={{input: styles.input}} size='md' mask />
 
       <Button radius='lg' size='md' fullWidth>
         Submit
