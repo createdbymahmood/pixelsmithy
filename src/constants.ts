@@ -162,9 +162,7 @@ export const urls = {
         index: '/dash-stack/dashboard/contacts',
         add: '/dash-stack/dashboard/contacts/add',
       },
-      toDo: {
-        index: '/dash-stack/dashboard/to-do',
-      },
+      toDo: '/dash-stack/dashboard/to-do',
       team: {
         index: '/dash-stack/dashboard/team',
         add: '/dash-stack/dashboard/team/add',

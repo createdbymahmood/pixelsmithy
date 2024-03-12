@@ -143,7 +143,7 @@ const sections: SidebarSection[] = [
         id: 'to-do',
         title: 'To-Do',
         icon: Note,
-        href: urls.DashStack.dashboard.toDo.index,
+        href: urls.DashStack.dashboard.toDo,
         activeSegment: ['to-do'],
       },
       {

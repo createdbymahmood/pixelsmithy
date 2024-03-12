@@ -54,7 +54,7 @@ function SpotlightImpl() {
         },
         {
           id: 'customers',
-          label: 'customers',
+          label: 'Customers',
           description: 'List of customers',
           onClick: () => router.push(urls.Modernize.dashboard.customers.index),
         },
