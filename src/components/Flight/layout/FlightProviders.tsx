@@ -1,24 +1,21 @@
-'use client'
-
 import '@/lib/styles/global.scss'
 import '@mantine/core/styles.css'
-import 'react-perfect-scrollbar/dist/css/styles.css'
 
+import {FlightsTheme} from '@flight/lib/style/FlightsTheme'
 import {MantineProvider} from '@mantine/core'
 import type {ReactNode} from 'react'
 
-import {JobLocationTheme} from '@/components/JobLocation/lib/style/JobLocationTheme'
 import {defaultThemeColorScheme} from '@/constants'
 
-interface JobLocationProvidersProps {
+interface FlightProvidersProps {
   children: ReactNode
 }
 
-export function JobLocationProviders({children}: JobLocationProvidersProps) {
+export function FlightProviders({children}: FlightProvidersProps) {
   return (
     <MantineProvider
       defaultColorScheme={defaultThemeColorScheme}
-      theme={JobLocationTheme}
+      theme={FlightsTheme}
     >
       {children}
     </MantineProvider>

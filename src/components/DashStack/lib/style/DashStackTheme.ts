@@ -6,6 +6,8 @@ import {nunitoSans} from '@/lib/styles/font/nunitoSans'
 
 import {components} from './customizations'
 
+const fontFamily = nunitoSans.style.fontFamily
+
 export const DashStackTheme = createTheme({
   components,
   primaryColor: 'primary',
@@ -47,10 +49,10 @@ export const DashStackTheme = createTheme({
       '#8400b1',
     ],
   },
-  fontFamily: nunitoSans.style.fontFamily,
+  fontFamily,
 
   headings: {
-    fontFamily: nunitoSans.style.fontFamily,
+    fontFamily,
     sizes: {
       h1: {fontSize: rem(80), lineHeight: rem(112), fontWeight: '700'},
       h2: {fontSize: rem(64), lineHeight: rem(90), fontWeight: '700'},

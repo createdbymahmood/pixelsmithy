@@ -19,13 +19,11 @@ interface DashStackProvidersProps {
 
 export function DashStackProviders({children}: DashStackProvidersProps) {
   return (
-    <div>
-      <MantineProvider
-        defaultColorScheme={defaultThemeColorScheme}
-        theme={DashStackTheme}
-      >
-        {children}
-      </MantineProvider>
-    </div>
+    <MantineProvider
+      defaultColorScheme={defaultThemeColorScheme}
+      theme={DashStackTheme}
+    >
+      {children}
+    </MantineProvider>
   )
 }
