@@ -180,7 +180,7 @@ export const applications = [
   {
     id: 1,
     title: 'Job Location',
-    description: 'A dashboard page',
+    description: 'A single job search page',
     href: urls.JobLocation.index,
   },
   {
