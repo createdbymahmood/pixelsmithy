@@ -13,15 +13,13 @@ import {
 } from '@mantine/core'
 import React from 'react'
 
-import styles from './SignInForm.module.scss'
+import styles from './SignUpForm.module.scss'
 
 function Header() {
   return (
     <Stack align='center' gap='sm'>
-      <Title order={4}>Login to Account</Title>
-      <Text size={rem(18)}>
-        Please enter your email and password to continue
-      </Text>
+      <Title order={4}>Create an Account</Title>
+      <Text size={rem(18)}>Create a account to continue</Text>
     </Stack>
   )
 }
@@ -49,6 +47,16 @@ function FormView() {
         />
       </Input.Wrapper>
 
+      <Input.Wrapper label={emailFieldLabel}>
+        <Input
+          name='username'
+          placeholder='Username'
+          radius='md'
+          size='md'
+          type='email'
+        />
+      </Input.Wrapper>
+
       <Input.Wrapper
         fw='600'
         label={passwordFieldLabel}
@@ -66,29 +74,29 @@ function FormView() {
       <Checkbox
         classNames={{label: styles.checkboxLabel}}
         color='gray.5'
-        label='Remember Password'
+        label='I accept terms and conditions'
         size='md'
         variant='outline'
         defaultChecked
       />
 
       <Button color='primary.4' mx='auto' radius='lg' size='lg' w={rem(418)}>
-        Sign In
+        Sign Up
       </Button>
 
       <Group gap='xs' justify='center'>
         <Text c='gray.7' size='lg'>
-          Don’t have an account?
+          Already have an account?
         </Text>
         <Anchor c='primary.4' fw='600' size='lg' underline='always'>
-          Create Account
+          Login
         </Anchor>
       </Group>
     </Stack>
   )
 }
 
-export function SignInForm() {
+export function SignUpForm() {
   return (
     <Stack>
       <Header />

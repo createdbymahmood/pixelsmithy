@@ -1,6 +1,7 @@
 import {useLayoutStore} from '@dash-stack/layout/DashStackDashboardLayout/store/layout'
 import {Box, Group, rem, Stack, Text, Tooltip} from '@mantine/core'
 import {
+  Champagne,
   ChatsTeardrop,
   Gauge,
   Gear,
@@ -184,7 +185,15 @@ const sections: SidebarSection[] = [
         icon: SignIn,
         href: urls.DashStack.authentication.signIn,
         target: '_blank',
-        activeSegment: ['product-stock'],
+        activeSegment: ['sign-in'],
+      },
+      {
+        id: 'sign-up',
+        title: 'Sign Up',
+        icon: Champagne,
+        href: urls.DashStack.authentication.signUp,
+        target: '_blank',
+        activeSegment: ['sign-up'],
       },
     ],
   },
