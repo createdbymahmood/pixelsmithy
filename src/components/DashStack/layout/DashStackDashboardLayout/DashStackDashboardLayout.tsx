@@ -15,7 +15,7 @@ export function DashStackDashboardLayout({
   children,
 }: ModernizeDashboardLayoutProps) {
   return (
-    <Stack bg='general.0' gap={0}>
+    <Stack bg='red' gap={0}>
       <Header />
 
       <Group gap={0} w='100%' wrap='nowrap'>
