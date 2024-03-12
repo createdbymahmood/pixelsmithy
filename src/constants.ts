@@ -172,6 +172,10 @@ export const urls = {
       settings: '/dash-stack/dashboard/settings',
       orders: '/dash-stack/dashboard/orders',
     },
+    authentication: {
+      signIn: '/dash-stack/authentication/sign-in',
+      signUp: '/dash-stack/authentication/sign-up',
+    },
   },
 }
 export const applications = [
