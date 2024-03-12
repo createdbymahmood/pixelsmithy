@@ -12,7 +12,6 @@ import type {ReactNode} from 'react'
 
 import {ModernizeTheme} from '@/components/Modernize/lib/style/ModernizeTheme'
 import {defaultThemeColorScheme} from '@/constants'
-import {inter} from '@/lib/styles/font/inter'
 
 interface ModernizeProvidersProps {
   children: ReactNode
@@ -20,13 +19,11 @@ interface ModernizeProvidersProps {
 
 export function ModernizeProviders({children}: ModernizeProvidersProps) {
   return (
-    <div className={inter.className}>
-      <MantineProvider
-        defaultColorScheme={defaultThemeColorScheme}
-        theme={ModernizeTheme}
-      >
-        {children}
-      </MantineProvider>
-    </div>
+    <MantineProvider
+      defaultColorScheme={defaultThemeColorScheme}
+      theme={ModernizeTheme}
+    >
+      {children}
+    </MantineProvider>
   )
 }

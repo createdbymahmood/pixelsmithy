@@ -7,13 +7,15 @@ import {inter} from '@/lib/styles/font/inter'
 import {colors} from './colors'
 import {components} from './customizations'
 
+const fontFamily = inter.style.fontFamily
+
 export const ModernizeTheme = createTheme({
   components,
   primaryColor: 'primary',
   colors,
-  fontFamily: inter.style.fontFamily,
+  fontFamily,
   headings: {
-    fontFamily: inter.style.fontFamily,
+    fontFamily,
     sizes: {
       h1: {fontSize: rem(80), lineHeight: rem(112), fontWeight: '700'},
       h2: {fontSize: rem(64), lineHeight: rem(90), fontWeight: '700'},

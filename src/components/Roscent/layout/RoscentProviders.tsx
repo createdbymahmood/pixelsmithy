@@ -13,7 +13,6 @@ import type {ReactNode} from 'react'
 
 import {RoscentTheme} from '@/components/Roscent/lib/style/RoscentTheme'
 import {defaultThemeColorScheme} from '@/constants'
-import {inter} from '@/lib/styles/font/inter'
 
 interface RoscentProvidersProps {
   children: ReactNode
@@ -21,13 +20,11 @@ interface RoscentProvidersProps {
 
 export function RoscentProviders({children}: RoscentProvidersProps) {
   return (
-    <div className={inter.className}>
-      <MantineProvider
-        defaultColorScheme={defaultThemeColorScheme}
-        theme={RoscentTheme}
-      >
-        {children}
-      </MantineProvider>
-    </div>
+    <MantineProvider
+      defaultColorScheme={defaultThemeColorScheme}
+      theme={RoscentTheme}
+    >
+      {children}
+    </MantineProvider>
   )
 }

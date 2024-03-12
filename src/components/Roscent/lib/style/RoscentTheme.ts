@@ -6,13 +6,16 @@ import {inter} from '@/lib/styles/font/inter'
 
 import {components} from './customizations'
 
+const fontFamily = inter.style.fontFamily
+
 export const RoscentTheme = createTheme({
   components,
   primaryColor: 'gray',
   primaryShade: 9,
   colors: {},
+  fontFamily,
   headings: {
-    fontFamily: inter.style.fontFamily,
+    fontFamily,
     sizes: {
       h1: {fontSize: rem(64), lineHeight: rem(78)},
       h2: {fontSize: rem(48), lineHeight: rem(58)},

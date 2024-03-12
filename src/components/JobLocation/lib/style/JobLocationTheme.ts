@@ -4,9 +4,16 @@ import './JobLocationDefaultStyles.scss'
 
 import {createTheme} from '@mantine/core'
 
+import {poppins} from '@/lib/styles/font/poppins'
+
+const fontFamily = poppins.style.fontFamily
+
 export const JobLocationTheme = createTheme({
   primaryShade: 4,
-
+  fontFamily,
+  headings: {
+    fontFamily,
+  },
   colors: {
     blue: [
       '#A6D7FF',
