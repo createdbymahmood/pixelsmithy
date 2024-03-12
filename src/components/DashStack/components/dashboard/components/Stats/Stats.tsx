@@ -1,7 +1,16 @@
 'use client'
 
 import type {MantineColor} from '@mantine/core'
-import {Badge, Card, Group, rem, Stack, Text, Title} from '@mantine/core'
+import {
+  Badge,
+  Card,
+  Group,
+  NumberFormatter,
+  rem,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core'
 import type {IconProps} from '@phosphor-icons/react'
 import {
   ChartLine,
@@ -12,7 +21,6 @@ import {
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
 import {get} from 'lodash-es'
-import numeral from 'numeral'
 import React from 'react'
 
 type StatType = 'growing' | 'regressing'
@@ -56,7 +64,10 @@ function Stat({
       <Group justify='space-between'>
         <Stack gap='xs'>
           <Text c='gray.7'>{title}</Text>
-          <Title order={5}>{numeral(value).format('0,0')}</Title>
+
+          <Title order={5}>
+            <NumberFormatter value={value} thousandSeparator />
+          </Title>
         </Stack>
 
         <Badge
