@@ -1,3 +1,5 @@
+import '@mantine/core/styles.css'
+
 import {Box, Center, MantineProvider, Text} from '@mantine/core'
 
 import {inter} from '@/lib/styles/font/inter'
