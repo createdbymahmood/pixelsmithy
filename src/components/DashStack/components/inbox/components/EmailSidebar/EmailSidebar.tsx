@@ -1,7 +1,16 @@
 'use client'
 
 import type {StackProps} from '@mantine/core'
-import {Button, Card, Checkbox, Group, rem, Stack, Text} from '@mantine/core'
+import {
+  Button,
+  Card,
+  Checkbox,
+  Group,
+  NumberFormatter,
+  rem,
+  Stack,
+  Text,
+} from '@mantine/core'
 import type {IconProps} from '@phosphor-icons/react'
 import {
   EnvelopeSimple,
@@ -17,7 +26,6 @@ import clsx from 'clsx'
 import {intersection, isEmpty, isEqual, isUndefined} from 'lodash-es'
 import Link from 'next/link'
 import {useSelectedLayoutSegments} from 'next/navigation'
-import numeral from 'numeral'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -151,7 +159,7 @@ function Folder(props: FolderProps) {
       </Text>
 
       <Text fw='600' ml='auto' size='sm'>
-        {numeral(props.count).format('0,0')}
+        <NumberFormatter value={props.count} thousandSeparator />
       </Text>
     </GroupLink>
   )
