@@ -1,4 +1,4 @@
-import {Accordion, Badge, Checkbox, Stack} from '@mantine/core'
+import {Accordion, Badge, Checkbox, Group} from '@mantine/core'
 import {useCallbackRef} from '@mantine/hooks'
 import type {useSelections} from 'ahooks'
 import React from 'react'
@@ -30,12 +30,12 @@ export function SelectableAccordionPanel({
 
   return (
     <Accordion.Panel key={item.label} classNames={{content: styles.panel}}>
-      <Stack classNames={{root: styles.checkboxArea}}>
+      <Group>
         <Checkbox label={item.label} onChange={onChange} />
         <Badge classNames={{root: styles.checkboxBadge}} color={badgeColor}>
           {item.count}
         </Badge>
-      </Stack>
+      </Group>
     </Accordion.Panel>
   )
 }

@@ -2,11 +2,6 @@
   padding-bottom: var(--mantine-spacing-sm);
 }
 
-.checkboxArea {
-  display: flex;
-  flex-direction: row;
-}
-
 .checkboxBadge {
   @include transition($transition-base-short);
   margin-left: auto;
