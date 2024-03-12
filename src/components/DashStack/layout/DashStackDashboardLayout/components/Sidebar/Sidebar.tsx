@@ -9,6 +9,7 @@ import {
   ListChecks,
   Note,
   Scan,
+  SignIn,
   StackSimple,
   User,
   UsersThree,
@@ -44,6 +45,7 @@ function SidebarItem(props: SidebarItem) {
       component={Link}
       href={props.href}
       py={rem(2)}
+      target={props.target}
       wrap='nowrap'
     >
       <Tooltip
@@ -171,6 +173,19 @@ const sections: SidebarSection[] = [
       //   href: '/',
       //   activeSegment: ['pricing'],
       // },
+    ],
+  },
+  {
+    title: 'Authentication',
+    items: [
+      {
+        id: 'sign-in',
+        title: 'Sign In',
+        icon: SignIn,
+        href: urls.DashStack.authentication.signIn,
+        target: '_blank',
+        activeSegment: ['product-stock'],
+      },
     ],
   },
 ]
