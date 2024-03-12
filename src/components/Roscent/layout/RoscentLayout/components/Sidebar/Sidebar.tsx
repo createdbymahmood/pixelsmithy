@@ -335,10 +335,17 @@ export function Sidebar() {
               target: '_blank',
             },
             {
-              id: 'accoun-setup',
+              id: 'account-setup',
               href: urls.roscent.authentication.accountSetup
                 .accountTypeSelection,
               title: 'Account Setup',
+              activeSegment: null,
+              target: '_blank',
+            },
+            {
+              id: 'verification',
+              href: urls.roscent.authentication.verification,
+              title: 'Verification',
               activeSegment: null,
               target: '_blank',
             },
