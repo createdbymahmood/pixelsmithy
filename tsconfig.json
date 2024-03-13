@@ -22,7 +22,7 @@
       "@/*": ["./src/*"],
       "@modernize/*": ["./src/components/Modernize/*"],
       "@dash-stack/*": ["./src/components/DashStack/*"],
-      "@flight/*": ["./src/components/Flight/*"]
+      "@flights/*": ["./src/components/Flights/*"]
     },
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },
