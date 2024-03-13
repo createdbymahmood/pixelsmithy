@@ -175,6 +175,9 @@ export const urls = {
       signUp: '/dash-stack/authentication/sign-up',
     },
   },
+  Flights: {
+    index: '/flights',
+  },
 }
 export const applications = [
   {
@@ -188,20 +191,27 @@ export const applications = [
     title: 'Roscent',
     description: 'Design system and UI Kit',
     href: urls.roscent.index,
-    info: 'Desktop Only',
+    info: 'Desktop version',
   },
   {
     id: 3,
     title: 'Modernize',
     description: 'Dashboard UI Kit',
     href: urls.Modernize.dashboard.index,
-    info: 'Desktop Only',
+    info: 'Desktop version',
   },
   {
     id: 4,
     title: 'DashStack',
     description: 'Dashboard UI Kit',
     href: urls.DashStack.dashboard.index,
-    info: 'Desktop Only',
+    info: 'Desktop version',
+  },
+  {
+    id: 5,
+    title: 'Flights',
+    description: 'Flight Schedule App',
+    href: urls.Flights.index,
+    info: 'Mobile Version Only, But also viewable on desktop',
   },
 ]
