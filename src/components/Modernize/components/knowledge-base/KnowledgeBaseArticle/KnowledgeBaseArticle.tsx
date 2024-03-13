@@ -36,7 +36,7 @@ function BackButton() {
       className='cursor-pointer'
       component={Link}
       gap={rem(4)}
-      href={urls.Modernize.dashboard.products.index}
+      href={urls.Modernize.dashboard.knowledgeBase.index}
     >
       <ArrowLeft className='icon-size-md' weight='bold' />
       <Text size='sm'>Back</Text>
