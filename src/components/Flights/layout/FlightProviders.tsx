@@ -1,7 +1,7 @@
 import '@/lib/styles/global.scss'
 import '@mantine/core/styles.css'
 
-import {FlightsTheme} from '@flight/lib/style/FlightsTheme'
+import {FlightsTheme} from '@flights/lib/style/FlightsTheme'
 import {MantineProvider} from '@mantine/core'
 import type {ReactNode} from 'react'
 
