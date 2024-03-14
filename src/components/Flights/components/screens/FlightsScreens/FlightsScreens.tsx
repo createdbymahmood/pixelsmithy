@@ -1,9 +1,10 @@
 import {Grid, Group} from '@mantine/core'
 import React from 'react'
 
+import {NoInternet} from '../NoInternet'
 import {Splash} from '../Splash'
 
-const screens = [Splash]
+const screens = [Splash, NoInternet]
 
 export function FlightsScreens() {
   const content = screens.map((Screen, index) => {
