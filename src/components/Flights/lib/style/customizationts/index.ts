@@ -1,13 +1,15 @@
 import type {
+  ButtonCssVariables,
+  ButtonProps,
+  ButtonStylesNames,
   MantineThemeComponents,
   TextCssVariables,
   TextProps,
-  TextStylesNames,
 } from '@mantine/core'
-import {rem, Text} from '@mantine/core'
+import {Button, rem, Text} from '@mantine/core'
 
 type DisplayTextResolverReturn = Record<
-  TextStylesNames,
+  'root',
   Partial<Record<TextCssVariables['root'], string>>
 >
 
@@ -67,6 +69,44 @@ const displayTextResolver = (
   }
 }
 
+type ButtonSizeResolverReturn = Record<
+  ButtonStylesNames,
+  Partial<Record<ButtonCssVariables['root'], string>>
+>
+
+const buttonSizeResolver = (
+  size: ButtonProps['size'],
+): Partial<ButtonSizeResolverReturn> => {
+  switch (size) {
+    case 'sm':
+      return {
+        root: {
+          '--button-height': rem(40),
+          '--button-fz': rem(16),
+        },
+      }
+
+    case 'md':
+      return {
+        root: {
+          '--button-height': rem(44),
+          '--button-fz': rem(16),
+        },
+      }
+
+    case 'lg':
+      return {
+        root: {
+          '--button-height': rem(50),
+          '--button-fz': rem(16),
+        },
+      }
+
+    default:
+      return {root: {}}
+  }
+}
+
 export const components: MantineThemeComponents = {
   Text: Text.extend({
     vars: (theme, props) => {
@@ -75,6 +115,11 @@ export const components: MantineThemeComponents = {
       }
 
       return {root: {}}
+    },
+  }),
+  Button: Button.extend({
+    vars: (theme, props) => {
+      return buttonSizeResolver(props.size) as ButtonSizeResolverReturn
     },
   }),
 }
