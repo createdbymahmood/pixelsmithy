@@ -1,6 +1,7 @@
 import Battery from '@flights/assets/icons/battery.svg'
 import type {MantineColor, StackProps} from '@mantine/core'
 import {Box, Group, rem, Stack, Text} from '@mantine/core'
+import clsx from 'clsx'
 import {omit} from 'lodash-es'
 import type {ReactNode} from 'react'
 import React from 'react'
@@ -20,7 +21,7 @@ function StatusBar({color}: Props) {
   return (
     <Group
       c={color}
-      className='shrink-0'
+      className={clsx(styles.statusBar)}
       justify='space-between'
       left={0}
       pos='absolute'
@@ -74,13 +75,12 @@ export function IOSScreen({
     <Stack
       color={color}
       h={rem(844)}
-      justify='center'
       pos='relative'
       w={rem(390)}
       {...omit(props, ['h', 'w'])}
     >
       <StatusBar color={color} />
-      <Box h={`calc(100% - ${rem(47 + 34)})`}>{children}</Box>
+      <Box h={`calc(100% - ${rem(34)})`}>{children}</Box>
       <HomeIndicator color={color} />
     </Stack>
   )
