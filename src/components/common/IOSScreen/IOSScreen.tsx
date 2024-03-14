@@ -67,12 +67,14 @@ function HomeIndicator({color}: Props) {
 export function IOSScreen({
   children,
   variant = 'light',
+  className,
   ...props
 }: IOSScreenProps) {
   const color: MantineColor = variant === 'dark' ? 'black' : 'white'
 
   return (
     <Stack
+      className={clsx('shrink-0', className)}
       color={color}
       h={rem(844)}
       pos='relative'
