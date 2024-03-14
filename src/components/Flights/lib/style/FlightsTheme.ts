@@ -11,6 +11,7 @@ export const FlightsTheme = createTheme({
   fontFamily,
   components,
   primaryShade: 5,
+  primaryColor: 'primary',
   headings: {fontFamily},
   fontSizes: {
     xl: rem(20),
@@ -18,5 +19,14 @@ export const FlightsTheme = createTheme({
     md: rem(16),
     sm: rem(14),
     xs: rem(12),
+  },
+  spacing: {
+    xxs: rem(4),
+    xs: rem(8),
+    sm: rem(12),
+    md: rem(16),
+    lg: rem(20),
+    xl: rem(24),
+    xxl: rem(28),
   },
 })
