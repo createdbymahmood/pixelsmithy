@@ -2,11 +2,13 @@ import type {
   ButtonCssVariables,
   ButtonProps,
   ButtonStylesNames,
+  InputCssVariables,
+  InputStylesNames,
   MantineThemeComponents,
   TextCssVariables,
   TextProps,
 } from '@mantine/core'
-import {Button, rem, Text} from '@mantine/core'
+import {Button, Input, rem, Text} from '@mantine/core'
 
 type DisplayTextResolverReturn = Record<
   'root',
@@ -107,6 +109,20 @@ const buttonSizeResolver = (
   }
 }
 
+type InputSizeResolverReturn = Record<
+  InputStylesNames,
+  Partial<Record<InputCssVariables['wrapper'], string>>
+>
+
+const inputSizeResolver = (): Partial<InputSizeResolverReturn> => {
+  return {
+    input: {
+      '--input-height': rem(50),
+      '--input-fz': rem(16),
+    },
+  }
+}
+
 export const components: MantineThemeComponents = {
   Text: Text.extend({
     vars: (theme, props) => {
@@ -120,6 +136,11 @@ export const components: MantineThemeComponents = {
   Button: Button.extend({
     vars: (theme, props) => {
       return buttonSizeResolver(props.size) as ButtonSizeResolverReturn
+    },
+  }),
+  Input: Input.extend({
+    vars: (theme, props) => {
+      return inputSizeResolver() as InputSizeResolverReturn
     },
   }),
 }

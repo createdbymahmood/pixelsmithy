@@ -1,1 +1,1 @@
-export * from './FlightsScreens'
+export * from '../FlightsScreens'
