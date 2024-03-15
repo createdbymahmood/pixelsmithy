@@ -37,12 +37,6 @@ a {
   flex-shrink: 0;
 }
 
-.icon-size-lg {
-  height: rem(28px);
-  width: rem(28px);
-  flex-shrink: 0;
-}
-
 .icon-size-xl {
   height: rem(32px);
   width: rem(32px);
@@ -58,4 +52,8 @@ a {
 
 .shrink-0 {
   flex-shrink: 0;
+}
+
+.borderless {
+  border: none;
 }

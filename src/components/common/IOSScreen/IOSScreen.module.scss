@@ -6,3 +6,7 @@
 .homeIndicator {
   z-index: var(--mantine-z-index-app);
 }
+
+.screen {
+  overflow: hidden;
+}
