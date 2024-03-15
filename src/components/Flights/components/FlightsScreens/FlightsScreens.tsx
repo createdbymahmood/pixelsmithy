@@ -1,4 +1,5 @@
 import {
+  ConfirmationCode,
   NameEntry,
   NoInternet,
   PhoneNumberEntry,
@@ -15,7 +16,11 @@ const screens = [
   },
   {
     title: 'authentication',
-    screens: [PhoneNumberEntry, NameEntry /* DateOfBirthSelection */],
+    screens: [
+      PhoneNumberEntry,
+      NameEntry /* DateOfBirthSelection */,
+      ConfirmationCode,
+    ],
   },
 ]
 
