@@ -1,5 +1,7 @@
-import '@/lib/styles/global.scss'
 import '@mantine/core/styles.css'
+import '@mantine/dates/styles.css'
+import '@mantine/carousel/styles.css'
+import '@/lib/styles/global.scss'
 
 import {FlightsTheme} from '@flights/lib/style/FlightsTheme'
 import {MantineProvider} from '@mantine/core'

@@ -1,8 +1,8 @@
 'use client'
 
-import '@/lib/styles/global.scss'
 import '@mantine/core/styles.css'
 import 'react-perfect-scrollbar/dist/css/styles.css'
+import '@/lib/styles/global.scss'
 
 import {MantineProvider} from '@mantine/core'
 import type {ReactNode} from 'react'

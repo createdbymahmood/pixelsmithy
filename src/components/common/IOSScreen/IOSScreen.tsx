@@ -74,7 +74,7 @@ export function IOSScreen({
 
   return (
     <Stack
-      className={clsx('shrink-0', className)}
+      className={clsx('shrink-0', styles.screen, className)}
       color={color}
       h={rem(844)}
       pos='relative'

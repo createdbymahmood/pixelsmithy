@@ -1,5 +1,6 @@
 import {
   ConfirmationCode,
+  Home,
   NameEntry,
   NoInternet,
   PhoneNumberEntry,
@@ -22,6 +23,7 @@ const screens = [
       ConfirmationCode,
     ],
   },
+  {title: 'home screen and search', screens: [Home]},
 ]
 
 export function FlightsScreens() {
@@ -37,5 +39,5 @@ export function FlightsScreens() {
       )
     })
 
-  return <Grid>{content}</Grid>
+  return <Grid py='xl'>{content}</Grid>
 }

@@ -1,11 +1,11 @@
 'use client'
 
-import '@/lib/styles/global.scss'
 import '@mantine/core/styles.css'
 import 'react-perfect-scrollbar/dist/css/styles.css'
 import '@mantine/carousel/styles.css'
 import '@mantine/spotlight/styles.css'
 import '@mantine/dates/styles.css'
+import '@/lib/styles/global.scss'
 
 import {MantineProvider} from '@mantine/core'
 import type {ReactNode} from 'react'

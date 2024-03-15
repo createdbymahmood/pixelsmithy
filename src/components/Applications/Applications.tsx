@@ -1,5 +1,5 @@
-import '@/lib/styles/global.scss'
 import '@mantine/core/styles.css'
+import '@/lib/styles/global.scss'
 
 import {
   Container,

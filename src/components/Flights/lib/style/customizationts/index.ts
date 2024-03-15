@@ -9,6 +9,7 @@ import type {
   TextProps,
 } from '@mantine/core'
 import {Button, Input, rem, Text} from '@mantine/core'
+import {DatePickerInput} from '@mantine/dates'
 
 type DisplayTextResolverReturn = Record<
   'root',
@@ -144,6 +145,11 @@ export const components: MantineThemeComponents = {
     },
     vars: (theme, props) => {
       return inputSizeResolver() as InputSizeResolverReturn
+    },
+  }),
+  DatePickerInput: DatePickerInput.extend({
+    defaultProps: {
+      size: 'lg',
     },
   }),
 }
