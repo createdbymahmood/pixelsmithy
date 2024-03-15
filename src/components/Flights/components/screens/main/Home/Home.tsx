@@ -19,27 +19,33 @@ function FormView() {
   )
 }
 
-export function Home() {
-  const titleProps: TextProps = {
-    fw: '700',
-    size: 'sm',
-    variant: 'display',
-  }
+const titleProps: TextProps = {
+  fw: '700',
+  size: 'sm',
+  variant: 'display',
+}
 
+function Header() {
+  return (
+    <Box w={rem(298)}>
+      <Text {...titleProps} c='primary'>
+        Extreme
+      </Text>
+
+      <Text {...titleProps} component='span'>
+        aiplane flight
+      </Text>
+    </Box>
+  )
+}
+
+export function Home() {
   return (
     <IOSScreen bg='white' variant='dark'>
       <Stack flex={1} gap='md' mt={rem(63)}>
         <Card>
           <Stack gap='md'>
-            <Box w={rem(298)}>
-              <Text {...titleProps} c='primary'>
-                Extreme
-              </Text>
-
-              <Text {...titleProps} component='span'>
-                aiplane flight
-              </Text>
-            </Box>
+            <Header />
 
             <FormView />
           </Stack>
