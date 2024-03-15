@@ -15,7 +15,7 @@ const screens = [
   },
   {
     title: 'authentication',
-    screens: [PhoneNumberEntry, NameEntry],
+    screens: [PhoneNumberEntry, NameEntry /* DateOfBirthSelection */],
   },
 ]
 
