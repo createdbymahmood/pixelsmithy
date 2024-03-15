@@ -1,11 +1,10 @@
 import type {TextProps} from '@mantine/core'
 import {Box, Button, Input, rem, Stack, Text} from '@mantine/core'
-import {Flag} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
 
-export function PhoneNumberEntry() {
+export function NameEntry() {
   const titleProps: TextProps = {
     fw: '700',
     size: 'sm',
@@ -15,20 +14,26 @@ export function PhoneNumberEntry() {
   return (
     <IOSScreen bg='white' variant='dark'>
       <Stack flex={1} gap='xxl' mt={rem(63)} px='lg'>
-        <Box maw={rem(236)}>
+        <Box w={rem(236)}>
           <Text {...titleProps} component='span'>
             Enter
           </Text>
 
           <Text component='span' ml='xs' {...titleProps} c='primary'>
-            phone number
+            first
+          </Text>
+
+          <Text {...titleProps} component='span' ml='xs'>
+            &
+          </Text>
+
+          <Text {...titleProps} c='primary'>
+            last name
           </Text>
         </Box>
 
-        <Input
-          defaultValue='+7 999 896 85 85'
-          leftSection={<Flag className='icon-size-lg' weight='duotone' />}
-        />
+        <Input defaultValue='Арт' placeholder='First Name' />
+        <Input defaultValue='' placeholder='Last Name' />
 
         <Box mb='sm' mt='auto' w='100%'>
           <Button radius='md' size='lg' fullWidth>

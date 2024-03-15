@@ -1,9 +1,12 @@
-import {NoInternet, Splash} from '@flights/components/screens/general'
+import {
+  NameEntry,
+  NoInternet,
+  PhoneNumberEntry,
+  Splash,
+} from '@flights/components/screens'
 import {Grid, Group} from '@mantine/core'
 import type {FC} from 'react'
 import React from 'react'
-
-import {PhoneNumberEntry} from '@/components/Flights/components/screens/authentication'
 
 const screens = [
   {
@@ -12,7 +15,7 @@ const screens = [
   },
   {
     title: 'authentication',
-    screens: [PhoneNumberEntry],
+    screens: [PhoneNumberEntry, NameEntry],
   },
 ]
 
