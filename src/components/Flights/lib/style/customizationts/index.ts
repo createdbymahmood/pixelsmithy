@@ -139,6 +139,9 @@ export const components: MantineThemeComponents = {
     },
   }),
   Input: Input.extend({
+    defaultProps: {
+      size: 'lg',
+    },
     vars: (theme, props) => {
       return inputSizeResolver() as InputSizeResolverReturn
     },
