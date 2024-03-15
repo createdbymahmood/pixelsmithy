@@ -112,3 +112,4 @@ export const colors: MantineThemeOverride['colors'] = {
     '#0B4A6F',
   ],
 }
+export const black = '#344054'

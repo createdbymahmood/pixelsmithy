@@ -2,7 +2,7 @@ import {createTheme, rem} from '@mantine/core'
 
 import {inter} from '@/lib/styles/font/inter'
 
-import {colors} from './colors'
+import {black, colors} from './colors'
 import {components} from './customizationts'
 
 const fontFamily = inter.style.fontFamily
@@ -10,6 +10,7 @@ export const FlightsTheme = createTheme({
   colors,
   fontFamily,
   components,
+  black,
   primaryShade: 5,
   primaryColor: 'primary',
   headings: {fontFamily},
