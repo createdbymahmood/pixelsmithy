@@ -5,25 +5,31 @@ import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
 
-export function PhoneNumberEntry() {
-  const titleProps: TextProps = {
-    fw: '700',
-    size: 'sm',
-    variant: 'display',
-  }
+const titleProps: TextProps = {
+  fw: '700',
+  size: 'sm',
+  variant: 'display',
+}
 
+function Header() {
+  return (
+    <Box maw={rem(236)}>
+      <Text {...titleProps} component='span'>
+        Enter
+      </Text>
+
+      <Text component='span' ml='xs' {...titleProps} c='primary'>
+        phone number
+      </Text>
+    </Box>
+  )
+}
+
+export function PhoneNumberEntry() {
   return (
     <IOSScreen bg='white' variant='dark'>
       <Stack flex={1} gap='xxl' mt={rem(63)} px='lg'>
-        <Box maw={rem(236)}>
-          <Text {...titleProps} component='span'>
-            Enter
-          </Text>
-
-          <Text component='span' ml='xs' {...titleProps} c='primary'>
-            phone number
-          </Text>
-        </Box>
+        <Header />
 
         <Input
           defaultValue='+7 999 896 85 85'

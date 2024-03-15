@@ -5,6 +5,34 @@ import React from 'react'
 
 import styles from './HelpfulInformation.module.scss'
 
+function Content() {
+  return (
+    <Carousel
+      align='start'
+      slideGap='md'
+      slideSize='30.333333%'
+      slidesToScroll={3}
+      withControls={false}
+      dragFree
+    >
+      {range(0, 20).map((index) => {
+        return (
+          <Carousel.Slide key={index}>
+            <Card
+              bg='gray.2'
+              className={styles.slide}
+              h={rem(135)}
+              p={0}
+              radius='lg'
+              w='100%'
+            />
+          </Carousel.Slide>
+        )
+      })}
+    </Carousel>
+  )
+}
+
 export function HelpfulInformation() {
   return (
     <Stack>
@@ -12,29 +40,7 @@ export function HelpfulInformation() {
         Helpful information
       </Text>
 
-      <Carousel
-        align='start'
-        slideGap='md'
-        slideSize='30.333333%'
-        slidesToScroll={3}
-        withControls={false}
-        dragFree
-      >
-        {range(0, 20).map((index) => {
-          return (
-            <Carousel.Slide key={index}>
-              <Card
-                bg='gray.2'
-                className={styles.slide}
-                h={rem(135)}
-                p={0}
-                radius='lg'
-                w='100%'
-              />
-            </Carousel.Slide>
-          )
-        })}
-      </Carousel>
+      <Content />
     </Stack>
   )
 }
