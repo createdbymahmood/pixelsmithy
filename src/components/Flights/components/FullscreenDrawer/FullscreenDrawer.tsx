@@ -28,6 +28,7 @@ export function FullscreenDrawer({children}: FullscreenDrawerProps) {
       className={styles.content}
       flex={1}
       left={0}
+      pb='xxxl'
       pos='absolute'
       radius='lg'
       right={0}

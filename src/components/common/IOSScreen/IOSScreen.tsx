@@ -47,6 +47,7 @@ function HomeIndicator({color}: Props) {
       align='flex-end'
       bottom={0}
       c={color}
+      className='shrink-0'
       h={rem(34)}
       justify='center'
       left={0}
