@@ -4,6 +4,7 @@ import {
   NameEntry,
   NoInternet,
   PhoneNumberEntry,
+  Search,
   Splash,
 } from '@flights/components/screens'
 import {Grid, Group} from '@mantine/core'
@@ -23,7 +24,7 @@ const screens = [
       ConfirmationCode,
     ],
   },
-  {title: 'home screen and search', screens: [Home]},
+  {title: 'home screen and search', screens: [Home, Search]},
 ]
 
 export function FlightsScreens() {

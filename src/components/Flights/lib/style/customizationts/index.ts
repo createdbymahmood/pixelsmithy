@@ -11,6 +11,8 @@ import type {
 import {Button, Input, rem, Text} from '@mantine/core'
 import {DatePickerInput} from '@mantine/dates'
 
+import InputStyles from './Input.module.scss'
+
 type DisplayTextResolverReturn = Record<
   'root',
   Partial<Record<TextCssVariables['root'], string>>
@@ -145,6 +147,12 @@ export const components: MantineThemeComponents = {
     },
     vars: (theme, props) => {
       return inputSizeResolver() as InputSizeResolverReturn
+    },
+    classNames(theme, props, ctx) {
+      return {
+        input: InputStyles.input,
+        section: InputStyles.section,
+      }
     },
   }),
   DatePickerInput: DatePickerInput.extend({

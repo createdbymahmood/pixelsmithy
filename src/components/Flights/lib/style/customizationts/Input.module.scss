@@ -1,0 +1,7 @@
+.section {
+  @include transition();
+
+  &:has(+ .input:focus) {
+    color: var(--mantine-primary-color-5);
+  }
+}
