@@ -20,6 +20,7 @@ export const FlightsTheme = createTheme({
     md: rem(16),
     sm: rem(14),
     xs: rem(12),
+    xxs: rem(10),
   },
   spacing: {
     xxs: rem(4),
