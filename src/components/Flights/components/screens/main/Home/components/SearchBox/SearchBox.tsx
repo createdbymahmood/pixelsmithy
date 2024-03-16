@@ -3,7 +3,6 @@ import {Box, Card, Divider, Input, Stack} from '@mantine/core'
 import {DatePickerInput} from '@mantine/dates'
 import type {IconProps} from '@phosphor-icons/react'
 import {CalendarBlank, MapPin} from '@phosphor-icons/react/dist/ssr'
-import React from 'react'
 
 const leadingIconProps: BoxProps & IconProps = {
   c: 'gray.9',
@@ -20,6 +19,8 @@ export function SearchBox() {
           leftSection={<Box component={MapPin} {...leadingIconProps} />}
           placeholder='Where to find an airplane tour?'
         />
+
+        <Box pos='relative' />
 
         <Divider />
 

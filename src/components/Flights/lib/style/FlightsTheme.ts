@@ -29,6 +29,7 @@ export const FlightsTheme = createTheme({
     lg: rem(20),
     xl: rem(24),
     xxl: rem(28),
+    xxxl: rem(32),
   },
   shadows: {
     xs: '0 1px 2px 0 rgba(16, 24, 40, 0.05)',
