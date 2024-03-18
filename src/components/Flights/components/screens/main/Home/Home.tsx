@@ -33,7 +33,7 @@ function Header() {
       </Text>
 
       <Text {...titleProps} component='span'>
-        aiplane flight
+        airplane flight
       </Text>
     </Box>
   )

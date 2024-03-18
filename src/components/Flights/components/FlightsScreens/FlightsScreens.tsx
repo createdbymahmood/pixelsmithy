@@ -1,4 +1,5 @@
 import {
+  AirTour,
   AirToursSearchResults,
   ConfirmationCode,
   DateSelection,
@@ -28,7 +29,7 @@ const screens = [
   },
   {
     title: 'home screen and search',
-    screens: [Home, Search, DateSelection, AirToursSearchResults],
+    screens: [Home, Search, DateSelection, AirToursSearchResults, AirTour],
   },
 ]
 

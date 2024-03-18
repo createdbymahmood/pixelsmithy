@@ -1,0 +1,13 @@
+.header {
+  @include border-bottom-radius(var(--mantine-radius-lg));
+}
+
+.flightDurationOption {
+  font-weight: 400;
+  font-size: var(--mantine-font-size-sm);
+  text-transform: none;
+}
+
+.flightRouteTitle {
+  font-size: var(--mantine-font-size-sm);
+}

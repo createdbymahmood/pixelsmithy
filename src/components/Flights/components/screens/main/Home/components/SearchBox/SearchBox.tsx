@@ -6,8 +6,7 @@ import {CalendarBlank, MapPin} from '@phosphor-icons/react/dist/ssr'
 
 const leadingIconProps: BoxProps & IconProps = {
   c: 'gray.9',
-  className: 'icon-size-md',
-  weight: 'bold',
+  className: 'icon-size-lg',
 }
 
 export function SearchBox() {
