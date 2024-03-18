@@ -12,16 +12,20 @@ import {
   Stack,
   Text,
 } from '@mantine/core'
+import {useDisclosure} from '@mantine/hooks'
+import type {IconWeight} from '@phosphor-icons/react'
 import {
   ArrowLeft,
+  Heart,
   SlidersHorizontal,
   Star,
 } from '@phosphor-icons/react/dist/ssr'
+import clsx from 'clsx'
 import {range} from 'lodash-es'
 import React from 'react'
-import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
+import {ScrollableContent} from '@/components/common/ScrollableContent'
 import {BottomNavigation} from '@/components/Flights/components/screens/general/components'
 
 function Header() {
@@ -61,7 +65,7 @@ function PopularAirToursCarousel() {
     <PopularAirToursCarouselSlide key={index} title='Extreme flight' />
   ))
   return (
-    <Card className='shrink-0' pb='xxxl' pt={0} px={0}>
+    <Card pb='xxxl' pt={0} px={0}>
       <Stack gap='xl'>
         <Text fw='700' size='xl'>
           Popular
@@ -73,13 +77,33 @@ function PopularAirToursCarousel() {
   )
 }
 
-interface AirTourListItemProps {}
+function FavoriteToggle() {
+  const [isBookmarked, {toggle}] = useDisclosure(false)
+  const iconWeight: IconWeight = isBookmarked ? 'fill' : 'bold'
+
+  return (
+    <Card
+      bg='rgba(255,255,255,0.3)'
+      c='white'
+      className={clsx('icon-size-lg', 'cursor-pointer')}
+      component={Heart}
+      p={rem(6)}
+      radius='xl'
+      weight={iconWeight}
+      onClick={toggle}
+    />
+  )
+}
 
 function AirTourListItem() {
   return (
     <Stack gap='md'>
       <Card bg='gray.3' h={rem(160)} p='sm'>
-        <Stack h='100%' justify='flex-end'>
+        <Stack h='100%' justify='space-between'>
+          <Box ml='auto'>
+            <FavoriteToggle />
+          </Box>
+
           <Group gap='xs' wrap='nowrap'>
             <Chip icon={<Star weight='fill' />} size='xs' variant='outline'>
               4.7
@@ -113,13 +137,15 @@ function AirToursList() {
       <AirTourListItem />
       <AirTourListItem />
       <AirTourListItem />
+      <AirTourListItem />
+      <AirTourListItem />
     </Stack>
   )
 }
 
 function Footer() {
   return (
-    <Stack className='shrink-0' gap='xl' mb='xs' mt='auto'>
+    <Stack className='shrink-0' gap='xl' mb='xs'>
       <Divider />
       <Button radius='md' size='lg' fullWidth>
         Find tour
@@ -131,17 +157,19 @@ function Footer() {
 export function AirToursSearchResults() {
   return (
     <IOSScreen bg='white' variant='dark'>
-      <Stack flex={1} gap='md' h='100%' mt={rem(63)} px='lg'>
+      <Stack h='100%' mt={rem(63)} px='lg'>
         <Header />
-        <PerfectScrollbar>
-          <Box h={100}>
+        <ScrollableContent
+          h={`calc(100% - ${rem(50)} - ${rem(75)} - ${rem(184)})`}
+        >
+          <Stack>
             <PopularAirToursCarousel />
             <AirToursList />
-          </Box>
-        </PerfectScrollbar>
+          </Stack>
+        </ScrollableContent>
         <Footer />
+        <BottomNavigation />
       </Stack>
-      <BottomNavigation />
     </IOSScreen>
   )
 }

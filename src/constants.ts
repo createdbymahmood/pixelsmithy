@@ -207,11 +207,11 @@ export const applications = [
     href: urls.DashStack.dashboard.index,
     info: 'Desktop version',
   },
-  /* {
+  {
     id: 5,
     title: 'Flights',
     description: 'Flight Schedule App',
     href: urls.Flights.index,
     info: 'Mobile Version Only, But also viewable on desktop',
-  }, */
+  },
 ]
