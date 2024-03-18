@@ -33,11 +33,11 @@ function Header() {
     <Group gap='md'>
       <ArrowLeft className='icon-size-md' />
       <Input
+        defaultValue='St. Petersburg, July 30'
         flex={1}
         rightSection={
           <Box className='icon-size-md' component={SlidersHorizontal} />
         }
-        value='St. Petersburg, July 30'
       />
     </Group>
   )
