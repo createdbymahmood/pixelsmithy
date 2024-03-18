@@ -45,13 +45,14 @@ function HomeIndicator({color}: Props) {
   return (
     <Group
       align='flex-end'
+      bg='white'
       bottom={0}
       c={color}
       className='shrink-0'
       h={rem(34)}
       justify='center'
       left={0}
-      mb={rem(8)}
+      pb={rem(8)}
       pos='absolute'
       right={0}
     >
@@ -83,9 +84,7 @@ export function IOSScreen({
       {...omit(props, ['h', 'w'])}
     >
       <StatusBar color={color} />
-      <Stack gap={0} h={`calc(100% - ${rem(34)})`}>
-        {children}
-      </Stack>
+      <Box h={`calc(100% - ${rem(34)})`}>{children}</Box>
       <HomeIndicator color={color} />
     </Stack>
   )
