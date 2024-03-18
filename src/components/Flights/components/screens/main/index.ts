@@ -1,3 +1,4 @@
+export * from './AirTour'
 export * from './AirToursSearchResults'
 export * from './DateSelection'
 export * from './Home'

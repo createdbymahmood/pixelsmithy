@@ -1,3 +1,4 @@
+import type {CardProps} from '@mantine/core'
 import {ActionIcon, Box, Card, Group, rem, Text} from '@mantine/core'
 import {useCounter} from '@mantine/hooks'
 import type {IconProps} from '@phosphor-icons/react'
@@ -41,16 +42,13 @@ function Counter() {
   )
 }
 
-export function PassengersCount() {
+type PassengersCountProps = CardProps
+
+export function PassengersCount(props: PassengersCountProps) {
   return (
-    <Card bg='white' px='sm' py={0} shadow='lg'>
+    <Card bg='white' px='sm' py={0} shadow='lg' {...props}>
       <Group h={rem(50)}>
-        <Box
-          c='black'
-          className='icon-size-md'
-          component={SmileyWink}
-          weight='bold'
-        />
+        <Box c='black' className='icon-size-lg' component={SmileyWink} />
         <Text c='gray.9'>Passengers</Text>
         <Box ml='auto'>
           <Counter />

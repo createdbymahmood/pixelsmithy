@@ -77,7 +77,7 @@ function PopularAirToursCarousel() {
   )
 }
 
-function FavoriteToggle() {
+export function FavoriteToggle() {
   const [isBookmarked, {toggle}] = useDisclosure(false)
   const iconWeight: IconWeight = isBookmarked ? 'fill' : 'bold'
 
