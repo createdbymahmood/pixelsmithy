@@ -1,3 +1,4 @@
+import {Carousel} from '@mantine/carousel'
 import type {
   ButtonCssVariables,
   ButtonProps,
@@ -158,6 +159,16 @@ export const components: MantineThemeComponents = {
   DatePickerInput: DatePickerInput.extend({
     defaultProps: {
       size: 'lg',
+    },
+  }),
+  Carousel: Carousel.extend({
+    defaultProps: {
+      align: 'start',
+      slideGap: 'md',
+      slidesToScroll: 3,
+      withControls: false,
+      withIndicators: false,
+      dragFree: true,
     },
   }),
 }

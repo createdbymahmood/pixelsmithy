@@ -41,7 +41,7 @@ function BottomNavigationItem({
 
 export function BottomNavigation() {
   return (
-    <Card mb='sm' pb={0} px='sm' shadow='bottomNavigation'>
+    <Card className='shrink-0' mb='sm' pb={0} px='sm' shadow='bottomNavigation'>
       <Group wrap='nowrap'>
         <BottomNavigationItem icon={RoadHorizon} index={0} title='Explore' />
         <BottomNavigationItem icon={Airplane} index={1} title='Flights' />

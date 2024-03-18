@@ -7,14 +7,7 @@ import styles from './HelpfulInformation.module.scss'
 
 function Content() {
   return (
-    <Carousel
-      align='start'
-      slideGap='md'
-      slideSize='30.333333%'
-      slidesToScroll={3}
-      withControls={false}
-      dragFree
-    >
+    <Carousel slideSize='30.333333%'>
       {range(0, 20).map((index) => {
         return (
           <Carousel.Slide key={index}>

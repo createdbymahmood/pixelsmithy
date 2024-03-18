@@ -21,7 +21,7 @@ function StatusBar({color}: Props) {
   return (
     <Group
       c={color}
-      className={clsx(styles.statusBar)}
+      className={clsx(styles.statusBar, 'shrink-0')}
       justify='space-between'
       left={0}
       pos='absolute'
