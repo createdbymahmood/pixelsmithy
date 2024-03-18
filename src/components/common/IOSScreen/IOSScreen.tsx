@@ -84,7 +84,9 @@ export function IOSScreen({
       {...omit(props, ['h', 'w'])}
     >
       <StatusBar color={color} />
-      <Box h={`calc(100% - ${rem(34)})`}>{children}</Box>
+      <Stack gap={0} h={`calc(100% - ${rem(34)})`}>
+        {children}
+      </Stack>
       <HomeIndicator color={color} />
     </Stack>
   )

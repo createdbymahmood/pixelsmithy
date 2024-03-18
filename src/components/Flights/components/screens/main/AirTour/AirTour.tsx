@@ -184,19 +184,31 @@ function FlightRoute() {
 
       <Timeline active={3} bulletSize={11} lineWidth={2} px='md'>
         <Timeline.Item
-          classNames={{itemTitle: styles.flightRouteTitle}}
+          classNames={{
+            itemTitle: styles.flightRouteTitle,
+            itemBody: styles.flightRouteTitleBody,
+          }}
           title='Kronstadt'
         />
         <Timeline.Item
-          classNames={{itemTitle: styles.flightRouteTitle}}
+          classNames={{
+            itemTitle: styles.flightRouteTitle,
+            itemBody: styles.flightRouteTitleBody,
+          }}
           title='Gulf of Finland'
         />
         <Timeline.Item
-          classNames={{itemTitle: styles.flightRouteTitle}}
+          classNames={{
+            itemTitle: styles.flightRouteTitle,
+            itemBody: styles.flightRouteTitleBody,
+          }}
           title='Forts'
         />
         <Timeline.Item
-          classNames={{itemTitle: styles.flightRouteTitle}}
+          classNames={{
+            itemTitle: styles.flightRouteTitle,
+            itemBody: styles.flightRouteTitleBody,
+          }}
           title='Dam'
         />
       </Timeline>
