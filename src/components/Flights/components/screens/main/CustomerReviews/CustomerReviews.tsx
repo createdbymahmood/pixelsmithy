@@ -9,7 +9,7 @@ import {CustomerReview} from '@/components/Flights/components/screens'
 export function CustomerReviews() {
   const homeIndicatorSize = 34
   const screenHeaderSize = 24
-  const contentOffset = 40
+  const contentOffset = 45
   /* prettier-ignore */
   const contentHeight = `calc(100% - (${rem(homeIndicatorSize + screenHeaderSize + contentOffset)} + var(--mantine-spacing-xxxl)))`
 

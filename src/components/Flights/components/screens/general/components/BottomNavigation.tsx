@@ -43,7 +43,6 @@ export function BottomNavigation() {
   return (
     <Card
       className='shrink-0'
-      flex={1}
       pb='sm'
       px='sm'
       radius={0}
@@ -52,7 +51,7 @@ export function BottomNavigation() {
       <Group wrap='nowrap'>
         <BottomNavigationItem icon={RoadHorizon} index={0} title='Explore' />
         <BottomNavigationItem icon={Airplane} index={1} title='Flights' />
-        <BottomNavigationItem icon={Heart} index={2} title='favorites' />
+        <BottomNavigationItem icon={Heart} index={2} title='Favorites' />
         <BottomNavigationItem icon={User} index={3} title='Profile' />
       </Group>
     </Card>

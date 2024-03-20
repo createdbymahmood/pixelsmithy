@@ -11,6 +11,7 @@ import styles from './IOSScreen.module.scss'
 interface IOSScreenProps extends StackProps {
   children: ReactNode
   variant?: 'dark' | 'light'
+  homeIndicatorBg?: MantineColor
 }
 
 interface Props {
@@ -41,10 +42,16 @@ function StatusBar({color}: Props) {
   )
 }
 
-function HomeIndicator({color}: Props) {
+interface HomeIndicatorProps {
+  color: MantineColor
+  bg: MantineColor
+}
+
+function HomeIndicator({color, bg}: HomeIndicatorProps) {
   return (
     <Group
       align='flex-end'
+      bg={bg}
       bottom={0}
       c={color}
       className='shrink-0'
@@ -69,6 +76,7 @@ export function IOSScreen({
   children,
   variant = 'light',
   className,
+  homeIndicatorBg = 'transparent',
   ...props
 }: IOSScreenProps) {
   const color: MantineColor = variant === 'dark' ? 'black' : 'white'
@@ -86,7 +94,7 @@ export function IOSScreen({
       <Stack gap={0} h={`calc(100% - ${rem(34)})`}>
         {children}
       </Stack>
-      <HomeIndicator color={color} />
+      <HomeIndicator bg={homeIndicatorBg} color={color} />
     </Stack>
   )
 }

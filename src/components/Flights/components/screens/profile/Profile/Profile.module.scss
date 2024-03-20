@@ -1,0 +1,8 @@
+.overview {
+  border-radius: none;
+  @include border-bottom-radius(var(--mantine-radius-lg));
+}
+
+.sections {
+  @include border-top-radius(var(--mantine-radius-lg));
+}
