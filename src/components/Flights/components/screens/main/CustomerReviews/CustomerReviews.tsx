@@ -1,4 +1,4 @@
-import {Card, rem, Stack} from '@mantine/core'
+import {rem, Stack} from '@mantine/core'
 import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
@@ -9,10 +9,14 @@ import {CustomerReview} from '@/components/Flights/components/screens'
 export function CustomerReviews() {
   return (
     <IOSScreen variant='dark'>
-      <Stack component={Card} flex={1} gap='md' mt={rem(21 + 40)} pb={0} px={0}>
+      <Stack gap='md' h='100%' mt={rem(63)} pb={0} px='md'>
         <ScreenHeader title='Customer reviews' />
-        <ScrollableContent h='calc(100%)'>
-          <Stack pb='md' px='md' py='xxxl'>
+        <ScrollableContent
+          h='100%'
+          mx='calc(var(--mantine-spacing-md) * -1)'
+          px='md'
+        >
+          <Stack>
             <CustomerReview />
             <CustomerReview />
             <CustomerReview />

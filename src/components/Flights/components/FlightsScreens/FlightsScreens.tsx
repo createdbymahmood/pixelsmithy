@@ -1,6 +1,7 @@
 import {
   AirTour,
   AirToursSearchResults,
+  Checkout,
   ConfirmationCode,
   CustomerReviews,
   DateSelection,
@@ -37,6 +38,7 @@ const screens = [
       AirToursSearchResults,
       AirTour,
       CustomerReviews,
+      Checkout,
     ],
   },
 ]
