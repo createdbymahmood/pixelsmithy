@@ -8,6 +8,7 @@ import {
   Home,
   NameEntry,
   NoInternet,
+  Notifications,
   PhoneNumberEntry,
   Profile,
   Search,
@@ -42,8 +43,11 @@ const screens = [
       CustomerReviews,
       Checkout,
       SuccessfulPayment,
-      Profile,
     ],
+  },
+  {
+    title: 'Profile',
+    screens: [Profile, Notifications],
   },
 ]
 
