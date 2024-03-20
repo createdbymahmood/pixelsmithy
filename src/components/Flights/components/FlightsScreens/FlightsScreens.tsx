@@ -9,6 +9,7 @@ import {
   NameEntry,
   NoInternet,
   PhoneNumberEntry,
+  Profile,
   Search,
   Splash,
   SuccessfulPayment,
@@ -41,6 +42,7 @@ const screens = [
       CustomerReviews,
       Checkout,
       SuccessfulPayment,
+      Profile,
     ],
   },
 ]

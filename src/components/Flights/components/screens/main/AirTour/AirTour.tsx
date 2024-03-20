@@ -9,6 +9,7 @@ import {
   Divider,
   Group,
   Input,
+  Pill,
   Rating,
   rem,
   Stack,
@@ -20,7 +21,6 @@ import {
   AirplaneTakeoff,
   ArrowLeft,
   CalendarBlank,
-  Star,
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {noop} from 'lodash-es'
@@ -50,17 +50,17 @@ function Header() {
       </Group>
 
       <Group gap='xs' wrap='nowrap'>
-        <Chip icon={<Star weight='fill' />} size='xs' variant='outline'>
-          4.7
-        </Chip>
+        <Pill bg='white' size='sm' variant='outline'>
+          4.5
+        </Pill>
 
-        <Chip size='xs' variant='outline'>
+        <Pill bg='white' size='sm' variant='outline'>
           Airfield: Selzo
-        </Chip>
+        </Pill>
 
-        <Chip size='xs' variant='outline'>
+        <Pill bg='white' size='sm' variant='outline'>
           Passengers: 4
-        </Chip>
+        </Pill>
       </Group>
     </Stack>
   )

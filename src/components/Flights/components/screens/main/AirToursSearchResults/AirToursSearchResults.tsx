@@ -3,10 +3,10 @@ import {
   Box,
   Button,
   Card,
-  Chip,
   Divider,
   Group,
   Input,
+  Pill,
   rem,
   Skeleton,
   Stack,
@@ -18,7 +18,6 @@ import {
   ArrowLeft,
   Heart,
   SlidersHorizontal,
-  Star,
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {range} from 'lodash-es'
@@ -105,17 +104,17 @@ function AirTourListItem() {
           </Box>
 
           <Group gap='xs' wrap='nowrap'>
-            <Chip icon={<Star weight='fill' />} size='xs' variant='outline'>
-              4.7
-            </Chip>
+            <Pill bg='white' size='sm' variant='outline'>
+              4.5
+            </Pill>
 
-            <Chip size='xs' variant='outline'>
+            <Pill bg='white' size='sm' variant='outline'>
               Airfield: Selzo
-            </Chip>
+            </Pill>
 
-            <Chip size='xs' variant='outline'>
+            <Pill bg='white' size='sm' variant='outline'>
               Passengers: 4
-            </Chip>
+            </Pill>
           </Group>
         </Stack>
       </Card>
