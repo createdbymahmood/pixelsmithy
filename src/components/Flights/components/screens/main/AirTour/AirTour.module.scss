@@ -15,3 +15,12 @@
 .flightRouteTitleBody {
   padding-left: var(--mantine-spacing-md);
 }
+
+.allReviewsButton {
+  position: absolute;
+  bottom: rem(10px);
+  left: var(--mantine-spacing-md);
+  right: var(--mantine-spacing-md);
+  background-color: var(--mantine-color-white);
+  box-shadow: 0 0px 46px 20px var(--mantine-color-white);
+}
