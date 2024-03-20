@@ -11,6 +11,7 @@ import {
   PhoneNumberEntry,
   Search,
   Splash,
+  SuccessfulPayment,
 } from '@flights/components/screens'
 import {Grid, Group} from '@mantine/core'
 import type {FC} from 'react'
@@ -39,6 +40,7 @@ const screens = [
       AirTour,
       CustomerReviews,
       Checkout,
+      SuccessfulPayment,
     ],
   },
 ]

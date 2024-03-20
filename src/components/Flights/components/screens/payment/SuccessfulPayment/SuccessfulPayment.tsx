@@ -1,10 +1,10 @@
 import {Box, Button, Card, rem, Stack, Text} from '@mantine/core'
-import {WifiHigh} from '@phosphor-icons/react/dist/ssr'
+import {CreditCard} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
 
-export function NoInternet() {
+export function SuccessfulPayment() {
   return (
     <IOSScreen bg='primary' variant='light'>
       <Stack
@@ -21,20 +21,20 @@ export function NoInternet() {
           <Card
             bg='primary.4'
             c='white'
-            component={WifiHigh}
+            component={CreditCard}
             h={rem(100)}
             mb={rem(24)}
             p={rem(16.3)}
             radius='xl'
             w={rem(100)}
-            weight='bold'
+            weight='duotone'
           />
           <Text fw='600' mb='sm' size='xs' variant='display'>
-            No connection
+            Paid
           </Text>
 
           <Text px={rem(43)} size='md' ta='center'>
-            No internet connection, check the connection and try again
+            In case of flight cancellation the money will be refunded
           </Text>
         </Stack>
 
@@ -47,7 +47,7 @@ export function NoInternet() {
           variant='default'
           fullWidth
         >
-          Try again
+          Perfect
         </Button>
       </Stack>
     </IOSScreen>

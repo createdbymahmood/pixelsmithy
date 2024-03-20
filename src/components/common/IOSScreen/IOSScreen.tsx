@@ -45,7 +45,6 @@ function HomeIndicator({color}: Props) {
   return (
     <Group
       align='flex-end'
-      bg='white'
       bottom={0}
       c={color}
       className='shrink-0'
