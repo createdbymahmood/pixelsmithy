@@ -293,14 +293,14 @@ function PilotInformation() {
   )
 }
 
-function CustomerReview() {
+export function CustomerReview() {
   return (
     <Card className='shrink-0' radius='md' shadow='xl'>
       <Stack gap='lg'>
         <Group gap='md'>
           <Avatar radius='md' size={rem(44)} />
           <Stack gap={rem(2)}>
-            <Text fw='700' size='lg'>
+            <Text fw='500' size='lg'>
               Ivan
             </Text>
             <Text c='gray.5' size='xs'>
