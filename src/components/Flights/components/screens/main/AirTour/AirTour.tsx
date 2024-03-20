@@ -3,6 +3,7 @@ import {
   Avatar,
   Badge,
   Box,
+  Button,
   Card,
   Chip,
   Divider,
@@ -37,7 +38,7 @@ function Header() {
     <Stack
       bg='gray.5'
       className={styles.header}
-      h={rem(200)}
+      h={rem(300)}
       justify='space-between'
       pb={rem(20)}
       pt={rem(57)}
@@ -292,12 +293,78 @@ function PilotInformation() {
   )
 }
 
+function CustomerReview() {
+  return (
+    <Card className='shrink-0' radius='md' shadow='xl'>
+      <Stack gap='lg'>
+        <Group gap='md'>
+          <Avatar radius='md' size={rem(44)} />
+          <Stack gap={rem(2)}>
+            <Text fw='700' size='lg'>
+              Ivan
+            </Text>
+            <Text c='gray.5' size='xs'>
+              May 21, 2022
+            </Text>
+          </Stack>
+        </Group>
+
+        <Group gap='xs'>
+          <Rating defaultValue={5} />
+          <Text fw='500' size='xs'>
+            5
+          </Text>
+        </Group>
+
+        <Text size='sm'>
+          The flights are excellent! The airfield is located in a picturesque
+          place and there is a lot to admire from above.
+        </Text>
+      </Stack>
+    </Card>
+  )
+}
+
 function CustomerReviews() {
-  return <div>CustomerReviews</div>
+  return (
+    <Card pos='relative'>
+      <Stack gap='md'>
+        <Text fw='700' size='lg'>
+          Customer reviews
+        </Text>
+
+        <Stack className='overflow-hidden' h={320}>
+          <CustomerReview />
+          <CustomerReview />
+        </Stack>
+
+        <Button
+          className={styles.allReviewsButton}
+          radius='md'
+          size='lg'
+          variant='outline'
+        >
+          All reviews
+        </Button>
+      </Stack>
+    </Card>
+  )
+}
+
+function Terms() {
+  return (
+    <Text bg='gray.2' c='primary' px='xxxl' py='xxxl' size='sm' ta='center'>
+      By continuing, you agree to the terms of use and privacy policy
+    </Text>
+  )
 }
 
 function Footer() {
-  return <div>Footer</div>
+  return (
+    <Button className='shrink-0' mx='md' radius='md' size='lg'>
+      Book for 10,000 ₽
+    </Button>
+  )
 }
 
 export function AirTour() {
@@ -311,7 +378,8 @@ export function AirTour() {
             <TourOptions />
             <FlightOptions />
             <PilotInformation />
-            {/* <CustomerReviews /> */}
+            <CustomerReviews />
+            <Terms />
           </Stack>
         </ScrollableContent>
         <Footer />
