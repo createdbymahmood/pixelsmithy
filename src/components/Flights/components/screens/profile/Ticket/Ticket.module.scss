@@ -1,0 +1,50 @@
+$shadow: inset 0 0 14px 3px hsla(200, 20%, 22%, 0.11);
+$bg: var(--mantine-color-white);
+$divider: var(--mantine-color-gray-2);
+$cutout-size: 1.2rem;
+
+.ticket {
+  overflow: visible;
+  .divider {
+    position: relative;
+    height: $cutout-size;
+    background-color: $bg;
+    margin-left: -($cutout-size) / 3;
+    margin-right: -($cutout-size) / 3;
+    &::after {
+      content: '';
+      position: absolute;
+      height: 50%;
+      width: 100%;
+      top: 0;
+      border-bottom: 1px dashed $divider;
+    }
+  }
+  .notch {
+    position: absolute;
+    left: ($cutout-size / 2) * -1;
+    width: $cutout-size;
+    height: $cutout-size;
+    overflow: hidden;
+    &::after {
+      content: '';
+      position: relative;
+      display: block;
+      width: ($cutout-size * 2);
+      height: ($cutout-size * 2);
+      right: 100%;
+      top: -50%;
+      border: ($cutout-size / 2) solid $bg;
+      border-radius: 50%;
+      box-shadow: $shadow;
+    }
+
+    &.right {
+      left: auto;
+      right: ($cutout-size / 2) * -1;
+      &::after {
+        right: 0;
+      }
+    }
+  }
+}

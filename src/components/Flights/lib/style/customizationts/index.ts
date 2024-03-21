@@ -9,7 +9,7 @@ import type {
   TextCssVariables,
   TextProps,
 } from '@mantine/core'
-import {Button, Input, rem, Text} from '@mantine/core'
+import {Button, Divider, Input, rem, Skeleton, Text} from '@mantine/core'
 import {DatePickerInput} from '@mantine/dates'
 
 import InputStyles from './Input.module.scss'
@@ -169,6 +169,18 @@ export const components: MantineThemeComponents = {
       withControls: false,
       withIndicators: false,
       dragFree: true,
+    },
+  }),
+  Divider: Divider.extend({
+    defaultProps: {
+      style: {
+        borderColor: 'var(--mantine-color-gray-2)',
+      },
+    },
+  }),
+  Skeleton: Skeleton.extend({
+    defaultProps: {
+      animate: false,
     },
   }),
 }

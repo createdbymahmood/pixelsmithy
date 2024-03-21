@@ -52,7 +52,7 @@ function PopularAirToursCarouselSlide({
   return (
     <Carousel.Slide>
       <Stack gap='sm'>
-        <Skeleton animate={false} h={rem(118)} w={118} />
+        <Skeleton h={rem(118)} w={118} />
         <Text size='sm'>{title}</Text>
       </Stack>
     </Carousel.Slide>
