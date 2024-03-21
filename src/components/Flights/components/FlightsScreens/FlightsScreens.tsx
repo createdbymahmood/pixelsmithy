@@ -14,6 +14,7 @@ import {
   Search,
   Splash,
   SuccessfulPayment,
+  Ticket,
   Tickets,
 } from '@flights/components/screens'
 import {Grid, Group} from '@mantine/core'
@@ -48,7 +49,7 @@ const screens = [
   },
   {
     title: 'Profile',
-    screens: [Profile, Notifications, Tickets],
+    screens: [Profile, Notifications, Tickets, Ticket],
   },
 ]
 
