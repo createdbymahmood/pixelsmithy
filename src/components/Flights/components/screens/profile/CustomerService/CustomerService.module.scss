@@ -1,3 +1,25 @@
 .composeInputWrapper {
   --_input-right-section-size: 68px;
 }
+
+.message {
+  font-size: rem(15px);
+  padding: 10px;
+
+  max-width: rem(201px);
+
+  background: var(--mantine-primary-color-5);
+  color: var(--mantine-color-white);
+
+  &.rtl {
+    border-bottom-right-radius: var(--mantine-radius-sm);
+  }
+
+  &.ltr {
+    border-bottom-left-radius: var(--mantine-radius-sm);
+  }
+}
+
+.messagsList {
+  flex-direction: column-reverse;
+}
