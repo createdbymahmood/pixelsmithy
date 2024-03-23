@@ -14,6 +14,7 @@ import {
   PhoneNumberEntry,
   Profile,
   Search,
+  Settings,
   Splash,
   SuccessfulPayment,
   Ticket,
@@ -58,6 +59,7 @@ const screens = [
       Ticket,
       CreditCards,
       CustomerService,
+      Settings,
     ],
   },
 ]
