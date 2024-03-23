@@ -1,4 +1,5 @@
 export * from './CreditCards'
+export * from './CustomerService'
 export * from './Notifications'
 export * from './Profile'
 export * from './Ticket'
