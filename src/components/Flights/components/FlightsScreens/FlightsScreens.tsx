@@ -5,6 +5,7 @@ import {
   ConfirmationCode,
   CreditCards,
   CustomerReviews,
+  CustomerService,
   DateSelection,
   Home,
   NameEntry,
@@ -50,7 +51,14 @@ const screens = [
   },
   {
     title: 'Profile',
-    screens: [Profile, Notifications, Tickets, Ticket, CreditCards],
+    screens: [
+      Profile,
+      Notifications,
+      Tickets,
+      Ticket,
+      CreditCards,
+      CustomerService,
+    ],
   },
 ]
 
