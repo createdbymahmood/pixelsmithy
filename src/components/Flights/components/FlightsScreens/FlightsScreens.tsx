@@ -7,6 +7,7 @@ import {
   CustomerReviews,
   CustomerService,
   DateSelection,
+  FlightSearch,
   Home,
   NameEntry,
   NoInternet,
@@ -61,6 +62,10 @@ const screens = [
       CustomerService,
       Settings,
     ],
+  },
+  {
+    title: 'Flight',
+    screens: [FlightSearch],
   },
 ]
 
