@@ -46,7 +46,7 @@ function Message({content, time, dir}: MessageProps) {
 
 function MessagesList() {
   return (
-    <Stack className={styles.messagsList} flex={1} gap='xxxl'>
+    <Stack className='flex-dir-column-reverse' flex={1} gap='xxxl'>
       <Message
         content='How do I add a new payment method?'
         dir='rtl'
