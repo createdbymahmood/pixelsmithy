@@ -44,7 +44,7 @@ export function Home() {
     <IOSScreen bg='white' variant='dark'>
       <Stack flex={1} gap='md' mt={rem(63)}>
         <Card>
-          <Stack gap='md'>
+          <Stack gap={rem(40)}>
             <Header />
 
             <FormView />

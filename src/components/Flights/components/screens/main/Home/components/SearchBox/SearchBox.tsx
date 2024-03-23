@@ -19,8 +19,6 @@ export function SearchBox() {
           placeholder='Where to find an airplane tour?'
         />
 
-        <Box pos='relative' />
-
         <Divider />
 
         <DatePickerInput
