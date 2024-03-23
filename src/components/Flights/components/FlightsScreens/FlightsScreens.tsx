@@ -3,6 +3,7 @@ import {
   AirToursSearchResults,
   Checkout,
   ConfirmationCode,
+  CreditCards,
   CustomerReviews,
   DateSelection,
   Home,
@@ -49,7 +50,7 @@ const screens = [
   },
   {
     title: 'Profile',
-    screens: [Profile, Notifications, Tickets, Ticket],
+    screens: [Profile, Notifications, Tickets, Ticket, CreditCards],
   },
 ]
 
