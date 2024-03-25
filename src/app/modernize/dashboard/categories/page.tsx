@@ -1,4 +1,4 @@
-import {CategoriesList} from '@modernize/components'
+import {CategoriesList} from '@/components/modernize/components'
 
 import {constructMetadata} from '@/utils/constructMetadata'
 

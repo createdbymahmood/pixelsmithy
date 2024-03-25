@@ -1,10 +1,10 @@
 import dynamic from 'next/dynamic'
 
-import {JobLocationProviders} from '@/components/JobLocation/layout'
+import {JobLocationProviders} from '@/components/job-location/layout'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 const JobLocation = dynamic(
-  () => import('@/components/JobLocation/JobLocation'),
+  () => import('@/components/job-location/JobLocation'),
   {
     ssr: false,
   },

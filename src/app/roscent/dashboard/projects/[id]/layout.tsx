@@ -1,5 +1,5 @@
 'use client'
 
-import {ProjectDetailsLayout} from '@/components/Roscent'
+import {ProjectDetailsLayout} from '@/components/roscent'
 
 export default ProjectDetailsLayout

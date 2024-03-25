@@ -1,4 +1,4 @@
-import {ForgotPasswordForm} from '@modernize/components'
+import {ForgotPasswordForm} from '@/components/modernize/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

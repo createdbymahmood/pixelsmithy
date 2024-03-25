@@ -10,8 +10,8 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import {get} from 'lodash-es'
 
-import type {StatusType} from '@/components/Roscent'
-import {statusBadgeMap} from '@/components/Roscent'
+import type {StatusType} from '@/components/roscent'
+import {statusBadgeMap} from '@/components/roscent'
 
 import styles from './ProductDelivery.module.scss'
 

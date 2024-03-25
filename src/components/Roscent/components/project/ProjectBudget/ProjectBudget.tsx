@@ -18,8 +18,8 @@ import {isEqual} from 'lodash-es'
 import type {ReactNode} from 'react'
 import React, {Fragment, useState} from 'react'
 
-import {StrippedProgress} from '@/components/Roscent/components/common/StrippedProgress'
-import {SaveFloatingActionButons} from '@/components/Roscent/components/project/components'
+import {StrippedProgress} from '@/components/roscent/components/common/StrippedProgress'
+import {SaveFloatingActionButons} from '@/components/roscent/components/project/components'
 
 import styles from './ProjectBudget.module.scss'
 

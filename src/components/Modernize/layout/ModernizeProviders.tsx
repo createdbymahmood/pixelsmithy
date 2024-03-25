@@ -10,7 +10,7 @@ import '@/lib/styles/global.scss'
 import {MantineProvider} from '@mantine/core'
 import type {ReactNode} from 'react'
 
-import {ModernizeTheme} from '@/components/Modernize/lib/style/ModernizeTheme'
+import {ModernizeTheme} from '@/components/modernize/lib/style/ModernizeTheme'
 import {defaultThemeColorScheme} from '@/constants'
 
 interface ModernizeProvidersProps {

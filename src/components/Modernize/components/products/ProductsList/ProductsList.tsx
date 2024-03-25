@@ -18,7 +18,7 @@ import Link from 'next/link'
 import {
   TableFilters,
   TableWrapper,
-} from '@/components/Modernize/components/common'
+} from '@/components/modernize/components/common'
 import {urls} from '@/constants'
 import {useTableState} from '@/hooks/useTableState'
 

@@ -1,4 +1,4 @@
-import {Applications} from '@/components/Applications'
+import {Applications} from '@/components/applications'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

@@ -3,7 +3,7 @@
 import {Stack} from '@mantine/core'
 import React from 'react'
 
-import {SignInSessions} from '@/components/Roscent/components/account/AccountSecurity/components'
+import {SignInSessions} from '@/components/roscent/components/account/AccountSecurity/components'
 
 import {Logs} from './components'
 

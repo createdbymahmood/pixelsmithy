@@ -15,8 +15,8 @@ import {CaretDown, ClipboardText, Clock} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import dayJS from 'dayjs'
 
-import {CompleationStatus} from '@/components/Roscent'
-import {dateToString} from '@/components/Roscent/utils/date'
+import {CompleationStatus} from '@/components/roscent'
+import {dateToString} from '@/components/roscent/utils/date'
 
 import styles from './LicenseUsage.module.scss'
 

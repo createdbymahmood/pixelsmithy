@@ -11,7 +11,7 @@ import {
   Table,
   Text,
 } from '@mantine/core'
-import {TableFilters} from '@modernize/components/common'
+import {TableFilters} from '@/components/modernize/components/common'
 import {Tag} from '@phosphor-icons/react/dist/ssr'
 import {get, isUndefined} from 'lodash-es'
 

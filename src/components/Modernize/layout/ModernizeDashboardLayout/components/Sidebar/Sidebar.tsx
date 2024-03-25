@@ -20,8 +20,8 @@ import {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {GroupLink} from '@/components/common'
-import type {SidebarSection} from '@/components/Roscent'
-import {SidebarItem} from '@/components/Roscent'
+import type {SidebarSection} from '@/components/roscent'
+import {SidebarItem} from '@/components/roscent'
 import {urls} from '@/constants'
 
 import styles from './Sidebar.module.scss'

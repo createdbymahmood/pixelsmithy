@@ -1,4 +1,4 @@
-import {Settings as SettingsView} from '@dash-stack/components'
+import {Settings as SettingsView} from '@/components/dash-stack/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

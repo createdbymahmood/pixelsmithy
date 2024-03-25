@@ -4,7 +4,7 @@ import {Box, Group} from '@mantine/core'
 import type {ReactNode} from 'react'
 import React from 'react'
 
-import {SideUsersList} from '@/components/Roscent/components/user-profile/UserProfileLayout/components'
+import {SideUsersList} from '@/components/roscent/components/user-profile/UserProfileLayout/components'
 
 interface UserProfileLayoutProps {
   children: ReactNode

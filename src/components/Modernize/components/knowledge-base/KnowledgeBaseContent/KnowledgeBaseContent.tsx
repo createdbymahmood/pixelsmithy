@@ -13,7 +13,7 @@ import {
   TextInput,
   Title,
 } from '@mantine/core'
-import {articles} from '@modernize/mock/articles'
+import {articles} from '@/components/modernize/mock/articles'
 import {MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 

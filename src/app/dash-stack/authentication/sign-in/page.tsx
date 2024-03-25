@@ -1,4 +1,4 @@
-import {SignInForm} from '@dash-stack/components'
+import {SignInForm} from '@/components/dash-stack/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

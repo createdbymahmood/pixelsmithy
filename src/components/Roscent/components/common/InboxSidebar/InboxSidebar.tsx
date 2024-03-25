@@ -7,7 +7,7 @@ import {isUndefined} from 'lodash-es'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {toInboxSidebarTime} from '@/components/Roscent/utils/date'
+import {toInboxSidebarTime} from '@/components/roscent/utils/date'
 
 import styles from './InboxSidebar.module.scss'
 

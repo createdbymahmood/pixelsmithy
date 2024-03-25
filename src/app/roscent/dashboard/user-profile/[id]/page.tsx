@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {UserProfile as UserProfileView} from '@/components/Roscent'
+import {UserProfile as UserProfileView} from '@/components/roscent'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

@@ -12,7 +12,7 @@ import {
 import {range} from 'lodash-es'
 import React from 'react'
 
-import {ProjectCard} from '@/components/Roscent/components'
+import {ProjectCard} from '@/components/roscent/components'
 
 import styles from './Projects.module.scss'
 

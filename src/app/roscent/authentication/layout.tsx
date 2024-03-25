@@ -1,3 +1,3 @@
-import {AuthenticationLayout} from '@/components/Roscent/components/authentication'
+import {AuthenticationLayout} from '@/components/roscent/components/authentication'
 
 export default AuthenticationLayout

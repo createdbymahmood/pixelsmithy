@@ -1,6 +1,6 @@
 'use client'
 
-import {FlightProviders} from '@flights/layout'
+import {FlightProviders} from '@/components/flights/layout'
 import type {ReactNode} from 'react'
 import React from 'react'
 

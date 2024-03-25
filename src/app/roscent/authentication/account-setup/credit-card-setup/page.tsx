@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {CreditCardSetup} from '@/components/Roscent/components/authentication/AccountSetup/components'
+import {CreditCardSetup} from '@/components/roscent/components/authentication/AccountSetup/components'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

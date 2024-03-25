@@ -1,4 +1,4 @@
-import {OrdersList} from '@modernize/components'
+import {OrdersList} from '@/components/modernize/components'
 
 import {constructMetadata} from '@/utils/constructMetadata'
 

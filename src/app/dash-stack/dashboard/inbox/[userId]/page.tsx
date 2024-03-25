@@ -1,4 +1,4 @@
-import {Chat as ChatView} from '@dash-stack/components'
+import {Chat as ChatView} from '@/components/dash-stack/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

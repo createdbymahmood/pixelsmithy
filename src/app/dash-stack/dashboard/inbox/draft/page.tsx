@@ -1,4 +1,4 @@
-import {Inbox as InboxView} from '@dash-stack/components'
+import {Inbox as InboxView} from '@/components/dash-stack/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

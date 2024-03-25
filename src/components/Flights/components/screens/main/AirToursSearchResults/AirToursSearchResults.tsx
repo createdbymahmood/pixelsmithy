@@ -25,7 +25,7 @@ import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
 import {ScrollableContent} from '@/components/common/ScrollableContent'
-import {BottomNavigation} from '@/components/Flights/components/screens/general/components'
+import {BottomNavigation} from '@/components/flights/components/screens/general/components'
 
 function Header() {
   return (

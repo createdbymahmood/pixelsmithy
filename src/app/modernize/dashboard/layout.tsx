@@ -1,3 +1,3 @@
-import {ModernizeDashboardLayout} from '@/components/Modernize/layout/ModernizeDashboardLayout'
+import {ModernizeDashboardLayout} from '@/components/modernize/layout/ModernizeDashboardLayout'
 
 export default ModernizeDashboardLayout

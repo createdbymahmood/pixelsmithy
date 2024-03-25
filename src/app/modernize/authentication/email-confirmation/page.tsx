@@ -1,4 +1,4 @@
-import {EmailConfirmationForm} from '@modernize/components'
+import {EmailConfirmationForm} from '@/components/modernize/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

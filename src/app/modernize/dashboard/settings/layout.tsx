@@ -1,3 +1,3 @@
-import SettingsLayout from '@modernize/components/settings/SettingsLayout/SettingsLayout'
+import SettingsLayout from '@/components/modernize/components/settings/SettingsLayout/SettingsLayout'
 
 export default SettingsLayout

@@ -1,10 +1,10 @@
 'use client'
 
 import {rem, Stack, Table} from '@mantine/core'
-import {orders, orderStatusMap} from '@modernize/components'
+import {orders, orderStatusMap} from '@/components/modernize/components'
 import {get} from 'lodash-es'
 
-import {TableWrapper} from '@/components/Modernize/components/common'
+import {TableWrapper} from '@/components/modernize/components/common'
 import {dateTimeFormat} from '@/constants'
 
 function TableContent() {

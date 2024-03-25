@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {EmailTemplate as EmailTemplateView} from '@/components/Roscent'
+import {EmailTemplate as EmailTemplateView} from '@/components/roscent'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

@@ -23,8 +23,8 @@ import Link from 'next/link'
 import {notFound, useParams} from 'next/navigation'
 
 import {GroupLink} from '@/components/common'
-import {CommunityForm, Webinars} from '@/components/Modernize/components'
-import {articles} from '@/components/Modernize/mock/articles'
+import {CommunityForm, Webinars} from '@/components/modernize/components'
+import {articles} from '@/components/modernize/mock/articles'
 import {urls} from '@/constants'
 
 import styles from './KnowledgeBaseArticle.module.scss'

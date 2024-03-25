@@ -4,7 +4,7 @@ import {Card, Group, rem, Stack, Table, Text, Title} from '@mantine/core'
 import {CalendarBlank, DownloadSimple} from '@phosphor-icons/react/dist/ssr'
 import dayJS from 'dayjs'
 
-import {dateToString} from '@/components/Roscent/utils/date'
+import {dateToString} from '@/components/roscent/utils/date'
 
 const elements = [
   {

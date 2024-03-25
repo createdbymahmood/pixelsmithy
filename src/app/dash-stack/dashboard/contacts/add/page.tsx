@@ -1,4 +1,4 @@
-import {AddContactForm} from '@dash-stack/components'
+import {AddContactForm} from '@/components/dash-stack/components'
 
 import {constructMetadata} from '@/utils/constructMetadata'
 
