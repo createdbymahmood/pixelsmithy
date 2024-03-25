@@ -3,7 +3,7 @@ import {MagnifyingGlass, MapPin} from '@phosphor-icons/react/dist/ssr'
 import React, {Fragment} from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
-import {FullscreenDrawer} from '@/components/Flights/components'
+import {FullscreenDrawer} from '@/components/flights/components'
 
 function CurrentLocation() {
   return (

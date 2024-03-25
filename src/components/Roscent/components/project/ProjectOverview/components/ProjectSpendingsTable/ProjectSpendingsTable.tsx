@@ -2,8 +2,8 @@ import {Avatar, Card, rem, Stack, Table, Title} from '@mantine/core'
 import dayJS from 'dayjs'
 import React from 'react'
 
-import {CompleationStatus} from '@/components/Roscent'
-import {dateToString} from '@/components/Roscent/utils/date'
+import {CompleationStatus} from '@/components/roscent'
+import {dateToString} from '@/components/roscent/utils/date'
 
 const elements = [
   {

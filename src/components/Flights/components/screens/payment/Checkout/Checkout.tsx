@@ -3,7 +3,7 @@ import {CreditCard} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
-import {ScreenHeader} from '@/components/Flights/components/common'
+import {ScreenHeader} from '@/components/flights/components/common'
 
 function FormView() {
   return (

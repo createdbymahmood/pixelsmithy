@@ -20,7 +20,7 @@ import {
   SuccessfulPayment,
   Ticket,
   Tickets,
-} from '@flights/components/screens'
+} from '@/components/flights/components/screens'
 import {Grid, Group} from '@mantine/core'
 import type {FC} from 'react'
 import React from 'react'

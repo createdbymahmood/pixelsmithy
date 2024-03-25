@@ -23,7 +23,7 @@ import clsx from 'clsx'
 import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
-import {BottomNavigation} from '@/components/Flights/components/screens/general/components'
+import {BottomNavigation} from '@/components/flights/components/screens/general/components'
 
 import styles from './Profile.module.scss'
 

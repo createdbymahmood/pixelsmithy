@@ -3,7 +3,7 @@ import {Box, Button, Card, rem, Stack, Text} from '@mantine/core'
 import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
-import {BottomNavigation} from '@/components/Flights/components/screens/general/components'
+import {BottomNavigation} from '@/components/flights/components/screens/general/components'
 
 import {HelpfulInformation, PassengersCount, SearchBox} from './components'
 

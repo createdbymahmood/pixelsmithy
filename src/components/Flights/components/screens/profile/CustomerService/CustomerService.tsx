@@ -5,7 +5,7 @@ import {isEmpty} from 'lodash-es'
 import React, {useState} from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
-import {ScreenHeader} from '@/components/Flights/components/common'
+import {ScreenHeader} from '@/components/flights/components/common'
 
 import styles from './CustomerService.module.scss'
 

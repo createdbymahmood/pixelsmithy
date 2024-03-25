@@ -7,8 +7,8 @@ import dayJS from 'dayjs'
 import type {ReactNode} from 'react'
 
 import {GroupLink} from '@/components/common'
-import type {InboxSidebarPreviewItem} from '@/components/Roscent'
-import {InboxSidebar} from '@/components/Roscent'
+import type {InboxSidebarPreviewItem} from '@/components/roscent'
+import {InboxSidebar} from '@/components/roscent'
 
 function InboxSidebarHeader() {
   return (

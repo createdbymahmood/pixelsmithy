@@ -7,7 +7,7 @@ import {List, Tabs} from '@mantine/core'
 import {head} from 'lodash-es'
 import Link from 'next/link'
 
-import {projectId} from '@/components/Roscent/mocks/email'
+import {projectId} from '@/components/roscent/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './SidebarTabsQuickNavigation.module.scss'

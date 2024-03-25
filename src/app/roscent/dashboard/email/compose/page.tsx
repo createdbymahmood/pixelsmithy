@@ -1,4 +1,4 @@
-import {EmailCompose} from '@/components/Roscent'
+import {EmailCompose} from '@/components/roscent'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

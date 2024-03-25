@@ -9,8 +9,8 @@ import {
 import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
-import {ScreenHeader} from '@/components/Flights/components/common'
-import {BottomNavigation} from '@/components/Flights/components/screens/general/components'
+import {ScreenHeader} from '@/components/flights/components/common'
+import {BottomNavigation} from '@/components/flights/components/screens/general/components'
 
 interface CC {
   exp: string

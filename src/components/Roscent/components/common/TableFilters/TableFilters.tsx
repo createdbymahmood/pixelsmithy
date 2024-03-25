@@ -4,7 +4,7 @@ import {Card, Group} from '@mantine/core'
 import {FunnelSimple, Plus, SortAscending} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 
-import {SearchInput} from '@/components/Roscent'
+import {SearchInput} from '@/components/roscent'
 
 import styles from './TableFilters.module.scss'
 

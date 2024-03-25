@@ -11,7 +11,7 @@ import '@/lib/styles/global.scss'
 import {MantineProvider} from '@mantine/core'
 import type {ReactNode} from 'react'
 
-import {RoscentTheme} from '@/components/Roscent/lib/style/RoscentTheme'
+import {RoscentTheme} from '@/components/roscent/lib/style/RoscentTheme'
 import {defaultThemeColorScheme} from '@/constants'
 
 interface RoscentProvidersProps {

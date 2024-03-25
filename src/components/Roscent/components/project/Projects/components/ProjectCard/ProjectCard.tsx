@@ -14,8 +14,8 @@ import Link from 'next/link'
 import {
   CompleationStatus,
   getCompleationStatusByIndex,
-} from '@/components/Roscent/components/project/Projects/components/Status/Status'
-import {projectId} from '@/components/Roscent/mocks/email'
+} from '@/components/roscent/components/project/Projects/components/Status/Status'
+import {projectId} from '@/components/roscent/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './ProjectCard.module.scss'

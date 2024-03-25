@@ -4,7 +4,7 @@ import '@mantine/carousel/styles.css'
 import '@/lib/styles/global.scss'
 import 'react-perfect-scrollbar/dist/css/styles.css'
 
-import {FlightsTheme} from '@flights/lib/style/FlightsTheme'
+import {FlightsTheme} from '@/components/flights/lib/style/FlightsTheme'
 import {MantineProvider} from '@mantine/core'
 import type {ReactNode} from 'react'
 

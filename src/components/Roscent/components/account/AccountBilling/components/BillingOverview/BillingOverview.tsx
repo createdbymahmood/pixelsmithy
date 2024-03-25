@@ -11,7 +11,7 @@ import {
 } from '@mantine/core'
 import {Info} from '@phosphor-icons/react/dist/ssr'
 
-import {StrippedProgress} from '@/components/Roscent/components/common/StrippedProgress'
+import {StrippedProgress} from '@/components/roscent/components/common/StrippedProgress'
 
 function Header() {
   return (

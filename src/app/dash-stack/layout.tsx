@@ -1,6 +1,6 @@
 'use client'
 
-import {DashStackProviders} from '@dash-stack/layout/DashStackProviders'
+import {DashStackProviders} from '@/components/dash-stack/layout/DashStackProviders'
 import type {ReactNode} from 'react'
 import React from 'react'
 

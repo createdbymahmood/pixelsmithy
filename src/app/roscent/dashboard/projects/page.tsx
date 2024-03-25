@@ -1,4 +1,4 @@
-import {Projects as ProjectsPage} from '@/components/Roscent'
+import {Projects as ProjectsPage} from '@/components/roscent'
 import {defaultLoadingScreenDelayMS} from '@/constants'
 import {constructMetadata} from '@/utils/constructMetadata'
 import {sleep} from '@/utils/sleep'

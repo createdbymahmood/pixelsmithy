@@ -1,4 +1,4 @@
-import {ToDoList} from '@dash-stack/components'
+import {ToDoList} from '@/components/dash-stack/components'
 
 import {constructMetadata} from '@/utils/constructMetadata'
 

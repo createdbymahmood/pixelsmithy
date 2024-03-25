@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {ForgotPasswordForm} from '@/components/Roscent'
+import {ForgotPasswordForm} from '@/components/roscent'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

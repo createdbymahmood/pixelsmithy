@@ -9,7 +9,7 @@ import type {FC, ReactNode} from 'react'
 import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
-import {BottomNavigation} from '@/components/Flights/components/screens/general/components'
+import {BottomNavigation} from '@/components/flights/components/screens/general/components'
 
 interface SettingsSectionProps {
   title: string

@@ -15,7 +15,7 @@ import dayJS from 'dayjs'
 import {range} from 'lodash-es'
 import {useState} from 'react'
 
-import {activities} from '@/components/Roscent/layout/RoscentLayout/components/RightSidePanel/RightSidePanel'
+import {activities} from '@/components/roscent/layout/RoscentLayout/components/RightSidePanel/RightSidePanel'
 
 import styles from './ProjectOverviewTimeline.module.scss'
 

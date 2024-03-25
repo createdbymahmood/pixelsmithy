@@ -1,4 +1,4 @@
-import {CustomerInfo} from '@modernize/components'
+import {CustomerInfo} from '@/components/modernize/components'
 
 import {constructMetadata} from '@/utils/constructMetadata'
 

@@ -20,9 +20,9 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@modernize/*": ["./src/components/Modernize/*"],
-      "@dash-stack/*": ["./src/components/DashStack/*"],
-      "@flights/*": ["./src/components/Flights/*"]
+      "@modernize/*": ["./src/components/modernize/*"],
+      "@dash-stack/*": ["./src/components/dash-stack/*"],
+      "@flights/*": ["./src/components/flights/*"]
     },
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },

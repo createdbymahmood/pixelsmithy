@@ -6,8 +6,8 @@ import clsx from 'clsx'
 import dayJS from 'dayjs'
 import type {ReactNode} from 'react'
 
-import type {InboxSidebarPreviewItem} from '@/components/Roscent'
-import {InboxSidebar, SearchInput} from '@/components/Roscent'
+import type {InboxSidebarPreviewItem} from '@/components/roscent'
+import {InboxSidebar, SearchInput} from '@/components/roscent'
 
 import styles from './ChatLayout.module.scss'
 

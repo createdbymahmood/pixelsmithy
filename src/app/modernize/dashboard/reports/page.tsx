@@ -4,7 +4,8 @@ import dynamic from 'next/dynamic'
 import React from 'react'
 
 const ReportsView = dynamic(
-  () => import('@modernize/components/reports').then((m) => m.Reports),
+  () =>
+    import('@/components/modernize/components/reports').then((m) => m.Reports),
   {
     ssr: false,
   },

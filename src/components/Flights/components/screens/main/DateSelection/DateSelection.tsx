@@ -2,7 +2,7 @@ import {Box, Button, Skeleton} from '@mantine/core'
 import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
-import {FullscreenDrawer} from '@/components/Flights/components'
+import {FullscreenDrawer} from '@/components/flights/components'
 
 function DatePickerView() {
   return <Skeleton flex={1} mx='auto' />

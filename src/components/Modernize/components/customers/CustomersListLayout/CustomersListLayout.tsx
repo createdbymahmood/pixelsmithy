@@ -4,7 +4,7 @@ import type {
   TabsTabStylesNames,
 } from '@mantine/core'
 import {Box, Button, Group, rem, Stack, Tabs, Title} from '@mantine/core'
-import {TableWrapper} from '@modernize/components/common'
+import {TableWrapper} from '@/components/modernize/components/common'
 import {Plus} from '@phosphor-icons/react/dist/ssr'
 import {startCase} from 'lodash-es'
 import Link from 'next/link'

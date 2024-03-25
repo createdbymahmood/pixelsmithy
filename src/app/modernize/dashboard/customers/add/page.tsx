@@ -1,4 +1,4 @@
-import {AddCustomerForm} from '@modernize/components'
+import {AddCustomerForm} from '@/components/modernize/components'
 
 import {constructMetadata} from '@/utils/constructMetadata'
 

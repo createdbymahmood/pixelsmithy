@@ -20,7 +20,7 @@ import {get} from 'lodash-es'
 import {
   TableFilters,
   TableWrapper,
-} from '@/components/Modernize/components/common'
+} from '@/components/modernize/components/common'
 import {dateTimeFormat} from '@/constants'
 import {useTableState} from '@/hooks/useTableState'
 

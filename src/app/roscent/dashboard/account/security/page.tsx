@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {AccountSecurity} from '@/components/Roscent'
+import {AccountSecurity} from '@/components/roscent'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

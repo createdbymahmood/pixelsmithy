@@ -1,4 +1,4 @@
-import {ProductStock as ProductStockView} from '@dash-stack/components'
+import {ProductStock as ProductStockView} from '@/components/dash-stack/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

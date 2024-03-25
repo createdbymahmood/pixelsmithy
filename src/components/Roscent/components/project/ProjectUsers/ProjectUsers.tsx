@@ -13,8 +13,8 @@ import {
 import {CalendarBlank} from '@phosphor-icons/react/dist/ssr'
 import dayJS from 'dayjs'
 
-import {TableFilters} from '@/components/Roscent'
-import {dateToString} from '@/components/Roscent/utils/date'
+import {TableFilters} from '@/components/roscent'
+import {dateToString} from '@/components/roscent/utils/date'
 import {useTableState} from '@/hooks/useTableState'
 
 const elements = [

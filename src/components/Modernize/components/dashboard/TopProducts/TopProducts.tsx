@@ -2,7 +2,7 @@
 
 import {Avatar, Group, rem, Stack, Table, Text} from '@mantine/core'
 
-import {TableWrapper} from '@/components/Modernize/components/common'
+import {TableWrapper} from '@/components/modernize/components/common'
 
 interface Product {
   title: string

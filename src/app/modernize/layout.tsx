@@ -3,7 +3,7 @@
 import type {ReactNode} from 'react'
 
 import {MobileVersionNotice} from '@/components/common/MobileVersionNotice'
-import {ModernizeProviders} from '@/components/Modernize/layout'
+import {ModernizeProviders} from '@/components/modernize/layout'
 
 export default function Layout(props: {children: ReactNode}) {
   return (

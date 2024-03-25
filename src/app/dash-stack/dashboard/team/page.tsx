@@ -1,4 +1,4 @@
-import {Team as TeamView} from '@dash-stack/components'
+import {Team as TeamView} from '@/components/dash-stack/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

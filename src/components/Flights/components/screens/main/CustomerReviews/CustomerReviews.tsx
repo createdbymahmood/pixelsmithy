@@ -3,8 +3,8 @@ import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
 import {ScrollableContent} from '@/components/common/ScrollableContent'
-import {ScreenHeader} from '@/components/Flights/components/common'
-import {CustomerReview} from '@/components/Flights/components/screens'
+import {ScreenHeader} from '@/components/flights/components/common'
+import {CustomerReview} from '@/components/flights/components/screens'
 
 export function CustomerReviews() {
   const homeIndicatorSize = 34

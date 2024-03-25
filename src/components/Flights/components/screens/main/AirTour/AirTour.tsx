@@ -28,8 +28,8 @@ import React from 'react'
 
 import {IOSScreen} from '@/components/common/IOSScreen/IOSScreen'
 import {ScrollableContent} from '@/components/common/ScrollableContent'
-import {FavoriteToggle} from '@/components/Flights/components/screens'
-import {PassengersCount} from '@/components/Flights/components/screens/main/Home/components'
+import {FavoriteToggle} from '@/components/flights/components/screens'
+import {PassengersCount} from '@/components/flights/components/screens/main/Home/components'
 
 import styles from './AirTour.module.scss'
 

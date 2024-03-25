@@ -18,8 +18,8 @@ import clsx from 'clsx'
 import dayJS from 'dayjs'
 import {useState} from 'react'
 
-import {SettingsCard} from '@/components/Roscent'
-import {SaveFloatingActionButons} from '@/components/Roscent/components/project/components'
+import {SettingsCard} from '@/components/roscent'
+import {SaveFloatingActionButons} from '@/components/roscent/components/project/components'
 
 import styles from './ProjectSettings.module.scss'
 

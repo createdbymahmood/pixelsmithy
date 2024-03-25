@@ -13,11 +13,11 @@ import {
 } from '@mantine/core'
 import Link from 'next/link'
 
-import {SocialLogin} from '@/components/Roscent'
+import {SocialLogin} from '@/components/roscent'
 import {
   PasswordInput,
   TermsOfUse,
-} from '@/components/Roscent/components/authentication/components'
+} from '@/components/roscent/components/authentication/components'
 import {urls} from '@/constants'
 
 import styles from './SignUpForm.module.scss'
