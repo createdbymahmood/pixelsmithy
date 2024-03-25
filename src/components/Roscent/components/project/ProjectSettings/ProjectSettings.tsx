@@ -14,12 +14,12 @@ import {
 import {DateInput} from '@mantine/dates'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
 import {CalendarBlank, UploadSimple} from '@phosphor-icons/react/dist/ssr'
+import {SaveFloatingActionButons} from '@roscent/components/project/components'
 import clsx from 'clsx'
 import dayJS from 'dayjs'
 import {useState} from 'react'
 
-import {SettingsCard} from '@/components/roscent'
-import {SaveFloatingActionButons} from '@/components/roscent/components/project/components'
+import {SettingsCard} from '@roscent/components'
 
 import styles from './ProjectSettings.module.scss'
 

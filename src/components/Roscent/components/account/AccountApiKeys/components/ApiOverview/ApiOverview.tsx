@@ -8,9 +8,8 @@ import {
   Text,
   Title,
 } from '@mantine/core'
+import {SignInSessions} from '@roscent/components/account/AccountSecurity/components'
 import React from 'react'
-
-import {SignInSessions} from '@/components/roscent/components/account/AccountSecurity/components'
 
 import {ApiKeys} from './components'
 

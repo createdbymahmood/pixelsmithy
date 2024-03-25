@@ -1,4 +1,4 @@
-import {ProjectActivity} from '@/components/roscent'
+import {ProjectActivity} from '@roscent/components'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

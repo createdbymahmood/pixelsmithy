@@ -1,6 +1,6 @@
+import {SignInForm} from '@roscent/components'
 import React from 'react'
 
-import {SignInForm} from '@/components/roscent'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

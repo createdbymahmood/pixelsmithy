@@ -12,6 +12,10 @@ import {
   PaintRoller,
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
+import {SidebarProfileButton} from '@roscent/layout/RoscentLayout/components/Sidebar/SidebarProfileButton'
+import {SidebarTabsQuickNavigation} from '@roscent/layout/RoscentLayout/components/Sidebar/SidebarTabsQuickNavigation'
+import {emailId, projectId} from '@roscent/mocks/email'
+import {userId} from '@roscent/mocks/user'
 import clsx from 'clsx'
 import {isArray, isEmpty, isEqual} from 'lodash-es'
 import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
@@ -21,10 +25,6 @@ import type {ComponentProps} from 'react'
 import React, {Fragment, useState} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {SidebarProfileButton} from '@/components/roscent/layout/RoscentLayout/components/Sidebar/SidebarProfileButton'
-import {SidebarTabsQuickNavigation} from '@/components/roscent/layout/RoscentLayout/components/Sidebar/SidebarTabsQuickNavigation'
-import {emailId, projectId} from '@/components/roscent/mocks/email'
-import {userId} from '@/components/roscent/mocks/user'
 import {urls} from '@/constants'
 
 import styles from './Sidebar.module.scss'

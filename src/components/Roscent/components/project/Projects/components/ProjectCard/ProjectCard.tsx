@@ -9,13 +9,13 @@ import {
   Title,
 } from '@mantine/core'
 import {Butterfly} from '@phosphor-icons/react/dist/ssr'
-import Link from 'next/link'
-
 import {
   CompleationStatus,
   getCompleationStatusByIndex,
-} from '@/components/roscent/components/project/Projects/components/Status/Status'
-import {projectId} from '@/components/roscent/mocks/email'
+} from '@roscent/components/project/Projects/components/Status/Status'
+import Link from 'next/link'
+
+import {projectId} from '@roscent/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './ProjectCard.module.scss'

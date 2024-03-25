@@ -3,7 +3,7 @@ import {entries, groupBy, map} from 'lodash-es'
 import {useState} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {SearchInput} from '@/components/roscent'
+import {SearchInput} from '@roscent/components'
 
 import styles from './SideUsersList.module.scss'
 

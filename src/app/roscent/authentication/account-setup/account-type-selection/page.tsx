@@ -1,4 +1,5 @@
-import {AccountTypeSelection as AccountTypeSelectionView} from '@/components/roscent/components/authentication/AccountSetup/components'
+import {AccountTypeSelection as AccountTypeSelectionView} from '@roscent/components/authentication/AccountSetup/components'
+
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

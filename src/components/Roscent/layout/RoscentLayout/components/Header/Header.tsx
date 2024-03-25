@@ -16,9 +16,9 @@ import {
 import {useRouter} from 'next/navigation'
 import {Fragment} from 'react'
 
-import {SearchInput} from '@/components/roscent'
-import {useRoscentLayoutStore} from '@/components/roscent/layout/RoscentLayout/store/layout'
-import {projectId} from '@/components/roscent/mocks/email'
+import {SearchInput} from '@roscent/components'
+import {useRoscentLayoutStore} from '@roscent/layout/RoscentLayout/store/layout'
+import {projectId} from '@roscent/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './Header.module.scss'

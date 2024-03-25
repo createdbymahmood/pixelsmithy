@@ -12,9 +12,9 @@ import {
 import dayJS from 'dayjs'
 import {get} from 'lodash-es'
 
-import {TableFilters} from '@/components/roscent'
-import {dateToString} from '@/components/roscent/utils/date'
-import {iconMap} from '@/components/roscent/utils/icons'
+import {TableFilters} from '@roscent/components'
+import {dateToString} from '@roscent/utils/date'
+import {iconMap} from '@roscent/utils/icons'
 import {useTableState} from '@/hooks/useTableState'
 
 const elements = [

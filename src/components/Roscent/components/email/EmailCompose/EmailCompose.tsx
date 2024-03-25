@@ -21,7 +21,7 @@ import {useRef} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import type {Editor as EditorType} from 'tinymce'
 
-import {EmailInboxSidebar} from '@/components/roscent'
+import {EmailInboxSidebar} from '@roscent/components'
 
 import styles from './EmailCompose.module.scss'
 

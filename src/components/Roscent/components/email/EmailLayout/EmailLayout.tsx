@@ -21,7 +21,7 @@ import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 import React, {Fragment} from 'react'
 
-import {emailId} from '@/components/roscent/mocks/email'
+import {emailId} from '@roscent/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './EmailLayout.module.scss'
