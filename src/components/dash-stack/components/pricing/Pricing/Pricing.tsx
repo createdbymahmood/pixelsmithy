@@ -11,7 +11,7 @@ import {
 } from '@mantine/core'
 import React from 'react'
 
-import {PageHeader} from '@/components/dash-stack/components'
+import {PageHeader} from '@dash-stack/components'
 
 interface PricingFeature {
   enabled: boolean

@@ -16,7 +16,7 @@ import {Star, Trash, XCircle} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {Fragment} from 'react'
 
-import {PageHeader} from '@/components/dash-stack/components'
+import {PageHeader} from '@dash-stack/components'
 
 import styles from './ToDoList.module.scss'
 

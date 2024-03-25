@@ -1,4 +1,4 @@
-import {Dashboard as DashboardView} from '@/components/dash-stack/components'
+import {Dashboard as DashboardView} from '@dash-stack/components'
 
 import {constructMetadata} from '@/utils/constructMetadata'
 

@@ -1,6 +1,6 @@
 'use client'
 
-import {PageHeader, Product} from '@/components/dash-stack/components'
+import {PageHeader, Product} from '@dash-stack/components'
 import {SimpleGrid, Stack} from '@mantine/core'
 import {range} from 'lodash-es'
 

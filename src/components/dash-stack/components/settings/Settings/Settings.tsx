@@ -12,7 +12,7 @@ import {
 } from '@mantine/core'
 import {Image} from '@phosphor-icons/react/dist/ssr'
 
-import {PageHeader} from '@/components/dash-stack/components'
+import {PageHeader} from '@dash-stack/components'
 
 function UploadLogo() {
   return (

@@ -1,4 +1,4 @@
-import {Favorites as FavoritesView} from '@/components/dash-stack/components'
+import {Favorites as FavoritesView} from '@dash-stack/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'
