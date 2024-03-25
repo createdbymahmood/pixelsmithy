@@ -14,6 +14,10 @@
     "postinstall": "node scripts/postinstall.js"
   },
   "dependencies": {
+    "@chakra-ui/anatomy": "2.2.2",
+    "@chakra-ui/react": "2.8.2",
+    "@emotion/react": "11.11.4",
+    "@emotion/styled": "11.11.0",
     "@faker-js/faker": "8.4.1",
     "@mantine/carousel": "7.5.3",
     "@mantine/core": "7.5.1",
@@ -30,6 +34,7 @@
     "date-fns": "3.5.0",
     "dayjs": "1.11.10",
     "embla-carousel-react": "8.0.0-rc22",
+    "framer-motion": "11.0.20",
     "immer": "10.0.3",
     "keen-slider": "6.8.6",
     "lodash-es": "4.17.21",
