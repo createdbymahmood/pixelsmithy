@@ -12,10 +12,10 @@ import {
   Text,
   Title,
 } from '@mantine/core'
+import {TableFilters, TableWrapper} from '@modernize/components/common'
 import {Plus} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
-import {TableFilters, TableWrapper} from '@modernize/components/common'
 import {urls} from '@/constants'
 import {useTableState} from '@/hooks/useTableState'
 

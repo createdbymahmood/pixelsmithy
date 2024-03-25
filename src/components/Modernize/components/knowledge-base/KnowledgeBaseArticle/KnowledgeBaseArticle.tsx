@@ -15,6 +15,7 @@ import {
   TextInput,
   Title,
 } from '@mantine/core'
+import {CommunityForm, Webinars} from '@modernize/components'
 import {ArrowLeft} from '@phosphor-icons/react'
 import {MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
 import {find, head} from 'lodash-es'
@@ -23,7 +24,6 @@ import Link from 'next/link'
 import {notFound, useParams} from 'next/navigation'
 
 import {GroupLink} from '@/components/common'
-import {CommunityForm, Webinars} from '@modernize/components'
 import {articles} from '@/components/modernize/mock/articles'
 import {urls} from '@/constants'
 

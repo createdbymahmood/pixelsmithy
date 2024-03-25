@@ -2,11 +2,11 @@
 
 import {rem, Stack, Table, Text} from '@mantine/core'
 import {paymentStatusMap} from '@modernize/components'
+import {TableWrapper} from '@modernize/components/common'
 import type {Dayjs} from 'dayjs'
 import dayJS from 'dayjs'
 import {get} from 'lodash-es'
 
-import {TableWrapper} from '@modernize/components/common'
 import {dateTimeFormat} from '@/constants'
 
 type OrderStatus = 'completed' | 'pending' | 'ready' | 'received' | 'shipped'

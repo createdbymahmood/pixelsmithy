@@ -1,3 +1,4 @@
+import {PageHeader} from '@dash-stack/components'
 import {faker} from '@faker-js/faker'
 import {
   Button,
@@ -13,7 +14,6 @@ import {EnvelopeSimple} from '@phosphor-icons/react/dist/ssr'
 import {range} from 'lodash-es'
 import Link from 'next/link'
 
-import {PageHeader} from '@dash-stack/components'
 import {urls} from '@/constants'
 
 function Header() {

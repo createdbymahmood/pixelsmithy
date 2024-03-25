@@ -9,13 +9,12 @@ import {
   Title,
 } from '@mantine/core'
 import {useCallbackRef} from '@mantine/hooks'
+import {activities} from '@roscent/layout/RoscentLayout/components/RightSidePanel/RightSidePanel'
 import clsx from 'clsx'
 import type {Dayjs} from 'dayjs'
 import dayJS from 'dayjs'
 import {range} from 'lodash-es'
 import {useState} from 'react'
-
-import {activities} from '@roscent/layout/RoscentLayout/components/RightSidePanel/RightSidePanel'
 
 import styles from './ProjectOverviewTimeline.module.scss'
 

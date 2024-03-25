@@ -1,8 +1,7 @@
 import {Card, Group, rem, Stack, Table, Text, Title} from '@mantine/core'
 import {DownloadSimple} from '@phosphor-icons/react/dist/ssr'
-import dayJS from 'dayjs'
-
 import {dateToString} from '@roscent/utils/date'
+import dayJS from 'dayjs'
 
 const elements = [
   {

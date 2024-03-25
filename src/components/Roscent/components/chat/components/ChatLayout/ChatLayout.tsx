@@ -2,12 +2,11 @@
 
 import {Box, Card, Group} from '@mantine/core'
 import {Gear, NotePencil} from '@phosphor-icons/react/dist/ssr'
+import type {InboxSidebarPreviewItem} from '@roscent/components'
+import {InboxSidebar, SearchInput} from '@roscent/components'
 import clsx from 'clsx'
 import dayJS from 'dayjs'
 import type {ReactNode} from 'react'
-
-import type {InboxSidebarPreviewItem} from '@roscent/components'
-import {InboxSidebar, SearchInput} from '@roscent/components'
 
 import styles from './ChatLayout.module.scss'
 

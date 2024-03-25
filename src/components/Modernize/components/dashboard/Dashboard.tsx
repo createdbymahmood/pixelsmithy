@@ -1,10 +1,9 @@
 'use client'
 
 import {Button, Grid, Group, rem, SimpleGrid, Stack, Title} from '@mantine/core'
+import {OrdersChart} from '@modernize/components/dashboard/OrdersChart'
 import {Gear} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
-
-import {OrdersChart} from '@modernize/components/dashboard/OrdersChart'
 
 import {RecentTransactions} from './RecentTransactions'
 import {SalesChart} from './SalesChart'

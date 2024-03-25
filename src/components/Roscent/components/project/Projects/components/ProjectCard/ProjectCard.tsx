@@ -13,9 +13,9 @@ import {
   CompleationStatus,
   getCompleationStatusByIndex,
 } from '@roscent/components/project/Projects/components/Status/Status'
+import {projectId} from '@roscent/mocks/email'
 import Link from 'next/link'
 
-import {projectId} from '@roscent/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './ProjectCard.module.scss'

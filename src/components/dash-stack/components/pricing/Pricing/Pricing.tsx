@@ -1,3 +1,4 @@
+import {PageHeader} from '@dash-stack/components'
 import {
   Anchor,
   Button,
@@ -10,8 +11,6 @@ import {
   Title,
 } from '@mantine/core'
 import React from 'react'
-
-import {PageHeader} from '@dash-stack/components'
 
 interface PricingFeature {
   enabled: boolean

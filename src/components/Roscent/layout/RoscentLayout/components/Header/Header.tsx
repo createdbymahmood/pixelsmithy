@@ -13,12 +13,12 @@ import {
   Star,
   Sun,
 } from '@phosphor-icons/react/dist/ssr'
-import {useRouter} from 'next/navigation'
-import {Fragment} from 'react'
-
 import {SearchInput} from '@roscent/components'
 import {useRoscentLayoutStore} from '@roscent/layout/RoscentLayout/store/layout'
 import {projectId} from '@roscent/mocks/email'
+import {useRouter} from 'next/navigation'
+import {Fragment} from 'react'
+
 import {urls} from '@/constants'
 
 import styles from './Header.module.scss'

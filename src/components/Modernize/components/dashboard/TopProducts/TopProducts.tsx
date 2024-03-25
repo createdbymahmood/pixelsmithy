@@ -1,7 +1,6 @@
 'use client'
 
 import {Avatar, Group, rem, Stack, Table, Text} from '@mantine/core'
-
 import {TableWrapper} from '@modernize/components/common'
 
 interface Product {

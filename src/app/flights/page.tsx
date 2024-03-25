@@ -1,6 +1,7 @@
 'use client'
-import {FlightsScreens} from '@/components/flights/components'
 import React from 'react'
+
+import {FlightsScreens} from '@/components/flights/components'
 
 export default function Flight() {
   return <FlightsScreens />

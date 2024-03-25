@@ -2,9 +2,9 @@
 
 import {rem, Stack, Table} from '@mantine/core'
 import {orders, orderStatusMap} from '@modernize/components'
+import {TableWrapper} from '@modernize/components/common'
 import {get} from 'lodash-es'
 
-import {TableWrapper} from '@modernize/components/common'
 import {dateTimeFormat} from '@/constants'
 
 function TableContent() {

@@ -1,9 +1,9 @@
 import {KnowledgeBaseArticle} from '@modernize/components'
-import {articles} from '@/components/modernize/mock/articles'
 import {find} from 'lodash-es'
 import type {Metadata} from 'next'
 import {notFound} from 'next/navigation'
 
+import {articles} from '@/components/modernize/mock/articles'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 interface Props {

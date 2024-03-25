@@ -1,4 +1,3 @@
-import {useLayoutStore} from '@/components/dash-stack/layout/DashStackDashboardLayout/store/layout'
 import {
   Avatar,
   Group,
@@ -25,6 +24,7 @@ import clsx from 'clsx'
 import {useRouter} from 'next/navigation'
 import {Fragment} from 'react'
 
+import {useLayoutStore} from '@/components/dash-stack/layout/DashStackDashboardLayout/store/layout'
 import {urls} from '@/constants'
 
 import styles from './Header.module.scss'
