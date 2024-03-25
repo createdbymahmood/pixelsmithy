@@ -13,13 +13,12 @@ import {
   Title,
 } from '@mantine/core'
 import {useCallbackRef} from '@mantine/hooks'
+import {StrippedProgress} from '@roscent/components/common/StrippedProgress'
+import {SaveFloatingActionButons} from '@roscent/components/project/components'
 import clsx from 'clsx'
 import {isEqual} from 'lodash-es'
 import type {ReactNode} from 'react'
 import React, {Fragment, useState} from 'react'
-
-import {StrippedProgress} from '@/components/roscent/components/common/StrippedProgress'
-import {SaveFloatingActionButons} from '@/components/roscent/components/project/components'
 
 import styles from './ProjectBudget.module.scss'
 

@@ -5,7 +5,7 @@ import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import {useShallow} from 'zustand/react/shallow'
 
-import {useRoscentLayoutStore} from '@/components/roscent/layout/RoscentLayout/store/layout'
+import {useRoscentLayoutStore} from '@roscent/layout/RoscentLayout/store/layout'
 
 import {Header, RightSidePanel, Sidebar} from './components'
 import styles from './RoscentLayout.module.scss'

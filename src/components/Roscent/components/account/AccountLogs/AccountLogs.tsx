@@ -1,9 +1,8 @@
 'use client'
 
 import {Stack} from '@mantine/core'
+import {SignInSessions} from '@roscent/components/account/AccountSecurity/components'
 import React from 'react'
-
-import {SignInSessions} from '@/components/roscent/components/account/AccountSecurity/components'
 
 import {Logs} from './components'
 

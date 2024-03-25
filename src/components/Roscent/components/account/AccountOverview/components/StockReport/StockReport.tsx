@@ -1,7 +1,7 @@
 import {Card, Group, rem, Table, Text, Title} from '@mantine/core'
 import {get} from 'lodash-es'
 
-import {statusBadgeMap} from '@/components/roscent'
+import {statusBadgeMap} from '@roscent/components'
 
 const elements = [
   {

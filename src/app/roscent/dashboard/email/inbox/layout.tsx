@@ -1,3 +1,3 @@
-import {EmailInboxLayout} from '@/components/roscent'
+import {EmailInboxLayout} from '@roscent/components'
 
 export default EmailInboxLayout

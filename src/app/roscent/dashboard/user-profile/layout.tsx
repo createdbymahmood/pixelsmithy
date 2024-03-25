@@ -1,4 +1,4 @@
 'use client'
-import {UserProfileLayout} from '@/components/roscent'
+import {UserProfileLayout} from '@roscent/components'
 
 export default UserProfileLayout

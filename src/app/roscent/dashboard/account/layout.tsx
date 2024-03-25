@@ -1,4 +1,4 @@
 'use client'
-import {AccountLayout} from '@/components/roscent'
+import {AccountLayout} from '@roscent/components'
 
 export default AccountLayout

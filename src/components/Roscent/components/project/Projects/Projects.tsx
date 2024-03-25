@@ -9,10 +9,9 @@ import {
   TrendUp,
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
+import {ProjectCard} from '@roscent/components'
 import {range} from 'lodash-es'
 import React from 'react'
-
-import {ProjectCard} from '@/components/roscent/components'
 
 import styles from './Projects.module.scss'
 

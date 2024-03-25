@@ -9,7 +9,7 @@ import Link from 'next/link'
 import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
-import {projectId} from '@/components/roscent/mocks/email'
+import {projectId} from '@roscent/mocks/email'
 import {urls} from '@/constants'
 
 interface ProjectOverviewProps {

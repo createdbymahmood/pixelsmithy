@@ -1,6 +1,6 @@
+import {AccountInfo as AccountInfoView} from '@roscent/components/authentication/AccountSetup/components'
 import React from 'react'
 
-import {AccountInfo as AccountInfoView} from '@/components/roscent/components/authentication/AccountSetup/components'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

@@ -5,7 +5,7 @@ import clsx from 'clsx'
 import {get} from 'lodash-es'
 import {Fragment} from 'react'
 
-import {iconMap} from '@/components/roscent/utils/icons'
+import {iconMap} from '@roscent/utils/icons'
 
 import styles from './ProjectOverviewFilesList.module.scss'
 

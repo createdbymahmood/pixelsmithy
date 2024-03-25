@@ -1,6 +1,6 @@
+import {VerificationForm} from '@roscent/components'
 import React from 'react'
 
-import {VerificationForm} from '@/components/roscent'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

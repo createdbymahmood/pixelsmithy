@@ -1,5 +1,5 @@
 'use client'
 
-import {EmailLayout} from '@/components/roscent'
+import {EmailLayout} from '@roscent/components'
 
 export default EmailLayout

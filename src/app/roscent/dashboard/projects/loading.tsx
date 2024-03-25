@@ -1,5 +1,5 @@
 'use client'
 
-import {ProjectsLoading} from '@/components/roscent'
+import {ProjectsLoading} from '@roscent/components'
 
 export default ProjectsLoading

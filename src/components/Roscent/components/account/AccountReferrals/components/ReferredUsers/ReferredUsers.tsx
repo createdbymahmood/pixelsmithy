@@ -11,7 +11,7 @@ import {
 import {CalendarBlank} from '@phosphor-icons/react/dist/ssr'
 import dayJS from 'dayjs'
 
-import {dateToString} from '@/components/roscent/utils/date'
+import {dateToString} from '@roscent/utils/date'
 
 const elements = [
   {

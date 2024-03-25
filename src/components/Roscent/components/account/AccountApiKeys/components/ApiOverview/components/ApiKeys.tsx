@@ -1,10 +1,9 @@
 'use client'
 
 import {Card, Stack, Table, Title} from '@mantine/core'
+import {CompleationStatus} from '@roscent/components'
+import {dateToString} from '@roscent/utils/date'
 import dayJS from 'dayjs'
-
-import {CompleationStatus} from '@/components/roscent'
-import {dateToString} from '@/components/roscent/utils/date'
 
 const elements = [
   {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {ProjectOverview} from '@/components/roscent'
+import {ProjectOverview} from '@roscent/components'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

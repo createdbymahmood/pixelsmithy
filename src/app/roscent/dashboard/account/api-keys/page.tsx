@@ -1,6 +1,6 @@
+import {AccountApiKeys} from '@roscent/components'
 import React from 'react'
 
-import {AccountApiKeys} from '@/components/roscent'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

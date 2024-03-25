@@ -1,5 +1,5 @@
 'use client'
 
-import {RoscentDashboardLayout} from '@/components/roscent/layout/RoscentLayout'
+import {RoscentDashboardLayout} from '@roscent/layout/RoscentLayout'
 
 export default RoscentDashboardLayout

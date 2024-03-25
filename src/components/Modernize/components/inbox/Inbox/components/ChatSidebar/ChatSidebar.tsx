@@ -8,7 +8,7 @@ import dayJS from 'dayjs'
 import {isUndefined} from 'lodash-es'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {toInboxSidebarTime} from '@/components/roscent/utils/date'
+import {toInboxSidebarTime} from '@roscent/utils/date'
 
 import styles from './ChatSidebar.module.scss'
 

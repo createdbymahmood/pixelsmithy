@@ -12,6 +12,8 @@ import {
   User,
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
+import type {SidebarSection} from '@roscent/layout/RoscentLayout/components/Sidebar/Sidebar'
+import {SidebarItem} from '@roscent/layout/RoscentLayout/components/Sidebar/Sidebar'
 import clsx from 'clsx'
 import {intersection, isEmpty, isEqual} from 'lodash-es'
 import Link from 'next/link'
@@ -20,8 +22,6 @@ import {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {GroupLink} from '@/components/common'
-import type {SidebarSection} from '@/components/roscent'
-import {SidebarItem} from '@/components/roscent'
 import {urls} from '@/constants'
 
 import styles from './Sidebar.module.scss'
