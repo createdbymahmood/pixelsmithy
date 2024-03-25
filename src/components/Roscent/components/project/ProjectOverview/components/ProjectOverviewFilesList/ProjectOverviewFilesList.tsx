@@ -1,11 +1,10 @@
 import {Button, Card, Group, rem, Stack, Text, Title} from '@mantine/core'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
 import {DownloadSimple, Upload, X} from '@phosphor-icons/react/dist/ssr'
+import {iconMap} from '@roscent/utils/icons'
 import clsx from 'clsx'
 import {get} from 'lodash-es'
 import {Fragment} from 'react'
-
-import {iconMap} from '@roscent/utils/icons'
 
 import styles from './ProjectOverviewFilesList.module.scss'
 

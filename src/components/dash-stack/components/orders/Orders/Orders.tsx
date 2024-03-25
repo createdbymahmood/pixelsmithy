@@ -1,7 +1,6 @@
+import {PageHeader} from '@dash-stack/components'
 import {Stack} from '@mantine/core'
 import React from 'react'
-
-import {PageHeader} from '@dash-stack/components'
 
 import {OrdersTable} from './components'
 

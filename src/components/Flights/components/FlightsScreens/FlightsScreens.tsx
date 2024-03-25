@@ -1,3 +1,7 @@
+import {Grid, Group} from '@mantine/core'
+import type {FC} from 'react'
+import React from 'react'
+
 import {
   AirTour,
   AirToursSearchResults,
@@ -21,9 +25,6 @@ import {
   Ticket,
   Tickets,
 } from '@/components/flights/components/screens'
-import {Grid, Group} from '@mantine/core'
-import type {FC} from 'react'
-import React from 'react'
 
 const screens = [
   {

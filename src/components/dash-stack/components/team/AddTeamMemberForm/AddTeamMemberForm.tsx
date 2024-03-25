@@ -1,4 +1,5 @@
 'use client'
+import {PageHeader} from '@dash-stack/components'
 import {
   Avatar,
   Button,
@@ -12,8 +13,6 @@ import {
 } from '@mantine/core'
 import {Image} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
-
-import {PageHeader} from '@dash-stack/components'
 
 function UploadPhoto() {
   return (

@@ -2,13 +2,13 @@
 
 import {Box, Card, Checkbox, Group} from '@mantine/core'
 import {FunnelSimple} from '@phosphor-icons/react/dist/ssr'
+import type {InboxSidebarPreviewItem} from '@roscent/components'
+import {InboxSidebar} from '@roscent/components'
 import clsx from 'clsx'
 import dayJS from 'dayjs'
 import type {ReactNode} from 'react'
 
 import {GroupLink} from '@/components/common'
-import type {InboxSidebarPreviewItem} from '@roscent/components'
-import {InboxSidebar} from '@roscent/components'
 
 function InboxSidebarHeader() {
   return (

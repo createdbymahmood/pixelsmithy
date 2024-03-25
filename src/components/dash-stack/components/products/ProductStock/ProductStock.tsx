@@ -1,10 +1,9 @@
 'use client'
 
+import {PageHeader} from '@dash-stack/components'
 import {Group, Input, rem, Stack} from '@mantine/core'
 import {MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
-
-import {PageHeader} from '@dash-stack/components'
 
 import {ProductStockTable} from './components'
 

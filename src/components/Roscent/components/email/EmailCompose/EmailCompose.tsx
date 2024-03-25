@@ -16,12 +16,11 @@ import {
   Paperclip,
   Trash,
 } from '@phosphor-icons/react/dist/ssr'
+import {EmailInboxSidebar} from '@roscent/components'
 import clsx from 'clsx'
 import {useRef} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import type {Editor as EditorType} from 'tinymce'
-
-import {EmailInboxSidebar} from '@roscent/components'
 
 import styles from './EmailCompose.module.scss'
 

@@ -8,10 +8,9 @@ import {
   MagnifyingGlass,
   Trash,
 } from '@phosphor-icons/react/dist/ssr'
-import {get} from 'lodash-es'
-
 import type {StatusType} from '@roscent/components'
 import {statusBadgeMap} from '@roscent/components'
+import {get} from 'lodash-es'
 
 import styles from './ProductDelivery.module.scss'
 

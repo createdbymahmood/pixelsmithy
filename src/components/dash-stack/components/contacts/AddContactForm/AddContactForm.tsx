@@ -1,4 +1,5 @@
 'use client'
+import {PageHeader} from '@dash-stack/components'
 import {
   Avatar,
   Button,
@@ -13,8 +14,6 @@ import {
 import {DatePickerInput} from '@mantine/dates'
 import {Image} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
-
-import {PageHeader} from '@dash-stack/components'
 
 function UploadPhoto() {
   return (

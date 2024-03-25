@@ -11,13 +11,13 @@ import {
   Text,
   Title,
 } from '@mantine/core'
+import {SocialLogin} from '@roscent/components'
 import {
   PasswordInput,
   TermsOfUse,
 } from '@roscent/components/authentication/components'
 import Link from 'next/link'
 
-import {SocialLogin} from '@roscent/components'
 import {urls} from '@/constants'
 
 import styles from './SignUpForm.module.scss'

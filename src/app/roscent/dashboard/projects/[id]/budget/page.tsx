@@ -1,4 +1,5 @@
 import {ProjectBudget} from '@roscent/components'
+
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

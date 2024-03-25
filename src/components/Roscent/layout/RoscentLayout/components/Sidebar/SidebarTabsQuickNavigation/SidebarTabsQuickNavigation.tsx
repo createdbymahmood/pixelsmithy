@@ -4,10 +4,10 @@ import type {
   MantineComponent,
 } from '@mantine/core'
 import {List, Tabs} from '@mantine/core'
+import {projectId} from '@roscent/mocks/email'
 import {head} from 'lodash-es'
 import Link from 'next/link'
 
-import {projectId} from '@roscent/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './SidebarTabsQuickNavigation.module.scss'

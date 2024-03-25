@@ -15,13 +15,13 @@ import {
   Tray,
   WarningOctagon,
 } from '@phosphor-icons/react/dist/ssr'
+import {emailId} from '@roscent/mocks/email'
 import clsx from 'clsx'
 import Link from 'next/link'
 import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 import React, {Fragment} from 'react'
 
-import {emailId} from '@roscent/mocks/email'
 import {urls} from '@/constants'
 
 import styles from './EmailLayout.module.scss'

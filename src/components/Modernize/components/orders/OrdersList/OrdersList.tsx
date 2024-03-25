@@ -12,12 +12,12 @@ import {
   Text,
   Title,
 } from '@mantine/core'
+import {TableFilters, TableWrapper} from '@modernize/components/common'
 import {Plus} from '@phosphor-icons/react/dist/ssr'
 import type {Dayjs} from 'dayjs'
 import dayJS from 'dayjs'
 import {get} from 'lodash-es'
 
-import {TableFilters, TableWrapper} from '@modernize/components/common'
 import {dateTimeFormat} from '@/constants'
 import {useTableState} from '@/hooks/useTableState'
 

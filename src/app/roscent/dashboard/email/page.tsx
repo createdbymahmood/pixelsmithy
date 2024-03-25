@@ -1,6 +1,6 @@
+import {emailId} from '@roscent/mocks/email'
 import {redirect} from 'next/navigation'
 
-import {emailId} from '@roscent/mocks/email'
 import {urls} from '@/constants'
 import {constructMetadata} from '@/utils/constructMetadata'
 

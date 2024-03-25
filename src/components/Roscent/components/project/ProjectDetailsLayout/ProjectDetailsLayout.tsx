@@ -4,12 +4,12 @@ import type {
   TabsTabStylesNames,
 } from '@mantine/core'
 import {Box, Tabs} from '@mantine/core'
+import {projectId} from '@roscent/mocks/email'
 import {startCase} from 'lodash-es'
 import Link from 'next/link'
 import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
-import {projectId} from '@roscent/mocks/email'
 import {urls} from '@/constants'
 
 interface ProjectOverviewProps {

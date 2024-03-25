@@ -1,9 +1,8 @@
 import {Avatar, Box, Card, Group, rem, Stack, Text} from '@mantine/core'
+import {SearchInput} from '@roscent/components'
 import {entries, groupBy, map} from 'lodash-es'
 import {useState} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
-
-import {SearchInput} from '@roscent/components'
 
 import styles from './SideUsersList.module.scss'
 

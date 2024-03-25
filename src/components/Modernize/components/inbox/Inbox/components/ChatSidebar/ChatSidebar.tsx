@@ -2,13 +2,12 @@
 
 import {Avatar, Badge, Box, Group, Input, rem, Stack, Text} from '@mantine/core'
 import {MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
+import {toInboxSidebarTime} from '@roscent/utils/date'
 import clsx from 'clsx'
 import type {Dayjs} from 'dayjs'
 import dayJS from 'dayjs'
 import {isUndefined} from 'lodash-es'
 import PerfectScrollbar from 'react-perfect-scrollbar'
-
-import {toInboxSidebarTime} from '@roscent/utils/date'
 
 import styles from './ChatSidebar.module.scss'
 

@@ -12,11 +12,10 @@ import {
   Title,
 } from '@mantine/core'
 import {CaretDown, ClipboardText, Clock} from '@phosphor-icons/react/dist/ssr'
-import clsx from 'clsx'
-import dayJS from 'dayjs'
-
 import {CompleationStatus} from '@roscent/components'
 import {dateToString} from '@roscent/utils/date'
+import clsx from 'clsx'
+import dayJS from 'dayjs'
 
 import styles from './LicenseUsage.module.scss'
 

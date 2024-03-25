@@ -2,10 +2,9 @@
 
 import {Card, Group, Menu, Stack, Table, Text, Title} from '@mantine/core'
 import {CaretDown} from '@phosphor-icons/react/dist/ssr'
-import dayJS from 'dayjs'
-
 import {OperationStatus} from '@roscent/components'
 import {dateToString} from '@roscent/utils/date'
+import dayJS from 'dayjs'
 
 import styles from './SignInSessions.module.scss'
 

@@ -1,13 +1,12 @@
 'use client'
 
 import {Avatar, Badge, Box, Group, rem, Stack, Text} from '@mantine/core'
+import {toInboxSidebarTime} from '@roscent/utils/date'
 import clsx from 'clsx'
 import type {Dayjs} from 'dayjs'
 import {isUndefined} from 'lodash-es'
 import type {ReactNode} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
-
-import {toInboxSidebarTime} from '@roscent/utils/date'
 
 import styles from './InboxSidebar.module.scss'
 

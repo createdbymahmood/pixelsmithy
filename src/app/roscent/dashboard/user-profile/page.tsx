@@ -1,6 +1,6 @@
+import {userId} from '@roscent/mocks/user'
 import {redirect} from 'next/navigation'
 
-import {userId} from '@roscent/mocks/user'
 import {urls} from '@/constants'
 
 export default function Page() {
