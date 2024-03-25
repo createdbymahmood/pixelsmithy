@@ -17,7 +17,7 @@ import {
 } from '@mantine/core'
 import {DatePickerInput} from '@mantine/dates'
 import {useCallbackRef, useDisclosure} from '@mantine/hooks'
-import {FormViewSection} from '@/components/modernize/components/common'
+import {FormViewSection} from '@modernize/components/common'
 import {ArrowLeft} from '@phosphor-icons/react'
 import {
   Bag,

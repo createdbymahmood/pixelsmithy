@@ -13,7 +13,7 @@ import {
   Text,
 } from '@mantine/core'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
-import {FormViewSection} from '@/components/modernize/components/common'
+import {FormViewSection} from '@modernize/components/common'
 
 function Actions() {
   return (

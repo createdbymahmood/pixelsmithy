@@ -1,4 +1,4 @@
-import {Inbox as InboxView} from '@/components/modernize/components'
+import {Inbox as InboxView} from '@modernize/components'
 
 import {constructMetadata} from '@/utils/constructMetadata'
 

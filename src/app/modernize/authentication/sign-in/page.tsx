@@ -1,4 +1,4 @@
-import {SignInForm} from '@/components/modernize/components'
+import {SignInForm} from '@modernize/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

@@ -1,4 +1,4 @@
-import {Pricing as PricingView} from '@/components/modernize/components'
+import {Pricing as PricingView} from '@modernize/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

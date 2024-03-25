@@ -1,4 +1,4 @@
-import {AddProductForm} from '@/components/modernize/components'
+import {AddProductForm} from '@modernize/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

@@ -14,7 +14,7 @@ import {
   Textarea,
   Title,
 } from '@mantine/core'
-import {FormViewSection} from '@/components/modernize/components/common'
+import {FormViewSection} from '@modernize/components/common'
 import {ArrowLeft} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 

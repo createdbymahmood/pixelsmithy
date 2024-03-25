@@ -17,10 +17,7 @@ import type {Dayjs} from 'dayjs'
 import dayJS from 'dayjs'
 import {get} from 'lodash-es'
 
-import {
-  TableFilters,
-  TableWrapper,
-} from '@/components/modernize/components/common'
+import {TableFilters, TableWrapper} from '@modernize/components/common'
 import {dateTimeFormat} from '@/constants'
 import {useTableState} from '@/hooks/useTableState'
 

@@ -10,7 +10,7 @@ import {
   Table,
   Text,
 } from '@mantine/core'
-import {TableFilters} from '@/components/modernize/components/common'
+import {TableFilters} from '@modernize/components/common'
 import Link from 'next/link'
 
 import {GroupLink} from '@/components/common'

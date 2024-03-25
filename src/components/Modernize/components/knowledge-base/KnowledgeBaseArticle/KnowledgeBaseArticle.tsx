@@ -23,7 +23,7 @@ import Link from 'next/link'
 import {notFound, useParams} from 'next/navigation'
 
 import {GroupLink} from '@/components/common'
-import {CommunityForm, Webinars} from '@/components/modernize/components'
+import {CommunityForm, Webinars} from '@modernize/components'
 import {articles} from '@/components/modernize/mock/articles'
 import {urls} from '@/constants'
 
