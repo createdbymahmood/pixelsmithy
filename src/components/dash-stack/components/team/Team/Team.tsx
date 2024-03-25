@@ -12,7 +12,7 @@ import {
 import {range} from 'lodash-es'
 import Link from 'next/link'
 
-import {PageHeader} from '@/components/dash-stack/components'
+import {PageHeader} from '@dash-stack/components'
 import {urls} from '@/constants'
 
 function Header() {

@@ -1,3 +1,3 @@
-import {AuthenticationLayout} from '@/components/dash-stack/components'
+import {AuthenticationLayout} from '@dash-stack/components'
 
 export default AuthenticationLayout

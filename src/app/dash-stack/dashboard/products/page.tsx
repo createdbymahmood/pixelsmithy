@@ -1,4 +1,4 @@
-import {Products as ProductsView} from '@/components/dash-stack/components'
+import {Products as ProductsView} from '@dash-stack/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

@@ -1,3 +1,3 @@
-import {InboxLayout} from '@/components/dash-stack/components'
+import {InboxLayout} from '@dash-stack/components'
 
 export default InboxLayout

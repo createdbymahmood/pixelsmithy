@@ -13,7 +13,7 @@ import {EnvelopeSimple} from '@phosphor-icons/react/dist/ssr'
 import {range} from 'lodash-es'
 import Link from 'next/link'
 
-import {PageHeader} from '@/components/dash-stack/components'
+import {PageHeader} from '@dash-stack/components'
 import {urls} from '@/constants'
 
 function Header() {

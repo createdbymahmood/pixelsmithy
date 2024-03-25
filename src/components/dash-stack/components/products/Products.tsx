@@ -1,6 +1,6 @@
 'use client'
 
-import {PageHeader} from '@/components/dash-stack/components'
+import {PageHeader} from '@dash-stack/components'
 import {Stack} from '@mantine/core'
 
 import {ProductsCarousel, PromotionsCarousel} from './components'

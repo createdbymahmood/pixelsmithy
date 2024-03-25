@@ -1,4 +1,4 @@
-import {Pricing as PricingView} from '@/components/dash-stack/components'
+import {Pricing as PricingView} from '@dash-stack/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

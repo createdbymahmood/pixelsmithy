@@ -13,7 +13,7 @@ import {
 import {Image} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
-import {PageHeader} from '@/components/dash-stack/components'
+import {PageHeader} from '@dash-stack/components'
 
 function UploadPhoto() {
   return (
