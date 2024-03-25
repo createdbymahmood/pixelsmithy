@@ -1,4 +1,4 @@
-import {KnowledgeBaseContent} from '@/components/modernize/components'
+import {KnowledgeBaseContent} from '@modernize/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

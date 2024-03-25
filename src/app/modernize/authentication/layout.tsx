@@ -1,3 +1,3 @@
-import {AuthenticationLayout} from '@/components/modernize/components'
+import {AuthenticationLayout} from '@modernize/components'
 
 export default AuthenticationLayout

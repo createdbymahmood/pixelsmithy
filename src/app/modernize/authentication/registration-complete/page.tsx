@@ -1,4 +1,4 @@
-import {RegistrationComplete} from '@/components/modernize/components'
+import {RegistrationComplete} from '@modernize/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

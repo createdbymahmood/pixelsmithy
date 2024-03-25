@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import React from 'react'
 
 const DashboardView = dynamic(
-  () => import('@/components/modernize/components').then((m) => m.Dashboard),
+  () => import('@modernize/components').then((m) => m.Dashboard),
   {
     ssr: false,
   },

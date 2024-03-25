@@ -1,4 +1,4 @@
-import {CouponsList} from '@/components/modernize/components'
+import {CouponsList} from '@modernize/components'
 
 import {constructMetadata} from '@/utils/constructMetadata'
 

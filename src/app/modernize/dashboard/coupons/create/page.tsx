@@ -1,4 +1,4 @@
-import {CreateCouponForm} from '@/components/modernize/components'
+import {CreateCouponForm} from '@modernize/components'
 
 import {constructMetadata} from '@/utils/constructMetadata'
 

@@ -1,4 +1,4 @@
-import {CustomersList} from '@/components/modernize/components'
+import {CustomersList} from '@modernize/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

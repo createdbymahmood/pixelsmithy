@@ -1,4 +1,4 @@
-import {NotificaitonsSettings as NotificationsSettingsView} from '@/components/modernize/components'
+import {NotificaitonsSettings as NotificationsSettingsView} from '@modernize/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'
