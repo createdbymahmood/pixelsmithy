@@ -148,7 +148,7 @@ const SidebarItems = ({items}: SidebarItemsProps) => {
 const SidebarSections = ({sections}: SidebarSectionsProps) => {
   const content = sections.map((section) => {
     return (
-      <Box key={section.title} mb='xl'>
+      <Box key={section.title} mb={1}>
         <Text
           color='gray.500'
           fontSize='xs'
@@ -174,7 +174,7 @@ const SidebarSections = ({sections}: SidebarSectionsProps) => {
 
 export function SidebarContent() {
   return (
-    <Box h='100%' p={3}>
+    <Box h='100%' py={4}>
       <SidebarSections sections={sidebarSections} />
     </Box>
   )
