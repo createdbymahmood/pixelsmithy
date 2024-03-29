@@ -25,7 +25,7 @@ export function SidebarDrawer({children}: SidebarDrawerProps) {
         aria-label='Send email'
         colorScheme='white'
         icon={<List className='icon-size-md' />}
-        m={3}
+        m={4}
         variant='outline'
         onClick={onOpen}
       />
@@ -34,6 +34,7 @@ export function SidebarDrawer({children}: SidebarDrawerProps) {
         finalFocusRef={btnRef}
         isOpen={isOpen}
         placement='left'
+        size='full'
         onClose={onClose}
       >
         <DrawerOverlay />
