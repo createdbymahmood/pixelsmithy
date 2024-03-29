@@ -19,11 +19,4 @@ export const theme = extendTheme({
     heading: inter.style.fontFamily,
     body: inter.style.fontFamily,
   },
-  styles: {
-    global: () => ({
-      '.chakra-collapse': {
-        overflow: 'visible !important',
-      },
-    }),
-  },
 })
