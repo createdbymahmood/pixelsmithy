@@ -24,6 +24,7 @@ const sidebarAccordion = definePartsStyle((props) => {
     panel: {
       p: 0,
       ml: 10,
+      pr: 1,
       borderRadius: 'lg',
     },
     container: {
