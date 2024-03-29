@@ -11,6 +11,7 @@ import {
   Title,
   useMantineTheme,
 } from '@mantine/core'
+import {range} from 'lodash-es'
 import {forwardRef} from 'react'
 
 import styles from './PromotionsCarousel.module.scss'
@@ -43,23 +44,16 @@ const CarouselSlide = forwardRef<HTMLDivElement, unknown>(
 )
 
 export function PromotionsCarousel() {
+  const slides = range(0, 4).map((index) => {
+    return (
+      <Carousel.Slide key={index}>
+        <CarouselSlide />
+      </Carousel.Slide>
+    )
+  })
   return (
     <Carousel classNames={{control: styles.control}} slideGap={rem(10)}>
-      <Carousel.Slide>
-        <CarouselSlide />
-      </Carousel.Slide>
-
-      <Carousel.Slide>
-        <CarouselSlide />
-      </Carousel.Slide>
-
-      <Carousel.Slide>
-        <CarouselSlide />
-      </Carousel.Slide>
-
-      <Carousel.Slide>
-        <CarouselSlide />
-      </Carousel.Slide>
+      {slides}
     </Carousel>
   )
 }
