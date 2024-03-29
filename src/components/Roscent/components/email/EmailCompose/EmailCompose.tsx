@@ -18,21 +18,11 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import {EmailInboxSidebar} from '@roscent/components'
 import clsx from 'clsx'
-import {useRef} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
-import type {Editor as EditorType} from 'tinymce'
 
 import styles from './EmailCompose.module.scss'
 
 function ComposeEditor() {
-  const editorRef = useRef<EditorType>(null!)
-
-  const log = () => {
-    if (editorRef.current) {
-      console.log(editorRef.current.getContent())
-    }
-  }
-
   return (
     <Stack className={styles.editor} gap={0}>
       <Skeleton h={rem(400)} />
