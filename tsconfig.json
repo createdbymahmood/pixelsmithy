@@ -23,7 +23,8 @@
       "@modernize/*": ["./src/components/modernize/*"],
       "@dash-stack/*": ["./src/components/dash-stack/*"],
       "@flights/*": ["./src/components/flights/*"],
-      "@roscent/*": ["./src/components/roscent/*"]
+      "@roscent/*": ["./src/components/roscent/*"],
+      "@preline/*": ["./src/components/preline/*"]
     },
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },

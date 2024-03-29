@@ -178,18 +178,21 @@ export const urls = {
   Flights: {
     index: '/flights',
   },
+  Preline: {
+    index: '/preline',
+  },
 }
 export const applications = [
   {
     id: 1,
     title: 'Job Location',
-    description: 'A single job search page',
+    description: 'A Simple Job Search Page',
     href: urls.JobLocation.index,
   },
   {
     id: 2,
     title: 'Roscent',
-    description: 'Design system and UI Kit',
+    description: 'Design System and UI Kit',
     href: urls.roscent.index,
     info: 'Desktop version',
   },
@@ -213,5 +216,12 @@ export const applications = [
     description: 'Flight Schedule App',
     href: urls.Flights.index,
     info: 'Mobile Version Only, But also viewable on desktop',
+  },
+  {
+    id: 6,
+    title: 'Preline',
+    description: 'Preline UI Design System',
+    href: urls.Preline.index,
+    info: 'Implemented using Chakra UI',
   },
 ]

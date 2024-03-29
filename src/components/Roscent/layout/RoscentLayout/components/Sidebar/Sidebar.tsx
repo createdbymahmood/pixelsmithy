@@ -53,11 +53,11 @@ export interface SidebarSection {
   items: SidebarItem[]
 }
 
-interface SidebarSectionsProps {
+export interface SidebarSectionsProps {
   sections: SidebarSection[]
 }
 
-interface SidebarItemsProps {
+export interface SidebarItemsProps {
   items: SidebarItem[]
 }
 
