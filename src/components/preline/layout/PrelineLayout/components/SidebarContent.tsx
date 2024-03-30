@@ -8,6 +8,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 import {
+  ArrowsVertical,
   Basket,
   Briefcase,
   Files,
@@ -19,6 +20,7 @@ import {
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
 import {isArray, isEmpty, isEqual} from 'lodash-es'
+import Link from 'next/link'
 import {useSelectedLayoutSegments} from 'next/navigation'
 import type {ReactNode} from 'react'
 import React, {Fragment} from 'react'
@@ -39,7 +41,19 @@ interface CustomSidebarSection extends SidebarSection {
 
 const sidebarSections: CustomSidebarSection[] = [
   {
-    title: '',
+    title: 'Components',
+    items: [
+      {
+        id: 'accordion',
+        title: 'Accordion',
+        icon: ArrowsVertical,
+        activeSegment: null,
+        href: urls.Preline.accordion,
+      },
+    ],
+  },
+  {
+    title: 'Main',
     items: [
       {
         id: 'dashboard',
@@ -247,8 +261,9 @@ const SidebarItems = ({items}: SidebarItemsProps) => {
       return item.icon ?? Fragment
     })()
 
+    const Component = !isEmpty(item.href) ? Link : undefined
     return (
-      <AccordionItem key={item.id} py={1}>
+      <AccordionItem key={item.id} as={Component} href={item.href} py={1}>
         <AccordionButton>
           <HStack w='100%'>
             {withIcon ? <Icon className='icon-size-lg' /> : null}
