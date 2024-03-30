@@ -40,7 +40,9 @@ export function SidebarDrawer({children}: SidebarDrawerProps) {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <Box mt={8}>{children}</Box>
+          <Box mt={12} overflow='hidden'>
+            {children}
+          </Box>
         </DrawerContent>
       </Drawer>
     </Fragment>
