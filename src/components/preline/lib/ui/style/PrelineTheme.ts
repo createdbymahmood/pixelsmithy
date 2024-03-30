@@ -8,7 +8,7 @@ import {
 
 import {inter} from '@/lib/styles/font/inter'
 
-export const theme = extendTheme({
+export const PrelineTheme = extendTheme({
   components: {
     Button,
     Skeleton,
