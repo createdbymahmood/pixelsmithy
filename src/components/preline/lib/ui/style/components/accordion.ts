@@ -39,7 +39,7 @@ const sidebarAccordion = definePartsStyle((props) => {
         bg: 'gray.50',
       },
       _focus: {
-        color: 'blue.500',
+        color: 'blue.600',
         bg: 'gray.50',
       },
     },

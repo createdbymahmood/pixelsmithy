@@ -251,9 +251,7 @@ const SidebarItems = ({items}: SidebarItemsProps) => {
       <AccordionItem key={item.id} py={1}>
         <AccordionButton>
           <HStack w='100%'>
-            {withIcon ? (
-              <Icon className='icon-size-lg' weight='regular' />
-            ) : null}
+            {withIcon ? <Icon className='icon-size-lg' /> : null}
 
             <Text fontSize='sm' fontWeight='500'>
               {item.title}
