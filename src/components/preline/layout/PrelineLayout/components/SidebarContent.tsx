@@ -12,6 +12,7 @@ import {Files, House, UsersThree} from '@phosphor-icons/react/dist/ssr'
 import {isArray, isEmpty, isEqual} from 'lodash-es'
 import {useSelectedLayoutSegments} from 'next/navigation'
 import React, {Fragment} from 'react'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import type {
   SidebarItemsProps,
@@ -96,9 +97,9 @@ const SidebarItems = ({items}: SidebarItemsProps) => {
   const content = items.map((item) => {
     const withChildren = isArray(item.children) && !isEmpty(item.children)
 
-    const children = (() => {
-      return withChildren ? <SidebarItems items={item.children!} /> : null
-    })()
+    const children = withChildren ? (
+      <SidebarItems items={item.children!} />
+    ) : null
 
     const opened = isEqual(segments, item.activeSegment)
     const withIcon = !isEmpty(item.icon)
@@ -174,8 +175,10 @@ const SidebarSections = ({sections}: SidebarSectionsProps) => {
 
 export function SidebarContent() {
   return (
-    <Box h='100%' py={4}>
-      <SidebarSections sections={sidebarSections} />
-    </Box>
+    <PerfectScrollbar>
+      <Box h='100%' py={4}>
+        <SidebarSections sections={sidebarSections} />
+      </Box>
+    </PerfectScrollbar>
   )
 }
