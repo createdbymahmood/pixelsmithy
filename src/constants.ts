@@ -180,6 +180,7 @@ export const urls = {
   },
   Preline: {
     index: '/preline',
+    accordion: '/preline/accordion',
   },
 }
 export const applications = [
