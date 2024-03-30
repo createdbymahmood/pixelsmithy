@@ -25,7 +25,7 @@ export function SidebarDrawer({children}: SidebarDrawerProps) {
         aria-label='Send email'
         colorScheme='white'
         icon={<List className='icon-size-md' />}
-        m={4}
+        m={2}
         variant='outline'
         onClick={onOpen}
       />
