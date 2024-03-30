@@ -3,14 +3,24 @@ import {
   AccordionButton,
   AccordionIcon,
   AccordionItem,
-  AccordionPanel,
   Box,
   HStack,
   Text,
 } from '@chakra-ui/react'
-import {Files, House, UsersThree} from '@phosphor-icons/react/dist/ssr'
+import {
+  Basket,
+  Briefcase,
+  Files,
+  House,
+  Key,
+  LockSimple,
+  UserCircle,
+  UserGear,
+  UsersThree,
+} from '@phosphor-icons/react/dist/ssr'
 import {isArray, isEmpty, isEqual} from 'lodash-es'
 import {useSelectedLayoutSegments} from 'next/navigation'
+import type {ReactNode} from 'react'
 import React, {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -21,11 +31,15 @@ import type {
 } from '@/components/roscent'
 import {urls} from '@/constants'
 
-interface CustomSidebarSection extends SidebarSection {}
+import {AccordionPanel, SectionTitle} from './styles'
+
+interface CustomSidebarSection extends SidebarSection {
+  badge?: ReactNode
+}
 
 const sidebarSections: CustomSidebarSection[] = [
   {
-    title: 'Pages',
+    title: '',
     items: [
       {
         id: 'dashboard',
@@ -37,33 +51,98 @@ const sidebarSections: CustomSidebarSection[] = [
             id: 'dashboard-default',
             href: urls.Preline.index,
             title: 'Default',
-            activeSegment: [''],
+            activeSegment: null,
           },
           {
             id: 'dashboard-alternative',
             href: urls.Preline.index,
             title: 'Alternative',
-            activeSegment: [''],
+            activeSegment: null,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Pages',
+    items: [
+      {
+        id: 'users',
+        title: 'Users',
+        icon: UsersThree,
+        activeSegment: null,
+        children: [
+          {
+            id: 'users-default',
+            href: urls.Preline.index,
+            title: 'Default',
+            activeSegment: null,
+          },
+          {
+            id: 'users-alternative',
+            href: urls.Preline.index,
+            title: 'Alternative',
+            activeSegment: null,
+          },
+        ],
+      },
+      {
+        id: 'user-profile',
+        title: 'User Profile',
+        icon: UserGear,
+        activeSegment: null,
+        children: [
+          {
+            id: 'user-profile-default',
+            href: urls.Preline.index,
+            title: 'Default',
+            activeSegment: null,
+          },
+          {
+            id: 'user-profile-alternative',
+            href: urls.Preline.index,
+            title: 'Alternative',
+            activeSegment: null,
           },
         ],
       },
       {
         id: 'account',
         title: 'Account',
-        icon: UsersThree,
+        icon: UserCircle,
         activeSegment: null,
         children: [
           {
             id: 'account-default',
             href: urls.Preline.index,
             title: 'Default',
-            activeSegment: [''],
+            activeSegment: null,
           },
           {
             id: 'account-alternative',
             href: urls.Preline.index,
             title: 'Alternative',
-            activeSegment: [''],
+            activeSegment: null,
+          },
+        ],
+      },
+      {
+        id: 'ecommerce',
+        title: 'E-Commerce',
+        icon: Basket,
+        activeSegment: null,
+        children: [
+          {
+            id: 'ecommerce-default',
+            href: urls.Preline.index,
+            title: 'Default',
+            activeSegment: null,
+          },
+          {
+            id: 'ecommerce-alternative',
+            href: urls.Preline.index,
+            title: 'Alternative',
+            activeSegment: null,
           },
         ],
       },
@@ -74,16 +153,76 @@ const sidebarSections: CustomSidebarSection[] = [
         activeSegment: null,
         children: [
           {
+            id: 'projects-default',
+            href: urls.Preline.index,
+            title: 'Default',
+            activeSegment: null,
+          },
+          {
+            id: 'projects-alternative',
+            href: urls.Preline.index,
+            title: 'Alternative',
+            activeSegment: null,
+          },
+        ],
+      },
+      {
+        id: 'project',
+        title: 'Project',
+        icon: Briefcase,
+        activeSegment: null,
+        children: [
+          {
             id: 'project-default',
             href: urls.Preline.index,
             title: 'Default',
-            activeSegment: [''],
+            activeSegment: null,
           },
           {
             id: 'project-alternative',
             href: urls.Preline.index,
             title: 'Alternative',
-            activeSegment: [''],
+            activeSegment: null,
+          },
+        ],
+      },
+      {
+        id: 'authentication',
+        title: 'Authentication',
+        icon: LockSimple,
+        activeSegment: null,
+        children: [
+          {
+            id: 'auth-default',
+            href: urls.Preline.index,
+            title: 'Default',
+            activeSegment: null,
+          },
+          {
+            id: 'auth-alternative',
+            href: urls.Preline.index,
+            title: 'Alternative',
+            activeSegment: null,
+          },
+        ],
+      },
+      {
+        id: 'api-keys',
+        title: 'API Keys',
+        icon: Key,
+        activeSegment: null,
+        children: [
+          {
+            id: 'api-key-default',
+            href: urls.Preline.index,
+            title: 'Default',
+            activeSegment: null,
+          },
+          {
+            id: 'api-key-alternative',
+            href: urls.Preline.index,
+            title: 'Alternative',
+            activeSegment: null,
           },
         ],
       },
@@ -123,22 +262,7 @@ const SidebarItems = ({items}: SidebarItemsProps) => {
           </HStack>
         </AccordionButton>
 
-        <AccordionPanel
-          _before={{
-            content: "''",
-            display: 'block',
-            width: 0.5,
-            borderRadius: 'xl',
-            bg: 'gray.200',
-            position: 'absolute',
-            left: -3,
-            top: 1,
-            bottom: 1,
-          }}
-          position='relative'
-        >
-          {children}
-        </AccordionPanel>
+        <AccordionPanel>{children}</AccordionPanel>
       </AccordionItem>
     )
   })
@@ -150,16 +274,9 @@ const SidebarSections = ({sections}: SidebarSectionsProps) => {
   const content = sections.map((section) => {
     return (
       <Box key={section.title} mb={1}>
-        <Text
-          color='gray.500'
-          fontSize='xs'
-          fontWeight='600'
-          mb={2}
-          ml={4}
-          textTransform='uppercase'
-        >
-          {section.title}
-        </Text>
+        {!isEmpty(section.title) && (
+          <SectionTitle>{section.title}</SectionTitle>
+        )}
 
         <SidebarItems items={section.items} />
       </Box>
@@ -176,7 +293,7 @@ const SidebarSections = ({sections}: SidebarSectionsProps) => {
 export function SidebarContent() {
   return (
     <PerfectScrollbar>
-      <Box h='100%' py={4}>
+      <Box h='100%' px={2} py={4}>
         <SidebarSections sections={sidebarSections} />
       </Box>
     </PerfectScrollbar>
