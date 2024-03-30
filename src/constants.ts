@@ -218,11 +218,11 @@ export const applications = [
     href: urls.Flights.index,
     info: 'Mobile Version Only, But also viewable on desktop',
   },
-  {
+  /* {
     id: 6,
     title: 'Preline',
     description: 'Preline UI Design System',
     href: urls.Preline.index,
     info: 'Implemented using Chakra UI',
-  },
+  }, */
 ]
