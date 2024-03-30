@@ -292,10 +292,10 @@ const SidebarSections = ({sections}: SidebarSectionsProps) => {
 
 export function SidebarContent() {
   return (
-    <PerfectScrollbar>
-      <Box h='100%' px={2} py={4}>
+    <Box h='100%' px={[0, 2]} py={4}>
+      <PerfectScrollbar>
         <SidebarSections sections={sidebarSections} />
-      </Box>
-    </PerfectScrollbar>
+      </PerfectScrollbar>
+    </Box>
   )
 }

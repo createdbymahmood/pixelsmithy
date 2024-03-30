@@ -13,7 +13,7 @@ interface PrelineLayoutProps {
 export function PrelineLayout({children}: PrelineLayoutProps) {
   return (
     <Grid gap={0} gridTemplateColumns={['0 auto', '260px auto']} h='100vh'>
-      <GridItem overflowY='hidden'>
+      <GridItem overflowY={['visible', 'hidden']}>
         <Sidebar />
       </GridItem>
 
