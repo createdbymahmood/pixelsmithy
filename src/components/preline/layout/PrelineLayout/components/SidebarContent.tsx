@@ -282,7 +282,7 @@ const SidebarSections = ({sections}: SidebarSectionsProps) => {
   })
 
   return (
-    <Accordion variant='sidebar' w='100%' allowMultiple>
+    <Accordion variant='base' w='100%' allowMultiple>
       {content}
     </Accordion>
   )

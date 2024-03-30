@@ -18,13 +18,9 @@ const baseStyle = definePartsStyle({
   }),
 })
 
-// Defining a custom variant called outline
-const sidebarAccordion = definePartsStyle((props) => {
+const base = definePartsStyle(() => {
   return {
     panel: {
-      p: 0,
-      ml: 10,
-      pr: 1,
       borderRadius: 'lg',
     },
     container: {
@@ -34,10 +30,12 @@ const sidebarAccordion = definePartsStyle((props) => {
 
     button: {
       borderRadius: 'lg',
+
       _hover: {
         color: 'blue.600',
         bg: 'gray.50',
       },
+
       _focus: {
         color: 'blue.600',
         bg: 'gray.50',
@@ -46,9 +44,7 @@ const sidebarAccordion = definePartsStyle((props) => {
   }
 })
 
-const variants = {
-  sidebar: sidebarAccordion,
-}
+const variants = {base}
 
 export const Accordion = defineMultiStyleConfig({
   baseStyle,
