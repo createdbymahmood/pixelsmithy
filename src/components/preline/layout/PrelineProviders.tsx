@@ -1,4 +1,6 @@
 'use client'
+
+import 'react-perfect-scrollbar/dist/css/styles.css'
 import '@/lib/styles/global.scss'
 
 import {ChakraProvider} from '@chakra-ui/react'
