@@ -7,6 +7,9 @@ import {
 export const AccordionPanel = chakra(OriginalAccordionPanel, {
   baseStyle: {
     position: 'relative',
+    p: 0,
+    ml: 10,
+    pr: 1,
     _before: {
       content: "''",
       display: 'block',

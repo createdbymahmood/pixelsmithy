@@ -5,7 +5,7 @@ import {createMultiStyleConfigHelpers} from '@chakra-ui/react'
 const {definePartsStyle, defineMultiStyleConfig} =
   createMultiStyleConfigHelpers(alertAnatomy.keys)
 
-const alertCustomVariant = definePartsStyle({
+const custom = definePartsStyle({
   container: {
     border: '1px solid',
     borderColor: 'gray.200',
@@ -26,5 +26,5 @@ const alertCustomVariant = definePartsStyle({
 })
 
 export const Alert = defineMultiStyleConfig({
-  variants: {custom: alertCustomVariant},
+  variants: {custom},
 })
