@@ -7,6 +7,7 @@ import {colors} from './colors'
 const fontFamily = inter.style.fontFamily
 
 export const JobHuntlyTheme = createTheme({
+  primaryColor: 'primary',
   fontFamily,
   colors,
   headings: {
@@ -18,5 +19,15 @@ export const JobHuntlyTheme = createTheme({
       h4: {fontSize: rem(24), lineHeight: rem(28.8), fontWeight: '700'},
       h5: {fontSize: rem(20), lineHeight: rem(24), fontWeight: '700'},
     },
+  },
+  spacing: {
+    xxs: rem(4),
+    xs: rem(8),
+    sm: rem(12),
+    md: rem(16),
+    lg: rem(20),
+    xl: rem(24),
+    xxl: rem(28),
+    xxxl: rem(32),
   },
 })
