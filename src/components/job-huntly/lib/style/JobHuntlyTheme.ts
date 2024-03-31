@@ -3,13 +3,14 @@ import {createTheme, rem} from '@mantine/core'
 import {inter} from '@/lib/styles/font/inter'
 
 import {colors} from './colors'
+import {components} from './customizations'
 
 const fontFamily = inter.style.fontFamily
-
 export const JobHuntlyTheme = createTheme({
   primaryColor: 'primary',
   fontFamily,
   colors,
+  components,
   headings: {
     fontFamily,
     sizes: {
