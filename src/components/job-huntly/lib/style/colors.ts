@@ -61,7 +61,7 @@ export const colors: MantineThemeOverride['colors'] = {
     '#0075ce',
     '#0066b7',
   ],
-  purple: [
+  secondary: [
     '#eeeaff',
     '#d7d0ff',
     '#ac9cff',

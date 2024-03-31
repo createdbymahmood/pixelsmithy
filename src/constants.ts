@@ -178,6 +178,13 @@ export const urls = {
   Flights: {
     index: '/flights',
   },
+  JobHuntly: {
+    applicant: {
+      dashboard: {
+        index: '/job-huntly/applicant/dashboard',
+      },
+    },
+  },
 }
 export const applications = [
   {
