@@ -24,7 +24,8 @@
       "@dash-stack/*": ["./src/components/dash-stack/*"],
       "@flights/*": ["./src/components/flights/*"],
       "@roscent/*": ["./src/components/roscent/*"],
-      "@preline/*": ["./src/components/preline/*"]
+      "@preline/*": ["./src/components/preline/*"],
+      "@job-huntly/*": ["./src/components/job-huntly/*"]
     },
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },
