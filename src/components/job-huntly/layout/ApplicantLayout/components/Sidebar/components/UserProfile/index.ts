@@ -1,1 +1,1 @@
-export * from './SidebarUserProfile'
+export * from './UserProfile'
