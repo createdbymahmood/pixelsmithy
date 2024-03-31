@@ -3,7 +3,7 @@ import type {
   TextCssVariables,
   TextProps,
 } from '@mantine/core'
-import {rem, Text} from '@mantine/core'
+import {Button, rem, Text} from '@mantine/core'
 
 type DisplayTextResolverReturn = Record<
   'root',
@@ -50,6 +50,11 @@ export const components: MantineThemeComponents = {
       }
 
       return {root: {}}
+    },
+  }),
+  Button: Button.extend({
+    defaultProps: {
+      fw: '700',
     },
   }),
 }

@@ -178,7 +178,14 @@ function SidebarContent() {
 
 export function Sidebar() {
   return (
-    <Stack bg='neutrals.0' gap='xxxl' h='100%' pt='xxxl' w={rem(272)}>
+    <Stack
+      bg='neutrals.0'
+      className={styles.sidebar}
+      gap='xxxl'
+      h='100%'
+      pt='xxxl'
+      w={rem(272)}
+    >
       <Box mx='lg'>
         <Skeleton className='shrink-0' h={rem(48)} radius={0} />
       </Box>
