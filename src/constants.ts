@@ -179,11 +179,13 @@ export const urls = {
     index: '/flights',
   },
   JobHuntly: {
+    index: '/job-huntly',
     applicant: {
       dashboard: {
         index: '/job-huntly/applicant/dashboard',
       },
     },
+    landing: '/job-huntly/landing',
   },
 }
 export const applications = [
