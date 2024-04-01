@@ -1,0 +1,13 @@
+.table {
+  border: rem(1px) solid var(--mantine-primary-color-0);
+}
+
+.header {
+  border-bottom: rem(1px) solid var(--mantine-primary-color-0);
+}
+
+.item {
+  &:nth-child(odd) {
+    background: var(--mantine-color-neutrals-0);
+  }
+}
