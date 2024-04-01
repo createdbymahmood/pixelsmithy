@@ -119,6 +119,7 @@ function SidebarItem(props: SidebarItem) {
         px='sm'
         py='sm'
         w='100%'
+        wrap='nowrap'
       >
         <Icon
           className='icon-size-lg'
