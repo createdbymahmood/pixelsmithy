@@ -24,7 +24,9 @@ export function ApplicantLayout({children}: ApplicantLayoutProps) {
 
         <Box h={`calc(100% - ${rem(107)})`}>
           <PerfectScrollbar>
-            <Container h='100%'>{children}</Container>
+            <Container h='100%' px='xxxl' py='xl' size='xl'>
+              {children}
+            </Container>
           </PerfectScrollbar>
         </Box>
       </Grid.Col>

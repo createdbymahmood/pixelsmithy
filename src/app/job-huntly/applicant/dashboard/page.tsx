@@ -1,3 +1,4 @@
+import {ApplicantDashboard as ApplicantDashboardView} from '@job-huntly/components'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'
@@ -7,5 +8,5 @@ export const metadata = constructMetadata({
 })
 
 export default function ApplicantDashboard() {
-  return <div />
+  return <ApplicantDashboardView />
 }
