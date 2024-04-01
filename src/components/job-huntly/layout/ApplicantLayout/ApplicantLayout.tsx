@@ -22,7 +22,7 @@ export function ApplicantLayout({children}: ApplicantLayoutProps) {
       <Grid.Col h='100%' span='auto'>
         <Header />
 
-        <Box h={`calc(100% - ${rem(107)})`}>
+        <Box h={`calc(100% - ${rem(107)})`} pb='xxxl'>
           <PerfectScrollbar>
             <Container h='100%' px='xxxl' py='xl' size='xl'>
               {children}

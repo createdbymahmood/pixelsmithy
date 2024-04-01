@@ -3,7 +3,9 @@ import type {
   TextCssVariables,
   TextProps,
 } from '@mantine/core'
-import {Button, rem, Text} from '@mantine/core'
+import {Badge, Button, rem, Text} from '@mantine/core'
+
+import BadgeStyles from './Badge.module.scss'
 
 type DisplayTextResolverReturn = Record<
   'root',
@@ -55,6 +57,13 @@ export const components: MantineThemeComponents = {
   Button: Button.extend({
     defaultProps: {
       fw: '700',
+    },
+  }),
+  Badge: Badge.extend({
+    classNames(theme, props, ctx) {
+      return {
+        root: BadgeStyles.root,
+      }
     },
   }),
 }
