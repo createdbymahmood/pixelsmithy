@@ -1,6 +1,6 @@
 'use client'
 
-import {Box, Group, Stack, Text, Title} from '@mantine/core'
+import {Box, Group, rem, Stack, Text, Title} from '@mantine/core'
 import {DatePickerInput} from '@mantine/dates'
 import {CalendarBlank} from '@phosphor-icons/react/dist/ssr'
 import React, {useState} from 'react'
@@ -22,6 +22,7 @@ export function Header() {
       </Stack>
 
       <DatePickerInput
+        miw={rem(172.68)}
         rightSection={
           <Box
             c='primary'
