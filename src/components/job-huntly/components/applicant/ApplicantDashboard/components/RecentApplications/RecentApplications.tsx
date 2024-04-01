@@ -1,7 +1,5 @@
 'use client'
 
-import type {Application, ApplicationStatus} from '@job-huntly/mock'
-import {applications} from '@job-huntly/mock'
 import {
   Avatar,
   Badge,
@@ -20,21 +18,27 @@ import clsx from 'clsx'
 import {get} from 'lodash-es'
 import React from 'react'
 
+import type {
+  Application,
+  ApplicationStatus,
+} from '@/components/job-huntly/mock/applications'
+import {applications} from '@/components/job-huntly/mock/applications'
+
 import styles from './RecentApplications.module.scss'
 
 const applicationStatusMap: Record<ApplicationStatus, JSX.Element> = {
   review: (
-    <Badge color='yellow' size='lg' variant='outline'>
+    <Badge color='yellow' py='md' size='lg' variant='outline'>
       In Review
     </Badge>
   ),
   shortlisted: (
-    <Badge color='primary' size='lg' variant='outline'>
+    <Badge color='primary' py='md' size='lg' variant='outline'>
       Shortlisted
     </Badge>
   ),
   declined: (
-    <Badge color='red' size='lg' variant='outline'>
+    <Badge color='red' py='md' size='lg' variant='outline'>
       Declined
     </Badge>
   ),
@@ -47,7 +51,7 @@ function ListItem(props: ListItemProps) {
   return (
     <Group className={styles.item} justify='space-between' p='xl'>
       <Group gap='xl'>
-        <Avatar radius='md' size={rem(64)}>
+        <Avatar component={props.logo} radius='md' size={rem(64)}>
           N
         </Avatar>
 
