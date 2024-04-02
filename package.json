@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "preinstall": "npx npm-only-allow@latest --PM yarn",
+    "preinstall": "npx only-allow bun",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
