@@ -24,10 +24,13 @@ export function ApplicantLayout({children}: ApplicantLayoutProps) {
 
         <Box h={`calc(100% - ${rem(107)})`}>
           <PerfectScrollbar>
-            <Container h='100%' px='xxxl' size='xxl'>
-              <Box pb='xxxl' py='xl'>
-                {children}
-              </Box>
+            <Container
+              h='100%'
+              px='xxxl'
+              size='xxl'
+              style={{overflowY: 'hidden'}}
+            >
+              {children}
             </Container>
           </PerfectScrollbar>
         </Box>

@@ -39,7 +39,7 @@ const sections: SidebarSection[] = [
         id: 'messages',
         title: 'Messages',
         icon: ChatCenteredText,
-        href: urls.JobHuntly.applicant.messages.index,
+        href: urls.JobHuntly.applicant.chat.index,
         activeSegment: ['messages'],
         unread: 1,
       },

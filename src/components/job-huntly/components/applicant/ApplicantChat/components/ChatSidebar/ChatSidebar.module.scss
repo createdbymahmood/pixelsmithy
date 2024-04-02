@@ -1,0 +1,15 @@
+.chatPreview {
+  @include transition();
+
+  &:hover {
+    background-color: var(--mantine-primary-color-0);
+  }
+
+  &:not(:last-child) {
+    border-bottom: rem(1px) solid var(--mantine-color-neutrals-2);
+  }
+}
+
+.sidebar {
+  border-right: rem(1px) solid var(--mantine-color-neutrals-2);
+}

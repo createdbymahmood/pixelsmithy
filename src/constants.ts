@@ -184,8 +184,8 @@ export const urls = {
       dashboard: {
         index: '/job-huntly/applicant/dashboard',
       },
-      messages: {
-        index: '/job-huntly/applicant/dashboard/messages',
+      chat: {
+        index: '/job-huntly/applicant/dashboard/chat',
       },
     },
     landing: '/job-huntly/landing',
