@@ -1,48 +1,10 @@
-import type {
-  MantineThemeComponents,
-  TextCssVariables,
-  TextProps,
-} from '@mantine/core'
-import {Badge, Button, rem, Text} from '@mantine/core'
+import type {MantineThemeComponents} from '@mantine/core'
+import {Badge, Button, Container, rem, Text} from '@mantine/core'
+import {get} from 'lodash-es'
 
 import BadgeStyles from './Badge.module.scss'
-
-type DisplayTextResolverReturn = Record<
-  'root',
-  Partial<Record<TextCssVariables['root'], string>>
->
-
-const displayTextResolver = (
-  size: TextProps['size'],
-): DisplayTextResolverReturn => {
-  switch (size) {
-    case 'xl':
-      return {
-        root: {
-          '--text-fz': rem(72),
-          '--text-lh': rem(72),
-        },
-      }
-    case 'lg':
-      return {
-        root: {
-          '--text-fz': rem(48),
-          '--text-lh': rem(48),
-        },
-      }
-
-    case 'md':
-      return {
-        root: {
-          '--text-fz': rem(20),
-          '--text-lh': rem(24),
-        },
-      }
-
-    default:
-      return {root: {}}
-  }
-}
+import {CONTAINER_SIZES} from './container'
+import {displayTextResolver} from './text'
 
 export const components: MantineThemeComponents = {
   Text: Text.extend({
@@ -63,9 +25,28 @@ export const components: MantineThemeComponents = {
     },
   }),
   Badge: Badge.extend({
-    classNames(theme, props, ctx) {
+    classNames() {
       return {
         root: BadgeStyles.root,
+      }
+    },
+  }),
+  Container: Container.extend({
+    vars: (_, {size, fluid}) => {
+      const containerSize = (() => {
+        if (fluid) return '100%'
+
+        if (size !== undefined && size in CONTAINER_SIZES) {
+          return get(CONTAINER_SIZES, size)
+        }
+
+        return rem(size)
+      })()
+
+      return {
+        root: {
+          '--container-size': containerSize,
+        },
       }
     },
   }),
