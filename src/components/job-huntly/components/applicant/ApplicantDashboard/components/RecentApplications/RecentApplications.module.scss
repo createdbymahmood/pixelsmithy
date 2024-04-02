@@ -7,6 +7,10 @@
 }
 
 .item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: var(--mantine-spacing-xl);
+  align-items: center;
   &:nth-child(odd) {
     background: var(--mantine-color-neutrals-0);
   }
