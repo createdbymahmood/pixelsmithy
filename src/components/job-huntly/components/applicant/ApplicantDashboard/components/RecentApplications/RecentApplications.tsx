@@ -49,8 +49,8 @@ interface ListItemProps extends Application {}
 function ListItem(props: ListItemProps) {
   const badge = get(applicationStatusMap, props.status)
   return (
-    <Group className={styles.item} justify='space-between' p='xl'>
-      <Group gap='xl'>
+    <Box className={styles.item} p='xl'>
+      <Group gap='xl' wrap='nowrap'>
         <Avatar component={props.logo} radius='md' size={rem(64)}>
           N
         </Avatar>
@@ -76,7 +76,7 @@ function ListItem(props: ListItemProps) {
         component={DotsThree}
         weight='bold'
       />
-    </Group>
+    </Box>
   )
 }
 
