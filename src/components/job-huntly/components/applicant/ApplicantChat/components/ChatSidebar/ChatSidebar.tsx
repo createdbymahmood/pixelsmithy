@@ -11,6 +11,18 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import styles from './ChatSidebar.module.scss'
 
 function ChatPreview({date, name, preview, isOnline}: ChatItem) {
+  const onlineBadge = isOnline ? (
+    <Badge bg='primary' h={rem(6)} radius='xl' w={rem(6)} circle />
+  ) : null
+
+  const chatPreviewDate = (
+    <Text c='neutrals.5' className='white-space-no-wrap' ml='auto'>
+      {toInboxSidebarTime(date)}
+    </Text>
+  )
+
+  const senderName = <Text fw='600'>{name}</Text>
+
   return (
     <Box className={clsx(styles.chatPreview)} p='md'>
       <Group
@@ -18,21 +30,13 @@ function ChatPreview({date, name, preview, isOnline}: ChatItem) {
         className={clsx(styles.listItem, 'cursor-pointer')}
         wrap='nowrap'
       >
-        <Box pos='relative'>
-          <Avatar size={rem(48)} />
-        </Box>
+        <Avatar size={rem(48)} />
 
         <Stack gap='xxs' w='100%'>
           <Group gap={rem(9)}>
-            <Text fw='600'>{name}</Text>
-
-            {isOnline ? (
-              <Badge bg='primary' h={rem(6)} radius='xl' w={rem(6)} circle />
-            ) : null}
-
-            <Text c='neutrals.5' className='white-space-no-wrap' ml='auto'>
-              {toInboxSidebarTime(date)}
-            </Text>
+            {senderName}
+            {onlineBadge}
+            {chatPreviewDate}
           </Group>
 
           <Text c='neutrals.4' size='sm'>
