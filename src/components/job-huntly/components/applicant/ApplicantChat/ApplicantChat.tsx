@@ -1,7 +1,14 @@
 import React from 'react'
 
-import {ChatLayout} from '@/components/job-huntly/components/applicant/ApplicantChat/components'
+import {
+  Chat,
+  ChatLayout,
+} from '@/components/job-huntly/components/applicant/ApplicantChat/components'
 
 export function ApplicantChat() {
-  return <ChatLayout>Salam</ChatLayout>
+  return (
+    <ChatLayout>
+      <Chat />
+    </ChatLayout>
+  )
 }

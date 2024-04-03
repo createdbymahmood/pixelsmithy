@@ -1,5 +1,13 @@
 import type {MantineThemeComponents} from '@mantine/core'
-import {Badge, Button, Container, Input, rem, Text} from '@mantine/core'
+import {
+  ActionIcon,
+  Badge,
+  Button,
+  Container,
+  Input,
+  rem,
+  Text,
+} from '@mantine/core'
 import {get} from 'lodash-es'
 
 import BadgeStyles from './Badge.module.scss'
@@ -25,6 +33,11 @@ export const components: MantineThemeComponents = {
     },
   }),
   Input: Input.extend({
+    defaultProps: {
+      radius: 0,
+    },
+  }),
+  ActionIcon: ActionIcon.extend({
     defaultProps: {
       radius: 0,
     },
