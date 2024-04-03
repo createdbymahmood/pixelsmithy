@@ -20,6 +20,7 @@ import {GroupLink} from '@/components/common'
 import type {SidebarSection} from '@/components/roscent'
 import {SidebarItem} from '@/components/roscent'
 import {urls} from '@/constants'
+import {inter} from '@/lib/styles/font/inter'
 
 import {UserProfile} from './components'
 import styles from './Sidebar.module.scss'
@@ -181,7 +182,7 @@ export function Sidebar() {
   return (
     <Stack
       bg='neutrals.0'
-      className={styles.sidebar}
+      className={clsx(styles.sidebar, inter.className)}
       gap='xxxl'
       h='100%'
       pt='xxxl'

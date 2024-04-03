@@ -39,9 +39,7 @@ function ChatPreview({date, name, preview, isOnline}: ChatItem) {
             {chatPreviewDate}
           </Group>
 
-          <Text c='neutrals.4' size='sm'>
-            {preview}
-          </Text>
+          <Text c='neutrals.4'>{preview}</Text>
         </Stack>
       </Group>
     </Box>
@@ -57,14 +55,14 @@ interface ChatItem {
 
 const chats: ChatItem[] = [
   {
-    name: 'Tom Anderson',
-    preview: 'Hello, I’m interested in this item and it will susprise everyone',
+    name: 'Jan Mayer',
+    preview: 'We want to invite you for a quick interview',
     date: dayJS().subtract(1, 'days'),
     isOnline: true,
   },
   {
     name: 'Luis Pittman',
-    preview: 'Hi, can I ask if there is anything...',
+    preview: 'Hey thanks for your interview...',
     date: dayJS().subtract(1, 'days'),
     isOnline: true,
   },
@@ -118,13 +116,13 @@ export function ChatSidebar() {
       pt='xxxl'
       w={rem(416)}
     >
-      <Box mb={rem(28)} pr='xxxl'>
+      <Box mb={rem(28)} px='xxxl'>
         <SidebarHeader />
       </Box>
 
       <Stack gap={0} h='100%' pb={rem(48)}>
         <PerfectScrollbar>
-          <Box pb='xxxl' pr='xxxl'>
+          <Box pb='xxxl' px='xxxl'>
             {content}
           </Box>
         </PerfectScrollbar>
