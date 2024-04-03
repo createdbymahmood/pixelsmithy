@@ -128,26 +128,80 @@ function ChatInfo() {
   )
 }
 
-function ChatContent() {
+interface MessageProps {
+  direction: 'LTR' | 'RTL'
+  content: string
+  sender: string
+  date: string
+}
+
+function Message({direction, content, sender, date}: MessageProps) {
+  const isLTR = direction === 'LTR'
+
   return (
-    <Stack>
+    <Group
+      className={clsx(
+        {[styles.rtl]: !isLTR},
+        [{'flex-dir-row-reverse': !isLTR}],
+        [{'flex-dir-row': isLTR}],
+      )}
+      w='fit-content'
+    >
+      <Avatar size={rem(48)} />
+      <Stack align={isLTR ? 'flex-start' : 'flex-end'} gap='xs'>
+        <Text fw='600'>{sender}</Text>
+
+        <Box
+          className={clsx(
+            styles.message,
+            {[styles.messageRTL]: !isLTR},
+            {[styles.messageLTR]: isLTR},
+            {[styles.messageRTLTextContent]: !isLTR},
+            {[styles.messageLTRTextContent]: isLTR},
+          )}
+        >
+          <Text c='neutrals.5' lineClamp={Infinity}>
+            {content}
+          </Text>
+        </Box>
+
+        <Text c='neutrals.4'>{date}</Text>
+      </Stack>
+    </Group>
+  )
+}
+
+function ChatContent() {
+  const dividerCTA = (
+    <Button
+      c='neutrals.6'
+      className={styles.dividerButton}
+      color='gray.4'
+      fw='500'
+      leftSection={<Box className='icon-size-md' component={CaretDown} />}
+      size='md'
+      variant='outline'
+    >
+      Today
+    </Button>
+  )
+
+  return (
+    <Stack px='xxxl'>
       <ChatInfo />
-      <Divider
-        label={
-          <Button
-            c='neutrals.6'
-            className={styles.dividerButton}
-            color='gray.4'
-            fw='500'
-            leftSection={<Box className='icon-size-md' component={CaretDown} />}
-            size='md'
-            variant='outline'
-          >
-            Today
-          </Button>
-        }
-        labelPosition='center'
-        my='xs'
+      <Divider label={dividerCTA} labelPosition='center' my='xs' />
+      <Message
+        content='Hey Jake, I wanted to reach out because we saw your work contributions and were impressed by your work.'
+        date='12 mins ago'
+        direction='LTR'
+        sender='Jan Mayer'
+      />
+
+      <Message
+        content='Hi Jan, sure I would love to. Thanks for taking the time to see my work!'
+        date='12 mins ago'
+        direction='RTL'
+        sender='You'
       />
     </Stack>
   )
