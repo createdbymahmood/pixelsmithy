@@ -14,3 +14,23 @@
     0 28.8px 46.7px 0 rgba(192, 192, 192, 0.06),
     0 79px 128px 0 rgba(192, 192, 192, 0.09);
 }
+
+.message {
+  max-width: rem(420);
+  width: fit-content;
+  padding: var(--mantine-spacing-sm) var(--mantine-spacing-lg);
+}
+
+.rtl {
+  align-self: flex-end;
+}
+
+.messageRTLTextContent {
+  background-color: var(--mantine-color-neutrals-0);
+  color: var(--mantine-color-neutrals-5);
+}
+
+.messageLTRTextContent {
+  background-color: var(--mantine-color-white);
+  border: rem(1px) solid var(--mantine-color-neutrals-2);
+}
