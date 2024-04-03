@@ -10,7 +10,7 @@ interface ChatLayoutProps {
 
 export function ChatLayout({children}: ChatLayoutProps) {
   return (
-    <Group align='flex-start' h='100%' w='100%' wrap='nowrap'>
+    <Group align='flex-start' gap={0} h='100%' w='100%' wrap='nowrap'>
       <ChatSidebar />
 
       <Box h='100%' style={{alignSelf: 'stretch'}} w='100%'>
