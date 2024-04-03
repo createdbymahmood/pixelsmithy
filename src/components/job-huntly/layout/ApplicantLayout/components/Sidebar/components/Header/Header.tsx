@@ -7,7 +7,7 @@ import styles from './Header.module.scss'
 
 export function Header() {
   return (
-    <Group className={styles.header} p='xxxl'>
+    <Group className={clsx(styles.header)} p='xxxl'>
       <Title order={3}>Dashboard</Title>
       <Button ml='auto' size='md' variant='outline'>
         Back to homepage
