@@ -4,13 +4,17 @@ import {
   ActionIcon,
   Avatar,
   Box,
+  Button,
+  Divider,
   Group,
   Input,
   rem,
   Stack,
   Text,
+  Title,
 } from '@mantine/core'
 import {
+  CaretDown,
   DotsThreeVertical,
   Paperclip,
   PaperPlaneRight,
@@ -20,6 +24,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import React from 'react'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import styles from './Chat.module.scss'
 
@@ -102,10 +107,59 @@ function Compose() {
   )
 }
 
+function ChatInfo() {
+  return (
+    <Stack align='center' gap='xs'>
+      <Avatar size={rem(88)} />
+      <Title order={4}>Jan Mayer</Title>
+
+      <Group c='neutrals.5' gap='xs'>
+        <Text>Recruiter at</Text>
+        <Text c='primary'>Nomad</Text>
+      </Group>
+
+      <Group c='neutrals.5' gap='xs' justify='center'>
+        <Text>This is the very beginning of your direct message with</Text>
+        <Text c='neutrals.6' fw='500'>
+          Jan Mayer
+        </Text>
+      </Group>
+    </Stack>
+  )
+}
+
+function ChatContent() {
+  return (
+    <Stack>
+      <ChatInfo />
+      <Divider
+        label={
+          <Button
+            c='neutrals.6'
+            className={styles.dividerButton}
+            color='gray.4'
+            fw='500'
+            leftSection={<Box className='icon-size-md' component={CaretDown} />}
+            size='md'
+            variant='outline'
+          >
+            Today
+          </Button>
+        }
+        labelPosition='center'
+        my='xs'
+      />
+    </Stack>
+  )
+}
+
 export function Chat() {
   return (
     <Stack h='100%' pb='xxxl'>
       <Header />
+      <PerfectScrollbar>
+        <ChatContent />
+      </PerfectScrollbar>
       <Compose />
     </Stack>
   )

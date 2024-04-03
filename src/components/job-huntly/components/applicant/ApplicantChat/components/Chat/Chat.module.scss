@@ -5,3 +5,12 @@
 .compose {
   border: rem(1px) solid var(--mantine-color-neutrals-2);
 }
+
+.dividerButton {
+  box-shadow:
+    0 2.7px 4.4px 0 rgba(192, 192, 192, 0.03),
+    0 6.9px 11.1px 0 rgba(192, 192, 192, 0.04),
+    0 14px 22.7px 0 rgba(192, 192, 192, 0.05),
+    0 28.8px 46.7px 0 rgba(192, 192, 192, 0.06),
+    0 79px 128px 0 rgba(192, 192, 192, 0.09);
+}
