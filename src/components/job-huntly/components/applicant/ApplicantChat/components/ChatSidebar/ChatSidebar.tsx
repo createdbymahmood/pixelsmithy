@@ -111,7 +111,7 @@ export function ChatSidebar() {
 
   return (
     <Box
-      className={clsx(styles.sidebar, 'shrink-0')}
+      className={clsx(styles.sidebar, 'shrink-0', 'overflow-y-hidden')}
       h='100%'
       pt='xxxl'
       w={rem(416)}
@@ -120,9 +120,9 @@ export function ChatSidebar() {
         <SidebarHeader />
       </Box>
 
-      <Stack gap={0} h='100%' pb={rem(48)}>
+      <Stack gap={0} h='calc(100% - 46px - var(--mantine-spacing-xxxl))'>
         <PerfectScrollbar>
-          <Box pb='xxxl' px='xxxl'>
+          <Box p='xxxl' pt={0}>
             {content}
           </Box>
         </PerfectScrollbar>
