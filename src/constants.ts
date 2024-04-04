@@ -183,6 +183,7 @@ export const urls = {
     applicant: {
       dashboard: {
         index: '/job-huntly/applicant/dashboard',
+        home: '/job-huntly/applicant/dashboard/home',
       },
       chat: {
         index: '/job-huntly/applicant/dashboard/chat',

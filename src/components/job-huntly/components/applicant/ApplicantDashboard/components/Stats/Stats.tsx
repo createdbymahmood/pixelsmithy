@@ -1,6 +1,15 @@
 'use client'
 
-import {Box, Button, Card, Group, Skeleton, Stack, Title} from '@mantine/core'
+import {
+  Box,
+  Button,
+  Card,
+  Group,
+  Skeleton,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core'
 import {ArrowRight} from '@phosphor-icons/react/dist/ssr'
 import type {ReactNode} from 'react'
 import React from 'react'
@@ -16,9 +25,9 @@ function StatCard({children, title}: StatCardProps) {
   return (
     <Card className={styles.card} h='100%' p='xl'>
       <Stack align='flex-start' gap='xxxl' h='100%' justify='stretch'>
-        <Title fw='600' lineClamp={1} order={5}>
+        <Text fw='600' lineClamp={1} size='xl'>
           {title}
-        </Title>
+        </Text>
 
         {children}
       </Stack>

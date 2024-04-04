@@ -5,10 +5,14 @@ import React from 'react'
 
 import styles from './Header.module.scss'
 
-export function Header() {
+interface HeaderProps {
+  title: string
+}
+
+export function Header({title}: HeaderProps) {
   return (
-    <Group className={clsx(styles.header)} p='xxxl'>
-      <Title order={3}>Dashboard</Title>
+    <Group bg='white' className={clsx(styles.header)} p='xxxl'>
+      <Title order={3}>{title}</Title>
       <Button ml='auto' size='md' variant='outline'>
         Back to homepage
       </Button>

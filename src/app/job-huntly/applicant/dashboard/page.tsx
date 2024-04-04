@@ -1,12 +1,7 @@
-import {ApplicantDashboard as ApplicantDashboardView} from '@job-huntly/components'
-import React from 'react'
+import {redirect} from 'next/navigation'
 
-import {constructMetadata} from '@/utils/constructMetadata'
+import {urls} from '@/constants'
 
-export const metadata = constructMetadata({
-  title: 'Dashboard',
-})
-
-export default function ApplicantDashboard() {
-  return <ApplicantDashboardView />
+export default function Dashboard() {
+  return redirect(urls.JobHuntly.applicant.dashboard.home)
 }

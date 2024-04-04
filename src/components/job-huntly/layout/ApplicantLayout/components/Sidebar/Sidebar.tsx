@@ -168,7 +168,7 @@ function SidebarContent() {
   })
 
   return (
-    <Stack flex={1} gap='xxxl' h='100%' pb='xs'>
+    <Stack gap='xxxl' h='100%' pb='xs'>
       {content}
 
       <Box ml='xxxl' mt='auto' pb='xxxl'>
@@ -182,7 +182,7 @@ export function Sidebar() {
   return (
     <Stack
       bg='neutrals.0'
-      className={clsx(styles.sidebar, inter.className)}
+      className={clsx(styles.sidebar, inter.className, 'shrink-0')}
       gap='xxxl'
       h='100%'
       pt='xxxl'
