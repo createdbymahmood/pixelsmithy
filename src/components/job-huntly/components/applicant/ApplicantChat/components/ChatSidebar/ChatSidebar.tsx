@@ -116,13 +116,13 @@ export function ChatSidebar() {
       pt='xxxl'
       w={rem(416)}
     >
-      <Box mb={rem(28)} px='xxxl'>
+      <Box mb={rem(28)} pr='xxxl'>
         <SidebarHeader />
       </Box>
 
       <Stack gap={0} h='calc(100% - 46px - var(--mantine-spacing-xxxl))'>
         <PerfectScrollbar>
-          <Box p='xxxl' pt={0}>
+          <Box pl={0} pt={0} px='xxxl'>
             {content}
           </Box>
         </PerfectScrollbar>
