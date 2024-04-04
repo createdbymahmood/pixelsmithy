@@ -23,10 +23,10 @@ export function DashboardPageLayout({
       <Box
         className='overflow-y-hidden'
         h={`calc(100vh - ${rem(107)})`}
-        pb='xl'
+        py='xxxl'
       >
         <PerfectScrollbar>
-          <Container h='100%' p='xxxl' size='xxl'>
+          <Container h='100%' px='xxxl' size='xxl'>
             {children}
           </Container>
         </PerfectScrollbar>
