@@ -10,7 +10,6 @@ import {
   rem,
   Stack,
   Text,
-  Title,
 } from '@mantine/core'
 import {ArrowRight} from '@phosphor-icons/react'
 import {DotsThree} from '@phosphor-icons/react/dist/ssr'
@@ -94,9 +93,9 @@ export function RecentApplications() {
   )
   return (
     <Card className={styles.table} p={0} radius={0}>
-      <Title className={styles.header} fw='600' order={5} p='xl'>
+      <Text className={styles.header} fw='600' p='xl' size='xl'>
         Recent Applications History
-      </Title>
+      </Text>
 
       <Box p='xl'>
         <List />
