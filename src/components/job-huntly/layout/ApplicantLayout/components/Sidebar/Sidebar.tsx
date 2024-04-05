@@ -40,7 +40,7 @@ const sections: SidebarSection[] = [
         id: 'messages',
         title: 'Messages',
         icon: ChatCenteredText,
-        href: urls.JobHuntly.applicant.chat.index,
+        href: urls.JobHuntly.applicant.dashboard.chat,
         activeSegment: ['chat'],
         unread: 1,
       },
@@ -48,7 +48,7 @@ const sections: SidebarSection[] = [
         id: 'my-applications',
         title: 'My Applications',
         icon: FileText,
-        href: '',
+        href: urls.JobHuntly.applicant.dashboard.applications,
         activeSegment: ['applications'],
       },
       {

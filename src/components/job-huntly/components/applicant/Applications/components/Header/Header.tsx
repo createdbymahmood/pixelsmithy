@@ -11,16 +11,17 @@ export function Header() {
     new Date('2023-04-01'),
     new Date('2023-04-07'),
   ])
+
   const formattedDates = value
     .map((v) => dayJS(v).format('MMMM DD'))
     .join(' - ')
+
   return (
     <Group justify='space-between'>
       <Stack gap='xs'>
-        <Title order={4}>Good morning, Jake</Title>
+        <Title order={4}>Keep it up, Jake</Title>
         <Text c='neutrals.4' fw='500'>
-          Here is what’s happening with your job search applications from{' '}
-          {formattedDates}.
+          Here is job applications status from {formattedDates}.
         </Text>
       </Stack>
 

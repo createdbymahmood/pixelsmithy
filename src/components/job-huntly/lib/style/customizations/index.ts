@@ -3,6 +3,7 @@ import {
   ActionIcon,
   Badge,
   Button,
+  Card,
   Container,
   Input,
   rem,
@@ -38,6 +39,11 @@ export const components: MantineThemeComponents = {
     },
   }),
   ActionIcon: ActionIcon.extend({
+    defaultProps: {
+      radius: 0,
+    },
+  }),
+  Card: Card.extend({
     defaultProps: {
       radius: 0,
     },
