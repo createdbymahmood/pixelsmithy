@@ -1,13 +1,10 @@
 import {Stack} from '@mantine/core'
 import React from 'react'
 
-import {Banner, Header} from './components'
+interface ApplicationsProps {
+  value: string
+}
 
-export function Applications() {
-  return (
-    <Stack gap='xxxl'>
-      <Header />
-      <Banner />
-    </Stack>
-  )
+export function Applications({value}: ApplicationsProps) {
+  return <Stack gap='xxxl'>{value}</Stack>
 }

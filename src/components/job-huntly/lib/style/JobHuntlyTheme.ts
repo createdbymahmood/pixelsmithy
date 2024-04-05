@@ -23,6 +23,13 @@ export const JobHuntlyTheme = createTheme({
       h5: {fontSize: rem(20), lineHeight: rem(24), fontWeight: '600'},
     },
   },
+  lineHeights: {
+    xs: '1.4',
+    sm: '1.45',
+    md: rem(25.6),
+    lg: '1.6',
+    xl: '1.65',
+  },
   spacing: {
     xxs: rem(4),
     xs: rem(8),

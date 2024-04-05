@@ -1,0 +1,17 @@
+.tab {
+  &[data-active] {
+    border-bottom: none;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: rem(4px);
+      background: var(--mantine-primary-color-5);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      @include border-top-radius(var(--mantine-radius-default));
+    }
+  }
+}

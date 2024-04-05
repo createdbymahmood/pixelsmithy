@@ -185,7 +185,16 @@ export const urls = {
         index: '/job-huntly/applicant/dashboard',
         home: '/job-huntly/applicant/dashboard/home',
         chat: '/job-huntly/applicant/dashboard/chat',
-        applications: '/job-huntly/applicant/dashboard/applications',
+        applications: {
+          index: '/job-huntly/applicant/dashboard/applications',
+          all: '/job-huntly/applicant/dashboard/applications/all',
+          inReview: '/job-huntly/applicant/dashboard/applications/in-review',
+          interviewing:
+            '/job-huntly/applicant/dashboard/applications/interviewing',
+          assessment: '/job-huntly/applicant/dashboard/applications/assessment',
+          offered: '/job-huntly/applicant/dashboard/applications/offered',
+          hired: '/job-huntly/applicant/dashboard/applications/hired',
+        },
       },
     },
     landing: '/job-huntly/landing',
