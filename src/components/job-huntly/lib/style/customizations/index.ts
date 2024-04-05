@@ -1,4 +1,4 @@
-import type {MantineThemeComponents} from '@mantine/core'
+import type {ButtonStylesNames, MantineThemeComponents} from '@mantine/core'
 import {
   ActionIcon,
   Badge,
@@ -10,6 +10,9 @@ import {
   Text,
 } from '@mantine/core'
 import {get} from 'lodash-es'
+import type {CSSProperties} from 'react'
+
+import {inter} from '@/lib/styles/font/inter'
 
 import BadgeStyles from './Badge.module.scss'
 import {CONTAINER_SIZES} from './container'
@@ -28,6 +31,17 @@ export const components: MantineThemeComponents = {
   Button: Button.extend({
     defaultProps: {
       fw: '700',
+    },
+    styles(theme, props, ctx) {
+      if (props.variant === 'outline') {
+        return {
+          root: {
+            fontFamily: inter.style.fontFamily,
+          },
+        } as Partial<Record<ButtonStylesNames, CSSProperties>>
+      }
+
+      return {}
     },
   }),
   Input: Input.extend({
