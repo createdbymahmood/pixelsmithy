@@ -185,11 +185,9 @@ export function Sidebar() {
   return (
     <Stack
       bg='neutrals.0'
-      // bg='red'
       className={clsx(styles.sidebar, inter.className, 'shrink-0')}
-      // gap='xxxl'
+      gap={0}
       h='100%'
-      // pt='xxxl'
       w={rem(272)}
     >
       <Box mx='xl'>

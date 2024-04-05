@@ -5,7 +5,10 @@ import type {ReactNode} from 'react'
 import React from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {Header} from '@/components/job-huntly/layout/ApplicantLayout/components/Sidebar/components/Header'
+import {
+  Header,
+  JOB_HUNTLY_HEADER_HEIGHT,
+} from '@/components/job-huntly/layout/ApplicantLayout/components/Sidebar/components/Header'
 
 interface DashboardPageLayoutProps {
   children: ReactNode
@@ -22,7 +25,7 @@ export function DashboardPageLayout({
 
       <Box
         className='overflow-y-hidden'
-        h={`calc(100vh - ${rem(107)})`}
+        h={`calc(100vh - ${rem(JOB_HUNTLY_HEADER_HEIGHT)})`}
         py='xxxl'
       >
         <PerfectScrollbar>
