@@ -48,7 +48,7 @@ const sections: SidebarSection[] = [
         id: 'my-applications',
         title: 'My Applications',
         icon: FileText,
-        href: urls.JobHuntly.applicant.dashboard.applications,
+        href: urls.JobHuntly.applicant.dashboard.applications.index,
         activeSegment: ['applications'],
       },
       {
@@ -97,7 +97,6 @@ const sections: SidebarSection[] = [
 
 function SidebarItem(props: SidebarItem) {
   const segment = useSelectedLayoutSegments()
-  console.log({segment})
   const isEqualToSegment = isEqual(segment, props.activeSegment)
   const isActive =
     !isEmpty(intersection(segment, props.activeSegment)) || isEqualToSegment

@@ -1,6 +1,6 @@
-import {redirect} from 'next/navigation'
+import {Applications as ApplicationsView} from '@job-huntly/components'
+import React from 'react'
 
-import {urls} from '@/constants'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({
@@ -8,5 +8,5 @@ export const metadata = constructMetadata({
 })
 
 export default function Applications() {
-  return redirect(urls.JobHuntly.applicant.dashboard.applications.all)
+  return <ApplicationsView value='all' />
 }
