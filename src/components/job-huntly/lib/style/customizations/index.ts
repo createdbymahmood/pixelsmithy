@@ -17,9 +17,6 @@ import {displayTextResolver} from './text'
 
 export const components: MantineThemeComponents = {
   Text: Text.extend({
-    defaultProps: {
-      lineClamp: 1,
-    },
     vars: (theme, props) => {
       if (props.variant === 'display') {
         return displayTextResolver(props.size)
