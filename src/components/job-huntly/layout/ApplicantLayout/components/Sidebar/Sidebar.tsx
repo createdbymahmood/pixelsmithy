@@ -1,4 +1,4 @@
-import {Badge, Box, Group, rem, Skeleton, Stack, Text} from '@mantine/core'
+import {Badge, Box, Group, rem, Stack, Text} from '@mantine/core'
 import {
   Buildings,
   ChatCenteredText,
@@ -22,7 +22,7 @@ import {SidebarItem} from '@/components/roscent'
 import {urls} from '@/constants'
 import {inter} from '@/lib/styles/font/inter'
 
-import {UserProfile} from './components'
+import {Logo, UserProfile} from './components'
 import styles from './Sidebar.module.scss'
 
 const sections: SidebarSection[] = [
@@ -130,7 +130,9 @@ function SidebarItem(props: SidebarItem) {
           weight='bold'
         />
 
-        <Text fw='500'>{props.title}</Text>
+        <Text fw='500' lineClamp={1}>
+          {props.title}
+        </Text>
         {!isUndefined(props.unread) && (
           <Badge bg='primary' ml='auto' size='lg' circle>
             {props.unread}
@@ -183,14 +185,15 @@ export function Sidebar() {
   return (
     <Stack
       bg='neutrals.0'
+      // bg='red'
       className={clsx(styles.sidebar, inter.className, 'shrink-0')}
-      gap='xxxl'
+      // gap='xxxl'
       h='100%'
-      pt='xxxl'
+      // pt='xxxl'
       w={rem(272)}
     >
-      <Box mx='lg'>
-        <Skeleton className='shrink-0' h={rem(48)} radius={0} />
+      <Box mx='xl'>
+        <Logo />
       </Box>
 
       <PerfectScrollbar>
