@@ -47,7 +47,7 @@ function TotalJobsAppliedStats() {
 
 function JobsInterviewedStats() {
   return (
-    <StatCard title='Total Jobs Applied'>
+    <StatCard title='Interviewed'>
       <Title fw='600' order={1}>
         18
       </Title>
