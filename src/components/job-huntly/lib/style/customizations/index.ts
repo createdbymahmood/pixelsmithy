@@ -6,9 +6,12 @@ import {
   Card,
   Container,
   Input,
+  Pagination,
   rem,
+  Table,
   Text,
 } from '@mantine/core'
+import clsx from 'clsx'
 import {get} from 'lodash-es'
 import type {CSSProperties} from 'react'
 
@@ -16,6 +19,8 @@ import {inter} from '@/lib/styles/font/inter'
 
 import BadgeStyles from './Badge.module.scss'
 import {CONTAINER_SIZES} from './container'
+import PaginationStyles from './Pagination.module.scss'
+import TableStyles from './Table.module.scss'
 import {displayTextResolver} from './text'
 
 export const components: MantineThemeComponents = {
@@ -63,6 +68,22 @@ export const components: MantineThemeComponents = {
     classNames() {
       return {
         root: BadgeStyles.root,
+      }
+    },
+  }),
+  Pagination: Pagination.extend({
+    classNames() {
+      return {
+        root: clsx(PaginationStyles.root, inter.className),
+        control: clsx(PaginationStyles.control, 'borderless'),
+        dots: PaginationStyles.dots,
+      }
+    },
+  }),
+  Table: Table.extend({
+    classNames() {
+      return {
+        table: TableStyles.table,
       }
     },
   }),
