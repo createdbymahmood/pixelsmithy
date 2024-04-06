@@ -1,47 +1,17 @@
 'use client'
 
-import {
-  Avatar,
-  Badge,
-  Box,
-  Button,
-  Card,
-  Group,
-  rem,
-  Stack,
-  Text,
-} from '@mantine/core'
+import {Avatar, Box, Button, Card, Group, rem, Stack, Text} from '@mantine/core'
 import {ArrowRight} from '@phosphor-icons/react'
 import {DotsThree} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {get} from 'lodash-es'
 import React from 'react'
 
-import type {
-  Application,
-  ApplicationStatus,
-} from '@/components/job-huntly/mock/applications'
+import {applicationStatusMap} from '@/components/job-huntly/components/applicant/Applications/components/ApplicationsList/components'
+import type {Application} from '@/components/job-huntly/mock/applications'
 import {applications} from '@/components/job-huntly/mock/applications'
 
 import styles from './RecentApplications.module.scss'
-
-const applicationStatusMap: Record<ApplicationStatus, JSX.Element> = {
-  review: (
-    <Badge color='yellow' py='md' size='lg' variant='outline'>
-      In Review
-    </Badge>
-  ),
-  shortlisted: (
-    <Badge color='primary' py='md' size='lg' variant='outline'>
-      Shortlisted
-    </Badge>
-  ),
-  declined: (
-    <Badge color='red' py='md' size='lg' variant='outline'>
-      Declined
-    </Badge>
-  ),
-}
 
 interface ListItemProps extends Application {}
 
@@ -56,10 +26,12 @@ function ListItem(props: ListItemProps) {
 
         <Stack gap={0}>
           <Text fw='700' size='lg'>
-            {props.position}
+            {props.role}
           </Text>
 
-          <Text c='neutrals.4'>{props.info}</Text>
+          <Text c='neutrals.4'>
+            {props.company} • {props.location} • {props.type}
+          </Text>
         </Stack>
       </Group>
 
@@ -80,7 +52,7 @@ function ListItem(props: ListItemProps) {
 }
 
 function List() {
-  const content = applications.map((application) => {
+  const content = applications.slice(0, 3).map((application) => {
     return <ListItem key={application.id} {...application} />
   })
 

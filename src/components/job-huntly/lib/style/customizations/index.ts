@@ -81,9 +81,17 @@ export const components: MantineThemeComponents = {
     },
   }),
   Table: Table.extend({
+    defaultProps: {
+      striped: 'even',
+      withRowBorders: false,
+      verticalSpacing: 'var(--mantine-spacing-xl)',
+      horizontalSpacing: 'var(--mantine-spacing-xl)',
+    },
     classNames() {
       return {
         table: TableStyles.table,
+        thead: TableStyles.thead,
+        th: TableStyles.th,
       }
     },
   }),
