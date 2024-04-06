@@ -24,6 +24,7 @@ import type {
 import {applications} from '@/components/job-huntly/mock/applications'
 
 const elements: Application[] = applications
+
 export const applicationStatusMap: Record<ApplicationStatus, JSX.Element> = {
   review: (
     <Badge color='yellow' py='md' size='lg' variant='outline'>

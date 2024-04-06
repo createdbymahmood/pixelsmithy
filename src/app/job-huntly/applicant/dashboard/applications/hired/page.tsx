@@ -1,4 +1,4 @@
-import {Applications as ApplicationsView} from '@job-huntly/components'
+import {Applications as ApplicationsView} from '@job-huntly/components/applicant'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

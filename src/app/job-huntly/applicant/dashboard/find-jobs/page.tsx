@@ -1,4 +1,4 @@
-import {FindJobs as FindJobsView} from '@job-huntly/components'
+import {FindJobs as FindJobsView} from '@job-huntly/components/applicant'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'
