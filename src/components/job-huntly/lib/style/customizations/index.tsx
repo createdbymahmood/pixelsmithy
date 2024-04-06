@@ -1,16 +1,19 @@
 import type {ButtonStylesNames, MantineThemeComponents} from '@mantine/core'
 import {
   ActionIcon,
+  Autocomplete,
   Badge,
+  Box,
   Button,
   Card,
   Container,
-  Input,
   Pagination,
   rem,
   Table,
   Text,
+  TextInput,
 } from '@mantine/core'
+import {CaretDown} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {get} from 'lodash-es'
 import type {CSSProperties} from 'react'
@@ -49,9 +52,16 @@ export const components: MantineThemeComponents = {
       return {}
     },
   }),
-  Input: Input.extend({
+  TextInput: TextInput.extend({
     defaultProps: {
       radius: 0,
+    },
+  }),
+  Autocomplete: Autocomplete.extend({
+    defaultProps: {
+      rightSection: (
+        <Box className='icon-size-sm' component={CaretDown} weight='bold' />
+      ),
     },
   }),
   ActionIcon: ActionIcon.extend({
