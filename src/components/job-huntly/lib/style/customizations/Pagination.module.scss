@@ -1,0 +1,19 @@
+.root {
+  --pagination-control-size-lg: rem(46px);
+  --pagination-control-size: var(--pagination-control-size-lg);
+}
+
+.control {
+  font-weight: 600;
+  border-radius: var(--mantine-radius-md);
+  color: var(--mantine-color-neutrals-5);
+
+  &[data-active] {
+    color: var(--mantine-color-white);
+  }
+}
+
+.dots {
+  align-items: flex-end;
+  padding-bottom: var(--mantine-spacing-xxs);
+}
