@@ -195,6 +195,7 @@ export const urls = {
           offered: '/job-huntly/applicant/dashboard/applications/offered',
           hired: '/job-huntly/applicant/dashboard/applications/hired',
         },
+        findJobs: '/job-huntly/applicant/dashboard/find-jobs',
       },
     },
     landing: '/job-huntly/landing',

@@ -55,8 +55,8 @@ const sections: SidebarSection[] = [
         id: 'find-jobs',
         title: 'Find Jobs',
         icon: MagnifyingGlass,
-        href: '',
-        activeSegment: ['explore'],
+        href: urls.JobHuntly.applicant.dashboard.findJobs,
+        activeSegment: ['find-jobs'],
       },
       {
         id: 'browse-companies',
