@@ -1,4 +1,4 @@
-import {ApplicantChat} from '@job-huntly/components'
+import {Chat as ChatView} from '@job-huntly/components/applicant'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'
@@ -8,5 +8,5 @@ export const metadata = constructMetadata({
 })
 
 export default function Chat() {
-  return <ApplicantChat />
+  return <ChatView />
 }

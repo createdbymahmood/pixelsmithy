@@ -1,4 +1,4 @@
-import {ApplicantDashboard as ApplicantDashboardView} from '@job-huntly/components'
+import {Dashboard as ApplicantDashboardView} from '@job-huntly/components/applicant'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'

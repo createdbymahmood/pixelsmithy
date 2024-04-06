@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import {get} from 'lodash-es'
 import React from 'react'
 
-import {applicationStatusMap} from '@/components/job-huntly/components/applicant/Applications/components/ApplicationsList/components'
+import {applicationStatusMap} from '@/components/job-huntly/components/applicant/dashboard/Applications/components/ApplicationsList/components'
 import type {Application} from '@/components/job-huntly/mock/applications'
 import {applications} from '@/components/job-huntly/mock/applications'
 
