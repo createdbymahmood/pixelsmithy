@@ -21,6 +21,7 @@ import type {CSSProperties} from 'react'
 import {inter} from '@/lib/styles/font/inter'
 
 import BadgeStyles from './Badge.module.scss'
+import ButtonStyles from './Button.module.scss'
 import {CONTAINER_SIZES} from './container'
 import PaginationStyles from './Pagination.module.scss'
 import TableStyles from './Table.module.scss'
@@ -39,6 +40,11 @@ export const components: MantineThemeComponents = {
   Button: Button.extend({
     defaultProps: {
       fw: '700',
+    },
+    classNames(theme, props, ctx) {
+      return {
+        root: ButtonStyles.root,
+      }
     },
     styles(theme, props, ctx) {
       if (props.variant === 'outline') {
