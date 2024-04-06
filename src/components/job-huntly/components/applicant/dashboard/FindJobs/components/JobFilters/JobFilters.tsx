@@ -92,7 +92,11 @@ function Filters() {
 
 export function JobFilters() {
   return (
-    <Box h='100%' w={`calc(${rem(234)} + var(--mantine-spacing-xl))`}>
+    <Box
+      className='shrink-0'
+      h='100%'
+      w={`calc(${rem(234)} + var(--mantine-spacing-xl))`}
+    >
       <PerfectScrollbar>
         <Box pr='xl'>
           <Filters />
