@@ -6,22 +6,18 @@
   background-color: white;
   font-weight: 500;
   padding: 0;
+  align-items: flex-start;
 }
 
 .item {
   border: rem(1px) solid transparent;
   padding: 0;
-
-  z-index: 0;
-  transition: transform 150ms ease;
-
-  &[data-active] {
-    z-index: 1;
-  }
 }
 
 .label {
   font-weight: 600;
+  padding: 0;
+  padding-bottom: var(--mantine-spacing-lg);
 }
 
 .chevron {
@@ -30,10 +26,12 @@
 }
 .content {
   padding: 0;
-  padding-top: var(--mantine-spacing-md);
-  padding-bottom: var(--mantine-spacing-md);
+  padding-top: var(--mantine-spacing-lg);
+  padding-bottom: var(--mantine-spacing-lg);
+  align-items: flex-start;
 }
 
 .checkboxLabel {
   color: var(--mantine-color-neutrals-5);
+  @include line-clamp(1);
 }
