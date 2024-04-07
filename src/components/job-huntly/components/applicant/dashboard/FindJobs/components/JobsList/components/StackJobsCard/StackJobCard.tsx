@@ -82,7 +82,13 @@ function JobApplicationsStatus({
 function Actions({applicationsInfo}: Pick<Job, 'applicationsInfo'>) {
   return (
     <Stack ml='auto' w='fit-content'>
-      <Button miw={rem(164)} py='sm' size='md' w='100%'>
+      <Button
+        miw={rem(164)}
+        py='sm'
+        size='md'
+        w='100%'
+        onClick={(e) => e.preventDefault()}
+      >
         Apply
       </Button>
 
