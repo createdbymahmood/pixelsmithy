@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {DashboardPageLayout} from '@/components/job-huntly/layout'
+import DashboardPageLayout from '@/components/job-huntly/layout/DashboardPageLayout/DashboardPageLayout'
 import {urls} from '@/constants'
 
 export default function Job() {

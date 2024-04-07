@@ -16,7 +16,7 @@ interface DashboardPageLayoutProps {
   callbackURL?: string
 }
 
-export function DashboardPageLayout({
+export default function DashboardPageLayout({
   callbackURL,
   children,
   title,

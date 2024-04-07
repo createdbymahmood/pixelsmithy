@@ -54,7 +54,6 @@ const filters = [
 ]
 
 function Filters() {
-  // See groceries data above
   const items = filters.map((item) => {
     const selectables = item.elements.map((filter) => {
       const label = `${filter.label} (${filter.count})`
