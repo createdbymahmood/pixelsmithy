@@ -13,15 +13,17 @@ import {
 interface DashboardPageLayoutProps {
   children: ReactNode
   title: string
+  callbackURL?: string
 }
 
 export function DashboardPageLayout({
+  callbackURL,
   children,
   title,
 }: DashboardPageLayoutProps) {
   return (
     <Box w='100%'>
-      <Header title={title} />
+      <Header callbackURL={callbackURL} title={title} />
 
       <Box
         className='overflow-y-hidden'
