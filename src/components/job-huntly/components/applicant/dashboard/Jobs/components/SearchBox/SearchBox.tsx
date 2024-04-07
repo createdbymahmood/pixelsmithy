@@ -49,7 +49,7 @@ export function SearchBox() {
             size='md'
             w='100%'
           />
-          <Button className='shrink-0' fz='md' size='lg'>
+          <Button className='shrink-0' size='md'>
             Search
           </Button>
         </Group>
