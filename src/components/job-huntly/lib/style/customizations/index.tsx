@@ -121,7 +121,7 @@ export const components: MantineThemeComponents = {
     },
   }),
   Container: Container.extend({
-    vars: (_, {size, fluid}) => {
+    vars: (_, {fluid, size}) => {
       const containerSize = (() => {
         if (fluid) return '100%'
 

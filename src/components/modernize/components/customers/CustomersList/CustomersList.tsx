@@ -67,11 +67,11 @@ function TableContent() {
   const mapElementToKey = (element: Customer) =>
     `${element.name}-${element.location}`
   const {
+    indeterminate,
+    isAllSelected,
     onAllSelectionsChange,
     onItemSelectionChange,
     selections,
-    indeterminate,
-    isAllSelected,
   } = useTableState({
     items: elements.map(mapElementToKey),
   })

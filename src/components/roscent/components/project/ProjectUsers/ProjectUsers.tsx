@@ -50,11 +50,11 @@ const elements = [
 
 function TableContent() {
   const {
+    indeterminate,
+    isAllSelected,
     onAllSelectionsChange,
     onItemSelectionChange,
     selections,
-    indeterminate,
-    isAllSelected,
   } = useTableState({items: elements.map((element) => element.user)})
 
   const rows = elements.map((element) => {

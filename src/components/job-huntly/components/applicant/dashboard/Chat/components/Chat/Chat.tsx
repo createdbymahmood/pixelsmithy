@@ -135,7 +135,7 @@ interface MessageProps {
   date: string
 }
 
-function Message({direction, content, sender, date}: MessageProps) {
+function Message({content, date, direction, sender}: MessageProps) {
   const isLTR = direction === 'LTR'
 
   return (

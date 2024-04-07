@@ -41,7 +41,7 @@ interface Article {
 }
 interface ArticleProps extends Article {}
 
-function ArticleCard({id, contents, title}: ArticleProps) {
+function ArticleCard({contents, id, title}: ArticleProps) {
   const content = (() => {
     const result = contents.map((section) => (
       <Text key={section} size='sm'>

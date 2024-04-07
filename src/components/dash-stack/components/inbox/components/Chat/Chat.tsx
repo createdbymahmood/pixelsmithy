@@ -78,7 +78,7 @@ interface MessageProps {
   type: 'image' | 'text'
 }
 
-function Message({direction, content, type}: MessageProps) {
+function Message({content, direction, type}: MessageProps) {
   const isLTR = direction === 'LTR'
   const isText = type === 'text'
 

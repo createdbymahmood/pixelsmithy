@@ -75,11 +75,11 @@ export const paymentStatusMap: Record<PaymentStatus, JSX.Element> = {
 
 function TableContent() {
   const {
+    indeterminate,
+    isAllSelected,
     onAllSelectionsChange,
     onItemSelectionChange,
     selections,
-    indeterminate,
-    isAllSelected,
   } = useTableState({
     items: orders.map((element) => element.order),
   })

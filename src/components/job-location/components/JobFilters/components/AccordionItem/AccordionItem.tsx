@@ -9,7 +9,7 @@ interface AccordionItemProps {
   children: ReactNode
 }
 
-export function AccordionItem({children, _key, title}: AccordionItemProps) {
+export function AccordionItem({_key, children, title}: AccordionItemProps) {
   return (
     <OriginalAccordion.Item classNames={{item: styles.item}} value={_key}>
       <OriginalAccordion.Control

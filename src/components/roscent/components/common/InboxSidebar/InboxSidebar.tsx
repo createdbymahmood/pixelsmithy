@@ -20,9 +20,9 @@ export interface InboxSidebarPreviewItem {
 interface InboxSidebarListItemProps extends InboxSidebarPreviewItem {}
 
 function ChatListItem({
-  preview,
-  name,
   date,
+  name,
+  preview,
   unread,
 }: InboxSidebarListItemProps) {
   return (

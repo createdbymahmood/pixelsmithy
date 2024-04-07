@@ -60,7 +60,7 @@ interface SidebarItemProps {
   segment: string | null
 }
 
-function SidebarItem({href, title, icon: Icon, segment}: SidebarItemProps) {
+function SidebarItem({href, icon: Icon, segment, title}: SidebarItemProps) {
   const layoutSegment = useSelectedLayoutSegment()
   const isActive = layoutSegment === segment
   const iconWeight: IconWeight = isActive ? 'fill' : 'light'

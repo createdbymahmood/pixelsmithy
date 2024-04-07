@@ -24,11 +24,11 @@ interface NotificationType {
 }
 
 function Notification({
+  color,
   date,
   description,
-  title,
-  color,
   icon: Icon,
+  title,
 }: NotificationType) {
   return (
     <Card p={0} radius='md'>

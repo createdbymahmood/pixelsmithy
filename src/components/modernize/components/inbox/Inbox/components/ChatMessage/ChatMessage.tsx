@@ -16,7 +16,7 @@ interface ChatMessageProps {
   date: Dayjs
 }
 
-function ChatMessage({direction, content, type, date}: ChatMessageProps) {
+function ChatMessage({content, date, direction, type}: ChatMessageProps) {
   const isLTR = direction === 'LTR'
   const isText = type === 'text'
 

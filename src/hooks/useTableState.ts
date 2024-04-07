@@ -8,8 +8,8 @@ interface UseTableStateParams<T> {
 }
 
 export function useTableState<T>({
-  items,
   defaultSelected,
+  items,
 }: UseTableStateParams<T>) {
   const selections = useSelections<T>(items, defaultSelected)
 

@@ -10,7 +10,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import styles from './ChatSidebar.module.scss'
 
-function ChatPreview({date, name, preview, isOnline}: ChatItem) {
+function ChatPreview({date, isOnline, name, preview}: ChatItem) {
   const onlineBadge = isOnline ? (
     <Badge bg='primary' h={rem(6)} radius='xl' w={rem(6)} circle />
   ) : null

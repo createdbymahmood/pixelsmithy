@@ -10,7 +10,7 @@ interface ScrollableContentProps extends ComponentProps<typeof Box<'div'>> {
 export const ScrollableContent = forwardRef<
   HTMLDivElement,
   ScrollableContentProps
->(function ScrollableContent({h, children, ...props}, ref) {
+>(function ScrollableContent({children, h, ...props}, ref) {
   return (
     <Box ref={ref} h={h} style={{overflow: 'auto'}} {...props}>
       {children}
