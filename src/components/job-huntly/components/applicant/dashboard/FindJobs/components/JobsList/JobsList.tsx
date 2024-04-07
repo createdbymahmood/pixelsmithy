@@ -17,7 +17,7 @@ export enum JobsListType {
 }
 
 function useJobsListState() {
-  const [type, {setLeft: setGrid, setRight: setStack}] = useToggle<
+  const [type, {setLeft: setStack, setRight: setGrid}] = useToggle<
     JobsListType.Stack,
     JobsListType.Grid
   >(JobsListType.Stack, JobsListType.Grid)
