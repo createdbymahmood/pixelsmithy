@@ -11,13 +11,13 @@ import {
   Text,
 } from '@mantine/core'
 import {capitalize, clamp, startCase} from 'lodash-es'
-import React from 'react'
+import React, {Fragment} from 'react'
 
 import type {Job} from '@/components/job-huntly/mock/jobs'
 
 function Info({company, location}: Pick<Job, 'company' | 'location'>) {
   return (
-    <Group>
+    <Group gap='xs'>
       <Text c='neutrals.4'>{company}</Text>
       <Text c='neutrals.4'>•</Text>
       <Text c='neutrals.4'>{location}</Text>
@@ -54,18 +54,16 @@ function calculateCapacityProgressValue(count: number, capacity: number) {
   return clamp((count * 100) / capacity, 0, 100)
 }
 
-function Actions({applicationsInfo}: Pick<Job, 'applicationsInfo'>) {
+function JobApplicationsStatus({
+  applicationsInfo,
+}: Pick<Job, 'applicationsInfo'>) {
   const progressValue = calculateCapacityProgressValue(
     applicationsInfo.applicantsCount,
     applicationsInfo.capacity,
   )
 
   return (
-    <Stack ml='auto' w='fit-content'>
-      <Button py='sm' size='md' w={rem(164)}>
-        Apply
-      </Button>
-
+    <Fragment>
       <Progress color='green' radius={0} value={progressValue} />
 
       <Group gap='xs' wrap='nowrap'>
@@ -77,6 +75,18 @@ function Actions({applicationsInfo}: Pick<Job, 'applicationsInfo'>) {
           of {applicationsInfo.capacity} capacity
         </Text>
       </Group>
+    </Fragment>
+  )
+}
+
+function Actions({applicationsInfo}: Pick<Job, 'applicationsInfo'>) {
+  return (
+    <Stack ml='auto' w='fit-content'>
+      <Button miw={rem(164)} py='sm' size='md' w='100%'>
+        Apply
+      </Button>
+
+      <JobApplicationsStatus applicationsInfo={applicationsInfo} />
     </Stack>
   )
 }

@@ -1,4 +1,5 @@
 import {createTheme, rem} from '@mantine/core'
+import {get} from 'lodash-es'
 
 import {clashDisplay} from '@/components/job-huntly/assets/fonts/ClashDisplay/clashDisplay'
 import {epilogue} from '@/lib/styles/font/epilogue'
@@ -23,6 +24,7 @@ export const JobHuntlyTheme = createTheme({
       h5: {fontSize: rem(20), lineHeight: rem(24), fontWeight: '600'},
     },
   },
+  black: get(colors, 'neutrals.7', '#000') as string,
   lineHeights: {
     xs: '1.4',
     sm: '1.45',

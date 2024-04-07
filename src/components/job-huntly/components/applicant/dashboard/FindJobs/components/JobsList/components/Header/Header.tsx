@@ -11,11 +11,80 @@ import {
   Text,
   Title,
 } from '@mantine/core'
+import type {IconProps} from '@phosphor-icons/react'
 import {CaretDown} from '@phosphor-icons/react'
 import {Rows, SquaresFour} from '@phosphor-icons/react/dist/ssr'
+import {get} from 'lodash-es'
 import React from 'react'
 
-export function Header() {
+import type {UseJobsListStateReturnValue} from '@/components/job-huntly/components/applicant/dashboard/FindJobs/components'
+import {JobsListType} from '@/components/job-huntly/components/applicant/dashboard/FindJobs/components'
+
+interface HeaderProps extends UseJobsListStateReturnValue {}
+
+const Active = Symbol('active')
+const InActive = Symbol('active')
+
+const switchListTypeStylesMap = {
+  [Active]: {
+    c: 'primary',
+    variant: 'light',
+  },
+  [InActive]: {
+    c: 'neutrals.4',
+    variant: 'transparent',
+  },
+}
+
+const switchListTypeIconPropsMap: Record<
+  typeof Active | typeof InActive,
+  Omit<IconProps, 'display'>
+> = {
+  [Active]: {
+    weight: 'fill',
+  },
+  [InActive]: {
+    weight: 'regular',
+  },
+}
+
+const getActiveState = (
+  currentType: UseJobsListStateReturnValue['type'],
+  type: JobsListType,
+) => {
+  return currentType === type ? Active : InActive
+}
+
+export function Header(fns: HeaderProps) {
+  const switchListTypeActionButtons = [
+    {
+      key: JobsListType.Grid,
+      icon: SquaresFour,
+      onClick: fns.setGrid,
+      actionIconProps: get(
+        switchListTypeStylesMap,
+        getActiveState(fns.type, JobsListType.Grid),
+      ),
+      innerIconProps: get(
+        switchListTypeIconPropsMap,
+        getActiveState(fns.type, JobsListType.Grid),
+      ),
+    },
+    {
+      key: JobsListType.Stack,
+      icon: Rows,
+      onClick: fns.setStack,
+      actionIconProps: get(
+        switchListTypeStylesMap,
+        getActiveState(fns.type, JobsListType.Stack),
+      ),
+      innerIconProps: get(
+        switchListTypeIconPropsMap,
+        getActiveState(fns.type, JobsListType.Stack),
+      ),
+    },
+  ]
+
   return (
     <Group wrap='nowrap'>
       <Stack gap='xxs'>
@@ -67,13 +136,23 @@ export function Header() {
         <Divider orientation='vertical' />
 
         <Group>
-          <ActionIcon c='neutrals.4' size='lg' variant='transparent'>
-            <Box className='icon-size-lg' component={SquaresFour} />
-          </ActionIcon>
-
-          <ActionIcon c='primary' size='lg' variant='light'>
-            <Box className='icon-size-lg' component={Rows} weight='fill' />
-          </ActionIcon>
+          {switchListTypeActionButtons.map((button) => {
+            return (
+              <ActionIcon
+                key={button.key}
+                radius='sm'
+                size='lg'
+                {...button.actionIconProps}
+                onClick={button.onClick}
+              >
+                <Box
+                  className='icon-size-lg'
+                  component={button.icon}
+                  {...button.innerIconProps}
+                />
+              </ActionIcon>
+            )
+          })}
         </Group>
       </Group>
     </Group>
