@@ -48,13 +48,13 @@ const growthRateColorMap: Record<StatType, string> = {
 interface StatProps extends StatValue {}
 
 function Stat({
+  description,
+  gorwingOrRegressingPercentage,
+  icon,
+  iconColor,
   title,
   type,
   value,
-  icon,
-  description,
-  iconColor,
-  gorwingOrRegressingPercentage,
 }: StatProps) {
   const Icon = icon
   const badge = get(growthRateBadgeMap, type)

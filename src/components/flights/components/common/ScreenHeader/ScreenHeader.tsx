@@ -8,7 +8,7 @@ interface ScreenHeaderProps extends GroupProps {
   title: string
 }
 
-export function ScreenHeader({title, className, ...props}: ScreenHeaderProps) {
+export function ScreenHeader({className, title, ...props}: ScreenHeaderProps) {
   return (
     <Group
       className={clsx(className, 'cursor-pointer')}

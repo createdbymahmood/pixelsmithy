@@ -61,7 +61,7 @@ interface CardWithCarouselProps extends AlertsProps {
   title: string
 }
 
-export function CardWithCarousel({title, slides}: CardWithCarouselProps) {
+export function CardWithCarousel({slides, title}: CardWithCarouselProps) {
   return (
     <Card>
       <Stack>

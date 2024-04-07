@@ -65,7 +65,7 @@ interface CreditCardProps {
   isActive: boolean
 }
 
-function CreditCard({exp, name, number, isActive}: CreditCardProps) {
+function CreditCard({exp, isActive, name, number}: CreditCardProps) {
   const activeBadge = isActive && <Badge color='green'>Active</Badge>
   return (
     <Card bg='gray.2' p='md' radius='md'>

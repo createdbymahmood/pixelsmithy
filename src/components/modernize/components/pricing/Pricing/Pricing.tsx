@@ -98,9 +98,9 @@ interface PlanProps extends PlanType {}
 function Plan({
   description,
   features,
-  title,
-  pricing,
   isRecommended,
+  pricing,
+  title,
 }: PlanProps) {
   const pricingType = pricing.type === 'annually' ? 'year' : 'month'
 

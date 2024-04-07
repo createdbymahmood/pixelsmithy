@@ -56,11 +56,11 @@ interface TableContentProps {
 function TableContent({status}: TableContentProps) {
   const mapElementToKey = (element: Coupon) => element.name
   const {
+    indeterminate,
+    isAllSelected,
     onAllSelectionsChange,
     onItemSelectionChange,
     selections,
-    indeterminate,
-    isAllSelected,
   } = useTableState({
     items: elements.map(mapElementToKey),
   })

@@ -11,7 +11,7 @@ import {useMobileDevice} from '@/hooks/useMobileDevice'
 
 export function JobFilters() {
   const isMobile = useMobileDevice()
-  const [opened, {open, close}] = useDisclosure(false)
+  const [opened, {close, open}] = useDisclosure(false)
 
   const content = (
     <Accordion

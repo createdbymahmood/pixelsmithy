@@ -15,7 +15,7 @@ interface MessageProps {
   dir: 'ltr' | 'rtl'
 }
 
-function Message({content, time, dir}: MessageProps) {
+function Message({content, dir, time}: MessageProps) {
   const isLTR = dir === 'ltr'
   return (
     <Group

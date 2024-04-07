@@ -96,7 +96,7 @@ interface PopoverTargetProps extends Pick<DisclojureHelpers, 'toggle'> {
   opened: boolean
 }
 
-function PopoverTarget({children, toggle, opened}: PopoverTargetProps) {
+function PopoverTarget({children, opened, toggle}: PopoverTargetProps) {
   return (
     <Popover.Target>
       <Group className={clsx('cursor-pointer')} gap='sm' onClick={toggle}>

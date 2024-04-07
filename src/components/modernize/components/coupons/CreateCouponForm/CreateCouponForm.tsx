@@ -101,7 +101,7 @@ function CouponInformation() {
 }
 
 function useCheckboxToggleState() {
-  const [isDisabled, {open, close}] = useDisclosure(false)
+  const [isDisabled, {close, open}] = useDisclosure(false)
 
   const onCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {

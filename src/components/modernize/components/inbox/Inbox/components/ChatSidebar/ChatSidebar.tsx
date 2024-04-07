@@ -11,7 +11,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import styles from './ChatSidebar.module.scss'
 
-function ChatPreview({date, name, preview, unread, isOnline}: ChatItem) {
+function ChatPreview({date, isOnline, name, preview, unread}: ChatItem) {
   const hasUnreadMessages = !isUndefined(unread)
 
   return (

@@ -139,11 +139,11 @@ const pricings: Pricing[] = [
 interface PricingProps extends Pricing {}
 
 function PricingCard({
-  title,
   chargeType,
   features,
-  price,
   isRecommended,
+  price,
+  title,
 }: PricingProps) {
   return (
     <Card radius='xl' w='100%'>

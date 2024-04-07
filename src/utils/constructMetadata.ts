@@ -15,10 +15,10 @@ const defaultMetadata: Required<ConstructMetadataParams> = {
 }
 
 export const constructMetadata = ({
-  title,
   description,
-  image,
   icons,
+  image,
+  title,
 }: ConstructMetadataParams = defaultMetadata): Metadata => {
   return {
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions

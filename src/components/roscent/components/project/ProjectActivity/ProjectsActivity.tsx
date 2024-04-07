@@ -56,11 +56,11 @@ const createElementKey = (fileName: string, uploader: string) =>
 
 function TableContent() {
   const {
+    indeterminate,
+    isAllSelected,
     onAllSelectionsChange,
     onItemSelectionChange,
     selections,
-    indeterminate,
-    isAllSelected,
   } = useTableState({
     items: elements.map((element) =>
       createElementKey(element.file, element.uploader),

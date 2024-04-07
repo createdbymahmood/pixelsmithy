@@ -17,8 +17,8 @@ interface BottomNavigationItemProps {
 
 function BottomNavigationItem({
   icon: Icon,
-  title,
   index,
+  title,
 }: BottomNavigationItemProps) {
   const active = index === 0
   const c = active

@@ -47,7 +47,7 @@ interface HomeIndicatorProps {
   bg: MantineColor
 }
 
-function HomeIndicator({color, bg}: HomeIndicatorProps) {
+function HomeIndicator({bg, color}: HomeIndicatorProps) {
   return (
     <Group
       align='flex-end'
@@ -74,9 +74,9 @@ function HomeIndicator({color, bg}: HomeIndicatorProps) {
 
 export function IOSScreen({
   children,
-  variant = 'light',
   className,
   homeIndicatorBg = 'transparent',
+  variant = 'light',
   ...props
 }: IOSScreenProps) {
   const color: MantineColor = variant === 'dark' ? 'black' : 'white'

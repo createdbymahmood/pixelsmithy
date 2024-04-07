@@ -42,11 +42,11 @@ const elements: Product[] = [
 function TableContent() {
   const mapElementToKey = (element: Product) => element.title
   const {
+    indeterminate,
+    isAllSelected,
     onAllSelectionsChange,
     onItemSelectionChange,
     selections,
-    indeterminate,
-    isAllSelected,
   } = useTableState({
     items: elements.map(mapElementToKey),
   })
