@@ -9,7 +9,7 @@ import {
   Text,
 } from '@mantine/core'
 import {capitalize, clamp, startCase} from 'lodash-es'
-import React, {Fragment} from 'react'
+import React from 'react'
 
 import type {Job} from '@/components/job-huntly/mock/jobs'
 
@@ -48,7 +48,10 @@ function Categories({categories}: Pick<Job, 'categories'>) {
   })
 }
 
-function calculateCapacityProgressValue(count: number, capacity: number) {
+export function calculateCapacityProgressValue(
+  count: number,
+  capacity: number,
+) {
   return clamp((count * 100) / capacity, 0, 100)
 }
 
@@ -61,7 +64,7 @@ function JobApplicationsStatus({
   )
 
   return (
-    <Fragment>
+    <Stack gap='xs' mt='sm'>
       <Progress color='green' radius={0} value={progressValue} />
 
       <Group gap='xs' wrap='nowrap'>
@@ -73,7 +76,7 @@ function JobApplicationsStatus({
           of {applicationsInfo.capacity} capacity
         </Text>
       </Group>
-    </Fragment>
+    </Stack>
   )
 }
 
@@ -121,6 +124,7 @@ export function GridJobCard({
           location={location}
           role={role}
         />
+
         <JobApplicationsStatus applicationsInfo={applicationsInfo} />
       </Stack>
     </Paper>

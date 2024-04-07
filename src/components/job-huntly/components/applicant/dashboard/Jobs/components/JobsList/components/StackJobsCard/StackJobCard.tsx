@@ -10,9 +10,10 @@ import {
   Stack,
   Text,
 } from '@mantine/core'
-import {capitalize, clamp, startCase} from 'lodash-es'
-import React, {Fragment} from 'react'
+import {capitalize, startCase} from 'lodash-es'
+import React from 'react'
 
+import {calculateCapacityProgressValue} from '@/components/job-huntly/components/applicant/dashboard/Jobs/components/JobsList/components'
 import type {Job} from '@/components/job-huntly/mock/jobs'
 
 function Info({company, location}: Pick<Job, 'company' | 'location'>) {
@@ -50,10 +51,6 @@ function Categories({categories}: Pick<Job, 'categories'>) {
   })
 }
 
-function calculateCapacityProgressValue(count: number, capacity: number) {
-  return clamp((count * 100) / capacity, 0, 100)
-}
-
 function JobApplicationsStatus({
   applicationsInfo,
 }: Pick<Job, 'applicationsInfo'>) {
@@ -63,7 +60,7 @@ function JobApplicationsStatus({
   )
 
   return (
-    <Fragment>
+    <Stack gap='xs' mt='xs'>
       <Progress color='green' radius={0} value={progressValue} />
 
       <Group gap='xs' wrap='nowrap'>
@@ -75,13 +72,13 @@ function JobApplicationsStatus({
           of {applicationsInfo.capacity} capacity
         </Text>
       </Group>
-    </Fragment>
+    </Stack>
   )
 }
 
 function Actions({applicationsInfo}: Pick<Job, 'applicationsInfo'>) {
   return (
-    <Stack ml='auto' w='fit-content'>
+    <Stack gap='xs' ml='auto' w='fit-content'>
       <Button
         miw={rem(164)}
         py='sm'
