@@ -30,13 +30,19 @@ export function Header({callbackURL, title}: HeaderProps) {
   ) : null
 
   return (
-    <Group bg='white' className={clsx(styles.header)} p='xxxl'>
+    <Group bg='white' className={clsx(styles.header)} gap='xxxl' p='xxxl'>
       <Group gap='xs'>
         {backArrow}
         <Title order={3}>{title}</Title>
       </Group>
 
-      <Button ml='auto' size='md' variant='outline'>
+      <Button
+        c='primary'
+        color='primary.1'
+        ml='auto'
+        size='md'
+        variant='outline'
+      >
         Back to homepage
       </Button>
 

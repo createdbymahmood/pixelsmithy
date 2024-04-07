@@ -41,6 +41,7 @@ export const components: MantineThemeComponents = {
   Button: Button.extend({
     defaultProps: {
       fw: '700',
+      radius: 0,
     },
     classNames(theme, props, ctx) {
       return {
