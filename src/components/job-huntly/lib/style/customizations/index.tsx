@@ -23,6 +23,7 @@ import type {CSSProperties} from 'react'
 import {inter} from '@/lib/styles/font/inter'
 
 import BadgeStyles from './Badge.module.scss'
+import {buttonSizeResolver} from './button'
 import ButtonStyles from './Button.module.scss'
 import {CONTAINER_SIZES} from './container'
 import PaginationStyles from './Pagination.module.scss'
@@ -40,6 +41,9 @@ export const components: MantineThemeComponents = {
     },
   }),
   Button: Button.extend({
+    vars: (theme, props) => {
+      return buttonSizeResolver(props.size)
+    },
     defaultProps: {
       fw: '700',
       radius: 0,
