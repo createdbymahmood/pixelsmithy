@@ -42,4 +42,7 @@ export const JobHuntlyTheme = createTheme({
     xxl: rem(28),
     xxxl: rem(32),
   },
+  breakpoints: {
+    xxl: '100em',
+  },
 })

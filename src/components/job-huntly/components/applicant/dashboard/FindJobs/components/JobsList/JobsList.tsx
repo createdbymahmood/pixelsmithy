@@ -31,7 +31,7 @@ export function JobsList() {
   const content = (() => {
     if (state.type === JobsListType.Grid) {
       return (
-        <SimpleGrid cols={3}>
+        <SimpleGrid cols={{xxl: 3, xl: 2, md: 1, base: 1}}>
           {jobs.map((job) => {
             return <GridJobCard {...job} key={job.id} />
           })}
