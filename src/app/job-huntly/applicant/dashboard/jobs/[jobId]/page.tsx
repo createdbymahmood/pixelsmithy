@@ -1,15 +1,16 @@
+import {JobDescription as JobDescriptionView} from '@job-huntly/components/applicant'
+import DashboardPageLayout from '@job-huntly/layout/DashboardPageLayout/DashboardPageLayout'
 import React from 'react'
 
-import DashboardPageLayout from '@/components/job-huntly/layout/DashboardPageLayout/DashboardPageLayout'
 import {urls} from '@/constants'
 
-export default function Job() {
+export default function JobDescription() {
   return (
     <DashboardPageLayout
       callbackURL={urls.JobHuntly.applicant.dashboard.jobs}
       title='Job Description'
     >
-      Job Info
+      <JobDescriptionView />
     </DashboardPageLayout>
   )
 }
