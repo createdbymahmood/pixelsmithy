@@ -195,7 +195,9 @@ export const urls = {
           offered: '/job-huntly/applicant/dashboard/applications/offered',
           hired: '/job-huntly/applicant/dashboard/applications/hired',
         },
-        findJobs: '/job-huntly/applicant/dashboard/find-jobs',
+        jobs: '/job-huntly/applicant/dashboard/jobs',
+        job: (jobId: string) =>
+          urlCat('/job-huntly/applicant/dashboard/jobs/:jobId', {jobId}),
       },
     },
     landing: '/job-huntly/landing',
