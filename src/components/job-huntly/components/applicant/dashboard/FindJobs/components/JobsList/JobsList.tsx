@@ -2,10 +2,12 @@
 
 import {SimpleGrid, Stack as MantineStack} from '@mantine/core'
 import {useToggle} from 'ahooks'
+import Link from 'next/link'
 import React from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {jobs} from '@/components/job-huntly/mock/jobs'
+import {urls} from '@/constants'
 
 import {GridJobCard, Header, StackJobCard} from './components'
 
@@ -33,7 +35,14 @@ export function JobsList() {
       return (
         <SimpleGrid cols={{xxl: 3, xl: 2, md: 1, base: 1}}>
           {jobs.map((job) => {
-            return <GridJobCard {...job} key={job.id} />
+            return (
+              <Link
+                key={job.id}
+                href={urls.JobHuntly.applicant.dashboard.job(job.id)}
+              >
+                <GridJobCard {...job} />
+              </Link>
+            )
           })}
         </SimpleGrid>
       )
@@ -42,7 +51,14 @@ export function JobsList() {
     return (
       <MantineStack h='100%'>
         {jobs.map((job) => {
-          return <StackJobCard {...job} key={job.id} />
+          return (
+            <Link
+              key={job.id}
+              href={urls.JobHuntly.applicant.dashboard.job(job.id)}
+            >
+              <StackJobCard {...job} />
+            </Link>
+          )
         })}
       </MantineStack>
     )
