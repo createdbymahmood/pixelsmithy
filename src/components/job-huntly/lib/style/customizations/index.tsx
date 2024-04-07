@@ -8,6 +8,7 @@ import {
   Card,
   Container,
   Pagination,
+  Progress,
   rem,
   Table,
   Text,
@@ -62,6 +63,11 @@ export const components: MantineThemeComponents = {
     },
   }),
   TextInput: TextInput.extend({
+    defaultProps: {
+      radius: 0,
+    },
+  }),
+  Progress: Progress.extend({
     defaultProps: {
       radius: 0,
     },
