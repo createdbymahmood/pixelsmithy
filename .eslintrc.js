@@ -1,7 +1,7 @@
 const {init} = require('@fullstacksjs/eslint-config/init')
 
 module.exports = init({
-  plugins: ['eslint-plugin-unused-imports'],
+  plugins: ['eslint-plugin-unused-imports', 'sort-destructure-keys'],
   modules: {
     auto: true,
     esm: true,
@@ -38,5 +38,6 @@ module.exports = init({
     'react/hook-use-state': ['error'],
     'import/extensions': ['off'],
     'unused-imports/no-unused-imports': 'warn',
+    'sort-destructure-keys/sort-destructure-keys': [2, {caseSensitive: false}],
   },
 })
