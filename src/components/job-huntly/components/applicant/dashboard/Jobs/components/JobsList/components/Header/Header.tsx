@@ -17,8 +17,8 @@ import {Rows, SquaresFour} from '@phosphor-icons/react/dist/ssr'
 import {get} from 'lodash-es'
 import React from 'react'
 
-import type {UseJobsListStateReturnValue} from '@/components/job-huntly/components/applicant/dashboard/FindJobs/components'
-import {JobsListType} from '@/components/job-huntly/components/applicant/dashboard/FindJobs/components'
+import type {UseJobsListStateReturnValue} from '@/components/job-huntly/components/applicant/dashboard/Jobs/components'
+import {JobsListType} from '@/components/job-huntly/components/applicant/dashboard/Jobs/components'
 
 interface HeaderProps extends UseJobsListStateReturnValue {}
 
