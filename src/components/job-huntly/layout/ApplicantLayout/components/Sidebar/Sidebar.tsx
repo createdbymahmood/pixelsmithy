@@ -17,8 +17,7 @@ import React, {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {GroupLink} from '@/components/common'
-import type {SidebarSection} from '@/components/roscent'
-import {SidebarItem} from '@/components/roscent'
+import type {SidebarItem, SidebarSection} from '@/components/roscent'
 import {urls} from '@/constants'
 import {inter} from '@/lib/styles/font/inter'
 
@@ -33,7 +32,7 @@ const sections: SidebarSection[] = [
         id: 'dashboard',
         title: 'Dashboard',
         icon: HouseSimple,
-        href: urls.JobHuntly.applicant.dashboard.index,
+        href: urls.JobHuntly.applicant.dashboard.home,
         activeSegment: ['home'],
       },
       {
@@ -95,7 +94,7 @@ const sections: SidebarSection[] = [
   },
 ]
 
-function SidebarItem(props: SidebarItem) {
+function SidebarItemElement(props: SidebarItem) {
   const segment = useSelectedLayoutSegments()
   const isEqualToSegment = isEqual(segment, props.activeSegment)
   const isActive =
@@ -145,7 +144,7 @@ function SidebarItem(props: SidebarItem) {
 function SidebarContent() {
   const content = sections.map((section) => {
     const sidebarItems = section.items.map((item) => {
-      return <SidebarItem key={item.id} {...item} />
+      return <SidebarItemElement key={item.id} {...item} />
     })
 
     return (
