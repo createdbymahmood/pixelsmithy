@@ -2,6 +2,7 @@
 
 import {Stack} from '@mantine/core'
 import React from 'react'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {jobs} from '@/components/job-huntly/mock/jobs'
 
@@ -13,10 +14,12 @@ export function JobsList() {
   })
 
   return (
-    <Stack gap='xxxl' w='100%'>
+    <Stack gap='xxxl' h='100%' w='100%'>
       <Header />
 
-      {list}
+      <PerfectScrollbar>
+        <Stack h='100%'>{list}</Stack>
+      </PerfectScrollbar>
     </Stack>
   )
 }

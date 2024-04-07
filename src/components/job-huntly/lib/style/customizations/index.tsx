@@ -30,9 +30,6 @@ import {displayTextResolver} from './text'
 
 export const components: MantineThemeComponents = {
   Text: Text.extend({
-    defaultProps: {
-      c: 'neutrals.6',
-    },
     vars: (theme, props) => {
       if (props.variant === 'display') {
         return displayTextResolver(props.size)
