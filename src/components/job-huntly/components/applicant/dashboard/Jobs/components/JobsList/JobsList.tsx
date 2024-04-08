@@ -1,12 +1,12 @@
 'use client'
 
+import {jobs} from '@job-huntly/mock/jobs'
 import {SimpleGrid, Stack as MantineStack} from '@mantine/core'
 import {useToggle} from 'ahooks'
 import Link from 'next/link'
 import React from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {jobs} from '@/components/job-huntly/mock/jobs'
 import {urls} from '@/constants'
 
 import {GridJobCard, Header, StackJobCard} from './components'

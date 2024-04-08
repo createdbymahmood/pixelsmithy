@@ -1,3 +1,3 @@
-import {ApplicantLayout} from '@/components/job-huntly/layout'
+import {ApplicantLayout} from '@job-huntly/layout'
 
 export default ApplicantLayout

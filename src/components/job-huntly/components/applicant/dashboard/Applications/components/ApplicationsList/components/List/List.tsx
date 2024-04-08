@@ -1,5 +1,10 @@
 'use client'
 
+import type {
+  Application,
+  ApplicationStatus,
+} from '@job-huntly/mock/applications'
+import {applications} from '@job-huntly/mock/applications'
 import {
   Avatar,
   Badge,
@@ -17,11 +22,6 @@ import clsx from 'clsx'
 import {get} from 'lodash-es'
 
 import {GroupLink} from '@/components/common'
-import type {
-  Application,
-  ApplicationStatus,
-} from '@/components/job-huntly/mock/applications'
-import {applications} from '@/components/job-huntly/mock/applications'
 
 const elements: Application[] = applications
 

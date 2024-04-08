@@ -1,7 +1,7 @@
+import {clashDisplay} from '@job-huntly/assets/fonts/ClashDisplay/clashDisplay'
 import {createTheme, rem} from '@mantine/core'
 import {get} from 'lodash-es'
 
-import {clashDisplay} from '@/components/job-huntly/assets/fonts/ClashDisplay/clashDisplay'
 import {epilogue} from '@/lib/styles/font/epilogue'
 
 import {colors} from './colors'

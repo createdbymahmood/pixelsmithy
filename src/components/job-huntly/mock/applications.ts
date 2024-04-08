@@ -1,6 +1,5 @@
+import type {JobType} from '@job-huntly/mock/jobs'
 import type {FC, SVGProps} from 'react'
-
-import type {JobType} from '@/components/job-huntly/mock/jobs'
 
 import DigitalOcean from './assets/logo/digital-ocean.svg'
 import Divvy from './assets/logo/divvy.svg'

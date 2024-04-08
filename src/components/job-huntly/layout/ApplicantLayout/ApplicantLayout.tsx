@@ -1,10 +1,9 @@
 'use client'
 
+import {Sidebar} from '@job-huntly/layout/ApplicantLayout/components'
 import {Group} from '@mantine/core'
 import type {ReactNode} from 'react'
 import React from 'react'
-
-import {Sidebar} from '@/components/job-huntly/layout/ApplicantLayout/components'
 
 interface ApplicantLayoutProps {
   children: ReactNode

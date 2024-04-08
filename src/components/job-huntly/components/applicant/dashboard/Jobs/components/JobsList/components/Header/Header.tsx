@@ -1,5 +1,7 @@
 'use client'
 
+import type {UseJobsListStateReturnValue} from '@job-huntly/components/applicant/dashboard/Jobs/components'
+import {JobsListType} from '@job-huntly/components/applicant/dashboard/Jobs/components'
 import {
   ActionIcon,
   Box,
@@ -16,9 +18,6 @@ import {CaretDown} from '@phosphor-icons/react'
 import {Rows, SquaresFour} from '@phosphor-icons/react/dist/ssr'
 import {get} from 'lodash-es'
 import React from 'react'
-
-import type {UseJobsListStateReturnValue} from '@/components/job-huntly/components/applicant/dashboard/Jobs/components'
-import {JobsListType} from '@/components/job-huntly/components/applicant/dashboard/Jobs/components'
 
 interface HeaderProps extends UseJobsListStateReturnValue {}
 

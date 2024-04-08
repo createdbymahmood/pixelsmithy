@@ -1,5 +1,8 @@
 'use client'
 
+import {JobApplicationsStatus} from '@job-huntly/components/applicant/dashboard/Jobs/components/JobsList/components'
+import type {Job} from '@job-huntly/mock/jobs'
+import {jobs} from '@job-huntly/mock/jobs'
 import {
   Anchor,
   Badge,
@@ -19,10 +22,6 @@ import {
 import {ArrowRight, CheckCircle} from '@phosphor-icons/react/dist/ssr'
 import {capitalize, head} from 'lodash-es'
 import React from 'react'
-
-import {JobApplicationsStatus} from '@/components/job-huntly/components/applicant/dashboard/Jobs/components/JobsList/components'
-import type {Job} from '@/components/job-huntly/mock/jobs'
-import {jobs} from '@/components/job-huntly/mock/jobs'
 
 import {Header} from './components'
 
