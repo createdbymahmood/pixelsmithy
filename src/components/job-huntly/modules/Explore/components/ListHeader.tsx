@@ -1,7 +1,5 @@
 'use client'
 
-import type {UseJobsListStateReturnValue} from '@job-huntly/components/applicant/dashboard/Jobs/components'
-import {JobsListType} from '@job-huntly/components/applicant/dashboard/Jobs/components'
 import {
   ActionIcon,
   Box,
@@ -19,7 +17,13 @@ import {Rows, SquaresFour} from '@phosphor-icons/react/dist/ssr'
 import {get} from 'lodash-es'
 import React from 'react'
 
-interface HeaderProps extends UseJobsListStateReturnValue {}
+import type {ExploreListHeaderConfig} from '@/components/job-huntly/modules/Explore'
+import {ExploreListMode} from '@/components/job-huntly/modules/Explore'
+import type {UseExploreListStateReturnValue} from '@/components/job-huntly/modules/Explore/components/List'
+
+interface HeaderProps extends ExploreListHeaderConfig {
+  state: UseExploreListStateReturnValue
+}
 
 const Active = Symbol('active')
 const InActive = Symbol('active')
@@ -48,38 +52,38 @@ const switchListTypeIconPropsMap: Record<
 }
 
 const getActiveState = (
-  currentType: UseJobsListStateReturnValue['type'],
-  type: JobsListType,
+  currentType: UseExploreListStateReturnValue['type'],
+  type: ExploreListMode,
 ) => {
   return currentType === type ? Active : InActive
 }
 
-export function Header(fns: HeaderProps) {
+export function ListHeader(props: HeaderProps) {
   const switchListTypeActionButtons = [
     {
-      key: JobsListType.Grid,
+      key: ExploreListMode.Grid,
       icon: SquaresFour,
-      onClick: fns.setGrid,
+      onClick: props.state.setGrid,
       actionIconProps: get(
         switchListTypeStylesMap,
-        getActiveState(fns.type, JobsListType.Grid),
+        getActiveState(props.state.type, ExploreListMode.Grid),
       ),
       innerIconProps: get(
         switchListTypeIconPropsMap,
-        getActiveState(fns.type, JobsListType.Grid),
+        getActiveState(props.state.type, ExploreListMode.Grid),
       ),
     },
     {
-      key: JobsListType.Stack,
+      key: ExploreListMode.Stack,
       icon: Rows,
-      onClick: fns.setStack,
+      onClick: props.state.setStack,
       actionIconProps: get(
         switchListTypeStylesMap,
-        getActiveState(fns.type, JobsListType.Stack),
+        getActiveState(props.state.type, ExploreListMode.Stack),
       ),
       innerIconProps: get(
         switchListTypeIconPropsMap,
-        getActiveState(fns.type, JobsListType.Stack),
+        getActiveState(props.state.type, ExploreListMode.Stack),
       ),
     },
   ]
@@ -87,8 +91,8 @@ export function Header(fns: HeaderProps) {
   return (
     <Group wrap='nowrap'>
       <Stack gap='xxs'>
-        <Title order={4}>All Jobs</Title>
-        <Text>Showing 73 results</Text>
+        <Title order={4}>{props.title}</Title>
+        <Text>{props.description}</Text>
       </Stack>
 
       <Group gap='xxl' ml='auto' wrap='nowrap'>

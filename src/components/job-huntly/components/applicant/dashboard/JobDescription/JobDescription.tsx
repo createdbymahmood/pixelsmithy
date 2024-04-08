@@ -1,6 +1,6 @@
 'use client'
 
-import {JobApplicationsStatus} from '@job-huntly/components/applicant/dashboard/Jobs/components/JobsList/components'
+import {JobApplicationsStatus} from '@job-huntly/components/applicant/dashboard/Jobs/StackJobsCard'
 import type {Job} from '@job-huntly/mock/jobs'
 import {jobs} from '@job-huntly/mock/jobs'
 import {

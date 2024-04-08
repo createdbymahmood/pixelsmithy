@@ -1,4 +1,4 @@
-import {calculateCapacityProgressValue} from '@job-huntly/components/applicant/dashboard/Jobs/components/JobsList/components'
+import {calculateCapacityProgressValue} from '@job-huntly/components/applicant/dashboard/Jobs/GridJobCard'
 import type {Job} from '@job-huntly/mock/jobs'
 import {
   Avatar,
