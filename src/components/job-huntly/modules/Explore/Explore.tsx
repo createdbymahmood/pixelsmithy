@@ -1,4 +1,5 @@
 import {Divider, Group, rem, Stack as MantineStack} from '@mantine/core'
+import type {ReactNode} from 'react'
 import React from 'react'
 
 import {Filters, List, SearchBox} from './components'
@@ -60,7 +61,7 @@ export interface ExploreListHeaderConfig {
 
 export interface ExploreListConfig<T> {
   header: ExploreListHeaderConfig
-  render: (elements: T[], listMode: ExploreListMode) => JSX.Element
+  render: (elements: T[], listMode: ExploreListMode) => ReactNode
   elements: T[]
 }
 
