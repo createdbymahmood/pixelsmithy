@@ -1,3 +1,4 @@
+import type {Job} from '@job-huntly/mock/jobs'
 import {
   Avatar,
   Badge,
@@ -10,8 +11,6 @@ import {
 } from '@mantine/core'
 import {capitalize, clamp, startCase} from 'lodash-es'
 import React from 'react'
-
-import type {Job} from '@/components/job-huntly/mock/jobs'
 
 function Info({company, location}: Pick<Job, 'company' | 'location'>) {
   return (

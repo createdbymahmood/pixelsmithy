@@ -7,10 +7,10 @@ import '@mantine/dropzone/styles.css'
 import '@mantine/spotlight/styles.css'
 import '@/lib/styles/global.scss'
 
+import {JobHuntlyTheme} from '@job-huntly/lib/style/JobHuntlyTheme'
 import {MantineProvider} from '@mantine/core'
 import type {ReactNode} from 'react'
 
-import {JobHuntlyTheme} from '@/components/job-huntly/lib/style/JobHuntlyTheme'
 import {defaultThemeColorScheme} from '@/constants'
 
 interface JobHunyltProviders {

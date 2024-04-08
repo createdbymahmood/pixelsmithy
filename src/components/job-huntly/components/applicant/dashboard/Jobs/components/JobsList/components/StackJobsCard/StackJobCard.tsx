@@ -1,3 +1,5 @@
+import {calculateCapacityProgressValue} from '@job-huntly/components/applicant/dashboard/Jobs/components/JobsList/components'
+import type {Job} from '@job-huntly/mock/jobs'
 import {
   Avatar,
   Badge,
@@ -13,9 +15,6 @@ import {
 } from '@mantine/core'
 import {capitalize, startCase} from 'lodash-es'
 import React from 'react'
-
-import {calculateCapacityProgressValue} from '@/components/job-huntly/components/applicant/dashboard/Jobs/components/JobsList/components'
-import type {Job} from '@/components/job-huntly/mock/jobs'
 
 function Info({company, location}: Pick<Job, 'company' | 'location'>) {
   return (

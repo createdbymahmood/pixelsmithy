@@ -1,5 +1,6 @@
 'use client'
 
+import type {Job} from '@job-huntly/mock/jobs'
 import {
   Avatar,
   Box,
@@ -16,8 +17,6 @@ import {ShareNetwork} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {startCase} from 'lodash-es'
 import React from 'react'
-
-import type {Job} from '@/components/job-huntly/mock/jobs'
 
 function Actions() {
   return (

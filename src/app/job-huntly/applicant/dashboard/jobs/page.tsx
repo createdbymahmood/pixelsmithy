@@ -1,7 +1,7 @@
 import {Jobs as JobsView} from '@job-huntly/components/applicant'
+import DashboardPageLayout from '@job-huntly/layout/DashboardPageLayout/DashboardPageLayout'
 import React from 'react'
 
-import DashboardPageLayout from '@/components/job-huntly/layout/DashboardPageLayout/DashboardPageLayout'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({

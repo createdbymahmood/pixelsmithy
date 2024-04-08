@@ -1,15 +1,14 @@
 'use client'
 
+import {applicationStatusMap} from '@job-huntly/components/applicant/dashboard/Applications/components/ApplicationsList/components'
+import type {Application} from '@job-huntly/mock/applications'
+import {applications} from '@job-huntly/mock/applications'
 import {Avatar, Box, Button, Card, Group, rem, Stack, Text} from '@mantine/core'
 import {ArrowRight} from '@phosphor-icons/react'
 import {DotsThree} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {get} from 'lodash-es'
 import React from 'react'
-
-import {applicationStatusMap} from '@/components/job-huntly/components/applicant/dashboard/Applications/components/ApplicationsList/components'
-import type {Application} from '@/components/job-huntly/mock/applications'
-import {applications} from '@/components/job-huntly/mock/applications'
 
 import styles from './RecentApplications.module.scss'
 

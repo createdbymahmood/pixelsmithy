@@ -1,8 +1,7 @@
 import {ApplicationsLayout} from '@job-huntly/components/applicant'
+import DashboardPageLayout from '@job-huntly/layout/DashboardPageLayout/DashboardPageLayout'
 import type {ReactNode} from 'react'
 import React from 'react'
-
-import DashboardPageLayout from '@/components/job-huntly/layout/DashboardPageLayout/DashboardPageLayout'
 
 interface LayoutProps {
   children: ReactNode
