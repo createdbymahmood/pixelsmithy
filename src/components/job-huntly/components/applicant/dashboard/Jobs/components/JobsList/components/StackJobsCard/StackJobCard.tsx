@@ -1,6 +1,7 @@
 import {
   Avatar,
   Badge,
+  Box,
   Button,
   Divider,
   Group,
@@ -51,7 +52,7 @@ function Categories({categories}: Pick<Job, 'categories'>) {
   })
 }
 
-function JobApplicationsStatus({
+export function JobApplicationsStatus({
   applicationsInfo,
 }: Pick<Job, 'applicationsInfo'>) {
   const progressValue = calculateCapacityProgressValue(
@@ -60,7 +61,7 @@ function JobApplicationsStatus({
   )
 
   return (
-    <Stack gap='xs' mt='xs'>
+    <Stack gap='xs'>
       <Progress color='green' radius={0} value={progressValue} />
 
       <Group gap='xs' wrap='nowrap'>
@@ -89,7 +90,9 @@ function Actions({applicationsInfo}: Pick<Job, 'applicationsInfo'>) {
         Apply
       </Button>
 
-      <JobApplicationsStatus applicationsInfo={applicationsInfo} />
+      <Box mt='xs'>
+        <JobApplicationsStatus applicationsInfo={applicationsInfo} />
+      </Box>
     </Stack>
   )
 }
