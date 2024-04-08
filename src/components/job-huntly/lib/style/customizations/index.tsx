@@ -7,6 +7,7 @@ import {
   Box,
   Button,
   Card,
+  Checkbox,
   Container,
   Pagination,
   Paper,
@@ -27,6 +28,7 @@ import AccordionStyles from './Accordion.module.scss'
 import BadgeStyles from './Badge.module.scss'
 import {buttonSizeResolver} from './button'
 import ButtonStyles from './Button.module.scss'
+import CheckboxStyles from './Checkbox.module.scss'
 import {CONTAINER_SIZES} from './container'
 import PaginationStyles from './Pagination.module.scss'
 import TableStyles from './Table.module.scss'
@@ -152,6 +154,11 @@ export const components: MantineThemeComponents = {
   Accordion: Accordion.extend({
     classNames() {
       return AccordionStyles
+    },
+  }),
+  Checkbox: Checkbox.extend({
+    classNames() {
+      return CheckboxStyles
     },
   }),
 }

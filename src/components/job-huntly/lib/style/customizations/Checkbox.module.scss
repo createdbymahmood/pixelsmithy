@@ -1,0 +1,4 @@
+.label {
+  color: var(--mantine-color-neutrals-5);
+  @include line-clamp(1);
+}
