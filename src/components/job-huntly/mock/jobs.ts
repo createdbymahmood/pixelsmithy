@@ -19,15 +19,16 @@ export interface Job {
   company: string
   type: JobType
   location: string
-  categories: JobCategory[]
+  categories: Category[]
   applicationsInfo: JobApplicationsInfo
   logo: FC<SVGProps<SVGElement>>
 }
 
-interface JobCategory {
+interface Category {
   label: string
   color: MantineColor
 }
+
 export const jobs: Job[] = [
   {
     id: '1',

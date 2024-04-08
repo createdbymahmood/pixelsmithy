@@ -1,5 +1,6 @@
 export * from './Applications'
 export * from './Chat'
+export * from './Companies'
 export * from './Dashboard'
 export * from './JobDescription'
 export * from './Jobs'
