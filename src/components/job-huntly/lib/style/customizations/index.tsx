@@ -1,5 +1,6 @@
 import type {ButtonStylesNames, MantineThemeComponents} from '@mantine/core'
 import {
+  Accordion,
   ActionIcon,
   Autocomplete,
   Badge,
@@ -22,6 +23,7 @@ import type {CSSProperties} from 'react'
 
 import {inter} from '@/lib/styles/font/inter'
 
+import AccordionStyles from './Accordion.module.scss'
 import BadgeStyles from './Badge.module.scss'
 import {buttonSizeResolver} from './button'
 import ButtonStyles from './Button.module.scss'
@@ -145,6 +147,11 @@ export const components: MantineThemeComponents = {
           '--container-size': containerSize,
         },
       }
+    },
+  }),
+  Accordion: Accordion.extend({
+    classNames() {
+      return AccordionStyles
     },
   }),
 }
