@@ -68,7 +68,7 @@ const sections: SidebarSection[] = [
         id: 'my-public-profile',
         title: 'My Public Profile',
         icon: User,
-        href: '',
+        href: urls.JobHuntly.applicant.dashboard.profile,
         activeSegment: ['profile'],
       },
     ],
