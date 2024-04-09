@@ -13,6 +13,7 @@ import {
   Paper,
   Progress,
   rem,
+  Skeleton,
   Table,
   Text,
   TextInput,
@@ -70,6 +71,11 @@ export const components: MantineThemeComponents = {
     },
   }),
   TextInput: TextInput.extend({
+    defaultProps: {
+      radius: 0,
+    },
+  }),
+  Skeleton: Skeleton.extend({
     defaultProps: {
       radius: 0,
     },
