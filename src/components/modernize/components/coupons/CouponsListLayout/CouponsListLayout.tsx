@@ -1,8 +1,3 @@
-import type {
-  MantineComponent,
-  TabsTabProps,
-  TabsTabStylesNames,
-} from '@mantine/core'
 import {Box, Button, Group, rem, Stack, Tabs, Title} from '@mantine/core'
 import {TableWrapper} from '@modernize/components/common'
 import {Plus} from '@phosphor-icons/react/dist/ssr'
@@ -11,6 +6,7 @@ import Link from 'next/link'
 import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
+import {TabLink} from '@/components/common'
 import {urls} from '@/constants'
 
 function Header() {
@@ -31,13 +27,6 @@ function Header() {
     </Group>
   )
 }
-
-const Tab = Tabs.Tab as MantineComponent<{
-  props: TabsTabProps & {href: string}
-  ref: HTMLButtonElement
-  stylesNames: TabsTabStylesNames
-  compound: true
-}>
 
 interface CouponsListLayout {
   children: ReactNode
@@ -66,9 +55,9 @@ export default function CouponsListLayout({children}: CouponsListLayout) {
 
   const content = coupons.map((tab) => {
     return (
-      <Tab key={tab.key} component={Link} href={tab.href} value={tab.key}>
+      <TabLink key={tab.key} component={Link} href={tab.href} value={tab.key}>
         {startCase(tab.label)}
-      </Tab>
+      </TabLink>
     )
   })
 

@@ -1,10 +1,5 @@
 'use client'
 
-import type {
-  MantineComponent,
-  TabsTabProps,
-  TabsTabStylesNames,
-} from '@mantine/core'
 import {Box, Group, Stack, Tabs, Text} from '@mantine/core'
 import {isEqual, startCase} from 'lodash-es'
 import Link from 'next/link'
@@ -12,6 +7,7 @@ import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 import React from 'react'
 
+import {TabLink} from '@/components/common'
 import {urls} from '@/constants'
 
 import {Banner, Header} from '../components'
@@ -59,13 +55,6 @@ const applications = [
   },
 ] as const
 
-const Tab = Tabs.Tab as MantineComponent<{
-  props: TabsTabProps & {href: string}
-  ref: HTMLButtonElement
-  stylesNames: TabsTabStylesNames
-  compound: true
-}>
-
 export function ApplicationsLayout({children}: ApplicationsLayoutProps) {
   const segment = useSelectedLayoutSegment()
 
@@ -83,12 +72,12 @@ export function ApplicationsLayout({children}: ApplicationsLayoutProps) {
       </Group>
     )
     return (
-      <Tab key={tab.key} component={Link} href={tab.href} value={tab.key}>
+      <TabLink key={tab.key} component={Link} href={tab.href} value={tab.key}>
         <Group c='neutrals.4' gap='xxs' wrap='nowrap'>
           {label}
           {count}
         </Group>
-      </Tab>
+      </TabLink>
     )
   })
 

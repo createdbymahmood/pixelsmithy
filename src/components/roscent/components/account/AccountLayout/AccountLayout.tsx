@@ -1,14 +1,10 @@
-import type {
-  MantineComponent,
-  TabsTabProps,
-  TabsTabStylesNames,
-} from '@mantine/core'
 import {Box, Tabs} from '@mantine/core'
 import {startCase} from 'lodash-es'
 import Link from 'next/link'
 import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
+import {TabLink} from '@/components/common'
 import {urls} from '@/constants'
 
 interface ProjectOverviewProps {
@@ -26,21 +22,14 @@ const accountSections = [
   {key: 'logs', href: urls.roscent.account.logs},
 ] as const
 
-const Tab = Tabs.Tab as MantineComponent<{
-  props: TabsTabProps & {href: string}
-  ref: HTMLButtonElement
-  stylesNames: TabsTabStylesNames
-  compound: true
-}>
-
 export function AccountLayout({children}: ProjectOverviewProps) {
   const segment = useSelectedLayoutSegment()
 
   const content = accountSections.map((tab) => {
     return (
-      <Tab key={tab.key} component={Link} href={tab.href} value={tab.key}>
+      <TabLink key={tab.key} component={Link} href={tab.href} value={tab.key}>
         {startCase(tab.key)}
-      </Tab>
+      </TabLink>
     )
   })
 

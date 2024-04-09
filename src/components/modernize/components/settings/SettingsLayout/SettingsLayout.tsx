@@ -1,16 +1,12 @@
 'use client'
 
-import type {
-  MantineComponent,
-  TabsTabProps,
-  TabsTabStylesNames,
-} from '@mantine/core'
 import {Box, Button, Card, Group, rem, Stack, Tabs, Title} from '@mantine/core'
 import {startCase} from 'lodash-es'
 import Link from 'next/link'
 import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
+import {TabLink} from '@/components/common'
 import {urls} from '@/constants'
 
 function Actions() {
@@ -32,13 +28,6 @@ function Header() {
     </Group>
   )
 }
-
-const Tab = Tabs.Tab as MantineComponent<{
-  props: TabsTabProps & {href: string}
-  ref: HTMLButtonElement
-  stylesNames: TabsTabStylesNames
-  compound: true
-}>
 
 interface SettingsLayout {
   children: ReactNode
@@ -62,7 +51,7 @@ export default function SettingsLayout({children}: SettingsLayout) {
 
   const content = settings.map((tab) => {
     return (
-      <Tab
+      <TabLink
         key={tab.key}
         component={Link}
         href={tab.href}
@@ -74,7 +63,7 @@ export default function SettingsLayout({children}: SettingsLayout) {
         value={tab.key}
       >
         {startCase(tab.label)}
-      </Tab>
+      </TabLink>
     )
   })
 
