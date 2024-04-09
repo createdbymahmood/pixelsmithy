@@ -3,7 +3,14 @@
 import {Grid, Stack} from '@mantine/core'
 import React from 'react'
 
-import {About, Educations, Experiences, Header, Skills} from './components'
+import {
+  About,
+  Educations,
+  Experiences,
+  Header,
+  Portfolios,
+  Skills,
+} from './components'
 
 export function Profile() {
   return (
@@ -15,6 +22,7 @@ export function Profile() {
           <Experiences />
           <Educations />
           <Skills />
+          <Portfolios />
         </Stack>
       </Grid.Col>
     </Grid>
