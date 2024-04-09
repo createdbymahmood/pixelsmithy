@@ -2,6 +2,7 @@ import type {ButtonStylesNames, MantineThemeComponents} from '@mantine/core'
 import {
   Accordion,
   ActionIcon,
+  Anchor,
   Autocomplete,
   Badge,
   Box,
@@ -73,6 +74,11 @@ export const components: MantineThemeComponents = {
   TextInput: TextInput.extend({
     defaultProps: {
       radius: 0,
+    },
+  }),
+  Anchor: Anchor.extend({
+    defaultProps: {
+      fw: '600',
     },
   }),
   Skeleton: Skeleton.extend({
