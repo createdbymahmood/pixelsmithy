@@ -1,6 +1,8 @@
-import {ActionIcon, Box, Group, Paper, rem, Stack} from '@mantine/core'
+import {ActionIcon, Avatar, Box, Group, Paper, rem, Stack} from '@mantine/core'
 import {Pencil} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
+
+import styles from './Header.module.scss'
 
 function Banner() {
   return (
@@ -19,19 +21,29 @@ function Banner() {
   )
 }
 
-/* function ProfileImage() {
-  return <Avatar />
+function ProfileImage() {
+  return (
+    <Avatar
+      bg='white'
+      className={styles.profileImage}
+      h={rem(140)}
+      size='xl'
+      w={rem(140)}
+    >
+      JG
+    </Avatar>
+  )
 }
 
-function Info() {
+/* function Info() {
   return <div />
-} */
-
+}
+ */
 export function Header() {
   return (
-    <Stack gap='xl'>
+    <Stack gap='xl' pos='relative'>
       <Banner />
-      {/* <ProfileImage /> */}
+      <ProfileImage />
       {/* <Info /> */}
     </Stack>
   )
