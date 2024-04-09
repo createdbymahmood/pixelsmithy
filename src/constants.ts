@@ -200,6 +200,10 @@ export const urls = {
           urlCat('/job-huntly/applicant/dashboard/jobs/:jobId', {jobId}),
         companies: '/job-huntly/applicant/dashboard/companies',
         profile: '/job-huntly/applicant/dashboard/profile',
+        settings: {
+          index: '/job-huntly/applicant/dashboard/settings',
+          profile: '/job-huntly/applicant/dashboard/settings/profile',
+        },
       },
     },
     landing: '/job-huntly/landing',
