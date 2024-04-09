@@ -5,33 +5,33 @@ import React from 'react'
 
 import {EditButton, ProfileSection} from '../common'
 
-interface Details {
-  key: string
+interface Detail {
+  title: string
   value: string
   icon: Icon
 }
 
-const details: Details[] = [
+const details: Detail[] = [
   {
-    key: 'Email',
+    title: 'Email',
     value: 'jakegyll@email.com',
     icon: Envelope,
   },
   {
-    key: 'Phone',
+    title: 'Phone',
     value: '+44 1245 572 135',
     icon: DeviceMobile,
   },
   {
-    key: 'Languages',
+    title: 'Languages',
     value: 'English, French',
     icon: Translate,
   },
 ]
 
-interface DetailItemProps extends Details {}
+interface DetailItemProps extends Detail {}
 
-function DetailItem({icon, key, value}: DetailItemProps) {
+function DetailItem({icon, title, value}: DetailItemProps) {
   return (
     <Group align='flex-start'>
       <Box
@@ -42,7 +42,7 @@ function DetailItem({icon, key, value}: DetailItemProps) {
       />
 
       <Stack gap={rem(2)}>
-        <Text c='neutrals.4'>{key}</Text>
+        <Text c='neutrals.4'>{title}</Text>
         <Text>{value}</Text>
       </Stack>
     </Group>
@@ -51,7 +51,7 @@ function DetailItem({icon, key, value}: DetailItemProps) {
 
 export function AdditionalDetails() {
   const content = details.map((detail) => {
-    return <DetailItem {...detail} key={detail.key} />
+    return <DetailItem {...detail} key={detail.title} />
   })
 
   return (
