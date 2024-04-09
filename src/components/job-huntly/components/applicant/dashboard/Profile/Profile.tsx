@@ -11,6 +11,7 @@ import {
   Header,
   Portfolios,
   Skills,
+  SocialLinks,
 } from './components'
 
 export function Profile() {
@@ -30,6 +31,7 @@ export function Profile() {
       <Grid.Col span={{lg: 3, md: 12, base: 12}}>
         <Stack gap='xl'>
           <AdditionalDetails />
+          <SocialLinks />
         </Stack>
       </Grid.Col>
     </Grid>
