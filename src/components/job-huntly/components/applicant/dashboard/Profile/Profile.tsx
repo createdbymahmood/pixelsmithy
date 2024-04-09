@@ -5,6 +5,7 @@ import React from 'react'
 
 import {
   About,
+  AdditionalDetails,
   Educations,
   Experiences,
   Header,
@@ -23,6 +24,12 @@ export function Profile() {
           <Educations />
           <Skills />
           <Portfolios />
+        </Stack>
+      </Grid.Col>
+
+      <Grid.Col span={{lg: 3, md: 12, base: 12}}>
+        <Stack gap='xl'>
+          <AdditionalDetails />
         </Stack>
       </Grid.Col>
     </Grid>
