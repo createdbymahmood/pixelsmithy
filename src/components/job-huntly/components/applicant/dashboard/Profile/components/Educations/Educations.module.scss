@@ -1,0 +1,13 @@
+.education {
+  &:first-of-type {
+    padding-top: var(--mantine-spacing-xs);
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--mantine-primary-color-1);
+  }
+
+  &:not(:first-of-type) {
+    padding-top: var(--mantine-spacing-xl);
+  }
+}
