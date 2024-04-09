@@ -8,6 +8,7 @@ import Twitter from './assets/twitter.svg'
 import styles from './Experiences.module.scss'
 
 interface Experience {
+  // eslint-disable-next-line react/no-unused-prop-types
   id: string
   logo: FC<SVGProps<SVGElement>>
   company: string
@@ -49,7 +50,6 @@ function ExperienceCard({
   company,
   description,
   duration,
-  id,
   location,
   logo,
   role,
