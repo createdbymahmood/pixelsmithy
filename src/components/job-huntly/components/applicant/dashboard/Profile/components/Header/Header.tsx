@@ -1,5 +1,4 @@
 import {
-  ActionIcon,
   Avatar,
   Badge,
   Box,
@@ -10,9 +9,10 @@ import {
   Text,
   Title,
 } from '@mantine/core'
-import {Flag, MapPin, Pencil} from '@phosphor-icons/react/dist/ssr'
+import {Flag, MapPin} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
+import {EditButton} from '../common'
 import styles from './Header.module.scss'
 
 function Banner() {
@@ -25,9 +25,7 @@ function Banner() {
       justify='flex-end'
       p='xl'
     >
-      <ActionIcon c='white' color='white' size={rem(40)} variant='outline'>
-        <Box className='icon-size-lg' component={Pencil} weight='bold' />
-      </ActionIcon>
+      <EditButton color='white' />
     </Paper>
   )
 }
