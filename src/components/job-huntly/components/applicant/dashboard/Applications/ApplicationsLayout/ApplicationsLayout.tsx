@@ -15,7 +15,6 @@ import React from 'react'
 import {urls} from '@/constants'
 
 import {Banner, Header} from '../components'
-import styles from './ApplicationsLayout.module.scss'
 
 interface ApplicationsLayoutProps {
   children: ReactNode
@@ -98,7 +97,7 @@ export function ApplicationsLayout({children}: ApplicationsLayoutProps) {
       <Header />
       <Banner />
 
-      <Tabs key={segment} classNames={{tab: styles.tab}} defaultValue={segment}>
+      <Tabs key={segment} defaultValue={segment}>
         <Tabs.List>{content}</Tabs.List>
         <Box mt='xl'>{children}</Box>
       </Tabs>
