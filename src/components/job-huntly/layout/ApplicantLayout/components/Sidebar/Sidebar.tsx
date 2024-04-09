@@ -80,7 +80,7 @@ const sections: SidebarSection[] = [
         id: 'settings',
         title: 'Settings',
         icon: Gear,
-        href: '',
+        href: urls.JobHuntly.applicant.dashboard.settings.profile,
         activeSegment: ['settings'],
       },
       {
