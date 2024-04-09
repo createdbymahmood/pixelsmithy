@@ -1,4 +1,9 @@
 .tab {
+  font-weight: 600;
+  font-size: var(--mantine-font-size-md);
+  line-height: var(--mantine-line-height-sm);
+  padding-bottom: var(--mantine-spacing-md);
+
   &[data-active] {
     border-bottom: none;
     position: relative;
