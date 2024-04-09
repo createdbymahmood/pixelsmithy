@@ -16,6 +16,7 @@ import {
   rem,
   Skeleton,
   Table,
+  Tabs,
   Text,
   TextInput,
 } from '@mantine/core'
@@ -34,6 +35,7 @@ import CheckboxStyles from './Checkbox.module.scss'
 import {CONTAINER_SIZES} from './container'
 import PaginationStyles from './Pagination.module.scss'
 import TableStyles from './Table.module.scss'
+import TabsStyles from './Tabs.module.scss'
 import {displayTextResolver} from './text'
 
 export const components: MantineThemeComponents = {
@@ -171,6 +173,11 @@ export const components: MantineThemeComponents = {
   Checkbox: Checkbox.extend({
     classNames() {
       return CheckboxStyles
+    },
+  }),
+  Tabs: Tabs.extend({
+    classNames() {
+      return TabsStyles
     },
   }),
 }
