@@ -15,7 +15,7 @@ import React from 'react'
 import {EditButton} from '../common'
 import styles from './Header.module.scss'
 
-function Banner() {
+function Cover() {
   return (
     <Paper
       align='flex-start'
@@ -91,7 +91,7 @@ function Info() {
 export function Header() {
   return (
     <Stack gap='xl' h={rem(347)} pos='relative'>
-      <Banner />
+      <Cover />
       <ProfileImage />
       <Info />
     </Stack>
