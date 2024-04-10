@@ -23,6 +23,11 @@ const settingsSections = [
     label: 'Login Details',
     href: urls.JobHuntly.applicant.dashboard.settings.login,
   },
+  {
+    key: 'notifications',
+    label: 'Notifications',
+    href: urls.JobHuntly.applicant.dashboard.settings.notifications,
+  },
 ]
 
 export default function SettingsLayout({children}: ProjectOverviewProps) {

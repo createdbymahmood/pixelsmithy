@@ -204,6 +204,8 @@ export const urls = {
           index: '/job-huntly/applicant/dashboard/settings',
           profile: '/job-huntly/applicant/dashboard/settings/my-profile',
           login: '/job-huntly/applicant/dashboard/settings/login-details',
+          notifications:
+            '/job-huntly/applicant/dashboard/settings/notifications',
         },
       },
     },
