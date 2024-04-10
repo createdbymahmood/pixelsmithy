@@ -48,10 +48,12 @@ function FormSection({children, description, title}: FormSectionProps) {
   return (
     <Grid>
       <Grid.Col span={{xl: 4, lg: 6, md: 12}}>
-        <Stack>
+        <Stack gap={0}>
           <Text fw='600'>{title}</Text>
           {!isEmpty(description) ? (
-            <Text c='neutrals.5'>{description}</Text>
+            <Text c='neutrals.5' mt={rem(5)}>
+              {description}
+            </Text>
           ) : null}
         </Stack>
       </Grid.Col>
