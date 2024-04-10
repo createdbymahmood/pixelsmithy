@@ -1,3 +1,13 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
 .label {
   margin-bottom: var(--mantine-spacing-xxs);
+}
+
+.description {
+  order: 1;
+  margin-top: var(--mantine-spacing-xxs);
 }

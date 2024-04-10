@@ -21,7 +21,7 @@ function Header() {
         Basic Information
       </Text>
       <Text c='neutrals.5'>
-        This is your personal information that you can update anytime.
+        This is login information that you can update anytime.
       </Text>
     </Stack>
   )
@@ -61,12 +61,46 @@ function EmailSettings() {
   )
 }
 
+function PasswordSettings() {
+  return (
+    <FormSection
+      description='Manage your password to make sure it is safe'
+      title='New Password'
+    >
+      <Stack align='flex-start' gap={rem(20)}>
+        <TextInput
+          description='Minimum 8 characters'
+          label='Old Password'
+          name='password'
+          placeholder='Enter your old password'
+          size='md'
+          type='password'
+          w='100%'
+        />
+
+        <TextInput
+          description='Minimum 8 characters'
+          label='New Password'
+          name='password'
+          placeholder='Enter your new password'
+          size='md'
+          type='password'
+          w='100%'
+        />
+        <Button size='md'>Change Password</Button>
+      </Stack>
+    </FormSection>
+  )
+}
+
 export function LoginSettings() {
   return (
     <Stack gap='xl'>
       <Header />
       <Divider />
       <EmailSettings />
+      <Divider />
+      <PasswordSettings />
     </Stack>
   )
 }
