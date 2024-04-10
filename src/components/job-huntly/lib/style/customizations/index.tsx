@@ -10,6 +10,7 @@ import {
   Card,
   Checkbox,
   Container,
+  Divider,
   Pagination,
   Paper,
   Progress,
@@ -178,6 +179,12 @@ export const components: MantineThemeComponents = {
   Tabs: Tabs.extend({
     classNames() {
       return TabsStyles
+    },
+  }),
+
+  Divider: Divider.extend({
+    defaultProps: {
+      color: 'secondary.0',
     },
   }),
 }
