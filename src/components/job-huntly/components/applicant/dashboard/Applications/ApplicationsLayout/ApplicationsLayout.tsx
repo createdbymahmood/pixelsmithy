@@ -59,9 +59,14 @@ export function ApplicationsLayout({children}: ApplicationsLayoutProps) {
   const segment = useSelectedLayoutSegment()
 
   const content = applications.map((tab) => {
-    const label = <Text fw='600'>{startCase(tab.label)}</Text>
     const isActive = isEqual(segment, tab.key)
     const c = isActive ? 'primary' : 'neutrals.5'
+    const labelColor = isActive ? 'neutrals.6' : 'neutrals.5'
+    const label = (
+      <Text c={labelColor} fw='600'>
+        {startCase(tab.label)}
+      </Text>
+    )
     const count = (
       <Group fw='600' gap={0}>
         {'('}

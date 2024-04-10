@@ -11,6 +11,7 @@
   padding: 0;
   padding-bottom: var(--mantine-spacing-md);
   background-color: transparent;
+  color: var(--mantine-color-neutrals-5);
 
   &:not(:last-of-type) {
     margin-right: rem(40px);
@@ -19,6 +20,7 @@
   &[data-active] {
     border-bottom: rem(2px) solid transparent;
     position: relative;
+    color: var(--mantine-color-black);
 
     &::before {
       content: '';
