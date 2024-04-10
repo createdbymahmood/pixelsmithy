@@ -11,7 +11,7 @@ import {
   Text,
   TextInput,
 } from '@mantine/core'
-import {CheckCircle} from '@phosphor-icons/react/dist/ssr'
+import {CheckCircle, Info} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 function Header() {
@@ -93,6 +93,26 @@ function PasswordSettings() {
   )
 }
 
+function Footer() {
+  const closeAccountRightSection = (
+    <Box className='icon-size-lg' component={Info} weight='bold' />
+  )
+
+  return (
+    <Group justify='flex-end'>
+      <Button
+        color='red'
+        fw='600'
+        rightSection={closeAccountRightSection}
+        size='md'
+        variant='transparent'
+      >
+        Close Acccount
+      </Button>
+    </Group>
+  )
+}
+
 export function LoginSettings() {
   return (
     <Stack gap='xl'>
@@ -101,6 +121,8 @@ export function LoginSettings() {
       <EmailSettings />
       <Divider />
       <PasswordSettings />
+      <Divider />
+      <Footer />
     </Stack>
   )
 }
