@@ -16,6 +16,7 @@ import {
   Pagination,
   Paper,
   Progress,
+  Radio,
   rem,
   Select,
   Skeleton,
@@ -40,6 +41,7 @@ import {CONTAINER_SIZES} from './container'
 import InputStyles from './InputStyles.module.scss'
 import InputWrapperStyles from './InputWrapper.module.scss'
 import PaginationStyles from './Pagination.module.scss'
+import RadioStyles from './Radio.module.scss'
 import TableStyles from './Table.module.scss'
 import TabsStyles from './Tabs.module.scss'
 import {displayTextResolver} from './text'
@@ -214,6 +216,11 @@ export const components: MantineThemeComponents = {
   Input: Input.extend({
     classNames() {
       return InputStyles
+    },
+  }),
+  Radio: Radio.extend({
+    classNames() {
+      return RadioStyles
     },
   }),
 }
