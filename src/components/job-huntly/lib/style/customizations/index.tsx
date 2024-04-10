@@ -11,10 +11,13 @@ import {
   Checkbox,
   Container,
   Divider,
+  Input,
+  InputWrapper,
   Pagination,
   Paper,
   Progress,
   rem,
+  Select,
   Skeleton,
   Table,
   Tabs,
@@ -34,6 +37,8 @@ import {buttonSizeResolver} from './button'
 import ButtonStyles from './Button.module.scss'
 import CheckboxStyles from './Checkbox.module.scss'
 import {CONTAINER_SIZES} from './container'
+import InputStyles from './InputStyles.module.scss'
+import InputWrapperStyles from './InputWrapper.module.scss'
 import PaginationStyles from './Pagination.module.scss'
 import TableStyles from './Table.module.scss'
 import TabsStyles from './Tabs.module.scss'
@@ -103,6 +108,18 @@ export const components: MantineThemeComponents = {
     defaultProps: {
       rightSection: (
         <Box className='icon-size-sm' component={CaretDown} weight='bold' />
+      ),
+    },
+  }),
+  Select: Select.extend({
+    defaultProps: {
+      rightSection: (
+        <Box
+          c='neutrals.6'
+          className='icon-size-md'
+          component={CaretDown}
+          weight='bold'
+        />
       ),
     },
   }),
@@ -185,6 +202,18 @@ export const components: MantineThemeComponents = {
   Divider: Divider.extend({
     defaultProps: {
       color: 'secondary.0',
+    },
+  }),
+
+  InputWrapper: InputWrapper.extend({
+    classNames() {
+      return InputWrapperStyles
+    },
+  }),
+
+  Input: Input.extend({
+    classNames() {
+      return InputStyles
     },
   }),
 }
