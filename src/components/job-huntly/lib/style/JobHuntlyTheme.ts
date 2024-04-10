@@ -29,7 +29,7 @@ export const JobHuntlyTheme = createTheme({
     xs: '1.4',
     sm: '1.45',
     md: rem(25.6),
-    lg: '1.6',
+    lg: rem(28.8),
     xl: '1.65',
   },
   spacing: {
