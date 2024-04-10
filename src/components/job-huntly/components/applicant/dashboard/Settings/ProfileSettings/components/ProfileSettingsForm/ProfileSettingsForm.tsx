@@ -1,18 +1,23 @@
 'use client'
 
+import type {MantineSize} from '@mantine/core'
 import {
   Box,
   Divider,
   Grid,
   Group,
   rem,
+  Select,
   Skeleton,
   Stack,
   Text,
+  TextInput,
 } from '@mantine/core'
+import {DatePickerInput} from '@mantine/dates'
 import type {DropzoneProps} from '@mantine/dropzone'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
 import {Image, Upload, X} from '@phosphor-icons/react/dist/ssr'
+import {isEmpty} from 'lodash-es'
 import type {ReactNode} from 'react'
 import React from 'react'
 
@@ -34,22 +39,24 @@ function Header() {
 interface FormSectionProps {
   children: ReactNode
   title: string
-  description: string
+  description?: string
 }
 
 function FormSection({children, description, title}: FormSectionProps) {
   return (
     <Grid>
-      <Grid.Col span={{xl: 3, lg: 4, md: 12}}>
+      <Grid.Col span={{xl: 4, lg: 6, md: 12}}>
         <Stack>
           <Text fw='600'>{title}</Text>
-          <Text c='neutrals.5'>{description}</Text>
+          {!isEmpty(description) ? (
+            <Text c='neutrals.5'>{description}</Text>
+          ) : null}
         </Stack>
       </Grid.Col>
 
       <Grid.Col
         className={styles.formSectionChildrenCol}
-        span={{xl: 9, lg: 8, md: 12}}
+        span={{xl: 5, lg: 6, md: 12}}
       >
         {children}
       </Grid.Col>
@@ -72,6 +79,7 @@ function ProfilePhotoSettingsDropzone(props: Partial<DropzoneProps>) {
       <Group
         h={144}
         justify='center'
+        px='sm'
         py='xl'
         style={{pointerEvents: 'none'}}
         wrap='nowrap'
@@ -88,7 +96,7 @@ function ProfilePhotoSettingsDropzone(props: Partial<DropzoneProps>) {
           <Stack align='center' gap='xxs'>
             <Box c='primary' className='icon-size-xl' component={Image} />
 
-            <Group gap='xxs' mt='xs'>
+            <Group gap='xxs' justify='center' mt='xs'>
               <Text c='primary' fw='500'>
                 Click to replace
               </Text>
@@ -122,12 +130,66 @@ function ProfilePhotoSettings() {
   )
 }
 
+function PersonalDetailsSettings() {
+  const defaultInputProps = {
+    size: 'md' as MantineSize,
+    withAsterisk: true,
+    w: '100%',
+  }
+
+  return (
+    <FormSection title='Personal Details'>
+      <Stack gap='xl'>
+        <TextInput
+          defaultValue='Jake Gyll'
+          label='Full Name'
+          {...defaultInputProps}
+        />
+        <Group wrap='nowrap'>
+          <TextInput
+            defaultValue='+44 1245 572 135'
+            label='Phone Number'
+            {...defaultInputProps}
+          />
+          <TextInput
+            defaultValue='Jakegyll@gmail.com'
+            label='Email'
+            name='email'
+            type='email'
+            {...defaultInputProps}
+          />
+        </Group>
+
+        <Group wrap='nowrap'>
+          <DatePickerInput
+            defaultValue={new Date('09-08-1997')}
+            label='Date of Birth'
+            valueFormat='DD/MM/YYYY'
+            {...defaultInputProps}
+          />
+
+          <Select
+            data={['Male', 'Female']}
+            defaultValue='Male'
+            label='Gender'
+            name='email'
+            type='email'
+            {...defaultInputProps}
+          />
+        </Group>
+      </Stack>
+    </FormSection>
+  )
+}
+
 export function ProfileSettingsForm() {
   return (
     <Stack gap='xl'>
       <Header />
       <Divider />
       <ProfilePhotoSettings />
+      <Divider />
+      <PersonalDetailsSettings />
     </Stack>
   )
 }
