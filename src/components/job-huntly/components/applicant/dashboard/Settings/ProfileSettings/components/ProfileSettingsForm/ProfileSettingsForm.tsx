@@ -3,9 +3,11 @@
 import type {MantineSize} from '@mantine/core'
 import {
   Box,
+  Button,
   Divider,
   Grid,
   Group,
+  Radio,
   rem,
   Select,
   Skeleton,
@@ -182,6 +184,48 @@ function PersonalDetailsSettings() {
   )
 }
 
+function AccountTypeSettings() {
+  const jobSeekerLabel = (
+    <Stack gap={0}>
+      <Text fw='500'>Job Seeker</Text>
+      <Text c='neutrals.5'>Looking for a job</Text>
+    </Stack>
+  )
+
+  const employerLabel = (
+    <Stack gap={0}>
+      <Text fw='500'>Employer</Text>
+      <Text c='neutrals.5'>Hiring, sourcing candidates, or posting a jobs</Text>
+    </Stack>
+  )
+
+  return (
+    <FormSection
+      description='You can update your account type'
+      title='Account Type'
+    >
+      <Radio.Group
+        defaultValue='jobSeeker'
+        name='favoriteFramework'
+        withAsterisk
+      >
+        <Stack mt='xs'>
+          <Radio label={jobSeekerLabel} value='jobSeeker' variant='outline' />
+          <Radio label={employerLabel} value='employer' variant='outline' />
+        </Stack>
+      </Radio.Group>
+    </FormSection>
+  )
+}
+
+function Footer() {
+  return (
+    <Group justify='flex-end'>
+      <Button size='md'>Save Profile</Button>
+    </Group>
+  )
+}
+
 export function ProfileSettingsForm() {
   return (
     <Stack gap='xl'>
@@ -190,6 +234,10 @@ export function ProfileSettingsForm() {
       <ProfilePhotoSettings />
       <Divider />
       <PersonalDetailsSettings />
+      <Divider />
+      <AccountTypeSettings />
+      <Divider />
+      <Footer />
     </Stack>
   )
 }
