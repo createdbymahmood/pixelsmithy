@@ -1,0 +1,7 @@
+.formSectionChildrenCol {
+  padding-left: var(--mantine-spacing-xxl);
+
+  @include smaller-than(var(--mantine-breakpoint-md)) {
+    padding-left: 0;
+  }
+}
