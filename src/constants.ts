@@ -203,6 +203,7 @@ export const urls = {
         settings: {
           index: '/job-huntly/applicant/dashboard/settings',
           profile: '/job-huntly/applicant/dashboard/settings/my-profile',
+          login: '/job-huntly/applicant/dashboard/settings/login-details',
         },
       },
     },
