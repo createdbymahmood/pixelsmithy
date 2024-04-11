@@ -1,5 +1,13 @@
+import {Divider, Group} from '@mantine/core'
 import React from 'react'
 
+import {Sidebar} from './components'
+
 export function HelpCenter() {
-  return <div>HelpCenter</div>
+  return (
+    <Group align='flex-start' h='100%' wrap='nowrap'>
+      <Sidebar />
+      <Divider orientation='vertical' />
+    </Group>
+  )
 }

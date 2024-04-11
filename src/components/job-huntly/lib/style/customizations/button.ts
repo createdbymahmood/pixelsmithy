@@ -26,6 +26,14 @@ export const buttonSizeResolver = (
         },
       }
 
+    case 'sm':
+      return {
+        root: {
+          '--button-fz': rem(14),
+          '--button-height': rem(42),
+        },
+      }
+
     default:
       return {root: {}}
   }
