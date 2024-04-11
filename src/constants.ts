@@ -207,6 +207,9 @@ export const urls = {
           notifications:
             '/job-huntly/applicant/dashboard/settings/notifications',
         },
+        helpCenter: {
+          index: '/job-huntly/applicant/dashboard/help-center',
+        },
       },
     },
     landing: '/job-huntly/landing',
