@@ -111,7 +111,7 @@ function CustomerServiceCard() {
 
 export function Sidebar() {
   return (
-    <Stack gap='xxxl' h='100%' p='xxxl' w={rem(374)}>
+    <Stack className='shrink-0' gap='xxxl' h='100%' p='xxxl' w={rem(374)}>
       <Header />
       <List />
       <CustomerServiceCard />
