@@ -8,6 +8,8 @@ interface LayoutProps {
 
 export default function Layout({children}: LayoutProps) {
   return (
-    <DashboardPageLayout title='Help Center'>{children}</DashboardPageLayout>
+    <DashboardPageLayout p={0} title='Help Center'>
+      {children}
+    </DashboardPageLayout>
   )
 }
