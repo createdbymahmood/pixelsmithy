@@ -1,3 +1,9 @@
 .header {
   border-bottom: rem(1px) solid var(--mantine-color-secondary-0);
 }
+
+.notification {
+  &:not(:first-of-type) {
+    border-bottom: rem(1px) solid var(--mantine-color-secondary-0);
+  }
+}
