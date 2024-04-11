@@ -4,6 +4,7 @@ import {
   Header,
   JOB_HUNTLY_HEADER_HEIGHT,
 } from '@job-huntly/layout/ApplicantLayout/components/Sidebar/components/Header'
+import type {MantineSpacing} from '@mantine/core'
 import {Box, Container, rem} from '@mantine/core'
 import type {ReactNode} from 'react'
 import React from 'react'
@@ -13,11 +14,13 @@ interface DashboardPageLayoutProps {
   children: ReactNode
   title: string
   callbackURL?: string
+  p?: MantineSpacing
 }
 
 export default function DashboardPageLayout({
   callbackURL,
   children,
+  p = 'xxxl',
   title,
 }: DashboardPageLayoutProps) {
   return (
@@ -27,10 +30,10 @@ export default function DashboardPageLayout({
       <Box
         className='overflow-y-hidden'
         h={`calc(100vh - ${rem(JOB_HUNTLY_HEADER_HEIGHT)})`}
-        py='xxxl'
+        py={p}
       >
         <PerfectScrollbar>
-          <Container h='100%' px='xxxl' size='xxl'>
+          <Container h='100%' px={p} size='xxl'>
             {children}
           </Container>
         </PerfectScrollbar>
