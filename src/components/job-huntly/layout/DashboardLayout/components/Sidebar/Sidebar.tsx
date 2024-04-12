@@ -1,14 +1,4 @@
 import {Badge, Box, Group, rem, Stack, Text} from '@mantine/core'
-import {
-  Buildings,
-  ChatCenteredText,
-  FileText,
-  Gear,
-  HouseSimple,
-  MagnifyingGlass,
-  Question,
-  User,
-} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {intersection, isEmpty, isEqual, isUndefined} from 'lodash-es'
 import Link from 'next/link'
@@ -18,81 +8,10 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {GroupLink} from '@/components/common'
 import type {SidebarItem, SidebarSection} from '@/components/roscent'
-import {urls} from '@/constants'
 import {inter} from '@/lib/styles/font/inter'
 
 import {Logo, UserProfile} from './components'
 import styles from './Sidebar.module.scss'
-
-const sections: SidebarSection[] = [
-  {
-    title: '',
-    items: [
-      {
-        id: 'dashboard',
-        title: 'Dashboard',
-        icon: HouseSimple,
-        href: urls.JobHuntly.applicant.dashboard.home,
-        activeSegment: ['home'],
-      },
-      {
-        id: 'messages',
-        title: 'Messages',
-        icon: ChatCenteredText,
-        href: urls.JobHuntly.applicant.dashboard.chat,
-        activeSegment: ['chat'],
-        unread: 1,
-      },
-      {
-        id: 'my-applications',
-        title: 'My Applications',
-        icon: FileText,
-        href: urls.JobHuntly.applicant.dashboard.applications.index,
-        activeSegment: ['applications'],
-      },
-      {
-        id: 'jobs',
-        title: 'Find Jobs',
-        icon: MagnifyingGlass,
-        href: urls.JobHuntly.applicant.dashboard.jobs,
-        activeSegment: ['jobs'],
-      },
-      {
-        id: 'browse-companies',
-        title: 'Browse Companies',
-        icon: Buildings,
-        href: urls.JobHuntly.applicant.dashboard.companies,
-        activeSegment: ['companies'],
-      },
-      {
-        id: 'my-public-profile',
-        title: 'My Public Profile',
-        icon: User,
-        href: urls.JobHuntly.applicant.dashboard.profile,
-        activeSegment: ['profile'],
-      },
-    ],
-  },
-  {
-    title: 'Settings',
-    items: [
-      {
-        id: 'settings',
-        title: 'Settings',
-        icon: Gear,
-        href: urls.JobHuntly.applicant.dashboard.settings.profile,
-        activeSegment: ['settings', 'my-profile'],
-      },
-      {
-        id: 'help-center',
-        title: 'Help Center',
-        icon: Question,
-        href: urls.JobHuntly.applicant.dashboard.helpCenter.index,
-        activeSegment: ['help-center'],
-      },
-    ],
-  },
-]
 
 function SidebarItemElement(props: SidebarItem) {
   const segment = useSelectedLayoutSegments()
@@ -141,7 +60,11 @@ function SidebarItemElement(props: SidebarItem) {
   )
 }
 
-function SidebarContent() {
+interface SidebarContentProps {
+  sections: SidebarSection[]
+}
+
+function SidebarContent({sections}: SidebarContentProps) {
   const content = sections.map((section) => {
     const sidebarItems = section.items.map((item) => {
       return <SidebarItemElement key={item.id} {...item} />
@@ -179,7 +102,11 @@ function SidebarContent() {
   )
 }
 
-export function Sidebar() {
+export interface SidebarProps {
+  sections: SidebarSection[]
+}
+
+export function Sidebar({sections}: SidebarProps) {
   return (
     <Stack
       bg='neutrals.0'
@@ -193,7 +120,7 @@ export function Sidebar() {
       </Box>
 
       <PerfectScrollbar>
-        <SidebarContent />
+        <SidebarContent sections={sections} />
       </PerfectScrollbar>
     </Stack>
   )
