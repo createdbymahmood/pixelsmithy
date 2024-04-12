@@ -1,2 +1,2 @@
-export * from './ApplicantLayout'
+export * from './DashboardLayout'
 export * from './JobHuntlyProviders'
