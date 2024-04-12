@@ -15,6 +15,7 @@ import {
   Text,
   Title,
 } from '@mantine/core'
+import {useCallbackRef} from '@mantine/hooks'
 import {ArrowLeft, Bell} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {isEmpty} from 'lodash-es'
@@ -117,6 +118,10 @@ function Notifications() {
 function Notification() {
   const [opened, setOpened] = useState(false)
 
+  const toggle = useCallbackRef(() => {
+    setOpened((o) => !o)
+  })
+
   return (
     <Popover
       opened={opened}
@@ -130,7 +135,7 @@ function Notification() {
           radius='xl'
           size={rem(40)}
           variant={opened ? 'outline' : 'transparent'}
-          onClick={() => setOpened((o) => !o)}
+          onClick={toggle}
         >
           <Indicator
             color='orange'
