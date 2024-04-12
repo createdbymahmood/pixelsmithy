@@ -116,7 +116,7 @@ function Notifications() {
   )
 }
 
-function Notification() {
+export function Notification() {
   const [opened, setOpened] = useState(false)
 
   const toggle = useCallbackRef(() => {
