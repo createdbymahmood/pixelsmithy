@@ -1,15 +1,16 @@
 'use client'
 
-import {Sidebar} from '@job-huntly/layout/ApplicantLayout/components'
 import {Group} from '@mantine/core'
 import type {ReactNode} from 'react'
 import React from 'react'
 
-interface ApplicantLayoutProps {
+import {Sidebar} from '@/components/job-huntly/layout/DashboardLayout/components'
+
+interface DashboardLayoutProps {
   children: ReactNode
 }
 
-export function ApplicantLayout({children}: ApplicantLayoutProps) {
+export function DashboardLayout({children}: DashboardLayoutProps) {
   return (
     <Group
       align='stretch'

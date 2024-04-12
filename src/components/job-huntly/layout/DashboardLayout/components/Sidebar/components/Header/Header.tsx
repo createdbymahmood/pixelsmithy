@@ -24,6 +24,7 @@ import React, {useState} from 'react'
 
 import styles from './Header.module.scss'
 
+export const JOB_HUNTLY_HEADER_HEIGHT = rem(107)
 const notifications = [
   {
     sender: 'Jan Mayer',
