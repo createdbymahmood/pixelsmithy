@@ -13,7 +13,6 @@ import {
 
 interface CompanyDashboardPageLayoutProps {
   children: ReactNode
-  title: string
   callbackURL?: string
   p?: MantineSpacing
 }
@@ -22,7 +21,6 @@ export default function CompanyDashboardPageLayout({
   callbackURL,
   children,
   p = 'xxxl',
-  title,
 }: CompanyDashboardPageLayoutProps) {
   return (
     <Box w='100%'>
