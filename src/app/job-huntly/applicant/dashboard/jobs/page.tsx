@@ -1,5 +1,5 @@
 import {Jobs as JobsView} from '@job-huntly/components/applicant'
-import DashboardPageLayout from '@job-huntly/layout/DashboardPageLayout/DashboardPageLayout'
+import ApplicantDashboardPageLayout from '@job-huntly/layout/ApplicantDashboardPageLayout'
 import React from 'react'
 
 import {constructMetadata} from '@/utils/constructMetadata'
@@ -10,8 +10,8 @@ export const metadata = constructMetadata({
 
 export default function Jobs() {
   return (
-    <DashboardPageLayout title='Find Jobs'>
+    <ApplicantDashboardPageLayout title='Find Jobs'>
       <JobsView />
-    </DashboardPageLayout>
+    </ApplicantDashboardPageLayout>
   )
 }
