@@ -1,6 +1,10 @@
-import {Container} from '@mantine/core'
+import CompanyDashboardPageLayout from '@job-huntly/layout/CompanyDashboardPageLayout'
 import React from 'react'
 
 export default function Page() {
-  return <Container>Dashboard</Container>
+  return (
+    <CompanyDashboardPageLayout title='Dashboard'>
+      Dashboard
+    </CompanyDashboardPageLayout>
+  )
 }

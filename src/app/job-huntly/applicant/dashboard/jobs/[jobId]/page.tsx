@@ -1,7 +1,7 @@
 import {JobDescription as JobDescriptionView} from '@job-huntly/components/applicant'
-import ApplicantDashboardPageLayout from '@job-huntly/layout/ApplicantDashboardPageLayout'
 import React from 'react'
 
+import ApplicantDashboardPageLayout from '@/components/job-huntly/layout/ApplicantDashboardPageLayout/ApplicantDashboardPageLayout'
 import {urls} from '@/constants'
 
 export default function JobDescription() {

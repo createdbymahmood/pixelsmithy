@@ -1,14 +1,12 @@
 'use client'
 
-import {
-  Header,
-  JOB_HUNTLY_HEADER_HEIGHT,
-} from '@job-huntly/layout/DashboardLayout/components/Sidebar/components/Header'
 import type {MantineSpacing} from '@mantine/core'
 import {Box, Container, rem} from '@mantine/core'
 import type {ReactNode} from 'react'
 import React from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
+
+import {Header, JOB_HUNTLY_HEADER_HEIGHT} from './components'
 
 interface ApplicantDashboardPageLayoutProps {
   children: ReactNode
