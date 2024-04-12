@@ -1,4 +1,4 @@
-import DashboardPageLayout from '@job-huntly/layout/DashboardPageLayout/DashboardPageLayout'
+import ApplicantDashboardPageLayout from '@job-huntly/layout/ApplicantDashboardPageLayout'
 import type {ReactNode} from 'react'
 import React from 'react'
 
@@ -8,8 +8,8 @@ interface LayoutProps {
 
 export default function Layout({children}: LayoutProps) {
   return (
-    <DashboardPageLayout p={0} title='Help Center'>
+    <ApplicantDashboardPageLayout p={0} title='Help Center'>
       {children}
-    </DashboardPageLayout>
+    </ApplicantDashboardPageLayout>
   )
 }

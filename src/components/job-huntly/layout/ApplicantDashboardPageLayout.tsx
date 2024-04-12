@@ -10,19 +10,19 @@ import type {ReactNode} from 'react'
 import React from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-interface DashboardPageLayoutProps {
+interface ApplicantDashboardPageLayoutProps {
   children: ReactNode
   title: string
   callbackURL?: string
   p?: MantineSpacing
 }
 
-export default function DashboardPageLayout({
+export default function ApplicantDashboardPageLayout({
   callbackURL,
   children,
   p = 'xxxl',
   title,
-}: DashboardPageLayoutProps) {
+}: ApplicantDashboardPageLayoutProps) {
   return (
     <Box w='100%'>
       <Header callbackURL={callbackURL} title={title} />
