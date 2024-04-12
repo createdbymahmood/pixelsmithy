@@ -1,3 +1,3 @@
-import {DashboardLayout} from '@job-huntly/layout'
+import {ApplicantDashboardLayout} from '@job-huntly/layout/ApplicantDashboardLayout'
 
-export default DashboardLayout
+export default ApplicantDashboardLayout
