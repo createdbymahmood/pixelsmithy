@@ -212,6 +212,11 @@ export const urls = {
         },
       },
     },
+    company: {
+      dashboard: {
+        index: '/job-huntly/company/dashboard',
+      },
+    },
     landing: '/job-huntly/landing',
   },
 }
