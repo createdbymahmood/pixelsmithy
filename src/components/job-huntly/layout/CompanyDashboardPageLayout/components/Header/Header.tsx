@@ -5,6 +5,7 @@ import React from 'react'
 
 import {Notification} from '@/components/job-huntly/layout/ApplicantDashboardPageLayout/components'
 
+import {CompanySwitch} from '../CompanySwitch'
 import styles from './Header.module.scss'
 
 export const COMPANY_DASHBOARD_PAGE_LAYAOUT_HEADER_HEIGHT = rem(120)
@@ -19,9 +20,11 @@ export function Header() {
       px='xxxl'
       py='md'
     >
-      {/* <Group gap='xs' /> */}
+      <CompanySwitch />
 
-      <Notification />
+      <Box ml='auto'>
+        <Notification />
+      </Box>
 
       <Button
         leftSection={
