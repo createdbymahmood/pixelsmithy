@@ -53,11 +53,17 @@ export const columns: DataTableColumn<Company>[] = [
     width: 'fit-content',
     sortable: true,
     render: renderFullName,
+    title: 'Full Name',
   },
   {accessor: 'score', sortable: true, render: renderScore},
-  {accessor: 'hiringStage', sortable: true, render: renderHiringStage},
-  {accessor: 'appliedDate', sortable: true},
-  {accessor: 'jobRole', sortable: true},
+  {
+    accessor: 'hiringStage',
+    sortable: true,
+    render: renderHiringStage,
+    title: 'Hiring Stage',
+  },
+  {accessor: 'appliedDate', sortable: true, title: 'Applied Date'},
+  {accessor: 'jobRole', sortable: true, title: 'Job Role'},
   {
     accessor: 'action',
     width: '0%', // 👈 use minimal width
