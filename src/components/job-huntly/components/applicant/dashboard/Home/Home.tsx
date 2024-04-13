@@ -3,7 +3,7 @@ import React from 'react'
 
 import {Header, RecentApplications, Stats} from './components'
 
-export function Dashboard() {
+export function Home() {
   return (
     <Stack gap='xxxl'>
       <Header />
