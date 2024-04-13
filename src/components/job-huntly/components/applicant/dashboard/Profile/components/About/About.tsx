@@ -1,7 +1,6 @@
+import {EditButton, ProfileSection} from '@job-huntly/components/common'
 import {Stack, Text} from '@mantine/core'
 import React from 'react'
-
-import {EditButton, ProfileSection} from '../common'
 
 export function About() {
   return (

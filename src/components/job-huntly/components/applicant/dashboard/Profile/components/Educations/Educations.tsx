@@ -1,9 +1,13 @@
+import {
+  AddButton,
+  EditButton,
+  ProfileSection,
+} from '@job-huntly/components/common'
 import {Anchor, Avatar, Group, rem, Stack, Text} from '@mantine/core'
 import {isEmpty} from 'lodash-es'
 import type {FC, SVGProps} from 'react'
 import React from 'react'
 
-import {AddButton, EditButton, ProfileSection} from '../common'
 import Harvard from './assets/harvard.svg'
 import Toronto from './assets/toronto.svg'
 import styles from './Educations.module.scss'

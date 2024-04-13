@@ -1,9 +1,8 @@
+import {EditButton, ProfileSection} from '@job-huntly/components/common'
 import {Anchor, Box, Group, rem, Stack, Text} from '@mantine/core'
 import type {Icon} from '@phosphor-icons/react'
 import {Globe, InstagramLogo, TwitterLogo} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
-
-import {EditButton, ProfileSection} from '../common'
 
 interface Link {
   title: string

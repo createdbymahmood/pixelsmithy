@@ -15,6 +15,7 @@ const actionIconColorsMap: Record<BaseButtonColor, ActionIconProps> = {
   primary: {
     c: 'primary',
     color: 'primary.1',
+    bg: 'white',
   },
   white: {
     c: 'white',
