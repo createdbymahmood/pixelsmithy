@@ -18,6 +18,7 @@ import {
   Title,
 } from '@mantine/core'
 import type {IconWeight} from '@phosphor-icons/react'
+import {ArrowRight} from '@phosphor-icons/react'
 import {
   Buildings,
   Envelope,
@@ -25,6 +26,7 @@ import {
   FacebookLogo,
   Fire,
   Gear,
+  InstagramLogo,
   LinkedinLogo,
   MapPin,
   TwitterLogo,
@@ -33,7 +35,7 @@ import {
 import {head} from 'lodash-es'
 import React from 'react'
 
-import {EditButton} from '@/components/job-huntly/components/common'
+import {AddButton, EditButton} from '@/components/job-huntly/components/common'
 import {CompanyProfileSection} from '@/components/job-huntly/components/company/dashboard/CompanyProfile/common'
 import {companies} from '@/components/job-huntly/mock/companies'
 
@@ -253,8 +255,87 @@ function Gallery() {
   )
 }
 
+const team = [
+  {
+    name: 'Célestin Gardinier',
+    role: 'CEO & Co-Founder',
+  },
+  {
+    name: 'Reynaud Colbert',
+    role: 'Co-Founder',
+  },
+  {
+    name: 'Arienne Lyon',
+    role: 'Managing Director',
+  },
+]
+
 function Team() {
-  return <div>Team</div>
+  const action = (
+    <Group>
+      <EditButton />
+      <AddButton />
+    </Group>
+  )
+
+  const list = team.map((member) => {
+    return (
+      <Paper key={member.name} p='xl' w='100%' withBorder>
+        <Stack align='center' gap={0}>
+          <Avatar size={rem(80)} />
+
+          <Text fw='600' lineClamp={1} mt='md' size='lg'>
+            {member.name}
+          </Text>
+
+          <Text c='neutrals.4' lineClamp={1} mt='xxs'>
+            {member.role}
+          </Text>
+
+          <Group justify='center' mt='md'>
+            <Box
+              c='neutrals.3'
+              className='icon-size-lg'
+              component={InstagramLogo}
+              weight='bold'
+            />
+            <Box
+              c='neutrals.3'
+              className='icon-size-lg'
+              component={LinkedinLogo}
+              weight='bold'
+            />
+          </Group>
+        </Stack>
+      </Paper>
+    )
+  })
+
+  const CTARightSection = (
+    <Box
+      className='icon-size-lg'
+      component={ArrowRight}
+      ml='xs'
+      weight='bold'
+    />
+  )
+
+  return (
+    <CompanyProfileSection action={action} title='Team'>
+      <Group wrap='nowrap'>{list}</Group>
+
+      <Button
+        fw='600'
+        mt='sm'
+        pl={0}
+        rightSection={CTARightSection}
+        size='md'
+        variant='transparent'
+      >
+        View all core teams
+      </Button>
+    </CompanyProfileSection>
+  )
 }
 
 function Benefits() {
