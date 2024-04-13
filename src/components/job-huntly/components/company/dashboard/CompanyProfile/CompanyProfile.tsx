@@ -12,6 +12,7 @@ import {
   Indicator,
   Paper,
   rem,
+  Skeleton,
   Stack,
   Text,
   Title,
@@ -235,7 +236,21 @@ function Contact() {
 }
 
 function Gallery() {
-  return <div>Gallery</div>
+  return (
+    <CompanyProfileSection
+      action={<EditButton />}
+      title={`Working at ${company.name}`}
+    >
+      <Group align='stretch' h={rem(606)} wrap='nowrap'>
+        <Skeleton flex={2} h='100%' />
+        <Stack flex={1}>
+          <Skeleton flex={1} h='100%' />
+          <Skeleton flex={1} h='100%' />
+          <Skeleton flex={1} h='100%' />
+        </Stack>
+      </Group>
+    </CompanyProfileSection>
+  )
 }
 
 function Team() {
