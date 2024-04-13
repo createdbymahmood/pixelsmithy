@@ -3,7 +3,13 @@
 import {Grid, Stack} from '@mantine/core'
 import React from 'react'
 
-import {Header, JobStats, OpenJobs, Stats} from './components'
+import {
+  ApplicantsSummary,
+  Header,
+  JobStats,
+  OpenJobs,
+  Stats,
+} from './components'
 
 export function Home() {
   return (
@@ -11,13 +17,16 @@ export function Home() {
       <Header />
       <Stats />
 
-      <Grid>
-        <Grid.Col span={9}>
+      <Grid gutter='xl'>
+        <Grid.Col span={8}>
           <JobStats />
         </Grid.Col>
 
-        <Grid.Col span={3}>
-          <OpenJobs />
+        <Grid.Col span={4}>
+          <Stack gap='xl'>
+            <OpenJobs />
+            <ApplicantsSummary />
+          </Stack>
         </Grid.Col>
       </Grid>
     </Stack>
