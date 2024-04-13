@@ -17,7 +17,7 @@ export function CompanyProfileSection({
     <Paper>
       <Stack>
         <Group justify='space-between'>
-          <Title fw='600' lineClamp={1} order={3}>
+          <Title fw='600' lineClamp={1} order={4}>
             {title}
           </Title>
 
