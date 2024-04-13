@@ -393,8 +393,49 @@ function OpenPositions() {
   )
 }
 
+const stack = ['HTML 5', 'CSS 3', 'JavaScript', 'Ruby', 'Mixpanel', 'Framer']
+
 function TechStack() {
-  return <div>TechStack</div>
+  const content = stack.map((item) => {
+    return (
+      <Stack key={item} align='center' gap='sm'>
+        <Skeleton h={rem(74)} w={74} />
+        <Text>{item}</Text>
+      </Stack>
+    )
+  })
+
+  const action = (
+    <Group>
+      <EditButton />
+      <AddButton />
+    </Group>
+  )
+
+  const CTARightSection = (
+    <Box
+      className='icon-size-lg'
+      component={ArrowRight}
+      ml='xs'
+      weight='bold'
+    />
+  )
+
+  return (
+    <CompanyProfileSection action={action} title='Tech Stack'>
+      <SimpleGrid cols={3}>{content}</SimpleGrid>
+      <Button
+        fw='600'
+        mt='sm'
+        pl={0}
+        rightSection={CTARightSection}
+        size='md'
+        variant='transparent'
+      >
+        View tech stack
+      </Button>
+    </CompanyProfileSection>
+  )
 }
 
 function OfficeLocations() {
