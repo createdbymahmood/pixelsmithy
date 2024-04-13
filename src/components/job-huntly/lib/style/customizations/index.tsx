@@ -17,6 +17,7 @@ import {
   Paper,
   Progress,
   Radio,
+  Rating,
   rem,
   SegmentedControl,
   Select,
@@ -26,7 +27,7 @@ import {
   Text,
   TextInput,
 } from '@mantine/core'
-import {CaretDown} from '@phosphor-icons/react/dist/ssr'
+import {CaretDown, Star} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {get} from 'lodash-es'
 import type {CSSProperties} from 'react'
@@ -231,6 +232,21 @@ export const components: MantineThemeComponents = {
     },
     classNames() {
       return SegmentedControlStyles
+    },
+  }),
+  Rating: Rating.extend({
+    defaultProps: {
+      emptySymbol: (
+        <Box className='icon-size-md' component={Star} weight='bold' />
+      ),
+      fullSymbol: (
+        <Box
+          c='yellow.4'
+          className='icon-size-md'
+          component={Star}
+          weight='fill'
+        />
+      ),
     },
   }),
 }
