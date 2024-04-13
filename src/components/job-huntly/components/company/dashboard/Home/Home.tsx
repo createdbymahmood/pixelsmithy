@@ -1,14 +1,25 @@
-import {Stack} from '@mantine/core'
+'use client'
+
+import {Grid, Stack} from '@mantine/core'
 import React from 'react'
 
-import {Header, JobStats, Stats} from './components'
+import {Header, JobStats, OpenJobs, Stats} from './components'
 
 export function Home() {
   return (
     <Stack gap='xxxl'>
       <Header />
       <Stats />
-      <JobStats />
+
+      <Grid>
+        <Grid.Col span={9}>
+          <JobStats />
+        </Grid.Col>
+
+        <Grid.Col span={3}>
+          <OpenJobs />
+        </Grid.Col>
+      </Grid>
     </Stack>
   )
 }
