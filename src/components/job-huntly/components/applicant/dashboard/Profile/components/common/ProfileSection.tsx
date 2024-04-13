@@ -6,11 +6,17 @@ interface ProfileSectionProps {
   title: string
   children: ReactNode
   action: ReactNode
+  withBorder?: boolean
 }
 
-export function ProfileSection({action, children, title}: ProfileSectionProps) {
+export function ProfileSection({
+  action,
+  children,
+  title,
+  withBorder = true,
+}: ProfileSectionProps) {
   return (
-    <Paper p='xl' withBorder>
+    <Paper p='xl' withBorder={withBorder}>
       <Stack>
         <Group justify='space-between'>
           <Text fw='600' lineClamp={1} size='xl'>
