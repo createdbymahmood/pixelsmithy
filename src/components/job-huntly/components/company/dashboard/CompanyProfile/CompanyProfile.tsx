@@ -12,6 +12,7 @@ import {
   Indicator,
   Paper,
   rem,
+  SimpleGrid,
   Skeleton,
   Stack,
   Text,
@@ -35,6 +36,7 @@ import {
 import {head} from 'lodash-es'
 import React from 'react'
 
+import {PerksAndBenefitsContent} from '@/components/job-huntly/components/applicant'
 import {AddButton, EditButton} from '@/components/job-huntly/components/common'
 import {CompanyProfileSection} from '@/components/job-huntly/components/company/dashboard/CompanyProfile/common'
 import {companies} from '@/components/job-huntly/mock/companies'
@@ -339,7 +341,20 @@ function Team() {
 }
 
 function Benefits() {
-  return <div>Benefits</div>
+  const action = (
+    <Group>
+      <EditButton />
+      <AddButton />
+    </Group>
+  )
+
+  return (
+    <CompanyProfileSection action={action} title='Benefit'>
+      <SimpleGrid cols={3} spacing='md'>
+        <PerksAndBenefitsContent />
+      </SimpleGrid>
+    </CompanyProfileSection>
+  )
 }
 
 function OpenPositions() {

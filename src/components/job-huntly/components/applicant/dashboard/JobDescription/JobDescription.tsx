@@ -198,7 +198,16 @@ function PerksAndBenefitsCard({description, title}: PerksAndBenefitsCardProps) {
   )
 }
 
-function PerksAndBenefits() {
+function PerksAndBenefitsTitle() {
+  return (
+    <Stack gap='xs'>
+      <Title order={4}>Perks & Benefits</Title>
+      <Text c='neutrals.5'>This job comes with several perks and benefits</Text>
+    </Stack>
+  )
+}
+
+export function PerksAndBenefitsContent() {
   const list = [
     {
       title: 'Full Healthcare',
@@ -231,16 +240,17 @@ function PerksAndBenefits() {
       />
     )
   })
+
+  return content
+}
+
+export function PerksAndBenefits() {
   return (
     <Stack gap='xl'>
-      <Stack gap='xs'>
-        <Title order={4}>Perks & Benefits</Title>
-        <Text c='neutrals.5'>
-          This job comes with several perks and benefits
-        </Text>
-      </Stack>
-
-      <SimpleGrid cols={{xl: 4, lg: 3, md: 2}}>{content}</SimpleGrid>
+      <PerksAndBenefitsTitle />
+      <SimpleGrid cols={{xl: 4, lg: 3, md: 2}}>
+        <PerksAndBenefitsContent />
+      </SimpleGrid>
     </Stack>
   )
 }
