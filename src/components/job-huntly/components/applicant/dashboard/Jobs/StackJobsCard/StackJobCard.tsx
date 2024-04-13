@@ -120,6 +120,10 @@ function CardBody({
   )
 }
 
+interface StackJobCardProps extends Job {
+  withApply?: boolean
+}
+
 export function StackJobCard({
   applicationsInfo,
   categories,
@@ -128,7 +132,8 @@ export function StackJobCard({
   logo,
   role,
   type,
-}: Job) {
+  withApply = true,
+}: StackJobCardProps) {
   return (
     <Paper px='xxxl' py='xl' withBorder>
       <Group>
@@ -142,7 +147,7 @@ export function StackJobCard({
           type={type}
         />
 
-        <Actions applicationsInfo={applicationsInfo} />
+        {withApply ? <Actions applicationsInfo={applicationsInfo} /> : null}
       </Group>
     </Paper>
   )

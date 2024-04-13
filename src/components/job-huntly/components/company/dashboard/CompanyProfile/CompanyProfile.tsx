@@ -37,9 +37,11 @@ import {head} from 'lodash-es'
 import React from 'react'
 
 import {PerksAndBenefitsContent} from '@/components/job-huntly/components/applicant'
+import {StackJobCard} from '@/components/job-huntly/components/applicant/dashboard/Jobs/StackJobsCard'
 import {AddButton, EditButton} from '@/components/job-huntly/components/common'
 import {CompanyProfileSection} from '@/components/job-huntly/components/company/dashboard/CompanyProfile/common'
 import {companies} from '@/components/job-huntly/mock/companies'
+import {jobs} from '@/components/job-huntly/mock/jobs'
 
 const company = head(companies)!
 
@@ -358,7 +360,37 @@ function Benefits() {
 }
 
 function OpenPositions() {
-  return <div>OpenPositions</div>
+  const CTARightSection = (
+    <Box
+      className='icon-size-lg'
+      component={ArrowRight}
+      ml='xs'
+      weight='bold'
+    />
+  )
+
+  const action = (
+    <Button
+      fw='600'
+      mt='sm'
+      pl={0}
+      rightSection={CTARightSection}
+      size='md'
+      variant='transparent'
+    >
+      Show all jobs
+    </Button>
+  )
+
+  const content = jobs.map((job) => {
+    return <StackJobCard key={job.id} withApply={false} {...job} />
+  })
+
+  return (
+    <CompanyProfileSection action={action} title='Open Positions'>
+      <Stack>{content}</Stack>
+    </CompanyProfileSection>
+  )
 }
 
 function TechStack() {
