@@ -42,7 +42,7 @@ const sections: SidebarSection[] = [
         title: 'Company Profile',
         icon: Buildings,
         href: urls.JobHuntly.company.dashboard.companyProfile,
-        activeSegment: ['null'],
+        activeSegment: ['company-profile'],
       },
 
       {
