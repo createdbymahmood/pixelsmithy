@@ -1,12 +1,9 @@
-import {
-  AddButton,
-  EditButton,
-  ProfileSection,
-} from '@job-huntly/components/common'
+import {AddButton, EditButton} from '@job-huntly/components/common'
 import {Anchor, Avatar, Group, rem, Stack, Text} from '@mantine/core'
 import type {FC, SVGProps} from 'react'
 import React from 'react'
 
+import {ProfileSection} from '../common'
 import GoDaddy from './assets/godaddy.svg'
 import Twitter from './assets/twitter.svg'
 import styles from './Experiences.module.scss'
