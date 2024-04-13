@@ -217,6 +217,7 @@ export const urls = {
         index: '/job-huntly/company/dashboard',
         home: '/job-huntly/company/dashboard/home',
         chat: '/job-huntly/company/dashboard/chat',
+        companyProfile: '/job-huntly/company/dashboard/company-profile',
       },
     },
     landing: '/job-huntly/landing',
