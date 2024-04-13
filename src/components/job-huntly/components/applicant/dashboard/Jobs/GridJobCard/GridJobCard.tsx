@@ -15,9 +15,11 @@ import React from 'react'
 function Info({company, location}: Pick<Job, 'company' | 'location'>) {
   return (
     <Group gap='xs'>
-      <Text c='neutrals.4'>{company}</Text>
-      <Text c='neutrals.4'>•</Text>
-      <Text c='neutrals.4'>{location}</Text>
+      <Text c='neutrals.4' lineClamp={1}>
+        {company}
+        {' • '}
+        {location}
+      </Text>
     </Group>
   )
 }
@@ -87,7 +89,7 @@ function CardBody({
 }: Pick<Job, 'categories' | 'company' | 'location' | 'role'>) {
   return (
     <Stack gap='xxs'>
-      <Text fw='600' size='xl'>
+      <Text fw='600' lineClamp={1} size='xl'>
         {role}
       </Text>
 

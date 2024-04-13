@@ -7,6 +7,7 @@ import {
   ApplicantsSummary,
   Header,
   JobStats,
+  JobUpdates,
   OpenJobs,
   Stats,
 } from './components'
@@ -29,6 +30,8 @@ export function Home() {
           </Stack>
         </Grid.Col>
       </Grid>
+
+      <JobUpdates />
     </Stack>
   )
 }
