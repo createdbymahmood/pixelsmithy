@@ -7,7 +7,11 @@ import Nomad from './assets/logo/nomad.svg'
 import Packer from './assets/logo/packer.svg'
 import Udacity from './assets/logo/udacity.svg'
 
-export type ApplicationStatus = 'declined' | 'review' | 'shortlisted'
+export type ApplicationStatus =
+  | 'declined'
+  | 'interview'
+  | 'review'
+  | 'shortlisted'
 export interface Application {
   id: string
   role: string
