@@ -31,6 +31,11 @@ export const applicationStatusMap: Record<ApplicationStatus, JSX.Element> = {
       In Review
     </Badge>
   ),
+  interview: (
+    <Badge color='yellow' py='md' size='lg' variant='outline'>
+      Interview
+    </Badge>
+  ),
   shortlisted: (
     <Badge color='primary' py='md' size='lg' variant='outline'>
       Shortlisted
