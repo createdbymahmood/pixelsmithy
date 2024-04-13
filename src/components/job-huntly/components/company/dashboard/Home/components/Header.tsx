@@ -19,10 +19,10 @@ export function Header() {
   return (
     <Group justify='space-between'>
       <Stack gap='xs'>
-        <Title order={4}>Good morning, Jake</Title>
+        <Title order={4}>Good morning, Maria</Title>
+
         <Text c='neutrals.4' fw='500'>
-          Here is what’s happening with your job search applications from{' '}
-          {formattedDates}.
+          Here is your job listings statistic report from {formattedDates}.
         </Text>
       </Stack>
 
