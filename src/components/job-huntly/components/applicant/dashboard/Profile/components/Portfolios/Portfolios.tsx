@@ -1,9 +1,8 @@
+import {AddButton, ProfileSection} from '@job-huntly/components/common'
 import type {Embla} from '@mantine/carousel'
 import {Carousel} from '@mantine/carousel'
 import {Progress, rem, Skeleton, Stack, Text} from '@mantine/core'
 import React, {useCallback, useEffect, useState} from 'react'
-
-import {AddButton, ProfileSection} from '../common'
 
 const portfolios = [
   'Clinically - clinic & health care website',

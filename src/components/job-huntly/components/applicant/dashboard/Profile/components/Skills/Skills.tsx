@@ -1,7 +1,10 @@
+import {
+  AddButton,
+  EditButton,
+  ProfileSection,
+} from '@job-huntly/components/common'
 import {Badge, Group} from '@mantine/core'
 import React from 'react'
-
-import {AddButton, EditButton, ProfileSection} from '../common'
 
 const skills = [
   'Communication',

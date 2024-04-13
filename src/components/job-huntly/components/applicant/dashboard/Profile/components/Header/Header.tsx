@@ -1,3 +1,4 @@
+import {EditButton} from '@job-huntly/components/common'
 import {
   Avatar,
   Badge,
@@ -12,7 +13,6 @@ import {
 import {Flag, MapPin} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
-import {EditButton} from '../common'
 import styles from './Header.module.scss'
 
 function Cover() {
