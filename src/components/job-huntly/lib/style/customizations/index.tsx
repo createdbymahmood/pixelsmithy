@@ -18,6 +18,7 @@ import {
   Progress,
   Radio,
   rem,
+  SegmentedControl,
   Select,
   Skeleton,
   Table,
@@ -42,6 +43,7 @@ import InputStyles from './InputStyles.module.scss'
 import InputWrapperStyles from './InputWrapper.module.scss'
 import PaginationStyles from './Pagination.module.scss'
 import RadioStyles from './Radio.module.scss'
+import SegmentedControlStyles from './SegmentedControl.module.scss'
 import TableStyles from './Table.module.scss'
 import TabsStyles from './Tabs.module.scss'
 import {displayTextResolver} from './text'
@@ -221,6 +223,14 @@ export const components: MantineThemeComponents = {
   Radio: Radio.extend({
     classNames() {
       return RadioStyles
+    },
+  }),
+  SegmentedControl: SegmentedControl.extend({
+    defaultProps: {
+      radius: 0,
+    },
+    classNames() {
+      return SegmentedControlStyles
     },
   }),
 }
