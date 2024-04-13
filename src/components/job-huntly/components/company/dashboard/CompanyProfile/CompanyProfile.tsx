@@ -16,12 +16,17 @@ import {
   Text,
   Title,
 } from '@mantine/core'
+import type {IconWeight} from '@phosphor-icons/react'
 import {
   Buildings,
+  Envelope,
   Eye,
+  FacebookLogo,
   Fire,
   Gear,
+  LinkedinLogo,
   MapPin,
+  TwitterLogo,
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
 import {head} from 'lodash-es'
@@ -157,17 +162,9 @@ function Header() {
   )
 }
 
-function TechStack() {
-  return <div>TechStack</div>
-}
-
 function Profile() {
-  return <div>Profile</div>
-}
-
-function Contact() {
   return (
-    <CompanyProfileSection action={<EditButton />} title='Contact'>
+    <CompanyProfileSection action={<EditButton />} title='Company Profile'>
       <Text c='neutrals.5'>
         Nomad is a software platform for starting and running internet
         businesses. Millions of businesses rely on Stripe’s software tools to
@@ -185,12 +182,60 @@ function Contact() {
   )
 }
 
-function Gallery() {
-  return <div>Gallery</div>
+const methods = [
+  {
+    label: 'twitter.com/Nomad',
+    icon: TwitterLogo,
+    weight: 'fill' as IconWeight,
+  },
+  {
+    label: 'facebook.com/NomadHQ',
+    icon: FacebookLogo,
+    weight: 'fill' as IconWeight,
+  },
+  {
+    label: 'linkedin.com/company/nomad',
+    icon: LinkedinLogo,
+    weight: 'fill' as IconWeight,
+  },
+  {
+    label: 'nomad@gmail.com',
+    icon: Envelope,
+    weight: 'regular' as IconWeight,
+  },
+]
+
+function Contact() {
+  const content = methods.map((method) => {
+    const leftSection = (
+      <Box
+        className='icon-size-lg'
+        component={method.icon}
+        weight={method.weight}
+      />
+    )
+    return (
+      <Button
+        key={method.label}
+        fw='400'
+        leftSection={leftSection}
+        size='sm'
+        variant='outline'
+      >
+        {method.label}
+      </Button>
+    )
+  })
+
+  return (
+    <CompanyProfileSection action={<EditButton />} title='Contact'>
+      <Group>{content}</Group>
+    </CompanyProfileSection>
+  )
 }
 
-function OfficeLocations() {
-  return <div>OfficeLocations</div>
+function Gallery() {
+  return <div>Gallery</div>
 }
 
 function Team() {
@@ -203,6 +248,14 @@ function Benefits() {
 
 function OpenPositions() {
   return <div>OpenPositions</div>
+}
+
+function TechStack() {
+  return <div>TechStack</div>
+}
+
+function OfficeLocations() {
+  return <div>OfficeLocations</div>
 }
 
 const gutter: MantineSpacing = 'xxxl'
