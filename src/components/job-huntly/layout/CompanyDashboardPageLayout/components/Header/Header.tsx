@@ -8,7 +8,7 @@ import {Notification} from '@/components/job-huntly/layout/ApplicantDashboardPag
 import {CompanySwitch} from '../CompanySwitch'
 import styles from './Header.module.scss'
 
-export const COMPANY_DASHBOARD_PAGE_LAYAOUT_HEADER_HEIGHT = rem(120)
+export const COMPANY_DASHBOARD_PAGE_LAYAOUT_HEADER_HEIGHT = rem(90.59)
 
 export function Header() {
   return (
