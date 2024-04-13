@@ -216,6 +216,7 @@ export const urls = {
       dashboard: {
         index: '/job-huntly/company/dashboard',
         home: '/job-huntly/company/dashboard/home',
+        chat: '/job-huntly/company/dashboard/chat',
       },
     },
     landing: '/job-huntly/landing',

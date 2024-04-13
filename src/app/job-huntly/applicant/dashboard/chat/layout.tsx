@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export default function Layout({children}: LayoutProps) {
   return (
-    <ApplicantDashboardPageLayout title='Messages'>
+    <ApplicantDashboardPageLayout p={0} title='Messages'>
       {children}
     </ApplicantDashboardPageLayout>
   )

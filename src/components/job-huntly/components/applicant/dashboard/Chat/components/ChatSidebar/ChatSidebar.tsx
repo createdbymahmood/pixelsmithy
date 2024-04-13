@@ -39,7 +39,9 @@ function ChatPreview({date, isOnline, name, preview}: ChatItem) {
             {chatPreviewDate}
           </Group>
 
-          <Text c='neutrals.4'>{preview}</Text>
+          <Text c='neutrals.4' lineClamp={1} w='100%'>
+            {preview}
+          </Text>
         </Stack>
       </Group>
     </Box>
@@ -113,16 +115,17 @@ export function ChatSidebar() {
     <Box
       className={clsx(styles.sidebar, 'shrink-0', 'overflow-y-hidden')}
       h='100%'
+      pb='xl'
       pt='xxxl'
       w={rem(416)}
     >
-      <Box mb={rem(28)} pr='xxxl'>
+      <Box mb={rem(28)} px='xxxl'>
         <SidebarHeader />
       </Box>
 
       <Stack gap={0} h='calc(100% - 46px - var(--mantine-spacing-xxxl))'>
         <PerfectScrollbar>
-          <Box pl={0} pt={0} px='xxxl'>
+          <Box mx='xxxl' pl={0} pt={0}>
             {content}
           </Box>
         </PerfectScrollbar>
