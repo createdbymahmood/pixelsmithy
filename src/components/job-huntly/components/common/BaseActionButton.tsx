@@ -32,7 +32,7 @@ export function BaseActionButton({
 
   return (
     <ActionIcon size={rem(40)} variant='outline' {...colorProps} {...props}>
-      <Box className='icon-size-lg' component={icon} />
+      <Box className='icon-size-md' component={icon} />
     </ActionIcon>
   )
 }

@@ -4,6 +4,7 @@ import type {MantineSpacing} from '@mantine/core'
 import {
   Anchor,
   Avatar,
+  Badge,
   Box,
   Button,
   Divider,
@@ -276,9 +277,9 @@ const team = [
 
 function Team() {
   const action = (
-    <Group>
-      <EditButton />
+    <Group gap='xs' wrap='nowrap'>
       <AddButton />
+      <EditButton />
     </Group>
   )
 
@@ -344,9 +345,9 @@ function Team() {
 
 function Benefits() {
   const action = (
-    <Group>
-      <EditButton />
+    <Group gap='xs' wrap='nowrap'>
       <AddButton />
+      <EditButton />
     </Group>
   )
 
@@ -406,9 +407,9 @@ function TechStack() {
   })
 
   const action = (
-    <Group>
-      <EditButton />
+    <Group gap='xs' wrap='nowrap'>
       <AddButton />
+      <EditButton />
     </Group>
   )
 
@@ -438,8 +439,66 @@ function TechStack() {
   )
 }
 
+const countries = [
+  {
+    label: 'United States',
+    hq: true,
+  },
+  {label: 'England'},
+  {label: 'Japan'},
+  {label: 'Australia'},
+  {label: 'China'},
+]
+
 function OfficeLocations() {
-  return <div>OfficeLocations</div>
+  const CTARightSection = (
+    <Box
+      className='icon-size-lg'
+      component={ArrowRight}
+      ml='xs'
+      weight='bold'
+    />
+  )
+
+  const action = (
+    <Group gap='xs' wrap='nowrap'>
+      <AddButton />
+      <EditButton />
+    </Group>
+  )
+
+  const content = countries.map((country) => {
+    const hq = country.hq ? (
+      <Badge color='blue' py='md' size='lg' variant='light'>
+        Head Quarters
+      </Badge>
+    ) : null
+
+    return (
+      <Group key={country.label} gap='sm' wrap='nowrap'>
+        <Avatar radius={0}>{country.label.charAt(0)}</Avatar>
+        <Text fw='600' lineClamp={1}>
+          {country.label}
+        </Text>
+        {hq}
+      </Group>
+    )
+  })
+  return (
+    <CompanyProfileSection action={action} title='Office Locations'>
+      <Stack>{content}</Stack>
+      <Button
+        fw='600'
+        mt='sm'
+        pl={0}
+        rightSection={CTARightSection}
+        size='md'
+        variant='transparent'
+      >
+        View countries
+      </Button>
+    </CompanyProfileSection>
+  )
 }
 
 const gutter: MantineSpacing = 'xxxl'
