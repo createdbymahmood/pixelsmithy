@@ -16,6 +16,7 @@ export interface Company {
   jobsCount: number
   categories: Category[]
   logo: FC<SVGProps<SVGElement>>
+  website: string
 }
 
 export const companies: Company[] = [
@@ -37,6 +38,7 @@ export const companies: Company[] = [
         color: 'primary',
       },
     ],
+    website: 'https://stripe.com',
   },
   {
     id: '1',
@@ -52,5 +54,6 @@ export const companies: Company[] = [
         color: 'green',
       },
     ],
+    website: 'https://app.rocketmoney.com',
   },
 ]
