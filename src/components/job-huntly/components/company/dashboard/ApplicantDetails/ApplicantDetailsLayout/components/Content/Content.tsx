@@ -27,6 +27,13 @@ export function Content({children}: ContentProps) {
         params.applicantId,
       ),
     },
+    {
+      key: 'resume',
+      label: 'Resume',
+      href: urls.JobHuntly.company.dashboard.applicantDetailsResume(
+        params.applicantId,
+      ),
+    },
   ]
 
   const segment = useSelectedLayoutSegment()
