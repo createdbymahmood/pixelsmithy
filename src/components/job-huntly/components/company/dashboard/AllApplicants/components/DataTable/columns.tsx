@@ -4,6 +4,9 @@ import {DotsThree} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {get} from 'lodash-es'
 import type {DataTableColumn} from 'mantine-datatable'
+import Link from 'next/link'
+
+import {urls} from '@/constants'
 
 import type {Applicant} from './DataTable'
 
@@ -30,10 +33,11 @@ const renderHiringStage = (record: Applicant) => {
   return badge
 }
 
-const renderAction = () => {
+const renderAction = (record: Applicant) => {
+  const href = urls.JobHuntly.company.dashboard.applicantDetails(record.id)
   return (
     <Group wrap='nowrap'>
-      <Button size='md' variant='outline'>
+      <Button component={Link} href={href} size='md' variant='outline'>
         See Application
       </Button>
 
