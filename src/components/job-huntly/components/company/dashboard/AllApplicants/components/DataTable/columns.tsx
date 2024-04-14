@@ -1,14 +1,13 @@
+import {applicationStatusMap} from '@job-huntly/components/applicant/dashboard/Applications/components/ApplicationsList/components'
 import {Avatar, Box, Button, Group, Rating, rem, Text} from '@mantine/core'
 import {DotsThree} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {get} from 'lodash-es'
 import type {DataTableColumn} from 'mantine-datatable'
 
-import {applicationStatusMap} from '@/components/job-huntly/components/applicant/dashboard/Applications/components/ApplicationsList/components'
+import type {Applicant} from './DataTable'
 
-import type {Company} from './DataTable'
-
-const renderFullName = (record: Company) => {
+const renderFullName = (record: Applicant) => {
   return (
     <Group wrap='nowrap'>
       <Avatar size={rem(40)} />
@@ -17,7 +16,7 @@ const renderFullName = (record: Company) => {
   )
 }
 
-const renderScore = (record: Company) => {
+const renderScore = (record: Applicant) => {
   return (
     <Group gap='xs'>
       <Rating count={1} mt='xxs' value={record.score} readOnly />
@@ -26,7 +25,7 @@ const renderScore = (record: Company) => {
   )
 }
 
-const renderHiringStage = (record: Company) => {
+const renderHiringStage = (record: Applicant) => {
   const badge = get(applicationStatusMap, record.hiringStage)
   return badge
 }
@@ -47,7 +46,7 @@ const renderAction = () => {
   )
 }
 
-export const columns: DataTableColumn<Company>[] = [
+export const columns: DataTableColumn<Applicant>[] = [
   {
     accessor: 'fullName',
     width: 'fit-content',

@@ -11,19 +11,20 @@ import type {DataTableSortStatus} from 'mantine-datatable'
 import {DataTable as MantineDataTable} from 'mantine-datatable'
 import {useState} from 'react'
 
-import companies from './applicants.json'
+import {applicants} from '@/components/job-huntly/mock/applicants'
+
 import {columns} from './columns'
 import TableStyles from './DataTable.module.scss'
 
-export type Company = (typeof companies)[0]
+export type Applicant = (typeof applicants)[0]
 
 export function BasicUsageExample() {
-  const [selectedRecords, setSelectedRecords] = useState<Company[]>([])
-  const [sortStatus, setSortStatus] = useState<DataTableSortStatus<Company>>({
+  const [selectedRecords, setSelectedRecords] = useState<Applicant[]>([])
+  const [sortStatus, setSortStatus] = useState<DataTableSortStatus<Applicant>>({
     columnAccessor: 'name',
     direction: 'asc',
   })
-  const [records, setRecords] = useState(sortBy(companies, 'name'))
+  const [records, setRecords] = useState(sortBy(applicants, 'firstName'))
   const [bodyRef] = useAutoAnimate<HTMLTableSectionElement>()
 
   return (
@@ -46,7 +47,7 @@ export function BasicUsageExample() {
       onSortStatusChange={(_sortStatus) => {
         setSortStatus(_sortStatus)
 
-        const data = sortBy(companies, _sortStatus.columnAccessor)
+        const data = sortBy(applicants, _sortStatus.columnAccessor)
         setRecords(_sortStatus.direction === 'desc' ? data.reverse() : data)
       }}
     />
