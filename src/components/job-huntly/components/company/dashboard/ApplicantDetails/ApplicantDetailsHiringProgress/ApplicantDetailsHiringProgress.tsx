@@ -30,7 +30,7 @@ function CurrentStageAction() {
   )
   return (
     <Button leftSection={leftSection} ml='auto' size='md' variant='outline'>
-      More Action
+      Give Rating
     </Button>
   )
 }
