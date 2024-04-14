@@ -5,18 +5,10 @@
 
 .thead {
   color: var(--mantine-color-neutrals-4);
-  // border: 1px solid var(--mantine-color-secondary-1) !important;
 }
 
 .th {
   font-weight: 500;
   padding: var(--mantine-spacing-md) var(--mantine-spacing-xs);
   border: none;
-}
-
-tbody .tr {
-  &:first-of-type {
-    .td {
-    }
-  }
 }

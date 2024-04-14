@@ -1,0 +1,5 @@
+.mantine-datatable-row {
+  &:where([data-with-row-border]) {
+    border-bottom: none;
+  }
+}
