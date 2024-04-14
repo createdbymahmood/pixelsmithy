@@ -152,6 +152,11 @@ function NoteCard({author, date, id, note, replies, time}: NoteCardProps) {
     })
   })()
 
+  const showRepliesCTA = (() => {
+    if (expanded || !replies?.length) return null
+    return <Anchor onClick={fns.open}>{replies.length} Replies</Anchor>
+  })()
+
   return (
     <Paper p='md' withBorder>
       <Group align='flex-start' wrap='nowrap'>
@@ -174,10 +179,7 @@ function NoteCard({author, date, id, note, replies, time}: NoteCardProps) {
 
           <Text c='neutrals.5'>{note}</Text>
 
-          {replies?.length && !expanded ? (
-            <Anchor onClick={fns.open}>{replies.length} Replies</Anchor>
-          ) : null}
-
+          {showRepliesCTA}
           {_replies}
         </Stack>
       </Group>
