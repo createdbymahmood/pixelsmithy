@@ -6,7 +6,7 @@ import type {DataTableColumn} from 'mantine-datatable'
 
 import {applicationStatusMap} from '@/components/job-huntly/components/applicant/dashboard/Applications/components/ApplicationsList/components'
 
-import type {Company} from './AllApplicants'
+import type {Company} from './DataTable'
 
 const renderFullName = (record: Company) => {
   return (
