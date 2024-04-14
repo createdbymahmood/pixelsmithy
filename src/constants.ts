@@ -230,6 +230,11 @@ export const urls = {
             '/job-huntly/company/dashboard/all-applicants/:applicantId/profile',
             {applicantId},
           ),
+        applicantDetailsResume: (applicantId: string) =>
+          urlCat(
+            '/job-huntly/company/dashboard/all-applicants/:applicantId/resume',
+            {applicantId},
+          ),
       },
     },
     landing: '/job-huntly/landing',
