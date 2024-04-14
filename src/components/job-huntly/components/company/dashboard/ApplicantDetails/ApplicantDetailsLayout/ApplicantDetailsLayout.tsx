@@ -18,11 +18,11 @@ export function ApplicantDetailsLayout({
       <Header />
 
       <Grid>
-        <Grid.Col span={{xl: 3, lg: 4, md: 12}}>
+        <Grid.Col span={{lg: 4, md: 12}}>
           <Sidebar />
         </Grid.Col>
 
-        <Grid.Col span={{xl: 9, lg: 8, md: 12}}>
+        <Grid.Col span={{lg: 8, md: 12}}>
           <Content>{children}</Content>
         </Grid.Col>
       </Grid>
