@@ -34,6 +34,13 @@ export function Content({children}: ContentProps) {
         params.applicantId,
       ),
     },
+    {
+      key: 'hiring-progress',
+      label: 'Hiring Progress',
+      href: urls.JobHuntly.company.dashboard.applicantDetailsHiringProgress(
+        params.applicantId,
+      ),
+    },
   ]
 
   const segment = useSelectedLayoutSegment()

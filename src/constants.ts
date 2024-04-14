@@ -235,6 +235,12 @@ export const urls = {
             '/job-huntly/company/dashboard/all-applicants/:applicantId/resume',
             {applicantId},
           ),
+
+        applicantDetailsHiringProgress: (applicantId: string) =>
+          urlCat(
+            '/job-huntly/company/dashboard/all-applicants/:applicantId/hiring-progress',
+            {applicantId},
+          ),
       },
     },
     landing: '/job-huntly/landing',
