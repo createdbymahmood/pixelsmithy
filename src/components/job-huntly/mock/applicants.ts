@@ -16,3 +16,5 @@ export const applicants = [
     jobRole: 'Golang Dev',
   },
 ]
+
+export type Applicant = (typeof applicants)[0]
