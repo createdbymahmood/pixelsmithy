@@ -7,7 +7,7 @@ interface ProfileInfoSectionProps {
   value: ReactNode
 }
 
-function ProfileInfoSection({label, value}: ProfileInfoSectionProps) {
+export function ProfileInfoSection({label, value}: ProfileInfoSectionProps) {
   const _value = isValidElement(value) ? (
     value
   ) : (
