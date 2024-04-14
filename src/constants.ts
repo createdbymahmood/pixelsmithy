@@ -241,6 +241,11 @@ export const urls = {
             '/job-huntly/company/dashboard/all-applicants/:applicantId/hiring-progress',
             {applicantId},
           ),
+        applicantDetailsInterviewSchedule: (applicantId: string) =>
+          urlCat(
+            '/job-huntly/company/dashboard/all-applicants/:applicantId/interview-schedule',
+            {applicantId},
+          ),
       },
     },
     landing: '/job-huntly/landing',

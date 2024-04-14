@@ -41,6 +41,13 @@ export function Content({children}: ContentProps) {
         params.applicantId,
       ),
     },
+    {
+      key: 'interview-schedule',
+      label: 'Interview Schedule',
+      href: urls.JobHuntly.company.dashboard.applicantDetailsInterviewSchedule(
+        params.applicantId,
+      ),
+    },
   ]
 
   const segment = useSelectedLayoutSegment()
