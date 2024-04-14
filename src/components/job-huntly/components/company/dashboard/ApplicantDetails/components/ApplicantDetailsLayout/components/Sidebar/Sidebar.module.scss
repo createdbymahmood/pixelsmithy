@@ -1,0 +1,5 @@
+.interviewStageProgressSection {
+  &:not(:last-of-type) {
+    margin-right: var(--mantine-spacing-xxs);
+  }
+}

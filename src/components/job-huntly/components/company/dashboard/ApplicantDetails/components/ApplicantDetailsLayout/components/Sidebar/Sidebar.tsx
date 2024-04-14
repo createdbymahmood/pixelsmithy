@@ -1,5 +1,6 @@
 import {
   ActionIcon,
+  Anchor,
   Avatar,
   Box,
   Button,
@@ -7,20 +8,31 @@ import {
   Group,
   Indicator,
   Paper,
+  Progress,
   Rating,
   rem,
   Stack,
   Text,
   Title,
 } from '@mantine/core'
-import {ChatCenteredText} from '@phosphor-icons/react/dist/ssr'
-import {find} from 'lodash-es'
+import type {Icon} from '@phosphor-icons/react'
+import {
+  ChatCenteredText,
+  DeviceMobile,
+  Envelope,
+  Globe,
+  InstagramLogo,
+  TwitterLogo,
+} from '@phosphor-icons/react/dist/ssr'
+import {find, range} from 'lodash-es'
 import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
 import {useParams} from 'next/navigation'
-import React, {Fragment} from 'react'
+import React from 'react'
 
 import type {Applicant} from '@/components/job-huntly/mock/applicants'
 import {applicants} from '@/components/job-huntly/mock/applicants'
+
+import styles from './Sidebar.module.scss'
 
 interface Props {
   applicant: Applicant
@@ -73,12 +85,27 @@ function InfoAppliedJobs() {
 function InfoInterviewStage() {
   return (
     <Paper bg='neutrals.0' p='md'>
-      <Group gap='xs'>
-        <Text>Stage</Text>
+      <Stack>
+        <Group gap='xs'>
+          <Text>Stage</Text>
 
-        <Indicator color='blue' ml='auto' mr='xs' />
-        <Text c='blue'>Interview</Text>
-      </Group>
+          <Indicator color='blue' ml='auto' mr='xs' />
+          <Text c='blue'>Interview</Text>
+        </Group>
+
+        <Progress.Root radius={0} size='lg'>
+          {range(0, 3).map((index) => {
+            return (
+              <Progress.Section
+                key={index}
+                className={styles.interviewStageProgressSection}
+                color='blue'
+                value={25}
+              />
+            )
+          })}
+        </Progress.Root>
+      </Stack>
     </Paper>
   )
 }
@@ -112,8 +139,66 @@ function Info({applicant}: Props) {
   )
 }
 
-function Contact(props: Applicant) {
-  return <Fragment />
+interface ContactItemProps {
+  label: string
+  value: string
+  icon: Icon
+  type: 'href' | 'text'
+}
+
+function ContactItem({icon, label, type, value}: ContactItemProps) {
+  const Component = type === 'href' ? Anchor : Text
+  return (
+    <Group align='flex-start'>
+      <Box c='neutrals.4' className='icon-size-lg' component={icon} />
+
+      <Stack gap={rem(2)}>
+        <Text c='neutrals.4'>{label}</Text>
+        <Component fw='400'>{value}</Component>
+      </Stack>
+    </Group>
+  )
+}
+
+const items: ContactItemProps[] = [
+  {
+    label: 'Email',
+    value: 'jeromeBell45@email.com',
+    icon: Envelope,
+    type: 'text',
+  },
+  {
+    label: 'Phone',
+    value: '+44 1245 572 135',
+    icon: DeviceMobile,
+    type: 'text',
+  },
+  {
+    label: 'Instagram',
+    value: 'instagram.com/jakegyll',
+    icon: InstagramLogo,
+    type: 'href',
+  },
+  {
+    label: 'Twitter',
+    value: 'twitter.com/jeromebell',
+    icon: TwitterLogo,
+    type: 'href',
+  },
+  {
+    label: 'Website',
+    value: 'www.jeromebell.com',
+    icon: Globe,
+    type: 'href',
+  },
+]
+
+function Contact() {
+  const content = items.map((contact) => {
+    return <ContactItem {...contact} key={contact.label} />
+  })
+
+  return <Stack>{content}</Stack>
 }
 
 interface QueryParams extends Params {
@@ -132,6 +217,8 @@ export function Sidebar() {
     <Paper p='xl' withBorder>
       <Stack gap='xl'>
         <Info applicant={state.applicant} />
+        <Divider />
+        <Contact />
       </Stack>
     </Paper>
   )
