@@ -214,7 +214,7 @@ function useSidebarState(): {applicant: Applicant} {
 export function Sidebar() {
   const state = useSidebarState()
   return (
-    <Paper p='xl' withBorder>
+    <Paper p='xl' pos='sticky' top={0} withBorder>
       <Stack gap='xl'>
         <Info applicant={state.applicant} />
         <Divider />
