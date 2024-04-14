@@ -11,6 +11,7 @@ import {
   Checkbox,
   Container,
   Divider,
+  Group,
   Input,
   InputWrapper,
   Pagination,
@@ -35,6 +36,7 @@ import type {CSSProperties} from 'react'
 import {inter} from '@/lib/styles/font/inter'
 
 import AccordionStyles from './Accordion.module.scss'
+import {actionIconSizeResolver} from './actionIcon'
 import BadgeStyles from './Badge.module.scss'
 import {buttonSizeResolver} from './button'
 import ButtonStyles from './Button.module.scss'
@@ -59,6 +61,7 @@ export const components: MantineThemeComponents = {
       return {root: {}}
     },
   }),
+
   Button: Button.extend({
     vars: (theme, props) => {
       return buttonSizeResolver(props.size)
@@ -131,6 +134,9 @@ export const components: MantineThemeComponents = {
   ActionIcon: ActionIcon.extend({
     defaultProps: {
       radius: 0,
+    },
+    vars: (theme, props) => {
+      return actionIconSizeResolver(props.size)
     },
   }),
   Card: Card.extend({
@@ -237,15 +243,19 @@ export const components: MantineThemeComponents = {
   Rating: Rating.extend({
     defaultProps: {
       emptySymbol: (
-        <Box className='icon-size-md' component={Star} weight='bold' />
+        <Group>
+          <Box className='icon-size-md' component={Star} weight='bold' />
+        </Group>
       ),
       fullSymbol: (
-        <Box
-          c='yellow.4'
-          className='icon-size-md'
-          component={Star}
-          weight='fill'
-        />
+        <Group>
+          <Box
+            c='yellow.4'
+            className='icon-size-md'
+            component={Star}
+            weight='fill'
+          />
+        </Group>
       ),
     },
   }),
