@@ -1,7 +1,6 @@
+import {ApplicantDetailsLayout} from '@job-huntly/components/company/dashboard/ApplicantDetails/ApplicantDetailsLayout'
 import type {ReactNode} from 'react'
 import React from 'react'
-
-import {ApplicantDetailsLayout} from '@/components/job-huntly/components/company/dashboard/ApplicantDetails/components'
 
 interface LayoutProps {
   children: ReactNode
