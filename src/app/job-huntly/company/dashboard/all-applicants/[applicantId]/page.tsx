@@ -1,27 +1,19 @@
-import {ApplicantDetails as ApplicantDetailsView} from '@job-huntly/components/company'
-import {find} from 'lodash-es'
-import type {Metadata} from 'next'
-import {notFound} from 'next/navigation'
-import React from 'react'
+'use client'
 
-import {applicants} from '@/components/job-huntly/mock/applicants'
-import {constructMetadata} from '@/utils/constructMetadata'
+import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
+import {redirect, useParams} from 'next/navigation'
 
-interface Props {
-  params: {applicantId: string}
-}
+import {urls} from '@/constants'
 
-export function generateMetadata({params}: Props): Metadata {
-  const id = params.applicantId
-
-  const applicant = find(applicants, {id})
-  if (!applicant) return notFound()
-
-  return constructMetadata({
-    title: `${applicant.fullName} | Applicant Details`,
-  })
+interface QueryParams extends Params {
+  applicantId: string
 }
 
 export default function ApplicantDetails() {
-  return <ApplicantDetailsView />
+  const params = useParams<QueryParams>()
+  return redirect(
+    urls.JobHuntly.company.dashboard.applicantDetailsProfile(
+      params.applicantId,
+    ),
+  )
 }
