@@ -219,6 +219,10 @@ export const urls = {
         chat: '/job-huntly/company/dashboard/chat',
         companyProfile: '/job-huntly/company/dashboard/company-profile',
         allApplicants: '/job-huntly/company/dashboard/all-applicants',
+        applicantDetails: (applicantId: string) =>
+          urlCat('/job-huntly/company/dashboard/all-applicants/:applicantId', {
+            applicantId,
+          }),
       },
     },
     landing: '/job-huntly/landing',
