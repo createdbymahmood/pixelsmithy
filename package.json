@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "8.4.1",
+    "@formkit/auto-animate": "^0.8.2",
     "@mantine/carousel": "7.8.0",
     "@mantine/core": "7.8.0",
     "@mantine/dates": "7.8.0",
