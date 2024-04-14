@@ -9,15 +9,17 @@ interface Props {
   params: {applicantId: string}
 }
 
-export function generateCompanyDashboardApplicantProfileMetadata({
-  params,
-}: Props): Metadata {
-  const id = params.applicantId
+export function generateCompanyDashboardApplicantProfileMetadata(
+  section: string,
+) {
+  return ({params}: Props): Metadata => {
+    const id = params.applicantId
 
-  const applicant = find(applicants, {id})
-  if (!applicant) return notFound()
+    const applicant = find(applicants, {id})
+    if (!applicant) return notFound()
 
-  return constructMetadata({
-    title: `${applicant.fullName} | Applicant Details`,
-  })
+    return constructMetadata({
+      title: `${section} | ${applicant.fullName}`,
+    })
+  }
 }
