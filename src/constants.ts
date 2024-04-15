@@ -252,20 +252,25 @@ export const urls = {
             ),
         },
 
-        jobListing: '/job-huntly/company/dashboard/job-listing',
-        jobApplicants: (jobId: string) =>
-          urlCat(
-            '/job-huntly/company/dashboard/job-listing/:jobId/applicants',
-            {jobId},
-          ),
-        jobDetails: (jobId: string) =>
-          urlCat('/job-huntly/company/dashboard/job-listing/:jobId/details', {
-            jobId,
-          }),
-        jobAnalytics: (jobId: string) =>
-          urlCat('/job-huntly/company/dashboard/job-listing/:jobId/analytics', {
-            jobId,
-          }),
+        jobs: {
+          listing: '/job-huntly/company/dashboard/job-listing',
+          applicants: (jobId: string) =>
+            urlCat(
+              '/job-huntly/company/dashboard/job-listing/:jobId/applicants',
+              {jobId},
+            ),
+          details: (jobId: string) =>
+            urlCat('/job-huntly/company/dashboard/job-listing/:jobId/details', {
+              jobId,
+            }),
+          analytics: (jobId: string) =>
+            urlCat(
+              '/job-huntly/company/dashboard/job-listing/:jobId/analytics',
+              {
+                jobId,
+              },
+            ),
+        },
       },
     },
     landing: '/job-huntly/landing',

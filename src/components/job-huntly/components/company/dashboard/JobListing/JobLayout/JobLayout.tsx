@@ -43,7 +43,7 @@ function BackButton() {
       component={Link}
       gap={rem(4)}
       h={rem(40)}
-      href={urls.JobHuntly.company.dashboard.jobListing}
+      href={urls.JobHuntly.company.dashboard.jobs.listing}
       p='xxs'
       w={rem(40)}
     >
@@ -117,17 +117,17 @@ function LayoutTabs({children}: LayoutProps) {
     {
       key: 'applicants',
       label: 'Applicants',
-      href: urls.JobHuntly.company.dashboard.jobApplicants(params.jobId),
+      href: urls.JobHuntly.company.dashboard.jobs.applicants(params.jobId),
     },
     {
       key: 'details',
       label: 'Details',
-      href: urls.JobHuntly.company.dashboard.jobDetails(params.jobId),
+      href: urls.JobHuntly.company.dashboard.jobs.details(params.jobId),
     },
     {
       key: 'analytics',
       label: 'Analytics',
-      href: urls.JobHuntly.company.dashboard.jobAnalytics(params.jobId),
+      href: urls.JobHuntly.company.dashboard.jobs.analytics(params.jobId),
     },
   ]
 
