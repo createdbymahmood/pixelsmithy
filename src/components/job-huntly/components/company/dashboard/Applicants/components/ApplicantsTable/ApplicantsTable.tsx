@@ -4,7 +4,12 @@ import './DefaultStyles.scss'
 
 import {useAutoAnimate} from '@formkit/auto-animate/react'
 import type {MantineThemeComponents} from '@mantine/core'
-import {Box, createTheme, MantineProvider, Table} from '@mantine/core'
+import {
+  Box,
+  createTheme,
+  MantineProvider,
+  Table as MantineTable,
+} from '@mantine/core'
 import {CaretUp, CaretUpDown} from '@phosphor-icons/react/dist/ssr'
 import {sortBy} from 'lodash-es'
 import type {DataTableSortStatus} from 'mantine-datatable'
@@ -13,12 +18,12 @@ import {useState} from 'react'
 
 import {applicants} from '@/components/job-huntly/mock/applicants'
 
+import TableStyles from './ApplicantsTable.module.scss'
 import {columns} from './columns'
-import TableStyles from './DataTable.module.scss'
 
 export type Applicant = (typeof applicants)[0]
 
-export function BasicUsageExample() {
+function Table() {
   const [selectedRecords, setSelectedRecords] = useState<Applicant[]>([])
   const [sortStatus, setSortStatus] = useState<DataTableSortStatus<Applicant>>({
     columnAccessor: 'name',
@@ -55,7 +60,7 @@ export function BasicUsageExample() {
 }
 
 const components: MantineThemeComponents = {
-  Table: Table.extend({
+  Table: MantineTable.extend({
     defaultProps: {
       striped: 'even',
       withRowBorders: false,
@@ -69,10 +74,10 @@ const components: MantineThemeComponents = {
   }),
 }
 
-export function DataTable() {
+export function ApplicantsTable() {
   return (
     <MantineProvider theme={createTheme({components})}>
-      <BasicUsageExample />
+      <Table />
     </MantineProvider>
   )
 }

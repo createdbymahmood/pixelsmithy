@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 import {urls} from '@/constants'
 
-import type {Applicant} from './DataTable'
+import type {Applicant} from './ApplicantsTable'
 
 const renderFullName = (record: Applicant) => {
   return (
