@@ -2,7 +2,7 @@
 import {Stack} from '@mantine/core'
 import React, {useState} from 'react'
 
-import {DataTable, Header} from './components'
+import {ApplicantsTable, Header} from './components'
 
 export enum ApplicantsView {
   Table = 'Table View',
@@ -23,7 +23,7 @@ export function Applicants() {
   return (
     <Stack gap={0}>
       <Header state={state} />
-      <DataTable />
+      <ApplicantsTable />
     </Stack>
   )
 }
