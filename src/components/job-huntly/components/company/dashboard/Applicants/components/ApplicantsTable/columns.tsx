@@ -33,7 +33,7 @@ const renderHiringStage = (record: Applicant) => {
 }
 
 const renderAction = (record: Applicant) => {
-  const href = urls.JobHuntly.company.dashboard.applicantDetails(record.id)
+  const href = urls.JobHuntly.company.dashboard.applicants.details(record.id)
   return (
     <Group wrap='nowrap'>
       <Button component={Link} href={href} size='md' variant='outline'>

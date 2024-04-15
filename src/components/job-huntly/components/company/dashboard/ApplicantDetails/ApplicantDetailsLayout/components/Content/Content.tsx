@@ -23,28 +23,28 @@ export function Content({children}: ContentProps) {
     {
       key: 'profile',
       label: 'Applicant Profile',
-      href: urls.JobHuntly.company.dashboard.applicantDetailsProfile(
+      href: urls.JobHuntly.company.dashboard.applicants.profile(
         params.applicantId,
       ),
     },
     {
       key: 'resume',
       label: 'Resume',
-      href: urls.JobHuntly.company.dashboard.applicantDetailsResume(
+      href: urls.JobHuntly.company.dashboard.applicants.resume(
         params.applicantId,
       ),
     },
     {
       key: 'hiring-progress',
       label: 'Hiring Progress',
-      href: urls.JobHuntly.company.dashboard.applicantDetailsHiringProgress(
+      href: urls.JobHuntly.company.dashboard.applicants.hiringProgress(
         params.applicantId,
       ),
     },
     {
       key: 'interview-schedule',
       label: 'Interview Schedule',
-      href: urls.JobHuntly.company.dashboard.applicantDetailsInterviewSchedule(
+      href: urls.JobHuntly.company.dashboard.applicants.interviewSchedule(
         params.applicantId,
       ),
     },
