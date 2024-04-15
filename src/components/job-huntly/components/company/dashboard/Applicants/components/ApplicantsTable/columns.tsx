@@ -6,9 +6,8 @@ import {get} from 'lodash-es'
 import type {DataTableColumn} from 'mantine-datatable'
 import Link from 'next/link'
 
+import type {Applicant} from '@/components/job-huntly/mock/applicants'
 import {urls} from '@/constants'
-
-import type {Applicant} from './ApplicantsTable'
 
 const renderFullName = (record: Applicant) => {
   return (

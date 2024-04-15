@@ -1,3 +1,8 @@
 .column {
   border-top: 5px solid currentColor;
 }
+
+.applicantCardContent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
