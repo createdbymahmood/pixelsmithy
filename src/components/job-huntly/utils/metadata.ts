@@ -3,16 +3,17 @@ import type {Metadata} from 'next'
 import {notFound} from 'next/navigation'
 
 import {applicants} from '@/components/job-huntly/mock/applicants'
+import {jobs} from '@/components/job-huntly/mock/jobs'
 import {constructMetadata} from '@/utils/constructMetadata'
 
-interface Props {
+interface CompanyDashboardApplicantProfileProps {
   params: {applicantId: string}
 }
 
 export function generateCompanyDashboardApplicantProfileMetadata(
   section: string,
 ) {
-  return ({params}: Props): Metadata => {
+  return ({params}: CompanyDashboardApplicantProfileProps): Metadata => {
     const id = params.applicantId
 
     const applicant = find(applicants, {id})
@@ -20,6 +21,22 @@ export function generateCompanyDashboardApplicantProfileMetadata(
 
     return constructMetadata({
       title: `${section} | ${applicant.fullName}`,
+    })
+  }
+}
+interface CompanyDashboardJobApplicantsProps {
+  params: {jobId: string}
+}
+
+export function generateCompanyDashboardJobApplicantsMetadata(section: string) {
+  return ({params}: CompanyDashboardJobApplicantsProps): Metadata => {
+    const id = params.jobId
+
+    const job = find(jobs, {id})
+    if (!job) return notFound()
+
+    return constructMetadata({
+      title: `${section} | ${job.role}`,
     })
   }
 }

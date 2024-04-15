@@ -2,12 +2,19 @@ import {Badge, Box, Group, rem, Text} from '@mantine/core'
 import {DotsThree} from '@phosphor-icons/react/dist/ssr'
 import {get} from 'lodash-es'
 import type {DataTableColumn} from 'mantine-datatable'
+import Link from 'next/link'
 
 import type {Job, JobStatus, JobType} from '@/components/job-huntly/mock/jobs'
+import {urls} from '@/constants'
 
-function renderRole(record: Job, index: number) {
+function renderRole(record: Job) {
   return (
-    <Text fw='500' lineClamp={1}>
+    <Text
+      component={Link}
+      fw='500'
+      href={urls.JobHuntly.company.dashboard.jobApplicants(record.id)}
+      lineClamp={1}
+    >
       {record.role}
     </Text>
   )
@@ -44,17 +51,17 @@ const jobTypeBadgeMap: Record<JobType, JSX.Element> = {
   ),
 }
 
-function renderStatus(record: Job, index: number) {
+function renderStatus(record: Job) {
   const badge = get(statusBadgeMap, record.status)
   return badge
 }
 
-function renderJobType(record: Job, index: number) {
+function renderJobType(record: Job) {
   const badge = get(jobTypeBadgeMap, record.type)
   return badge
 }
 
-function renderNeeds(record: Job, index: number) {
+function renderNeeds(record: Job) {
   return (
     <Group gap='xxs'>
       <Text>{record.needsInfo.needs}</Text>
