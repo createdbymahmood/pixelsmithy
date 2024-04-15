@@ -66,7 +66,7 @@ function renderNeeds(record: Job) {
     <Group gap='xxs'>
       <Text>{record.needsInfo.needs}</Text>
       <Text c='neutrals.3'>/</Text>
-      <Text c='neutrals.3'>{record.needsInfo.capacity}</Text>
+      <Text c='neutrals.3'>{record.needsInfo.hired}</Text>
     </Group>
   )
 }

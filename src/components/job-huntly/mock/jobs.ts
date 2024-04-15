@@ -15,7 +15,7 @@ export interface JobApplicationsInfo {
 
 export interface JobNeedsInfo {
   needs: number
-  capacity: number
+  hired: number
 }
 
 export interface Job {
@@ -65,8 +65,8 @@ export const jobs: Job[] = [
     datePosted: '20 May 2020',
     dueDate: '24 May 2020',
     needsInfo: {
-      capacity: 10,
-      needs: 5,
+      hired: 5,
+      needs: 10,
     },
   },
   {
@@ -94,8 +94,8 @@ export const jobs: Job[] = [
     datePosted: '20 May 2020',
     dueDate: '24 May 2020',
     needsInfo: {
-      capacity: 10,
-      needs: 5,
+      hired: 5,
+      needs: 10,
     },
   },
   {
@@ -123,8 +123,8 @@ export const jobs: Job[] = [
     datePosted: '20 May 2020',
     dueDate: '24 May 2020',
     needsInfo: {
-      capacity: 10,
-      needs: 5,
+      hired: 5,
+      needs: 10,
     },
   },
   {
@@ -152,8 +152,8 @@ export const jobs: Job[] = [
     datePosted: '20 May 2020',
     dueDate: '24 May 2020',
     needsInfo: {
-      capacity: 10,
-      needs: 5,
+      hired: 5,
+      needs: 10,
     },
   },
 ]
