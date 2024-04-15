@@ -21,7 +21,7 @@ import {
 } from '@mantine/core'
 import {ArrowRight, CheckCircle} from '@phosphor-icons/react/dist/ssr'
 import {capitalize, head} from 'lodash-es'
-import React from 'react'
+import React, {Fragment} from 'react'
 
 import {Header} from './components'
 
@@ -289,11 +289,19 @@ function AboutCompany() {
   )
 }
 
-export function JobDescription() {
+interface JobDescriptionProps {
+  withApply?: boolean
+  withReadMore?: boolean
+}
+
+export function JobDescription({
+  withApply = true,
+  withReadMore = true,
+}: JobDescriptionProps) {
   const job = head(jobs)!
   return (
     <Stack gap='xxxl' py='xxxl'>
-      <Header job={job} />
+      <Header job={job} withApply={withApply} />
 
       <Grid gutter='xxxl'>
         <Grid.Col span={{xl: 9, lg: 8}}>
@@ -317,8 +325,13 @@ export function JobDescription() {
       </Grid>
       <Divider />
       <PerksAndBenefits />
-      <Divider />
-      <AboutCompany />
+
+      {withReadMore ? (
+        <Fragment>
+          <Divider />
+          <AboutCompany />
+        </Fragment>
+      ) : null}
     </Stack>
   )
 }
