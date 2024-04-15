@@ -12,7 +12,7 @@ function renderRole(record: Job) {
     <Text
       component={Link}
       fw='500'
-      href={urls.JobHuntly.company.dashboard.jobApplicants(record.id)}
+      href={urls.JobHuntly.company.dashboard.jobs.applicants(record.id)}
       lineClamp={1}
     >
       {record.role}
