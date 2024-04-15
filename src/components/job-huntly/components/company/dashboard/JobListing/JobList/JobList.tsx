@@ -1,12 +1,14 @@
+'use client'
 import {Stack} from '@mantine/core'
 import React from 'react'
 
-import {Header} from './components'
+import {DataTable, Header} from './components'
 
 export function JobList() {
   return (
-    <Stack gap='xxxl'>
+    <Stack className='overflow-hidden' gap='xxxl'>
       <Header />
+      <DataTable />
     </Stack>
   )
 }
