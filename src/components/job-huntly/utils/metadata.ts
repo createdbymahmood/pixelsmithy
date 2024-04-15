@@ -28,7 +28,7 @@ interface CompanyDashboardJobApplicantsProps {
   params: {jobId: string}
 }
 
-export function generateCompanyDashboardJobApplicantsMetadata(section: string) {
+export function generateCompanyDashboardJobMetadata(section: string) {
   return ({params}: CompanyDashboardJobApplicantsProps): Metadata => {
     const id = params.jobId
 

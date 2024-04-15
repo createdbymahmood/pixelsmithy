@@ -124,6 +124,11 @@ function LayoutTabs({children}: LayoutProps) {
       label: 'Details',
       href: urls.JobHuntly.company.dashboard.jobDetails(params.jobId),
     },
+    {
+      key: 'analytics',
+      label: 'Analytics',
+      href: urls.JobHuntly.company.dashboard.jobAnalytics(params.jobId),
+    },
   ]
 
   const segment = useSelectedLayoutSegment()
