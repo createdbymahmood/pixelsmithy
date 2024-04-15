@@ -16,12 +16,11 @@ import type {DataTableSortStatus} from 'mantine-datatable'
 import {DataTable as MantineDataTable} from 'mantine-datatable'
 import {useState} from 'react'
 
+import type {Applicant} from '@/components/job-huntly/mock/applicants'
 import {applicants} from '@/components/job-huntly/mock/applicants'
 
 import TableStyles from './ApplicantsTable.module.scss'
 import {columns} from './columns'
-
-export type Applicant = (typeof applicants)[0]
 
 function Table() {
   const [selectedRecords, setSelectedRecords] = useState<Applicant[]>([])
@@ -29,7 +28,9 @@ function Table() {
     columnAccessor: 'name',
     direction: 'asc',
   })
-  const [records, setRecords] = useState(sortBy(applicants, 'firstName'))
+  const [records, setRecords] = useState<Applicant[]>(
+    sortBy(applicants, 'firstName'),
+  )
   const [bodyRef] = useAutoAnimate<HTMLTableSectionElement>()
 
   return (

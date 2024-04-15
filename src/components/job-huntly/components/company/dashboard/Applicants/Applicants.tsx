@@ -20,6 +20,7 @@ export type UseApplicantsViewStateReturn = ReturnType<
 
 export function Applicants() {
   const state = useApplicantsViewState()
+
   const content = (() => {
     switch (state.view) {
       case ApplicantsView.Table:

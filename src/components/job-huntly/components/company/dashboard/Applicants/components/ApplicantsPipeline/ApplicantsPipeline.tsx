@@ -1,9 +1,24 @@
 import type {MantineColor} from '@mantine/core'
-import {Box, Group, Indicator, Paper, rem, Text} from '@mantine/core'
+import {
+  Anchor,
+  Avatar,
+  Box,
+  Group,
+  Indicator,
+  Paper,
+  Rating,
+  rem,
+  Stack,
+  Text,
+} from '@mantine/core'
 import {DotsThree} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
+import {filter} from 'lodash-es'
 import React from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
+
+import type {Applicant} from '@/components/job-huntly/mock/applicants'
+import {applicants} from '@/components/job-huntly/mock/applicants'
 
 import styles from './ApplicantsPipeline.module.scss'
 
@@ -49,6 +64,65 @@ const columns: Column[] = [
   },
 ]
 
+interface ApplicantsColumnProps {
+  columnKey: string
+}
+
+interface ApplicantCardProps {
+  applicant: Applicant
+}
+
+function ApplicantCard({applicant}: ApplicantCardProps) {
+  return (
+    <Paper p='xl' withBorder>
+      <Stack gap='xl'>
+        <Group>
+          <Avatar size={rem(56)} />
+          <Stack gap={0}>
+            <Text fw='700'>{applicant.fullName}</Text>
+            <Anchor size='sm' underline='never'>
+              View Profile
+            </Anchor>
+          </Stack>
+        </Group>
+
+        <Group className={styles.applicantCardContent}>
+          <Stack gap={0}>
+            <Text c='neutrals.4' lineClamp={1}>
+              Applied on
+            </Text>
+            <Text fw='600' lineClamp={1} size='md'>
+              {applicant.appliedDate}
+            </Text>
+          </Stack>
+
+          <Stack gap={0} ml='xl'>
+            <Text c='neutrals.4' lineClamp={1}>
+              Score
+            </Text>
+
+            <Group gap='xs'>
+              <Rating count={1} value={applicant.score} />
+              <Text fw='600' size='md'>
+                {applicant.score}
+              </Text>
+            </Group>
+          </Stack>
+        </Group>
+      </Stack>
+    </Paper>
+  )
+}
+
+function ApplicantsColumn({columnKey}: ApplicantsColumnProps) {
+  const _applicants = filter(applicants, {hiringStage: columnKey})
+  const content = _applicants.map((applicant) => {
+    return <ApplicantCard key={applicant.id} applicant={applicant} />
+  })
+
+  return <Stack gap='xs'>{content}</Stack>
+}
+
 interface PipelineColumnProps {
   column: Column
 }
@@ -88,13 +162,20 @@ function PipelineColumn({column}: PipelineColumnProps) {
 
 export function ApplicantsPipeline() {
   const content = columns.map((column) => {
-    return <PipelineColumn key={column.label} column={column} />
+    return (
+      <Paper key={column.label} p='xs' withBorder>
+        <Stack gap='xl'>
+          <PipelineColumn column={column} />
+          <ApplicantsColumn columnKey={column.key} />
+        </Stack>
+      </Paper>
+    )
   })
 
   return (
     <Box>
       <PerfectScrollbar>
-        <Group h='100%' wrap='nowrap'>
+        <Group align='flex-start' h='100%' wrap='nowrap'>
           {content}
         </Group>
       </PerfectScrollbar>
