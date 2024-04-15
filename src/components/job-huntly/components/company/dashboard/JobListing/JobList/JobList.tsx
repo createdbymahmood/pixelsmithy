@@ -1,5 +1,12 @@
+import {Stack} from '@mantine/core'
 import React from 'react'
 
+import {Header} from './components'
+
 export function JobList() {
-  return <div>JobList</div>
+  return (
+    <Stack gap='xxxl'>
+      <Header />
+    </Stack>
+  )
 }
