@@ -53,9 +53,10 @@ function Info(props: Pick<Job, 'company' | 'location' | 'type'>) {
 
 interface HeaderProps {
   job: Job
+  withApply: boolean
 }
 
-export function Header({job}: HeaderProps) {
+export function Header({job, withApply}: HeaderProps) {
   return (
     <Paper bg='neutrals.0' p={rem(40)}>
       <Paper bg='white' p='xl' withBorder>
@@ -71,7 +72,7 @@ export function Header({job}: HeaderProps) {
             />
           </Stack>
 
-          <Actions />
+          {withApply ? <Actions /> : null}
         </Group>
       </Paper>
     </Paper>
