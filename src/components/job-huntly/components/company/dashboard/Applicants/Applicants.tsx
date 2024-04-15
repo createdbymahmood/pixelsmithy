@@ -1,12 +1,28 @@
+'use client'
 import {Stack} from '@mantine/core'
-import React from 'react'
+import React, {useState} from 'react'
 
 import {DataTable, Header} from './components'
 
+export enum ApplicantsView {
+  Table = 'Table View',
+  Pipeline = 'Pipeline View',
+}
+
+function useApplicantsViewState() {
+  const [view, setView] = useState<ApplicantsView>(ApplicantsView.Table)
+  return {view, setView}
+}
+
+export type UseApplicantsViewStateReturn = ReturnType<
+  typeof useApplicantsViewState
+>
+
 export function Applicants() {
+  const state = useApplicantsViewState()
   return (
     <Stack gap={0}>
-      <Header />
+      <Header state={state} />
       <DataTable />
     </Stack>
   )
