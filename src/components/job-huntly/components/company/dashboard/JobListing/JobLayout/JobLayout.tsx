@@ -43,7 +43,7 @@ function BackButton() {
       component={Link}
       gap={rem(4)}
       h={rem(40)}
-      href={urls.Modernize.dashboard.coupons.index}
+      href={urls.JobHuntly.company.dashboard.jobListing}
       p='xxs'
       w={rem(40)}
     >
@@ -82,7 +82,7 @@ interface HeaderProps {
 
 function Header({job}: HeaderProps) {
   return (
-    <Group py='xl'>
+    <Group pb='xl'>
       <BackButton />
       <HeaderInfo job={job} />
       <Box ml='auto'>
@@ -139,7 +139,7 @@ function LayoutTabs({children}: LayoutProps) {
   )
 }
 
-export function JobLayout({children}: JobLayoutProps) {
+export default function JobLayout({children}: JobLayoutProps) {
   const state = useJobLayoutState()
   return (
     <Stack gap={0}>
