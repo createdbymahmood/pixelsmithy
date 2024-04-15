@@ -12,6 +12,9 @@ import {
 import {FunnelSimple, MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
+import type {UseApplicantsViewStateReturn} from '../../Applicants'
+import {ApplicantsView} from '../../Applicants'
+
 function Search() {
   const leftSection = (
     <Box className='icon-size-lg' component={MagnifyingGlass} weight='bold' />
@@ -39,24 +42,33 @@ function Filter() {
   )
 }
 
-function ViewSwitch() {
+interface ViewSwitchProps {
+  state: UseApplicantsViewStateReturn
+}
+
+function ViewSwitch({state}: ViewSwitchProps) {
   return (
     <SegmentedControl
-      data={['Pipeline View', 'Table View']}
-      defaultValue='Table View'
+      data={[ApplicantsView.Pipeline, ApplicantsView.Table]}
+      defaultValue={ApplicantsView.Table}
       size='md'
+      onChange={state.setView as (value: string) => void}
     />
   )
 }
 
-export function Header() {
+interface HeaderProps {
+  state: UseApplicantsViewStateReturn
+}
+
+export function Header({state}: HeaderProps) {
   return (
     <Group pb='xl'>
       <Title order={4}>Total Applicants: 19</Title>
       <Search />
       <Filter />
       <Divider my='xs' orientation='vertical' />
-      <ViewSwitch />
+      <ViewSwitch state={state} />
     </Group>
   )
 }
