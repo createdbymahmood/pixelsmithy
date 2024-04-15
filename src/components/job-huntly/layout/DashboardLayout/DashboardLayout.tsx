@@ -13,7 +13,7 @@ export function DashboardLayout({children, sections}: DashboardLayoutProps) {
   return (
     <Group
       align='stretch'
-      className='overflow-y-hidden'
+      className='overflow-hidden'
       display='flex'
       gap='0'
       h='100vh'
