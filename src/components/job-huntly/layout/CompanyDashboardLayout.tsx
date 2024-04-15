@@ -16,6 +16,7 @@ import React from 'react'
 import type {SidebarSection} from '@/components/roscent'
 import {urls} from '@/constants'
 
+import {CompanyDashboardPageLayout} from './CompanyDashboardPageLayout'
 import {DashboardLayout} from './DashboardLayout'
 
 const sections: SidebarSection[] = [
@@ -96,5 +97,9 @@ interface CompanyDashboardLayoutProps {
 export function CompanyDashboardLayout({
   children,
 }: CompanyDashboardLayoutProps) {
-  return <DashboardLayout sections={sections}>{children}</DashboardLayout>
+  return (
+    <DashboardLayout sections={sections}>
+      <CompanyDashboardPageLayout>{children}</CompanyDashboardPageLayout>
+    </DashboardLayout>
+  )
 }

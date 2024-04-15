@@ -17,7 +17,7 @@ interface CompanyDashboardPageLayoutProps {
   p?: MantineSpacing
 }
 
-export default function CompanyDashboardPageLayout({
+export function CompanyDashboardPageLayout({
   callbackURL,
   children,
   p = 'xxxl',
