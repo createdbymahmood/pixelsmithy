@@ -23,7 +23,7 @@ export function CompanyDashboardPageLayout({
   p = 'xxxl',
 }: CompanyDashboardPageLayoutProps) {
   return (
-    <Box w='100%'>
+    <Box className='overflow-hidden' w='100%'>
       <Header />
 
       <Box
