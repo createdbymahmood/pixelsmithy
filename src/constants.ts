@@ -218,34 +218,40 @@ export const urls = {
         home: '/job-huntly/company/dashboard/home',
         chat: '/job-huntly/company/dashboard/chat',
         companyProfile: '/job-huntly/company/dashboard/company-profile',
-        allApplicants: '/job-huntly/company/dashboard/all-applicants',
 
-        applicantDetails: (applicantId: string) =>
-          urlCat('/job-huntly/company/dashboard/all-applicants/:applicantId', {
-            applicantId,
-          }),
+        applicants: {
+          all: '/job-huntly/company/dashboard/all-applicants',
+          details: (applicantId: string) =>
+            urlCat(
+              '/job-huntly/company/dashboard/all-applicants/:applicantId',
+              {
+                applicantId,
+              },
+            ),
 
-        applicantDetailsProfile: (applicantId: string) =>
-          urlCat(
-            '/job-huntly/company/dashboard/all-applicants/:applicantId/profile',
-            {applicantId},
-          ),
-        applicantDetailsResume: (applicantId: string) =>
-          urlCat(
-            '/job-huntly/company/dashboard/all-applicants/:applicantId/resume',
-            {applicantId},
-          ),
+          profile: (applicantId: string) =>
+            urlCat(
+              '/job-huntly/company/dashboard/all-applicants/:applicantId/profile',
+              {applicantId},
+            ),
+          resume: (applicantId: string) =>
+            urlCat(
+              '/job-huntly/company/dashboard/all-applicants/:applicantId/resume',
+              {applicantId},
+            ),
 
-        applicantDetailsHiringProgress: (applicantId: string) =>
-          urlCat(
-            '/job-huntly/company/dashboard/all-applicants/:applicantId/hiring-progress',
-            {applicantId},
-          ),
-        applicantDetailsInterviewSchedule: (applicantId: string) =>
-          urlCat(
-            '/job-huntly/company/dashboard/all-applicants/:applicantId/interview-schedule',
-            {applicantId},
-          ),
+          hiringProgress: (applicantId: string) =>
+            urlCat(
+              '/job-huntly/company/dashboard/all-applicants/:applicantId/hiring-progress',
+              {applicantId},
+            ),
+          interviewSchedule: (applicantId: string) =>
+            urlCat(
+              '/job-huntly/company/dashboard/all-applicants/:applicantId/interview-schedule',
+              {applicantId},
+            ),
+        },
+
         jobListing: '/job-huntly/company/dashboard/job-listing',
         jobApplicants: (jobId: string) =>
           urlCat(

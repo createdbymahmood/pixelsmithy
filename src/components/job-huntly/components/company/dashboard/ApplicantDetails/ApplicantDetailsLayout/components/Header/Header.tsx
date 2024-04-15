@@ -25,7 +25,7 @@ function BackButton() {
   return (
     <GroupLink
       component={Link}
-      href={urls.JobHuntly.company.dashboard.allApplicants}
+      href={urls.JobHuntly.company.dashboard.applicants.all}
     >
       <Box
         className='cursor-pointer'

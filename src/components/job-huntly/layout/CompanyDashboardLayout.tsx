@@ -50,7 +50,7 @@ const sections: SidebarSection[] = [
         id: 'all-applicants',
         title: 'All Applicants',
         icon: UsersThree,
-        href: urls.JobHuntly.company.dashboard.allApplicants,
+        href: urls.JobHuntly.company.dashboard.applicants.all,
         activeSegment: ['all-applicants'],
       },
       {

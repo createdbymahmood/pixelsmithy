@@ -12,8 +12,6 @@ interface QueryParams extends Params {
 export default function ApplicantDetails() {
   const params = useParams<QueryParams>()
   return redirect(
-    urls.JobHuntly.company.dashboard.applicantDetailsProfile(
-      params.applicantId,
-    ),
+    urls.JobHuntly.company.dashboard.applicants.profile(params.applicantId),
   )
 }
