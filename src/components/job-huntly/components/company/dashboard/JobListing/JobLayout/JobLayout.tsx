@@ -7,6 +7,7 @@ import {
   Indicator,
   rem,
   Stack,
+  Tabs,
   Text,
   Title,
 } from '@mantine/core'
@@ -15,10 +16,10 @@ import {ArrowLeft} from '@phosphor-icons/react/dist/ssr'
 import {capitalize, find, head} from 'lodash-es'
 import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
 import Link from 'next/link'
-import {useParams} from 'next/navigation'
+import {useParams, useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
-import {GroupLink} from '@/components/common'
+import {GroupLink, TabLink} from '@/components/common'
 import type {Job} from '@/components/job-huntly/mock/jobs'
 import {jobs} from '@/components/job-huntly/mock/jobs'
 import {urls} from '@/constants'
@@ -81,7 +82,7 @@ interface HeaderProps {
 
 function Header({job}: HeaderProps) {
   return (
-    <Group>
+    <Group py='xl'>
       <BackButton />
       <HeaderInfo job={job} />
       <Box ml='auto'>
@@ -105,12 +106,45 @@ function useJobLayoutState() {
   const job = find(jobs, {id})!
   return {job}
 }
+interface LayoutProps {
+  children: ReactNode
+}
+
+function LayoutTabs({children}: LayoutProps) {
+  const params = useParams<QueryParams>()
+
+  const applicantProfileSections = [
+    {
+      key: 'applicants',
+      label: 'Applicants',
+      href: urls.JobHuntly.company.dashboard.jobApplicants(params.jobId),
+    },
+  ]
+
+  const segment = useSelectedLayoutSegment()
+
+  const content = applicantProfileSections.map((tab) => {
+    return (
+      <TabLink key={tab.key} component={Link} href={tab.href} value={tab.key}>
+        {tab.label}
+      </TabLink>
+    )
+  })
+
+  return (
+    <Tabs key={segment} defaultValue={segment}>
+      <Tabs.List>{content}</Tabs.List>
+      <Box>{children}</Box>
+    </Tabs>
+  )
+}
 
 export function JobLayout({children}: JobLayoutProps) {
   const state = useJobLayoutState()
   return (
-    <Stack>
+    <Stack gap={0}>
       <Header job={state.job} />
+      <LayoutTabs>{children}</LayoutTabs>
     </Stack>
   )
 }
