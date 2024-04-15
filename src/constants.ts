@@ -246,6 +246,7 @@ export const urls = {
             '/job-huntly/company/dashboard/all-applicants/:applicantId/interview-schedule',
             {applicantId},
           ),
+        jobListing: '/job-huntly/company/dashboard/job-listing',
       },
     },
     landing: '/job-huntly/landing',
