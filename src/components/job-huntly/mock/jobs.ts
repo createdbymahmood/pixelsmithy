@@ -6,10 +6,15 @@ import Nomad from './assets/logo/nomad.svg'
 import Revolut from './assets/logo/revolut.svg'
 import Terraform from './assets/logo/terraform.svg'
 
-export type JobType = 'full-time' | 'part-time'
+export type JobType = 'freelance' | 'full-time' | 'part-time'
 
 export interface JobApplicationsInfo {
   applicantsCount: number
+  capacity: number
+}
+
+export interface JobNeedsInfo {
+  needs: number
   capacity: number
 }
 
@@ -22,8 +27,13 @@ export interface Job {
   categories: Category[]
   applicationsInfo: JobApplicationsInfo
   logo: FC<SVGProps<SVGElement>>
+  status: JobStatus
+  datePosted: string
+  dueDate: string
+  needsInfo: JobNeedsInfo
 }
 
+export type JobStatus = 'closed' | 'live'
 interface Category {
   label: string
   color: MantineColor
@@ -51,6 +61,13 @@ export const jobs: Job[] = [
     ],
     logo: Nomad,
     type: 'full-time',
+    status: 'live',
+    datePosted: '20 May 2020',
+    dueDate: '24 May 2020',
+    needsInfo: {
+      capacity: 10,
+      needs: 5,
+    },
   },
   {
     id: '2',
@@ -73,6 +90,13 @@ export const jobs: Job[] = [
     ],
     logo: Dropbox,
     type: 'full-time',
+    status: 'closed',
+    datePosted: '20 May 2020',
+    dueDate: '24 May 2020',
+    needsInfo: {
+      capacity: 10,
+      needs: 5,
+    },
   },
   {
     id: '3',
@@ -94,7 +118,14 @@ export const jobs: Job[] = [
       },
     ],
     logo: Terraform,
-    type: 'full-time',
+    type: 'freelance',
+    status: 'live',
+    datePosted: '20 May 2020',
+    dueDate: '24 May 2020',
+    needsInfo: {
+      capacity: 10,
+      needs: 5,
+    },
   },
   {
     id: '4',
@@ -116,6 +147,13 @@ export const jobs: Job[] = [
       },
     ],
     logo: Revolut,
-    type: 'full-time',
+    type: 'part-time',
+    status: 'closed',
+    datePosted: '20 May 2020',
+    dueDate: '24 May 2020',
+    needsInfo: {
+      capacity: 10,
+      needs: 5,
+    },
   },
 ]
