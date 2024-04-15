@@ -5,7 +5,7 @@ import {DataTable, Header} from './components'
 
 export function AllApplicants() {
   return (
-    <Stack gap='xl'>
+    <Stack gap={0}>
       <Header />
       <DataTable />
     </Stack>
