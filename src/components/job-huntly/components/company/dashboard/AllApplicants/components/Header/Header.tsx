@@ -51,7 +51,7 @@ function ViewSwitch() {
 
 export function Header() {
   return (
-    <Group>
+    <Group py='xl'>
       <Title order={4}>Total Applicants: 19</Title>
       <Search />
       <Filter />
