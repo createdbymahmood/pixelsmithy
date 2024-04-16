@@ -220,34 +220,31 @@ export const urls = {
         companyProfile: '/job-huntly/company/dashboard/company-profile',
 
         applicants: {
-          all: '/job-huntly/company/dashboard/all-applicants',
+          all: '/job-huntly/company/dashboard/applicants',
           details: (applicantId: string) =>
-            urlCat(
-              '/job-huntly/company/dashboard/all-applicants/:applicantId',
-              {
-                applicantId,
-              },
-            ),
+            urlCat('/job-huntly/company/dashboard/applicants/:applicantId', {
+              applicantId,
+            }),
 
           profile: (applicantId: string) =>
             urlCat(
-              '/job-huntly/company/dashboard/all-applicants/:applicantId/profile',
+              '/job-huntly/company/dashboard/applicants/:applicantId/profile',
               {applicantId},
             ),
           resume: (applicantId: string) =>
             urlCat(
-              '/job-huntly/company/dashboard/all-applicants/:applicantId/resume',
+              '/job-huntly/company/dashboard/applicants/:applicantId/resume',
               {applicantId},
             ),
 
           hiringProgress: (applicantId: string) =>
             urlCat(
-              '/job-huntly/company/dashboard/all-applicants/:applicantId/hiring-progress',
+              '/job-huntly/company/dashboard/applicants/:applicantId/hiring-progress',
               {applicantId},
             ),
           interviewSchedule: (applicantId: string) =>
             urlCat(
-              '/job-huntly/company/dashboard/all-applicants/:applicantId/interview-schedule',
+              '/job-huntly/company/dashboard/applicants/:applicantId/interview-schedule',
               {applicantId},
             ),
         },
