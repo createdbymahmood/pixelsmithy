@@ -21,20 +21,9 @@ import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
 import {Image, Upload, X} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
-import styles from './ProfileSettings.module.scss'
+import {FormHeader} from '@/components/job-huntly/components/common/form/FormHeader'
 
-function Header() {
-  return (
-    <Stack gap='xxs'>
-      <Text fw='600' size='lg'>
-        Basic Information
-      </Text>
-      <Text c='neutrals.5'>
-        This is your personal information that you can update anytime.
-      </Text>
-    </Stack>
-  )
-}
+import styles from './ProfileSettings.module.scss'
 
 function ProfilePhotoSettingsDropzone(props: Partial<DropzoneProps>) {
   return (
@@ -193,6 +182,15 @@ function Footer() {
     <Group justify='flex-end'>
       <Button size='md'>Save Profile</Button>
     </Group>
+  )
+}
+
+function Header() {
+  return (
+    <FormHeader
+      description='This is your personal information that you can update anytime.'
+      title='Basic Information'
+    />
   )
 }
 

@@ -14,18 +14,7 @@ import {
 import {CheckCircle, Info} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
-function Header() {
-  return (
-    <Stack gap='xxs'>
-      <Text fw='600' size='lg'>
-        Basic Information
-      </Text>
-      <Text c='neutrals.5'>
-        This is login information that you can update anytime.
-      </Text>
-    </Stack>
-  )
-}
+import {FormHeader} from '@/components/job-huntly/components/common/form/FormHeader'
 
 function EmailSettings() {
   return (
@@ -110,6 +99,15 @@ function Footer() {
         Close Acccount
       </Button>
     </Group>
+  )
+}
+
+function Header() {
+  return (
+    <FormHeader
+      description='This is login information that you can update anytime.'
+      title='Basic Information'
+    />
   )
 }
 
