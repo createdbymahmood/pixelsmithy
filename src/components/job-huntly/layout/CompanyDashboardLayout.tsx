@@ -58,7 +58,7 @@ const sections: SidebarSection[] = [
         title: 'Job Listing',
         icon: ClipboardText,
         href: urls.JobHuntly.company.dashboard.jobs.listing,
-        activeSegment: ['job-listing'],
+        activeSegment: ['jobs'],
       },
       {
         id: 'my-schedule',
