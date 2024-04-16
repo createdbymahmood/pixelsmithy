@@ -1,12 +1,13 @@
 import type {MantineColor, StepperStepProps} from '@mantine/core'
-import {Box, Stepper, Text} from '@mantine/core'
+import {Box, Paper, Stack, Stepper, Text} from '@mantine/core'
 import {Briefcase, ClipboardText} from '@phosphor-icons/react/dist/ssr'
 import {get} from 'lodash-es'
 import React, {useState} from 'react'
 import type {Falsey} from 'utility-types'
 
-type StepperStepState = Exclude<StepperStepProps['state'], Falsey>
+import {JobInformation} from '../JobInformation'
 
+type StepperStepState = Exclude<StepperStepProps['state'], Falsey>
 const labelColorMap: Record<StepperStepState, MantineColor> = {
   stepInactive: 'neutrals.3',
   stepProgress: 'primary',
@@ -51,8 +52,9 @@ function Step({
       description={description}
       icon={icon}
       label={label}
-      {...props}
-    />
+    >
+      Salam
+    </Stepper.Step>
   )
 }
 
@@ -69,7 +71,7 @@ function JobInformationStep(props: StepperStepProps) {
       icon={icon}
       label='Step 1/3'
     >
-      Step 1 content: Create an account
+      <JobInformation />
     </Step>
   )
 }
@@ -95,6 +97,7 @@ function PerksAndBenefitsStep(props: StepperStepProps) {
   const icon = (
     <Box className='icon-size-lg' component={ClipboardText} weight='bold' />
   )
+
   return (
     <Step
       {...props}
@@ -112,10 +115,17 @@ export function Steps() {
   const [active, setActive] = useState(0)
 
   return (
-    <Stepper active={active} size='xl' onStepClick={setActive}>
-      <JobInformationStep />
-      <JobDescriptionStep />
-      <PerksAndBenefitsStep />
-    </Stepper>
+    <Paper px='xl' py='sm' withBorder>
+      <Stack>
+        <Stepper active={active} size='xl' onStepClick={setActive}>
+          <JobInformationStep>
+            <JobInformation />
+          </JobInformationStep>
+
+          <JobDescriptionStep />
+          <PerksAndBenefitsStep />
+        </Stepper>
+      </Stack>
+    </Paper>
   )
 }
