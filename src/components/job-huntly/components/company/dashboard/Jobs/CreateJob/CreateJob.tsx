@@ -36,7 +36,7 @@ function Header() {
 
 export function CreateJob() {
   return (
-    <Stack>
+    <Stack gap={0}>
       <Header />
       <Steps />
     </Stack>
