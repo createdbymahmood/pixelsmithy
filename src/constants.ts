@@ -266,6 +266,10 @@ export const urls = {
               jobId,
             }),
         },
+        settings: {
+          index: '/job-huntly/company/dashboard/settings',
+          overview: '/job-huntly/company/dashboard/settings/overview',
+        },
       },
     },
     landing: '/job-huntly/landing',
