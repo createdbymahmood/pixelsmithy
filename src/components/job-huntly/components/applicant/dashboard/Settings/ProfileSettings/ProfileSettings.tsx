@@ -23,13 +23,10 @@ import React from 'react'
 import {FormHeader} from '@/components/job-huntly/components/common/form/FormHeader'
 import {FormSection} from '@/components/job-huntly/components/common/form/FormSection'
 
-import styles from './ProfileSettings.module.scss'
-
 function ProfilePhotoSettingsDropzone(props: Partial<DropzoneProps>) {
   return (
     <Dropzone
       accept={IMAGE_MIME_TYPE}
-      className={styles.profileImageDropzone}
       maxSize={5 * 1024 ** 2}
       w='100%'
       onDrop={(files) => console.log('accepted files', files)}
