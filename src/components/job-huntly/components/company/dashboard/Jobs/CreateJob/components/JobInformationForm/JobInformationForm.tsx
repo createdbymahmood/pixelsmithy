@@ -6,6 +6,8 @@ import {
   FormSection,
 } from '@/components/job-huntly/components/common/form'
 
+import {SalaryRangePicker} from './SalaryRangePicker'
+
 function JobTitle() {
   return (
     <FormSection
@@ -38,6 +40,17 @@ function TypeOfEmployment() {
   )
 }
 
+function Salary() {
+  return (
+    <FormSection
+      description='Please specify the estimated salary range for the role. *You can leave this blank'
+      title='Salary'
+    >
+      <SalaryRangePicker />
+    </FormSection>
+  )
+}
+
 export function JobInformationForm() {
   return (
     <Stack gap='xl'>
@@ -49,6 +62,8 @@ export function JobInformationForm() {
       <JobTitle />
       <Divider />
       <TypeOfEmployment />
+      <Divider />
+      <Salary />
     </Stack>
   )
 }
