@@ -151,14 +151,21 @@ function JobListingViewStats() {
   )
 }
 
-/* function TrafficChannel() {
-  return <Box>TrafficChannel</Box>
+function TrafficChannel() {
+  return (
+    <Paper p='xl' withBorder>
+      <Stack gap='xl'>
+        <Title order={5}>Traffic channel</Title>
+        <Skeleton h={rem(250)} />
+      </Stack>
+    </Paper>
+  )
 }
 
 function VisitorsByCountry() {
   return <Box>VisitorsByCountry</Box>
 }
- */
+
 const gutterSize: MantineSpacing = 'xl'
 
 export function JobAnalytics() {
@@ -174,7 +181,9 @@ export function JobAnalytics() {
         </Stack>
       </Grid.Col>
       <Grid.Col span={4}>
-        <Stack gap={gutterSize} />
+        <Stack gap={gutterSize}>
+          <TrafficChannel />
+        </Stack>
       </Grid.Col>
     </Grid>
   )
