@@ -93,14 +93,7 @@ function RequiredSkills() {
         <Group>
           {skills.map((skill) => {
             return (
-              <Pill
-                key={skill}
-                bg='neutrals.0'
-                c='primary'
-                radius={0}
-                size='lg'
-                withRemoveButton
-              >
+              <Pill key={skill} withRemoveButton>
                 {skill}
               </Pill>
             )
