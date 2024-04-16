@@ -11,7 +11,7 @@ export function FormHeader(props: FormHeaderProps) {
       <Text fw='600' size='lg'>
         {props.title}
       </Text>
-      <Text c='neutrals.5'>{props.description}</Text>
+      <Text c='neutrals.4'>{props.description}</Text>
     </Stack>
   )
 }
