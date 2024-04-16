@@ -1,6 +1,5 @@
 'use client'
 
-import {FormSection} from '@job-huntly/components/applicant/dashboard/Settings/common'
 import type {MantineSize} from '@mantine/core'
 import {
   Box,
@@ -22,6 +21,7 @@ import {Image, Upload, X} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 import {FormHeader} from '@/components/job-huntly/components/common/form/FormHeader'
+import {FormSection} from '@/components/job-huntly/components/common/form/FormSection'
 
 import styles from './ProfileSettings.module.scss'
 

@@ -1,6 +1,5 @@
 'use client'
 
-import {FormSection} from '@job-huntly/components/applicant/dashboard/Settings/common'
 import {
   Box,
   Button,
@@ -15,6 +14,7 @@ import {CheckCircle, Info} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 import {FormHeader} from '@/components/job-huntly/components/common/form/FormHeader'
+import {FormSection} from '@/components/job-huntly/components/common/form/FormSection'
 
 function EmailSettings() {
   return (
