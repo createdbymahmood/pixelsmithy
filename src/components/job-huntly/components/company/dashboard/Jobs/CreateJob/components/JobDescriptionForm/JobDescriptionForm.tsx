@@ -1,27 +1,11 @@
-import {Divider, Stack, Textarea} from '@mantine/core'
-import React, {useState} from 'react'
+import {Divider, Stack} from '@mantine/core'
+import React from 'react'
 
 import {
+  DescriptionInput,
   FormHeader,
   FormSection,
 } from '@/components/job-huntly/components/common/form'
-
-function JobDescriptionInput() {
-  const MAX_LENGTH = 500
-  const [value, setValue] = useState('')
-
-  return (
-    <Textarea
-      description={`Maximum ${MAX_LENGTH} characters`}
-      // description='Salam'
-      maxLength={MAX_LENGTH}
-      rows={7}
-      size='md'
-      value={value}
-      onChange={(event) => setValue(event.currentTarget.value)}
-    />
-  )
-}
 
 function JobDescription() {
   return (
@@ -29,7 +13,7 @@ function JobDescription() {
       description='Job titles must be describe one position'
       title='Job Descriptions'
     >
-      <JobDescriptionInput />
+      <DescriptionInput />
     </FormSection>
   )
 }
@@ -40,7 +24,7 @@ function Responsibilities() {
       description='Outline the core responsibilities of the position'
       title='Responsibilities'
     >
-      <JobDescriptionInput />
+      <DescriptionInput />
     </FormSection>
   )
 }
@@ -51,7 +35,7 @@ function WhoYouAre() {
       description='Add your preferred candidates qualifications'
       title='Who You Are'
     >
-      <JobDescriptionInput />
+      <DescriptionInput />
     </FormSection>
   )
 }
@@ -62,7 +46,7 @@ function NiceToHaves() {
       description='Add your preferred candidates qualifications'
       title='Nice-To-Haves'
     >
-      <JobDescriptionInput />
+      <DescriptionInput />
     </FormSection>
   )
 }
