@@ -29,6 +29,7 @@ import {
   Text,
   TextInput,
 } from '@mantine/core'
+import {Dropzone} from '@mantine/dropzone'
 import {CaretDown, Star} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import {get} from 'lodash-es'
@@ -43,6 +44,7 @@ import {buttonSizeResolver} from './button'
 import ButtonStyles from './Button.module.scss'
 import CheckboxStyles from './Checkbox.module.scss'
 import {CONTAINER_SIZES} from './container'
+import DropzoneStyles from './Dropzone.module.scss'
 import InputStyles from './InputStyles.module.scss'
 import InputWrapperStyles from './InputWrapper.module.scss'
 import PaginationStyles from './Pagination.module.scss'
@@ -270,6 +272,11 @@ export const components: MantineThemeComponents = {
           weight='bold'
         />
       ),
+    },
+  }),
+  Dropzone: Dropzone.extend({
+    classNames() {
+      return DropzoneStyles
     },
   }),
 }
