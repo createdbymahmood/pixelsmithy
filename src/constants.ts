@@ -250,6 +250,7 @@ export const urls = {
         },
 
         jobs: {
+          post: '/job-huntly/company/dashboard/jobs/post',
           listing: '/job-huntly/company/dashboard/jobs',
           applicants: (jobId: string) =>
             urlCat('/job-huntly/company/dashboard/jobs/:jobId/applicants', {
