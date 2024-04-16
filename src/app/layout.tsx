@@ -1,3 +1,5 @@
+import '@/utils/date-plugins'
+
 import {ColorSchemeScript} from '@mantine/core'
 import type {Metadata} from 'next'
 
