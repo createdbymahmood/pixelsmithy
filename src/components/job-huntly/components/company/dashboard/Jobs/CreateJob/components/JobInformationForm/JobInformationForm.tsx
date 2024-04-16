@@ -1,4 +1,15 @@
-import {Checkbox, Divider, Stack, TagsInput, TextInput} from '@mantine/core'
+import {
+  Box,
+  Button,
+  Checkbox,
+  Divider,
+  Group,
+  Pill,
+  Stack,
+  TagsInput,
+  TextInput,
+} from '@mantine/core'
+import {Plus} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 import {
@@ -66,6 +77,40 @@ function Categories() {
   )
 }
 
+function RequiredSkills() {
+  const skills = ['Graphic Design', 'Communication', 'Illustrator']
+  const buttonLeftSection = <Box className='icon-size-md' component={Plus} />
+  return (
+    <FormSection
+      description='Add required skills for the job'
+      title='Required Skills'
+    >
+      <Stack align='flex-start'>
+        <Button leftSection={buttonLeftSection} size='sm' variant='outline'>
+          Add Skills
+        </Button>
+
+        <Group>
+          {skills.map((skill) => {
+            return (
+              <Pill
+                key={skill}
+                bg='neutrals.0'
+                c='primary'
+                radius={0}
+                size='lg'
+                withRemoveButton
+              >
+                {skill}
+              </Pill>
+            )
+          })}
+        </Group>
+      </Stack>
+    </FormSection>
+  )
+}
+
 export function JobInformationForm() {
   return (
     <Stack gap='xl'>
@@ -81,6 +126,8 @@ export function JobInformationForm() {
       <Salary />
       <Divider />
       <Categories />
+      <Divider />
+      <RequiredSkills />
     </Stack>
   )
 }
