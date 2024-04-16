@@ -8,6 +8,8 @@ import React from 'react'
 import {urls} from '@/constants'
 import {useCallbackUrl} from '@/hooks/useCallbackUrl'
 
+import {Steps} from './components'
+
 function Header() {
   const [callbackUrl] = useCallbackUrl({
     defaultValue: urls.JobHuntly.company.dashboard.jobs.listing,
@@ -36,6 +38,7 @@ export function CreateJob() {
   return (
     <Stack>
       <Header />
+      <Steps />
     </Stack>
   )
 }
