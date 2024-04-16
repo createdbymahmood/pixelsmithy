@@ -7,6 +7,7 @@ import type {Falsey} from 'utility-types'
 
 import {JobDescriptionForm} from '../JobDescriptionForm'
 import {JobInformationForm} from '../JobInformationForm'
+import {PerksAndBenefitsForm} from '../PerksAndBenefitsForm'
 import styles from './Steps.module.scss'
 
 type StepperStepState = Exclude<StepperStepProps['state'], Falsey>
@@ -116,10 +117,10 @@ function PerksAndBenefitsStep(props: StepperStepProps) {
 const STEPS_COUNT = 3
 
 export function Steps() {
-  const [active, setActive] = useState(1)
+  const [active, setActive] = useState(0)
 
   const nextStep = () =>
-    setActive((current) => Math.min(STEPS_COUNT, current + 1))
+    setActive((current) => Math.min(STEPS_COUNT - 1, current + 1))
 
   return (
     <Stack>
@@ -147,7 +148,9 @@ export function Steps() {
           <JobDescriptionForm />
         </JobDescriptionStep>
 
-        <PerksAndBenefitsStep />
+        <PerksAndBenefitsStep>
+          <PerksAndBenefitsForm />
+        </PerksAndBenefitsStep>
       </Stepper>
 
       <Divider />
