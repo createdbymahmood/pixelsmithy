@@ -250,23 +250,19 @@ export const urls = {
         },
 
         jobs: {
-          listing: '/job-huntly/company/dashboard/job-listing',
+          listing: '/job-huntly/company/dashboard/jobs',
           applicants: (jobId: string) =>
-            urlCat(
-              '/job-huntly/company/dashboard/job-listing/:jobId/applicants',
-              {jobId},
-            ),
+            urlCat('/job-huntly/company/dashboard/jobs/:jobId/applicants', {
+              jobId,
+            }),
           details: (jobId: string) =>
-            urlCat('/job-huntly/company/dashboard/job-listing/:jobId/details', {
+            urlCat('/job-huntly/company/dashboard/jobs/:jobId/details', {
               jobId,
             }),
           analytics: (jobId: string) =>
-            urlCat(
-              '/job-huntly/company/dashboard/job-listing/:jobId/analytics',
-              {
-                jobId,
-              },
-            ),
+            urlCat('/job-huntly/company/dashboard/jobs/:jobId/analytics', {
+              jobId,
+            }),
         },
       },
     },
