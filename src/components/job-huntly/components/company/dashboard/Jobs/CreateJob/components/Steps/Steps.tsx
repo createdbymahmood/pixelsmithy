@@ -5,6 +5,7 @@ import {get} from 'lodash-es'
 import React, {useState} from 'react'
 import type {Falsey} from 'utility-types'
 
+import {JobDescriptionForm} from '../JobDescriptionForm'
 import {JobInformationForm} from '../JobInformationForm'
 import styles from './Steps.module.scss'
 
@@ -115,7 +116,7 @@ function PerksAndBenefitsStep(props: StepperStepProps) {
 const STEPS_COUNT = 3
 
 export function Steps() {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(1)
 
   const nextStep = () =>
     setActive((current) => Math.min(STEPS_COUNT, current + 1))
@@ -128,7 +129,7 @@ export function Steps() {
         size='xl'
         styles={{
           separator: {
-            background: 'secondary.0',
+            background: 'var(--mantine-color-neutrals-2) !important',
             height: '50px',
             width: '1px',
             flexGrow: 0,
@@ -142,7 +143,10 @@ export function Steps() {
           <JobInformationForm />
         </JobInformationStep>
 
-        <JobDescriptionStep />
+        <JobDescriptionStep>
+          <JobDescriptionForm />
+        </JobDescriptionStep>
+
         <PerksAndBenefitsStep />
       </Stepper>
 
