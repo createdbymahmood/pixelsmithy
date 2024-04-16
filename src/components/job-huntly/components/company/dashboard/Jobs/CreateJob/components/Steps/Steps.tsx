@@ -5,7 +5,7 @@ import {get} from 'lodash-es'
 import React, {useState} from 'react'
 import type {Falsey} from 'utility-types'
 
-import {JobInformation} from '../JobInformation'
+import {JobInformationForm} from '../JobInformationForm'
 import styles from './Steps.module.scss'
 
 type StepperStepState = Exclude<StepperStepProps['state'], Falsey>
@@ -72,7 +72,7 @@ function JobInformationStep(props: StepperStepProps) {
       icon={icon}
       label='Step 1/3'
     >
-      <JobInformation />
+      <JobInformationForm />
     </Step>
   )
 }
@@ -134,7 +134,7 @@ export function Steps() {
         onStepClick={setActive}
       >
         <JobInformationStep>
-          <JobInformation />
+          <JobInformationForm />
         </JobInformationStep>
 
         <JobDescriptionStep />
