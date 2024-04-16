@@ -1,5 +1,5 @@
 import type {MantineColor, StepperStepProps} from '@mantine/core'
-import {Box, Stack, Stepper, Text} from '@mantine/core'
+import {Box, Button, Divider, Stack, Stepper, Text} from '@mantine/core'
 import {Briefcase, ClipboardText} from '@phosphor-icons/react/dist/ssr'
 import {get} from 'lodash-es'
 import React, {useState} from 'react'
@@ -112,8 +112,13 @@ function PerksAndBenefitsStep(props: StepperStepProps) {
   )
 }
 
+const STEPS_COUNT = 3
+
 export function Steps() {
   const [active, setActive] = useState(0)
+
+  const nextStep = () =>
+    setActive((current) => Math.min(STEPS_COUNT, current + 1))
 
   return (
     <Stack>
@@ -140,6 +145,11 @@ export function Steps() {
         <JobDescriptionStep />
         <PerksAndBenefitsStep />
       </Stepper>
+
+      <Divider />
+      <Button ml='auto' size='md' onClick={nextStep}>
+        Next step
+      </Button>
     </Stack>
   )
 }
