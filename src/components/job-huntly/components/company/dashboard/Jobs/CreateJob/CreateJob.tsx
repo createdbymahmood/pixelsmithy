@@ -25,7 +25,7 @@ function Header() {
   )
 
   return (
-    <Group>
+    <Group pb='xxxl'>
       {backArrow}
       <Title order={4}>Post a Job</Title>
     </Group>
