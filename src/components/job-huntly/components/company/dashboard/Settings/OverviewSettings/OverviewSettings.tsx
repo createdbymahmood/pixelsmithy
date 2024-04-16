@@ -1,10 +1,24 @@
 'use client'
 
-import {Avatar, Box, Divider, Group, rem, Stack, Text} from '@mantine/core'
+import {
+  Autocomplete,
+  Avatar,
+  Box,
+  Divider,
+  Group,
+  InputLabel,
+  rem,
+  Select,
+  Stack,
+  TagsInput,
+  Text,
+  TextInput,
+} from '@mantine/core'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
 import {Upload, X} from '@phosphor-icons/react'
 import {Image} from '@phosphor-icons/react/dist/ssr'
-import {head} from 'lodash-es'
+import dayJS from 'dayjs'
+import {head, range} from 'lodash-es'
 import React from 'react'
 
 import {
@@ -85,6 +99,72 @@ function CompanyLogo() {
   )
 }
 
+function CompanyDetails() {
+  return (
+    <FormSection
+      description='Introduce your company core info quickly to users by fill up company details'
+      title='Company Details'
+    >
+      <Stack gap='xl'>
+        <TextInput defaultValue={company.name} label='Company Name' size='md' />
+        <TextInput label='Website' placeholder='eg: Google.com' size='md' />
+        <TagsInput
+          defaultValue={['England', 'Japan', 'Australia']}
+          label='Location'
+          size='md'
+        />
+        <Group wrap='nowrap'>
+          <Select
+            data={['0 - 50', '51 - 200']}
+            defaultValue='0 - 50'
+            label='Employee'
+            size='md'
+            w='100%'
+          />
+          <Select
+            data={['Technology']}
+            defaultValue='Technology'
+            label='Industry'
+            size='md'
+            w='100%'
+          />
+        </Group>
+
+        <Stack gap='xxs' justify='flex-end'>
+          <InputLabel size='md'>Date Founded</InputLabel>
+
+          <Group wrap='nowrap'>
+            <Autocomplete
+              data={range(1, 32).map((idx) => String(idx))}
+              defaultValue='10'
+              size='md'
+              w='100%'
+            />
+            <Autocomplete
+              data={dayJS.months()}
+              defaultValue='January'
+              size='md'
+              w='100%'
+            />
+            <Autocomplete
+              data={range(1970, dayJS().year()).map((idx) => String(idx))}
+              defaultValue='1980'
+              size='md'
+              w='100%'
+            />
+          </Group>
+        </Stack>
+
+        <TagsInput
+          defaultValue={['HTML 5', 'CSS 3', 'JavaScript']}
+          label='Tech Stack'
+          size='md'
+        />
+      </Stack>
+    </FormSection>
+  )
+}
+
 export function OverviewSettings() {
   return (
     <Stack>
@@ -92,6 +172,7 @@ export function OverviewSettings() {
       <Divider />
       <CompanyLogo />
       <Divider />
+      <CompanyDetails />
     </Stack>
   )
 }

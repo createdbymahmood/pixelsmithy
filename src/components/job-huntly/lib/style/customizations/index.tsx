@@ -16,6 +16,7 @@ import {
   InputWrapper,
   Pagination,
   Paper,
+  Pill,
   Progress,
   Radio,
   Rating,
@@ -277,6 +278,14 @@ export const components: MantineThemeComponents = {
   Dropzone: Dropzone.extend({
     classNames() {
       return DropzoneStyles
+    },
+  }),
+  Pill: Pill.extend({
+    defaultProps: {
+      bg: 'neutrals.0',
+      c: 'primary',
+      radius: 0,
+      size: 'lg',
     },
   }),
 }
