@@ -2,6 +2,8 @@
   &:before {
     border-bottom: rem(1px) solid var(--mantine-color-secondary-0);
   }
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .tab {
