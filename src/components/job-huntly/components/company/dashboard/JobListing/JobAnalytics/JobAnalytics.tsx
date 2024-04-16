@@ -9,6 +9,7 @@ import {
   NumberFormatter,
   Paper,
   rem,
+  ScrollArea,
   Skeleton,
   Stack,
   Text,
@@ -162,8 +163,64 @@ function TrafficChannel() {
   )
 }
 
+interface VisitorsByCountryItemProps {
+  country: string
+  value: number
+}
+
+function VisitorsByCountryItem(props: VisitorsByCountryItemProps) {
+  return (
+    <Group>
+      <Skeleton h={24} w={rem(32)} />
+      <Text>{props.country}</Text>
+      <Text ml='auto'>
+        <NumberFormatter value={props.value} />
+      </Text>
+    </Group>
+  )
+}
+
+const visitorsByCountryStats: VisitorsByCountryItemProps[] = [
+  {
+    country: 'USA',
+    value: 2340,
+  },
+  {
+    country: 'France',
+    value: 2340,
+  },
+  {
+    country: 'Italy',
+    value: 2340,
+  },
+  {
+    country: 'Germany',
+    value: 2340,
+  },
+  {
+    country: 'Japan',
+    value: 2340,
+  },
+  {
+    country: 'Netherlands',
+    value: 2340,
+  },
+]
+
 function VisitorsByCountry() {
-  return <Box>VisitorsByCountry</Box>
+  const content = visitorsByCountryStats.map((stat) => {
+    return <VisitorsByCountryItem {...stat} key={stat.country} />
+  })
+  return (
+    <Paper p='xl' withBorder>
+      <Stack gap='xl'>
+        <Title order={5}>Visitors by country</Title>
+        <ScrollArea h={rem(210)} pr='sm'>
+          <Stack gap='sm'>{content}</Stack>
+        </ScrollArea>
+      </Stack>
+    </Paper>
+  )
 }
 
 const gutterSize: MantineSpacing = 'xl'
@@ -183,6 +240,7 @@ export function JobAnalytics() {
       <Grid.Col span={4}>
         <Stack gap={gutterSize}>
           <TrafficChannel />
+          <VisitorsByCountry />
         </Stack>
       </Grid.Col>
     </Grid>
