@@ -4,6 +4,7 @@ import {
   Autocomplete,
   Avatar,
   Box,
+  Button,
   Divider,
   Group,
   InputLabel,
@@ -22,6 +23,7 @@ import {head, range} from 'lodash-es'
 import React from 'react'
 
 import {
+  DescriptionInput,
   FormHeader,
   FormSection,
 } from '@/components/job-huntly/components/common/form'
@@ -91,7 +93,7 @@ function CompanyLogo() {
       description='This image will be shown publicly as company logo.'
       title='Company Logo'
     >
-      <Group align='flex-start' wrap='nowrap'>
+      <Group align='flex-start' gap='xxxl' wrap='nowrap'>
         <Avatar component={company.logo} radius={0} size={rem(124)} />
         <CompanyLogoDropzone />
       </Group>
@@ -165,14 +167,37 @@ function CompanyDetails() {
   )
 }
 
+function AboutCompany() {
+  return (
+    <FormSection
+      description='Brief description for your company. URLs are hyperlinked.'
+      title='About Company'
+    >
+      <DescriptionInput defaultValue='Nomad is part of the Information Technology Industry. We believe travellers want to experience real life and meet local people. Nomad has 30 total employees across all of its locations and generates $1.50 million in sales.' />
+    </FormSection>
+  )
+}
+
+function Action() {
+  return (
+    <Button ml='auto' size='lg'>
+      Save Changes
+    </Button>
+  )
+}
+
 export function OverviewSettings() {
   return (
-    <Stack>
+    <Stack gap='xl'>
       <Header />
       <Divider />
       <CompanyLogo />
       <Divider />
       <CompanyDetails />
+      <Divider />
+      <AboutCompany />
+      <Divider />
+      <Action />
     </Stack>
   )
 }
