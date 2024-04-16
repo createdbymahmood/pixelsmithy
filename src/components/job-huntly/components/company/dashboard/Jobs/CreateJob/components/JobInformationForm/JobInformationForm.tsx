@@ -1,4 +1,4 @@
-import {Checkbox, Divider, Stack, TextInput} from '@mantine/core'
+import {Checkbox, Divider, Stack, TagsInput, TextInput} from '@mantine/core'
 import React from 'react'
 
 import {
@@ -51,6 +51,21 @@ function Salary() {
   )
 }
 
+function Categories() {
+  return (
+    <FormSection
+      description='You can select multiple job categories'
+      title='Categories'
+    >
+      <TagsInput
+        label='Select Job Categories'
+        placeholder='Select Job Categories'
+        size='md'
+      />
+    </FormSection>
+  )
+}
+
 export function JobInformationForm() {
   return (
     <Stack gap='xl'>
@@ -64,6 +79,8 @@ export function JobInformationForm() {
       <TypeOfEmployment />
       <Divider />
       <Salary />
+      <Divider />
+      <Categories />
     </Stack>
   )
 }

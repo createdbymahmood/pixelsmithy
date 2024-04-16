@@ -25,6 +25,7 @@ import {
   Skeleton,
   Table,
   Tabs,
+  TagsInput,
   Text,
   TextInput,
 } from '@mantine/core'
@@ -256,6 +257,18 @@ export const components: MantineThemeComponents = {
             weight='fill'
           />
         </Group>
+      ),
+    },
+  }),
+  TagsInput: TagsInput.extend({
+    defaultProps: {
+      rightSection: (
+        <Box
+          c='neutrals.6'
+          className='icon-size-md'
+          component={CaretDown}
+          weight='bold'
+        />
       ),
     },
   }),
