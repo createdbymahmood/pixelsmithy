@@ -12,7 +12,9 @@ import './layout.css'
 
 import {JobHuntlyTheme} from '@job-huntly/lib/style/JobHuntlyTheme'
 import {MantineProvider} from '@mantine/core'
+import NextAdapterApp from 'next-query-params/app'
 import type {ReactNode} from 'react'
+import {QueryParamProvider} from 'use-query-params'
 
 import {defaultThemeColorScheme} from '@/constants'
 
@@ -26,7 +28,9 @@ export function JobHuntlyProviders({children}: JobHunyltProviders) {
       defaultColorScheme={defaultThemeColorScheme}
       theme={JobHuntlyTheme}
     >
-      {children}
+      <QueryParamProvider adapter={NextAdapterApp}>
+        {children}
+      </QueryParamProvider>
     </MantineProvider>
   )
 }
