@@ -24,7 +24,7 @@ export const JobHuntlyTheme = createTheme({
       h5: {fontSize: rem(20), lineHeight: rem(24), fontWeight: '600'},
     },
   },
-  black: get(colors, 'neutrals.7', '#000') as string,
+  black: get(colors, 'neutrals.6', '#000') as string,
   lineHeights: {
     xs: '1.4',
     sm: '1.45',
