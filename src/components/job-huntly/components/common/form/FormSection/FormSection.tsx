@@ -19,7 +19,7 @@ export function FormSection({children, description, title}: FormSectionProps) {
         <Stack gap={0}>
           <Text fw='600'>{title}</Text>
           {!isEmpty(description) ? (
-            <Text c='neutrals.5' mt={rem(5)}>
+            <Text c='neutrals.4' mt={rem(5)}>
               {description}
             </Text>
           ) : null}
