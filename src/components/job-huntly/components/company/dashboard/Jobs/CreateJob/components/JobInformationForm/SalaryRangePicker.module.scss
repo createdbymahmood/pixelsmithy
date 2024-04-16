@@ -1,0 +1,14 @@
+.thumb {
+  height: rem(24px);
+  width: rem(24px);
+  background-color: var(--mantine-primary-color-5);
+  border-width: rem(1px);
+  @include box-shadow(var(--mantine-shadow-sm));
+}
+
+.track {
+  height: rem(6px);
+}
+.input {
+  font-weight: 600;
+}
