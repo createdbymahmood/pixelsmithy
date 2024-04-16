@@ -2,19 +2,7 @@ import {FormSection} from '@job-huntly/components/applicant/dashboard/Settings/c
 import {Button, Checkbox, Divider, rem, Stack, Text} from '@mantine/core'
 import React from 'react'
 
-function Header() {
-  return (
-    <Stack gap='xxs'>
-      <Text fw='600' size='lg'>
-        Basic Information
-      </Text>
-
-      <Text c='neutrals.5'>
-        This is notifications preferences that you can update anytime.
-      </Text>
-    </Stack>
-  )
-}
+import {FormHeader} from '@/components/job-huntly/components/common/form/FormHeader'
 
 const options = [
   {
@@ -68,6 +56,15 @@ function Notifications() {
         <Button size='md'>Update Notifications</Button>
       </Stack>
     </FormSection>
+  )
+}
+
+function Header() {
+  return (
+    <FormHeader
+      description='This is notifications preferences that you can update anytime.'
+      title='Basic Information'
+    />
   )
 }
 
