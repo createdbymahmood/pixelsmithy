@@ -9,8 +9,10 @@ import {
   NumberFormatter,
   Paper,
   rem,
+  Skeleton,
   Stack,
   Text,
+  Title,
 } from '@mantine/core'
 import type {Icon} from '@phosphor-icons/react'
 import {
@@ -134,18 +136,29 @@ function TotalApplied() {
   )
 }
 
-/* function JobListingViewStats() {
-  return <Box>JobListingViewStats</Box>
+function JobListingViewStats() {
+  return (
+    <Paper p='xl' withBorder>
+      <Stack gap='xl'>
+        <Group justify='space-between'>
+          <Title order={5}>Job Listing View stats</Title>
+          <Skeleton h={rem(50)} w={rem(151)} />
+        </Group>
+
+        <Skeleton h={rem(353)} />
+      </Stack>
+    </Paper>
+  )
 }
 
-function TrafficChannel() {
+/* function TrafficChannel() {
   return <Box>TrafficChannel</Box>
 }
 
 function VisitorsByCountry() {
   return <Box>VisitorsByCountry</Box>
-} */
-
+}
+ */
 const gutterSize: MantineSpacing = 'xl'
 
 export function JobAnalytics() {
@@ -157,7 +170,7 @@ export function JobAnalytics() {
             <TotalViews />
             <TotalApplied />
           </Group>
-          {/* <JobListingViewStats /> */}
+          <JobListingViewStats />
         </Stack>
       </Grid.Col>
       <Grid.Col span={4}>
