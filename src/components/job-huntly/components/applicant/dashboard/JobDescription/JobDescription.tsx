@@ -183,12 +183,15 @@ function RequiredSkills() {
   )
 }
 
-interface PerksAndBenefitsCardProps {
+export interface PerksAndBenefitsCardProps {
   title: string
   description: string
 }
 
-function PerksAndBenefitsCard({description, title}: PerksAndBenefitsCardProps) {
+export function PerksAndBenefitsCard({
+  description,
+  title,
+}: PerksAndBenefitsCardProps) {
   return (
     <Stack gap='xl'>
       <Skeleton h={rem(48)} w={rem(48)} />
