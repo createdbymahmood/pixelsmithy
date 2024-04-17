@@ -18,11 +18,15 @@ const settingsSections = [
     label: 'Overview',
     href: urls.JobHuntly.company.dashboard.settings.overview,
   },
-
   {
     key: 'social-links',
     label: 'Social Links',
     href: urls.JobHuntly.company.dashboard.settings.socialLinks,
+  },
+  {
+    key: 'team',
+    label: 'Team',
+    href: urls.JobHuntly.company.dashboard.settings.team,
   },
 ]
 
