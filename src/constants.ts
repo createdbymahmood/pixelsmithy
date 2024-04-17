@@ -269,6 +269,7 @@ export const urls = {
         settings: {
           index: '/job-huntly/company/dashboard/settings',
           overview: '/job-huntly/company/dashboard/settings/overview',
+          socialLinks: '/job-huntly/company/dashboard/settings/social-links',
         },
       },
     },

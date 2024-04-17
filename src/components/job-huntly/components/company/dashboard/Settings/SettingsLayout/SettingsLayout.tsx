@@ -18,6 +18,12 @@ const settingsSections = [
     label: 'Overview',
     href: urls.JobHuntly.company.dashboard.settings.overview,
   },
+
+  {
+    key: 'social-links',
+    label: 'Social Links',
+    href: urls.JobHuntly.company.dashboard.settings.socialLinks,
+  },
 ]
 
 export default function SettingsLayout({children}: ProjectOverviewProps) {
@@ -34,7 +40,7 @@ export default function SettingsLayout({children}: ProjectOverviewProps) {
   return (
     <Tabs key={segment} defaultValue={segment}>
       <Tabs.List>{content}</Tabs.List>
-      <Box mt='lg'>{children}</Box>
+      <Box mt='xxl'>{children}</Box>
     </Tabs>
   )
 }
