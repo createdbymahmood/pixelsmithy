@@ -1,5 +1,6 @@
 'use client'
 
+import type {GridColProps} from '@mantine/core'
 import {Grid, rem, Stack, Text} from '@mantine/core'
 import {isEmpty} from 'lodash-es'
 import type {ReactNode} from 'react'
@@ -10,12 +11,25 @@ interface FormSectionProps {
   children: ReactNode
   title: string
   description?: string
+  fluid?: boolean
 }
 
-export function FormSection({children, description, title}: FormSectionProps) {
+export function FormSection({
+  children,
+  description,
+  fluid = false,
+  title,
+}: FormSectionProps) {
+  const childrenGridSpan: GridColProps['span'] = (() => {
+    if (fluid) {
+      return {xl: 8, lg: 8, md: 12}
+    }
+
+    return {xl: 5, lg: 6, md: 12}
+  })()
   return (
     <Grid>
-      <Grid.Col span={{xl: 4, lg: 6, md: 12}}>
+      <Grid.Col span={{xl: 4, lg: 4, md: 12}}>
         <Stack gap={0}>
           <Text fw='600'>{title}</Text>
           {!isEmpty(description) ? (
@@ -28,7 +42,7 @@ export function FormSection({children, description, title}: FormSectionProps) {
 
       <Grid.Col
         className={styles.formSectionChildrenCol}
-        span={{xl: 5, lg: 6, md: 12}}
+        span={childrenGridSpan}
       >
         {children}
       </Grid.Col>

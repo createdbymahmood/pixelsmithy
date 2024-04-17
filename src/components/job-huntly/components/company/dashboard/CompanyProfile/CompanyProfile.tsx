@@ -43,6 +43,8 @@ import {AddButton, EditButton} from '@/components/job-huntly/components/common'
 import {CompanyProfileSection} from '@/components/job-huntly/components/company/dashboard/CompanyProfile/common'
 import {companies} from '@/components/job-huntly/mock/companies'
 import {jobs} from '@/components/job-huntly/mock/jobs'
+import type {TeamMember} from '@/components/job-huntly/mock/team'
+import {team} from '@/components/job-huntly/mock/team'
 
 const company = head(companies)!
 
@@ -260,20 +262,42 @@ function Gallery() {
   )
 }
 
-const team = [
-  {
-    name: 'Célestin Gardinier',
-    role: 'CEO & Co-Founder',
-  },
-  {
-    name: 'Reynaud Colbert',
-    role: 'Co-Founder',
-  },
-  {
-    name: 'Arienne Lyon',
-    role: 'Managing Director',
-  },
-]
+interface TeamMemberCardProps {
+  member: TeamMember
+}
+
+export function TeamMemberCard({member}: TeamMemberCardProps) {
+  return (
+    <Paper key={member.name} p='xl' w='100%' withBorder>
+      <Stack align='center' gap={0}>
+        <Avatar size={rem(80)} />
+
+        <Text fw='600' lineClamp={1} mt='md' size='lg'>
+          {member.name}
+        </Text>
+
+        <Text c='neutrals.4' lineClamp={1} mt='xxs'>
+          {member.role}
+        </Text>
+
+        <Group justify='center' mt='md'>
+          <Box
+            c='neutrals.3'
+            className='icon-size-lg'
+            component={InstagramLogo}
+            weight='bold'
+          />
+          <Box
+            c='neutrals.3'
+            className='icon-size-lg'
+            component={LinkedinLogo}
+            weight='bold'
+          />
+        </Group>
+      </Stack>
+    </Paper>
+  )
+}
 
 function Team() {
   const action = (
@@ -283,37 +307,8 @@ function Team() {
     </Group>
   )
 
-  const list = team.map((member) => {
-    return (
-      <Paper key={member.name} p='xl' w='100%' withBorder>
-        <Stack align='center' gap={0}>
-          <Avatar size={rem(80)} />
-
-          <Text fw='600' lineClamp={1} mt='md' size='lg'>
-            {member.name}
-          </Text>
-
-          <Text c='neutrals.4' lineClamp={1} mt='xxs'>
-            {member.role}
-          </Text>
-
-          <Group justify='center' mt='md'>
-            <Box
-              c='neutrals.3'
-              className='icon-size-lg'
-              component={InstagramLogo}
-              weight='bold'
-            />
-            <Box
-              c='neutrals.3'
-              className='icon-size-lg'
-              component={LinkedinLogo}
-              weight='bold'
-            />
-          </Group>
-        </Stack>
-      </Paper>
-    )
+  const content = team.map((member) => {
+    return <TeamMemberCard key={member.name} member={member} />
   })
 
   const CTARightSection = (
@@ -327,7 +322,7 @@ function Team() {
 
   return (
     <CompanyProfileSection action={action} title='Team'>
-      <Group wrap='nowrap'>{list}</Group>
+      <Group wrap='nowrap'>{content}</Group>
 
       <Button
         fw='600'
