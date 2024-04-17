@@ -279,37 +279,44 @@ export const urls = {
 }
 export const applications = [
   {
-    id: 1,
-    title: 'Job Location',
-    description: 'A Simple Job Search Page',
-    href: urls.JobLocation.index,
+    title: 'Job Huntly - Company',
+    description: 'Job Search Dashboard',
+    href: urls.JobHuntly.company.dashboard.home,
+    info: 'Desktop version',
   },
   {
-    id: 2,
+    title: 'Job Huntly - Applicant',
+    description: 'Job Search Dashboard',
+    href: urls.JobHuntly.applicant.dashboard.home,
+    info: 'Desktop version',
+  },
+  {
     title: 'Roscent',
     description: 'Design System and UI Kit',
     href: urls.roscent.index,
     info: 'Desktop version',
   },
   {
-    id: 3,
     title: 'Modernize',
     description: 'Dashboard UI Kit',
     href: urls.Modernize.dashboard.index,
     info: 'Desktop version',
   },
   {
-    id: 4,
     title: 'DashStack',
     description: 'Dashboard UI Kit',
     href: urls.DashStack.dashboard.index,
     info: 'Desktop version',
   },
   {
-    id: 5,
     title: 'Flights',
     description: 'Flight Schedule App',
     href: urls.Flights.index,
     info: 'Mobile Version Only, But also viewable on desktop',
+  },
+  {
+    title: 'Job Location',
+    description: 'A Simple Job Search Page',
+    href: urls.JobLocation.index,
   },
 ]
