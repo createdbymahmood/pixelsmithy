@@ -28,6 +28,7 @@ const ApplicationsList = () => {
         component={Link}
         gap={0}
         href={application.href}
+        target='_blank'
       >
         <Text className={clsx(robotoSlab.className, styles.title)} size='xl'>
           {application.title}
