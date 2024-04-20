@@ -18,12 +18,28 @@ const stackVariants = cva('flex', {
       lg: '',
     },
     align: {
+      end: 'items-end',
       center: 'items-center',
+      start: 'items-start',
+      baseline: 'items-baseline',
+      stretch: 'items-stretch',
+    },
+    justify: {
+      normal: 'justify-normal',
+      start: 'justify-start',
+      end: 'justify-end',
+      center: 'justify-center',
+      between: 'justify-between',
+      around: 'justify-around',
+      evenly: 'justify-evenly',
+      stretch: 'justify-stretch',
     },
   },
   defaultVariants: {
     gap: 'xs',
     direction: 'row',
+    align: 'center',
+    justify: 'start',
   },
   compoundVariants: [
     /* col Spacing */
@@ -41,7 +57,7 @@ const stackVariants = cva('flex', {
 })
 
 export interface StackProps
-  extends React.ComponentPropsWithoutRef<'div'>,
+  extends React.HtmlHTMLAttributes<HTMLDivElement>,
     VariantProps<typeof stackVariants> {
   asChild?: boolean
 }
