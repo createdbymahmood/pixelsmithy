@@ -24,6 +24,6 @@ const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
     )
   },
 )
-Container.displayName = 'Button'
+Container.displayName = 'Container'
 
 export {Container, containerVariants}
