@@ -1,26 +1,25 @@
 'use client'
 
-import '@mantine/core/styles.css'
-import 'react-perfect-scrollbar/dist/css/styles.css'
-import '@/lib/styles/global.scss'
+import '@job-location/lib/style/globals.css'
 
-import {MantineProvider} from '@mantine/core'
+import {cn} from '@job-location/utils/cn'
 import type {ReactNode} from 'react'
 
-import {JobLocationTheme} from '@/components/job-location/lib/style/JobLocationTheme'
-import {defaultThemeColorScheme} from '@/constants'
+import {inter} from '@/lib/styles/font/inter'
 
-interface JobLocationProvidersProps {
+interface RootLayoutProps {
   children: ReactNode
 }
 
-export function JobLocationProviders({children}: JobLocationProvidersProps) {
+export function JobLocationProviders({children}: RootLayoutProps) {
   return (
-    <MantineProvider
-      defaultColorScheme={defaultThemeColorScheme}
-      theme={JobLocationTheme}
+    <div
+      className={cn(
+        'min-h-screen bg-background font-sans antialiased',
+        inter.variable,
+      )}
     >
       {children}
-    </MantineProvider>
+    </div>
   )
 }
