@@ -1,6 +1,6 @@
 // import {useCallbackRef} from '@radix-ui/react-use-callback-ref'
 import {useCallbackRef} from '@mantine/hooks'
-import {noop} from 'lodash-es'
+import {isUndefined} from 'lodash-es'
 import * as React from 'react'
 
 interface UseControllableStateParams<T> {
@@ -13,7 +13,7 @@ type SetStateFn<T> = (prevState?: T) => T
 
 function useControllableState<T>({
   defaultProp,
-  onChange = noop,
+  onChange,
   prop,
 }: UseControllableStateParams<T>) {
   const [uncontrolledProp, setUncontrolledProp] = useUncontrolledState({
@@ -23,6 +23,28 @@ function useControllableState<T>({
   const isControlled = prop !== undefined
   const value = isControlled ? prop : uncontrolledProp
   const handleChange = useCallbackRef(onChange)
+
+  React.useEffect(() => {
+    if (isControlled && isUndefined(onChange)) {
+      const error = new Error()
+
+      const controlWarning = isControlled
+        ? 'a controlled value to be uncontrolled'
+        : 'an uncontrolled value to be controlled'
+
+      const undefinedWarning = isControlled
+        ? 'defined to an undefined'
+        : 'undefined to a defined'
+
+      console.error(/** #__DE-INDENT__ */ `
+        [${useControllableState.name}]:
+        A component is changing ${controlWarning}. This is likely caused by the value changing from ${undefinedWarning} value, which should not happen.
+        Decide between using a controlled or uncontrolled input element for the lifetime of the component.
+        More info: https://reactjs.org/link/controlled-components
+        ${error.stack}
+      `)
+    }
+  }, [isControlled, onChange, value])
 
   const setValue: React.Dispatch<React.SetStateAction<T | undefined>> =
     React.useCallback(
