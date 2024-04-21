@@ -1,5 +1,4 @@
-// import {useCallbackRef} from '@radix-ui/react-use-callback-ref'
-import {useCallbackRef} from '@mantine/hooks'
+import {useCallbackRef} from '@radix-ui/react-use-callback-ref'
 import {isUndefined} from 'lodash-es'
 import * as React from 'react'
 
