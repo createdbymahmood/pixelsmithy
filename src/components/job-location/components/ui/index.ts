@@ -1,3 +1,4 @@
+export * from './accordion'
 export * from './box'
 export * from './button'
 export * from './container'
