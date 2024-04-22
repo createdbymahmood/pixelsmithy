@@ -1,11 +1,11 @@
 'use client'
 
 import {cn} from '@job-location/utils/cn'
+import {Stack} from '@mantine/core'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import {Check} from 'lucide-react'
 import * as React from 'react'
 
-import {FormControl} from './form-control'
 import {Label} from './label'
 
 export interface CheckboxProps
@@ -21,7 +21,7 @@ const Checkbox = React.forwardRef<
   const controlId = id ?? defaultControlId
 
   return (
-    <FormControl>
+    <Stack gap='xs'>
       <CheckboxPrimitive.Root
         ref={ref}
         className={cn(
@@ -39,7 +39,7 @@ const Checkbox = React.forwardRef<
       </CheckboxPrimitive.Root>
 
       {label ? <Label htmlFor={controlId}>{label}</Label> : null}
-    </FormControl>
+    </Stack>
   )
 })
 Checkbox.displayName = CheckboxPrimitive.Root.displayName
