@@ -5,7 +5,8 @@ import '@job-location/lib/style/globals.css'
 import {cn} from '@job-location/utils/cn'
 import type {ReactNode} from 'react'
 
-import {inter} from '@/lib/styles/font/inter'
+import {openSans} from '@/lib/styles/font/openSans'
+import {poppins} from '@/lib/styles/font/poppins'
 
 interface RootLayoutProps {
   children: ReactNode
@@ -16,7 +17,8 @@ export function JobLocationProviders({children}: RootLayoutProps) {
     <div
       className={cn(
         'min-h-screen bg-background font-sans antialiased',
-        inter.variable,
+        poppins.variable,
+        openSans.variable,
       )}
     >
       {children}
