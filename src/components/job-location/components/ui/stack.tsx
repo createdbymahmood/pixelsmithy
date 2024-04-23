@@ -49,10 +49,10 @@ const stackVariants = cva('flex', {
     {direction: 'col', gap: 'lg', class: 'space-y-12'},
 
     /* row Spacing */
-    {direction: 'row', gap: 'xs', class: 'space-x-2'},
-    {direction: 'row', gap: 'sm', class: 'space-x-4'},
-    {direction: 'row', gap: 'md', class: 'space-x-8'},
-    {direction: 'row', gap: 'lg', class: 'space-x-12'},
+    {direction: 'row', gap: 'xs', class: 'space-x-1'},
+    {direction: 'row', gap: 'sm', class: 'space-x-2'},
+    {direction: 'row', gap: 'md', class: 'space-x-4'},
+    {direction: 'row', gap: 'lg', class: 'space-x-8'},
   ],
 })
 
@@ -63,12 +63,17 @@ export interface StackProps
 }
 
 const Stack = React.forwardRef<HTMLDivElement, StackProps>(
-  ({asChild = false, className, direction, gap, ...props}, ref) => {
+  (
+    {align, asChild = false, className, direction, gap, justify, ...props},
+    ref,
+  ) => {
     const Comp = asChild ? Slot : 'div'
     return (
       <Comp
         ref={ref}
-        className={cn(stackVariants({gap, className, direction}))}
+        className={cn(
+          stackVariants({gap, className, direction, align, justify}),
+        )}
         {...props}
       />
     )
