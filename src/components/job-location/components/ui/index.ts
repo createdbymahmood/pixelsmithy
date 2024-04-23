@@ -1,4 +1,5 @@
 export * from './accordion'
+export * from './anchor'
 export * from './box'
 export * from './button'
 export * from './container'
