@@ -179,12 +179,7 @@ function Actions() {
 
 function JobFiltersContent() {
   return (
-    <Stack
-      align='start'
-      className='mx-3 w-[268px] pb-32'
-      direction='col'
-      gap='md'
-    >
+    <Stack align='start' className='mx-3 w-[268px]' direction='col' gap='md'>
       <Sections />
       <Actions />
     </Stack>
