@@ -1,6 +1,6 @@
 'use client'
 
-import {Button} from '@job-location/components/ui/button'
+import {JobFilters} from '@job-location/components/compound'
 
 // function JobLocationContent() {
 //   return (
@@ -30,5 +30,5 @@ import {Button} from '@job-location/components/ui/button'
 // }
 
 export default function JobLocation() {
-  return <Button>Salam</Button>
+  return <JobFilters />
 }
