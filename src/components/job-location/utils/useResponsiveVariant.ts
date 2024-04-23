@@ -1,12 +1,9 @@
 import {useMediaQuery} from '@mantine/hooks'
 import {useMemo} from 'react'
-import resolveConfig from 'tailwindcss/resolveConfig'
 
-import tailwindConfig from '../../../../tailwind.config'
+import {tailwindConfig} from '@/components/job-location/lib/tailwind'
 
-const fullConfig = resolveConfig(tailwindConfig as unknown as any)
-
-const {screens} = fullConfig.theme as {
+const {screens} = tailwindConfig.theme as {
   screens: Record<'2xl' | 'lg' | 'md' | 'sm' | 'xl', string>
 }
 
