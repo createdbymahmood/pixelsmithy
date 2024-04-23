@@ -13,7 +13,9 @@ const SectionAccordion = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Root>,
   AccordionProps
 >(({className, ...props}, ref) => {
-  return <AccordionPrimitive.Root ref={ref} {...props} />
+  return (
+    <AccordionPrimitive.Root ref={ref} className={cn(className)} {...props} />
+  )
 })
 
 const SectionAccordionItem = React.forwardRef<
