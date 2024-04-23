@@ -1,12 +1,14 @@
-import JobLocation from '@/components/job-location/JobLocation'
+// import JobLocation from '@/components/job-location/JobLocation'
+import dynamic from 'next/dynamic'
+
 import {constructMetadata} from '@/utils/constructMetadata'
 
-/* const JobLocation = dynamic(
+const JobLocation = dynamic(
   () => import('@/components/job-location/JobLocation'),
   {
     ssr: false,
   },
-) */
+)
 
 export const metadata = constructMetadata({
   title: 'Job Location',
