@@ -1,3 +1,4 @@
+'use client'
 import {Box, Tabs} from '@mantine/core'
 import {projectId} from '@roscent/mocks/email'
 import {startCase} from 'lodash-es'
