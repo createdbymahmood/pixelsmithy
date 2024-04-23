@@ -53,7 +53,7 @@ function SelectableSectionContent({
 
     if (hasOptions) {
       return (
-        <Stack className='w-full' direction='col' gap='md'>
+        <Stack className='w-full' direction='col' gap='sm'>
           {options.map((option) => {
             return (
               <JobFiltersCheckbox
