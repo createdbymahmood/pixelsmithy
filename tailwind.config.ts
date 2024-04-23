@@ -1,5 +1,6 @@
 import {fontFamily} from 'tailwindcss/defaultTheme'
-import tailwindCssAnimate from 'tailwindcss-animate'
+import plugin from 'tailwindcss/plugin'
+import animate from 'tailwindcss-animate'
 
 /** @type {import('tailwindcss').Config} */
 
@@ -81,5 +82,30 @@ export default {
       },
     },
   },
-  plugins: [tailwindCssAnimate],
+  plugins: [
+    animate,
+    plugin(({addBase, addComponents, addUtilities, theme}) => {
+      addBase({
+        h1: {
+          fontSize: theme('fontSize.2xl'),
+        },
+        h2: {
+          fontSize: theme('fontSize.xl'),
+        },
+      })
+      addComponents({
+        '.card': {
+          backgroundColor: theme('colors.white'),
+          borderRadius: theme('borderRadius.lg'),
+          padding: theme('spacing.6'),
+          boxShadow: theme('boxShadow.xl'),
+        },
+      })
+      addUtilities({
+        '.content-auto': {
+          contentVisibility: 'auto',
+        },
+      })
+    }),
+  ],
 }
