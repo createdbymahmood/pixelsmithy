@@ -43,14 +43,14 @@ const stackVariants = cva('flex', {
   },
   compoundVariants: [
     /* col Spacing */
-    {direction: 'col', gap: 'xs', class: 'space-y-2'},
-    {direction: 'col', gap: 'sm', class: 'space-y-4'},
-    {direction: 'col', gap: 'md', class: 'space-y-8'},
-    {direction: 'col', gap: 'lg', class: 'space-y-12'},
+    {direction: 'col', gap: 'xs', class: 'space-y-1'},
+    {direction: 'col', gap: 'sm', class: 'space-y-2.5'},
+    {direction: 'col', gap: 'md', class: 'space-y-4'},
+    {direction: 'col', gap: 'lg', class: 'space-y-8'},
 
     /* row Spacing */
     {direction: 'row', gap: 'xs', class: 'space-x-1'},
-    {direction: 'row', gap: 'sm', class: 'space-x-2'},
+    {direction: 'row', gap: 'sm', class: 'space-x-2.5'},
     {direction: 'row', gap: 'md', class: 'space-x-4'},
     {direction: 'row', gap: 'lg', class: 'space-x-8'},
   ],
