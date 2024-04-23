@@ -1,11 +1,19 @@
-// import {Stack} from '@phosphor-icons/react'
 import {useCallbackRef} from '@mantine/hooks'
 import {useSelections} from 'ahooks'
 import {identity, isEmpty, isUndefined, values} from 'lodash-es'
+import {Menu} from 'lucide-react'
 import type {ReactNode} from 'react'
 import React, {Fragment} from 'react'
 
-import {Box, Button, Stack} from '@/components/job-location/components/ui'
+import {
+  Box,
+  Button,
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  Stack,
+} from '@/components/job-location/components/ui'
+import {useMobileDeviceWithTailwindConfig} from '@/hooks/useMobileDeviceWithTailwindConfig'
 
 import type {JobFiltersCheckboxOption} from './job-filters-checkbox'
 import {JobFiltersCheckbox} from './job-filters-checkbox'
@@ -131,6 +139,7 @@ function Sections() {
 
   return (
     <SectionAccordion
+      className='w-full'
       defaultValue={
         values(accordionItemValues).map(identity) as unknown as string[]
       }
@@ -168,11 +177,11 @@ function Actions() {
   )
 }
 
-export function JobFilters() {
+function JobFiltersContent() {
   return (
     <Stack
       align='start'
-      className='mx-3 max-w-[268px] pb-32'
+      className='mx-3 w-[268px] pb-32'
       direction='col'
       gap='md'
     >
@@ -180,4 +189,26 @@ export function JobFilters() {
       <Actions />
     </Stack>
   )
+}
+
+export function JobFilters() {
+  const isMobile = useMobileDeviceWithTailwindConfig()
+
+  if (isMobile) {
+    return (
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button size='icon' variant='ghost'>
+            <Menu />
+          </Button>
+        </SheetTrigger>
+
+        <SheetContent>
+          <JobFiltersContent />
+        </SheetContent>
+      </Sheet>
+    )
+  }
+
+  return <JobFiltersContent />
 }
