@@ -1,3 +1,4 @@
+'use client'
 import {Box, Tabs} from '@mantine/core'
 import {startCase} from 'lodash-es'
 import Link from 'next/link'
