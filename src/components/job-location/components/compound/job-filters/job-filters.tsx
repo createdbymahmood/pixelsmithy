@@ -69,7 +69,7 @@ function SelectableSectionContent({
       )
     }
 
-    return <Box className='py-4'>{children}</Box>
+    return <Box className='pb-4'>{children}</Box>
   })()
 
   return (
