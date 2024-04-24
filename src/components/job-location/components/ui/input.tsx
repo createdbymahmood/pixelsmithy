@@ -16,7 +16,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const controlId = id ?? defaultControlId
 
     return (
-      <Stack align='start' direction='col' gap='none'>
+      <Stack align='start' gap='none'>
         {label ? (
           <Label
             className='font-serif font-semibold'

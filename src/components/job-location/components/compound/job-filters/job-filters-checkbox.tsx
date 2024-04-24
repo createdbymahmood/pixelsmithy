@@ -1,7 +1,7 @@
 import {noop} from 'lodash-es'
 import React from 'react'
 
-import {Stack} from '@/components/job-location/components/ui'
+import {Group} from '@/components/job-location/components/ui'
 import {Badge} from '@/components/job-location/components/ui/badge'
 import type {CheckboxProps} from '@/components/job-location/components/ui/checkbox'
 import {Checkbox} from '@/components/job-location/components/ui/checkbox'
@@ -23,9 +23,9 @@ export function JobFiltersCheckbox({
   value,
 }: JobFiltersCheckboxProps) {
   return (
-    <Stack className='w-full' justify='between'>
+    <Group className='w-full' justify='between' noWrap>
       <Checkbox label={label} onCheckedChange={onCheckedChange} />
       <Badge variant={isSelected ? 'secondary' : 'disabled'}>{value}</Badge>
-    </Stack>
+    </Group>
   )
 }

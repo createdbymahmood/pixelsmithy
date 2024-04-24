@@ -6,6 +6,7 @@ import {useState} from 'react'
 
 import {
   Box,
+  Group,
   Input,
   Slider,
   Stack,
@@ -71,7 +72,7 @@ const useSalaryRangeSliderState = () => {
 export function JobFiltersSalaryRange() {
   const state = useSalaryRangeSliderState()
   return (
-    <Stack direction='col' gap='lg'>
+    <Stack gap='lg'>
       <Slider
         defaultValue={Object.values(state.range)}
         max={salaryRangeInitialValues.max}
@@ -80,7 +81,7 @@ export function JobFiltersSalaryRange() {
         onValueChange={state.onRangeSliderValueChange}
       />
 
-      <Stack gap='lg'>
+      <Group gap='lg' noWrap>
         <Input
           className='rounded-xl text-center text-gray-500'
           label='Min'
@@ -100,7 +101,7 @@ export function JobFiltersSalaryRange() {
           value={state.range.max}
           onChange={state.onMaxInputChange}
         />
-      </Stack>
+      </Group>
     </Stack>
   )
 }
