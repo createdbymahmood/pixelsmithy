@@ -5,7 +5,7 @@ import * as React from 'react'
 
 import {cn} from '@/components/job-location/utils/cn'
 
-const stackVariants = cva('flex flex-col', {
+const groupVariants = cva('flex flex-row flex-wrap', {
   variants: {
     gap: {
       none: 'gap-0',
@@ -31,32 +31,38 @@ const stackVariants = cva('flex flex-col', {
       evenly: 'justify-evenly',
       stretch: 'justify-stretch',
     },
+    noWrap: {
+      true: 'flex-nowrap',
+    },
   },
   defaultVariants: {
     gap: 'xs',
-    align: 'stretch',
+    align: 'center',
     justify: 'start',
   },
 })
 
-export interface StackProps
+export interface GroupProps
   extends React.HtmlHTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof stackVariants> {
+    VariantProps<typeof groupVariants> {
   asChild?: boolean
 }
 
-const Stack = React.forwardRef<HTMLDivElement, StackProps>(
-  ({align, asChild = false, className, gap, justify, ...props}, ref) => {
+const Group = React.forwardRef<HTMLDivElement, GroupProps>(
+  (
+    {align, asChild = false, className, gap, justify, noWrap, ...props},
+    ref,
+  ) => {
     const Comp = asChild ? Slot : 'div'
     return (
       <Comp
         ref={ref}
-        className={cn(stackVariants({gap, className, align, justify}))}
+        className={cn(groupVariants({gap, className, align, justify, noWrap}))}
         {...props}
       />
     )
   },
 )
-Stack.displayName = 'Stack'
+Group.displayName = 'Group'
 
-export {Stack, stackVariants}
+export {Group, groupVariants}
