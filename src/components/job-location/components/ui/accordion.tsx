@@ -5,7 +5,7 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import {ChevronDown} from 'lucide-react'
 import * as React from 'react'
 
-type AccordionProps = React.ComponentPropsWithoutRef<
+export type AccordionProps = React.ComponentPropsWithoutRef<
   typeof AccordionPrimitive.Root
 >
 
@@ -13,7 +13,13 @@ const Accordion = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Root>,
   AccordionProps
 >(({className, ...props}, ref) => {
-  return <AccordionPrimitive.Root ref={ref} {...props} />
+  return (
+    <AccordionPrimitive.Root
+      ref={ref}
+      className={cn('w-full', className)}
+      {...props}
+    />
+  )
 })
 
 Accordion.displayName = 'Accordion'
