@@ -8,6 +8,7 @@ import React, {Fragment} from 'react'
 import {
   Box,
   Button,
+  Group,
   Sheet,
   SheetContent,
   SheetTrigger,
@@ -53,7 +54,7 @@ function SelectableSectionContent({
 
     if (hasOptions) {
       return (
-        <Stack className='w-full' direction='col' gap='sm'>
+        <Stack className='w-full' gap='sm'>
           {options.map((option) => {
             return (
               <JobFiltersCheckbox
@@ -69,7 +70,7 @@ function SelectableSectionContent({
       )
     }
 
-    return <Box className='pb-4'>{children}</Box>
+    return <Box className='pb-4 pt-2'>{children}</Box>
   })()
 
   return (
@@ -170,16 +171,16 @@ function Sections() {
 
 function Actions() {
   return (
-    <Stack>
+    <Group>
       <Button>Apply</Button>
       <Button disabled>Reset</Button>
-    </Stack>
+    </Group>
   )
 }
 
 function JobFiltersContent() {
   return (
-    <Stack align='start' className='mx-3 w-[268px]' direction='col' gap='md'>
+    <Stack align='start' className='mx-3 w-[268px]' gap='md'>
       <Sections />
       <Actions />
     </Stack>

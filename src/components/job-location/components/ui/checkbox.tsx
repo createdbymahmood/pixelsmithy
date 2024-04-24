@@ -7,7 +7,7 @@ import {cva} from 'class-variance-authority'
 import {Check} from 'lucide-react'
 import * as React from 'react'
 
-import {Stack} from '@/components/job-location/components/ui'
+import {Group} from '@/components/job-location/components/ui'
 
 import {Label} from './label'
 
@@ -39,7 +39,7 @@ const Checkbox = React.forwardRef<
   const controlId = id ?? defaultControlId
 
   return (
-    <Stack gap='sm'>
+    <Group gap='sm'>
       <CheckboxPrimitive.Root
         ref={ref}
         className={cn(checkboxVariants({size}), className)}
@@ -58,7 +58,7 @@ const Checkbox = React.forwardRef<
           {label}
         </Label>
       ) : null}
-    </Stack>
+    </Group>
   )
 })
 Checkbox.displayName = CheckboxPrimitive.Root.displayName
