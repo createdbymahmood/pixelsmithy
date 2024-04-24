@@ -80,86 +80,51 @@ function SelectableSectionContent({
     </Fragment>
   )
 }
+enum AccordionItemValues {
+  TypeOfEmployment = 'TypeOfEmployment',
+  SeniorityLevel = 'SeniorityLevel',
+  SalaryRange = 'SalaryRange',
+}
 
 function Sections() {
   const typeOfEmploymentOptions: JobFiltersCheckboxOption[] = [
-    {
-      label: 'Full Time Jobs',
-      value: '159',
-    },
-    {
-      label: 'Part Time Jobs',
-      value: '38',
-    },
-    {
-      label: 'Remote Jobs',
-      value: '50',
-    },
-    {
-      label: 'Internship Jobs',
-      value: '76',
-    },
-    {
-      label: 'Training Jobs',
-      value: '15',
-    },
+    {label: 'Full Time Jobs', value: '159'},
+    {label: 'Part Time Jobs', value: '38'},
+    {label: 'Remote Jobs', value: '50'},
+    {label: 'Internship Jobs', value: '76'},
+    {label: 'Training Jobs', value: '15'},
   ]
 
   const seniorityLevelOptions: JobFiltersCheckboxOption[] = [
-    {
-      label: 'Student Level',
-      value: '38',
-    },
-    {
-      label: 'Entry Level',
-      value: '50',
-    },
-    {
-      label: 'Mid Level',
-      value: '45',
-    },
-    {
-      label: 'Senior Level',
-      value: '30',
-    },
-    {
-      label: 'Directors',
-      value: '20',
-    },
-    {
-      label: 'VP or Above',
-      value: '15',
-    },
+    {label: 'Student Level', value: '38'},
+    {label: 'Entry Level', value: '50'},
+    {label: 'Mid Level', value: '45'},
+    {label: 'Senior Level', value: '30'},
+    {label: 'Directors', value: '20'},
+    {label: 'VP or Above', value: '15'},
   ]
 
-  const accordionItemValues = {
-    typeOfEmployment: 'type-of-employment',
-    seniorityLevel: 'seniority-level',
-    salaryRange: 'salary-range',
-  }
+  const defaultAccordionValue = values(AccordionItemValues).map(
+    identity,
+  ) as unknown as string[]
 
   return (
-    <SectionAccordion
-      defaultValue={
-        values(accordionItemValues).map(identity) as unknown as string[]
-      }
-      type='multiple'
-    >
-      <SectionAccordionItem value={accordionItemValues.typeOfEmployment}>
+    <SectionAccordion defaultValue={defaultAccordionValue} type='multiple'>
+      <SectionAccordionItem value={AccordionItemValues.TypeOfEmployment}>
         <SelectableSectionContent
           options={typeOfEmploymentOptions}
           title='Type of Employment'
         />
       </SectionAccordionItem>
 
-      <SectionAccordionItem value={accordionItemValues.seniorityLevel}>
+      <SectionAccordionItem value={AccordionItemValues.SeniorityLevel}>
         <SelectableSectionContent
           options={seniorityLevelOptions}
           title='Seniority Level'
         />
       </SectionAccordionItem>
 
-      <SectionAccordionItem value={accordionItemValues.salaryRange}>
+      <SectionAccordionItem value={AccordionItemValues.SalaryRange}>
         <SelectableSectionContent title='Salary Range'>
           <JobFiltersSalaryRange />
         </SelectableSectionContent>
