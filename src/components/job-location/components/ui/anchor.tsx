@@ -4,7 +4,7 @@ import * as React from 'react'
 
 import {cn} from '@/components/job-location/utils/cn'
 
-interface AnchorProps extends ComponentPropsWithoutRef<'a'> {
+export interface AnchorProps extends ComponentPropsWithoutRef<'a'> {
   asChild?: boolean
 }
 
