@@ -140,7 +140,6 @@ function Sections() {
 
   return (
     <SectionAccordion
-      className='w-full'
       defaultValue={
         values(accordionItemValues).map(identity) as unknown as string[]
       }
