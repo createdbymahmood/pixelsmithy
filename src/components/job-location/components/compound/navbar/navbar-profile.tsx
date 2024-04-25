@@ -38,24 +38,30 @@ function Dropdown({children}: DropdownProps) {
   )
 }
 
+function UserAvatar() {
+  return (
+    <Avatar className='size-14 rounded-xl'>
+      <AvatarImage alt='@shadcn' src='https://github.com/shadcn.png' />
+      <AvatarFallback className='rounded-xl'>CN</AvatarFallback>
+    </Avatar>
+  )
+}
+
 export function NavbarProfile() {
   return (
     <Group gap='md' noWrap>
-      <Avatar className='size-14 rounded-xl'>
-        <AvatarImage alt='@shadcn' src='https://github.com/shadcn.png' />
-        <AvatarFallback className='rounded-xl'>CN</AvatarFallback>
-      </Avatar>
+      <UserAvatar />
 
-      <Stack className='font-serif'>
-        <p className='text-xs font-medium text-muted-foreground'>Hello!</p>
+      <Dropdown>
+        <Stack className='font-serif'>
+          <p className='text-xs font-medium text-muted-foreground'>Hello!</p>
 
-        <Dropdown>
           <Group gap='xs' noWrap>
             <p className='line-clamp-1 text-xs font-medium'>Sahil Dobariya</p>
             <ChevronDown className='size-4 fill-muted-foreground text-muted-foreground transition-all group-data-[state=open]:rotate-180' />
           </Group>
-        </Dropdown>
-      </Stack>
+        </Stack>
+      </Dropdown>
     </Group>
   )
 }
