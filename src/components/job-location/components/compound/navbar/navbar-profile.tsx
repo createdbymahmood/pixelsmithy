@@ -41,9 +41,9 @@ function Dropdown({children}: DropdownProps) {
 export function NavbarProfile() {
   return (
     <Group gap='md' noWrap>
-      <Avatar className='size-16 rounded-xl'>
+      <Avatar className='size-14 rounded-xl'>
         <AvatarImage alt='@shadcn' src='https://github.com/shadcn.png' />
-        <AvatarFallback>CN</AvatarFallback>
+        <AvatarFallback className='rounded-xl'>CN</AvatarFallback>
       </Avatar>
 
       <Stack className='font-serif'>
