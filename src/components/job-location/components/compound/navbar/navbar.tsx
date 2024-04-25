@@ -10,9 +10,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
   Group,
+  Separator,
 } from '@/components/job-location/components/ui'
 
 import {NavbarAnchor} from './navbar-anchor'
+import {NavbarNotifications} from './navbar-notifications'
 
 const nav = [
   'Find Jobs',
@@ -70,10 +72,15 @@ function NavbarProfile() {
 
 export function Navbar() {
   return (
-    <Group className='h-[100px] w-full bg-white px-10' justify='between'>
+    <Group className='h-[100px] w-full bg-white px-10' justify='between' noWrap>
       <NavbarLogo />
       <NavbarLinks />
-      <NavbarProfile />
+
+      <Group gap='md' noWrap>
+        {/* <NavbarProfile /> */}
+        <NavbarNotifications />
+        <Separator className='h-12' orientation='vertical' />
+      </Group>
     </Group>
   )
 }
