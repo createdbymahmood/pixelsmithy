@@ -1,5 +1,9 @@
 'use client'
 
+// import {JobFilters, Navbar} from '@/components/job-location/components/compound'
+// import {Container, Stack} from '@/components/job-location/components/ui'
+// import {JobFilters} from '@job-location/components/compound'
+
 import {Box, Container, Grid, rem} from '@mantine/core'
 
 import {JobFilters} from '@/components/job-location/components/JobFilters'
@@ -36,5 +40,13 @@ export default function JobLocation() {
 }
 
 // export default function JobLocation() {
-//   return <JobFilters />
+//   return (
+//     <Stack align='start'>
+//       <Navbar />
+
+//       <Container>
+//         <JobFilters />
+//       </Container>
+//     </Stack>
+//   )
 // }
