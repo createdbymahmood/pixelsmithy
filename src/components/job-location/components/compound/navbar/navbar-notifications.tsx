@@ -6,7 +6,7 @@ import {Button} from '@/components/job-location/components/ui'
 export function NavbarNotifications() {
   return (
     <Button size='icon' variant='outline'>
-      <Bell className='text-primary' />
+      <Bell className='text-primary' size={20} />
     </Button>
   )
 }
