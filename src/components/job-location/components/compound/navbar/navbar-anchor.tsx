@@ -10,7 +10,7 @@ interface NavbarAnchorProps extends AnchorProps {
 }
 
 const navbarAnchorVariants = cva(
-  'relative line-clamp-1 flex h-full cursor-pointer items-center font-serif text-md font-medium text-gray-400',
+  'relative line-clamp-1 flex h-full cursor-pointer items-center whitespace-nowrap font-serif text-md font-medium text-gray-400',
   {
     variants: {
       isActive: {

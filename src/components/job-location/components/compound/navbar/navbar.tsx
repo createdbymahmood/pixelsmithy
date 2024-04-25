@@ -1,20 +1,10 @@
 import NavbarLogo from '@job-location/assets/images/logo.svg'
-import React from 'react'
 
-import {
-  Button,
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-  Group,
-  Separator,
-} from '@/components/job-location/components/ui'
+import {Group, Separator} from '@/components/job-location/components/ui'
 
 import {NavbarAnchor} from './navbar-anchor'
 import {NavbarNotifications} from './navbar-notifications'
+import {NavbarProfile} from './navbar-profile'
 
 const nav = [
   'Find Jobs',
@@ -43,30 +33,10 @@ function NavbarLinks() {
     <Group
       className='hidden self-stretch lg:flex lg:w-[700px] xl:w-[788px]'
       justify='between'
+      noWrap
     >
       {elements}
     </Group>
-  )
-}
-
-function NavbarProfile() {
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button size='icon' variant='outline'>
-          S
-        </Button>
-      </DropdownMenuTrigger>
-
-      <DropdownMenuContent side='bottom'>
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>Profile</DropdownMenuItem>
-        <DropdownMenuItem>Billing</DropdownMenuItem>
-        <DropdownMenuItem>Team</DropdownMenuItem>
-        <DropdownMenuItem>Subscription</DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
   )
 }
 
@@ -77,9 +47,9 @@ export function Navbar() {
       <NavbarLinks />
 
       <Group gap='md' noWrap>
-        {/* <NavbarProfile /> */}
         <NavbarNotifications />
         <Separator className='h-12' orientation='vertical' />
+        <NavbarProfile />
       </Group>
     </Group>
   )
