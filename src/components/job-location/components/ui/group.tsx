@@ -13,6 +13,7 @@ const groupVariants = cva('flex flex-row flex-wrap', {
       sm: 'gap-2.5',
       md: 'gap-4',
       lg: 'gap-8',
+      xl: 'gap-10',
     },
     align: {
       end: 'items-end',

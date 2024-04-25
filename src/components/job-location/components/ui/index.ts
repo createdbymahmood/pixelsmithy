@@ -1,5 +1,6 @@
 export * from './accordion'
 export * from './anchor'
+export * from './avatar'
 export * from './box'
 export * from './button'
 export * from './container'
