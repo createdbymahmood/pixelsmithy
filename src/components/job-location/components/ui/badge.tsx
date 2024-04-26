@@ -18,6 +18,8 @@ const badgeVariants = cva(
           'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
         outline: 'text-foreground',
         disabled: 'border-transparent bg-gray-100 text-gray-400',
+        'job-description-tag':
+          'rounded-none bg-gray-100 px-3 py-2 text-sm font-normal text-gray-400',
       },
     },
     defaultVariants: {
