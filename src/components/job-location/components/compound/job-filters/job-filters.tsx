@@ -144,7 +144,7 @@ function Actions() {
 
 function JobFiltersContent() {
   return (
-    <Stack align='start' className='mx-3 w-[268px]' gap='md'>
+    <Stack align='start' className='mx-3 w-[268px] shrink-0 ' gap='md'>
       <Sections />
       <Actions />
     </Stack>
@@ -158,9 +158,7 @@ export function JobFilters() {
     return (
       <Sheet>
         <SheetTrigger asChild>
-          <Button size='icon' variant='ghost'>
-            <Menu />
-          </Button>
+          <Menu className='my-2 cursor-pointer' />
         </SheetTrigger>
 
         <SheetContent>
