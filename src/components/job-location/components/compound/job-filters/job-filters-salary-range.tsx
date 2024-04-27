@@ -1,8 +1,9 @@
 import {useCallbackRef} from '@mantine/hooks'
 import {produce} from 'immer'
-import {gt, lt, toNumber} from 'lodash-es'
+import {toNumber} from 'lodash-es'
 import type {ChangeEvent} from 'react'
 import {useState} from 'react'
+import {z} from 'zod'
 
 import {
   Box,
@@ -17,36 +18,45 @@ const salaryRangeInitialValues = {
   max: 1000,
 }
 
+const rangeValueSchema = z
+  .number()
+  .min(salaryRangeInitialValues.min)
+  .max(salaryRangeInitialValues.max)
+
 const useSalaryRangeSliderState = () => {
   const [range, setRange] = useState(salaryRangeInitialValues)
 
   const onMinInputChange = useCallbackRef(
     (e: ChangeEvent<HTMLInputElement>) => {
-      const value = toNumber(e.target.value)
-      if (isNaN(value)) return
-      const isValidMinValue = gt(value, salaryRangeInitialValues.max)
-      if (isValidMinValue) return
+      try {
+        const _value = toNumber(e.target.value)
+        const value = rangeValueSchema.parse(_value)
 
-      setRange(
-        produce((draft) => {
-          draft.min = value
-        }),
-      )
+        setRange(
+          produce((draft) => {
+            draft.min = value
+          }),
+        )
+      } catch (error) {
+        /*  */
+      }
     },
   )
 
   const onMaxInputChange = useCallbackRef(
     (e: ChangeEvent<HTMLInputElement>) => {
-      const value = toNumber(e.target.value)
-      if (isNaN(value)) return
-      const isValidMaxValue = lt(value, salaryRangeInitialValues.min)
-      if (isValidMaxValue) return
+      try {
+        const _value = toNumber(e.target.value)
+        const value = rangeValueSchema.parse(_value)
 
-      setRange(
-        produce((draft) => {
-          draft.max = value
-        }),
-      )
+        setRange(
+          produce((draft) => {
+            draft.max = value
+          }),
+        )
+      } catch (error) {
+        /*  */
+      }
     },
   )
 
