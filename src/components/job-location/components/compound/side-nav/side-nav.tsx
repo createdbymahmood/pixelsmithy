@@ -42,10 +42,7 @@ export function SideNav() {
   })
 
   return (
-    <Stack
-      className='absolute left-0 top-1/3 hidden -translate-y-1/3 rounded-e-4xl bg-white px-3 py-10 2xl:block'
-      gap='md'
-    >
+    <Stack className='absolute left-0 top-1/3 hidden -translate-y-1/3 rounded-e-4xl bg-white px-3 py-10 2xl:flex'>
       {content}
     </Stack>
   )
