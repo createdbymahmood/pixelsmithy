@@ -48,7 +48,6 @@ export function Navbar() {
       noWrap
     >
       <NavbarLogo />
-
       <NavbarLinks />
 
       <Group gap='md' noWrap>
