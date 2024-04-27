@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
   Group,
   Stack,
+  Typography,
 } from '@/components/job-location/components/ui'
 
 interface DropdownProps {
@@ -54,10 +55,18 @@ export function NavbarProfile() {
 
       <Dropdown>
         <Stack className='font-serif'>
-          <p className='text-xs font-medium text-muted-foreground'>Hello!</p>
+          <Typography
+            className='text-muted-foreground'
+            size='xs'
+            weight='medium'
+          >
+            Hello!
+          </Typography>
 
           <Group gap='xs' noWrap>
-            <p className='line-clamp-1 text-xs font-medium'>Sahil Dobariya</p>
+            <Typography className='line-clamp-1' size='xs' weight='medium'>
+              Sahil Dobariya
+            </Typography>
             <ChevronDown className='size-4 fill-muted-foreground text-muted-foreground transition-all group-data-[state=open]:rotate-180' />
           </Group>
         </Stack>

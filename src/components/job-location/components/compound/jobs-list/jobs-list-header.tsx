@@ -1,17 +1,27 @@
 import React from 'react'
 
-import {Group} from '@/components/job-location/components/ui'
+import {Group, Typography} from '@/components/job-location/components/ui'
 
 export function JobsListHeader() {
   return (
     <Group className='md:py-5'>
       <Group>
-        <h4 className='font-serif text-lg font-semibold md:text-2xl lg:text-3xl'>
+        <Typography
+          className='text-lg md:text-2xl lg:text-3xl'
+          family='serif'
+          size='lg'
+          weight='semibold'
+        >
           8,526
-        </h4>
-        <p className='font-serif text-lg text-gray-500 md:text-2xl lg:text-3xl'>
+        </Typography>
+
+        <Typography
+          className='text-gray-500 md:text-2xl lg:text-3xl'
+          family='serif'
+          size='lg'
+        >
           Jobs Found
-        </p>
+        </Typography>
       </Group>
     </Group>
   )

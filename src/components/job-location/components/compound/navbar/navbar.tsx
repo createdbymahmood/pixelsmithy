@@ -42,8 +42,13 @@ function NavbarLinks() {
 
 export function Navbar() {
   return (
-    <Group className='h-[100px] w-full bg-white px-10' justify='between' noWrap>
+    <Group
+      className='h-[100px] w-full bg-white px-2 md:px-5 lg:px-6 xl:px-10'
+      justify='between'
+      noWrap
+    >
       <NavbarLogo />
+
       <NavbarLinks />
 
       <Group gap='md' noWrap>

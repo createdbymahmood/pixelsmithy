@@ -7,6 +7,7 @@ import {
   Box,
   Group,
   Stack,
+  Typography,
 } from '@/components/job-location/components/ui'
 import {Badge} from '@/components/job-location/components/ui/badge'
 
@@ -19,11 +20,17 @@ function JobsListCardHeader() {
       </Avatar>
 
       <Stack>
-        <p className='line-clamp-2 max-w-40 font-serif text-base font-medium'>
+        <Typography
+          className='line-clamp-2 max-w-40'
+          family='serif'
+          weight='medium'
+        >
           Senior Product Designer - Growth
-        </p>
+        </Typography>
 
-        <p className='font-serif text-sm text-primary'>United States</p>
+        <Typography className='text-primary' family='serif' size='sm'>
+          United States
+        </Typography>
       </Stack>
 
       <MoreHorizontal className='ml-auto cursor-pointer text-gray-400' />
@@ -34,19 +41,31 @@ function JobsListCardHeader() {
 function JobsListCardBody() {
   return (
     <Stack className='mt-5'>
-      <p className='text-sm text-gray-400'>United States, California</p>
+      <Typography className='text-gray-400' size='sm'>
+        United States, California
+      </Typography>
 
       <Group className='mt-1' justify='between'>
-        <p className='text-sm font-semibold'>Mid-Senior</p>
-        <p className='text-sm font-semibold'>Full-Time</p>
-        <p className='text-sm font-semibold'>$10520 PA</p>
+        <Typography size='sm' weight='semibold'>
+          Mid-Senior
+        </Typography>
+        <Typography size='sm' weight='semibold'>
+          Full-Time
+        </Typography>
+        <Typography size='sm' weight='semibold'>
+          $10520 PA
+        </Typography>
       </Group>
 
-      <p className='mt-2 text-sm tracking-wider text-gray-400'>
+      <Typography
+        className='mt-2 text-gray-400'
+        letterSpacing='wider'
+        size='sm'
+      >
         It is a long established fact that a reader will be distracted by the
         readable content of a page when looking at its layout. The point of
         using Lorem Ipsum is that it has a more-or-less normal.
-      </p>
+      </Typography>
 
       <Group className='mt-3' gap='md'>
         <Badge variant='job-description-tag'>Design</Badge>
@@ -60,7 +79,9 @@ function JobsListCardBody() {
 function JobsListCardFooter() {
   return (
     <Group className='mt-4' justify='between'>
-      <p className='text-sm text-gray-400'>28 March 2021</p>
+      <Typography className='text-gray-400' size='sm'>
+        28 March 2021
+      </Typography>
 
       <Group gap='md'>
         <Ban className='cursor-pointer text-gray-400' />
