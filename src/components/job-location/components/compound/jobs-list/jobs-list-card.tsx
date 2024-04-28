@@ -10,6 +10,7 @@ import {
   Typography,
 } from '@/components/job-location/components/ui'
 import {Badge} from '@/components/job-location/components/ui/badge'
+import {useResponsiveVariant} from '@/components/job-location/utils/useResponsiveVariant'
 
 function JobsListCardHeader() {
   return (
@@ -67,7 +68,11 @@ function JobsListCardBody() {
         using Lorem Ipsum is that it has a more-or-less normal.
       </Typography>
 
-      <Group className='mt-3' gap='md'>
+      <Group
+        className='mt-3'
+        gap={useResponsiveVariant({base: 'sm', lg: 'md'})}
+        // gap='md'
+      >
         <Badge variant='job-description-tag'>Design</Badge>
         <Badge variant='job-description-tag'>User Experience</Badge>
         <Badge variant='job-description-tag'>Senior</Badge>

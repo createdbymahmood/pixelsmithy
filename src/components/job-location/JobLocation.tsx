@@ -19,7 +19,7 @@ export default function JobLocation() {
         <Group
           align='stretch'
           className='flex-wrap md:flex-nowrap'
-          gap={useResponsiveVariant({initial: 'sm', md: 'xl'})}
+          gap={useResponsiveVariant({base: 'sm', md: 'xl'})}
         >
           <JobFilters />
           <JobsList />

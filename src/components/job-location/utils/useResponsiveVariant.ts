@@ -17,7 +17,7 @@ type ResponsiveValue<T> = T extends boolean
 
 export type ResponsiveProps<T> = {
   [K in Breakpoints]?: ResponsiveValue<T>
-} & {initial: ResponsiveValue<T>}
+} & {base: ResponsiveValue<T>}
 
 function getScreenValue(key: string) {
   return Number.parseInt(screens[key as Breakpoints].replace('px', ''), 10)
@@ -25,11 +25,11 @@ function getScreenValue(key: string) {
 
 /**
  * Custom hook for handling responsive behavior based on breakpoints.
- * @param props - The responsive props containing breakpoints and initial value.
+ * @param props - The responsive props containing breakpoints and base value.
  * @returns The responsive value based on the current breakpoint.
  */
 export function useResponsiveVariant<T>(props: ResponsiveProps<T>) {
-  const {initial, ...breakpoints} = props
+  const {base, ...breakpoints} = props
 
   const mediaQueries = Object.keys(breakpoints)
     .sort((a, b) => {
@@ -49,8 +49,8 @@ export function useResponsiveVariant<T>(props: ResponsiveProps<T>) {
     .filter(Boolean)
 
   const size = useMemo(() => {
-    return mediaQueries[0] ?? initial
-  }, [initial, mediaQueries])
+    return mediaQueries[0] ?? base
+  }, [base, mediaQueries])
 
   return size
 }
