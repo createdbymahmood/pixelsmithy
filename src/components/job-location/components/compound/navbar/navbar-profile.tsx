@@ -27,7 +27,7 @@ function Dropdown({children}: DropdownProps) {
         {children}
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent side='bottom'>
+      <DropdownMenuContent align='end' side='bottom' sideOffset={12}>
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>Profile</DropdownMenuItem>
