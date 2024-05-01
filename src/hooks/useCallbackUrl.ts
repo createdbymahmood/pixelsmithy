@@ -8,9 +8,10 @@ interface UseCallbackUrlParams {
   options?: QueryParamOptions
 }
 
-export const useCallbackUrl = (params: UseCallbackUrlParams) =>
-  useQueryParam(
-    CALLBACK_URL_PARAM_KEY,
-    withDefault(StringParam, params.defaultValue),
-    params.options,
-  )
+export const useCallbackUrl = (params: UseCallbackUrlParams) => {
+  const name = CALLBACK_URL_PARAM_KEY
+  const paramConfig = withDefault(StringParam, params.defaultValue)
+  const options = params.options
+
+  return useQueryParam(name, paramConfig, options)
+}
