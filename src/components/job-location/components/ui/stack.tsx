@@ -39,11 +39,16 @@ const stackVariants = cva('flex flex-col', {
   },
 })
 
-export interface StackProps
-  extends React.HtmlHTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof stackVariants> {
+interface StackVariantsProps extends VariantProps<typeof stackVariants> {}
+interface StackElementProps extends React.HtmlHTMLAttributes<HTMLDivElement> {}
+
+interface StackCommonProps {
   asChild?: boolean
 }
+interface StackProps
+  extends StackVariantsProps,
+    StackElementProps,
+    StackCommonProps {}
 
 const Stack = React.forwardRef<HTMLDivElement, StackProps>(
   ({align, asChild = false, className, gap, justify, ...props}, ref) => {
