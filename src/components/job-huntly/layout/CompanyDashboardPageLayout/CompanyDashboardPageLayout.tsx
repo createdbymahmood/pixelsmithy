@@ -13,12 +13,10 @@ import {
 
 interface CompanyDashboardPageLayoutProps {
   children: ReactNode
-  callbackURL?: string
   p?: MantineSpacing
 }
 
 export function CompanyDashboardPageLayout({
-  callbackURL,
   children,
   p = 'xxxl',
 }: CompanyDashboardPageLayoutProps) {
@@ -29,10 +27,10 @@ export function CompanyDashboardPageLayout({
       <Box
         className='overflow-y-hidden'
         h={`calc(100vh - ${rem(COMPANY_DASHBOARD_PAGE_LAYAOUT_HEADER_HEIGHT)})`}
-        py={p}
+        pb='xs'
       >
         <PerfectScrollbar>
-          <Container h='100%' px={p} size='xxl'>
+          <Container h='100%' pos='relative' px={p} py={p} size='xxl'>
             {children}
           </Container>
         </PerfectScrollbar>
