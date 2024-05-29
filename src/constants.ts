@@ -1,7 +1,15 @@
 import type {MantineColorScheme} from '@mantine/core'
 import urlCat from 'urlcat'
 
-import {JobhuntlyCompanyDashboardHome} from '@/routes'
+import {
+  DashstackDashboard,
+  Flights,
+  JobhuntlyApplicantDashboardHome,
+  JobhuntlyCompanyDashboardHome,
+  Joblocation,
+  ModernizeDashboard,
+  RoscentDashboard,
+} from '@/routes'
 
 export const defaultThemeColorScheme: MantineColorScheme = 'light'
 export const defaultDateFormat = 'DD MMMM YYYY'
@@ -280,50 +288,46 @@ export const urls = {
   },
 }
 
-console.log({
-  JobhuntlyCompanyDashboardHome: JobhuntlyCompanyDashboardHome.toString(),
-})
 export const applications = [
   {
     title: 'Job Huntly - Company',
     description: 'Job Search Dashboard',
-    href: urls.JobHuntly.company.dashboard.home,
-    // href: JobhuntlyCompanyDashboardHome.Link,
+    href: JobhuntlyCompanyDashboardHome(),
     info: 'Desktop version',
   },
   {
     title: 'Job Huntly - Applicant',
     description: 'Job Search Dashboard',
-    href: urls.JobHuntly.applicant.dashboard.home,
+    href: JobhuntlyApplicantDashboardHome(),
     info: 'Desktop version',
   },
   {
     title: 'Roscent',
     description: 'Design System and UI Kit',
-    href: urls.roscent.index,
+    href: RoscentDashboard(),
     info: 'Desktop version',
   },
   {
     title: 'Modernize',
     description: 'Dashboard UI Kit',
-    href: urls.Modernize.dashboard.index,
+    href: ModernizeDashboard(),
     info: 'Desktop version',
   },
   {
     title: 'DashStack',
     description: 'Dashboard UI Kit',
-    href: urls.DashStack.dashboard.index,
+    href: DashstackDashboard(),
     info: 'Desktop version',
   },
   {
     title: 'Flights',
     description: 'Flight Schedule App',
-    href: urls.Flights.index,
+    href: Flights(),
     info: 'Mobile Version Only, But also viewable on desktop',
   },
   {
     title: 'Job Location',
     description: 'A Simple Job Search Page',
-    href: urls.JobLocation.index,
+    href: Joblocation(),
   },
 ]
