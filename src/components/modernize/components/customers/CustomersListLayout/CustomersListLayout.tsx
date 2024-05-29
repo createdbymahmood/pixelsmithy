@@ -7,7 +7,13 @@ import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
 import {TabLink} from '@/components/common'
-import {urls} from '@/constants'
+import {
+  ModernizeDashboardCustomersAdd,
+  ModernizeDashboardCustomersListAll,
+  ModernizeDashboardCustomersListFromeurope,
+  ModernizeDashboardCustomersListNew,
+  ModernizeDashboardCustomersListReturning,
+} from '@/lib/declarative-routing'
 
 function Header() {
   return (
@@ -18,7 +24,7 @@ function Header() {
         <Button variant='default'>Export</Button>
         <Button
           component={Link}
-          href={urls.Modernize.dashboard.customers.add}
+          href={ModernizeDashboardCustomersAdd()}
           leftSection={<Plus className='icon-size-md' weight='bold' />}
         >
           Add Customer
@@ -36,22 +42,22 @@ const customers = [
   {
     key: 'all',
     label: 'All Customers',
-    href: urls.Modernize.dashboard.customers.list.all,
+    href: ModernizeDashboardCustomersListAll(),
   },
   {
     key: 'new',
     label: 'New Customers',
-    href: urls.Modernize.dashboard.customers.list.new,
+    href: ModernizeDashboardCustomersListNew(),
   },
   {
     key: 'returning',
     label: 'Returning Customers',
-    href: urls.Modernize.dashboard.customers.list.returning,
+    href: ModernizeDashboardCustomersListReturning(),
   },
   {
     key: 'from-europe',
     label: 'From Europe',
-    href: urls.Modernize.dashboard.customers.list.fromEurope,
+    href: ModernizeDashboardCustomersListFromeurope(),
   },
 ] as const
 

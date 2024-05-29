@@ -23,7 +23,15 @@ import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 import React, {Fragment} from 'react'
 
-import {urls} from '@/constants'
+import {
+  RoscentDashboardEmailArchive,
+  RoscentDashboardEmailCompose,
+  RoscentDashboardEmailDraft,
+  RoscentDashboardEmailInboxId,
+  RoscentDashboardEmailSent,
+  RoscentDashboardEmailSpam,
+  RoscentDashboardEmailTrash,
+} from '@/lib/declarative-routing'
 
 import styles from './EmailLayout.module.scss'
 
@@ -46,7 +54,7 @@ function Compose() {
       className={clsx('cursor-pointer', styles.item, styles.compose)}
       component={Link}
       gap='sm'
-      href={urls.roscent.email.compose}
+      href={RoscentDashboardEmailCompose()}
     >
       <PencilSimpleLine className='icon-size-lg' weight={iconWeight} />
       <Text size='sm'>Compose</Text>
@@ -84,37 +92,37 @@ const sidebarItems = [
   {
     title: 'Inbox',
     icon: Tray,
-    href: urls.roscent.email.inbox(emailId),
+    href: RoscentDashboardEmailInboxId({id: emailId}),
     segment: 'inbox',
   },
   {
     title: 'Sent',
     icon: PaperPlaneRight,
-    href: urls.roscent.email.sent,
+    href: RoscentDashboardEmailSent(),
     segment: 'sent',
   },
   {
     title: 'Draft',
     icon: FileText,
-    href: urls.roscent.email.draft,
+    href: RoscentDashboardEmailDraft(),
     segment: 'draft',
   },
   {
     title: 'Spam',
     icon: WarningOctagon,
-    href: urls.roscent.email.spam,
+    href: RoscentDashboardEmailSpam(),
     segment: 'spam',
   },
   {
     title: 'Trash',
     icon: Trash,
-    href: urls.roscent.email.trash,
+    href: RoscentDashboardEmailTrash(),
     segment: 'trash',
   },
   {
     title: 'Archive',
     icon: Archive,
-    href: urls.roscent.email.archive,
+    href: RoscentDashboardEmailArchive(),
     segment: 'archive',
   },
 ]

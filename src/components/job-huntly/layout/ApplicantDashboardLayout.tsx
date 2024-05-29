@@ -11,10 +11,18 @@ import {
   User,
 } from '@phosphor-icons/react/dist/ssr'
 import type {ReactNode} from 'react'
-import React from 'react'
 
 import type {SidebarSection} from '@/components/roscent'
-import {urls} from '@/constants'
+import {
+  JobhuntlyApplicantDashboardApplications,
+  JobhuntlyApplicantDashboardChat,
+  JobhuntlyApplicantDashboardCompanies,
+  JobhuntlyApplicantDashboardHelpcenter,
+  JobhuntlyApplicantDashboardHome,
+  JobhuntlyApplicantDashboardJobs,
+  JobhuntlyApplicantDashboardProfile,
+  JobhuntlyApplicantDashboardSettingsMyprofile,
+} from '@/lib/declarative-routing'
 
 import {DashboardLayout} from './DashboardLayout'
 
@@ -26,14 +34,14 @@ const sections: SidebarSection[] = [
         id: 'dashboard',
         title: 'Dashboard',
         icon: HouseSimple,
-        href: urls.JobHuntly.applicant.dashboard.home,
+        href: JobhuntlyApplicantDashboardHome(),
         activeSegment: ['home'],
       },
       {
         id: 'messages',
         title: 'Messages',
         icon: ChatCenteredText,
-        href: urls.JobHuntly.applicant.dashboard.chat,
+        href: JobhuntlyApplicantDashboardChat(),
         activeSegment: ['chat'],
         unread: 1,
       },
@@ -41,28 +49,28 @@ const sections: SidebarSection[] = [
         id: 'my-applications',
         title: 'My Applications',
         icon: FileText,
-        href: urls.JobHuntly.applicant.dashboard.applications.index,
+        href: JobhuntlyApplicantDashboardApplications(),
         activeSegment: ['applications'],
       },
       {
         id: 'jobs',
         title: 'Find Jobs',
         icon: MagnifyingGlass,
-        href: urls.JobHuntly.applicant.dashboard.jobs,
+        href: JobhuntlyApplicantDashboardJobs(),
         activeSegment: ['jobs'],
       },
       {
         id: 'browse-companies',
         title: 'Browse Companies',
         icon: Buildings,
-        href: urls.JobHuntly.applicant.dashboard.companies,
+        href: JobhuntlyApplicantDashboardCompanies(),
         activeSegment: ['companies'],
       },
       {
         id: 'my-public-profile',
         title: 'My Public Profile',
         icon: User,
-        href: urls.JobHuntly.applicant.dashboard.profile,
+        href: JobhuntlyApplicantDashboardProfile(),
         activeSegment: ['profile'],
       },
     ],
@@ -74,14 +82,14 @@ const sections: SidebarSection[] = [
         id: 'settings',
         title: 'Settings',
         icon: Gear,
-        href: urls.JobHuntly.applicant.dashboard.settings.profile,
+        href: JobhuntlyApplicantDashboardSettingsMyprofile(),
         activeSegment: ['settings', 'my-profile'],
       },
       {
         id: 'help-center',
         title: 'Help Center',
         icon: Question,
-        href: urls.JobHuntly.applicant.dashboard.helpCenter.index,
+        href: JobhuntlyApplicantDashboardHelpcenter(),
         activeSegment: ['help-center'],
       },
     ],

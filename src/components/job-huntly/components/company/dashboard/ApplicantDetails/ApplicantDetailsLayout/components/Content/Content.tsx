@@ -3,10 +3,14 @@ import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
 import Link from 'next/link'
 import {useParams, useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
-import React from 'react'
 
 import {TabLink} from '@/components/common'
-import {urls} from '@/constants'
+import {
+  JobhuntlyCompanyDashboardApplicantsApplicantIdHiringprogress,
+  JobhuntlyCompanyDashboardApplicantsApplicantIdInterviewschedule,
+  JobhuntlyCompanyDashboardApplicantsApplicantIdProfile,
+  JobhuntlyCompanyDashboardApplicantsApplicantIdResume,
+} from '@/lib/declarative-routing'
 
 interface ContentProps {
   children: ReactNode
@@ -23,30 +27,30 @@ export function Content({children}: ContentProps) {
     {
       key: 'profile',
       label: 'Applicant Profile',
-      href: urls.JobHuntly.company.dashboard.applicants.profile(
-        params.applicantId,
-      ),
+      href: JobhuntlyCompanyDashboardApplicantsApplicantIdProfile({
+        applicantId: params.applicantId,
+      }),
     },
     {
       key: 'resume',
       label: 'Resume',
-      href: urls.JobHuntly.company.dashboard.applicants.resume(
-        params.applicantId,
-      ),
+      href: JobhuntlyCompanyDashboardApplicantsApplicantIdResume({
+        applicantId: params.applicantId,
+      }),
     },
     {
       key: 'hiring-progress',
       label: 'Hiring Progress',
-      href: urls.JobHuntly.company.dashboard.applicants.hiringProgress(
-        params.applicantId,
-      ),
+      href: JobhuntlyCompanyDashboardApplicantsApplicantIdHiringprogress({
+        applicantId: params.applicantId,
+      }),
     },
     {
       key: 'interview-schedule',
       label: 'Interview Schedule',
-      href: urls.JobHuntly.company.dashboard.applicants.interviewSchedule(
-        params.applicantId,
-      ),
+      href: JobhuntlyCompanyDashboardApplicantsApplicantIdInterviewschedule({
+        applicantId: params.applicantId,
+      }),
     },
   ]
 

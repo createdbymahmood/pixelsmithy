@@ -17,7 +17,7 @@ import {MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
 import {articles} from '@/components/modernize/mock/articles'
-import {urls} from '@/constants'
+import {ModernizeDashboardKnowledgebaseArticleArticleId} from '@/lib/declarative-routing'
 
 function Header() {
   return <Title order={5}>Knowledge Base</Title>
@@ -54,7 +54,7 @@ function ArticleCard({contents, id, title}: ArticleProps) {
         key='more'
         c='primary.7'
         component={Link}
-        href={urls.Modernize.dashboard.knowledgeBase.article(id)}
+        href={ModernizeDashboardKnowledgebaseArticleArticleId({articleId: id})}
         mt={rem(20)}
         size='sm'
         underline='never'

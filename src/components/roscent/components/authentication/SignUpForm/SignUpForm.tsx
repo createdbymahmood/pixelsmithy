@@ -18,7 +18,7 @@ import {
 } from '@roscent/components/authentication/components'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {RoscentAuthenticationSignin} from '@/lib/declarative-routing'
 
 import styles from './SignUpForm.module.scss'
 
@@ -57,7 +57,7 @@ function FormView() {
         <Anchor
           c='indigo.4'
           component={Link}
-          href={urls.roscent.authentication.signIn}
+          href={RoscentAuthenticationSignin()}
           size='sm'
           underline='never'
         >

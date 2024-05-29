@@ -20,9 +20,12 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import Link from 'next/link'
-import React from 'react'
 
-import {urls} from '@/constants'
+import {
+  RoscentAuthenticationAccountsetupAccounttypeselection,
+  RoscentAuthenticationAccountsetupBillingdetails,
+  RoscentAuthenticationSignin,
+} from '@/lib/declarative-routing'
 
 import {CardSelectionGroup} from '../CardSelectionGroup'
 import styles from './AccountInfo.module.scss'
@@ -37,7 +40,7 @@ function Help() {
       <Anchor
         c='indigo.4'
         component={Link}
-        href={urls.roscent.authentication.signIn}
+        href={RoscentAuthenticationSignin()}
         ml={rem(5)}
         size='sm'
         underline='never'
@@ -128,7 +131,7 @@ function Footer() {
     <Group justify='center' wrap='nowrap'>
       <Button
         component={Link}
-        href={urls.roscent.authentication.accountSetup.accountTypeSelection}
+        href={RoscentAuthenticationAccountsetupAccounttypeselection()}
         leftSection={previousLeftSection}
         radius='md'
         variant='light'
@@ -138,7 +141,7 @@ function Footer() {
       </Button>
       <Button
         component={Link}
-        href={urls.roscent.authentication.accountSetup.billingDetails}
+        href={RoscentAuthenticationAccountsetupBillingdetails()}
         radius='md'
         rightSection={continueRightsection}
         fullWidth

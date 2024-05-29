@@ -13,7 +13,7 @@ import {
 import {range} from 'lodash-es'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {DashstackDashboardTeamAdd} from '@/lib/declarative-routing'
 
 function Header() {
   return (
@@ -22,7 +22,7 @@ function Header() {
       <Button
         color='primary.4'
         component={Link}
-        href={urls.DashStack.dashboard.team.add}
+        href={DashstackDashboardTeamAdd()}
         radius='md'
         size='md'
       >

@@ -5,14 +5,14 @@ import type {DataTableColumn} from 'mantine-datatable'
 import Link from 'next/link'
 
 import type {Job, JobStatus, JobType} from '@/components/job-huntly/mock/jobs'
-import {urls} from '@/constants'
+import {JobhuntlyCompanyDashboardJobsJobIdApplicants} from '@/lib/declarative-routing'
 
 function renderRole(record: Job) {
   return (
     <Text
       component={Link}
       fw='500'
-      href={urls.JobHuntly.company.dashboard.jobs.applicants(record.id)}
+      href={JobhuntlyCompanyDashboardJobsJobIdApplicants({jobId: record.id})}
       lineClamp={1}
     >
       {record.role}

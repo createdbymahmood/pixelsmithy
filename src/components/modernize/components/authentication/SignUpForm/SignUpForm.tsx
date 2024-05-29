@@ -13,7 +13,10 @@ import {
 } from '@mantine/core'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {
+  ModernizeAuthenticationSignin,
+  ModernizeDashboard,
+} from '@/lib/declarative-routing'
 
 function SignInNotice() {
   return (
@@ -25,7 +28,7 @@ function SignInNotice() {
       <Anchor
         c='primary.7'
         component={Link}
-        href={urls.Modernize.authentication.signIn}
+        href={ModernizeAuthenticationSignin()}
         size='sm'
         underline='never'
       >
@@ -74,7 +77,7 @@ function TermsOfServiceNotice() {
       <Anchor
         c='primary.7'
         component={Link}
-        href={urls.Modernize.index}
+        href={ModernizeDashboard()}
         ml={rem(5)}
         size='sm'
         underline='never'

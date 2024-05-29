@@ -1,8 +1,8 @@
 import {userId} from '@roscent/mocks/user'
 import {redirect} from 'next/navigation'
 
-import {urls} from '@/constants'
+import {RoscentDashboardUserprofileId} from '@/lib/declarative-routing'
 
 export default function Page() {
-  return redirect(urls.roscent.userProfile(userId))
+  return redirect(RoscentDashboardUserprofileId({id: userId}))
 }

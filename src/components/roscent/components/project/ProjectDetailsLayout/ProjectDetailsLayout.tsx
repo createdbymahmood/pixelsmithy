@@ -7,20 +7,50 @@ import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
 import {TabLink} from '@/components/common'
-import {urls} from '@/constants'
+import {
+  RoscentDashboardProjectsIdActivity,
+  RoscentDashboardProjectsIdBudget,
+  RoscentDashboardProjectsIdFiles,
+  RoscentDashboardProjectsIdOverview,
+  RoscentDashboardProjectsIdSettings,
+  RoscentDashboardProjectsIdTargets,
+  RoscentDashboardProjectsIdUsers,
+} from '@/lib/declarative-routing'
 
 interface ProjectOverviewProps {
   children: ReactNode
 }
 
 export const projectDetailsSections = [
-  {key: 'overview', href: urls.roscent.projects.overview(projectId)},
-  {key: 'targets', href: urls.roscent.projects.targets(projectId)},
-  {key: 'budget', href: urls.roscent.projects.budget(projectId)},
-  {key: 'users', href: urls.roscent.projects.users(projectId)},
-  {key: 'files', href: urls.roscent.projects.files(projectId)},
-  {key: 'activity', href: urls.roscent.projects.activity(projectId)},
-  {key: 'settings', href: urls.roscent.projects.settings(projectId)},
+  {
+    key: 'overview',
+
+    href: RoscentDashboardProjectsIdOverview({id: projectId}),
+  },
+  {
+    key: 'targets',
+    href: RoscentDashboardProjectsIdTargets({id: projectId}),
+  },
+  {
+    key: 'budget',
+    href: RoscentDashboardProjectsIdBudget({id: projectId}),
+  },
+  {
+    key: 'users',
+    href: RoscentDashboardProjectsIdUsers({id: projectId}),
+  },
+  {
+    key: 'files',
+    href: RoscentDashboardProjectsIdFiles({id: projectId}),
+  },
+  {
+    key: 'activity',
+    href: RoscentDashboardProjectsIdActivity({id: projectId}),
+  },
+  {
+    key: 'settings',
+    href: RoscentDashboardProjectsIdSettings({id: projectId}),
+  },
 ] as const
 
 export function ProjectDetailsLayout({children}: ProjectOverviewProps) {

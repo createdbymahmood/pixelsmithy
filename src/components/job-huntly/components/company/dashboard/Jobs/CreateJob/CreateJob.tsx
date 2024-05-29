@@ -3,16 +3,15 @@
 import {Box, Group, rem, Stack, Title} from '@mantine/core'
 import {ArrowLeft} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/dist/client/link'
-import React from 'react'
 
-import {urls} from '@/constants'
 import {useCallbackUrl} from '@/hooks/useCallbackUrl'
+import {JobhuntlyCompanyDashboardJobs} from '@/lib/declarative-routing'
 
 import {Steps} from './components'
 
 function Header() {
   const [callbackUrl] = useCallbackUrl({
-    defaultValue: urls.JobHuntly.company.dashboard.jobs.listing,
+    defaultValue: JobhuntlyCompanyDashboardJobs(),
   })
   const backArrow = (
     <Link href={callbackUrl}>

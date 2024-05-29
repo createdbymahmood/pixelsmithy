@@ -7,7 +7,12 @@ import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
 import {TabLink} from '@/components/common'
-import {urls} from '@/constants'
+import {
+  ModernizeDashboardCouponsCreate,
+  ModernizeDashboardCouponsListActive,
+  ModernizeDashboardCouponsListAll,
+  ModernizeDashboardCouponsListExpired,
+} from '@/lib/declarative-routing'
 
 function Header() {
   return (
@@ -17,7 +22,7 @@ function Header() {
       <Group ml='auto'>
         <Button
           component={Link}
-          href={urls.Modernize.dashboard.coupons.create}
+          href={ModernizeDashboardCouponsCreate()}
           leftSection={<Plus className='icon-size-md' weight='bold' />}
           px='md'
         >
@@ -36,17 +41,17 @@ const coupons = [
   {
     key: 'all',
     label: 'All Coupons',
-    href: urls.Modernize.dashboard.coupons.list.all,
+    href: ModernizeDashboardCouponsListAll(),
   },
   {
     key: 'active',
     label: 'Active Coupons',
-    href: urls.Modernize.dashboard.coupons.list.active,
+    href: ModernizeDashboardCouponsListActive(),
   },
   {
     key: 'expired',
     label: 'Expired Coupons',
-    href: urls.Modernize.dashboard.coupons.list.expired,
+    href: ModernizeDashboardCouponsListExpired(),
   },
 ] as const
 

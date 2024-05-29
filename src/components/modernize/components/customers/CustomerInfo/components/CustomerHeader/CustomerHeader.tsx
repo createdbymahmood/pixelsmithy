@@ -4,7 +4,7 @@ import {ArrowLeft} from '@phosphor-icons/react'
 import Link from 'next/link'
 
 import {GroupLink} from '@/components/common'
-import {urls} from '@/constants'
+import {ModernizeDashboardCustomers} from '@/lib/declarative-routing'
 
 function BackButton() {
   return (
@@ -13,7 +13,7 @@ function BackButton() {
       className='cursor-pointer'
       component={Link}
       gap={rem(4)}
-      href={urls.Modernize.dashboard.customers.index}
+      href={ModernizeDashboardCustomers()}
     >
       <ArrowLeft className='icon-size-md' weight='bold' />
       <Text size='sm'>Back</Text>
@@ -26,13 +26,13 @@ function Actions() {
     <GroupLink ml='auto'>
       <Button
         component={Link}
-        href={urls.Modernize.dashboard.customers.index}
+        href={ModernizeDashboardCustomers()}
         ml='auto'
         variant='default'
       >
         Cancel
       </Button>
-      <Button component={Link} href={urls.Modernize.dashboard.customers.index}>
+      <Button component={Link} href={ModernizeDashboardCustomers()}>
         Save
       </Button>
     </GroupLink>

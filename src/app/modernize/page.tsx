@@ -1,7 +1,7 @@
 import {redirect} from 'next/navigation'
 
-import {urls} from '@/constants'
+import {ModernizeDashboard as ModernizeDashboardRoute} from '@/lib/declarative-routing'
 
 export default function ModernizeDashboard() {
-  return redirect(urls.Modernize.dashboard.index)
+  return redirect(ModernizeDashboardRoute())
 }

@@ -6,21 +6,54 @@ import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
 import {TabLink} from '@/components/common'
-import {urls} from '@/constants'
+import {
+  RoscentDashboardAccountApikeys,
+  RoscentDashboardAccountBilling,
+  RoscentDashboardAccountLogs,
+  RoscentDashboardAccountOverview,
+  RoscentDashboardAccountReferrals,
+  RoscentDashboardAccountSecurity,
+  RoscentDashboardAccountSettings,
+  RoscentDashboardAccountStatements,
+} from '@/lib/declarative-routing'
 
 interface ProjectOverviewProps {
   children: ReactNode
 }
 
 const accountSections = [
-  {key: 'overview', href: urls.roscent.account.overview},
-  {key: 'settings', href: urls.roscent.account.settings},
-  {key: 'security', href: urls.roscent.account.security},
-  {key: 'billing', href: urls.roscent.account.billing},
-  {key: 'statements', href: urls.roscent.account.statements},
-  {key: 'referrals', href: urls.roscent.account.referrals},
-  {key: 'api-keys', href: urls.roscent.account.apiKey},
-  {key: 'logs', href: urls.roscent.account.logs},
+  {
+    key: 'overview',
+    href: RoscentDashboardAccountOverview(),
+  },
+  {
+    key: 'settings',
+    href: RoscentDashboardAccountSettings(),
+  },
+  {
+    key: 'security',
+    href: RoscentDashboardAccountSecurity(),
+  },
+  {
+    key: 'billing',
+    href: RoscentDashboardAccountBilling(),
+  },
+  {
+    key: 'statements',
+    href: RoscentDashboardAccountStatements(),
+  },
+  {
+    key: 'referrals',
+    href: RoscentDashboardAccountReferrals(),
+  },
+  {
+    key: 'api-keys',
+    href: RoscentDashboardAccountApikeys(),
+  },
+  {
+    key: 'logs',
+    href: RoscentDashboardAccountLogs(),
+  },
 ] as const
 
 export function AccountLayout({children}: ProjectOverviewProps) {

@@ -14,7 +14,7 @@ import type {
   ExploreSearchBoxFormConfig,
 } from '@/components/job-huntly/modules'
 import {ExploreListMode, ExploreModule} from '@/components/job-huntly/modules'
-import {urls} from '@/constants'
+import {JobhuntlyApplicantDashboardJobsJobId} from '@/lib/declarative-routing'
 
 import {GridJobCard} from './GridJobCard'
 import {StackJobCard} from './StackJobsCard'
@@ -85,7 +85,7 @@ const list: ExploreListConfig<T> = {
             return (
               <Link
                 key={job.id}
-                href={urls.JobHuntly.applicant.dashboard.job(job.id)}
+                href={JobhuntlyApplicantDashboardJobsJobId({jobId: job.id})}
               >
                 <GridJobCard {...job} />
               </Link>
@@ -101,7 +101,7 @@ const list: ExploreListConfig<T> = {
           return (
             <Link
               key={job.id}
-              href={urls.JobHuntly.applicant.dashboard.job(job.id)}
+              href={JobhuntlyApplicantDashboardJobsJobId({jobId: job.id})}
             >
               <StackJobCard {...job} />
             </Link>

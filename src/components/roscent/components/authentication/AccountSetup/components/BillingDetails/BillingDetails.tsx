@@ -14,9 +14,12 @@ import {
 } from '@mantine/core'
 import {CaretLeft, CaretRight} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
-import React from 'react'
 
-import {urls} from '@/constants'
+import {
+  RoscentAuthenticationAccountsetupAccountinfo,
+  RoscentAuthenticationAccountsetupCreditcardsetup,
+  RoscentAuthenticationSignin,
+} from '@/lib/declarative-routing'
 
 import styles from './BillingDetails.module.scss'
 
@@ -30,7 +33,7 @@ function Help() {
       <Anchor
         c='indigo.4'
         component={Link}
-        href={urls.roscent.authentication.signIn}
+        href={RoscentAuthenticationSignin()}
         ml={rem(5)}
         size='sm'
         underline='never'
@@ -109,7 +112,7 @@ function Footer() {
     <Group justify='center' wrap='nowrap'>
       <Button
         component={Link}
-        href={urls.roscent.authentication.accountSetup.accountInfo}
+        href={RoscentAuthenticationAccountsetupAccountinfo()}
         leftSection={previousLeftSection}
         radius='md'
         variant='light'
@@ -119,7 +122,7 @@ function Footer() {
       </Button>
       <Button
         component={Link}
-        href={urls.roscent.authentication.accountSetup.creditCardSetup}
+        href={RoscentAuthenticationAccountsetupCreditcardsetup()}
         radius='md'
         rightSection={continueRightsection}
         fullWidth

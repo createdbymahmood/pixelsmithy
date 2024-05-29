@@ -16,13 +16,19 @@ import {ArrowLeft} from '@phosphor-icons/react/dist/ssr'
 import {capitalize, find, head} from 'lodash-es'
 import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
 import Link from 'next/link'
-import {useParams, useSelectedLayoutSegment} from 'next/navigation'
+import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
 import {GroupLink, TabLink} from '@/components/common'
 import type {Job} from '@/components/job-huntly/mock/jobs'
 import {jobs} from '@/components/job-huntly/mock/jobs'
-import {urls} from '@/constants'
+import {
+  JobhuntlyCompanyDashboardJobs,
+  JobhuntlyCompanyDashboardJobsJobIdAnalytics,
+  JobhuntlyCompanyDashboardJobsJobIdApplicants,
+  JobhuntlyCompanyDashboardJobsJobIdDetails,
+} from '@/lib/declarative-routing'
+import {useParams} from '@/lib/declarative-routing/hooks'
 
 function Action() {
   const leftSection = (
@@ -43,7 +49,7 @@ function BackButton() {
       component={Link}
       gap={rem(4)}
       h={rem(40)}
-      href={urls.JobHuntly.company.dashboard.jobs.listing}
+      href={JobhuntlyCompanyDashboardJobs()}
       p='xxs'
       w={rem(40)}
     >
@@ -95,12 +101,8 @@ interface JobLayoutProps {
   children: ReactNode
 }
 
-interface QueryParams extends Params {
-  jobId: string
-}
-
 function useJobLayoutState() {
-  const params = useParams<QueryParams>()
+  const params = useParams(JobhuntlyCompanyDashboardJobsJobIdApplicants)
   const id = params.jobId
 
   const job = find(jobs, {id})!
@@ -111,23 +113,22 @@ interface LayoutProps {
 }
 
 function LayoutTabs({children}: LayoutProps) {
-  const params = useParams<QueryParams>()
-
+  const params = useParams(JobhuntlyCompanyDashboardJobsJobIdApplicants)
   const applicantProfileSections = [
     {
       key: 'applicants',
       label: 'Applicants',
-      href: urls.JobHuntly.company.dashboard.jobs.applicants(params.jobId),
+      href: JobhuntlyCompanyDashboardJobsJobIdApplicants({jobId: params.jobId}),
     },
     {
       key: 'details',
       label: 'Details',
-      href: urls.JobHuntly.company.dashboard.jobs.details(params.jobId),
+      href: JobhuntlyCompanyDashboardJobsJobIdDetails({jobId: params.jobId}),
     },
     {
       key: 'analytics',
       label: 'Analytics',
-      href: urls.JobHuntly.company.dashboard.jobs.analytics(params.jobId),
+      href: JobhuntlyCompanyDashboardJobsJobIdAnalytics({jobId: params.jobId}),
     },
   ]
 

@@ -25,7 +25,7 @@ import {notFound, useParams} from 'next/navigation'
 
 import {GroupLink} from '@/components/common'
 import {articles} from '@/components/modernize/mock/articles'
-import {urls} from '@/constants'
+import {ModernizeDashboardKnowledgebase} from '@/lib/declarative-routing'
 
 import styles from './KnowledgeBaseArticle.module.scss'
 
@@ -36,7 +36,7 @@ function BackButton() {
       className='cursor-pointer'
       component={Link}
       gap={rem(4)}
-      href={urls.Modernize.dashboard.knowledgeBase.index}
+      href={ModernizeDashboardKnowledgebase()}
     >
       <ArrowLeft className='icon-size-md' weight='bold' />
       <Text size='sm'>Back</Text>

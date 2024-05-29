@@ -1,7 +1,7 @@
 import {redirect} from 'next/navigation'
 
-import {urls} from '@/constants'
+import {JobhuntlyApplicantDashboard} from '@/lib/declarative-routing'
 
 export default function Applicant() {
-  return redirect(urls.JobHuntly.applicant.dashboard.index)
+  return redirect(JobhuntlyApplicantDashboard())
 }

@@ -2,7 +2,7 @@ import {Anchor, Button, Input, rem, Stack, Text, Title} from '@mantine/core'
 import Link from 'next/link'
 import React from 'react'
 
-import {urls} from '@/constants'
+import {RoscentAuthenticationSignin} from '@/lib/declarative-routing'
 
 import styles from './ForgotPasswordForm.module.scss'
 
@@ -42,7 +42,7 @@ function Footer() {
       c='indigo.4'
       className={styles.forgotPassword}
       component={Link}
-      href={urls.roscent.authentication.signIn}
+      href={RoscentAuthenticationSignin()}
       mt='sm'
       size='sm'
       underline='never'

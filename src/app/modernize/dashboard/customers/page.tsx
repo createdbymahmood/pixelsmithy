@@ -1,6 +1,6 @@
 import {redirect} from 'next/navigation'
 
-import {urls} from '@/constants'
+import {ModernizeDashboardCustomersListAll} from '@/lib/declarative-routing'
 import {constructMetadata} from '@/utils/constructMetadata'
 
 export const metadata = constructMetadata({
@@ -8,5 +8,5 @@ export const metadata = constructMetadata({
 })
 
 export default function Customers() {
-  return redirect(urls.Modernize.dashboard.customers.list.all)
+  return redirect(ModernizeDashboardCustomersListAll())
 }

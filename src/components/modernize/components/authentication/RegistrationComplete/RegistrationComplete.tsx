@@ -4,7 +4,7 @@ import {Button, Divider, rem, Stack, Text, Title} from '@mantine/core'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {ModernizeAuthenticationSignin} from '@/lib/declarative-routing'
 
 function Header() {
   return (
@@ -32,7 +32,7 @@ function SocialLogin() {
 
       <Button
         component={Link}
-        href={urls.Modernize.authentication.signIn}
+        href={ModernizeAuthenticationSignin()}
         size='md'
         variant='default'
         fullWidth

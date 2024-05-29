@@ -14,8 +14,10 @@ import {
   User,
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
-import type {SidebarSection} from '@roscent/layout/RoscentLayout/components/Sidebar/Sidebar'
-import {SidebarItem} from '@roscent/layout/RoscentLayout/components/Sidebar/Sidebar'
+import type {
+  SidebarItem,
+  SidebarSection,
+} from '@roscent/layout/RoscentLayout/components/Sidebar/Sidebar'
 import clsx from 'clsx'
 import {intersection, isEmpty, isEqual} from 'lodash-es'
 import Link from 'next/link'
@@ -25,11 +27,25 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {GroupLink} from '@/components/common'
 import {useLayoutStore} from '@/components/dash-stack/layout/DashStackDashboardLayout/store/layout'
-import {urls} from '@/constants'
+import {
+  DashstackAuthenticationSignin,
+  DashstackAuthenticationSignup,
+  DashstackDashboard,
+  DashstackDashboardContacts,
+  DashstackDashboardFavorites,
+  DashstackDashboardInbox,
+  DashstackDashboardOrders,
+  DashstackDashboardPricing,
+  DashstackDashboardProducts,
+  DashstackDashboardProductstock,
+  DashstackDashboardSettings,
+  DashstackDashboardTeam,
+  DashstackDashboardTodo,
+} from '@/lib/declarative-routing'
 
 import styles from './Sidebar.module.scss'
 
-function SidebarItem(props: SidebarItem) {
+function SidebarItemImpl(props: SidebarItem) {
   const segment = useSelectedLayoutSegments()
   const isEqualToSegment = isEqual(segment, props.activeSegment)
   const isActive =
@@ -82,42 +98,42 @@ const sections: SidebarSection[] = [
         id: 'dashboard',
         title: 'Dashboard',
         icon: Gauge,
-        href: urls.DashStack.dashboard.index,
+        href: DashstackDashboard(),
         activeSegment: [],
       },
       {
         id: 'products',
         title: 'Products',
         icon: Scan,
-        href: urls.DashStack.dashboard.products.index,
+        href: DashstackDashboardProducts(),
         activeSegment: ['products'],
       },
       {
         id: 'favorites',
         title: 'Favorites',
         icon: Heart,
-        href: urls.DashStack.dashboard.favorites,
+        href: DashstackDashboardFavorites(),
         activeSegment: ['favorites'],
       },
       {
         id: 'inbox',
         title: 'Inbox',
         icon: ChatsTeardrop,
-        href: urls.DashStack.dashboard.inbox.index,
+        href: DashstackDashboardInbox(),
         activeSegment: ['inbox'],
       },
       {
         id: 'orders',
         title: 'Orders List',
         icon: ListChecks,
-        href: urls.DashStack.dashboard.orders,
+        href: DashstackDashboardOrders(),
         activeSegment: ['orders'],
       },
       {
         id: 'product-stock',
         title: 'Product Stock',
         icon: StackSimple,
-        href: urls.DashStack.dashboard.products.stock,
+        href: DashstackDashboardProductstock(),
         activeSegment: ['product-stock'],
       },
     ],
@@ -129,51 +145,37 @@ const sections: SidebarSection[] = [
         id: 'pricing',
         title: 'Pricing',
         icon: Gift,
-        href: urls.DashStack.dashboard.pricing,
+        href: DashstackDashboardPricing(),
         activeSegment: ['pricing'],
       },
-      // {
-      //   id: 'calendar',
-      //   title: 'Pricing',
-      //   icon: Calendar,
-      //   href: '/',
-      //   activeSegment: ['pricing'],
-      // },
       {
         id: 'to-do',
         title: 'To-Do',
         icon: Note,
-        href: urls.DashStack.dashboard.toDo,
+        href: DashstackDashboardTodo(),
         activeSegment: ['to-do'],
       },
       {
         id: 'contacts',
         title: 'Contacts',
         icon: UsersThree,
-        href: urls.DashStack.dashboard.contacts.index,
+        href: DashstackDashboardContacts(),
         activeSegment: ['contacts'],
       },
       {
         id: 'team',
         title: 'Team',
         icon: User,
-        href: urls.DashStack.dashboard.team.index,
+        href: DashstackDashboardTeam(),
         activeSegment: ['team'],
       },
       {
         id: 'settings',
         title: 'Settings',
         icon: Gear,
-        href: urls.DashStack.dashboard.settings,
+        href: DashstackDashboardSettings(),
         activeSegment: ['settings'],
       },
-      // {
-      //   id: 'invoice',
-      //   title: 'Invoice',
-      //   icon: Money,
-      //   href: '/',
-      //   activeSegment: ['pricing'],
-      // },
     ],
   },
   {
@@ -183,7 +185,7 @@ const sections: SidebarSection[] = [
         id: 'sign-in',
         title: 'Sign In',
         icon: SignIn,
-        href: urls.DashStack.authentication.signIn,
+        href: DashstackAuthenticationSignin(),
         target: '_blank',
         activeSegment: ['sign-in'],
       },
@@ -191,7 +193,7 @@ const sections: SidebarSection[] = [
         id: 'sign-up',
         title: 'Sign Up',
         icon: Champagne,
-        href: urls.DashStack.authentication.signUp,
+        href: DashstackAuthenticationSignup(),
         target: '_blank',
         activeSegment: ['sign-up'],
       },
@@ -203,7 +205,7 @@ function SidebarItems() {
   const sidebarOpen = useLayoutStore((s) => s.sidebarOpen)
   const content = sections.map((section) => {
     const sidebarItems = section.items.map((item) => {
-      return <SidebarItem key={item.id} {...item} />
+      return <SidebarItemImpl key={item.id} {...item} />
     })
 
     return (

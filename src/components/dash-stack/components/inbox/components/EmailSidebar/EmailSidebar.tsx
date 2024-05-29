@@ -31,7 +31,15 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {GroupLink} from '@/components/common'
 import {userId} from '@/components/dash-stack/mock/user'
-import {urls} from '@/constants'
+import {
+  DashstackDashboardInbox,
+  DashstackDashboardInboxBin,
+  DashstackDashboardInboxDraft,
+  DashstackDashboardInboxImportant,
+  DashstackDashboardInboxSent,
+  DashstackDashboardInboxSpam,
+  DashstackDashboardInboxStarred,
+} from '@/lib/declarative-routing'
 
 import styles from './EmailSidebar.module.scss'
 
@@ -84,49 +92,49 @@ const folders: Folder[] = [
     icon: EnvelopeSimple,
     count: 1253,
     segment: [userId],
-    href: urls.DashStack.dashboard.inbox.index,
+    href: DashstackDashboardInbox(),
   },
   {
     title: 'Starred',
     icon: Star,
     count: 245,
     segment: ['starred'],
-    href: urls.DashStack.dashboard.inbox.starred,
+    href: DashstackDashboardInboxStarred(),
   },
   {
     title: 'Sent',
     icon: PaperPlaneTilt,
     count: 24532,
     segment: ['sent'],
-    href: urls.DashStack.dashboard.inbox.sent,
+    href: DashstackDashboardInboxSent(),
   },
   {
     title: 'Draft',
     icon: PencilSimple,
     count: 9,
     segment: ['draft'],
-    href: urls.DashStack.dashboard.inbox.draft,
+    href: DashstackDashboardInboxDraft(),
   },
   {
     title: 'Spam',
     icon: Warning,
     count: 14,
     segment: ['spam'],
-    href: urls.DashStack.dashboard.inbox.spam,
+    href: DashstackDashboardInboxSpam(),
   },
   {
     title: 'Important',
     icon: SnapchatLogo,
     count: 18,
     segment: ['important'],
-    href: urls.DashStack.dashboard.inbox.important,
+    href: DashstackDashboardInboxImportant(),
   },
   {
     title: 'Bin',
     icon: Trash,
     count: 9,
     segment: ['bin'],
-    href: urls.DashStack.dashboard.inbox.bin,
+    href: DashstackDashboardInboxBin(),
   },
 ]
 

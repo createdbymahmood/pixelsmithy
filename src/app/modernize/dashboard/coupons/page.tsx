@@ -1,7 +1,7 @@
 import {redirect} from 'next/navigation'
 
-import {urls} from '@/constants'
+import {ModernizeDashboardCouponsListAll} from '@/lib/declarative-routing'
 
 export default function Coupons() {
-  return redirect(urls.Modernize.dashboard.coupons.list.all)
+  return redirect(ModernizeDashboardCouponsListAll())
 }

@@ -1,7 +1,7 @@
 import {redirect} from 'next/navigation'
 
-import {urls} from '@/constants'
+import {JobhuntlyCompanyDashboardSettingsOverview} from '@/lib/declarative-routing'
 
 export default function Settings() {
-  return redirect(urls.JobHuntly.company.dashboard.settings.overview)
+  return redirect(JobhuntlyCompanyDashboardSettingsOverview())
 }

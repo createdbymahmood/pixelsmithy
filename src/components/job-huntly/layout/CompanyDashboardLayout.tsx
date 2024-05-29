@@ -11,10 +11,16 @@ import {
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
 import type {ReactNode} from 'react'
-import React from 'react'
 
 import type {SidebarSection} from '@/components/roscent'
-import {urls} from '@/constants'
+import {
+  JobhuntlyCompanyDashboardApplicants,
+  JobhuntlyCompanyDashboardChat,
+  JobhuntlyCompanyDashboardCompanyprofile,
+  JobhuntlyCompanyDashboardHome,
+  JobhuntlyCompanyDashboardJobs,
+  JobhuntlyCompanyDashboardSettingsOverview,
+} from '@/lib/declarative-routing'
 
 import {CompanyDashboardPageLayout} from './CompanyDashboardPageLayout'
 import {DashboardLayout} from './DashboardLayout'
@@ -27,14 +33,14 @@ const sections: SidebarSection[] = [
         id: 'dashboard',
         title: 'Dashboard',
         icon: HouseSimple,
-        href: urls.JobHuntly.company.dashboard.home,
+        href: JobhuntlyCompanyDashboardHome(),
         activeSegment: ['home'],
       },
       {
         id: 'messages',
         title: 'Messages',
         icon: ChatCenteredText,
-        href: urls.JobHuntly.company.dashboard.chat,
+        href: JobhuntlyCompanyDashboardChat(),
         activeSegment: ['chat'],
         unread: 1,
       },
@@ -42,7 +48,7 @@ const sections: SidebarSection[] = [
         id: 'company-profile',
         title: 'Company Profile',
         icon: Buildings,
-        href: urls.JobHuntly.company.dashboard.companyProfile,
+        href: JobhuntlyCompanyDashboardCompanyprofile(),
         activeSegment: ['company-profile'],
       },
 
@@ -50,14 +56,14 @@ const sections: SidebarSection[] = [
         id: 'applicants',
         title: 'All Applicants',
         icon: UsersThree,
-        href: urls.JobHuntly.company.dashboard.applicants.all,
+        href: JobhuntlyCompanyDashboardApplicants(),
         activeSegment: ['applicants'],
       },
       {
         id: 'job-listing',
         title: 'Job Listing',
         icon: ClipboardText,
-        href: urls.JobHuntly.company.dashboard.jobs.listing,
+        href: JobhuntlyCompanyDashboardJobs(),
         activeSegment: ['jobs'],
       },
       {
@@ -76,7 +82,7 @@ const sections: SidebarSection[] = [
         id: 'settings',
         title: 'Settings',
         icon: Gear,
-        href: urls.JobHuntly.company.dashboard.settings.overview,
+        href: JobhuntlyCompanyDashboardSettingsOverview(),
         activeSegment: ['settings'],
       },
       {

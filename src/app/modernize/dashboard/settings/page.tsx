@@ -1,7 +1,7 @@
 import {redirect} from 'next/navigation'
 
-import {urls} from '@/constants'
+import {ModernizeDashboardSettingsProfile} from '@/lib/declarative-routing'
 
 export default function Settings() {
-  return redirect(urls.Modernize.dashboard.settings.profile)
+  return redirect(ModernizeDashboardSettingsProfile())
 }

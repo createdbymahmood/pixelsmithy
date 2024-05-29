@@ -14,7 +14,10 @@ import {
 } from '@mantine/core'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {
+  ModernizeAuthenticationForgotpassword,
+  ModernizeAuthenticationSignup,
+} from '@/lib/declarative-routing'
 
 function SignUpNotice() {
   return (
@@ -26,7 +29,7 @@ function SignUpNotice() {
       <Anchor
         c='primary.7'
         component={Link}
-        href={urls.Modernize.authentication.signUp}
+        href={ModernizeAuthenticationSignup()}
         size='sm'
         underline='never'
       >
@@ -65,7 +68,7 @@ function FormView() {
       <Anchor
         c='primary.7'
         component={Link}
-        href={urls.Modernize.authentication.forgotPassword}
+        href={ModernizeAuthenticationForgotpassword()}
         size='sm'
         ta='center'
         underline='never'

@@ -11,7 +11,7 @@ import {
 import Link from 'next/link'
 import React from 'react'
 
-import {urls} from '@/constants'
+import {RoscentAuthenticationSignin} from '@/lib/declarative-routing'
 
 import {PasswordInput, TermsOfUse} from '../components'
 
@@ -25,7 +25,7 @@ function AlreadyResetPassword() {
       <Anchor
         c='indigo.4'
         component={Link}
-        href={urls.roscent.authentication.signIn}
+        href={RoscentAuthenticationSignin()}
         size='sm'
         underline='never'
       >

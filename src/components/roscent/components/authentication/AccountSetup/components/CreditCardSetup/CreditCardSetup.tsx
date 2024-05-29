@@ -16,7 +16,11 @@ import {CaretLeft} from '@phosphor-icons/react/dist/ssr'
 import {range} from 'lodash-es'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {
+  RoscentAuthenticationAccountsetupBillingdetails,
+  RoscentAuthenticationSignin,
+  RoscentDashboardProjects,
+} from '@/lib/declarative-routing'
 
 import styles from './CreditCardSetup.module.scss'
 
@@ -30,7 +34,7 @@ function Help() {
       <Anchor
         c='indigo.4'
         component={Link}
-        href={urls.roscent.authentication.signIn}
+        href={RoscentAuthenticationSignin()}
         ml={rem(5)}
         size='sm'
         underline='never'
@@ -133,7 +137,7 @@ function Footer() {
     <Group justify='center' wrap='nowrap'>
       <Button
         component={Link}
-        href={urls.roscent.authentication.accountSetup.billingDetails}
+        href={RoscentAuthenticationAccountsetupBillingdetails()}
         leftSection={previousLeftSection}
         radius='md'
         variant='light'
@@ -143,7 +147,7 @@ function Footer() {
       </Button>
       <Button
         component={Link}
-        href={urls.roscent.projects.index}
+        href={RoscentDashboardProjects()}
         radius='md'
         fullWidth
       >

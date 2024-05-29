@@ -16,8 +16,8 @@ import {TableFilters, TableWrapper} from '@modernize/components/common'
 import {Plus} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
 import {useTableState} from '@/hooks/useTableState'
+import {ModernizeDashboardProductsAdd} from '@/lib/declarative-routing'
 
 interface Product {
   title: string
@@ -119,7 +119,7 @@ function Header() {
         <Button variant='default'>Export</Button>
         <Button
           component={Link}
-          href={urls.Modernize.dashboard.products.add}
+          href={ModernizeDashboardProductsAdd()}
           leftSection={<Plus className='icon-size-md' weight='bold' />}
         >
           Add Product

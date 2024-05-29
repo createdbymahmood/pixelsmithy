@@ -8,7 +8,14 @@ import type {ReactNode} from 'react'
 import React from 'react'
 
 import {TabLink} from '@/components/common'
-import {urls} from '@/constants'
+import {
+  JobhuntlyApplicantDashboardApplicationsAll,
+  JobhuntlyApplicantDashboardApplicationsAssessment,
+  JobhuntlyApplicantDashboardApplicationsHired,
+  JobhuntlyApplicantDashboardApplicationsInreview,
+  JobhuntlyApplicantDashboardApplicationsInterviewing,
+  JobhuntlyApplicantDashboardApplicationsOffered,
+} from '@/lib/declarative-routing'
 
 import {Banner, Header} from '../components'
 
@@ -20,37 +27,37 @@ const applications = [
   {
     key: 'all',
     label: 'All',
-    href: urls.JobHuntly.applicant.dashboard.applications.all,
+    href: JobhuntlyApplicantDashboardApplicationsAll(),
     count: 4,
   },
   {
     key: 'in-review',
     label: 'In Review',
-    href: urls.JobHuntly.applicant.dashboard.applications.inReview,
+    href: JobhuntlyApplicantDashboardApplicationsInreview(),
     count: 34,
   },
   {
     key: 'interviewing',
     label: 'Interviewing',
-    href: urls.JobHuntly.applicant.dashboard.applications.interviewing,
+    href: JobhuntlyApplicantDashboardApplicationsInterviewing(),
     count: 18,
   },
   {
     key: 'assessment',
     label: 'Assessment',
-    href: urls.JobHuntly.applicant.dashboard.applications.assessment,
+    href: JobhuntlyApplicantDashboardApplicationsAssessment(),
     count: 5,
   },
   {
     key: 'offered',
     label: 'offered',
-    href: urls.JobHuntly.applicant.dashboard.applications.offered,
+    href: JobhuntlyApplicantDashboardApplicationsOffered(),
     count: 2,
   },
   {
     key: 'hired',
     label: 'hired',
-    href: urls.JobHuntly.applicant.dashboard.applications.hired,
+    href: JobhuntlyApplicantDashboardApplicationsHired(),
     count: 1,
   },
 ] as const
