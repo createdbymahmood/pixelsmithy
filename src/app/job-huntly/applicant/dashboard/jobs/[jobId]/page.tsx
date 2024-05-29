@@ -1,13 +1,12 @@
 import {JobDescription as JobDescriptionView} from '@job-huntly/components/applicant'
-import React from 'react'
 
 import ApplicantDashboardPageLayout from '@/components/job-huntly/layout/ApplicantDashboardPageLayout/ApplicantDashboardPageLayout'
-import {urls} from '@/constants'
+import {JobhuntlyApplicantDashboardJobs} from '@/lib/declarative-routing'
 
 export default function JobDescription() {
   return (
     <ApplicantDashboardPageLayout
-      callbackURL={urls.JobHuntly.applicant.dashboard.jobs}
+      callbackURL={JobhuntlyApplicantDashboardJobs()}
       title='Job Description'
     >
       <JobDescriptionView />

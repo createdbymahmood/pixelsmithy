@@ -32,7 +32,7 @@ import Link from 'next/link'
 import React, {useState} from 'react'
 
 import {GroupLink} from '@/components/common'
-import {urls} from '@/constants'
+import {ModernizeDashboardCoupons} from '@/lib/declarative-routing'
 
 import styles from './CreateCouponForm.module.scss'
 
@@ -41,13 +41,13 @@ function Actions() {
     <Group ml='auto'>
       <Button
         component={Link}
-        href={urls.Modernize.dashboard.coupons.index}
+        href={ModernizeDashboardCoupons()}
         ml='auto'
         variant='default'
       >
         Cancel
       </Button>
-      <Button component={Link} href={urls.Modernize.dashboard.coupons.index}>
+      <Button component={Link} href={ModernizeDashboardCoupons()}>
         Save
       </Button>
     </Group>
@@ -61,7 +61,7 @@ function BackButton() {
       className='cursor-pointer'
       component={Link}
       gap={rem(4)}
-      href={urls.Modernize.dashboard.coupons.index}
+      href={ModernizeDashboardCoupons()}
     >
       <ArrowLeft className='icon-size-md' weight='bold' />
       <Text size='sm'>Back</Text>

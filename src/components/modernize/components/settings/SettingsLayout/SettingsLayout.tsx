@@ -7,7 +7,10 @@ import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
 import {TabLink} from '@/components/common'
-import {urls} from '@/constants'
+import {
+  ModernizeDashboardSettingsNotifications,
+  ModernizeDashboardSettingsProfile,
+} from '@/lib/declarative-routing'
 
 function Actions() {
   return (
@@ -37,12 +40,12 @@ const settings = [
   {
     key: 'profile',
     label: 'Profile',
-    href: urls.Modernize.dashboard.settings.profile,
+    href: ModernizeDashboardSettingsProfile(),
   },
   {
     key: 'notifications',
     label: 'Notifications',
-    href: urls.Modernize.dashboard.settings.notifications,
+    href: ModernizeDashboardSettingsNotifications(),
   },
 ] as const
 

@@ -27,7 +27,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 
 import {GroupLink} from '@/components/common/GroupLink'
-import {urls} from '@/constants'
+import {ModernizeDashboardCategories} from '@/lib/declarative-routing'
 
 import styles from './AddCategoryForm.module.scss'
 
@@ -36,13 +36,13 @@ function Actions() {
     <GroupLink ml='auto'>
       <Button
         component={Link}
-        href={urls.Modernize.dashboard.categories.index}
+        href={ModernizeDashboardCategories()}
         ml='auto'
         variant='default'
       >
         Cancel
       </Button>
-      <Button component={Link} href={urls.Modernize.dashboard.categories.index}>
+      <Button component={Link} href={ModernizeDashboardCategories()}>
         Save
       </Button>
     </GroupLink>
@@ -56,7 +56,7 @@ function BackButton() {
       className='cursor-pointer'
       component={Link}
       gap={rem(4)}
-      href={urls.Modernize.dashboard.categories.index}
+      href={ModernizeDashboardCategories()}
     >
       <ArrowLeft className='icon-size-md' weight='bold' />
       <Text size='sm'>Back</Text>

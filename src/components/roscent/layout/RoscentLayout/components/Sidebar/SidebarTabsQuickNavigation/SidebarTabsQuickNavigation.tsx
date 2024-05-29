@@ -8,7 +8,10 @@ import {projectId} from '@roscent/mocks/email'
 import {head} from 'lodash-es'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {
+  RoscentDashboardAccountSettings,
+  RoscentDashboardProjectsIdBudget,
+} from '@/lib/declarative-routing'
 
 import styles from './SidebarTabsQuickNavigation.module.scss'
 
@@ -20,12 +23,12 @@ const tabs = [
       {
         key: '1',
         title: 'Project Budget',
-        href: urls.roscent.projects.budget(projectId),
+        href: RoscentDashboardProjectsIdBudget({id: projectId}),
       },
       {
         key: '2',
         title: 'Account Settings',
-        href: urls.roscent.account.settings,
+        href: RoscentDashboardAccountSettings(),
       },
     ],
   },

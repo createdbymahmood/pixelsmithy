@@ -25,7 +25,19 @@ import {useRouter} from 'next/navigation'
 import {Fragment} from 'react'
 
 import {useLayoutStore} from '@/components/dash-stack/layout/DashStackDashboardLayout/store/layout'
-import {urls} from '@/constants'
+import {
+  DashstackDashboard,
+  DashstackDashboardContacts,
+  DashstackDashboardFavorites,
+  DashstackDashboardInbox,
+  DashstackDashboardOrders,
+  DashstackDashboardPricing,
+  DashstackDashboardProducts,
+  DashstackDashboardProductstock,
+  DashstackDashboardSettings,
+  DashstackDashboardTeam,
+  DashstackDashboardTodo,
+} from '@/lib/declarative-routing'
 
 import styles from './Header.module.scss'
 
@@ -39,37 +51,37 @@ function SpotlightImpl() {
           id: 'dashboard',
           label: 'Dashboard',
           description: 'The entry point',
-          onClick: () => router.push(urls.DashStack.dashboard.index),
+          onClick: () => router.push(DashstackDashboard()),
         },
         {
           id: 'products',
           label: 'Products',
           description: 'List of Products',
-          onClick: () => router.push(urls.DashStack.dashboard.products.index),
+          onClick: () => router.push(DashstackDashboardProducts()),
         },
         {
           id: 'favorites',
           label: 'Favorites',
           description: 'List of Favorites',
-          onClick: () => router.push(urls.DashStack.dashboard.favorites),
+          onClick: () => router.push(DashstackDashboardFavorites()),
         },
         {
           id: 'inbox',
           label: 'Inbox',
           description: 'Mailing system',
-          onClick: () => router.push(urls.DashStack.dashboard.inbox.index),
+          onClick: () => router.push(DashstackDashboardInbox()),
         },
         {
           id: 'orders',
           label: 'Orders List',
           description: 'List of orders',
-          onClick: () => router.push(urls.DashStack.dashboard.orders),
+          onClick: () => router.push(DashstackDashboardOrders()),
         },
         {
           id: 'product-stock',
           label: 'Product Stock',
           description: 'List of product stock',
-          onClick: () => router.push(urls.DashStack.dashboard.products.stock),
+          onClick: () => router.push(DashstackDashboardProductstock()),
         },
       ],
     },
@@ -80,31 +92,31 @@ function SpotlightImpl() {
           id: 'pricing',
           label: 'Pricing',
           description: 'Pricing page',
-          onClick: () => router.push(urls.DashStack.dashboard.pricing),
+          onClick: () => router.push(DashstackDashboardPricing()),
         },
         {
           id: 'todo',
           label: 'To-Do',
           description: 'To Do List',
-          onClick: () => router.push(urls.DashStack.dashboard.toDo),
+          onClick: () => router.push(DashstackDashboardTodo()),
         },
         {
           id: 'contacts',
           label: 'Contacts',
           description: 'Contacts list',
-          onClick: () => router.push(urls.DashStack.dashboard.contacts.index),
+          onClick: () => router.push(DashstackDashboardContacts()),
         },
         {
           id: 'team',
           label: 'Team',
           description: 'Our team members',
-          onClick: () => router.push(urls.DashStack.dashboard.team.index),
+          onClick: () => router.push(DashstackDashboardTeam()),
         },
         {
           id: 'settings',
           label: 'Settings',
           description: 'Personal setting page',
-          onClick: () => router.push(urls.DashStack.dashboard.settings),
+          onClick: () => router.push(DashstackDashboardSettings()),
         },
       ],
     },

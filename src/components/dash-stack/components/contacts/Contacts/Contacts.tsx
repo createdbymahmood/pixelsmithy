@@ -14,7 +14,7 @@ import {EnvelopeSimple} from '@phosphor-icons/react/dist/ssr'
 import {range} from 'lodash-es'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {DashstackDashboardContactsAdd} from '@/lib/declarative-routing'
 
 function Header() {
   return (
@@ -23,7 +23,7 @@ function Header() {
       <Button
         color='primary.4'
         component={Link}
-        href={urls.DashStack.dashboard.contacts.add}
+        href={DashstackDashboardContactsAdd()}
         radius='md'
         size='md'
       >

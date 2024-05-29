@@ -6,7 +6,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import {GroupLink} from '@/components/common'
-import {urls} from '@/constants'
+import {JobhuntlyCompanyDashboardApplicants} from '@/lib/declarative-routing'
 
 const backButtonSize = rem(40)
 
@@ -23,10 +23,7 @@ function Action() {
 
 function BackButton() {
   return (
-    <GroupLink
-      component={Link}
-      href={urls.JobHuntly.company.dashboard.applicants.all}
-    >
+    <GroupLink component={Link} href={JobhuntlyCompanyDashboardApplicants()}>
       <Box
         className='cursor-pointer'
         component={ArrowLeft}

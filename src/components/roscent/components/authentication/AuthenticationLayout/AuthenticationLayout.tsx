@@ -14,7 +14,10 @@ import {
 import Link from 'next/link'
 import type {ReactNode} from 'react'
 
-import {urls} from '@/constants'
+import {
+  RoscentAuthenticationSignin,
+  RoscentAuthenticationSignup,
+} from '@/lib/declarative-routing'
 
 const navbar = ['Product', 'Solutions', 'Resources', 'Download', 'Pricing']
 
@@ -38,7 +41,7 @@ function SignInActions() {
     <Group justify='flex-end'>
       <Button
         component={Link}
-        href={urls.roscent.authentication.signUp}
+        href={RoscentAuthenticationSignup()}
         radius='md'
         size='compact-sm'
         variant='light'
@@ -48,7 +51,7 @@ function SignInActions() {
 
       <Button
         component={Link}
-        href={urls.roscent.authentication.signIn}
+        href={RoscentAuthenticationSignin()}
         radius='md'
         size='compact-sm'
       >

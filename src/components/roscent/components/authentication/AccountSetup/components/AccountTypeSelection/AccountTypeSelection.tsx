@@ -8,7 +8,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {RoscentAuthenticationAccountsetupAccountinfo} from '@/lib/declarative-routing'
 
 import {CardSelectionGroup} from '../CardSelectionGroup'
 
@@ -46,7 +46,7 @@ function FormView() {
       <CardSelectionGroup options={options} />
       <Button
         component={Link}
-        href={urls.roscent.authentication.accountSetup.accountInfo}
+        href={RoscentAuthenticationAccountsetupAccountinfo()}
         mt='lg'
         radius='md'
         rightSection={rightSection}

@@ -1,7 +1,7 @@
 import {redirect} from 'next/navigation'
 
-import {urls} from '@/constants'
+import {RoscentDashboardAccountOverview} from '@/lib/declarative-routing'
 
 export default function Account() {
-  return redirect(urls.roscent.account.overview)
+  return redirect(RoscentDashboardAccountOverview())
 }

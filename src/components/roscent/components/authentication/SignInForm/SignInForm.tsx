@@ -15,7 +15,10 @@ import {
 import {Eye, EyeSlash} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {
+  RoscentAuthenticationForgotpassword,
+  RoscentAuthenticationSignup,
+} from '@/lib/declarative-routing'
 
 import styles from './SignInForm.module.scss'
 
@@ -81,7 +84,7 @@ function FormView() {
         c='indigo.4'
         className={styles.forgotPassword}
         component={Link}
-        href={urls.roscent.authentication.forgotPassword}
+        href={RoscentAuthenticationForgotpassword()}
         size='sm'
         underline='never'
       >
@@ -100,7 +103,7 @@ function FormView() {
         <Anchor
           c='indigo.4'
           component={Link}
-          href={urls.roscent.authentication.signUp}
+          href={RoscentAuthenticationSignup()}
           size='sm'
           underline='never'
         >

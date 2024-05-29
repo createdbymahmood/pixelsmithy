@@ -1,7 +1,7 @@
 import {redirect} from 'next/navigation'
 
-import {urls} from '@/constants'
+import {DashstackDashboard} from '@/lib/declarative-routing'
 
 export default function DashStack() {
-  return redirect(urls.DashStack.dashboard.index)
+  return redirect(DashstackDashboard())
 }

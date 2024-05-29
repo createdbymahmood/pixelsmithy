@@ -24,7 +24,17 @@ import Image from 'next/image'
 import {useRouter} from 'next/navigation'
 import {Fragment} from 'react'
 
-import {urls} from '@/constants'
+import {
+  ModernizeDashboard,
+  ModernizeDashboardCoupons,
+  ModernizeDashboardCustomers,
+  ModernizeDashboardKnowledgebase,
+  ModernizeDashboardOrders,
+  ModernizeDashboardPricing,
+  ModernizeDashboardProducts,
+  ModernizeDashboardReports,
+  ModernizeDashboardSettings,
+} from '@/lib/declarative-routing'
 
 import styles from './Header.module.scss'
 
@@ -38,43 +48,43 @@ function SpotlightImpl() {
           id: 'dashboard',
           label: 'Dashboard',
           description: 'The entry point',
-          onClick: () => router.push(urls.Modernize.dashboard.index),
+          onClick: () => router.push(ModernizeDashboard()),
         },
         {
           id: 'orders',
           label: 'Orders',
           description: 'List of orders',
-          onClick: () => router.push(urls.Modernize.dashboard.orders),
+          onClick: () => router.push(ModernizeDashboardOrders()),
         },
         {
           id: 'products',
           label: 'Products',
           description: 'List of Products',
-          onClick: () => router.push(urls.Modernize.dashboard.products.index),
+          onClick: () => router.push(ModernizeDashboardProducts()),
         },
         {
           id: 'customers',
           label: 'Customers',
           description: 'List of customers',
-          onClick: () => router.push(urls.Modernize.dashboard.customers.index),
+          onClick: () => router.push(ModernizeDashboardCustomers()),
         },
         {
           id: 'reports',
           label: 'Reports',
           description: 'List of Reports',
-          onClick: () => router.push(urls.Modernize.dashboard.reports.index),
+          onClick: () => router.push(ModernizeDashboardReports()),
         },
         {
           id: 'coupons',
           label: 'Coupons',
           description: 'List of Coupons',
-          onClick: () => router.push(urls.Modernize.dashboard.coupons.index),
+          onClick: () => router.push(ModernizeDashboardCoupons()),
         },
         {
           id: 'settings',
           label: 'Settings',
           description: 'List of Settings',
-          onClick: () => router.push(urls.Modernize.dashboard.settings.index),
+          onClick: () => router.push(ModernizeDashboardSettings()),
         },
       ],
     },
@@ -85,14 +95,13 @@ function SpotlightImpl() {
           id: 'knowledge-base',
           label: 'Knowledge Base',
           description: 'Maybe to learn something',
-          onClick: () =>
-            router.push(urls.Modernize.dashboard.knowledgeBase.index),
+          onClick: () => router.push(ModernizeDashboardKnowledgebase()),
         },
         {
           id: 'pricing',
           label: 'Pricing',
           description: 'See our plans',
-          onClick: () => router.push(urls.Modernize.dashboard.pricing),
+          onClick: () => router.push(ModernizeDashboardPricing()),
         },
       ],
     },

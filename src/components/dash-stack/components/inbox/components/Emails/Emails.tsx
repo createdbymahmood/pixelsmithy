@@ -29,7 +29,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {GroupLink} from '@/components/common'
 import {userId} from '@/components/dash-stack/mock/user'
-import {urls} from '@/constants'
+import {DashstackDashboardInboxUserId} from '@/lib/declarative-routing'
 
 import styles from './Emails.module.scss'
 
@@ -91,7 +91,7 @@ function EmailListItem() {
       <GroupLink
         component={Link}
         gap='sm'
-        href={urls.DashStack.dashboard.inbox.chat(userId)}
+        href={DashstackDashboardInboxUserId({userId})}
         wrap='nowrap'
       >
         <Text fw='600' lineClamp={1} size='sm'>

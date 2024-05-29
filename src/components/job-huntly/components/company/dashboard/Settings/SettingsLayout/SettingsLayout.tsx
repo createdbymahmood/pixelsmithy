@@ -6,7 +6,11 @@ import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
 import {TabLink} from '@/components/common'
-import {urls} from '@/constants'
+import {
+  JobhuntlyCompanyDashboardSettingsOverview,
+  JobhuntlyCompanyDashboardSettingsSociallinks,
+  JobhuntlyCompanyDashboardSettingsTeam,
+} from '@/lib/declarative-routing'
 
 interface ProjectOverviewProps {
   children: ReactNode
@@ -16,17 +20,17 @@ const settingsSections = [
   {
     key: 'overview',
     label: 'Overview',
-    href: urls.JobHuntly.company.dashboard.settings.overview,
+    href: JobhuntlyCompanyDashboardSettingsOverview(),
   },
   {
     key: 'social-links',
     label: 'Social Links',
-    href: urls.JobHuntly.company.dashboard.settings.socialLinks,
+    href: JobhuntlyCompanyDashboardSettingsSociallinks(),
   },
   {
     key: 'team',
     label: 'Team',
-    href: urls.JobHuntly.company.dashboard.settings.team,
+    href: JobhuntlyCompanyDashboardSettingsTeam(),
   },
 ]
 

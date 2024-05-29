@@ -6,7 +6,11 @@ import {useSelectedLayoutSegment} from 'next/navigation'
 import type {ReactNode} from 'react'
 
 import {TabLink} from '@/components/common'
-import {urls} from '@/constants'
+import {
+  JobhuntlyApplicantDashboardSettingsLogindetails,
+  JobhuntlyApplicantDashboardSettingsMyprofile,
+  JobhuntlyApplicantDashboardSettingsNotifications,
+} from '@/lib/declarative-routing'
 
 interface ProjectOverviewProps {
   children: ReactNode
@@ -16,17 +20,17 @@ const settingsSections = [
   {
     key: 'my-profile',
     label: 'My Profile',
-    href: urls.JobHuntly.applicant.dashboard.settings.profile,
+    href: JobhuntlyApplicantDashboardSettingsMyprofile(),
   },
   {
     key: 'login-details',
     label: 'Login Details',
-    href: urls.JobHuntly.applicant.dashboard.settings.login,
+    href: JobhuntlyApplicantDashboardSettingsLogindetails(),
   },
   {
     key: 'notifications',
     label: 'Notifications',
-    href: urls.JobHuntly.applicant.dashboard.settings.notifications,
+    href: JobhuntlyApplicantDashboardSettingsNotifications(),
   },
 ]
 

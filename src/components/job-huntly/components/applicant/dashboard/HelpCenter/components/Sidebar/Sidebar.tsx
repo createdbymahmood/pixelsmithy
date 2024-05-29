@@ -14,7 +14,7 @@ import {MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 import React from 'react'
 
-import {urls} from '@/constants'
+import {JobhuntlyApplicantDashboardHelpcenter} from '@/lib/declarative-routing'
 
 import styles from './Sidebar.module.scss'
 
@@ -62,27 +62,27 @@ const links: Link[] = [
   {
     label: 'Getting Started',
     active: true,
-    href: urls.JobHuntly.applicant.dashboard.helpCenter.index,
+    href: JobhuntlyApplicantDashboardHelpcenter(),
   },
   {
     label: 'My Profile',
     active: false,
-    href: urls.JobHuntly.applicant.dashboard.helpCenter.index,
+    href: JobhuntlyApplicantDashboardHelpcenter(),
   },
   {
     label: 'Applying for a job',
     active: false,
-    href: urls.JobHuntly.applicant.dashboard.helpCenter.index,
+    href: JobhuntlyApplicantDashboardHelpcenter(),
   },
   {
     label: 'Job Search Tips',
     active: false,
-    href: urls.JobHuntly.applicant.dashboard.helpCenter.index,
+    href: JobhuntlyApplicantDashboardHelpcenter(),
   },
   {
     label: 'Job Alerts',
     active: false,
-    href: urls.JobHuntly.applicant.dashboard.helpCenter.index,
+    href: JobhuntlyApplicantDashboardHelpcenter(),
   },
 ]
 

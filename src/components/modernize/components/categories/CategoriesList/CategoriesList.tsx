@@ -17,7 +17,7 @@ import {useDisclosure} from '@mantine/hooks'
 import {PencilSimple, Plus} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {ModernizeDashboardCategoriesAdd} from '@/lib/declarative-routing'
 
 function Header() {
   return (
@@ -25,7 +25,7 @@ function Header() {
       <Title order={5}>Categories</Title>
       <Button
         component={Link}
-        href={urls.Modernize.dashboard.categories.add}
+        href={ModernizeDashboardCategoriesAdd()}
         leftSection={<Plus className='icon-size-md' weight='bold' />}
       >
         Add Category
@@ -50,7 +50,7 @@ function Category({count, title}: CategoryProps) {
       blur={0}
       color='#000'
       component={Link}
-      href={urls.Modernize.dashboard.categories.add}
+      href={ModernizeDashboardCategoriesAdd()}
     >
       <Button
         leftSection={<PencilSimple className='icons-size-md' weight='bold' />}

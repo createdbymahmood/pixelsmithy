@@ -12,8 +12,10 @@ import {
   User,
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr'
-import type {SidebarSection} from '@roscent/layout/RoscentLayout/components/Sidebar/Sidebar'
-import {SidebarItem} from '@roscent/layout/RoscentLayout/components/Sidebar/Sidebar'
+import type {
+  SidebarItem,
+  SidebarSection,
+} from '@roscent/layout/RoscentLayout/components/Sidebar/Sidebar'
 import clsx from 'clsx'
 import {intersection, isEmpty, isEqual} from 'lodash-es'
 import Link from 'next/link'
@@ -22,11 +24,23 @@ import {Fragment} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import {GroupLink} from '@/components/common'
-import {urls} from '@/constants'
+import {
+  ModernizeDashboard,
+  ModernizeDashboardCategories,
+  ModernizeDashboardCoupons,
+  ModernizeDashboardCustomers,
+  ModernizeDashboardInbox,
+  ModernizeDashboardKnowledgebase,
+  ModernizeDashboardOrders,
+  ModernizeDashboardPricing,
+  ModernizeDashboardProducts,
+  ModernizeDashboardReports,
+  ModernizeDashboardSettingsProfile,
+} from '@/lib/declarative-routing'
 
 import styles from './Sidebar.module.scss'
 
-function SidebarItem(props: SidebarItem) {
+function SidebarItemImpl(props: SidebarItem) {
   const segment = useSelectedLayoutSegments()
   const isEqualToSegment = isEqual(segment, props.activeSegment)
   const isActive =
@@ -70,14 +84,14 @@ const sections: SidebarSection[] = [
         id: 'dashboard',
         title: 'Dashboard',
         icon: House,
-        href: urls.Modernize.dashboard.index,
+        href: ModernizeDashboard(),
         activeSegment: [],
       },
       {
         id: 'orders',
         title: 'Orders',
         icon: ListDashes,
-        href: urls.Modernize.dashboard.orders,
+        href: ModernizeDashboardOrders(),
         activeSegment: ['orders'],
         unread: 16,
       },
@@ -85,42 +99,42 @@ const sections: SidebarSection[] = [
         id: 'products',
         title: 'Products',
         icon: Tag,
-        href: urls.Modernize.dashboard.products.index,
+        href: ModernizeDashboardProducts(),
         activeSegment: ['products', 'add-product'],
       },
       {
         id: 'categories',
         title: 'Categories',
         icon: FolderSimple,
-        href: urls.Modernize.dashboard.categories.index,
+        href: ModernizeDashboardCategories(),
         activeSegment: ['categories', 'add-category'],
       },
       {
         id: 'customers',
         title: 'Customers',
         icon: UsersThree,
-        href: urls.Modernize.dashboard.customers.index,
+        href: ModernizeDashboardCustomers(),
         activeSegment: ['customers'],
       },
       {
         id: 'reports',
         title: 'Reports',
         icon: ChartBar,
-        href: urls.Modernize.dashboard.reports.index,
+        href: ModernizeDashboardReports(),
         activeSegment: ['reports'],
       },
       {
         id: 'coupons',
         title: 'Coupons',
         icon: Star,
-        href: urls.Modernize.dashboard.coupons.index,
+        href: ModernizeDashboardCoupons(),
         activeSegment: ['coupons'],
       },
       {
         id: 'inbox',
         title: 'Inbox',
         icon: ChatText,
-        href: urls.Modernize.dashboard.inbox,
+        href: ModernizeDashboardInbox(),
         activeSegment: ['inbox'],
       },
     ],
@@ -132,14 +146,14 @@ const sections: SidebarSection[] = [
         id: 'knowledgeBase',
         title: 'Knowledge Base',
         icon: Question,
-        href: urls.Modernize.dashboard.knowledgeBase.index,
+        href: ModernizeDashboardKnowledgebase(),
         activeSegment: ['knowledge-base'],
       },
       {
         id: 'pricing',
         title: 'Pricing',
         icon: Money,
-        href: urls.Modernize.dashboard.pricing,
+        href: ModernizeDashboardPricing(),
         activeSegment: ['pricing'],
       },
     ],
@@ -151,7 +165,7 @@ const sections: SidebarSection[] = [
         id: 'settings',
         title: 'Personal Settings',
         icon: User,
-        href: urls.Modernize.dashboard.settings.profile,
+        href: ModernizeDashboardSettingsProfile(),
         activeSegment: ['settings'],
       },
     ],
@@ -161,7 +175,7 @@ const sections: SidebarSection[] = [
 function SidebarItems() {
   const content = sections.map((section) => {
     const sidebarItems = section.items.map((item) => {
-      return <SidebarItem key={item.id} {...item} />
+      return <SidebarItemImpl key={item.id} {...item} />
     })
 
     return (

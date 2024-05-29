@@ -7,7 +7,7 @@ import type {DataTableColumn} from 'mantine-datatable'
 import Link from 'next/link'
 
 import type {Applicant} from '@/components/job-huntly/mock/applicants'
-import {urls} from '@/constants'
+import {JobhuntlyCompanyDashboardApplicantsApplicantId} from '@/lib/declarative-routing'
 
 const renderFullName = (record: Applicant) => {
   return (
@@ -33,7 +33,9 @@ const renderHiringStage = (record: Applicant) => {
 }
 
 const renderAction = (record: Applicant) => {
-  const href = urls.JobHuntly.company.dashboard.applicants.details(record.id)
+  const href = JobhuntlyCompanyDashboardApplicantsApplicantId({
+    applicantId: record.id,
+  })
   return (
     <Group wrap='nowrap'>
       <Button component={Link} href={href} size='md' variant='outline'>

@@ -14,8 +14,8 @@ import {TableFilters} from '@modernize/components/common'
 import Link from 'next/link'
 
 import {GroupLink} from '@/components/common'
-import {urls} from '@/constants'
 import {useTableState} from '@/hooks/useTableState'
+import {ModernizeDashboardCustomersInfoId} from '@/lib/declarative-routing'
 
 interface Customer {
   id: string
@@ -80,7 +80,7 @@ function TableContent() {
     const nameColumn = (
       <GroupLink
         component={Link}
-        href={urls.Modernize.dashboard.customers.info(element.id)}
+        href={ModernizeDashboardCustomersInfoId({id: element.id})}
       >
         <Checkbox
           checked={selections.isSelected(mapElementToKey(element))}

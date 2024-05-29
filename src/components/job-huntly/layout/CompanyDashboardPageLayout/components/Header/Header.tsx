@@ -4,11 +4,11 @@ import {Plus} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
-import React from 'react'
 import urlcat from 'urlcat'
 
 import {Notification} from '@/components/job-huntly/layout/ApplicantDashboardPageLayout/components'
-import {CALLBACK_URL_PARAM_KEY, urls} from '@/constants'
+import {CALLBACK_URL_PARAM_KEY} from '@/constants'
+import {JobhuntlyCompanyDashboardJobsCreate} from '@/lib/declarative-routing'
 
 import {CompanySwitch} from '../CompanySwitch'
 import styles from './Header.module.scss'
@@ -20,7 +20,7 @@ export function Header() {
     <Box className='icon-size-md' component={Plus} weight='bold' />
   )
   const callbackUrl = usePathname()
-  const disabled = callbackUrl === urls.JobHuntly.company.dashboard.jobs.create
+  const disabled = callbackUrl === JobhuntlyCompanyDashboardJobsCreate()
   return (
     <Group
       bg='white'
@@ -39,7 +39,7 @@ export function Header() {
       <Button
         component={Link}
         disabled={disabled}
-        href={urlcat(urls.JobHuntly.company.dashboard.jobs.create, {
+        href={urlcat(JobhuntlyCompanyDashboardJobsCreate(), {
           [CALLBACK_URL_PARAM_KEY]: callbackUrl,
         })}
         leftSection={postAJobLeftSection}

@@ -16,7 +16,7 @@ import {
 import {projectId} from '@roscent/mocks/email'
 import Link from 'next/link'
 
-import {urls} from '@/constants'
+import {RoscentDashboardProjectsIdOverview} from '@/lib/declarative-routing'
 
 import styles from './ProjectCard.module.scss'
 
@@ -82,7 +82,7 @@ export function ProjectCard({index}: ProjectCardProps) {
   return (
     <Card
       component={Link}
-      href={urls.roscent.projects.overview(projectId)}
+      href={RoscentDashboardProjectsIdOverview({id: projectId})}
       scroll
     >
       <Stack className={styles.card}>

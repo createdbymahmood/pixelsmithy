@@ -19,7 +19,10 @@ import {projectId} from '@roscent/mocks/email'
 import {useRouter} from 'next/navigation'
 import {Fragment} from 'react'
 
-import {urls} from '@/constants'
+import {
+  RoscentDashboardAccount,
+  RoscentDashboardProjectsIdOverview,
+} from '@/lib/declarative-routing'
 
 import styles from './Header.module.scss'
 
@@ -55,14 +58,15 @@ function SpotlightImpl() {
       id: 'projects',
       label: 'Projects',
       description: 'Go to projects page',
-      onClick: () => router.push(urls.roscent.projects.overview(projectId)),
+      onClick: () =>
+        router.push(RoscentDashboardProjectsIdOverview({id: projectId})),
       leftSection: <Folder size={iconSize} weight={iconWeight} />,
     },
     {
       id: 'account',
       label: 'Account',
       description: 'Go to account page',
-      onClick: () => router.push(urls.roscent.account.index),
+      onClick: () => router.push(RoscentDashboardAccount()),
       leftSection: <IdentificationCard size={iconSize} weight={iconWeight} />,
     },
   ]

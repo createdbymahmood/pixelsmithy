@@ -1,15 +1,11 @@
 'use client'
 
-import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
-import {redirect, useParams} from 'next/navigation'
+import {redirect} from 'next/navigation'
 
-import {urls} from '@/constants'
+import {RoscentDashboardProjectsIdOverview} from '@/lib/declarative-routing'
+import {useParams} from '@/lib/declarative-routing/hooks'
 
-interface QueryParams extends Params {
-  id: string
-}
-
-export default function ProjectDetails() {
-  const params = useParams<QueryParams>()
-  return redirect(urls.roscent.projects.overview(params.id))
+export default function Project() {
+  const params = useParams(RoscentDashboardProjectsIdOverview)
+  return redirect(RoscentDashboardProjectsIdOverview({id: params.id}))
 }

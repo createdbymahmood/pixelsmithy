@@ -2,7 +2,7 @@ import {Anchor, Checkbox, Group, rem, Text} from '@mantine/core'
 import Link from 'next/link'
 import React from 'react'
 
-import {urls} from '@/constants'
+import {RoscentDashboard} from '@/lib/declarative-routing'
 
 export function TermsOfUse() {
   return (
@@ -16,7 +16,7 @@ export function TermsOfUse() {
         <Anchor
           c='indigo.4'
           component={Link}
-          href={urls.roscent.index}
+          href={RoscentDashboard()}
           size='sm'
           underline='never'
         >

@@ -25,7 +25,33 @@ import type {ComponentProps} from 'react'
 import React, {Fragment, useState} from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import {urls} from '@/constants'
+import {
+  RoscentAuthenticationAccountsetupAccounttypeselection,
+  RoscentAuthenticationForgotpassword,
+  RoscentAuthenticationResetpassword,
+  RoscentAuthenticationSignin,
+  RoscentAuthenticationSignup,
+  RoscentAuthenticationVerification,
+  RoscentDashboardAccountApikeys,
+  RoscentDashboardAccountBilling,
+  RoscentDashboardAccountLogs,
+  RoscentDashboardAccountOverview,
+  RoscentDashboardAccountReferrals,
+  RoscentDashboardAccountSecurity,
+  RoscentDashboardAccountSettings,
+  RoscentDashboardAccountStatements,
+  RoscentDashboardChat,
+  RoscentDashboardEmailInboxId,
+  RoscentDashboardProjectsIdActivity,
+  RoscentDashboardProjectsIdBudget,
+  RoscentDashboardProjectsIdFiles,
+  RoscentDashboardProjectsIdOverview,
+  RoscentDashboardProjectsIdSettings,
+  RoscentDashboardProjectsIdTargets,
+  RoscentDashboardProjectsIdUsers,
+  RoscentDashboardUserprofileId,
+  RoscentEmailtemplate,
+} from '@/lib/declarative-routing'
 
 import styles from './Sidebar.module.scss'
 
@@ -173,27 +199,6 @@ export function Sidebar() {
     {
       title: 'Pages',
       items: [
-        /*  {
-          id: 'Dashboards',
-          icon: ChartPieSlice,
-          href: '/',
-          title: 'Overview',
-          activeSegment: '',
-          children: [
-            {
-              id: 'Overview',
-              href: '/',
-              title: 'Icon360',
-              activeSegment: '',
-            },
-          ],
-        }, */
-        /*  {
-          id: 'eCommerce',
-          title: 'eCommerce',
-          icon: ShoppingBagOpen,
-          href: '/',
-        }, */
         {
           id: 'projects',
           title: 'Projects',
@@ -202,43 +207,43 @@ export function Sidebar() {
           children: [
             {
               id: 'projectsOverview',
-              href: urls.roscent.projects.overview(projectId),
+              href: RoscentDashboardProjectsIdOverview({id: projectId}),
               title: 'Overview',
               activeSegment: ['projects', params.id, 'overview'],
             },
             {
               id: 'projectsTargets',
-              href: urls.roscent.projects.targets(projectId),
+              href: RoscentDashboardProjectsIdTargets({id: projectId}),
               title: 'Targets',
               activeSegment: ['projects', params.id, 'targets'],
             },
             {
               id: 'projectsBudget',
-              href: urls.roscent.projects.budget(projectId),
+              href: RoscentDashboardProjectsIdBudget({id: projectId}),
               title: 'Budget',
               activeSegment: ['projects', params.id, 'budget'],
             },
             {
               id: 'projectsUsers',
-              href: urls.roscent.projects.users(projectId),
+              href: RoscentDashboardProjectsIdUsers({id: projectId}),
               title: 'Users',
               activeSegment: ['projects', params.id, 'users'],
             },
             {
               id: 'projectsFiles',
-              href: urls.roscent.projects.files(projectId),
+              href: RoscentDashboardProjectsIdFiles({id: projectId}),
               title: 'Files',
               activeSegment: ['projects', params.id, 'files'],
             },
             {
               id: 'projectsActivity',
-              href: urls.roscent.projects.activity(projectId),
+              href: RoscentDashboardProjectsIdActivity({id: projectId}),
               title: 'Activity',
               activeSegment: ['projects', params.id, 'activity'],
             },
             {
               id: 'projectsSettings',
-              href: urls.roscent.projects.settings(projectId),
+              href: RoscentDashboardProjectsIdSettings({id: projectId}),
               title: 'Settings',
               activeSegment: ['projects', params.id, 'settings'],
             },
@@ -252,49 +257,49 @@ export function Sidebar() {
           children: [
             {
               id: 'accountOverview',
-              href: urls.roscent.account.overview,
+              href: RoscentDashboardAccountOverview(),
               title: 'Overview',
               activeSegment: ['account', 'overview'],
             },
             {
               id: 'accountSettings',
-              href: urls.roscent.account.settings,
+              href: RoscentDashboardAccountSettings(),
               title: 'Settings',
               activeSegment: ['account', 'settings'],
             },
             {
               id: 'accountSecurity',
-              href: urls.roscent.account.security,
+              href: RoscentDashboardAccountSecurity(),
               title: 'Security',
               activeSegment: ['account', 'security'],
             },
             {
               id: 'accountBilling',
-              href: urls.roscent.account.billing,
+              href: RoscentDashboardAccountBilling(),
               title: 'Billing',
               activeSegment: ['account', 'billing'],
             },
             {
               id: 'accountStatements',
-              href: urls.roscent.account.statements,
+              href: RoscentDashboardAccountStatements(),
               title: 'Statements',
               activeSegment: ['account', 'statements'],
             },
             {
               id: 'accountReferrals',
-              href: urls.roscent.account.referrals,
+              href: RoscentDashboardAccountReferrals(),
               title: 'Referrals',
               activeSegment: ['account', 'referrals'],
             },
             {
               id: 'accountApiKeys',
-              href: urls.roscent.account.apiKey,
+              href: RoscentDashboardAccountApikeys(),
               title: 'API Keys',
               activeSegment: ['account', 'api-key'],
             },
             {
               id: 'accountLogs',
-              href: urls.roscent.account.logs,
+              href: RoscentDashboardAccountLogs(),
               title: 'Logs',
               activeSegment: ['account', 'logs'],
             },
@@ -308,43 +313,42 @@ export function Sidebar() {
           children: [
             {
               id: 'sign-up',
-              href: urls.roscent.authentication.signUp,
+              href: RoscentAuthenticationSignup(),
               title: 'Sign Up',
               activeSegment: null,
               target: '_blank',
             },
             {
               id: 'sign-in',
-              href: urls.roscent.authentication.signIn,
+              href: RoscentAuthenticationSignin(),
               title: 'Sign In',
               activeSegment: null,
               target: '_blank',
             },
             {
               id: 'forgot-password',
-              href: urls.roscent.authentication.forgotPassword,
+              href: RoscentAuthenticationForgotpassword(),
               title: 'Forgot Password',
               activeSegment: null,
               target: '_blank',
             },
             {
               id: 'reset-password',
-              href: urls.roscent.authentication.resetPassword,
+              href: RoscentAuthenticationResetpassword(),
               title: 'Reset Password',
               activeSegment: null,
               target: '_blank',
             },
             {
               id: 'account-setup',
-              href: urls.roscent.authentication.accountSetup
-                .accountTypeSelection,
+              href: RoscentAuthenticationAccountsetupAccounttypeselection(),
               title: 'Account Setup',
               activeSegment: null,
               target: '_blank',
             },
             {
               id: 'verification',
-              href: urls.roscent.authentication.verification,
+              href: RoscentAuthenticationVerification(),
               title: 'Verification',
               activeSegment: null,
               target: '_blank',
@@ -353,7 +357,7 @@ export function Sidebar() {
         },
         {
           id: 'email',
-          href: urls.roscent.email.inbox(emailId),
+          href: RoscentDashboardEmailInboxId({id: emailId}),
           title: 'Email',
           icon: Envelope,
           activeSegment: null,
@@ -361,7 +365,7 @@ export function Sidebar() {
         },
         {
           id: 'chat',
-          href: urls.roscent.chat,
+          href: RoscentDashboardChat(),
           title: 'Chat',
           icon: ChatsCircle,
           activeSegment: null,
@@ -369,7 +373,7 @@ export function Sidebar() {
         },
         {
           id: 'userProfile',
-          href: urls.roscent.userProfile(userId),
+          href: RoscentDashboardUserprofileId({id: userId}),
           title: 'User Profile',
           icon: UsersThree,
           activeSegment: null,
@@ -384,7 +388,7 @@ export function Sidebar() {
           id: 'email-template',
           title: 'Template',
           icon: PaintRoller,
-          href: urls.roscent.emailTemplate,
+          href: RoscentEmailtemplate(),
           activeSegment: ['email-template'],
         },
       ],
