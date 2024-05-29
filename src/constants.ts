@@ -1,6 +1,8 @@
 import type {MantineColorScheme} from '@mantine/core'
 import urlCat from 'urlcat'
 
+import {JobhuntlyCompanyDashboardHome} from '@/routes'
+
 export const defaultThemeColorScheme: MantineColorScheme = 'light'
 export const defaultDateFormat = 'DD MMMM YYYY'
 export const defaultLoadingScreenDelayMS = 500
@@ -277,11 +279,16 @@ export const urls = {
     landing: '/job-huntly/landing',
   },
 }
+
+console.log({
+  JobhuntlyCompanyDashboardHome: JobhuntlyCompanyDashboardHome.toString(),
+})
 export const applications = [
   {
     title: 'Job Huntly - Company',
     description: 'Job Search Dashboard',
     href: urls.JobHuntly.company.dashboard.home,
+    // href: JobhuntlyCompanyDashboardHome.Link,
     info: 'Desktop version',
   },
   {
