@@ -11,7 +11,9 @@
     "test": "jest --passWithNoTests",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "postinstall": "node scripts/postinstall.js"
+    "postinstall": "node scripts/postinstall.js",
+    "dr:build": "npx declarative-routing build",
+    "dr:build:watch": "npx declarative-routing build --watch"
   },
   "dependencies": {
     "@faker-js/faker": "8.4.1",
@@ -51,12 +53,13 @@
     "lodash-es": "4.17.21",
     "lucide-react": "^0.372.0",
     "mantine-datatable": "7.8.1",
-    "next": "14.2.2",
+    "next": "^14.3.0-canary.82",
     "next-query-params": "^5.0.0",
     "produce": "0.4.1",
-    "react": "18.2.0",
+    "query-string": "^9.0.0",
+    "react": "^19.0.0-rc-935180c7e0-20240524",
     "react-apexcharts": "1.4.1",
-    "react-dom": "18.2.0",
+    "react-dom": "^19.0.0-rc-935180c7e0-20240524",
     "react-hook-form": "^7.51.3",
     "react-perfect-scrollbar": "1.5.8",
     "tailwind-merge": "^2.3.0",
@@ -65,7 +68,7 @@
     "urlcat": "2.0.4",
     "use-query-params": "^2.2.1",
     "utility-types": "3.11.0",
-    "zod": "^3.22.5",
+    "zod": "^3.23.8",
     "zustand": "4.5.1"
   },
   "devDependencies": {
