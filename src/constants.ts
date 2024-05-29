@@ -9,7 +9,7 @@ import {
   Joblocation,
   ModernizeDashboard,
   RoscentDashboard,
-} from '@/routes'
+} from '@/lib/declarative-routing'
 
 export const defaultThemeColorScheme: MantineColorScheme = 'light'
 export const defaultDateFormat = 'DD MMMM YYYY'
