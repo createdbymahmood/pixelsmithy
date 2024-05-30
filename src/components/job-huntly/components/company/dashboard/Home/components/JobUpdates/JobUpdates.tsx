@@ -8,7 +8,7 @@ import {
   Stack,
   Title,
 } from '@mantine/core'
-import {ArrowRight} from '@phosphor-icons/react'
+import {ArrowRight} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 import {GridJobCard} from '@/components/job-huntly/components/applicant/dashboard/Jobs/GridJobCard'

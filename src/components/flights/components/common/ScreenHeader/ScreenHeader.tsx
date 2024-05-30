@@ -1,6 +1,6 @@
 import type {GroupProps} from '@mantine/core'
 import {Box, Group, Text} from '@mantine/core'
-import {ArrowLeft} from '@phosphor-icons/react'
+import {ArrowLeft} from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import React from 'react'
 

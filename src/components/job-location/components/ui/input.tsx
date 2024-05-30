@@ -1,5 +1,4 @@
 import {cn} from '@job-location/utils/cn'
-// import {Stack} from '@phosphor-icons/react'
 import * as React from 'react'
 
 import {Label} from '@/components/job-location/components/ui/label'

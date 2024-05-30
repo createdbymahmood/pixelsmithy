@@ -10,12 +10,12 @@ import {
   Text,
 } from '@mantine/core'
 import type {IconProps} from '@phosphor-icons/react'
-import {PencilSimple} from '@phosphor-icons/react'
 import {
   BellSimple,
   ChatCenteredDots,
   CreditCard,
   Gear,
+  PencilSimple,
   Ticket,
   XCircle,
 } from '@phosphor-icons/react/dist/ssr'

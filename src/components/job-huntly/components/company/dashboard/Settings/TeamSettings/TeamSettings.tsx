@@ -10,8 +10,7 @@ import {
   Stack,
   Title,
 } from '@mantine/core'
-import {Plus, Rows} from '@phosphor-icons/react'
-import {SquaresFour} from '@phosphor-icons/react/dist/ssr'
+import {Plus, Rows, SquaresFour} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 import {FormSection} from '@/components/job-huntly/components/common/form'

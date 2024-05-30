@@ -20,8 +20,8 @@ import {
   Title,
 } from '@mantine/core'
 import type {IconWeight} from '@phosphor-icons/react'
-import {ArrowRight} from '@phosphor-icons/react'
 import {
+  ArrowRight,
   Buildings,
   Envelope,
   Eye,

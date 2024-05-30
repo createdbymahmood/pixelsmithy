@@ -17,8 +17,7 @@ import {
   TextInput,
 } from '@mantine/core'
 import {Dropzone, IMAGE_MIME_TYPE} from '@mantine/dropzone'
-import {Upload, X} from '@phosphor-icons/react'
-import {Image} from '@phosphor-icons/react/dist/ssr'
+import {Image, Upload, X} from '@phosphor-icons/react/dist/ssr'
 import dayJS from 'dayjs'
 import {head, range} from 'lodash-es'
 import React from 'react'

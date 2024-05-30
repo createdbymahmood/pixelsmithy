@@ -1,5 +1,5 @@
 import {Box, Button, Divider, SimpleGrid, Stack} from '@mantine/core'
-import {Plus} from '@phosphor-icons/react'
+import {Plus} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 import type {PerksAndBenefitsCardProps} from '@/components/job-huntly/components/applicant'

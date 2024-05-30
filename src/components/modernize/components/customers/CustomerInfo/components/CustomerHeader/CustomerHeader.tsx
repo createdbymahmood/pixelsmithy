@@ -1,6 +1,6 @@
 'use client'
 import {Button, Group, rem, Stack, Text, Title} from '@mantine/core'
-import {ArrowLeft} from '@phosphor-icons/react'
+import {ArrowLeft} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
 import {GroupLink} from '@/components/common'

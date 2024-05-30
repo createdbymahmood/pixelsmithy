@@ -1,5 +1,5 @@
 import {Button, Group, Text} from '@mantine/core'
-import {CaretLeft, CaretRight} from '@phosphor-icons/react'
+import {CaretLeft, CaretRight} from '@phosphor-icons/react/dist/ssr'
 import React from 'react'
 
 export function TablePagination() {

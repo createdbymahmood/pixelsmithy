@@ -16,8 +16,7 @@ import {
   Title,
 } from '@mantine/core'
 import {CommunityForm, Webinars} from '@modernize/components'
-import {ArrowLeft} from '@phosphor-icons/react'
-import {MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
+import {ArrowLeft, MagnifyingGlass} from '@phosphor-icons/react/dist/ssr'
 import {find, head} from 'lodash-es'
 import type {Params} from 'next/dist/shared/lib/router/utils/route-matcher'
 import Link from 'next/link'
