@@ -8,7 +8,6 @@ const withBundleAnalyzer = createBundleAnalyzer({
 const nextConfig = {
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
-    ppr: true,
   },
   sassOptions: {
     prependData: `@import "./src/lib/styles/styles.scss";`,
